@@ -67,6 +67,6 @@ def list_endpoints_with_progress(openapi_file, output_file):
 if __name__ == "__main__":
     # Default input and output file paths
     openapi_file = "github/openapi/v1.0/openapi.yaml"  # Default input file
-    output_file = "openapi-endpoints.txt"             # Default output file
+    output_file = "endpoints-all.txt"             # Default output file
 
     list_endpoints_with_progress(openapi_file, output_file)
