@@ -1,0 +1,10 @@
+value:
+  failedJoinerRuns: '0'
+  failedLeaverRuns: '0'
+  failedMoverRuns: '0'
+  successfulJoinerRuns: '0'
+  successfulLeaverRuns: '0'
+  successfulMoverRuns: '0'
+  totalJoinerRuns: '0'
+  totalLeaverRuns: '0'
+  totalMoverRuns: '0'

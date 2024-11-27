@@ -1,0 +1,17 @@
+value:
+  apiConnectors:
+    - '@odata.type': microsoft.graph.identityApiConnector
+  authenticationEventListeners:
+    - '@odata.type': microsoft.graph.authenticationEventListener
+  authenticationEventsFlows:
+    - '@odata.type': microsoft.graph.authenticationEventsFlow
+  b2xUserFlows:
+    - '@odata.type': microsoft.graph.b2xIdentityUserFlow
+  conditionalAccess:
+    '@odata.type': microsoft.graph.conditionalAccessRoot
+  customAuthenticationExtensions:
+    - '@odata.type': microsoft.graph.customAuthenticationExtension
+  identityProviders:
+    - '@odata.type': microsoft.graph.identityProviderBase
+  userFlowAttributes:
+    - '@odata.type': microsoft.graph.identityUserFlowAttribute

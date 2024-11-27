@@ -1,0 +1,4 @@
+value:
+  hashType:
+    '@odata.type': microsoft.graph.fileHashType
+  hashValue: String

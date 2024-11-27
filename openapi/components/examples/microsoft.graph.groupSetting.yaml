@@ -1,0 +1,5 @@
+value:
+  displayName: String
+  templateId: String
+  values:
+    - '@odata.type': microsoft.graph.settingValue

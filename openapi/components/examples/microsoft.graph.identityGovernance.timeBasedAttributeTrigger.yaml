@@ -1,0 +1,4 @@
+value:
+  offsetInDays: '0'
+  timeBasedAttribute:
+    '@odata.type': microsoft.graph.identityGovernance.workflowTriggerTimeBasedAttribute

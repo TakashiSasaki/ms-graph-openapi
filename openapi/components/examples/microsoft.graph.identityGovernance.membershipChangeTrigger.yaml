@@ -1,0 +1,3 @@
+value:
+  changeType:
+    '@odata.type': microsoft.graph.identityGovernance.membershipChangeType

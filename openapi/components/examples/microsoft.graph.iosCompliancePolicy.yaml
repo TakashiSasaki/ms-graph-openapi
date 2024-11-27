@@ -1,0 +1,17 @@
+value:
+  deviceThreatProtectionEnabled: 'true'
+  deviceThreatProtectionRequiredSecurityLevel:
+    '@odata.type': microsoft.graph.deviceThreatProtectionLevel
+  managedEmailProfileRequired: 'true'
+  osMaximumVersion: String
+  osMinimumVersion: String
+  passcodeBlockSimple: 'true'
+  passcodeExpirationDays: '0'
+  passcodeMinimumCharacterSetCount: '0'
+  passcodeMinimumLength: '0'
+  passcodeMinutesOfInactivityBeforeLock: '0'
+  passcodePreviousPasscodeBlockCount: '0'
+  passcodeRequired: 'true'
+  passcodeRequiredType:
+    '@odata.type': microsoft.graph.requiredPasswordType
+  securityBlockJailbrokenDevices: 'true'

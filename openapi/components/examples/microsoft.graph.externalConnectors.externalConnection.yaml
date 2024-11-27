@@ -1,0 +1,20 @@
+value:
+  activitySettings:
+    '@odata.type': microsoft.graph.externalConnectors.activitySettings
+  configuration:
+    '@odata.type': microsoft.graph.externalConnectors.configuration
+  connectorId: String
+  description: String
+  groups:
+    - '@odata.type': microsoft.graph.externalConnectors.externalGroup
+  items:
+    - '@odata.type': microsoft.graph.externalConnectors.externalItem
+  name: String
+  operations:
+    - '@odata.type': microsoft.graph.externalConnectors.connectionOperation
+  schema:
+    '@odata.type': microsoft.graph.externalConnectors.schema
+  searchSettings:
+    '@odata.type': microsoft.graph.externalConnectors.searchSettings
+  state:
+    '@odata.type': microsoft.graph.externalConnectors.connectionState

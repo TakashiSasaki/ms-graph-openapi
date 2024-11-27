@@ -1,0 +1,6 @@
+value:
+  createdDateTimeUtc: '0001-01-01T00:00:00.0000000+00:00'
+  deviceIdentities:
+    - '@odata.type': microsoft.graph.importedWindowsAutopilotDeviceIdentity
+  status:
+    '@odata.type': microsoft.graph.importedWindowsAutopilotDeviceIdentityUploadStatus

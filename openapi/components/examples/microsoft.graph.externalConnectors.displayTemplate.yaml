@@ -1,0 +1,6 @@
+value:
+  id: String
+  layout: {}
+  priority: '0'
+  rules:
+    - '@odata.type': microsoft.graph.externalConnectors.propertyRule

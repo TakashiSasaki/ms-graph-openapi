@@ -1,0 +1,4 @@
+value:
+  emailSettings:
+    '@odata.type': microsoft.graph.emailSettings
+  workflowScheduleIntervalInHours: '0'

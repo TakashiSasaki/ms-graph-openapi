@@ -1,0 +1,5 @@
+value:
+  fallbackIdentityProvider:
+    '@odata.type': microsoft.graph.b2bIdentityProvidersType
+  primaryIdentityProviderPrecedenceOrder:
+    - '@odata.type': microsoft.graph.b2bIdentityProvidersType

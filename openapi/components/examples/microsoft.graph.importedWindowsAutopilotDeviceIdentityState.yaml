@@ -1,0 +1,6 @@
+value:
+  deviceErrorCode: '0'
+  deviceErrorName: String
+  deviceImportStatus:
+    '@odata.type': microsoft.graph.importedWindowsAutopilotDeviceIdentityImportStatus
+  deviceRegistrationId: String

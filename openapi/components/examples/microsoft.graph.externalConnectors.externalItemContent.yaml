@@ -1,0 +1,4 @@
+value:
+  type:
+    '@odata.type': microsoft.graph.externalConnectors.externalItemContentType
+  value: String

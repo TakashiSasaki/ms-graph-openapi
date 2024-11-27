@@ -1,0 +1,3 @@
+value:
+  groups:
+    - '@odata.type': microsoft.graph.group

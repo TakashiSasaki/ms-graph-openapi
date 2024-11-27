@@ -1,0 +1,3 @@
+value:
+  code: String
+  message: String

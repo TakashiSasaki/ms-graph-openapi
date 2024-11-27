@@ -1,0 +1,7 @@
+value:
+  columns:
+    - '@odata.type': microsoft.graph.horizontalSectionColumn
+  emphasis:
+    '@odata.type': microsoft.graph.sectionEmphasisType
+  layout:
+    '@odata.type': microsoft.graph.horizontalSectionLayoutType

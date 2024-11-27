@@ -1,0 +1,3 @@
+value:
+  authorizedApps:
+    - '@odata.type': microsoft.graph.application

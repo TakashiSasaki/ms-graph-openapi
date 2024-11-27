@@ -1,0 +1,12 @@
+value:
+  aliases:
+    - String
+  isQueryable: 'true'
+  isRefinable: 'true'
+  isRetrievable: 'true'
+  isSearchable: 'true'
+  labels:
+    - '@odata.type': microsoft.graph.externalConnectors.label
+  name: String
+  type:
+    '@odata.type': microsoft.graph.externalConnectors.propertyType

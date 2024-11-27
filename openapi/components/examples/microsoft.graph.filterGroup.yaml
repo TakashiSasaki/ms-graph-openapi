@@ -1,0 +1,4 @@
+value:
+  clauses:
+    - '@odata.type': microsoft.graph.filterClause
+  name: String

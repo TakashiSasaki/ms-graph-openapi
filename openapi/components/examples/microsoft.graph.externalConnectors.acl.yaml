@@ -1,0 +1,6 @@
+value:
+  accessType:
+    '@odata.type': microsoft.graph.externalConnectors.accessType
+  type:
+    '@odata.type': microsoft.graph.externalConnectors.aclType
+  value: String

@@ -1,0 +1,4 @@
+value:
+  address: String
+  displayName: String
+  id: String

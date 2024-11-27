@@ -1,0 +1,7 @@
+value:
+  arity:
+    '@odata.type': microsoft.graph.scopeOperatorType
+  multivaluedComparisonType:
+    '@odata.type': microsoft.graph.scopeOperatorMultiValuedComparisonType
+  supportedAttributeTypes:
+    - '@odata.type': microsoft.graph.attributeType

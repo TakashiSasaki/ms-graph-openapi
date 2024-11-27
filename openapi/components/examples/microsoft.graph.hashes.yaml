@@ -1,0 +1,5 @@
+value:
+  crc32Hash: String
+  quickXorHash: String
+  sha1Hash: String
+  sha256Hash: String

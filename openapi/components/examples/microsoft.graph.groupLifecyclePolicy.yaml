@@ -1,0 +1,4 @@
+value:
+  alternateNotificationEmails: String
+  groupLifetimeInDays: '0'
+  managedGroupTypes: String

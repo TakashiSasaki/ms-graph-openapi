@@ -1,0 +1,9 @@
+value:
+  subject:
+    '@odata.type': microsoft.graph.user
+  task:
+    '@odata.type': microsoft.graph.identityGovernance.task
+  taskProcessingresult:
+    '@odata.type': microsoft.graph.identityGovernance.taskProcessingResult
+  workflow:
+    '@odata.type': microsoft.graph.identityGovernance.workflow

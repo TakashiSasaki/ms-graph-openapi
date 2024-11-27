@@ -1,0 +1,11 @@
+value:
+  completedDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  createdDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  failureReason: String
+  processingStatus:
+    '@odata.type': microsoft.graph.identityGovernance.lifecycleWorkflowProcessingStatus
+  startedDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  subject:
+    '@odata.type': microsoft.graph.user
+  task:
+    '@odata.type': microsoft.graph.identityGovernance.task

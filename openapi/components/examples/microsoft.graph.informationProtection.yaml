@@ -1,0 +1,5 @@
+value:
+  bitlocker:
+    '@odata.type': microsoft.graph.bitlocker
+  threatAssessmentRequests:
+    - '@odata.type': microsoft.graph.threatAssessmentRequest

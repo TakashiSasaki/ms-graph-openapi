@@ -1,0 +1,5 @@
+value:
+  addImageQuery: 'true'
+  alternateText: String
+  alternativeText: String
+  iconUrl: String

@@ -1,0 +1,10 @@
+value:
+  fqdn: String
+  isAzureAdJoined: 'true'
+  isAzureAdRegistered: 'true'
+  isHybridAzureDomainJoined: 'true'
+  netBiosName: String
+  os: String
+  privateIpAddress: String
+  publicIpAddress: String
+  riskScore: String

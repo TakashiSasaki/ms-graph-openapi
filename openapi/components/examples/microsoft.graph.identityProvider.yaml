@@ -1,0 +1,5 @@
+value:
+  clientId: String
+  clientSecret: String
+  name: String
+  type: String

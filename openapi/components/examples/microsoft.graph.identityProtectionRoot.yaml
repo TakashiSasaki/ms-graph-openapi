@@ -1,0 +1,9 @@
+value:
+  riskDetections:
+    - '@odata.type': microsoft.graph.riskDetection
+  riskyServicePrincipals:
+    - '@odata.type': microsoft.graph.riskyServicePrincipal
+  riskyUsers:
+    - '@odata.type': microsoft.graph.riskyUser
+  servicePrincipalRiskDetections:
+    - '@odata.type': microsoft.graph.servicePrincipalRiskDetection

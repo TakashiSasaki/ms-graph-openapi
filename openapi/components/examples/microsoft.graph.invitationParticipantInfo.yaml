@@ -1,0 +1,7 @@
+value:
+  hidden: 'true'
+  identity:
+    '@odata.type': microsoft.graph.identitySet
+  participantId: String
+  removeFromDefaultAudioRoutingGroup: 'true'
+  replacesCallId: String

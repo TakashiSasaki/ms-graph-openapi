@@ -1,0 +1,4 @@
+value:
+  webparts:
+    - '@odata.type': microsoft.graph.webPart
+  width: '0'

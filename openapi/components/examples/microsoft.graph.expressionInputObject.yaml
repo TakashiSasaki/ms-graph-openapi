@@ -1,0 +1,5 @@
+value:
+  definition:
+    '@odata.type': microsoft.graph.objectDefinition
+  properties:
+    - '@odata.type': microsoft.graph.stringKeyObjectValuePair

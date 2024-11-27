@@ -1,0 +1,9 @@
+value:
+  completedDateTime:
+    '@odata.type': microsoft.graph.dateTimeTimeZone
+  dueDateTime:
+    '@odata.type': microsoft.graph.dateTimeTimeZone
+  flagStatus:
+    '@odata.type': microsoft.graph.followupFlagStatus
+  startDateTime:
+    '@odata.type': microsoft.graph.dateTimeTimeZone

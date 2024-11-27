@@ -1,0 +1,15 @@
+value:
+  customTaskExtensions:
+    - '@odata.type': microsoft.graph.identityGovernance.customTaskExtension
+  deletedItems:
+    '@odata.type': microsoft.graph.deletedItemContainer
+  insights:
+    '@odata.type': microsoft.graph.identityGovernance.insights
+  settings:
+    '@odata.type': microsoft.graph.identityGovernance.lifecycleManagementSettings
+  taskDefinitions:
+    - '@odata.type': microsoft.graph.identityGovernance.taskDefinition
+  workflows:
+    - '@odata.type': microsoft.graph.identityGovernance.workflow
+  workflowTemplates:
+    - '@odata.type': microsoft.graph.identityGovernance.workflowTemplate

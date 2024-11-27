@@ -1,0 +1,4 @@
+value:
+  userFlowType:
+    '@odata.type': microsoft.graph.userFlowType
+  userFlowTypeVersion: '0'

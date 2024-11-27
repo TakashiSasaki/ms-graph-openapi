@@ -1,0 +1,5 @@
+value:
+  classifyAs:
+    '@odata.type': microsoft.graph.inferenceClassificationType
+  senderEmailAddress:
+    '@odata.type': microsoft.graph.emailAddress

@@ -1,0 +1,3 @@
+value:
+  connections:
+    - '@odata.type': microsoft.graph.externalConnectors.externalConnection

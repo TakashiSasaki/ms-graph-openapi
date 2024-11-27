@@ -1,0 +1,17 @@
+value:
+  containerTypeId: 00000000-0000-0000-0000-000000000000
+  createdDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  customProperties:
+    '@odata.type': microsoft.graph.fileStorageContainerCustomPropertyDictionary
+  description: String
+  displayName: String
+  drive:
+    '@odata.type': microsoft.graph.drive
+  permissions:
+    - '@odata.type': microsoft.graph.permission
+  settings:
+    '@odata.type': microsoft.graph.fileStorageContainerSettings
+  status:
+    '@odata.type': microsoft.graph.fileStorageContainerStatus
+  viewpoint:
+    '@odata.type': microsoft.graph.fileStorageContainerViewpoint

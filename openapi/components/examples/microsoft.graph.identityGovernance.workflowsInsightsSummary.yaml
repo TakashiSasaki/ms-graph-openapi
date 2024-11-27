@@ -1,0 +1,10 @@
+value:
+  failedRuns: '0'
+  failedTasks: '0'
+  failedUsers: '0'
+  successfulRuns: '0'
+  successfulTasks: '0'
+  successfulUsers: '0'
+  totalRuns: '0'
+  totalTasks: '0'
+  totalUsers: '0'

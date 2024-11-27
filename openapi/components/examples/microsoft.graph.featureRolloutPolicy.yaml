@@ -1,0 +1,9 @@
+value:
+  appliesTo:
+    - '@odata.type': microsoft.graph.directoryObject
+  description: String
+  displayName: String
+  feature:
+    '@odata.type': microsoft.graph.stagedFeatureName
+  isAppliedToOrganization: 'true'
+  isEnabled: 'true'

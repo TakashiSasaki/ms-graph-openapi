@@ -1,0 +1,3 @@
+value:
+  initiatorType:
+    '@odata.type': microsoft.graph.initiatorType

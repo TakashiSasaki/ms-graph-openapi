@@ -1,0 +1,6 @@
+value:
+  fileHash:
+    '@odata.type': microsoft.graph.fileHash
+  name: String
+  path: String
+  riskScore: String

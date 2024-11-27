@@ -1,0 +1,9 @@
+value:
+  assignedUserPrincipalName: String
+  groupTag: String
+  hardwareIdentifier: AA==
+  importId: String
+  productKey: String
+  serialNumber: String
+  state:
+    '@odata.type': microsoft.graph.importedWindowsAutopilotDeviceIdentityState

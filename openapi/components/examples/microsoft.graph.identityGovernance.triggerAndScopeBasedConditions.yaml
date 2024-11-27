@@ -1,0 +1,5 @@
+value:
+  scope:
+    '@odata.type': microsoft.graph.subjectSet
+  trigger:
+    '@odata.type': microsoft.graph.identityGovernance.workflowExecutionTrigger

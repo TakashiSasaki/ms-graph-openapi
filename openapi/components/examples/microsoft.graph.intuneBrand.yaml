@@ -1,0 +1,18 @@
+value:
+  contactITEmailAddress: String
+  contactITName: String
+  contactITNotes: String
+  contactITPhoneNumber: String
+  darkBackgroundLogo:
+    '@odata.type': microsoft.graph.mimeContent
+  displayName: String
+  lightBackgroundLogo:
+    '@odata.type': microsoft.graph.mimeContent
+  onlineSupportSiteName: String
+  onlineSupportSiteUrl: String
+  privacyUrl: String
+  showDisplayNameNextToLogo: 'true'
+  showLogo: 'true'
+  showNameNextToLogo: 'true'
+  themeColor:
+    '@odata.type': microsoft.graph.rgbColor

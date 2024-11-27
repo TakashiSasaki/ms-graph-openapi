@@ -1,0 +1,4 @@
+value:
+  sortBy: String
+  sortOrder: String
+  viewType: String
