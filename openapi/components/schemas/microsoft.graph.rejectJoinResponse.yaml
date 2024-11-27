@@ -1,0 +1,13 @@
+allOf:
+  - $ref: .\microsoft.graph.participantJoiningResponse.yaml
+  - title: rejectJoinResponse
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      reason:
+        $ref: .\microsoft.graph.rejectReason.yaml
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.rejectJoinResponse'
+x-ms-discriminator-value: '#microsoft.graph.rejectJoinResponse'

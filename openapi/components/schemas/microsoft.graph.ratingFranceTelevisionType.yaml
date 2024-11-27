@@ -1,0 +1,32 @@
+title: ratingFranceTelevisionType
+enum:
+  - allAllowed
+  - allBlocked
+  - agesAbove10
+  - agesAbove12
+  - agesAbove16
+  - agesAbove18
+type: string
+description: TV content rating labels in France
+x-ms-enum:
+  name: ratingFranceTelevisionType
+  modelAsString: false
+  values:
+    - value: allAllowed
+      description: Default value, allow all TV shows content
+      name: allAllowed
+    - value: allBlocked
+      description: Do not allow any TV shows content
+      name: allBlocked
+    - value: agesAbove10
+      description: The -10 classification is not recommended for children under 10
+      name: agesAbove10
+    - value: agesAbove12
+      description: The -12 classification is not recommended for children under 12
+      name: agesAbove12
+    - value: agesAbove16
+      description: The -16 classification is not recommended for children under 16
+      name: agesAbove16
+    - value: agesAbove18
+      description: The -18 classification is not recommended for persons under 18
+      name: agesAbove18

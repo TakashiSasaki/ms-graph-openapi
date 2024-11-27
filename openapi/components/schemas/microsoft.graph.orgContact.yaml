@@ -1,0 +1,159 @@
+allOf:
+  - $ref: .\microsoft.graph.directoryObject.yaml
+  - title: orgContact
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      addresses:
+        type: array
+        items:
+          $ref: .\microsoft.graph.physicalOfficeAddress.yaml
+        description: >-
+          Postal addresses for this organizational contact. For now a contact
+          can only have one physical address.
+      companyName:
+        type: string
+        description: >-
+          Name of the company that this organizational contact belongs to. 
+          Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq for null
+          values).
+        nullable: true
+      department:
+        type: string
+        description: >-
+          The name for the department in which the contact works.  Supports
+          $filter (eq, ne, not, ge, le, in, startsWith, and eq for null values).
+        nullable: true
+      displayName:
+        type: string
+        description: >-
+          Display name for this organizational contact. Supports $filter (eq,
+          ne, not, ge, le, in, startsWith, and eq for null values), $search, and
+          $orderby.
+        nullable: true
+      givenName:
+        type: string
+        description: >-
+          First name for this organizational contact. Supports $filter (eq, ne,
+          not, ge, le, in, startsWith, and eq for null values).
+        nullable: true
+      jobTitle:
+        type: string
+        description: >-
+          Job title for this organizational contact. Supports $filter (eq, ne,
+          not, ge, le, in, startsWith, and eq for null values).
+        nullable: true
+      mail:
+        type: string
+        description: >-
+          The SMTP address for the contact, for example, 'jeff@contoso.com'.
+          Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq for null
+          values).
+        nullable: true
+      mailNickname:
+        type: string
+        description: >-
+          Email alias (portion of email address pre-pending the @ symbol) for
+          this organizational contact. Supports $filter (eq, ne, not, ge, le,
+          in, startsWith, and eq for null values).
+        nullable: true
+      onPremisesLastSyncDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: >-
+          Date and time when this organizational contact was last synchronized
+          from on-premises AD. This date and time information uses ISO 8601
+          format and is always in UTC time. For example, midnight UTC on Jan 1,
+          2014 is 2014-01-01T00:00:00Z. Supports $filter (eq, ne, not, ge, le,
+          in).
+        format: date-time
+        nullable: true
+      onPremisesProvisioningErrors:
+        type: array
+        items:
+          $ref: .\microsoft.graph.onPremisesProvisioningError.yaml
+        description: >-
+          List of any synchronization provisioning errors for this
+          organizational contact. Supports $filter (eq, not for category and
+          propertyCausingError), /$count eq 0, /$count ne 0.
+      onPremisesSyncEnabled:
+        type: boolean
+        description: >-
+          true if this object is synced from an on-premises directory; false if
+          this object was originally synced from an on-premises directory but is
+          no longer synced and now mastered in Exchange; null if this object has
+          never been synced from an on-premises directory (default).   Supports
+          $filter (eq, ne, not, in, and eq for null values).
+        nullable: true
+      phones:
+        type: array
+        items:
+          $ref: .\microsoft.graph.phone.yaml
+        description: >-
+          List of phones for this organizational contact. Phone types can be
+          mobile, business, and businessFax. Only one of each type can ever be
+          present in the collection.
+      proxyAddresses:
+        type: array
+        items:
+          type: string
+        description: >-
+          For example: 'SMTP: bob@contoso.com', 'smtp: bob@sales.contoso.com'.
+          The any operator is required for filter expressions on multi-valued
+          properties. Supports $filter (eq, not, ge, le, startsWith, /$count eq
+          0, /$count ne 0).
+      serviceProvisioningErrors:
+        type: array
+        items:
+          $ref: .\microsoft.graph.serviceProvisioningError.yaml
+        description: >-
+          Errors published by a federated service describing a non-transient,
+          service-specific error regarding the properties or link from an
+          organizational contact object .  Supports $filter (eq, not, for
+          isResolved and serviceInstance).
+      surname:
+        type: string
+        description: >-
+          Last name for this organizational contact. Supports $filter (eq, ne,
+          not, ge, le, in, startsWith, and eq for null values).
+        nullable: true
+      directReports:
+        type: array
+        items:
+          $ref: .\microsoft.graph.directoryObject.yaml
+        description: >-
+          The contact's direct reports. (The users and contacts that have their
+          manager property set to this contact.)  Read-only. Nullable. Supports
+          $expand.
+        x-ms-navigationProperty: true
+      manager:
+        anyOf:
+          - $ref: .\microsoft.graph.directoryObject.yaml
+          - type: object
+            nullable: true
+        description: >-
+          The user or contact that is this contact's manager. Read-only.
+          Supports $expand and $filter (eq) by id.
+        x-ms-navigationProperty: true
+      memberOf:
+        type: array
+        items:
+          $ref: .\microsoft.graph.directoryObject.yaml
+        description: >-
+          Groups that this contact is a member of. Read-only. Nullable. Supports
+          $expand.
+        x-ms-navigationProperty: true
+      transitiveMemberOf:
+        type: array
+        items:
+          $ref: .\microsoft.graph.directoryObject.yaml
+        description: >-
+          Groups that this contact is a member of, including groups that the
+          contact is nested under. Read-only. Nullable.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.orgContact'
+x-ms-discriminator-value: '#microsoft.graph.orgContact'

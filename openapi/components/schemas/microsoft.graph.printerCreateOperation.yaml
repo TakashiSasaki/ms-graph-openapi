@@ -1,0 +1,24 @@
+allOf:
+  - $ref: .\microsoft.graph.printOperation.yaml
+  - title: printerCreateOperation
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      certificate:
+        type: string
+        description: >-
+          The signed certificate created during the registration process.
+          Read-only.
+        nullable: true
+      printer:
+        anyOf:
+          - $ref: .\microsoft.graph.printer.yaml
+          - type: object
+            nullable: true
+        description: The created printer entity. Read-only.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.printerCreateOperation'
+x-ms-discriminator-value: '#microsoft.graph.printerCreateOperation'

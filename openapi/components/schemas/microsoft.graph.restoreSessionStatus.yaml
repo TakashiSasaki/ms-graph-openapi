@@ -1,0 +1,10 @@
+title: restoreSessionStatus
+enum:
+  - draft
+  - activating
+  - active
+  - completedWithError
+  - completed
+  - unknownFutureValue
+  - failed
+type: string

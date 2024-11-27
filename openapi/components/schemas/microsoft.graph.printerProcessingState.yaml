@@ -1,0 +1,8 @@
+title: printerProcessingState
+enum:
+  - unknown
+  - idle
+  - processing
+  - stopped
+  - unknownFutureValue
+type: string

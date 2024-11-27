@@ -1,0 +1,54 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: participant
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      info:
+        $ref: .\microsoft.graph.participantInfo.yaml
+      isInLobby:
+        type: boolean
+        description: true if the participant is in lobby.
+      isMuted:
+        type: boolean
+        description: true if the participant is muted (client or server muted).
+      mediaStreams:
+        type: array
+        items:
+          $ref: .\microsoft.graph.mediaStream.yaml
+        description: The list of media streams.
+      metadata:
+        type: string
+        description: A blob of data provided by the participant in the roster.
+        nullable: true
+      recordingInfo:
+        anyOf:
+          - $ref: .\microsoft.graph.recordingInfo.yaml
+          - type: object
+            nullable: true
+        description: Information about whether the participant has recording capability.
+      removedState:
+        anyOf:
+          - $ref: .\microsoft.graph.removedState.yaml
+          - type: object
+            nullable: true
+        description: Indicates the reason why the participant was removed from the roster.
+      restrictedExperience:
+        anyOf:
+          - $ref: .\microsoft.graph.onlineMeetingRestricted.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Indicates the reason or reasons media content from this participant is
+          restricted.
+      rosterSequenceNumber:
+        type: number
+        description: >-
+          Indicates the roster sequence number in which the participant was last
+          updated.
+        format: int64
+        nullable: true
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.participant'

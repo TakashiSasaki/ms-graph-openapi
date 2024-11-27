@@ -1,0 +1,40 @@
+title: retentionLabelSettings
+required:
+  - '@odata.type'
+type: object
+properties:
+  behaviorDuringRetentionPeriod:
+    anyOf:
+      - $ref: .\microsoft.graph.security.behaviorDuringRetentionPeriod.yaml
+      - type: object
+        nullable: true
+    description: >-
+      Describes the item behavior during retention period. Possible values are:
+      doNotRetain, retain, retainAsRecord, retainAsRegulatoryRecord,
+      unknownFutureValue. Read-only.
+  isContentUpdateAllowed:
+    type: boolean
+    description: Specifies whether updates to document content are allowed. Read-only.
+    nullable: true
+  isDeleteAllowed:
+    type: boolean
+    description: Specifies whether the document deletion is allowed. Read-only.
+    nullable: true
+  isLabelUpdateAllowed:
+    type: boolean
+    description: >-
+      Specifies whether you're allowed to change the retention label on the
+      document. Read-only.
+    nullable: true
+  isMetadataUpdateAllowed:
+    type: boolean
+    description: >-
+      Specifies whether updates to the item metadata (for example, the Title
+      field) are blocked. Read-only.
+    nullable: true
+  isRecordLocked:
+    type: boolean
+    description: Specifies whether the item is locked. Read-write.
+    nullable: true
+  '@odata.type':
+    type: string

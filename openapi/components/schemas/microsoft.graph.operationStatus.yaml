@@ -1,0 +1,7 @@
+title: operationStatus
+enum:
+  - NotStarted
+  - Running
+  - Completed
+  - Failed
+type: string

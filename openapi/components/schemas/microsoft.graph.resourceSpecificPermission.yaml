@@ -1,0 +1,30 @@
+title: resourceSpecificPermission
+required:
+  - '@odata.type'
+type: object
+properties:
+  description:
+    type: string
+    description: >-
+      Describes the level of access that the resource-specific permission
+      represents.
+    nullable: true
+  displayName:
+    type: string
+    description: The display name for the resource-specific permission.
+    nullable: true
+  id:
+    pattern: >-
+      ^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$
+    type: string
+    description: The unique identifier for the resource-specific application permission.
+    format: uuid
+  isEnabled:
+    type: boolean
+    description: Indicates whether the permission is enabled.
+  value:
+    type: string
+    description: The value of the permission.
+    nullable: true
+  '@odata.type':
+    type: string

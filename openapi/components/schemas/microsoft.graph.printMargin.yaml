@@ -1,0 +1,35 @@
+title: printMargin
+required:
+  - '@odata.type'
+type: object
+properties:
+  bottom:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    description: The margin in microns from the bottom edge.
+    format: int32
+    nullable: true
+  left:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    description: The margin in microns from the left edge.
+    format: int32
+    nullable: true
+  right:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    description: The margin in microns from the right edge.
+    format: int32
+    nullable: true
+  top:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    description: The margin in microns from the top edge.
+    format: int32
+    nullable: true
+  '@odata.type':
+    type: string

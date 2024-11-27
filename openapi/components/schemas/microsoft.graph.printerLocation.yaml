@@ -1,0 +1,101 @@
+title: printerLocation
+required:
+  - '@odata.type'
+type: object
+properties:
+  altitudeInMeters:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    description: The altitude, in meters, that the printer is located at.
+    format: int32
+    nullable: true
+  building:
+    type: string
+    description: The building that the printer is located in.
+    nullable: true
+  city:
+    type: string
+    description: The city that the printer is located in.
+    nullable: true
+  countryOrRegion:
+    type: string
+    description: The country or region that the printer is located in.
+    nullable: true
+  floor:
+    type: string
+    description: >-
+      The floor that the printer is located on. Only numerical values are
+      supported right now.
+    nullable: true
+  floorDescription:
+    type: string
+    description: The description of the floor that the printer is located on.
+    nullable: true
+  latitude:
+    oneOf:
+      - type: number
+        format: double
+        nullable: true
+      - type: string
+        nullable: true
+      - $ref: .\ReferenceNumeric.yaml
+    description: The latitude that the printer is located at.
+  longitude:
+    oneOf:
+      - type: number
+        format: double
+        nullable: true
+      - type: string
+        nullable: true
+      - $ref: .\ReferenceNumeric.yaml
+    description: The longitude that the printer is located at.
+  organization:
+    type: array
+    items:
+      type: string
+      nullable: true
+    description: >-
+      The organizational hierarchy that the printer belongs to. The elements
+      should be in hierarchical order.
+  postalCode:
+    type: string
+    description: The postal code that the printer is located in.
+    nullable: true
+  roomDescription:
+    type: string
+    description: The description of the room that the printer is located in.
+    nullable: true
+  roomName:
+    type: string
+    description: >-
+      The room that the printer is located in. Only numerical values are
+      supported right now.
+    nullable: true
+  site:
+    type: string
+    description: The site that the printer is located in.
+    nullable: true
+  stateOrProvince:
+    type: string
+    description: The state or province that the printer is located in.
+    nullable: true
+  streetAddress:
+    type: string
+    description: The street address where the printer is located.
+    nullable: true
+  subdivision:
+    type: array
+    items:
+      type: string
+      nullable: true
+    description: >-
+      The subdivision that the printer is located in. The elements should be in
+      hierarchical order.
+  subunit:
+    type: array
+    items:
+      type: string
+      nullable: true
+  '@odata.type':
+    type: string

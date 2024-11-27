@@ -1,0 +1,8 @@
+title: provisioningResult
+enum:
+  - success
+  - failure
+  - skipped
+  - warning
+  - unknownFutureValue
+type: string

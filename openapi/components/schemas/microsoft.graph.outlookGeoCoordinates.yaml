@@ -1,0 +1,55 @@
+title: outlookGeoCoordinates
+required:
+  - '@odata.type'
+type: object
+properties:
+  accuracy:
+    oneOf:
+      - type: number
+        format: double
+        nullable: true
+      - type: string
+        nullable: true
+      - $ref: .\ReferenceNumeric.yaml
+    description: >-
+      The accuracy of the latitude and longitude. As an example, the accuracy
+      can be measured in meters, such as the latitude and longitude are accurate
+      to within 50 meters.
+  altitude:
+    oneOf:
+      - type: number
+        format: double
+        nullable: true
+      - type: string
+        nullable: true
+      - $ref: .\ReferenceNumeric.yaml
+    description: The altitude of the location.
+  altitudeAccuracy:
+    oneOf:
+      - type: number
+        format: double
+        nullable: true
+      - type: string
+        nullable: true
+      - $ref: .\ReferenceNumeric.yaml
+    description: The accuracy of the altitude.
+  latitude:
+    oneOf:
+      - type: number
+        format: double
+        nullable: true
+      - type: string
+        nullable: true
+      - $ref: .\ReferenceNumeric.yaml
+    description: The latitude of the location.
+  longitude:
+    oneOf:
+      - type: number
+        format: double
+        nullable: true
+      - type: string
+        nullable: true
+      - $ref: .\ReferenceNumeric.yaml
+    description: The longitude of the location.
+  '@odata.type':
+    type: string

@@ -1,0 +1,14 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: printTaskTrigger
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      event:
+        $ref: .\microsoft.graph.printEvent.yaml
+      definition:
+        $ref: .\microsoft.graph.printTaskDefinition.yaml
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.printTaskTrigger'

@@ -1,0 +1,10 @@
+title: riskState
+enum:
+  - none
+  - confirmedSafe
+  - remediated
+  - dismissed
+  - atRisk
+  - confirmedCompromised
+  - unknownFutureValue
+type: string

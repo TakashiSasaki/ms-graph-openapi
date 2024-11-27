@@ -1,0 +1,19 @@
+title: recipient
+required:
+  - '@odata.type'
+type: object
+properties:
+  emailAddress:
+    anyOf:
+      - $ref: .\microsoft.graph.emailAddress.yaml
+      - type: object
+        nullable: true
+    description: The recipient's email address.
+  '@odata.type':
+    type: string
+discriminator:
+  propertyName: '@odata.type'
+  mapping:
+    '#microsoft.graph.attendeeBase': .\microsoft.graph.attendeeBase.yaml
+    '#microsoft.graph.attendee': .\microsoft.graph.attendee.yaml
+    microsoft.graph.attendeeBase: .\microsoft.graph.attendeeBase.yaml

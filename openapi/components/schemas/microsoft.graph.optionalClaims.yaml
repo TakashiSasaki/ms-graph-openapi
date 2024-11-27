@@ -1,0 +1,22 @@
+title: optionalClaims
+required:
+  - '@odata.type'
+type: object
+properties:
+  accessToken:
+    type: array
+    items:
+      $ref: .\microsoft.graph.optionalClaim.yaml
+    description: The optional claims returned in the JWT access token.
+  idToken:
+    type: array
+    items:
+      $ref: .\microsoft.graph.optionalClaim.yaml
+    description: The optional claims returned in the JWT ID token.
+  saml2Token:
+    type: array
+    items:
+      $ref: .\microsoft.graph.optionalClaim.yaml
+    description: The optional claims returned in the SAML token.
+  '@odata.type':
+    type: string

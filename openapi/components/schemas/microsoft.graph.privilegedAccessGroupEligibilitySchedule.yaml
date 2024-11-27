@@ -1,0 +1,63 @@
+allOf:
+  - $ref: .\microsoft.graph.privilegedAccessSchedule.yaml
+  - title: privilegedAccessGroupEligibilitySchedule
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      accessId:
+        anyOf:
+          - $ref: .\microsoft.graph.privilegedAccessGroupRelationships.yaml
+          - type: object
+            nullable: true
+        description: >-
+          The identifier of the membership or ownership eligibility to the group
+          that is governed by PIM. Required. The possible values are: owner,
+          member. Supports $filter (eq).
+      groupId:
+        type: string
+        description: >-
+          The identifier of the group representing the scope of the membership
+          or ownership eligibility through PIM for groups. Required. Supports
+          $filter (eq).
+        nullable: true
+      memberType:
+        anyOf:
+          - $ref: .\microsoft.graph.privilegedAccessGroupMemberType.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Indicates whether the assignment is derived from a group assignment.
+          It can further imply whether the caller can manage the schedule.
+          Required. The possible values are: direct, group, unknownFutureValue.
+          Supports $filter (eq).
+      principalId:
+        type: string
+        description: >-
+          The identifier of the principal whose membership or ownership
+          eligibility is granted through PIM for groups. Required. Supports
+          $filter (eq).
+        nullable: true
+      group:
+        anyOf:
+          - $ref: .\microsoft.graph.group.yaml
+          - type: object
+            nullable: true
+        description: >-
+          References the group that is the scope of the membership or ownership
+          eligibility through PIM for groups. Supports $expand.
+        x-ms-navigationProperty: true
+      principal:
+        anyOf:
+          - $ref: .\microsoft.graph.directoryObject.yaml
+          - type: object
+            nullable: true
+        description: >-
+          References the principal that's in the scope of this membership or
+          ownership eligibility request to the group that's governed by PIM.
+          Supports $expand.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.privilegedAccessGroupEligibilitySchedule'
+x-ms-discriminator-value: '#microsoft.graph.privilegedAccessGroupEligibilitySchedule'

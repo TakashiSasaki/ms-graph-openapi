@@ -1,0 +1,18 @@
+title: preAuthorizedApplication
+required:
+  - '@odata.type'
+type: object
+properties:
+  appId:
+    type: string
+    description: The unique identifier for the application.
+    nullable: true
+  delegatedPermissionIds:
+    type: array
+    items:
+      type: string
+    description: >-
+      The unique identifier for the oauth2PermissionScopes the application
+      requires.
+  '@odata.type':
+    type: string

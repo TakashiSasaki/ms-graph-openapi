@@ -1,0 +1,23 @@
+title: resultInfo
+required:
+  - '@odata.type'
+type: object
+properties:
+  code:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    description: The result code.
+    format: int32
+  message:
+    type: string
+    description: The message.
+    nullable: true
+  subcode:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    description: The result subcode.
+    format: int32
+  '@odata.type':
+    type: string

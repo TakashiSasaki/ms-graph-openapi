@@ -1,0 +1,5 @@
+title: roleEligibilityScheduleInstanceFilterByCurrentUserOptions
+enum:
+  - principal
+  - unknownFutureValue
+type: string

@@ -1,0 +1,11 @@
+allOf:
+  - $ref: .\microsoft.graph.callOptions.yaml
+  - title: outgoingCallOptions
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.outgoingCallOptions'
+x-ms-discriminator-value: '#microsoft.graph.outgoingCallOptions'

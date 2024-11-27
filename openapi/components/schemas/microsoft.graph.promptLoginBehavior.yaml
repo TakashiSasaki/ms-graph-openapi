@@ -1,0 +1,7 @@
+title: promptLoginBehavior
+enum:
+  - translateToFreshPasswordAuthentication
+  - nativeSupport
+  - disabled
+  - unknownFutureValue
+type: string

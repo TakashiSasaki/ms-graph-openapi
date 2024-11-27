@@ -1,0 +1,20 @@
+allOf:
+  - $ref: .\microsoft.graph.place.yaml
+  - title: roomList
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      emailAddress:
+        type: string
+        description: The email address of the room list.
+        nullable: true
+      rooms:
+        type: array
+        items:
+          $ref: .\microsoft.graph.room.yaml
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.roomList'
+x-ms-discriminator-value: '#microsoft.graph.roomList'

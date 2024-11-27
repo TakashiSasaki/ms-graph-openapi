@@ -1,0 +1,8 @@
+title: recordingStatus
+enum:
+  - unknown
+  - notRecording
+  - recording
+  - failed
+  - unknownFutureValue
+type: string

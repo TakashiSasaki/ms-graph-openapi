@@ -1,0 +1,24 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: printTaskDefinition
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      createdBy:
+        $ref: .\microsoft.graph.appIdentity.yaml
+      displayName:
+        type: string
+        description: The name of the printTaskDefinition.
+      tasks:
+        type: array
+        items:
+          $ref: .\microsoft.graph.printTask.yaml
+        description: >-
+          A list of tasks that have been created based on this definition. The
+          list includes currently running tasks and recently completed tasks.
+          Read-only.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.printTaskDefinition'

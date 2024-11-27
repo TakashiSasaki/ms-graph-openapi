@@ -1,0 +1,8 @@
+title: scheduleChangeRequestActor
+enum:
+  - sender
+  - recipient
+  - manager
+  - system
+  - unknownFutureValue
+type: string

@@ -1,0 +1,8 @@
+title: riskDetectionTimingType
+enum:
+  - notDefined
+  - realtime
+  - nearRealtime
+  - offline
+  - unknownFutureValue
+type: string

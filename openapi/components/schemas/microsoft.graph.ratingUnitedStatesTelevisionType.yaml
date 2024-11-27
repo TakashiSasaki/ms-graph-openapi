@@ -1,0 +1,40 @@
+title: ratingUnitedStatesTelevisionType
+enum:
+  - allAllowed
+  - allBlocked
+  - childrenAll
+  - childrenAbove7
+  - general
+  - parentalGuidance
+  - childrenAbove14
+  - adults
+type: string
+description: TV content rating labels in United States
+x-ms-enum:
+  name: ratingUnitedStatesTelevisionType
+  modelAsString: false
+  values:
+    - value: allAllowed
+      description: Default value, allow all TV shows content
+      name: allAllowed
+    - value: allBlocked
+      description: Do not allow any TV shows content
+      name: allBlocked
+    - value: childrenAll
+      description: TV-Y, all children
+      name: childrenAll
+    - value: childrenAbove7
+      description: TV-Y7, children age 7 and above
+      name: childrenAbove7
+    - value: general
+      description: TV-G, suitable for all ages
+      name: general
+    - value: parentalGuidance
+      description: TV-PG, parental guidance
+      name: parentalGuidance
+    - value: childrenAbove14
+      description: TV-14, children age 14 and above
+      name: childrenAbove14
+    - value: adults
+      description: TV-MA, adults only
+      name: adults

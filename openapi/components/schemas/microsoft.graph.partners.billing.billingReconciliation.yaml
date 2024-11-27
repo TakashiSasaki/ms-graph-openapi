@@ -1,0 +1,12 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: billingReconciliation
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      billed:
+        $ref: .\microsoft.graph.partners.billing.billedReconciliation.yaml
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.partners.billing.billingReconciliation'

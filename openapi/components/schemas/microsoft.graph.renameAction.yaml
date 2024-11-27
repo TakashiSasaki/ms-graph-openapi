@@ -1,0 +1,15 @@
+title: renameAction
+required:
+  - '@odata.type'
+type: object
+properties:
+  newName:
+    type: string
+    description: The new name of the item.
+    nullable: true
+  oldName:
+    type: string
+    description: The previous name of the item.
+    nullable: true
+  '@odata.type':
+    type: string

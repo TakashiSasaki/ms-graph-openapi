@@ -1,0 +1,9 @@
+title: responseType
+enum:
+  - none
+  - organizer
+  - tentativelyAccepted
+  - accepted
+  - declined
+  - notResponded
+type: string

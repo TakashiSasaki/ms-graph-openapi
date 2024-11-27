@@ -1,0 +1,20 @@
+title: rgbColor
+required:
+  - '@odata.type'
+type: object
+properties:
+  b:
+    type: number
+    description: Blue value
+    format: uint8
+  g:
+    type: number
+    description: Green value
+    format: uint8
+  r:
+    type: number
+    description: Red value
+    format: uint8
+  '@odata.type':
+    type: string
+description: Color in RGB.

@@ -1,0 +1,38 @@
+title: ratingIrelandTelevisionType
+enum:
+  - allAllowed
+  - allBlocked
+  - general
+  - children
+  - youngAdults
+  - parentalSupervision
+  - mature
+type: string
+description: TV content rating labels in Ireland
+x-ms-enum:
+  name: ratingIrelandTelevisionType
+  modelAsString: false
+  values:
+    - value: allAllowed
+      description: Default value, allow all TV shows content
+      name: allAllowed
+    - value: allBlocked
+      description: Do not allow any TV shows content
+      name: allBlocked
+    - value: general
+      description: The GA classification is suitable for all audiences
+      name: general
+    - value: children
+      description: The CH classification is suitable for children
+      name: children
+    - value: youngAdults
+      description: The YA classification is suitable for teenage audience
+      name: youngAdults
+    - value: parentalSupervision
+      description: >-
+        The PS classification invites parents and guardians to consider
+        restriction children’s access
+      name: parentalSupervision
+    - value: mature
+      description: The MA classification is suitable for adults
+      name: mature

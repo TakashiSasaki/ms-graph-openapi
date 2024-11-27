@@ -1,0 +1,10 @@
+title: provisioningStepType
+enum:
+  - import
+  - scoping
+  - matching
+  - processing
+  - referenceResolution
+  - export
+  - unknownFutureValue
+type: string

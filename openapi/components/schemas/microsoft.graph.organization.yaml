@@ -1,0 +1,184 @@
+allOf:
+  - $ref: .\microsoft.graph.directoryObject.yaml
+  - title: organization
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      assignedPlans:
+        type: array
+        items:
+          $ref: .\microsoft.graph.assignedPlan.yaml
+        description: >-
+          The collection of service plans associated with the tenant. Not
+          nullable.
+      businessPhones:
+        type: array
+        items:
+          type: string
+        description: >-
+          Telephone number for the organization. Although this property is a
+          string collection, only one number can be set.
+      city:
+        type: string
+        description: City name of the address for the organization.
+        nullable: true
+      country:
+        type: string
+        description: Country or region name of the address for the organization.
+        nullable: true
+      countryLetterCode:
+        type: string
+        description: >-
+          Country or region abbreviation for the organization in ISO 3166-2
+          format.
+        nullable: true
+      createdDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: >-
+          Timestamp of when the organization was created. The value can't be
+          modified and is automatically populated when the organization is
+          created. The Timestamp type represents date and time information using
+          ISO 8601 format and is always in UTC time. For example, midnight UTC
+          on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
+        format: date-time
+        nullable: true
+      defaultUsageLocation:
+        type: string
+        description: >-
+          Two-letter ISO 3166 country code indicating the default service usage
+          location of an organization.
+        nullable: true
+      displayName:
+        type: string
+        description: The display name for the tenant.
+        nullable: true
+      marketingNotificationEmails:
+        type: array
+        items:
+          type: string
+        description: Not nullable.
+      mobileDeviceManagementAuthority:
+        $ref: .\microsoft.graph.mdmAuthority.yaml
+      onPremisesLastSyncDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: >-
+          The time and date at which the tenant was last synced with the
+          on-premises directory. The Timestamp type represents date and time
+          information using ISO 8601 format and is always in UTC time. For
+          example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+          Read-only.
+        format: date-time
+        nullable: true
+      onPremisesSyncEnabled:
+        type: boolean
+        description: >-
+          true if this object is synced from an on-premises directory; false if
+          this object was originally synced from an on-premises directory but is
+          no longer synced. Nullable. null if this object isn't synced from
+          on-premises active directory (default).
+        nullable: true
+      partnerTenantType:
+        anyOf:
+          - $ref: .\microsoft.graph.partnerTenantType.yaml
+          - type: object
+            nullable: true
+        description: >-
+          The type of partnership this tenant has with Microsoft. The possible
+          values are: microsoftSupport, syndicatePartner, breadthPartner,
+          breadthPartnerDelegatedAdmin, resellerPartnerDelegatedAdmin,
+          valueAddedResellerPartnerDelegatedAdmin, unknownFutureValue. Nullable.
+          For more information about the possible types, see partnerTenantType
+          values.
+      postalCode:
+        type: string
+        description: Postal code of the address for the organization.
+        nullable: true
+      preferredLanguage:
+        type: string
+        description: >-
+          The preferred language for the organization. Should follow ISO 639-1
+          Code; for example, en.
+        nullable: true
+      privacyProfile:
+        anyOf:
+          - $ref: .\microsoft.graph.privacyProfile.yaml
+          - type: object
+            nullable: true
+        description: The privacy profile of an organization.
+      provisionedPlans:
+        type: array
+        items:
+          $ref: .\microsoft.graph.provisionedPlan.yaml
+        description: Not nullable.
+      securityComplianceNotificationMails:
+        type: array
+        items:
+          type: string
+        description: Not nullable.
+      securityComplianceNotificationPhones:
+        type: array
+        items:
+          type: string
+        description: Not nullable.
+      state:
+        type: string
+        description: State name of the address for the organization.
+        nullable: true
+      street:
+        type: string
+        description: Street name of the address for organization.
+        nullable: true
+      technicalNotificationMails:
+        type: array
+        items:
+          type: string
+        description: Not nullable.
+      tenantType:
+        type: string
+        description: >-
+          Not nullable. Can be one of the following types:  AAD - An enterprise
+          identity access management (IAM) service that serves
+          business-to-employee and business-to-business (B2B) scenarios.  AAD
+          B2C An identity access management (IAM) service that serves
+          business-to-consumer (B2C) scenarios.   CIAM - A customer identity &
+          access management (CIAM) solution that provides an integrated platform
+          to serve consumers, partners, and citizen scenarios.
+        nullable: true
+      verifiedDomains:
+        type: array
+        items:
+          $ref: .\microsoft.graph.verifiedDomain.yaml
+        description: The collection of domains associated with this tenant. Not nullable.
+      branding:
+        anyOf:
+          - $ref: .\microsoft.graph.organizationalBranding.yaml
+          - type: object
+            nullable: true
+        description: Branding for the organization. Nullable.
+        x-ms-navigationProperty: true
+      certificateBasedAuthConfiguration:
+        type: array
+        items:
+          $ref: .\microsoft.graph.certificateBasedAuthConfiguration.yaml
+        description: >-
+          Navigation property to manage certificate-based authentication
+          configuration. Only a single instance of
+          certificateBasedAuthConfiguration can be created in the collection.
+        x-ms-navigationProperty: true
+      extensions:
+        type: array
+        items:
+          $ref: .\microsoft.graph.extension.yaml
+        description: >-
+          The collection of open extensions defined for the organization.
+          Read-only. Nullable.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.organization'
+x-ms-discriminator-value: '#microsoft.graph.organization'

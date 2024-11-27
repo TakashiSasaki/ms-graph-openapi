@@ -1,0 +1,8 @@
+title: registryOperation
+enum:
+  - unknown
+  - create
+  - modify
+  - delete
+  - unknownFutureValue
+type: string

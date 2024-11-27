@@ -1,0 +1,31 @@
+title: provisioningErrorInfo
+required:
+  - '@odata.type'
+type: object
+properties:
+  additionalDetails:
+    type: string
+    description: Additional details if there's error.
+    nullable: true
+  errorCategory:
+    anyOf:
+      - $ref: .\microsoft.graph.provisioningStatusErrorCategory.yaml
+      - type: object
+        nullable: true
+    description: >-
+      Categorizes the error code. Possible values are failure,
+      nonServiceFailure, success, unknownFutureValue
+  errorCode:
+    type: string
+    description: Unique error code if any occurred. Learn more
+    nullable: true
+  reason:
+    type: string
+    description: Summarizes the status and describes why the status happened.
+    nullable: true
+  recommendedAction:
+    type: string
+    description: Provides the resolution for the corresponding error.
+    nullable: true
+  '@odata.type':
+    type: string

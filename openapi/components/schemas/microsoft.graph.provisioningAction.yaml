@@ -1,0 +1,10 @@
+title: provisioningAction
+enum:
+  - other
+  - create
+  - delete
+  - disable
+  - update
+  - stagedDelete
+  - unknownFutureValue
+type: string

@@ -1,0 +1,7 @@
+title: postType
+enum:
+  - regular
+  - quick
+  - strategic
+  - unknownFutureValue
+type: string

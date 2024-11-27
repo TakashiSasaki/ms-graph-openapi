@@ -1,0 +1,14 @@
+title: printTaskStatus
+required:
+  - '@odata.type'
+type: object
+properties:
+  description:
+    type: string
+    description: >-
+      A human-readable description of the current processing state of the
+      printTask.
+  state:
+    $ref: .\microsoft.graph.printTaskProcessingState.yaml
+  '@odata.type':
+    type: string

@@ -1,0 +1,61 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: printerBase
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      capabilities:
+        anyOf:
+          - $ref: .\microsoft.graph.printerCapabilities.yaml
+          - type: object
+            nullable: true
+        description: The capabilities of the printer/printerShare.
+      defaults:
+        anyOf:
+          - $ref: .\microsoft.graph.printerDefaults.yaml
+          - type: object
+            nullable: true
+        description: The default print settings of printer/printerShare.
+      displayName:
+        type: string
+        description: The name of the printer/printerShare.
+      isAcceptingJobs:
+        type: boolean
+        description: >-
+          Specifies whether the printer/printerShare is currently accepting new
+          print jobs.
+        nullable: true
+      location:
+        anyOf:
+          - $ref: .\microsoft.graph.printerLocation.yaml
+          - type: object
+            nullable: true
+        description: >-
+          The physical and/or organizational location of the
+          printer/printerShare.
+      manufacturer:
+        type: string
+        description: The manufacturer of the printer/printerShare.
+        nullable: true
+      model:
+        type: string
+        description: The model name of the printer/printerShare.
+        nullable: true
+      status:
+        $ref: .\microsoft.graph.printerStatus.yaml
+      jobs:
+        type: array
+        items:
+          $ref: .\microsoft.graph.printJob.yaml
+        description: >-
+          The list of jobs that are queued for printing by the
+          printer/printerShare.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+    discriminator:
+      propertyName: '@odata.type'
+      mapping:
+        '#microsoft.graph.printer': .\microsoft.graph.printer.yaml
+        '#microsoft.graph.printerShare': .\microsoft.graph.printerShare.yaml

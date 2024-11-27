@@ -1,0 +1,29 @@
+title: scheduleEntity
+required:
+  - '@odata.type'
+type: object
+properties:
+  endDateTime:
+    pattern: >-
+      ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+    type: string
+    format: date-time
+    nullable: true
+  startDateTime:
+    pattern: >-
+      ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+    type: string
+    format: date-time
+    nullable: true
+  theme:
+    $ref: .\microsoft.graph.scheduleEntityTheme.yaml
+  '@odata.type':
+    type: string
+discriminator:
+  propertyName: '@odata.type'
+  mapping:
+    '#microsoft.graph.shiftItem': .\microsoft.graph.shiftItem.yaml
+    '#microsoft.graph.openShiftItem': .\microsoft.graph.openShiftItem.yaml
+    '#microsoft.graph.timeOffItem': .\microsoft.graph.timeOffItem.yaml
+    microsoft.graph.shiftItem: .\microsoft.graph.shiftItem.yaml
+    microsoft.graph.timeOffItem: .\microsoft.graph.timeOffItem.yaml

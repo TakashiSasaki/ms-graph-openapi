@@ -1,0 +1,11 @@
+title: printJobStateDetail
+enum:
+  - uploadPending
+  - transforming
+  - completedSuccessfully
+  - completedWithWarnings
+  - completedWithErrors
+  - releaseWait
+  - interpreting
+  - unknownFutureValue
+type: string

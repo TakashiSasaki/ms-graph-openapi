@@ -1,0 +1,6 @@
+title: privilegedAccessGroupMemberType
+enum:
+  - direct
+  - group
+  - unknownFutureValue
+type: string

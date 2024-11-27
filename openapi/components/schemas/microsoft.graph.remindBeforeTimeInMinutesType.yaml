@@ -1,0 +1,5 @@
+title: remindBeforeTimeInMinutesType
+enum:
+  - mins15
+  - unknownFutureValue
+type: string

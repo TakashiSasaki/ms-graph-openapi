@@ -1,0 +1,35 @@
+title: physicalOfficeAddress
+required:
+  - '@odata.type'
+type: object
+properties:
+  city:
+    type: string
+    description: The city.
+    nullable: true
+  countryOrRegion:
+    type: string
+    description: >-
+      The country or region. It's a free-format string value, for example,
+      'United States'.
+    nullable: true
+  officeLocation:
+    type: string
+    description: >-
+      Office location such as building and office number for an organizational
+      contact.
+    nullable: true
+  postalCode:
+    type: string
+    description: The postal code.
+    nullable: true
+  state:
+    type: string
+    description: The state.
+    nullable: true
+  street:
+    type: string
+    description: The street.
+    nullable: true
+  '@odata.type':
+    type: string

@@ -1,0 +1,15 @@
+allOf:
+  - $ref: .\microsoft.graph.scheduleChangeRequest.yaml
+  - title: openShiftChangeRequest
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      openShiftId:
+        type: string
+        description: ID for the open shift.
+        nullable: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.openShiftChangeRequest'
+x-ms-discriminator-value: '#microsoft.graph.openShiftChangeRequest'

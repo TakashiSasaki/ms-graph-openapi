@@ -1,0 +1,14 @@
+title: printOperationStatus
+required:
+  - '@odata.type'
+type: object
+properties:
+  description:
+    type: string
+    description: >-
+      A human-readable description of the printOperation's current processing
+      state. Read-only.
+  state:
+    $ref: .\microsoft.graph.printOperationProcessingState.yaml
+  '@odata.type':
+    type: string

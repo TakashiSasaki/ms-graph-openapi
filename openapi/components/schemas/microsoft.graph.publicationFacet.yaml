@@ -1,0 +1,25 @@
+title: publicationFacet
+required:
+  - '@odata.type'
+type: object
+properties:
+  checkedOutBy:
+    anyOf:
+      - $ref: .\microsoft.graph.identitySet.yaml
+      - type: object
+        nullable: true
+    description: The user who checked out the file.
+  level:
+    type: string
+    description: >-
+      The state of publication for this document. Either published or checkout.
+      Read-only.
+    nullable: true
+  versionId:
+    type: string
+    description: >-
+      The unique identifier for the version that is visible to the current
+      caller. Read-only.
+    nullable: true
+  '@odata.type':
+    type: string

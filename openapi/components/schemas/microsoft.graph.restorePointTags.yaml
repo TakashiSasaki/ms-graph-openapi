@@ -1,0 +1,8 @@
+title: restorePointTags
+enum:
+  - none
+  - fastRestore
+  - unknownFutureValue
+type: string
+x-ms-enum-flags:
+  isFlags: true

@@ -1,0 +1,30 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: resourceOperation
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      actionName:
+        type: string
+        description: >-
+          Type of action this operation is going to perform. The actionName
+          should be concise and limited to as few words as possible.
+        nullable: true
+      description:
+        type: string
+        description: >-
+          Description of the resource operation. The description is used in
+          mouse-over text for the operation when shown in the Azure Portal.
+        nullable: true
+      resourceName:
+        type: string
+        description: Name of the Resource this operation is performed on.
+        nullable: true
+      '@odata.type':
+        type: string
+    description: >-
+      Describes the resourceOperation resource (entity) of the Microsoft Graph
+      API (REST), which supports Intune workflows related to role-based access
+      control (RBAC).
+x-ms-discriminator-value: '#microsoft.graph.resourceOperation'

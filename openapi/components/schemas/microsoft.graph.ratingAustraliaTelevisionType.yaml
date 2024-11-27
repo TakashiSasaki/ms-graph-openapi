@@ -1,0 +1,46 @@
+title: ratingAustraliaTelevisionType
+enum:
+  - allAllowed
+  - allBlocked
+  - preschoolers
+  - children
+  - general
+  - parentalGuidance
+  - mature
+  - agesAbove15
+  - agesAbove15AdultViolence
+type: string
+description: TV content rating labels in Australia
+x-ms-enum:
+  name: ratingAustraliaTelevisionType
+  modelAsString: false
+  values:
+    - value: allAllowed
+      description: Default value, allow all TV shows content
+      name: allAllowed
+    - value: allBlocked
+      description: Do not allow any TV shows content
+      name: allBlocked
+    - value: preschoolers
+      description: The P classification is intended for preschoolers
+      name: preschoolers
+    - value: children
+      description: The C classification is intended for children under 14
+      name: children
+    - value: general
+      description: The G classification is suitable for all ages
+      name: general
+    - value: parentalGuidance
+      description: The PG classification is recommended for young viewers
+      name: parentalGuidance
+    - value: mature
+      description: The M classification is recommended for viewers over 15
+      name: mature
+    - value: agesAbove15
+      description: The MA15+ classification is not suitable for viewers under 15
+      name: agesAbove15
+    - value: agesAbove15AdultViolence
+      description: >-
+        The AV15+ classification is not suitable for viewers under 15, adult
+        violence-specific
+      name: agesAbove15AdultViolence

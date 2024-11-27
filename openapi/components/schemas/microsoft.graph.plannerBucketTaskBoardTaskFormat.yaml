@@ -1,0 +1,16 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: plannerBucketTaskBoardTaskFormat
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      orderHint:
+        type: string
+        description: >-
+          Hint used to order tasks in the bucket view of the task board. For
+          details about the supported format, see Using order hints in Planner.
+        nullable: true
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.plannerBucketTaskBoardTaskFormat'

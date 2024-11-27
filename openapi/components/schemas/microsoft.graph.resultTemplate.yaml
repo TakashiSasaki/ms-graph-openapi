@@ -1,0 +1,13 @@
+title: resultTemplate
+required:
+  - '@odata.type'
+type: object
+properties:
+  body:
+    description: JSON schema of the result template.
+  displayName:
+    type: string
+    description: Name of the result template.
+    nullable: true
+  '@odata.type':
+    type: string

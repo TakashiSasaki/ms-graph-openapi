@@ -1,0 +1,7 @@
+title: printDuplexMode
+enum:
+  - flipOnLongEdge
+  - flipOnShortEdge
+  - oneSided
+  - unknownFutureValue
+type: string

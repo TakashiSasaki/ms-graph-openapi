@@ -1,0 +1,16 @@
+title: registryValueType
+enum:
+  - unknown
+  - binary
+  - dword
+  - dwordLittleEndian
+  - dwordBigEndian
+  - expandSz
+  - link
+  - multiSz
+  - none
+  - qword
+  - qwordlittleEndian
+  - sz
+  - unknownFutureValue
+type: string

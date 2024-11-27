@@ -1,0 +1,53 @@
+allOf:
+  - $ref: .\microsoft.graph.printerBase.yaml
+  - title: printer
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      hasPhysicalDevice:
+        type: boolean
+        description: True if the printer has a physical device for printing. Read-only.
+      isShared:
+        type: boolean
+        description: True if the printer is shared; false otherwise. Read-only.
+      lastSeenDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: >-
+          The most recent dateTimeOffset when a printer interacted with
+          Universal Print. Read-only.
+        format: date-time
+        nullable: true
+      registeredDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: The DateTimeOffset when the printer was registered. Read-only.
+        format: date-time
+      connectors:
+        type: array
+        items:
+          $ref: .\microsoft.graph.printConnector.yaml
+        description: The connectors that are associated with the printer.
+        x-ms-navigationProperty: true
+      shares:
+        type: array
+        items:
+          $ref: .\microsoft.graph.printerShare.yaml
+        description: >-
+          The list of printerShares that are associated with the printer.
+          Currently, only one printerShare can be associated with the printer.
+          Read-only. Nullable.
+        x-ms-navigationProperty: true
+      taskTriggers:
+        type: array
+        items:
+          $ref: .\microsoft.graph.printTaskTrigger.yaml
+        description: A list of task triggers that are associated with the printer.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.printer'
+x-ms-discriminator-value: '#microsoft.graph.printer'

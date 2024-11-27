@@ -1,0 +1,11 @@
+title: quarantineReason
+enum:
+  - EncounteredBaseEscrowThreshold
+  - EncounteredTotalEscrowThreshold
+  - EncounteredEscrowProportionThreshold
+  - EncounteredQuarantineException
+  - Unknown
+  - QuarantinedOnDemand
+  - TooManyDeletes
+  - IngestionInterrupted
+type: string

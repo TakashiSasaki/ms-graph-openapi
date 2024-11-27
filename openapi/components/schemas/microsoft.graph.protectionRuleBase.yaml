@@ -1,0 +1,62 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: protectionRuleBase
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      createdBy:
+        anyOf:
+          - $ref: .\microsoft.graph.identitySet.yaml
+          - type: object
+            nullable: true
+        description: The identity of person who created the rule.
+      createdDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: The time of creation of the rule.
+        format: date-time
+        nullable: true
+      error:
+        anyOf:
+          - $ref: .\microsoft.graph.publicError.yaml
+          - type: object
+            nullable: true
+        description: Contains error details if an operation on a rule fails.
+      isAutoApplyEnabled:
+        type: boolean
+        description: >-
+          true indicates that the protection rule is dynamic; false that it's
+          static. Currently, only static rules are supported.
+        nullable: true
+      lastModifiedBy:
+        anyOf:
+          - $ref: .\microsoft.graph.identitySet.yaml
+          - type: object
+            nullable: true
+        description: The identity of the person who last modified the rule.
+      lastModifiedDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: Timestamp of the last modification made to the rule.
+        format: date-time
+        nullable: true
+      status:
+        anyOf:
+          - $ref: .\microsoft.graph.protectionRuleStatus.yaml
+          - type: object
+            nullable: true
+        description: >-
+          The status of the protection rule. The possible values are: draft,
+          active, completed, completedWithErrors, unknownFutureValue. The draft
+          member is currently unsupported.
+      '@odata.type':
+        type: string
+    discriminator:
+      propertyName: '@odata.type'
+      mapping:
+        '#microsoft.graph.driveProtectionRule': .\microsoft.graph.driveProtectionRule.yaml
+        '#microsoft.graph.mailboxProtectionRule': .\microsoft.graph.mailboxProtectionRule.yaml
+        '#microsoft.graph.siteProtectionRule': .\microsoft.graph.siteProtectionRule.yaml

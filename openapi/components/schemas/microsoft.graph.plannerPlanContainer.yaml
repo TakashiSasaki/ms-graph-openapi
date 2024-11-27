@@ -1,0 +1,26 @@
+title: plannerPlanContainer
+required:
+  - '@odata.type'
+type: object
+properties:
+  containerId:
+    type: string
+    description: The identifier of the resource that contains the plan. Optional.
+    nullable: true
+  type:
+    anyOf:
+      - $ref: .\microsoft.graph.plannerContainerType.yaml
+      - type: object
+        nullable: true
+    description: >-
+      The type of the resource that contains the plan. For supported types, see
+      the previous table. Possible values are: group, unknownFutureValue,
+      roster. Note that you must use the Prefer: include-unknown-enum-members
+      request header to get the following value in this evolvable enum: roster.
+      Optional.
+  url:
+    type: string
+    description: The full canonical URL of the container. Optional.
+    nullable: true
+  '@odata.type':
+    type: string

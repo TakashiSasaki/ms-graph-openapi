@@ -1,0 +1,13 @@
+allOf:
+  - $ref: .\microsoft.graph.meetingInfo.yaml
+  - title: organizerMeetingInfo
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      organizer:
+        $ref: .\microsoft.graph.identitySet.yaml
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.organizerMeetingInfo'
+x-ms-discriminator-value: '#microsoft.graph.organizerMeetingInfo'

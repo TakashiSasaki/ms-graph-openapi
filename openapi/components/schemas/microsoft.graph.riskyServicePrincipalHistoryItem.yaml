@@ -1,0 +1,20 @@
+allOf:
+  - $ref: .\microsoft.graph.riskyServicePrincipal.yaml
+  - title: riskyServicePrincipalHistoryItem
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      activity:
+        anyOf:
+          - $ref: .\microsoft.graph.riskServicePrincipalActivity.yaml
+          - type: object
+            nullable: true
+        description: The activity related to service principal risk level change.
+      initiatedBy:
+        type: string
+        description: The identifier of the actor of the operation.
+        nullable: true
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.riskyServicePrincipalHistoryItem'

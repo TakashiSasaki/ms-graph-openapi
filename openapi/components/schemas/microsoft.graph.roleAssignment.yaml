@@ -1,0 +1,40 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: roleAssignment
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      description:
+        type: string
+        description: Description of the Role Assignment.
+        nullable: true
+      displayName:
+        type: string
+        description: The display or friendly name of the role Assignment.
+        nullable: true
+      resourceScopes:
+        type: array
+        items:
+          type: string
+          nullable: true
+        description: >-
+          List of ids of role scope member security groups.  These are IDs from
+          Azure Active Directory.
+      roleDefinition:
+        anyOf:
+          - $ref: .\microsoft.graph.roleDefinition.yaml
+          - type: object
+            nullable: true
+        description: Role definition this assignment is part of.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+    description: >-
+      The Role Assignment resource. Role assignments tie together a role
+      definition with members and scopes. There can be one or more role
+      assignments per role. This applies to custom and built-in roles.
+    discriminator:
+      propertyName: '@odata.type'
+      mapping:
+        '#microsoft.graph.deviceAndAppManagementRoleAssignment': .\microsoft.graph.deviceAndAppManagementRoleAssignment.yaml

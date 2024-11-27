@@ -1,0 +1,10 @@
+title: partnerTenantType
+enum:
+  - microsoftSupport
+  - syndicatePartner
+  - breadthPartner
+  - breadthPartnerDelegatedAdmin
+  - resellerPartnerDelegatedAdmin
+  - valueAddedResellerPartnerDelegatedAdmin
+  - unknownFutureValue
+type: string

@@ -1,0 +1,39 @@
+title: outOfBoxExperienceSetting
+required:
+  - '@odata.type'
+type: object
+properties:
+  deviceUsageType:
+    $ref: .\microsoft.graph.windowsDeviceUsageType.yaml
+  escapeLinkHidden:
+    type: boolean
+    description: >-
+      When TRUE, the link that allows user to start over with a different
+      account on company sign-in is hidden. When false, the link that allows
+      user to start over with a different account on company sign-in is
+      available. Default value is FALSE.
+  eulaHidden:
+    type: boolean
+    description: >-
+      When TRUE, EULA is hidden to the end user during OOBE. When FALSE, EULA is
+      shown to the end user during OOBE. Default value is FALSE.
+  keyboardSelectionPageSkipped:
+    type: boolean
+    description: >-
+      When TRUE, the keyboard selection page is hidden to the end user during
+      OOBE if Language and Region are set. When FALSE, the keyboard selection
+      page is skipped during OOBE.
+  privacySettingsHidden:
+    type: boolean
+    description: >-
+      When TRUE, privacy settings is hidden to the end user during OOBE. When
+      FALSE, privacy settings is shown to the end user during OOBE. Default
+      value is FALSE.
+  userType:
+    $ref: .\microsoft.graph.windowsUserType.yaml
+  '@odata.type':
+    type: string
+description: >-
+  The Windows Autopilot Deployment Profile settings used by the device for the
+  out-of-box experience. Supports: $select, $top, $skip. $Search, $orderBy and
+  $filter are not supported.

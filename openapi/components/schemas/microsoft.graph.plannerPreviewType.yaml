@@ -1,0 +1,8 @@
+title: plannerPreviewType
+enum:
+  - automatic
+  - noPreview
+  - checklist
+  - description
+  - reference
+type: string

@@ -1,0 +1,11 @@
+allOf:
+  - $ref: .\microsoft.graph.accessReviewApplyAction.yaml
+  - title: removeAccessApplyAction
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.removeAccessApplyAction'
+x-ms-discriminator-value: '#microsoft.graph.removeAccessApplyAction'

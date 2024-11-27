@@ -1,0 +1,25 @@
+title: phone
+required:
+  - '@odata.type'
+type: object
+properties:
+  language:
+    type: string
+    nullable: true
+  number:
+    type: string
+    description: The phone number.
+    nullable: true
+  region:
+    type: string
+    nullable: true
+  type:
+    anyOf:
+      - $ref: .\microsoft.graph.phoneType.yaml
+      - type: object
+        nullable: true
+    description: >-
+      The type of phone number. The possible values are: home, business, mobile,
+      other, assistant, homeFax, businessFax, otherFax, pager, radio.
+  '@odata.type':
+    type: string

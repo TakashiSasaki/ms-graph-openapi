@@ -1,0 +1,25 @@
+title: answerKeyword
+required:
+  - '@odata.type'
+type: object
+properties:
+  keywords:
+    type: array
+    items:
+      type: string
+      nullable: true
+    description: A collection of keywords used to trigger the search answer.
+  matchSimilarKeywords:
+    type: boolean
+    description: >-
+      If true, indicates that the search term contains similar words to the
+      keywords that should trigger the search answer.
+    nullable: true
+  reservedKeywords:
+    type: array
+    items:
+      type: string
+      nullable: true
+    description: Unique keywords that guarantee the search answer is triggered.
+  '@odata.type':
+    type: string

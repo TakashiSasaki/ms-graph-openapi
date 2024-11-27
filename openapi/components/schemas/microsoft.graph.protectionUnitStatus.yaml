@@ -1,0 +1,9 @@
+title: protectionUnitStatus
+enum:
+  - protectRequested
+  - protected
+  - unprotectRequested
+  - unprotected
+  - removeRequested
+  - unknownFutureValue
+type: string

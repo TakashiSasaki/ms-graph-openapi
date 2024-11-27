@@ -1,0 +1,22 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: printDocument
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      contentType:
+        type: string
+        description: The document's content (MIME) type. Read-only.
+        nullable: true
+      displayName:
+        type: string
+        description: The document's name. Read-only.
+        nullable: true
+      size:
+        type: number
+        description: The document's size in bytes. Read-only.
+        format: int64
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.printDocument'

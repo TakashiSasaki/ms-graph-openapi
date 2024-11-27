@@ -1,0 +1,17 @@
+allOf:
+  - $ref: .\microsoft.graph.identity.yaml
+  - title: provisioningSystem
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      details:
+        anyOf:
+          - $ref: .\microsoft.graph.detailsInfo.yaml
+          - type: object
+            nullable: true
+        description: Details of the system.
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.provisioningSystem'
+x-ms-discriminator-value: '#microsoft.graph.provisioningSystem'

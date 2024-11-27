@@ -1,0 +1,63 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: privilegedAccessGroup
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      assignmentApprovals:
+        type: array
+        items:
+          $ref: .\microsoft.graph.approval.yaml
+        x-ms-navigationProperty: true
+      assignmentScheduleInstances:
+        type: array
+        items:
+          $ref: >-
+            .\microsoft.graph.privilegedAccessGroupAssignmentScheduleInstance.yaml
+        description: >-
+          The instances of assignment schedules to activate a just-in-time
+          access.
+        x-ms-navigationProperty: true
+      assignmentScheduleRequests:
+        type: array
+        items:
+          $ref: >-
+            .\microsoft.graph.privilegedAccessGroupAssignmentScheduleRequest.yaml
+        description: >-
+          The schedule requests for operations to create, update, delete,
+          extend, and renew an assignment.
+        x-ms-navigationProperty: true
+      assignmentSchedules:
+        type: array
+        items:
+          $ref: .\microsoft.graph.privilegedAccessGroupAssignmentSchedule.yaml
+        description: The assignment schedules to activate a just-in-time access.
+        x-ms-navigationProperty: true
+      eligibilityScheduleInstances:
+        type: array
+        items:
+          $ref: >-
+            .\microsoft.graph.privilegedAccessGroupEligibilityScheduleInstance.yaml
+        description: >-
+          The instances of eligibility schedules to activate a just-in-time
+          access.
+        x-ms-navigationProperty: true
+      eligibilityScheduleRequests:
+        type: array
+        items:
+          $ref: >-
+            .\microsoft.graph.privilegedAccessGroupEligibilityScheduleRequest.yaml
+        description: >-
+          The schedule requests for operations to create, update, delete,
+          extend, and renew an eligibility.
+        x-ms-navigationProperty: true
+      eligibilitySchedules:
+        type: array
+        items:
+          $ref: .\microsoft.graph.privilegedAccessGroupEligibilitySchedule.yaml
+        description: The eligibility schedules to activate a just-in-time access.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.privilegedAccessGroup'

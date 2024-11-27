@@ -1,0 +1,204 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: plannerTask
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      activeChecklistItemCount:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: >-
+          Number of checklist items with value set to false, representing
+          incomplete items.
+        format: int32
+        nullable: true
+      appliedCategories:
+        anyOf:
+          - $ref: .\microsoft.graph.plannerAppliedCategories.yaml
+          - type: object
+            nullable: true
+        description: >-
+          The categories to which the task has been applied. See applied
+          Categories for possible values.
+      assigneePriority:
+        type: string
+        description: >-
+          Hint used to order items of this type in a list view. The format is
+          defined as outlined here.
+        nullable: true
+      assignments:
+        anyOf:
+          - $ref: .\microsoft.graph.plannerAssignments.yaml
+          - type: object
+            nullable: true
+        description: The set of assignees the task is assigned to.
+      bucketId:
+        type: string
+        description: >-
+          Bucket ID to which the task belongs. The bucket needs to be in the
+          plan that the task is in. It's 28 characters long and case-sensitive.
+          Format validation is done on the service.
+        nullable: true
+      checklistItemCount:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: Number of checklist items that are present on the task.
+        format: int32
+        nullable: true
+      completedBy:
+        anyOf:
+          - $ref: .\microsoft.graph.identitySet.yaml
+          - type: object
+            nullable: true
+        description: Identity of the user that completed the task.
+      completedDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: >-
+          Read-only. Date and time at which the 'percentComplete' of the task is
+          set to '100'. The Timestamp type represents date and time information
+          using ISO 8601 format and is always in UTC time. For example, midnight
+          UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+        format: date-time
+        nullable: true
+      conversationThreadId:
+        type: string
+        description: >-
+          Thread ID of the conversation on the task. This is the ID of the
+          conversation thread object created in the group.
+        nullable: true
+      createdBy:
+        anyOf:
+          - $ref: .\microsoft.graph.identitySet.yaml
+          - type: object
+            nullable: true
+        description: Identity of the user that created the task.
+      createdDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: >-
+          Read-only. Date and time at which the task is created. The Timestamp
+          type represents date and time information using ISO 8601 format and is
+          always in UTC time. For example, midnight UTC on Jan 1, 2014 is
+          2014-01-01T00:00:00Z
+        format: date-time
+        nullable: true
+      dueDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: >-
+          Date and time at which the task is due. The Timestamp type represents
+          date and time information using ISO 8601 format and is always in UTC
+          time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+        format: date-time
+        nullable: true
+      hasDescription:
+        type: boolean
+        description: >-
+          Read-only. Value is true if the details object of the task has a
+          nonempty description and false otherwise.
+        nullable: true
+      orderHint:
+        type: string
+        description: >-
+          Hint used to order items of this type in a list view. The format is
+          defined as outlined here.
+        nullable: true
+      percentComplete:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: >-
+          Percentage of task completion. When set to 100, the task is considered
+          completed.
+        format: int32
+        nullable: true
+      planId:
+        type: string
+        description: Plan ID to which the task belongs.
+        nullable: true
+      previewType:
+        anyOf:
+          - $ref: .\microsoft.graph.plannerPreviewType.yaml
+          - type: object
+            nullable: true
+        description: >-
+          This sets the type of preview that shows up on the task. The possible
+          values are: automatic, noPreview, checklist, description, reference.
+      priority:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: >-
+          Priority of the task. The valid range of values is between 0 and 10,
+          with the increasing value being lower priority (0 has the highest
+          priority and 10 has the lowest priority).  Currently, Planner
+          interprets values 0 and 1 as 'urgent', 2, 3 and 4 as 'important', 5,
+          6, and 7 as 'medium', and 8, 9, and 10 as 'low'.  Additionally,
+          Planner sets the value 1 for 'urgent', 3 for 'important', 5 for
+          'medium', and 9 for 'low'.
+        format: int32
+        nullable: true
+      referenceCount:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: Number of external references that exist on the task.
+        format: int32
+        nullable: true
+      startDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: >-
+          Date and time at which the task starts. The Timestamp type represents
+          date and time information using ISO 8601 format and is always in UTC
+          time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+        format: date-time
+        nullable: true
+      title:
+        type: string
+        description: Title of the task.
+      assignedToTaskBoardFormat:
+        anyOf:
+          - $ref: .\microsoft.graph.plannerAssignedToTaskBoardTaskFormat.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Read-only. Nullable. Used to render the task correctly in the task
+          board view when grouped by assignedTo.
+        x-ms-navigationProperty: true
+      bucketTaskBoardFormat:
+        anyOf:
+          - $ref: .\microsoft.graph.plannerBucketTaskBoardTaskFormat.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Read-only. Nullable. Used to render the task correctly in the task
+          board view when grouped by bucket.
+        x-ms-navigationProperty: true
+      details:
+        anyOf:
+          - $ref: .\microsoft.graph.plannerTaskDetails.yaml
+          - type: object
+            nullable: true
+        description: Read-only. Nullable. More details about the task.
+        x-ms-navigationProperty: true
+      progressTaskBoardFormat:
+        anyOf:
+          - $ref: .\microsoft.graph.plannerProgressTaskBoardTaskFormat.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Read-only. Nullable. Used to render the task correctly in the task
+          board view when grouped by progress.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.plannerTask'

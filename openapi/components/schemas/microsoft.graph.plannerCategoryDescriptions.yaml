@@ -1,0 +1,107 @@
+title: plannerCategoryDescriptions
+required:
+  - '@odata.type'
+type: object
+properties:
+  category1:
+    type: string
+    description: The label associated with Category 1
+    nullable: true
+  category10:
+    type: string
+    description: The label associated with Category 10
+    nullable: true
+  category11:
+    type: string
+    description: The label associated with Category 11
+    nullable: true
+  category12:
+    type: string
+    description: The label associated with Category 12
+    nullable: true
+  category13:
+    type: string
+    description: The label associated with Category 13
+    nullable: true
+  category14:
+    type: string
+    description: The label associated with Category 14
+    nullable: true
+  category15:
+    type: string
+    description: The label associated with Category 15
+    nullable: true
+  category16:
+    type: string
+    description: The label associated with Category 16
+    nullable: true
+  category17:
+    type: string
+    description: The label associated with Category 17
+    nullable: true
+  category18:
+    type: string
+    description: The label associated with Category 18
+    nullable: true
+  category19:
+    type: string
+    description: The label associated with Category 19
+    nullable: true
+  category2:
+    type: string
+    description: The label associated with Category 2
+    nullable: true
+  category20:
+    type: string
+    description: The label associated with Category 20
+    nullable: true
+  category21:
+    type: string
+    description: The label associated with Category 21
+    nullable: true
+  category22:
+    type: string
+    description: The label associated with Category 22
+    nullable: true
+  category23:
+    type: string
+    description: The label associated with Category 23
+    nullable: true
+  category24:
+    type: string
+    description: The label associated with Category 24
+    nullable: true
+  category25:
+    type: string
+    description: The label associated with Category 25
+    nullable: true
+  category3:
+    type: string
+    description: The label associated with Category 3
+    nullable: true
+  category4:
+    type: string
+    description: The label associated with Category 4
+    nullable: true
+  category5:
+    type: string
+    description: The label associated with Category 5
+    nullable: true
+  category6:
+    type: string
+    description: The label associated with Category 6
+    nullable: true
+  category7:
+    type: string
+    description: The label associated with Category 7
+    nullable: true
+  category8:
+    type: string
+    description: The label associated with Category 8
+    nullable: true
+  category9:
+    type: string
+    description: The label associated with Category 9
+    nullable: true
+  '@odata.type':
+    type: string

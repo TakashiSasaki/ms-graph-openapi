@@ -1,0 +1,202 @@
+title: printerCapabilities
+required:
+  - '@odata.type'
+type: object
+properties:
+  bottomMargins:
+    type: array
+    items:
+      maximum: 2147483647
+      minimum: -2147483648
+      type: number
+      format: int32
+      nullable: true
+    description: A list of supported bottom margins(in microns) for the printer.
+  collation:
+    type: boolean
+    description: >-
+      True if the printer supports collating when printing muliple copies of a
+      multi-page document; false otherwise.
+    nullable: true
+  colorModes:
+    type: array
+    items:
+      anyOf:
+        - $ref: .\microsoft.graph.printColorMode.yaml
+        - type: object
+          nullable: true
+    description: >-
+      The color modes supported by the printer. Valid values are described in
+      the following table.
+  contentTypes:
+    type: array
+    items:
+      type: string
+      nullable: true
+    description: >-
+      A list of supported content (MIME) types that the printer supports. It is
+      not guaranteed that the Universal Print service supports printing all of
+      these MIME types.
+  copiesPerJob:
+    anyOf:
+      - $ref: .\microsoft.graph.integerRange.yaml
+      - type: object
+        nullable: true
+    description: The range of copies per job supported by the printer.
+  dpis:
+    type: array
+    items:
+      maximum: 2147483647
+      minimum: -2147483648
+      type: number
+      format: int32
+      nullable: true
+    description: The list of print resolutions in DPI that are supported by the printer.
+  duplexModes:
+    type: array
+    items:
+      anyOf:
+        - $ref: .\microsoft.graph.printDuplexMode.yaml
+        - type: object
+          nullable: true
+    description: >-
+      The list of duplex modes that are supported by the printer. Valid values
+      are described in the following table.
+  feedOrientations:
+    type: array
+    items:
+      anyOf:
+        - $ref: .\microsoft.graph.printerFeedOrientation.yaml
+        - type: object
+          nullable: true
+    description: The list of feed orientations that are supported by the printer.
+  finishings:
+    type: array
+    items:
+      anyOf:
+        - $ref: .\microsoft.graph.printFinishing.yaml
+        - type: object
+          nullable: true
+    description: Finishing processes the printer supports for a printed document.
+  inputBins:
+    type: array
+    items:
+      type: string
+      nullable: true
+    description: Supported input bins for the printer.
+  isColorPrintingSupported:
+    type: boolean
+    description: >-
+      True if color printing is supported by the printer; false otherwise.
+      Read-only.
+    nullable: true
+  isPageRangeSupported:
+    type: boolean
+    description: True if the printer supports printing by page ranges; false otherwise.
+    nullable: true
+  leftMargins:
+    type: array
+    items:
+      maximum: 2147483647
+      minimum: -2147483648
+      type: number
+      format: int32
+      nullable: true
+    description: A list of supported left margins(in microns) for the printer.
+  mediaColors:
+    type: array
+    items:
+      type: string
+      nullable: true
+    description: The media (i.e., paper) colors supported by the printer.
+  mediaSizes:
+    type: array
+    items:
+      type: string
+      nullable: true
+    description: >-
+      The media sizes supported by the printer. Supports standard size names for
+      ISO and ANSI media sizes. Valid values are in the following table.
+  mediaTypes:
+    type: array
+    items:
+      type: string
+      nullable: true
+    description: The media types supported by the printer.
+  multipageLayouts:
+    type: array
+    items:
+      anyOf:
+        - $ref: .\microsoft.graph.printMultipageLayout.yaml
+        - type: object
+          nullable: true
+    description: >-
+      The presentation directions supported by the printer. Supported values are
+      described in the following table.
+  orientations:
+    type: array
+    items:
+      anyOf:
+        - $ref: .\microsoft.graph.printOrientation.yaml
+        - type: object
+          nullable: true
+    description: >-
+      The print orientations supported by the printer. Valid values are
+      described in the following table.
+  outputBins:
+    type: array
+    items:
+      type: string
+      nullable: true
+    description: The printer's supported output bins (trays).
+  pagesPerSheet:
+    type: array
+    items:
+      maximum: 2147483647
+      minimum: -2147483648
+      type: number
+      format: int32
+      nullable: true
+    description: Supported number of Input Pages to impose upon a single Impression.
+  qualities:
+    type: array
+    items:
+      anyOf:
+        - $ref: .\microsoft.graph.printQuality.yaml
+        - type: object
+          nullable: true
+    description: The print qualities supported by the printer.
+  rightMargins:
+    type: array
+    items:
+      maximum: 2147483647
+      minimum: -2147483648
+      type: number
+      format: int32
+      nullable: true
+    description: A list of supported right margins(in microns) for the printer.
+  scalings:
+    type: array
+    items:
+      anyOf:
+        - $ref: .\microsoft.graph.printScaling.yaml
+        - type: object
+          nullable: true
+    description: Supported print scalings.
+  supportsFitPdfToPage:
+    type: boolean
+    description: >-
+      True if the printer supports scaling PDF pages to match the print media
+      size; false otherwise.
+    nullable: true
+  topMargins:
+    type: array
+    items:
+      maximum: 2147483647
+      minimum: -2147483648
+      type: number
+      format: int32
+      nullable: true
+    description: A list of supported top margins(in microns) for the printer.
+  '@odata.type':
+    type: string

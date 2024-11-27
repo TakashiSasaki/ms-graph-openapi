@@ -1,0 +1,8 @@
+title: protectionPolicyStatus
+enum:
+  - inactive
+  - activeWithErrors
+  - updating
+  - active
+  - unknownFutureValue
+type: string

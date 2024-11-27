@@ -1,0 +1,24 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: profilePhoto
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      height:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: The height of the photo. Read-only.
+        format: int32
+        nullable: true
+      width:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: The width of the photo. Read-only.
+        format: int32
+        nullable: true
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.profilePhoto'

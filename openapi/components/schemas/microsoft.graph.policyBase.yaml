@@ -1,0 +1,33 @@
+allOf:
+  - $ref: .\microsoft.graph.directoryObject.yaml
+  - title: policyBase
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      description:
+        type: string
+        description: Description for this policy. Required.
+        nullable: true
+      displayName:
+        type: string
+        description: Display name for this policy. Required.
+        nullable: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.policyBase'
+    discriminator:
+      propertyName: '@odata.type'
+      mapping:
+        '#microsoft.graph.appManagementPolicy': .\microsoft.graph.appManagementPolicy.yaml
+        '#microsoft.graph.authorizationPolicy': .\microsoft.graph.authorizationPolicy.yaml
+        '#microsoft.graph.crossTenantAccessPolicy': .\microsoft.graph.crossTenantAccessPolicy.yaml
+        '#microsoft.graph.identitySecurityDefaultsEnforcementPolicy': .\microsoft.graph.identitySecurityDefaultsEnforcementPolicy.yaml
+        '#microsoft.graph.permissionGrantPolicy': .\microsoft.graph.permissionGrantPolicy.yaml
+        '#microsoft.graph.stsPolicy': .\microsoft.graph.stsPolicy.yaml
+        '#microsoft.graph.activityBasedTimeoutPolicy': .\microsoft.graph.activityBasedTimeoutPolicy.yaml
+        '#microsoft.graph.claimsMappingPolicy': .\microsoft.graph.claimsMappingPolicy.yaml
+        '#microsoft.graph.homeRealmDiscoveryPolicy': .\microsoft.graph.homeRealmDiscoveryPolicy.yaml
+        '#microsoft.graph.tokenIssuancePolicy': .\microsoft.graph.tokenIssuancePolicy.yaml
+        '#microsoft.graph.tokenLifetimePolicy': .\microsoft.graph.tokenLifetimePolicy.yaml
+        '#microsoft.graph.tenantAppManagementPolicy': .\microsoft.graph.tenantAppManagementPolicy.yaml

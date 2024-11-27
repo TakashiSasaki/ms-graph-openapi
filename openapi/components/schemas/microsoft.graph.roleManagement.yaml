@@ -1,0 +1,20 @@
+title: roleManagement
+required:
+  - '@odata.type'
+type: object
+properties:
+  directory:
+    anyOf:
+      - $ref: .\microsoft.graph.rbacApplication.yaml
+      - type: object
+        nullable: true
+    x-ms-navigationProperty: true
+  entitlementManagement:
+    anyOf:
+      - $ref: .\microsoft.graph.rbacApplication.yaml
+      - type: object
+        nullable: true
+    description: Container for roles and assignments for entitlement management resources.
+    x-ms-navigationProperty: true
+  '@odata.type':
+    type: string

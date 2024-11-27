@@ -1,0 +1,7 @@
+title: roleEligibilityScheduleRequestFilterByCurrentUserOptions
+enum:
+  - principal
+  - createdBy
+  - approver
+  - unknownFutureValue
+type: string

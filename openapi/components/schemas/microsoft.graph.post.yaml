@@ -1,0 +1,97 @@
+allOf:
+  - $ref: .\microsoft.graph.outlookItem.yaml
+  - title: post
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      body:
+        anyOf:
+          - $ref: .\microsoft.graph.itemBody.yaml
+          - type: object
+            nullable: true
+        description: >-
+          The contents of the post. This is a default property. This property
+          can be null.
+      conversationId:
+        type: string
+        description: Unique ID of the conversation. Read-only.
+        nullable: true
+      conversationThreadId:
+        type: string
+        description: Unique ID of the conversation thread. Read-only.
+        nullable: true
+      from:
+        $ref: .\microsoft.graph.recipient.yaml
+      hasAttachments:
+        type: boolean
+        description: >-
+          Indicates whether the post has at least one attachment. This is a
+          default property.
+      newParticipants:
+        type: array
+        items:
+          $ref: .\microsoft.graph.recipient.yaml
+        description: >-
+          Conversation participants that were added to the thread as part of
+          this post.
+      receivedDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: >-
+          Specifies when the post was received. The DateTimeOffset type
+          represents date and time information using ISO 8601 format and is
+          always in UTC time. For example, midnight UTC on Jan 1, 2014 is
+          2014-01-01T00:00:00Z
+        format: date-time
+      sender:
+        anyOf:
+          - $ref: .\microsoft.graph.recipient.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Contains the address of the sender. The value of Sender is assumed to
+          be the address of the authenticated user in the case when Sender is
+          not specified. This is a default property.
+      attachments:
+        type: array
+        items:
+          $ref: .\microsoft.graph.attachment.yaml
+        description: Read-only. Nullable. Supports $expand.
+        x-ms-navigationProperty: true
+      extensions:
+        type: array
+        items:
+          $ref: .\microsoft.graph.extension.yaml
+        description: >-
+          The collection of open extensions defined for the post. Read-only.
+          Nullable. Supports $expand.
+        x-ms-navigationProperty: true
+      inReplyTo:
+        anyOf:
+          - $ref: .\microsoft.graph.post.yaml
+          - type: object
+            nullable: true
+        description: Read-only. Supports $expand.
+        x-ms-navigationProperty: true
+      multiValueExtendedProperties:
+        type: array
+        items:
+          $ref: .\microsoft.graph.multiValueLegacyExtendedProperty.yaml
+        description: >-
+          The collection of multi-value extended properties defined for the
+          post. Read-only. Nullable.
+        x-ms-navigationProperty: true
+      singleValueExtendedProperties:
+        type: array
+        items:
+          $ref: .\microsoft.graph.singleValueLegacyExtendedProperty.yaml
+        description: >-
+          The collection of single-value extended properties defined for the
+          post. Read-only. Nullable.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.post'
+x-ms-discriminator-value: '#microsoft.graph.post'

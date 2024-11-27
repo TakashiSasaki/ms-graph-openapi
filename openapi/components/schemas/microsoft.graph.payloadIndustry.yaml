@@ -1,0 +1,25 @@
+title: payloadIndustry
+enum:
+  - unknown
+  - other
+  - banking
+  - businessServices
+  - consumerServices
+  - education
+  - energy
+  - construction
+  - consulting
+  - financialServices
+  - government
+  - hospitality
+  - insurance
+  - legal
+  - courierServices
+  - IT
+  - healthcare
+  - manufacturing
+  - retail
+  - telecom
+  - realEstate
+  - unknownFutureValue
+type: string

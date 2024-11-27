@@ -1,0 +1,16 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: printServiceEndpoint
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      displayName:
+        type: string
+        description: A human-readable display name for the endpoint.
+      uri:
+        type: string
+        description: The URI that can be used to access the service.
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.printServiceEndpoint'

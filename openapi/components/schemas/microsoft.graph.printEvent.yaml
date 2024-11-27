@@ -1,0 +1,5 @@
+title: printEvent
+enum:
+  - jobStarted
+  - unknownFutureValue
+type: string

@@ -1,0 +1,7 @@
+title: physicalAddressType
+enum:
+  - unknown
+  - home
+  - business
+  - other
+type: string

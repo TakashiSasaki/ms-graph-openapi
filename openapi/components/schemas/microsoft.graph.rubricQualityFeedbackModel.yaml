@@ -1,0 +1,17 @@
+title: rubricQualityFeedbackModel
+required:
+  - '@odata.type'
+type: object
+properties:
+  feedback:
+    anyOf:
+      - $ref: .\microsoft.graph.educationItemBody.yaml
+      - type: object
+        nullable: true
+    description: Specific feedback for one quality of this rubric.
+  qualityId:
+    type: string
+    description: The ID of the rubricQuality that this feedback is related to.
+    nullable: true
+  '@odata.type':
+    type: string

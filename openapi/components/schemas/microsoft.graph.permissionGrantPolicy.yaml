@@ -1,0 +1,27 @@
+allOf:
+  - $ref: .\microsoft.graph.policyBase.yaml
+  - title: permissionGrantPolicy
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      excludes:
+        type: array
+        items:
+          $ref: .\microsoft.graph.permissionGrantConditionSet.yaml
+        description: >-
+          Condition sets that are excluded in this permission grant policy.
+          Automatically expanded on GET.
+        x-ms-navigationProperty: true
+      includes:
+        type: array
+        items:
+          $ref: .\microsoft.graph.permissionGrantConditionSet.yaml
+        description: >-
+          Condition sets that are included in this permission grant policy.
+          Automatically expanded on GET.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.permissionGrantPolicy'
+x-ms-discriminator-value: '#microsoft.graph.permissionGrantPolicy'

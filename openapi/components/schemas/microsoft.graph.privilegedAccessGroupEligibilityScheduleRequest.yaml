@@ -1,0 +1,66 @@
+allOf:
+  - $ref: .\microsoft.graph.privilegedAccessScheduleRequest.yaml
+  - title: privilegedAccessGroupEligibilityScheduleRequest
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      accessId:
+        anyOf:
+          - $ref: .\microsoft.graph.privilegedAccessGroupRelationships.yaml
+          - type: object
+            nullable: true
+        description: >-
+          The identifier of membership or ownership eligibility relationship to
+          the group. Required. The possible values are: owner, member,
+          unknownFutureValue.
+      groupId:
+        type: string
+        description: >-
+          The identifier of the group representing the scope of the membership
+          and ownership eligibility through PIM for groups. Required.
+        nullable: true
+      principalId:
+        type: string
+        description: >-
+          The identifier of the principal whose membership or ownership
+          eligibility to the group is managed through PIM for groups. Required.
+        nullable: true
+      targetScheduleId:
+        type: string
+        description: >-
+          The identifier of the schedule that's created from the eligibility
+          request. Optional.
+        nullable: true
+      group:
+        anyOf:
+          - $ref: .\microsoft.graph.group.yaml
+          - type: object
+            nullable: true
+        description: >-
+          References the group that is the scope of the membership or ownership
+          eligibility request through PIM for groups. Supports $expand and
+          $select nested in $expand for select properties like id, displayName,
+          and mail.
+        x-ms-navigationProperty: true
+      principal:
+        anyOf:
+          - $ref: .\microsoft.graph.directoryObject.yaml
+          - type: object
+            nullable: true
+        description: >-
+          References the principal that's in the scope of the membership or
+          ownership eligibility request through the group that's governed by
+          PIM. Supports $expand and $select nested in $expand for id only.
+        x-ms-navigationProperty: true
+      targetSchedule:
+        anyOf:
+          - $ref: .\microsoft.graph.privilegedAccessGroupEligibilitySchedule.yaml
+          - type: object
+            nullable: true
+        description: Schedule created by this request.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.privilegedAccessGroupEligibilityScheduleRequest'
+x-ms-discriminator-value: '#microsoft.graph.privilegedAccessGroupEligibilityScheduleRequest'

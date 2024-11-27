@@ -1,0 +1,22 @@
+title: safeSearchFilterType
+enum:
+  - userDefined
+  - strict
+  - moderate
+type: string
+description: Specifies what level of safe search (filtering adult content) is required
+x-ms-enum:
+  name: safeSearchFilterType
+  modelAsString: false
+  values:
+    - value: userDefined
+      description: User Defined, default value, no intent.
+      name: userDefined
+    - value: strict
+      description: Strict, highest filtering against adult content.
+      name: strict
+    - value: moderate
+      description: >-
+        Moderate filtering against adult content (valid search results will not
+        be filtered).
+      name: moderate

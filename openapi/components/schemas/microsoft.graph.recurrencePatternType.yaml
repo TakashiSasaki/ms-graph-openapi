@@ -1,0 +1,9 @@
+title: recurrencePatternType
+enum:
+  - daily
+  - weekly
+  - absoluteMonthly
+  - relativeMonthly
+  - absoluteYearly
+  - relativeYearly
+type: string

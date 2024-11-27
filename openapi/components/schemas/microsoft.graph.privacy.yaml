@@ -1,0 +1,12 @@
+title: privacy
+required:
+  - '@odata.type'
+type: object
+properties:
+  subjectRightsRequests:
+    type: array
+    items:
+      $ref: .\microsoft.graph.subjectRightsRequest.yaml
+    x-ms-navigationProperty: true
+  '@odata.type':
+    type: string

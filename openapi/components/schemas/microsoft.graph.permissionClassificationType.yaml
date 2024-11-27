@@ -1,0 +1,7 @@
+title: permissionClassificationType
+enum:
+  - low
+  - medium
+  - high
+  - unknownFutureValue
+type: string

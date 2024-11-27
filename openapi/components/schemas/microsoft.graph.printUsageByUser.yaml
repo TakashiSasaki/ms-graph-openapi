@@ -1,0 +1,14 @@
+allOf:
+  - $ref: .\microsoft.graph.printUsage.yaml
+  - title: printUsageByUser
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      userPrincipalName:
+        type: string
+        description: The UPN of the user represented by these statistics.
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.printUsageByUser'
+x-ms-discriminator-value: '#microsoft.graph.printUsageByUser'

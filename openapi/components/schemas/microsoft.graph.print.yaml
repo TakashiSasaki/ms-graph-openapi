@@ -1,0 +1,51 @@
+title: print
+required:
+  - '@odata.type'
+type: object
+properties:
+  settings:
+    anyOf:
+      - $ref: .\microsoft.graph.printSettings.yaml
+      - type: object
+        nullable: true
+    description: Tenant-wide settings for the Universal Print service.
+  connectors:
+    type: array
+    items:
+      $ref: .\microsoft.graph.printConnector.yaml
+    description: The list of available print connectors.
+    x-ms-navigationProperty: true
+  operations:
+    type: array
+    items:
+      $ref: .\microsoft.graph.printOperation.yaml
+    description: The list of print long running operations.
+    x-ms-navigationProperty: true
+  printers:
+    type: array
+    items:
+      $ref: .\microsoft.graph.printer.yaml
+    description: The list of printers registered in the tenant.
+    x-ms-navigationProperty: true
+  services:
+    type: array
+    items:
+      $ref: .\microsoft.graph.printService.yaml
+    description: The list of available Universal Print service endpoints.
+    x-ms-navigationProperty: true
+  shares:
+    type: array
+    items:
+      $ref: .\microsoft.graph.printerShare.yaml
+    description: The list of printer shares registered in the tenant.
+    x-ms-navigationProperty: true
+  taskDefinitions:
+    type: array
+    items:
+      $ref: .\microsoft.graph.printTaskDefinition.yaml
+    description: >-
+      List of abstract definition for a task that can be triggered when various
+      events occur within Universal Print.
+    x-ms-navigationProperty: true
+  '@odata.type':
+    type: string

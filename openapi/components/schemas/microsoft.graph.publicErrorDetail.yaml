@@ -1,0 +1,19 @@
+title: publicErrorDetail
+required:
+  - '@odata.type'
+type: object
+properties:
+  code:
+    type: string
+    description: The error code.
+    nullable: true
+  message:
+    type: string
+    description: The error message.
+    nullable: true
+  target:
+    type: string
+    description: The target of the error.
+    nullable: true
+  '@odata.type':
+    type: string

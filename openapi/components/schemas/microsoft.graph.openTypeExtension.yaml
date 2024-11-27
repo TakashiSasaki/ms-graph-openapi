@@ -1,0 +1,14 @@
+allOf:
+  - $ref: .\microsoft.graph.extension.yaml
+  - title: openTypeExtension
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      extensionName:
+        type: string
+        description: A unique text identifier for an open type data extension. Optional.
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.openTypeExtension'
+x-ms-discriminator-value: '#microsoft.graph.openTypeExtension'

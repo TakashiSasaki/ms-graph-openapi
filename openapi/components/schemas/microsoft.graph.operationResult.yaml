@@ -1,0 +1,7 @@
+title: operationResult
+enum:
+  - success
+  - failure
+  - timeout
+  - unknownFutureValue
+type: string

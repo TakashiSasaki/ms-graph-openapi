@@ -1,0 +1,48 @@
+title: recurrenceRange
+required:
+  - '@odata.type'
+type: object
+properties:
+  endDate:
+    pattern: ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$
+    type: string
+    description: >-
+      The date to stop applying the recurrence pattern. Depending on the
+      recurrence pattern of the event, the last occurrence of the meeting may
+      not be this date. Required if type is endDate.
+    format: date
+    nullable: true
+  numberOfOccurrences:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    description: >-
+      The number of times to repeat the event. Required and must be positive if
+      type is numbered.
+    format: int32
+  recurrenceTimeZone:
+    type: string
+    description: >-
+      Time zone for the startDate and endDate properties. Optional. If not
+      specified, the time zone of the event is used.
+    nullable: true
+  startDate:
+    pattern: ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$
+    type: string
+    description: >-
+      The date to start applying the recurrence pattern. The first occurrence of
+      the meeting may be this date or later, depending on the recurrence pattern
+      of the event. Must be the same value as the start property of the
+      recurring event. Required.
+    format: date
+    nullable: true
+  type:
+    anyOf:
+      - $ref: .\microsoft.graph.recurrenceRangeType.yaml
+      - type: object
+        nullable: true
+    description: >-
+      The recurrence range. The possible values are: endDate, noEnd, numbered.
+      Required.
+  '@odata.type':
+    type: string

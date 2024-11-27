@@ -1,0 +1,16 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: outlookUser
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      masterCategories:
+        type: array
+        items:
+          $ref: .\microsoft.graph.outlookCategory.yaml
+        description: A list of categories defined for the user.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.outlookUser'

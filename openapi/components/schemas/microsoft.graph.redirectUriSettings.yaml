@@ -1,0 +1,16 @@
+title: redirectUriSettings
+required:
+  - '@odata.type'
+type: object
+properties:
+  index:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    format: int32
+    nullable: true
+  uri:
+    type: string
+    nullable: true
+  '@odata.type':
+    type: string

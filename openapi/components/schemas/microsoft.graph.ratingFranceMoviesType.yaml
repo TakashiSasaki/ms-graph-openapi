@@ -1,0 +1,38 @@
+title: ratingFranceMoviesType
+enum:
+  - allAllowed
+  - allBlocked
+  - agesAbove10
+  - agesAbove12
+  - agesAbove16
+  - agesAbove18
+type: string
+description: Movies rating labels in France
+x-ms-enum:
+  name: ratingFranceMoviesType
+  modelAsString: false
+  values:
+    - value: allAllowed
+      description: Default value, allow all movies content
+      name: allAllowed
+    - value: allBlocked
+      description: Do not allow any movies content
+      name: allBlocked
+    - value: agesAbove10
+      description: >-
+        The 10 classification prohibits the screening of the film to minors
+        under 10
+      name: agesAbove10
+    - value: agesAbove12
+      description: >-
+        The 12 classification prohibits the screening of the film to minors
+        under 12
+      name: agesAbove12
+    - value: agesAbove16
+      description: >-
+        The 16 classification prohibits the screening of the film to minors
+        under 16
+      name: agesAbove16
+    - value: agesAbove18
+      description: The 18 classification prohibits the screening to minors under 18
+      name: agesAbove18

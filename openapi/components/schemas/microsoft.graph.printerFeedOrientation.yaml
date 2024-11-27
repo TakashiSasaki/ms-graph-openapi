@@ -1,0 +1,6 @@
+title: printerFeedOrientation
+enum:
+  - longEdgeFirst
+  - shortEdgeFirst
+  - unknownFutureValue
+type: string

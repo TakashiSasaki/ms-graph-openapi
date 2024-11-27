@@ -1,0 +1,6 @@
+title: restorePointPreference
+enum:
+  - latest
+  - oldest
+  - unknownFutureValue
+type: string

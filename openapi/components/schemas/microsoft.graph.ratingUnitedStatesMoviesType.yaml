@@ -1,0 +1,36 @@
+title: ratingUnitedStatesMoviesType
+enum:
+  - allAllowed
+  - allBlocked
+  - general
+  - parentalGuidance
+  - parentalGuidance13
+  - restricted
+  - adults
+type: string
+description: Movies rating labels in United States
+x-ms-enum:
+  name: ratingUnitedStatesMoviesType
+  modelAsString: false
+  values:
+    - value: allAllowed
+      description: Default value, allow all movies content
+      name: allAllowed
+    - value: allBlocked
+      description: Do not allow any movies content
+      name: allBlocked
+    - value: general
+      description: G, all ages admitted
+      name: general
+    - value: parentalGuidance
+      description: PG, some material may not be suitable for children
+      name: parentalGuidance
+    - value: parentalGuidance13
+      description: PG13, some material may be inappropriate for children under 13
+      name: parentalGuidance13
+    - value: restricted
+      description: R, viewers under 17 require accompanying parent or adult guardian
+      name: restricted
+    - value: adults
+      description: NC17, adults only
+      name: adults

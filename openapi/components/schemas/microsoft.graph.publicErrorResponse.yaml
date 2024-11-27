@@ -1,0 +1,12 @@
+title: publicErrorResponse
+required:
+  - '@odata.type'
+type: object
+properties:
+  error:
+    anyOf:
+      - $ref: .\microsoft.graph.publicError.yaml
+      - type: object
+        nullable: true
+  '@odata.type':
+    type: string

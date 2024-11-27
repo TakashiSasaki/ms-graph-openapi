@@ -1,0 +1,35 @@
+allOf:
+  - $ref: .\microsoft.graph.directoryObject.yaml
+  - title: resourceSpecificPermissionGrant
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      clientAppId:
+        type: string
+        description: >-
+          ID of the service principal of the Microsoft Entra app that has been
+          granted access. Read-only.
+        nullable: true
+      clientId:
+        type: string
+        description: ID of the Microsoft Entra app that has been granted access. Read-only.
+        nullable: true
+      permission:
+        type: string
+        description: The name of the resource-specific permission. Read-only.
+        nullable: true
+      permissionType:
+        type: string
+        description: >-
+          The type of permission. Possible values are: Application, Delegated.
+          Read-only.
+        nullable: true
+      resourceAppId:
+        type: string
+        description: ID of the Microsoft Entra app that is hosting the resource. Read-only.
+        nullable: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.resourceSpecificPermissionGrant'
+x-ms-discriminator-value: '#microsoft.graph.resourceSpecificPermissionGrant'

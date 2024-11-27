@@ -1,0 +1,28 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: planner
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      buckets:
+        type: array
+        items:
+          $ref: .\microsoft.graph.plannerBucket.yaml
+        description: Read-only. Nullable. Returns a collection of the specified buckets
+        x-ms-navigationProperty: true
+      plans:
+        type: array
+        items:
+          $ref: .\microsoft.graph.plannerPlan.yaml
+        description: Read-only. Nullable. Returns a collection of the specified plans
+        x-ms-navigationProperty: true
+      tasks:
+        type: array
+        items:
+          $ref: .\microsoft.graph.plannerTask.yaml
+        description: Read-only. Nullable. Returns a collection of the specified tasks
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.planner'

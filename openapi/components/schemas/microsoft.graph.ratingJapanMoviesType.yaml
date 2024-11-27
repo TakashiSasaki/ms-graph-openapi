@@ -1,0 +1,34 @@
+title: ratingJapanMoviesType
+enum:
+  - allAllowed
+  - allBlocked
+  - general
+  - parentalGuidance
+  - agesAbove15
+  - agesAbove18
+type: string
+description: Movies rating labels in Japan
+x-ms-enum:
+  name: ratingJapanMoviesType
+  modelAsString: false
+  values:
+    - value: allAllowed
+      description: Default value, allow all movies content
+      name: allAllowed
+    - value: allBlocked
+      description: Do not allow any movies content
+      name: allBlocked
+    - value: general
+      description: Suitable for all ages
+      name: general
+    - value: parentalGuidance
+      description: >-
+        The PG-12 classification requests parental guidance for young people
+        under 12
+      name: parentalGuidance
+    - value: agesAbove15
+      description: The R15+ classification is suitable for viewers of 15 or older
+      name: agesAbove15
+    - value: agesAbove18
+      description: The R18+ classification is suitable for viewers of 18 or older
+      name: agesAbove18

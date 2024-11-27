@@ -1,0 +1,22 @@
+title: restorePointSearchResponse
+required:
+  - '@odata.type'
+type: object
+properties:
+  noResultProtectionUnitIds:
+    type: array
+    items:
+      type: string
+      nullable: true
+    description: Contains  alist of protection units with no restore points.
+  searchResponseId:
+    type: string
+    description: The unique identifier of the search response.
+    nullable: true
+  searchResults:
+    type: array
+    items:
+      $ref: .\microsoft.graph.restorePointSearchResult.yaml
+    description: Contains a collection of restore points.
+  '@odata.type':
+    type: string

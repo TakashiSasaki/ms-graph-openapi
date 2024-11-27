@@ -1,0 +1,23 @@
+allOf:
+  - $ref: .\microsoft.graph.apiAuthenticationConfigurationBase.yaml
+  - title: pkcs12Certificate
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      password:
+        type: string
+        description: >-
+          The password for the pfx file. Required. If no password is used, you
+          must still provide a value of ''.
+        nullable: true
+      pkcs12Value:
+        type: string
+        description: >-
+          Represents the pfx content that is sent. The value should be a base-64
+          encoded version of the actual certificate content. Required.
+        nullable: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.pkcs12Certificate'
+x-ms-discriminator-value: '#microsoft.graph.pkcs12Certificate'

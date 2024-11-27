@@ -1,0 +1,7 @@
+title: rejectReason
+enum:
+  - none
+  - busy
+  - forbidden
+  - unknownFutureValue
+type: string

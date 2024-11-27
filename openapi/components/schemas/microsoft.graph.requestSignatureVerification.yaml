@@ -1,0 +1,20 @@
+title: requestSignatureVerification
+required:
+  - '@odata.type'
+type: object
+properties:
+  allowedWeakAlgorithms:
+    anyOf:
+      - $ref: .\microsoft.graph.weakAlgorithms.yaml
+      - type: object
+        nullable: true
+    description: >-
+      Specifies which weak algorithms are allowed.  The possible values are:
+      rsaSha1, unknownFutureValue.
+  isSignedRequestRequired:
+    type: boolean
+    description: >-
+      Specifies whether signed authentication requests for this application
+      should be required.
+  '@odata.type':
+    type: string

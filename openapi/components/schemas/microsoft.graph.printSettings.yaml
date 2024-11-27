@@ -1,0 +1,14 @@
+title: printSettings
+required:
+  - '@odata.type'
+type: object
+properties:
+  documentConversionEnabled:
+    type: boolean
+    description: >-
+      Specifies whether document conversion is enabled for the tenant. If
+      document conversion is enabled, Universal Print service will automatically
+      convert documents into a format compatible with the printer (xps to pdf)
+      when needed.
+  '@odata.type':
+    type: string

@@ -1,0 +1,6 @@
+title: billingPeriod
+enum:
+  - current
+  - last
+  - unknownFutureValue
+type: string
