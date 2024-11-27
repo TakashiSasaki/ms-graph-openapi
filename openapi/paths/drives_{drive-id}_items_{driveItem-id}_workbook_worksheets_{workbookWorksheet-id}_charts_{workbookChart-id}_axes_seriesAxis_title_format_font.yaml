@@ -1,0 +1,123 @@
+description: >-
+  Provides operations to manage the font property of the
+  microsoft.graph.workbookChartAxisTitleFormat entity.
+get:
+  tags:
+    - drives.driveItem
+  summary: Get font from drives
+  description: >-
+    Represents the font attributes, such as font name, font size, color, etc. of
+    chart axis title object. Read-only.
+  operationId: drives.items.workbook.worksheets.charts.axes.seriesAxis.title.format.GetFont
+  parameters:
+    - name: $select
+      in: query
+      description: Select properties to be returned
+      style: form
+      explode: false
+      schema:
+        uniqueItems: true
+        type: array
+        items:
+          type: string
+    - name: $expand
+      in: query
+      description: Expand related entities
+      style: form
+      explode: false
+      schema:
+        uniqueItems: true
+        type: array
+        items:
+          type: string
+  responses:
+    2XX:
+      description: Retrieved navigation property
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\microsoft.graph.workbookChartFont.yaml
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: operation
+patch:
+  tags:
+    - drives.driveItem
+  summary: Update the navigation property font in drives
+  operationId: >-
+    drives.items.workbook.worksheets.charts.axes.seriesAxis.title.format.UpdateFont
+  requestBody:
+    description: New navigation property values
+    content:
+      application/json:
+        schema:
+          $ref: ..\components\schemas\microsoft.graph.workbookChartFont.yaml
+    required: true
+  responses:
+    2XX:
+      description: Success
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\microsoft.graph.workbookChartFont.yaml
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: operation
+delete:
+  tags:
+    - drives.driveItem
+  summary: Delete navigation property font for drives
+  operationId: >-
+    drives.items.workbook.worksheets.charts.axes.seriesAxis.title.format.DeleteFont
+  parameters:
+    - name: If-Match
+      in: header
+      description: ETag
+      schema:
+        type: string
+  responses:
+    '204':
+      description: Success
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: operation
+parameters:
+  - name: drive-id
+    in: path
+    description: The unique identifier of drive
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: drive
+  - name: driveItem-id
+    in: path
+    description: The unique identifier of driveItem
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: driveItem
+  - name: workbookWorksheet-id
+    in: path
+    description: The unique identifier of workbookWorksheet
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: workbookWorksheet
+  - name: workbookChart-id
+    in: path
+    description: The unique identifier of workbookChart
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: workbookChart
+x-ms-docs-grouped-path:
+  - >-
+    /drives/{drive-id}/items/{driveItem-id}/workbook/worksheets/{workbookWorksheet-id}/charts/{workbookChart-id}/axes/categoryAxis/title/format/font
+  - >-
+    /drives/{drive-id}/items/{driveItem-id}/workbook/worksheets/{workbookWorksheet-id}/charts/{workbookChart-id}/axes/valueAxis/title/format/font

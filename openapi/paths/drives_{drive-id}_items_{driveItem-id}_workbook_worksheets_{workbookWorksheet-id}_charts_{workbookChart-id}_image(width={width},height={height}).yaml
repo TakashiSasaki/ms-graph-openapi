@@ -1,0 +1,93 @@
+description: Provides operations to call the image method.
+get:
+  tags:
+    - drives.driveItem
+  summary: Invoke function image
+  operationId: >-
+    drives.drive.items.driveItem.workbook.worksheets.workbookWorksheet.charts.workbookChart.image-664c
+  responses:
+    2XX:
+      description: Success
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              value:
+                type: string
+                nullable: true
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: function
+parameters:
+  - name: drive-id
+    in: path
+    description: The unique identifier of drive
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: drive
+  - name: driveItem-id
+    in: path
+    description: The unique identifier of driveItem
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: driveItem
+  - name: workbookWorksheet-id
+    in: path
+    description: The unique identifier of workbookWorksheet
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: workbookWorksheet
+  - name: workbookChart-id
+    in: path
+    description: The unique identifier of workbookChart
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: workbookChart
+  - name: width
+    in: path
+    description: 'Usage: width={width}'
+    required: true
+    schema:
+      maximum: 2147483647
+      minimum: -2147483648
+      type: number
+      format: int32
+  - name: height
+    in: path
+    description: 'Usage: height={height}'
+    required: true
+    schema:
+      maximum: 2147483647
+      minimum: -2147483648
+      type: number
+      format: int32
+x-ms-docs-grouped-path:
+  - >-
+    /drives/{drive-id}/items/{driveItem-id}/workbook/worksheets/{workbookWorksheet-id}/charts/{workbookChart-id}/image()
+  - >-
+    /drives/{drive-id}/items/{driveItem-id}/workbook/worksheets/{workbookWorksheet-id}/charts/{workbookChart-id}/image(width={width},height={height},fittingMode='{fittingMode}')
+  - >-
+    /drives/{drive-id}/items/{driveItem-id}/workbook/worksheets/{workbookWorksheet-id}/charts/{workbookChart-id}/image(width={width})
+  - >-
+    /drives/{drive-id}/items/{driveItem-id}/workbook/worksheets/{workbookWorksheet-id}/charts/item(name='{name}')/image()
+  - >-
+    /drives/{drive-id}/items/{driveItem-id}/workbook/worksheets/{workbookWorksheet-id}/charts/item(name='{name}')/image(width={width},height={height},fittingMode='{fittingMode}')
+  - >-
+    /drives/{drive-id}/items/{driveItem-id}/workbook/worksheets/{workbookWorksheet-id}/charts/item(name='{name}')/image(width={width},height={height})
+  - >-
+    /drives/{drive-id}/items/{driveItem-id}/workbook/worksheets/{workbookWorksheet-id}/charts/item(name='{name}')/image(width={width})
+  - >-
+    /drives/{drive-id}/items/{driveItem-id}/workbook/worksheets/{workbookWorksheet-id}/charts/itemAt(index={index})/image()
+  - >-
+    /drives/{drive-id}/items/{driveItem-id}/workbook/worksheets/{workbookWorksheet-id}/charts/itemAt(index={index})/image(width={width},height={height},fittingMode='{fittingMode}')
+  - >-
+    /drives/{drive-id}/items/{driveItem-id}/workbook/worksheets/{workbookWorksheet-id}/charts/itemAt(index={index})/image(width={width},height={height})
+  - >-
+    /drives/{drive-id}/items/{driveItem-id}/workbook/worksheets/{workbookWorksheet-id}/charts/itemAt(index={index})/image(width={width})
