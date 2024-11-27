@@ -1,0 +1,145 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Microsoft Entra ID OAuth 2.0 Authorization Endpoint",
+    "description": "This OpenAPI document describes the OAuth 2.0 authorization endpoint for Microsoft Entra ID. The endpoint is used to obtain authorization codes as part of the authorization code grant flow.",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://login.microsoftonline.com/{tenant}/oauth2/v2.0",
+      "variables": {
+        "tenant": {
+          "default": "common",
+          "description": "The tenant identifier. Can be 'common', 'organizations', 'consumers', or a specific tenant ID."
+        }
+      }
+    }
+  ],
+  "paths": {
+    "/authorize": {
+      "get": {
+        "summary": "OAuth 2.0 Authorization Endpoint",
+        "description": "Initiates the OAuth 2.0 authorization code grant flow by redirecting the user to the Microsoft Entra ID sign-in page.",
+        "operationId": "getAuthorizationCode",
+        "parameters": [
+          {
+            "name": "client_id",
+            "in": "query",
+            "required": true,
+            "description": "The application's client ID.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "response_type",
+            "in": "query",
+            "required": true,
+            "description": "The type of response desired. For authorization code grant flow, this should be 'code'.",
+            "schema": {
+              "type": "string",
+              "enum": ["code"]
+            }
+          },
+          {
+            "name": "redirect_uri",
+            "in": "query",
+            "required": true,
+            "description": "The URI to redirect the user to after authorization is complete. Must match one of the redirect URIs registered for the application.",
+            "schema": {
+              "type": "string",
+              "format": "uri"
+            }
+          },
+          {
+            "name": "scope",
+            "in": "query",
+            "required": true,
+            "description": "A space-separated list of scopes that the application is requesting access to.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "response_mode",
+            "in": "query",
+            "required": false,
+            "description": "Specifies the method that should be used to send the resulting token back to your app. Can be 'query', 'fragment', or 'form_post'.",
+            "schema": {
+              "type": "string",
+              "enum": ["query", "fragment", "form_post"]
+            }
+          },
+          {
+            "name": "state",
+            "in": "query",
+            "required": false,
+            "description": "A value included in the request that is also returned in the token response. A randomly generated unique value is typically used to prevent cross-site request forgery attacks.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "prompt",
+            "in": "query",
+            "required": false,
+            "description": "Indicates the type of user interaction that is required. Can be 'login', 'none', 'consent', or 'select_account'.",
+            "schema": {
+              "type": "string",
+              "enum": ["login", "none", "consent", "select_account"]
+            }
+          },
+          {
+            "name": "login_hint",
+            "in": "query",
+            "required": false,
+            "description": "Can be used to pre-fill the username/email address field of the sign-in page for the user, if you know their username ahead of time.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "domain_hint",
+            "in": "query",
+            "required": false,
+            "description": "Provides a hint about the tenant or domain that the user should use to sign in. The value is a registered domain for the tenant.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "code_challenge",
+            "in": "query",
+            "required": false,
+            "description": "Used to secure authorization code grant flow by using Proof Key for Code Exchange (PKCE). This is the Base64URL-encoded SHA256 hash of the code verifier.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "code_challenge_method",
+            "in": "query",
+            "required": false,
+            "description": "The method used to encode the code verifier for the code challenge. Can be 'plain' or 'S256'. 'S256' is recommended.",
+            "schema": {
+              "type": "string",
+              "enum": ["plain", "S256"]
+            }
+          }
+        ],
+        "responses": {
+          "302": {
+            "description": "Redirects the user to the Microsoft Entra ID sign-in page. Upon successful authentication and authorization, the user is redirected to the specified redirect_uri with an authorization code."
+          },
+          "400": {
+            "description": "Bad Request. The request is missing a required parameter, includes an invalid parameter value, or is otherwise malformed."
+          },
+          "401": {
+            "description": "Unauthorized. The client is not authorized to request an authorization code using this method."
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,130 @@
+openapi: 3.1.0
+info:
+  title: Microsoft Entra ID OAuth 2.0 Token Endpoint
+  description: >
+    This OpenAPI document describes the OAuth 2.0 token endpoint for Microsoft Entra ID.
+    The endpoint is used to obtain access tokens as part of the OAuth 2.0 authorization flows.
+  version: 1.0.0
+servers:
+  - url: https://login.microsoftonline.com/{tenant}/oauth2/v2.0
+    variables:
+      tenant:
+        default: common
+        description: >
+          The tenant identifier. Can be 'common', 'organizations', 'consumers', or a specific tenant ID.
+paths:
+  /token:
+    post:
+      summary: OAuth 2.0 Token Endpoint
+      description: >
+        Exchanges authorization codes or refresh tokens for access tokens.
+      operationId: exchangeToken
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                grant_type:
+                  type: string
+                  description: >
+                    The type of grant being used. For example, 'authorization_code' or 'refresh_token'.
+                client_id:
+                  type: string
+                  description: The application's client ID.
+                client_secret:
+                  type: string
+                  description: >
+                    The application's client secret. Required for confidential clients.
+                code:
+                  type: string
+                  description: >
+                    The authorization code received from the authorization endpoint.
+                    Required if 'grant_type' is 'authorization_code'.
+                redirect_uri:
+                  type: string
+                  format: uri
+                  description: >
+                    The redirect URI that was used in the authorization request.
+                    Required if 'grant_type' is 'authorization_code'.
+                refresh_token:
+                  type: string
+                  description: >
+                    The refresh token received from a previous token request.
+                    Required if 'grant_type' is 'refresh_token'.
+                scope:
+                  type: string
+                  description: >
+                    A space-separated list of scopes that the application is requesting access to.
+                code_verifier:
+                  type: string
+                  description: >
+                    The same code verifier that was used to obtain the authorization code.
+                    Required if 'code_challenge' was included in the authorization request.
+              required:
+                - grant_type
+                - client_id
+      responses:
+        '200':
+          description: A successful response containing the access token.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  token_type:
+                    type: string
+                    description: The type of token issued. Typically 'Bearer'.
+                  expires_in:
+                    type: integer
+                    description: The lifetime in seconds of the access token.
+                  access_token:
+                    type: string
+                    description: The access token issued by the authorization server.
+                  refresh_token:
+                    type: string
+                    description: >
+                      The refresh token, which can be used to obtain new access tokens.
+                  id_token:
+                    type: string
+                    description: >
+                      A JWT that contains identity information about the user.
+                      Present if 'openid' scope was requested.
+                required:
+                  - token_type
+                  - expires_in
+                  - access_token
+        '400':
+          description: >
+            Bad Request. The request is missing a required parameter,
+            includes an invalid parameter value, or is otherwise malformed.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    description: A single ASCII error code.
+                  error_description:
+                    type: string
+                    description: >
+                      A human-readable text providing additional information about the error.
+                required:
+                  - error
+        '401':
+          description: Unauthorized. The client authentication failed.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    description: A single ASCII error code.
+                  error_description:
+                    type: string
+                    description: >
+                      A human-readable text providing additional information about the error.
+                required:
+                  - error
