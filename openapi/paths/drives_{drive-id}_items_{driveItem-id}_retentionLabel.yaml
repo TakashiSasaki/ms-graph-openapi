@@ -1,0 +1,123 @@
+description: >-
+  Provides operations to manage the retentionLabel property of the
+  microsoft.graph.driveItem entity.
+get:
+  tags:
+    - drives.driveItem
+  summary: Get retentionLabel from drives
+  description: >-
+    Information about retention label and settings enforced on the driveItem.
+    Read-write.
+  operationId: drives.items.GetRetentionLabel
+  parameters:
+    - name: $select
+      in: query
+      description: Select properties to be returned
+      style: form
+      explode: false
+      schema:
+        uniqueItems: true
+        type: array
+        items:
+          type: string
+    - name: $expand
+      in: query
+      description: Expand related entities
+      style: form
+      explode: false
+      schema:
+        uniqueItems: true
+        type: array
+        items:
+          type: string
+  responses:
+    2XX:
+      description: Retrieved navigation property
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\microsoft.graph.itemRetentionLabel.yaml
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: operation
+patch:
+  tags:
+    - drives.driveItem
+  summary: 'driveItem: setRetentionLabel'
+  description: >-
+    Apply (set) a retention label on a driveItem (files and folders). Retention
+    labels don't need to be published in a retention label policy to be applied
+    using this method. When a retention label is applied to a folder, all the
+    items in the folder are tagged with the same retention label. For
+    information about conflict resolution for retention labels, see Will an
+    existing label be overridden or removed. For information about retention
+    labels from an administrator's perspective, see Use retention labels to
+    manage the lifecycle of documents stored in SharePoint.
+  externalDocs:
+    description: Find more info here
+    url: >-
+      https://learn.microsoft.com/graph/api/driveitem-setretentionlabel?view=graph-rest-1.0
+  operationId: drives.items.UpdateRetentionLabel
+  requestBody:
+    description: New navigation property values
+    content:
+      application/json:
+        schema:
+          $ref: ..\components\schemas\microsoft.graph.itemRetentionLabel.yaml
+    required: true
+  responses:
+    2XX:
+      description: Success
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\microsoft.graph.itemRetentionLabel.yaml
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: operation
+delete:
+  tags:
+    - drives.driveItem
+  summary: 'driveItem: removeRetentionLabel'
+  description: >-
+    Remove a retention label from a driveItem. For information about retention
+    labels from an administrator's perspective, see Use retention labels to
+    manage the lifecycle of documents stored in SharePoint.
+  externalDocs:
+    description: Find more info here
+    url: >-
+      https://learn.microsoft.com/graph/api/driveitem-removeretentionlabel?view=graph-rest-1.0
+  operationId: drives.items.DeleteRetentionLabel
+  parameters:
+    - name: If-Match
+      in: header
+      description: ETag
+      schema:
+        type: string
+  responses:
+    '204':
+      description: Success
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: operation
+parameters:
+  - name: drive-id
+    in: path
+    description: The unique identifier of drive
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: drive
+  - name: driveItem-id
+    in: path
+    description: The unique identifier of driveItem
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: driveItem

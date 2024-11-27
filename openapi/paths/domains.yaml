@@ -1,0 +1,93 @@
+description: Provides operations to manage the collection of domain entities.
+get:
+  tags:
+    - domains.domain
+  summary: List domains
+  description: Retrieve a list of domain objects.
+  externalDocs:
+    description: Find more info here
+    url: https://learn.microsoft.com/graph/api/domain-list?view=graph-rest-1.0
+  operationId: domains.domain.ListDomain
+  parameters:
+    - $ref: ..\components\parameters\top.yaml
+    - $ref: ..\components\parameters\skip.yaml
+    - $ref: ..\components\parameters\search.yaml
+    - $ref: ..\components\parameters\filter.yaml
+    - $ref: ..\components\parameters\count.yaml
+    - name: $orderby
+      in: query
+      description: Order items by property values
+      style: form
+      explode: false
+      schema:
+        uniqueItems: true
+        type: array
+        items:
+          type: string
+    - name: $select
+      in: query
+      description: Select properties to be returned
+      style: form
+      explode: false
+      schema:
+        uniqueItems: true
+        type: array
+        items:
+          type: string
+    - name: $expand
+      in: query
+      description: Expand related entities
+      style: form
+      explode: false
+      schema:
+        uniqueItems: true
+        type: array
+        items:
+          type: string
+  responses:
+    2XX:
+      $ref: ..\components\responses\microsoft.graph.domainCollectionResponse.yaml
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-pageable:
+    nextLinkName: '@odata.nextLink'
+    operationName: listMore
+  x-ms-docs-operation-type: operation
+post:
+  tags:
+    - domains.domain
+  summary: Create domain
+  description: >-
+    Adds a domain to the tenant. Important: You cannot use an associated domain
+    with your Microsoft Entra tenant until ownership is verified. See List
+    verificationDnsRecords for details. Root domains require verification. For
+    example, contoso.com requires verification. If a root domain is verified,
+    subdomains of the root domain are automatically verified. For example,
+    subdomain.contoso.com is automatically be verified if contoso.com has been
+    verified.
+  externalDocs:
+    description: Find more info here
+    url: >-
+      https://learn.microsoft.com/graph/api/domain-post-domains?view=graph-rest-1.0
+  operationId: domains.domain.CreateDomain
+  requestBody:
+    description: New entity
+    content:
+      application/json:
+        schema:
+          $ref: ..\components\schemas\microsoft.graph.domain.yaml
+    required: true
+  responses:
+    2XX:
+      description: Created entity
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\microsoft.graph.domain.yaml
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: operation

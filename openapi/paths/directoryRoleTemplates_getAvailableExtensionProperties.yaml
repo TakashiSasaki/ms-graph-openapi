@@ -1,0 +1,52 @@
+description: Provides operations to call the getAvailableExtensionProperties method.
+post:
+  tags:
+    - directoryRoleTemplates.directoryRoleTemplate
+  summary: Invoke action getAvailableExtensionProperties
+  description: >-
+    Return all directory extension definitions that have been registered in a
+    directory, including through multi-tenant apps. The following entities
+    support extension properties:
+  externalDocs:
+    description: Find more info here
+    url: >-
+      https://learn.microsoft.com/graph/api/directoryobject-getavailableextensionproperties?view=graph-rest-1.0
+  operationId: directoryRoleTemplates.getAvailableExtensionProperties
+  requestBody:
+    description: Action parameters
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            isSyncedFromOnPremises:
+              type: boolean
+              default: false
+              nullable: true
+    required: true
+  responses:
+    2XX:
+      description: Success
+      content:
+        application/json:
+          schema:
+            title: Collection of extensionProperty
+            type: object
+            allOf:
+              - $ref: >-
+                  ..\components\schemas\BaseCollectionPaginationCountResponse.yaml
+              - type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: >-
+                        ..\components\schemas\microsoft.graph.extensionProperty.yaml
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: action
+  x-ms-pageable:
+    nextLinkName: '@odata.nextLink'
+    operationName: listMore

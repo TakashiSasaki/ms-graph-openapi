@@ -1,0 +1,74 @@
+description: Provides operations to call the grant method.
+post:
+  tags:
+    - drives.driveItem
+  summary: Invoke action grant
+  description: Grant users access to a link represented by a permission.
+  externalDocs:
+    description: Find more info here
+    url: https://learn.microsoft.com/graph/api/permission-grant?view=graph-rest-1.0
+  operationId: drives.drive.items.driveItem.permissions.permission.grant
+  requestBody:
+    description: Action parameters
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            roles:
+              type: array
+              items:
+                type: string
+                nullable: true
+            recipients:
+              type: array
+              items:
+                $ref: ..\components\schemas\microsoft.graph.driveRecipient.yaml
+    required: true
+  responses:
+    2XX:
+      description: Success
+      content:
+        application/json:
+          schema:
+            title: Collection of permission
+            type: object
+            allOf:
+              - $ref: >-
+                  ..\components\schemas\BaseCollectionPaginationCountResponse.yaml
+              - type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: ..\components\schemas\microsoft.graph.permission.yaml
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: action
+  x-ms-pageable:
+    nextLinkName: '@odata.nextLink'
+    operationName: listMore
+parameters:
+  - name: drive-id
+    in: path
+    description: The unique identifier of drive
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: drive
+  - name: driveItem-id
+    in: path
+    description: The unique identifier of driveItem
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: driveItem
+  - name: permission-id
+    in: path
+    description: The unique identifier of permission
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: permission

@@ -1,0 +1,109 @@
+description: >-
+  Provides operations to manage the thumbnails property of the
+  microsoft.graph.driveItem entity.
+get:
+  tags:
+    - drives.driveItem
+  summary: Get thumbnails from drives
+  description: >-
+    Collection of thumbnailSet objects associated with the item. For more
+    information, see getting thumbnails. Read-only. Nullable.
+  operationId: drives.items.GetThumbnails
+  parameters:
+    - name: $select
+      in: query
+      description: Select properties to be returned
+      style: form
+      explode: false
+      schema:
+        uniqueItems: true
+        type: array
+        items:
+          type: string
+    - name: $expand
+      in: query
+      description: Expand related entities
+      style: form
+      explode: false
+      schema:
+        uniqueItems: true
+        type: array
+        items:
+          type: string
+  responses:
+    2XX:
+      description: Retrieved navigation property
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\microsoft.graph.thumbnailSet.yaml
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: operation
+patch:
+  tags:
+    - drives.driveItem
+  summary: Update the navigation property thumbnails in drives
+  operationId: drives.items.UpdateThumbnails
+  requestBody:
+    description: New navigation property values
+    content:
+      application/json:
+        schema:
+          $ref: ..\components\schemas\microsoft.graph.thumbnailSet.yaml
+    required: true
+  responses:
+    2XX:
+      description: Success
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\microsoft.graph.thumbnailSet.yaml
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: operation
+delete:
+  tags:
+    - drives.driveItem
+  summary: Delete navigation property thumbnails for drives
+  operationId: drives.items.DeleteThumbnails
+  parameters:
+    - name: If-Match
+      in: header
+      description: ETag
+      schema:
+        type: string
+  responses:
+    '204':
+      description: Success
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: operation
+parameters:
+  - name: drive-id
+    in: path
+    description: The unique identifier of drive
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: drive
+  - name: driveItem-id
+    in: path
+    description: The unique identifier of driveItem
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: driveItem
+  - name: thumbnailSet-id
+    in: path
+    description: The unique identifier of thumbnailSet
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: thumbnailSet

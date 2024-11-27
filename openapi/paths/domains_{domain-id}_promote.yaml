@@ -1,0 +1,37 @@
+description: Provides operations to call the promote method.
+post:
+  tags:
+    - domains.domain
+  summary: Invoke action promote
+  description: >-
+    Promote a verified subdomain to the root domain. A verified domain has its
+    isVerified property set to true.
+  externalDocs:
+    description: Find more info here
+    url: https://learn.microsoft.com/graph/api/domain-promote?view=graph-rest-1.0
+  operationId: domains.domain.promote
+  responses:
+    2XX:
+      description: Success
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              value:
+                type: boolean
+                default: false
+                nullable: true
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: action
+parameters:
+  - name: domain-id
+    in: path
+    description: The unique identifier of domain
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: domain
