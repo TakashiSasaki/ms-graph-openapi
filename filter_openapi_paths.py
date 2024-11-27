@@ -2,13 +2,14 @@
 Script Name: filter_openapi_paths.py
 Author: Takashi Sasaki
 Created Date: 2024-11-26
-Version: 1.0
+Last Modified: 2024-11-27
+Version: 1.1
 
 Description:
 This script extracts and filters OpenAPI endpoint paths based on a given substring.
 The input OpenAPI document is in YAML format, and the matching paths are output
 as plain text to the standard output. The substring to search for is provided
-as a command-line argument.
+as a command-line argument. Case-insensitive and partial matches are supported.
 """
 
 import yaml
@@ -36,8 +37,11 @@ def filter_paths(openapi_file, substring):
             print("No `paths` section found in the OpenAPI document.", file=sys.stderr)
             return
 
-        # Filter paths containing the substring
-        matching_paths = [path for path in openapi['paths'] if substring in path]
+        # Convert substring to lowercase for case-insensitive matching
+        substring_lower = substring.lower()
+
+        # Filter paths containing the substring (case-insensitive)
+        matching_paths = [path for path in openapi['paths'] if substring_lower in path.lower()]
 
         # Output the matching paths
         for path in matching_paths:
