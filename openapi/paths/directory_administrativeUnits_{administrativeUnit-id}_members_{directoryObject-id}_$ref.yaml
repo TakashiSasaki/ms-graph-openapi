@@ -1,0 +1,42 @@
+description: Provides operations to manage the collection of directory entities.
+delete:
+  tags:
+    - directory.administrativeUnit
+  summary: Remove a member
+  description: >-
+    Use this API to remove a member (user, group, or device) from an
+    administrative unit.
+  externalDocs:
+    description: Find more info here
+    url: >-
+      https://learn.microsoft.com/graph/api/administrativeunit-delete-members?view=graph-rest-1.0
+  operationId: directory.administrativeUnits.members.DeleteRefDirectoryObject
+  parameters:
+    - name: If-Match
+      in: header
+      description: ETag
+      schema:
+        type: string
+  responses:
+    '204':
+      description: Success
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: operation
+parameters:
+  - name: administrativeUnit-id
+    in: path
+    description: The unique identifier of administrativeUnit
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: administrativeUnit
+  - name: directoryObject-id
+    in: path
+    description: The unique identifier of directoryObject
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: directoryObject

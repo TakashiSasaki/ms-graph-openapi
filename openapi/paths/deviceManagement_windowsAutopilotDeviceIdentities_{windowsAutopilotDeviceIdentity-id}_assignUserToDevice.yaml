@@ -1,0 +1,42 @@
+description: Provides operations to call the assignUserToDevice method.
+post:
+  tags:
+    - deviceManagement.windowsAutopilotDeviceIdentity
+  summary: Invoke action assignUserToDevice
+  description: Assigns user to Autopilot devices.
+  externalDocs:
+    description: Find more info here
+    url: >-
+      https://learn.microsoft.com/graph/api/intune-enrollment-windowsautopilotdeviceidentity-assignusertodevice?view=graph-rest-1.0
+  operationId: >-
+    deviceManagement.windowsAutopilotDeviceIdentities.windowsAutopilotDeviceIdentity.assignUserToDevice
+  requestBody:
+    description: Action parameters
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            userPrincipalName:
+              type: string
+              nullable: true
+            addressableUserName:
+              type: string
+              nullable: true
+    required: true
+  responses:
+    '204':
+      description: Success
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: action
+parameters:
+  - name: windowsAutopilotDeviceIdentity-id
+    in: path
+    description: The unique identifier of windowsAutopilotDeviceIdentity
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: windowsAutopilotDeviceIdentity

@@ -1,0 +1,16 @@
+description: Provides operations to count the resources in the collection.
+get:
+  tags:
+    - deviceManagement.userExperienceAnalyticsMetricHistory
+  summary: Get the number of the resource
+  operationId: deviceManagement.userExperienceAnalyticsMetricHistory.GetCount-6671
+  parameters:
+    - $ref: ..\components\parameters\search.yaml
+    - $ref: ..\components\parameters\filter.yaml
+  responses:
+    2XX:
+      $ref: ..\components\responses\ODataCountResponse.yaml
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml

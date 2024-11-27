@@ -1,0 +1,112 @@
+description: Provides operations to manage the collection of device entities.
+get:
+  tags:
+    - devices.directoryObject
+  summary: List registeredUsers
+  description: >-
+    Retrieve a list of users that are registered users of the device. For cloud
+    joined devices and registered personal devices, registered users are set to
+    the same value as registered owners at the time of registration.
+  externalDocs:
+    description: Find more info here
+    url: >-
+      https://learn.microsoft.com/graph/api/device-list-registeredusers?view=graph-rest-1.0
+  operationId: devices.ListRefRegisteredUsers
+  parameters:
+    - name: ConsistencyLevel
+      in: header
+      description: >-
+        Indicates the requested consistency level. Documentation URL:
+        https://docs.microsoft.com/graph/aad-advanced-queries
+      schema:
+        type: string
+      examples:
+        example-1:
+          description: >-
+            $search and $count queries require the client to set the
+            ConsistencyLevel HTTP header to 'eventual'.
+          value: eventual
+    - $ref: ..\components\parameters\top.yaml
+    - $ref: ..\components\parameters\skip.yaml
+    - $ref: ..\components\parameters\search.yaml
+    - $ref: ..\components\parameters\filter.yaml
+    - $ref: ..\components\parameters\count.yaml
+    - name: $orderby
+      in: query
+      description: Order items by property values
+      style: form
+      explode: false
+      schema:
+        uniqueItems: true
+        type: array
+        items:
+          type: string
+  responses:
+    2XX:
+      $ref: ..\components\responses\StringCollectionResponse.yaml
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-pageable:
+    nextLinkName: '@odata.nextLink'
+    operationName: listMore
+  x-ms-docs-operation-type: operation
+post:
+  tags:
+    - devices.directoryObject
+  summary: Create registeredUser
+  description: Add a registered user for the device.
+  externalDocs:
+    description: Find more info here
+    url: >-
+      https://learn.microsoft.com/graph/api/device-post-registeredusers?view=graph-rest-1.0
+  operationId: devices.CreateRefRegisteredUsers
+  requestBody:
+    $ref: ..\components\requestBodies\refPostBody.yaml
+  responses:
+    '204':
+      description: Success
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: operation
+delete:
+  tags:
+    - devices.directoryObject
+  summary: Delete registeredUser
+  description: Remove a user as a registered user of the device.
+  externalDocs:
+    description: Find more info here
+    url: >-
+      https://learn.microsoft.com/graph/api/device-delete-registeredusers?view=graph-rest-1.0
+  operationId: devices.DeleteRefRegisteredUsers
+  parameters:
+    - name: If-Match
+      in: header
+      description: ETag
+      schema:
+        type: string
+    - name: '@id'
+      in: query
+      description: The delete Uri
+      required: true
+      schema:
+        type: string
+  responses:
+    '204':
+      description: Success
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: operation
+parameters:
+  - name: device-id
+    in: path
+    description: The unique identifier of device
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: device

@@ -1,0 +1,44 @@
+description: Provides operations to call the getAuditActivityTypes method.
+get:
+  tags:
+    - deviceManagement.virtualEndpoint
+  summary: Invoke function getAuditActivityTypes
+  description: Get audit activity types by tenant ID.
+  externalDocs:
+    description: Find more info here
+    url: >-
+      https://learn.microsoft.com/graph/api/cloudpcauditevent-getauditactivitytypes?view=graph-rest-1.0
+  operationId: deviceManagement.virtualEndpoint.auditEvents.getAuditActivityTypes
+  parameters:
+    - $ref: ..\components\parameters\top.yaml
+    - $ref: ..\components\parameters\skip.yaml
+    - $ref: ..\components\parameters\search.yaml
+    - $ref: ..\components\parameters\filter.yaml
+    - $ref: ..\components\parameters\count.yaml
+  responses:
+    2XX:
+      description: Success
+      content:
+        application/json:
+          schema:
+            type: object
+            allOf:
+              - $ref: >-
+                  ..\components\schemas\BaseCollectionPaginationCountResponse.yaml
+              - type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      type: string
+                      nullable: true
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: function
+  x-ms-pageable:
+    nextLinkName: '@odata.nextLink'
+    operationName: listMore
+x-ms-docs-grouped-path:
+  - /deviceManagement/auditEvents/getAuditActivityTypes(category='{category}')

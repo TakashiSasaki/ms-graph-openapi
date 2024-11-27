@@ -1,0 +1,54 @@
+description: Casts the previous resource to group.
+get:
+  tags:
+    - directory.directoryObject
+  summary: List deletedItems (directory objects)
+  description: >-
+    Retrieve a list of recently deleted directory objects. Currently, deleted
+    items functionality is only supported for the application, servicePrincipal,
+    group, administrative unit, and user resources.
+  externalDocs:
+    description: Find more info here
+    url: >-
+      https://learn.microsoft.com/graph/api/directory-deleteditems-list?view=graph-rest-1.0
+  operationId: directory.GetDeletedItems.AsGroup
+  parameters:
+    - name: $select
+      in: query
+      description: Select properties to be returned
+      style: form
+      explode: false
+      schema:
+        uniqueItems: true
+        type: array
+        items:
+          type: string
+    - name: $expand
+      in: query
+      description: Expand related entities
+      style: form
+      explode: false
+      schema:
+        uniqueItems: true
+        type: array
+        items:
+          type: string
+  responses:
+    2XX:
+      description: Entity result.
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\microsoft.graph.group.yaml
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+parameters:
+  - name: directoryObject-id
+    in: path
+    description: The unique identifier of directoryObject
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: directoryObject

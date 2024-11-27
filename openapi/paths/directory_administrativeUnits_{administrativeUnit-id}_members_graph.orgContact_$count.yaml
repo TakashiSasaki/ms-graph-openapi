@@ -1,0 +1,37 @@
+description: Provides operations to count the resources in the collection.
+get:
+  tags:
+    - directory.administrativeUnit
+  summary: Get the number of the resource
+  operationId: directory.administrativeUnits.Members.GetCount.AsOrgContact-7392
+  parameters:
+    - name: ConsistencyLevel
+      in: header
+      description: >-
+        Indicates the requested consistency level. Documentation URL:
+        https://docs.microsoft.com/graph/aad-advanced-queries
+      schema:
+        type: string
+      examples:
+        example-1:
+          description: >-
+            $search and $count queries require the client to set the
+            ConsistencyLevel HTTP header to 'eventual'.
+          value: eventual
+    - $ref: ..\components\parameters\search.yaml
+    - $ref: ..\components\parameters\filter.yaml
+  responses:
+    2XX:
+      $ref: ..\components\responses\ODataCountResponse.yaml
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+parameters:
+  - name: administrativeUnit-id
+    in: path
+    description: The unique identifier of administrativeUnit
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: administrativeUnit
