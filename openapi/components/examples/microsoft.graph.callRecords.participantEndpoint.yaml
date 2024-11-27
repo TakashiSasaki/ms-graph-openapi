@@ -1,0 +1,11 @@
+value:
+  associatedIdentity:
+    '@odata.type': microsoft.graph.identity
+  cpuCoresCount: '0'
+  cpuName: String
+  cpuProcessorSpeedInMhz: '0'
+  feedback:
+    '@odata.type': microsoft.graph.callRecords.userFeedback
+  identity:
+    '@odata.type': microsoft.graph.identitySet
+  name: String

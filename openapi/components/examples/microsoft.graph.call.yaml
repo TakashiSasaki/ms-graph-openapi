@@ -1,0 +1,44 @@
+value:
+  audioRoutingGroups:
+    - '@odata.type': microsoft.graph.audioRoutingGroup
+  callbackUri: String
+  callChainId: String
+  callOptions:
+    '@odata.type': microsoft.graph.callOptions
+  callRoutes:
+    - '@odata.type': microsoft.graph.callRoute
+  chatInfo:
+    '@odata.type': microsoft.graph.chatInfo
+  contentSharingSessions:
+    - '@odata.type': microsoft.graph.contentSharingSession
+  direction:
+    '@odata.type': microsoft.graph.callDirection
+  incomingContext:
+    '@odata.type': microsoft.graph.incomingContext
+  mediaConfig:
+    '@odata.type': microsoft.graph.mediaConfig
+  mediaState:
+    '@odata.type': microsoft.graph.callMediaState
+  meetingInfo:
+    '@odata.type': microsoft.graph.meetingInfo
+  myParticipantId: String
+  operations:
+    - '@odata.type': microsoft.graph.commsOperation
+  participants:
+    - '@odata.type': microsoft.graph.participant
+  requestedModalities:
+    - '@odata.type': microsoft.graph.modality
+  resultInfo:
+    '@odata.type': microsoft.graph.resultInfo
+  source:
+    '@odata.type': microsoft.graph.participantInfo
+  state:
+    '@odata.type': microsoft.graph.callState
+  subject: String
+  targets:
+    - '@odata.type': microsoft.graph.invitationParticipantInfo
+  tenantId: String
+  toneInfo:
+    '@odata.type': microsoft.graph.toneInfo
+  transcription:
+    '@odata.type': microsoft.graph.callTranscriptionInfo

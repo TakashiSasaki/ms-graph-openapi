@@ -1,0 +1,13 @@
+value:
+  allowedCombinations:
+    - '@odata.type': microsoft.graph.authenticationMethodModes
+  combinationConfigurations:
+    - '@odata.type': microsoft.graph.authenticationCombinationConfiguration
+  createdDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  description: String
+  displayName: String
+  modifiedDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  policyType:
+    '@odata.type': microsoft.graph.authenticationStrengthPolicyType
+  requirementsSatisfied:
+    '@odata.type': microsoft.graph.authenticationStrengthRequirements

@@ -1,0 +1,7 @@
+value:
+  azureADAppId: String
+  communicationServiceId: String
+  platform:
+    '@odata.type': microsoft.graph.callRecords.clientPlatform
+  productFamily:
+    '@odata.type': microsoft.graph.callRecords.productFamily

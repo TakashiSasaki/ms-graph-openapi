@@ -1,0 +1,32 @@
+value:
+  address:
+    '@odata.type': microsoft.graph.physicalAddress
+  appointments:
+    - '@odata.type': microsoft.graph.bookingAppointment
+  bookingPageSettings:
+    '@odata.type': microsoft.graph.bookingPageSettings
+  businessHours:
+    - '@odata.type': microsoft.graph.bookingWorkHours
+  businessType: String
+  calendarView:
+    - '@odata.type': microsoft.graph.bookingAppointment
+  createdDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  customers:
+    - '@odata.type': microsoft.graph.bookingCustomerBase
+  customQuestions:
+    - '@odata.type': microsoft.graph.bookingCustomQuestion
+  defaultCurrencyIso: String
+  displayName: String
+  email: String
+  isPublished: 'true'
+  languageTag: String
+  lastUpdatedDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  phone: String
+  publicUrl: String
+  schedulingPolicy:
+    '@odata.type': microsoft.graph.bookingSchedulingPolicy
+  services:
+    - '@odata.type': microsoft.graph.bookingService
+  staffMembers:
+    - '@odata.type': microsoft.graph.bookingStaffMemberBase
+  webSiteUrl: String

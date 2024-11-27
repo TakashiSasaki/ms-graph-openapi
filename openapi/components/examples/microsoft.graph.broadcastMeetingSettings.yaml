@@ -1,0 +1,9 @@
+value:
+  allowedAudience:
+    '@odata.type': microsoft.graph.broadcastMeetingAudience
+  captions:
+    '@odata.type': microsoft.graph.broadcastMeetingCaptionSettings
+  isAttendeeReportEnabled: 'true'
+  isQuestionAndAnswerEnabled: 'true'
+  isRecordingEnabled: 'true'
+  isVideoOnDemandEnabled: 'true'

@@ -1,0 +1,5 @@
+value:
+  day:
+    '@odata.type': microsoft.graph.dayOfWeek
+  timeSlots:
+    - '@odata.type': microsoft.graph.bookingWorkTimeSlot

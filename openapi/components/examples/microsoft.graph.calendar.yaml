@@ -1,0 +1,28 @@
+value:
+  allowedOnlineMeetingProviders:
+    - '@odata.type': microsoft.graph.onlineMeetingProviderType
+  calendarPermissions:
+    - '@odata.type': microsoft.graph.calendarPermission
+  calendarView:
+    - '@odata.type': microsoft.graph.event
+  canEdit: 'true'
+  canShare: 'true'
+  canViewPrivateItems: 'true'
+  changeKey: String
+  color:
+    '@odata.type': microsoft.graph.calendarColor
+  defaultOnlineMeetingProvider:
+    '@odata.type': microsoft.graph.onlineMeetingProviderType
+  events:
+    - '@odata.type': microsoft.graph.event
+  hexColor: String
+  isDefaultCalendar: 'true'
+  isRemovable: 'true'
+  isTallyingResponses: 'true'
+  multiValueExtendedProperties:
+    - '@odata.type': microsoft.graph.multiValueLegacyExtendedProperty
+  name: String
+  owner:
+    '@odata.type': microsoft.graph.emailAddress
+  singleValueExtendedProperties:
+    - '@odata.type': microsoft.graph.singleValueLegacyExtendedProperty

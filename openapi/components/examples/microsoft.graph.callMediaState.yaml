@@ -1,0 +1,3 @@
+value:
+  audio:
+    '@odata.type': microsoft.graph.mediaState

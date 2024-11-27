@@ -1,0 +1,3 @@
+value:
+  recoveryKeys:
+    - '@odata.type': microsoft.graph.bitlockerRecoveryKey

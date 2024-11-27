@@ -1,0 +1,4 @@
+value:
+  hideBotAfterEscalation: 'true'
+  isContentSharingNotificationEnabled: 'true'
+  isDeltaRosterEnabled: 'true'

@@ -1,0 +1,4 @@
+value:
+  isRegistrationRequired: 'true'
+  targetType:
+    '@odata.type': microsoft.graph.authenticationMethodTargetType

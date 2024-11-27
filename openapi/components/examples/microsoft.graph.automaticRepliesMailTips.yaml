@@ -1,0 +1,8 @@
+value:
+  message: String
+  messageLanguage:
+    '@odata.type': microsoft.graph.localeInfo
+  scheduledEndTime:
+    '@odata.type': microsoft.graph.dateTimeTimeZone
+  scheduledStartTime:
+    '@odata.type': microsoft.graph.dateTimeTimeZone

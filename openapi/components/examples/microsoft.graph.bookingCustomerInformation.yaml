@@ -1,0 +1,11 @@
+value:
+  customerId: String
+  customQuestionAnswers:
+    - '@odata.type': microsoft.graph.bookingQuestionAnswer
+  emailAddress: String
+  location:
+    '@odata.type': microsoft.graph.location
+  name: String
+  notes: String
+  phone: String
+  timeZone: String

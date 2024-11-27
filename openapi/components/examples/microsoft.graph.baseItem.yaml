@@ -1,0 +1,17 @@
+value:
+  createdBy:
+    '@odata.type': microsoft.graph.identitySet
+  createdByUser:
+    '@odata.type': microsoft.graph.user
+  createdDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  description: String
+  eTag: String
+  lastModifiedBy:
+    '@odata.type': microsoft.graph.identitySet
+  lastModifiedByUser:
+    '@odata.type': microsoft.graph.user
+  lastModifiedDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  name: String
+  parentReference:
+    '@odata.type': microsoft.graph.itemReference
+  webUrl: String

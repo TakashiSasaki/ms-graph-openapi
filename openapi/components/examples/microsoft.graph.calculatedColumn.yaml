@@ -1,0 +1,4 @@
+value:
+  format: String
+  formula: String
+  outputType: String

@@ -1,0 +1,40 @@
+value:
+  additionalInformation: String
+  anonymousJoinWebUrl: String
+  appointmentLabel: String
+  createdDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  customerEmailAddress: String
+  customerName: String
+  customerNotes: String
+  customerPhone: String
+  customers:
+    - '@odata.type': microsoft.graph.bookingCustomerInformationBase
+  customerTimeZone: String
+  duration: Duration
+  endDateTime:
+    '@odata.type': microsoft.graph.dateTimeTimeZone
+  filledAttendeesCount: '0'
+  isCustomerAllowedToManageBooking: 'true'
+  isLocationOnline: 'true'
+  joinWebUrl: String
+  lastUpdatedDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  maximumAttendeesCount: '0'
+  optOutOfCustomerEmail: 'true'
+  postBuffer: Duration
+  preBuffer: Duration
+  price: '0'
+  priceType:
+    '@odata.type': microsoft.graph.bookingPriceType
+  reminders:
+    - '@odata.type': microsoft.graph.bookingReminder
+  selfServiceAppointmentId: String
+  serviceId: String
+  serviceLocation:
+    '@odata.type': microsoft.graph.location
+  serviceName: String
+  serviceNotes: String
+  smsNotificationsEnabled: 'true'
+  staffMemberIds:
+    - String
+  startDateTime:
+    '@odata.type': microsoft.graph.dateTimeTimeZone

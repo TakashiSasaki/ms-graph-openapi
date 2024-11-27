@@ -1,0 +1,6 @@
+value:
+  pageLayout:
+    '@odata.type': microsoft.graph.pageLayoutType
+  publishingState:
+    '@odata.type': microsoft.graph.publicationFacet
+  title: String

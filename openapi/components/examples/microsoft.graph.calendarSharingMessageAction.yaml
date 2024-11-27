@@ -1,0 +1,7 @@
+value:
+  action:
+    '@odata.type': microsoft.graph.calendarSharingAction
+  actionType:
+    '@odata.type': microsoft.graph.calendarSharingActionType
+  importance:
+    '@odata.type': microsoft.graph.calendarSharingActionImportance

@@ -1,0 +1,3 @@
+value:
+  userRegistrationDetails:
+    - '@odata.type': microsoft.graph.userRegistrationDetails

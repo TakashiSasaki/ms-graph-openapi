@@ -1,0 +1,3 @@
+value:
+  userAgent:
+    '@odata.type': microsoft.graph.callRecords.userAgent

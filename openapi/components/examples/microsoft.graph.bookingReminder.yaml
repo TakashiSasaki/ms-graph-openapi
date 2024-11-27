@@ -1,0 +1,5 @@
+value:
+  message: String
+  offset: Duration
+  recipients:
+    '@odata.type': microsoft.graph.bookingReminderRecipients

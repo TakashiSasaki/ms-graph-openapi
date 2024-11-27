@@ -1,0 +1,11 @@
+value:
+  callId: String
+  callRecordingDisplayName: String
+  callRecordingDuration: Duration
+  callRecordingStatus:
+    '@odata.type': microsoft.graph.callRecordingStatus
+  callRecordingUrl: String
+  initiator:
+    '@odata.type': microsoft.graph.identitySet
+  meetingOrganizer:
+    '@odata.type': microsoft.graph.identitySet

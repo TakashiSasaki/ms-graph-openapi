@@ -1,0 +1,5 @@
+value:
+  mfa:
+    - '@odata.type': microsoft.graph.conditionalAccessPolicy
+  none:
+    - '@odata.type': microsoft.graph.conditionalAccessPolicy

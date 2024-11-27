@@ -1,0 +1,7 @@
+value:
+  authenticationMethodModes:
+    - '@odata.type': microsoft.graph.authenticationMethodModeDetail
+  combinations:
+    - '@odata.type': microsoft.graph.authenticationMethodModes
+  policies:
+    - '@odata.type': microsoft.graph.authenticationStrengthPolicy

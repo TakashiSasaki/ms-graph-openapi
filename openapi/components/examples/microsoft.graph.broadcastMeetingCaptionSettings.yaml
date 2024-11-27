@@ -1,0 +1,5 @@
+value:
+  isCaptionEnabled: 'true'
+  spokenLanguage: String
+  translationLanguages:
+    - String

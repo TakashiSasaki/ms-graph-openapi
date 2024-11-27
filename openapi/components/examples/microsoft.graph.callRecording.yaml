@@ -1,0 +1,10 @@
+value:
+  callId: String
+  content: Stream
+  contentCorrelationId: String
+  createdDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  endDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  meetingId: String
+  meetingOrganizer:
+    '@odata.type': microsoft.graph.identitySet
+  recordingContentUrl: String
