@@ -1,0 +1,94 @@
+description: Provides operations to manage the collection of groupSetting entities.
+get:
+  tags:
+    - groupSettings.groupSetting
+  summary: List settings
+  description: Retrieve a list of tenant-level or group-specific group settings objects.
+  externalDocs:
+    description: Find more info here
+    url: >-
+      https://learn.microsoft.com/graph/api/group-list-settings?view=graph-rest-1.0
+  operationId: groupSettings.groupSetting.ListGroupSetting
+  parameters:
+    - $ref: ..\components\parameters\top.yaml
+    - $ref: ..\components\parameters\skip.yaml
+    - $ref: ..\components\parameters\search.yaml
+    - $ref: ..\components\parameters\filter.yaml
+    - $ref: ..\components\parameters\count.yaml
+    - name: $orderby
+      in: query
+      description: Order items by property values
+      style: form
+      explode: false
+      schema:
+        uniqueItems: true
+        type: array
+        items:
+          type: string
+    - name: $select
+      in: query
+      description: Select properties to be returned
+      style: form
+      explode: false
+      schema:
+        uniqueItems: true
+        type: array
+        items:
+          type: string
+    - name: $expand
+      in: query
+      description: Expand related entities
+      style: form
+      explode: false
+      schema:
+        uniqueItems: true
+        type: array
+        items:
+          type: string
+  responses:
+    2XX:
+      $ref: >-
+        ..\components\responses\microsoft.graph.groupSettingCollectionResponse.yaml
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-pageable:
+    nextLinkName: '@odata.nextLink'
+    operationName: listMore
+  x-ms-docs-operation-type: operation
+post:
+  tags:
+    - groupSettings.groupSetting
+  summary: Create settings
+  description: >-
+    Create a new setting based on the templates available in
+    groupSettingTemplates. These settings can be at the tenant-level or at the
+    group level. Group settings apply to only Microsoft 365 groups. The template
+    named Group.Unified can be used to configure tenant-wide Microsoft 365 group
+    settings, while the template named Group.Unified.Guest can be used to
+    configure group-specific settings.
+  externalDocs:
+    description: Find more info here
+    url: >-
+      https://learn.microsoft.com/graph/api/group-post-settings?view=graph-rest-1.0
+  operationId: groupSettings.groupSetting.CreateGroupSetting
+  requestBody:
+    description: New entity
+    content:
+      application/json:
+        schema:
+          $ref: ..\components\schemas\microsoft.graph.groupSetting.yaml
+    required: true
+  responses:
+    2XX:
+      description: Created entity
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\microsoft.graph.groupSetting.yaml
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: operation
