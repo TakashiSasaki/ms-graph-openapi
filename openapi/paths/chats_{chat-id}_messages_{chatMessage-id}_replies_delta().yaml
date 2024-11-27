@@ -1,0 +1,100 @@
+description: Provides operations to call the delta method.
+get:
+  tags:
+    - chats.chatMessage
+  summary: Invoke function delta
+  description: >-
+    Get the list of messages from all chats in which a user is a participant,
+    including one-on-one chats, group chats, and meeting chats. When you use
+    delta query, you can get new or updated messages. To get the replies for a
+    message, use the list message replies or the get message reply operations. A
+    GET request with the delta function returns one of the following: State
+    tokens are opaque to the client. To proceed with a round of change tracking,
+    copy and apply the @odata.nextLink or @odata.deltaLink URL returned from the
+    last GET request to the next delta function call. An @odata.deltaLink
+    returned in a response signifies that the current round of change tracking
+    is complete. You can save and use the @odata.deltaLink URL when you begin to
+    retrieve more changes (messages changed or posted after you acquire
+    @odata.deltaLink). For more information, see the delta query documentation.
+  externalDocs:
+    description: Find more info here
+    url: >-
+      https://learn.microsoft.com/graph/api/chatmessage-delta?view=graph-rest-1.0
+  operationId: chats.chat.messages.chatMessage.replies.delta
+  parameters:
+    - $ref: ..\components\parameters\top.yaml
+    - $ref: ..\components\parameters\skip.yaml
+    - $ref: ..\components\parameters\search.yaml
+    - $ref: ..\components\parameters\filter.yaml
+    - $ref: ..\components\parameters\count.yaml
+    - name: $select
+      in: query
+      description: Select properties to be returned
+      style: form
+      explode: false
+      schema:
+        uniqueItems: true
+        type: array
+        items:
+          type: string
+    - name: $orderby
+      in: query
+      description: Order items by property values
+      style: form
+      explode: false
+      schema:
+        uniqueItems: true
+        type: array
+        items:
+          type: string
+    - name: $expand
+      in: query
+      description: Expand related entities
+      style: form
+      explode: false
+      schema:
+        uniqueItems: true
+        type: array
+        items:
+          type: string
+  responses:
+    2XX:
+      description: Success
+      content:
+        application/json:
+          schema:
+            title: Collection of chatMessage
+            type: object
+            allOf:
+              - $ref: ..\components\schemas\BaseDeltaFunctionResponse.yaml
+              - type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: ..\components\schemas\microsoft.graph.chatMessage.yaml
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: function
+  x-ms-pageable:
+    nextLinkName: '@odata.nextLink'
+    operationName: listMore
+parameters:
+  - name: chat-id
+    in: path
+    description: The unique identifier of chat
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: chat
+  - name: chatMessage-id
+    in: path
+    description: The unique identifier of chatMessage
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: chatMessage
+x-ms-docs-grouped-path:
+  - /chats/{chat-id}/messages/delta()

@@ -1,0 +1,50 @@
+description: Provides operations to call the playPrompt method.
+post:
+  tags:
+    - communications.call
+  summary: Invoke action playPrompt
+  description: >-
+    Play a prompt in the call. For more information about how to handle
+    operations, see commsOperation
+  externalDocs:
+    description: Find more info here
+    url: https://learn.microsoft.com/graph/api/call-playprompt?view=graph-rest-1.0
+  operationId: communications.calls.call.playPrompt
+  requestBody:
+    description: Action parameters
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            prompts:
+              type: array
+              items:
+                $ref: ..\components\schemas\microsoft.graph.prompt.yaml
+            clientContext:
+              type: string
+              nullable: true
+    required: true
+  responses:
+    2XX:
+      description: Success
+      content:
+        application/json:
+          schema:
+            anyOf:
+              - $ref: ..\components\schemas\microsoft.graph.playPromptOperation.yaml
+              - type: object
+                nullable: true
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: action
+parameters:
+  - name: call-id
+    in: path
+    description: The unique identifier of call
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: call

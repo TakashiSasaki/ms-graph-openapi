@@ -1,0 +1,114 @@
+description: >-
+  Provides operations to manage the audioRoutingGroups property of the
+  microsoft.graph.call entity.
+get:
+  tags:
+    - communications.call
+  summary: Get audioRoutingGroup
+  description: Retrieve the properties and relationships of an audioRoutingGroup object.
+  externalDocs:
+    description: Find more info here
+    url: >-
+      https://learn.microsoft.com/graph/api/audioroutinggroup-get?view=graph-rest-1.0
+  operationId: communications.calls.GetAudioRoutingGroups
+  parameters:
+    - name: $select
+      in: query
+      description: Select properties to be returned
+      style: form
+      explode: false
+      schema:
+        uniqueItems: true
+        type: array
+        items:
+          type: string
+    - name: $expand
+      in: query
+      description: Expand related entities
+      style: form
+      explode: false
+      schema:
+        uniqueItems: true
+        type: array
+        items:
+          type: string
+  responses:
+    2XX:
+      description: Retrieved navigation property
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\microsoft.graph.audioRoutingGroup.yaml
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: operation
+patch:
+  tags:
+    - communications.call
+  summary: Update audioRoutingGroup
+  description: Modify sources and receivers of an audioRoutingGroup.
+  externalDocs:
+    description: Find more info here
+    url: >-
+      https://learn.microsoft.com/graph/api/audioroutinggroup-update?view=graph-rest-1.0
+  operationId: communications.calls.UpdateAudioRoutingGroups
+  requestBody:
+    description: New navigation property values
+    content:
+      application/json:
+        schema:
+          $ref: ..\components\schemas\microsoft.graph.audioRoutingGroup.yaml
+    required: true
+  responses:
+    2XX:
+      description: Success
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\microsoft.graph.audioRoutingGroup.yaml
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: operation
+delete:
+  tags:
+    - communications.call
+  summary: Delete audioRoutingGroup
+  description: Delete the specified audioRoutingGroup.
+  externalDocs:
+    description: Find more info here
+    url: >-
+      https://learn.microsoft.com/graph/api/audioroutinggroup-delete?view=graph-rest-1.0
+  operationId: communications.calls.DeleteAudioRoutingGroups
+  parameters:
+    - name: If-Match
+      in: header
+      description: ETag
+      schema:
+        type: string
+  responses:
+    '204':
+      description: Success
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: operation
+parameters:
+  - name: call-id
+    in: path
+    description: The unique identifier of call
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: call
+  - name: audioRoutingGroup-id
+    in: path
+    description: The unique identifier of audioRoutingGroup
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: audioRoutingGroup

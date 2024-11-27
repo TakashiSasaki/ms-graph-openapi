@@ -1,0 +1,93 @@
+description: Provides operations to manage the collection of externalConnection entities.
+get:
+  tags:
+    - connections.externalConnection
+  summary: Get entity from connections by key
+  operationId: connections.externalConnection.GetExternalConnection
+  parameters:
+    - name: $select
+      in: query
+      description: Select properties to be returned
+      style: form
+      explode: false
+      schema:
+        uniqueItems: true
+        type: array
+        items:
+          type: string
+    - name: $expand
+      in: query
+      description: Expand related entities
+      style: form
+      explode: false
+      schema:
+        uniqueItems: true
+        type: array
+        items:
+          type: string
+  responses:
+    2XX:
+      description: Retrieved entity
+      content:
+        application/json:
+          schema:
+            $ref: >-
+              ..\components\schemas\microsoft.graph.externalConnectors.externalConnection.yaml
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: operation
+patch:
+  tags:
+    - connections.externalConnection
+  summary: Update entity in connections
+  operationId: connections.externalConnection.UpdateExternalConnection
+  requestBody:
+    description: New property values
+    content:
+      application/json:
+        schema:
+          $ref: >-
+            ..\components\schemas\microsoft.graph.externalConnectors.externalConnection.yaml
+    required: true
+  responses:
+    2XX:
+      description: Success
+      content:
+        application/json:
+          schema:
+            $ref: >-
+              ..\components\schemas\microsoft.graph.externalConnectors.externalConnection.yaml
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: operation
+delete:
+  tags:
+    - connections.externalConnection
+  summary: Delete entity from connections
+  operationId: connections.externalConnection.DeleteExternalConnection
+  parameters:
+    - name: If-Match
+      in: header
+      description: ETag
+      schema:
+        type: string
+  responses:
+    '204':
+      description: Success
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: operation
+parameters:
+  - name: externalConnection-id
+    in: path
+    description: The unique identifier of externalConnection
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: externalConnection

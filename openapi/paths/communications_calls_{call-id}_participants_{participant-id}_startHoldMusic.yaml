@@ -1,0 +1,58 @@
+description: Provides operations to call the startHoldMusic method.
+post:
+  tags:
+    - communications.call
+  summary: Invoke action startHoldMusic
+  description: Put a participant on hold and play music in the background.
+  externalDocs:
+    description: Find more info here
+    url: >-
+      https://learn.microsoft.com/graph/api/participant-startholdmusic?view=graph-rest-1.0
+  operationId: communications.calls.call.participants.participant.startHoldMusic
+  requestBody:
+    description: Action parameters
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            customPrompt:
+              anyOf:
+                - $ref: ..\components\schemas\microsoft.graph.prompt.yaml
+                - type: object
+                  nullable: true
+            clientContext:
+              type: string
+              nullable: true
+    required: true
+  responses:
+    2XX:
+      description: Success
+      content:
+        application/json:
+          schema:
+            anyOf:
+              - $ref: >-
+                  ..\components\schemas\microsoft.graph.startHoldMusicOperation.yaml
+              - type: object
+                nullable: true
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: action
+parameters:
+  - name: call-id
+    in: path
+    description: The unique identifier of call
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: call
+  - name: participant-id
+    in: path
+    description: The unique identifier of participant
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: participant

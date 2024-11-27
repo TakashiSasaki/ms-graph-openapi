@@ -1,0 +1,72 @@
+description: >-
+  Provides operations to manage the tokenLifetimePolicies property of the
+  microsoft.graph.application entity.
+get:
+  tags:
+    - applications.tokenLifetimePolicy
+  summary: List assigned tokenLifetimePolicies
+  description: >-
+    List the tokenLifetimePolicy objects that are assigned to an application.
+    Only one object is returned in the collection because only one
+    tokenLifetimePolicy can be assigned to an application.
+  externalDocs:
+    description: Find more info here
+    url: >-
+      https://learn.microsoft.com/graph/api/application-list-tokenlifetimepolicies?view=graph-rest-1.0
+  operationId: applications.ListTokenLifetimePolicies
+  parameters:
+    - $ref: ..\components\parameters\top.yaml
+    - $ref: ..\components\parameters\skip.yaml
+    - $ref: ..\components\parameters\search.yaml
+    - $ref: ..\components\parameters\filter.yaml
+    - $ref: ..\components\parameters\count.yaml
+    - name: $orderby
+      in: query
+      description: Order items by property values
+      style: form
+      explode: false
+      schema:
+        uniqueItems: true
+        type: array
+        items:
+          type: string
+    - name: $select
+      in: query
+      description: Select properties to be returned
+      style: form
+      explode: false
+      schema:
+        uniqueItems: true
+        type: array
+        items:
+          type: string
+    - name: $expand
+      in: query
+      description: Expand related entities
+      style: form
+      explode: false
+      schema:
+        uniqueItems: true
+        type: array
+        items:
+          type: string
+  responses:
+    2XX:
+      $ref: >-
+        ..\components\responses\microsoft.graph.tokenLifetimePolicyCollectionResponse.yaml
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-pageable:
+    nextLinkName: '@odata.nextLink'
+    operationName: listMore
+  x-ms-docs-operation-type: operation
+parameters:
+  - name: application-id
+    in: path
+    description: The unique identifier of application
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: application

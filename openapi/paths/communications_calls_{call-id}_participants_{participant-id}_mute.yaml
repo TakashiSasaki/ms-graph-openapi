@@ -1,0 +1,58 @@
+description: Provides operations to call the mute method.
+post:
+  tags:
+    - communications.call
+  summary: Invoke action mute
+  description: >-
+    Mute a specific participant in the call. This is a server mute, meaning that
+    the server will drop all audio packets for this participant, even if the
+    participant continues to stream audio. For more information about how to
+    handle mute operations, see muteParticipantOperation.
+  externalDocs:
+    description: Find more info here
+    url: https://learn.microsoft.com/graph/api/participant-mute?view=graph-rest-1.0
+  operationId: communications.calls.call.participants.participant.mute
+  requestBody:
+    description: Action parameters
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            clientContext:
+              type: string
+              nullable: true
+    required: true
+  responses:
+    2XX:
+      description: Success
+      content:
+        application/json:
+          schema:
+            anyOf:
+              - $ref: >-
+                  ..\components\schemas\microsoft.graph.muteParticipantOperation.yaml
+              - type: object
+                nullable: true
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: action
+parameters:
+  - name: call-id
+    in: path
+    description: The unique identifier of call
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: call
+  - name: participant-id
+    in: path
+    description: The unique identifier of participant
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: participant
+x-ms-docs-grouped-path:
+  - /communications/calls/{call-id}/mute

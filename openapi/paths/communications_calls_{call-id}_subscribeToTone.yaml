@@ -1,0 +1,48 @@
+description: Provides operations to call the subscribeToTone method.
+post:
+  tags:
+    - communications.call
+  summary: Invoke action subscribeToTone
+  description: >-
+    Subscribe to DTMF (dual-tone multi-frequency signaling) which allows you to
+    be notified when the user presses keys on a 'dialpad'.
+  externalDocs:
+    description: Find more info here
+    url: >-
+      https://learn.microsoft.com/graph/api/call-subscribetotone?view=graph-rest-1.0
+  operationId: communications.calls.call.subscribeToTone
+  requestBody:
+    description: Action parameters
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            clientContext:
+              type: string
+              nullable: true
+    required: true
+  responses:
+    2XX:
+      description: Success
+      content:
+        application/json:
+          schema:
+            anyOf:
+              - $ref: >-
+                  ..\components\schemas\microsoft.graph.subscribeToToneOperation.yaml
+              - type: object
+                nullable: true
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: action
+parameters:
+  - name: call-id
+    in: path
+    description: The unique identifier of call
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: call

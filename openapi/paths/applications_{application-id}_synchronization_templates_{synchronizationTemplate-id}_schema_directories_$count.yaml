@@ -1,0 +1,31 @@
+description: Provides operations to count the resources in the collection.
+get:
+  tags:
+    - applications.synchronization
+  summary: Get the number of the resource
+  operationId: applications.synchronization.templates.schema.directories.GetCount-27bc
+  parameters:
+    - $ref: ..\components\parameters\search.yaml
+    - $ref: ..\components\parameters\filter.yaml
+  responses:
+    2XX:
+      $ref: ..\components\responses\ODataCountResponse.yaml
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+parameters:
+  - name: application-id
+    in: path
+    description: The unique identifier of application
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: application
+  - name: synchronizationTemplate-id
+    in: path
+    description: The unique identifier of synchronizationTemplate
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: synchronizationTemplate

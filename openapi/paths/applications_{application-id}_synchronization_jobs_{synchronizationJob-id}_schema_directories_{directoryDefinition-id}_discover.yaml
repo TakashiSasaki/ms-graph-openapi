@@ -1,0 +1,52 @@
+description: Provides operations to call the discover method.
+post:
+  tags:
+    - applications.synchronization
+  summary: Invoke action discover
+  description: 'Discover the latest schema definition for provisioning to an application. '
+  externalDocs:
+    description: Find more info here
+    url: >-
+      https://learn.microsoft.com/graph/api/synchronization-directorydefinition-discover?view=graph-rest-1.0
+  operationId: >-
+    applications.application.synchronization.jobs.synchronizationJob.schema.directories.directoryDefinition.discover
+  responses:
+    2XX:
+      description: Success
+      content:
+        application/json:
+          schema:
+            anyOf:
+              - $ref: ..\components\schemas\microsoft.graph.directoryDefinition.yaml
+              - type: object
+                nullable: true
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: action
+parameters:
+  - name: application-id
+    in: path
+    description: The unique identifier of application
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: application
+  - name: synchronizationJob-id
+    in: path
+    description: The unique identifier of synchronizationJob
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: synchronizationJob
+  - name: directoryDefinition-id
+    in: path
+    description: The unique identifier of directoryDefinition
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: directoryDefinition
+x-ms-docs-grouped-path:
+  - >-
+    /applications/{application-id}/synchronization/templates/{synchronizationTemplate-id}/schema/directories/{directoryDefinition-id}/discover

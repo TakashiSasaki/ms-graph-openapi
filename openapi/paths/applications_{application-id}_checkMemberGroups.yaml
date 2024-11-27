@@ -1,0 +1,62 @@
+description: Provides operations to call the checkMemberGroups method.
+post:
+  tags:
+    - applications.application
+  summary: Invoke action checkMemberGroups
+  description: >-
+    Check for membership in a specified list of group IDs, and return from that
+    list those groups (identified by IDs) of which the specified user, group,
+    service principal, organizational contact, device, or directory object is a
+    member. This function is transitive. You can check up to a maximum of 20
+    groups per request. This function supports all groups provisioned in
+    Microsoft Entra ID. Because Microsoft 365 groups cannot contain other
+    groups, membership in a Microsoft 365 group is always direct.
+  externalDocs:
+    description: Find more info here
+    url: >-
+      https://learn.microsoft.com/graph/api/directoryobject-checkmembergroups?view=graph-rest-1.0
+  operationId: applications.application.checkMemberGroups
+  requestBody:
+    description: Action parameters
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            groupIds:
+              type: array
+              items:
+                type: string
+    required: true
+  responses:
+    2XX:
+      description: Success
+      content:
+        application/json:
+          schema:
+            type: object
+            allOf:
+              - $ref: >-
+                  ..\components\schemas\BaseCollectionPaginationCountResponse.yaml
+              - type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      type: string
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: action
+  x-ms-pageable:
+    nextLinkName: '@odata.nextLink'
+    operationName: listMore
+parameters:
+  - name: application-id
+    in: path
+    description: The unique identifier of application
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: application

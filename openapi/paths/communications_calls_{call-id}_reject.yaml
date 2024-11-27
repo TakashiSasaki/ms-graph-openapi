@@ -1,0 +1,49 @@
+description: Provides operations to call the reject method.
+post:
+  tags:
+    - communications.call
+  summary: Invoke action reject
+  description: >-
+    Enable a bot to reject an incoming call. The incoming call request can be an
+    invite from a participant in a group call or a peer-to-peer call. If an
+    invite to a group call is received, the notification will contain the
+    chatInfo and meetingInfo parameters. The bot is expected to answer or reject
+    the call before the call times out. The current timeout value is 15 seconds.
+    This API does not end existing calls that have already been answered. Use
+    delete call to end a call.
+  externalDocs:
+    description: Find more info here
+    url: https://learn.microsoft.com/graph/api/call-reject?view=graph-rest-1.0
+  operationId: communications.calls.call.reject
+  requestBody:
+    description: Action parameters
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            reason:
+              anyOf:
+                - $ref: ..\components\schemas\microsoft.graph.rejectReason.yaml
+                - type: object
+                  nullable: true
+            callbackUri:
+              type: string
+              nullable: true
+    required: true
+  responses:
+    '204':
+      description: Success
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: action
+parameters:
+  - name: call-id
+    in: path
+    description: The unique identifier of call
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: call

@@ -1,0 +1,43 @@
+description: Provides operations to call the softDelete method.
+post:
+  tags:
+    - chats.chatMessage
+  summary: Invoke action softDelete
+  description: Delete a single chatMessage or a chat message reply in a channel or a chat.
+  externalDocs:
+    description: Find more info here
+    url: >-
+      https://learn.microsoft.com/graph/api/chatmessage-softdelete?view=graph-rest-1.0
+  operationId: chats.chat.messages.chatMessage.replies.chatMessage.softDelete
+  responses:
+    '204':
+      description: Success
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: action
+parameters:
+  - name: chat-id
+    in: path
+    description: The unique identifier of chat
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: chat
+  - name: chatMessage-id
+    in: path
+    description: The unique identifier of chatMessage
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: chatMessage
+  - name: chatMessage-id1
+    in: path
+    description: The unique identifier of chatMessage
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: chatMessage
+x-ms-docs-grouped-path:
+  - /chats/{chat-id}/messages/{chatMessage-id}/softDelete

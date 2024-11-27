@@ -1,0 +1,102 @@
+description: Provides operations to manage the collection of application entities.
+get:
+  tags:
+    - applications.tokenLifetimePolicy
+  summary: List assigned tokenLifetimePolicies
+  description: >-
+    List the tokenLifetimePolicy objects that are assigned to an application.
+    Only one object is returned in the collection because only one
+    tokenLifetimePolicy can be assigned to an application.
+  externalDocs:
+    description: Find more info here
+    url: >-
+      https://learn.microsoft.com/graph/api/application-list-tokenlifetimepolicies?view=graph-rest-1.0
+  operationId: applications.ListRefTokenLifetimePolicies
+  parameters:
+    - $ref: ..\components\parameters\top.yaml
+    - $ref: ..\components\parameters\skip.yaml
+    - $ref: ..\components\parameters\search.yaml
+    - $ref: ..\components\parameters\filter.yaml
+    - $ref: ..\components\parameters\count.yaml
+    - name: $orderby
+      in: query
+      description: Order items by property values
+      style: form
+      explode: false
+      schema:
+        uniqueItems: true
+        type: array
+        items:
+          type: string
+  responses:
+    2XX:
+      $ref: ..\components\responses\StringCollectionResponse.yaml
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-pageable:
+    nextLinkName: '@odata.nextLink'
+    operationName: listMore
+  x-ms-docs-operation-type: operation
+post:
+  tags:
+    - applications.tokenLifetimePolicy
+  summary: Assign tokenLifetimePolicy
+  description: >-
+    Assign a tokenLifetimePolicy to an application. You can have multiple
+    tokenLifetimePolicy policies in a tenant but can assign only one
+    tokenLifetimePolicy per application.
+  externalDocs:
+    description: Find more info here
+    url: >-
+      https://learn.microsoft.com/graph/api/application-post-tokenlifetimepolicies?view=graph-rest-1.0
+  operationId: applications.CreateRefTokenLifetimePolicies
+  requestBody:
+    $ref: ..\components\requestBodies\refPostBody.yaml
+  responses:
+    '204':
+      description: Success
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: operation
+delete:
+  tags:
+    - applications.tokenLifetimePolicy
+  summary: Remove tokenLifetimePolicy
+  description: Remove a tokenLifetimePolicy from an application.
+  externalDocs:
+    description: Find more info here
+    url: >-
+      https://learn.microsoft.com/graph/api/application-delete-tokenlifetimepolicies?view=graph-rest-1.0
+  operationId: applications.DeleteRefTokenLifetimePolicies
+  parameters:
+    - name: If-Match
+      in: header
+      description: ETag
+      schema:
+        type: string
+    - name: '@id'
+      in: query
+      description: The delete Uri
+      required: true
+      schema:
+        type: string
+  responses:
+    '204':
+      description: Success
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: operation
+parameters:
+  - name: application-id
+    in: path
+    description: The unique identifier of application
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: application

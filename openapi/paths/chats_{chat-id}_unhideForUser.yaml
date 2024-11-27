@@ -1,0 +1,41 @@
+description: Provides operations to call the unhideForUser method.
+post:
+  tags:
+    - chats.chat
+  summary: Invoke action unhideForUser
+  description: Unhide a chat for a user.
+  externalDocs:
+    description: Find more info here
+    url: >-
+      https://learn.microsoft.com/graph/api/chat-unhideforuser?view=graph-rest-1.0
+  operationId: chats.chat.unhideForUser
+  requestBody:
+    description: Action parameters
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            user:
+              anyOf:
+                - $ref: >-
+                    ..\components\schemas\microsoft.graph.teamworkUserIdentity.yaml
+                - type: object
+                  nullable: true
+    required: true
+  responses:
+    '204':
+      description: Success
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: action
+parameters:
+  - name: chat-id
+    in: path
+    description: The unique identifier of chat
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: chat

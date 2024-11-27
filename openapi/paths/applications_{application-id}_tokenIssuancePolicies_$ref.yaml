@@ -1,0 +1,96 @@
+description: Provides operations to manage the collection of application entities.
+get:
+  tags:
+    - applications.tokenIssuancePolicy
+  summary: List assigned tokenIssuancePolicies
+  description: List the tokenIssuancePolicy objects that are assigned to an application.
+  externalDocs:
+    description: Find more info here
+    url: >-
+      https://learn.microsoft.com/graph/api/application-list-tokenissuancepolicies?view=graph-rest-1.0
+  operationId: applications.ListRefTokenIssuancePolicies
+  parameters:
+    - $ref: ..\components\parameters\top.yaml
+    - $ref: ..\components\parameters\skip.yaml
+    - $ref: ..\components\parameters\search.yaml
+    - $ref: ..\components\parameters\filter.yaml
+    - $ref: ..\components\parameters\count.yaml
+    - name: $orderby
+      in: query
+      description: Order items by property values
+      style: form
+      explode: false
+      schema:
+        uniqueItems: true
+        type: array
+        items:
+          type: string
+  responses:
+    2XX:
+      $ref: ..\components\responses\StringCollectionResponse.yaml
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-pageable:
+    nextLinkName: '@odata.nextLink'
+    operationName: listMore
+  x-ms-docs-operation-type: operation
+post:
+  tags:
+    - applications.tokenIssuancePolicy
+  summary: Assign tokenIssuancePolicy
+  description: Assign a tokenIssuancePolicy to an application.
+  externalDocs:
+    description: Find more info here
+    url: >-
+      https://learn.microsoft.com/graph/api/application-post-tokenissuancepolicies?view=graph-rest-1.0
+  operationId: applications.CreateRefTokenIssuancePolicies
+  requestBody:
+    $ref: ..\components\requestBodies\refPostBody.yaml
+  responses:
+    '204':
+      description: Success
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: operation
+delete:
+  tags:
+    - applications.tokenIssuancePolicy
+  summary: Remove tokenIssuancePolicy
+  description: Remove a tokenIssuancePolicy from an application.
+  externalDocs:
+    description: Find more info here
+    url: >-
+      https://learn.microsoft.com/graph/api/application-delete-tokenissuancepolicies?view=graph-rest-1.0
+  operationId: applications.DeleteRefTokenIssuancePolicies
+  parameters:
+    - name: If-Match
+      in: header
+      description: ETag
+      schema:
+        type: string
+    - name: '@id'
+      in: query
+      description: The delete Uri
+      required: true
+      schema:
+        type: string
+  responses:
+    '204':
+      description: Success
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: operation
+parameters:
+  - name: application-id
+    in: path
+    description: The unique identifier of application
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: application

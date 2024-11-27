@@ -1,0 +1,48 @@
+description: Provides operations to call the getPresencesByUserId method.
+post:
+  tags:
+    - communications.cloudCommunications
+  summary: Invoke action getPresencesByUserId
+  description: Get the presence information for multiple users.
+  externalDocs:
+    description: Find more info here
+    url: >-
+      https://learn.microsoft.com/graph/api/cloudcommunications-getpresencesbyuserid?view=graph-rest-1.0
+  operationId: communications.getPresencesByUserId
+  requestBody:
+    description: Action parameters
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            ids:
+              type: array
+              items:
+                type: string
+    required: true
+  responses:
+    2XX:
+      description: Success
+      content:
+        application/json:
+          schema:
+            title: Collection of presence
+            type: object
+            allOf:
+              - $ref: >-
+                  ..\components\schemas\BaseCollectionPaginationCountResponse.yaml
+              - type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: ..\components\schemas\microsoft.graph.presence.yaml
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: action
+  x-ms-pageable:
+    nextLinkName: '@odata.nextLink'
+    operationName: listMore

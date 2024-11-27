@@ -1,0 +1,78 @@
+description: Provides operations to manage the media for the cloudCommunications entity.
+get:
+  tags:
+    - communications.onlineMeeting
+  summary: Get content for the navigation property transcripts from communications
+  description: The content of the transcript. Read-only.
+  operationId: communications.onlineMeetings.GetTranscriptsContent
+  responses:
+    2XX:
+      description: Retrieved media content
+      content:
+        application/octet-stream:
+          schema:
+            type: string
+            format: binary
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+put:
+  tags:
+    - communications.onlineMeeting
+  summary: Update content for the navigation property transcripts in communications
+  description: The content of the transcript. Read-only.
+  operationId: communications.onlineMeetings.UpdateTranscriptsContent
+  requestBody:
+    description: New media content.
+    content:
+      application/octet-stream:
+        schema:
+          type: string
+          format: binary
+    required: true
+  responses:
+    2XX:
+      description: Success
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\microsoft.graph.callTranscript.yaml
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+delete:
+  tags:
+    - communications.onlineMeeting
+  summary: Delete content for the navigation property transcripts in communications
+  description: The content of the transcript. Read-only.
+  operationId: communications.onlineMeetings.DeleteTranscriptsContent
+  parameters:
+    - name: If-Match
+      in: header
+      description: ETag
+      schema:
+        type: string
+  responses:
+    '204':
+      description: Success
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+parameters:
+  - name: onlineMeeting-id
+    in: path
+    description: The unique identifier of onlineMeeting
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: onlineMeeting
+  - name: callTranscript-id
+    in: path
+    description: The unique identifier of callTranscript
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: callTranscript

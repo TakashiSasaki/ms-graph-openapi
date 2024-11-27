@@ -1,0 +1,42 @@
+description: Provides operations to manage the collection of application entities.
+delete:
+  tags:
+    - applications.directoryObject
+  summary: Remove application owner
+  description: >-
+    Remove an owner from an application. As a recommended best practice, apps
+    should have at least two owners.
+  externalDocs:
+    description: Find more info here
+    url: >-
+      https://learn.microsoft.com/graph/api/application-delete-owners?view=graph-rest-1.0
+  operationId: applications.owners.DeleteRefDirectoryObject
+  parameters:
+    - name: If-Match
+      in: header
+      description: ETag
+      schema:
+        type: string
+  responses:
+    '204':
+      description: Success
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: operation
+parameters:
+  - name: application-id
+    in: path
+    description: The unique identifier of application
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: application
+  - name: directoryObject-id
+    in: path
+    description: The unique identifier of directoryObject
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: directoryObject

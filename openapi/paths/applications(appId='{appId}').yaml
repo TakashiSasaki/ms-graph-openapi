@@ -1,0 +1,109 @@
+description: Provides operations to manage the collection of application entities.
+get:
+  tags:
+    - applications.application
+  summary: Get application
+  description: Get the properties and relationships of an application object.
+  externalDocs:
+    description: Find more info here
+    url: https://learn.microsoft.com/graph/api/application-get?view=graph-rest-1.0
+  operationId: applications.application.GetApplicationByAppId
+  parameters:
+    - name: $select
+      in: query
+      description: Select properties to be returned
+      style: form
+      explode: false
+      schema:
+        uniqueItems: true
+        type: array
+        items:
+          type: string
+    - name: $expand
+      in: query
+      description: Expand related entities
+      style: form
+      explode: false
+      schema:
+        uniqueItems: true
+        type: array
+        items:
+          type: string
+  responses:
+    2XX:
+      description: Retrieved entity
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\microsoft.graph.application.yaml
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: operation
+patch:
+  tags:
+    - applications.application
+  summary: Upsert application
+  description: >-
+    Create a new application object if it doesn't exist, or update the
+    properties of an existing application object.
+  externalDocs:
+    description: Find more info here
+    url: >-
+      https://learn.microsoft.com/graph/api/application-upsert?view=graph-rest-1.0
+  operationId: applications.application.UpdateApplicationByAppId
+  requestBody:
+    description: New property values
+    content:
+      application/json:
+        schema:
+          $ref: ..\components\schemas\microsoft.graph.application.yaml
+    required: true
+  responses:
+    2XX:
+      description: Success
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\microsoft.graph.application.yaml
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: operation
+delete:
+  tags:
+    - applications.application
+  summary: Delete application
+  description: >-
+    Delete an application object. When deleted, apps are moved to a temporary
+    container and can be restored within 30 days. After that time, they are
+    permanently deleted.
+  externalDocs:
+    description: Find more info here
+    url: >-
+      https://learn.microsoft.com/graph/api/application-delete?view=graph-rest-1.0
+  operationId: applications.application.DeleteApplicationByAppId
+  parameters:
+    - name: If-Match
+      in: header
+      description: ETag
+      schema:
+        type: string
+  responses:
+    '204':
+      description: Success
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: operation
+parameters:
+  - name: appId
+    in: path
+    description: Alternate key of application
+    required: true
+    schema:
+      type: string
+      nullable: true
