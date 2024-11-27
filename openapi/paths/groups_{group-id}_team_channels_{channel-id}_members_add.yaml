@@ -1,0 +1,69 @@
+description: Provides operations to call the add method.
+post:
+  tags:
+    - groups.team
+  summary: Invoke action add
+  description: >-
+    Add multiple members in a single request to a team. The response provides
+    details about which memberships could and couldn't be created.
+  externalDocs:
+    description: Find more info here
+    url: >-
+      https://learn.microsoft.com/graph/api/conversationmembers-add?view=graph-rest-1.0
+  operationId: groups.group.team.channels.channel.members.add
+  requestBody:
+    description: Action parameters
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            values:
+              type: array
+              items:
+                $ref: ..\components\schemas\microsoft.graph.conversationMember.yaml
+    required: true
+  responses:
+    2XX:
+      description: Success
+      content:
+        application/json:
+          schema:
+            type: object
+            allOf:
+              - $ref: >-
+                  ..\components\schemas\BaseCollectionPaginationCountResponse.yaml
+              - type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: >-
+                        ..\components\schemas\microsoft.graph.actionResultPart.yaml
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: action
+  x-ms-pageable:
+    nextLinkName: '@odata.nextLink'
+    operationName: listMore
+parameters:
+  - name: group-id
+    in: path
+    description: The unique identifier of group
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: group
+  - name: channel-id
+    in: path
+    description: The unique identifier of channel
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: channel
+x-ms-docs-grouped-path:
+  - /groups/{group-id}/sites/add
+  - /groups/{group-id}/team/members/add
+  - /groups/{group-id}/team/primaryChannel/members/add
