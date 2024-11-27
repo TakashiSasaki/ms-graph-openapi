@@ -1,0 +1,89 @@
+description: >-
+  Provides operations to manage the parentSection property of the
+  microsoft.graph.onenotePage entity.
+get:
+  tags:
+    - groups.site
+  summary: Get parentSection from groups
+  description: The section that contains the page. Read-only.
+  operationId: groups.sites.onenote.sections.pages.GetParentSection
+  parameters:
+    - name: $select
+      in: query
+      description: Select properties to be returned
+      style: form
+      explode: false
+      schema:
+        uniqueItems: true
+        type: array
+        items:
+          type: string
+    - name: $expand
+      in: query
+      description: Expand related entities
+      style: form
+      explode: false
+      schema:
+        uniqueItems: true
+        type: array
+        items:
+          type: string
+  responses:
+    2XX:
+      description: Retrieved navigation property
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\microsoft.graph.onenoteSection.yaml
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: operation
+parameters:
+  - name: group-id
+    in: path
+    description: The unique identifier of group
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: group
+  - name: site-id
+    in: path
+    description: The unique identifier of site
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: site
+  - name: onenoteSection-id
+    in: path
+    description: The unique identifier of onenoteSection
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: onenoteSection
+  - name: onenotePage-id
+    in: path
+    description: The unique identifier of onenotePage
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: onenotePage
+x-ms-docs-grouped-path:
+  - >-
+    /groups/{group-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentSection
+  - >-
+    /groups/{group-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentSection
+  - /groups/{group-id}/onenote/pages/{onenotePage-id}/parentSection
+  - >-
+    /groups/{group-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentSection
+  - >-
+    /groups/{group-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentSection
+  - >-
+    /groups/{group-id}/sites/{site-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentSection
+  - >-
+    /groups/{group-id}/sites/{site-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentSection
+  - >-
+    /groups/{group-id}/sites/{site-id}/onenote/pages/{onenotePage-id}/parentSection
+  - >-
+    /groups/{group-id}/sites/{site-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentSection

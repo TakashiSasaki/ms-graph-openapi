@@ -1,0 +1,147 @@
+description: >-
+  Provides operations to manage the fromTerm property of the
+  microsoft.graph.termStore.relation entity.
+get:
+  tags:
+    - groups.site
+  summary: Get fromTerm from groups
+  description: >-
+    The from [term] of the relation. The term from which the relationship is
+    defined. A null value would indicate the relation is directly with the
+    [set].
+  operationId: groups.sites.termStore.sets.children.children.relations.GetFromTerm
+  parameters:
+    - name: $select
+      in: query
+      description: Select properties to be returned
+      style: form
+      explode: false
+      schema:
+        uniqueItems: true
+        type: array
+        items:
+          type: string
+    - name: $expand
+      in: query
+      description: Expand related entities
+      style: form
+      explode: false
+      schema:
+        uniqueItems: true
+        type: array
+        items:
+          type: string
+  responses:
+    2XX:
+      description: Retrieved navigation property
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\microsoft.graph.termStore.term.yaml
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: operation
+parameters:
+  - name: group-id
+    in: path
+    description: The unique identifier of group
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: group
+  - name: site-id
+    in: path
+    description: The unique identifier of site
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: site
+  - name: set-id
+    in: path
+    description: The unique identifier of set
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: set
+  - name: term-id
+    in: path
+    description: The unique identifier of term
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: term
+  - name: term-id1
+    in: path
+    description: The unique identifier of term
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: term
+  - name: relation-id
+    in: path
+    description: The unique identifier of relation
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: relation
+x-ms-docs-grouped-path:
+  - >-
+    /groups/{group-id}/sites/{site-id}/termStore/groups/{group-id1}/sets/{set-id}/children/{term-id}/children/{term-id1}/relations/{relation-id}/fromTerm
+  - >-
+    /groups/{group-id}/sites/{site-id}/termStore/groups/{group-id1}/sets/{set-id}/children/{term-id}/relations/{relation-id}/fromTerm
+  - >-
+    /groups/{group-id}/sites/{site-id}/termStore/groups/{group-id1}/sets/{set-id}/relations/{relation-id}/fromTerm
+  - >-
+    /groups/{group-id}/sites/{site-id}/termStore/groups/{group-id1}/sets/{set-id}/terms/{term-id}/children/{term-id1}/relations/{relation-id}/fromTerm
+  - >-
+    /groups/{group-id}/sites/{site-id}/termStore/groups/{group-id1}/sets/{set-id}/terms/{term-id}/relations/{relation-id}/fromTerm
+  - >-
+    /groups/{group-id}/sites/{site-id}/termStore/sets/{set-id}/children/{term-id}/relations/{relation-id}/fromTerm
+  - >-
+    /groups/{group-id}/sites/{site-id}/termStore/sets/{set-id}/parentGroup/sets/{set-id1}/children/{term-id}/children/{term-id1}/relations/{relation-id}/fromTerm
+  - >-
+    /groups/{group-id}/sites/{site-id}/termStore/sets/{set-id}/parentGroup/sets/{set-id1}/children/{term-id}/relations/{relation-id}/fromTerm
+  - >-
+    /groups/{group-id}/sites/{site-id}/termStore/sets/{set-id}/parentGroup/sets/{set-id1}/relations/{relation-id}/fromTerm
+  - >-
+    /groups/{group-id}/sites/{site-id}/termStore/sets/{set-id}/parentGroup/sets/{set-id1}/terms/{term-id}/children/{term-id1}/relations/{relation-id}/fromTerm
+  - >-
+    /groups/{group-id}/sites/{site-id}/termStore/sets/{set-id}/parentGroup/sets/{set-id1}/terms/{term-id}/relations/{relation-id}/fromTerm
+  - >-
+    /groups/{group-id}/sites/{site-id}/termStore/sets/{set-id}/relations/{relation-id}/fromTerm
+  - >-
+    /groups/{group-id}/sites/{site-id}/termStore/sets/{set-id}/terms/{term-id}/children/{term-id1}/relations/{relation-id}/fromTerm
+  - >-
+    /groups/{group-id}/sites/{site-id}/termStore/sets/{set-id}/terms/{term-id}/relations/{relation-id}/fromTerm
+  - >-
+    /groups/{group-id}/sites/{site-id}/termStores/{store-id}/groups/{group-id1}/sets/{set-id}/children/{term-id}/children/{term-id1}/relations/{relation-id}/fromTerm
+  - >-
+    /groups/{group-id}/sites/{site-id}/termStores/{store-id}/groups/{group-id1}/sets/{set-id}/children/{term-id}/relations/{relation-id}/fromTerm
+  - >-
+    /groups/{group-id}/sites/{site-id}/termStores/{store-id}/groups/{group-id1}/sets/{set-id}/relations/{relation-id}/fromTerm
+  - >-
+    /groups/{group-id}/sites/{site-id}/termStores/{store-id}/groups/{group-id1}/sets/{set-id}/terms/{term-id}/children/{term-id1}/relations/{relation-id}/fromTerm
+  - >-
+    /groups/{group-id}/sites/{site-id}/termStores/{store-id}/groups/{group-id1}/sets/{set-id}/terms/{term-id}/relations/{relation-id}/fromTerm
+  - >-
+    /groups/{group-id}/sites/{site-id}/termStores/{store-id}/sets/{set-id}/children/{term-id}/children/{term-id1}/relations/{relation-id}/fromTerm
+  - >-
+    /groups/{group-id}/sites/{site-id}/termStores/{store-id}/sets/{set-id}/children/{term-id}/relations/{relation-id}/fromTerm
+  - >-
+    /groups/{group-id}/sites/{site-id}/termStores/{store-id}/sets/{set-id}/parentGroup/sets/{set-id1}/children/{term-id}/children/{term-id1}/relations/{relation-id}/fromTerm
+  - >-
+    /groups/{group-id}/sites/{site-id}/termStores/{store-id}/sets/{set-id}/parentGroup/sets/{set-id1}/children/{term-id}/relations/{relation-id}/fromTerm
+  - >-
+    /groups/{group-id}/sites/{site-id}/termStores/{store-id}/sets/{set-id}/parentGroup/sets/{set-id1}/relations/{relation-id}/fromTerm
+  - >-
+    /groups/{group-id}/sites/{site-id}/termStores/{store-id}/sets/{set-id}/parentGroup/sets/{set-id1}/terms/{term-id}/children/{term-id1}/relations/{relation-id}/fromTerm
+  - >-
+    /groups/{group-id}/sites/{site-id}/termStores/{store-id}/sets/{set-id}/parentGroup/sets/{set-id1}/terms/{term-id}/relations/{relation-id}/fromTerm
+  - >-
+    /groups/{group-id}/sites/{site-id}/termStores/{store-id}/sets/{set-id}/relations/{relation-id}/fromTerm
+  - >-
+    /groups/{group-id}/sites/{site-id}/termStores/{store-id}/sets/{set-id}/terms/{term-id}/children/{term-id1}/relations/{relation-id}/fromTerm
+  - >-
+    /groups/{group-id}/sites/{site-id}/termStores/{store-id}/sets/{set-id}/terms/{term-id}/relations/{relation-id}/fromTerm

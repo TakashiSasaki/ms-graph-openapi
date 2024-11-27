@@ -1,0 +1,111 @@
+description: >-
+  Provides operations to manage the sections property of the
+  microsoft.graph.onenote entity.
+get:
+  tags:
+    - groups.site
+  summary: Get sections from groups
+  description: >-
+    The sections in all OneNote notebooks that are owned by the user or group. 
+    Read-only. Nullable.
+  operationId: groups.sites.onenote.GetSections
+  parameters:
+    - name: $select
+      in: query
+      description: Select properties to be returned
+      style: form
+      explode: false
+      schema:
+        uniqueItems: true
+        type: array
+        items:
+          type: string
+    - name: $expand
+      in: query
+      description: Expand related entities
+      style: form
+      explode: false
+      schema:
+        uniqueItems: true
+        type: array
+        items:
+          type: string
+  responses:
+    2XX:
+      description: Retrieved navigation property
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\microsoft.graph.onenoteSection.yaml
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: operation
+patch:
+  tags:
+    - groups.site
+  summary: Update the navigation property sections in groups
+  operationId: groups.sites.onenote.UpdateSections
+  requestBody:
+    description: New navigation property values
+    content:
+      application/json:
+        schema:
+          $ref: ..\components\schemas\microsoft.graph.onenoteSection.yaml
+    required: true
+  responses:
+    2XX:
+      description: Success
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\microsoft.graph.onenoteSection.yaml
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: operation
+delete:
+  tags:
+    - groups.site
+  summary: Delete navigation property sections for groups
+  operationId: groups.sites.onenote.DeleteSections
+  parameters:
+    - name: If-Match
+      in: header
+      description: ETag
+      schema:
+        type: string
+  responses:
+    '204':
+      description: Success
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: operation
+parameters:
+  - name: group-id
+    in: path
+    description: The unique identifier of group
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: group
+  - name: site-id
+    in: path
+    description: The unique identifier of site
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: site
+  - name: onenoteSection-id
+    in: path
+    description: The unique identifier of onenoteSection
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: onenoteSection
+x-ms-docs-grouped-path:
+  - /groups/{group-id}/onenote/sections/{onenoteSection-id}
