@@ -1,0 +1,6 @@
+description: Retrieved collection
+content:
+  application/json:
+    schema:
+      $ref: >-
+        ..\schemas\microsoft.graph.externalConnectors.externalActivityResultCollectionResponse.yaml
