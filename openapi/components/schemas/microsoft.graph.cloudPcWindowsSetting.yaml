@@ -1,0 +1,14 @@
+title: cloudPcWindowsSetting
+required:
+  - '@odata.type'
+type: object
+properties:
+  locale:
+    type: string
+    description: >-
+      The Windows language or region tag to use for language pack configuration
+      and localization of the Cloud PC. The default value is en-US, which
+      corresponds to English (United States).
+    nullable: true
+  '@odata.type':
+    type: string

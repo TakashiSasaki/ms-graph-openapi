@@ -1,0 +1,11 @@
+allOf:
+  - $ref: .\microsoft.graph.callRecords.participantBase.yaml
+  - title: participant
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.callRecords.participant'
+x-ms-discriminator-value: '#microsoft.graph.callRecords.participant'

@@ -1,0 +1,28 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: cloudPcProvisioningPolicyAssignment
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      target:
+        anyOf:
+          - $ref: .\microsoft.graph.cloudPcManagementAssignmentTarget.yaml
+          - type: object
+            nullable: true
+        description: >-
+          The assignment target for the provisioning policy. Currently, the only
+          target supported for this policy is a user group. For details, see
+          cloudPcManagementGroupAssignmentTarget.
+      assignedUsers:
+        type: array
+        items:
+          $ref: .\microsoft.graph.user.yaml
+        description: >-
+          The assignment targeted users for the provisioning policy. This list
+          of users is computed based on assignments, licenses, group
+          memberships, and policies. Read-only. Supports$expand.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.cloudPcProvisioningPolicyAssignment'

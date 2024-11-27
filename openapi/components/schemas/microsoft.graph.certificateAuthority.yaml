@@ -1,0 +1,36 @@
+title: certificateAuthority
+required:
+  - '@odata.type'
+type: object
+properties:
+  certificate:
+    type: string
+    description: Required. The base64 encoded string representing the public certificate.
+    format: base64url
+  certificateRevocationListUrl:
+    type: string
+    description: The URL of the certificate revocation list.
+    nullable: true
+  deltaCertificateRevocationListUrl:
+    type: string
+    description: >-
+      The URL contains the list of all revoked certificates since the last time
+      a full certificate revocaton list was created.
+    nullable: true
+  isRootAuthority:
+    type: boolean
+    description: >-
+      Required. true if the trusted certificate is a root authority, false if
+      the trusted certificate is an intermediate authority.
+  issuer:
+    type: string
+    description: >-
+      The issuer of the certificate, calculated from the certificate value.
+      Read-only.
+  issuerSki:
+    type: string
+    description: >-
+      The subject key identifier of the certificate, calculated from the
+      certificate value. Read-only.
+  '@odata.type':
+    type: string

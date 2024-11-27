@@ -1,0 +1,25 @@
+allOf:
+  - $ref: .\microsoft.graph.eventMessageDetail.yaml
+  - title: callTranscriptEventMessageDetail
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      callId:
+        type: string
+        description: Unique identifier of the call.
+        nullable: true
+      callTranscriptICalUid:
+        type: string
+        description: Unique identifier for a call transcript.
+        nullable: true
+      meetingOrganizer:
+        anyOf:
+          - $ref: .\microsoft.graph.identitySet.yaml
+          - type: object
+            nullable: true
+        description: The organizer of the meeting.
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.callTranscriptEventMessageDetail'
+x-ms-discriminator-value: '#microsoft.graph.callTranscriptEventMessageDetail'

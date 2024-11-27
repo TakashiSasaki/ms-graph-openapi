@@ -1,0 +1,20 @@
+title: bookingReminder
+required:
+  - '@odata.type'
+type: object
+properties:
+  message:
+    type: string
+    description: The message in the reminder.
+  offset:
+    pattern: ^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$
+    type: string
+    description: >-
+      The amount of time before the start of an appointment that the reminder
+      should be sent. It's denoted in ISO 8601 format.
+    format: duration
+  recipients:
+    $ref: .\microsoft.graph.bookingReminderRecipients.yaml
+  '@odata.type':
+    type: string
+description: This type represents when and to whom to send an e-mail reminder.

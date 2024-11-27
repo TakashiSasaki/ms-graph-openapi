@@ -1,0 +1,196 @@
+title: deviceInfo
+required:
+  - '@odata.type'
+type: object
+properties:
+  captureDeviceDriver:
+    type: string
+    description: Name of the capture device driver used by the media endpoint.
+    nullable: true
+  captureDeviceName:
+    type: string
+    description: Name of the capture device used by the media endpoint.
+    nullable: true
+  captureNotFunctioningEventRatio:
+    oneOf:
+      - type: number
+        format: float
+        nullable: true
+      - type: string
+        nullable: true
+      - $ref: .\ReferenceNumeric.yaml
+    description: >-
+      Fraction of the call that the media endpoint detected the capture device
+      was not working properly.
+  cpuInsufficentEventRatio:
+    oneOf:
+      - type: number
+        format: float
+        nullable: true
+      - type: string
+        nullable: true
+      - $ref: .\ReferenceNumeric.yaml
+    description: >-
+      Fraction of the call that the media endpoint detected the CPU resources
+      available were insufficient and caused poor quality of the audio sent and
+      received.
+  deviceClippingEventRatio:
+    oneOf:
+      - type: number
+        format: float
+        nullable: true
+      - type: string
+        nullable: true
+      - $ref: .\ReferenceNumeric.yaml
+    description: >-
+      Fraction of the call that the media endpoint detected clipping in the
+      captured audio that caused poor quality of the audio being sent.
+  deviceGlitchEventRatio:
+    oneOf:
+      - type: number
+        format: float
+        nullable: true
+      - type: string
+        nullable: true
+      - $ref: .\ReferenceNumeric.yaml
+    description: >-
+      Fraction of the call that the media endpoint detected glitches or gaps in
+      the audio played or captured that caused poor quality of the audio being
+      sent or received.
+  howlingEventCount:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    description: >-
+      Number of times during the call that the media endpoint detected howling
+      or screeching audio.
+    format: int32
+    nullable: true
+  initialSignalLevelRootMeanSquare:
+    oneOf:
+      - type: number
+        format: float
+        nullable: true
+      - type: string
+        nullable: true
+      - $ref: .\ReferenceNumeric.yaml
+    description: >-
+      The root mean square (RMS) of the incoming signal of up to the first 30
+      seconds of the call.
+  lowSpeechLevelEventRatio:
+    oneOf:
+      - type: number
+        format: float
+        nullable: true
+      - type: string
+        nullable: true
+      - $ref: .\ReferenceNumeric.yaml
+    description: >-
+      Fraction of the call that the media endpoint detected low speech level
+      that caused poor quality of the audio being sent.
+  lowSpeechToNoiseEventRatio:
+    oneOf:
+      - type: number
+        format: float
+        nullable: true
+      - type: string
+        nullable: true
+      - $ref: .\ReferenceNumeric.yaml
+    description: >-
+      Fraction of the call that the media endpoint detected low speech to noise
+      level that caused poor quality of the audio being sent.
+  micGlitchRate:
+    oneOf:
+      - type: number
+        format: float
+        nullable: true
+      - type: string
+        nullable: true
+      - $ref: .\ReferenceNumeric.yaml
+    description: Glitches per 5 minute interval for the media endpoint's microphone.
+  receivedNoiseLevel:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    description: >-
+      Average energy level of received audio for audio classified as mono noise
+      or left channel of stereo noise by the media endpoint.
+    format: int32
+    nullable: true
+  receivedSignalLevel:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    description: >-
+      Average energy level of received audio for audio classified as mono
+      speech, or left channel of stereo speech by the media endpoint.
+    format: int32
+    nullable: true
+  renderDeviceDriver:
+    type: string
+    description: Name of the render device driver used by the media endpoint.
+    nullable: true
+  renderDeviceName:
+    type: string
+    description: Name of the render device used by the media endpoint.
+    nullable: true
+  renderMuteEventRatio:
+    oneOf:
+      - type: number
+        format: float
+        nullable: true
+      - type: string
+        nullable: true
+      - $ref: .\ReferenceNumeric.yaml
+    description: Fraction of the call that media endpoint detected device render is muted.
+  renderNotFunctioningEventRatio:
+    oneOf:
+      - type: number
+        format: float
+        nullable: true
+      - type: string
+        nullable: true
+      - $ref: .\ReferenceNumeric.yaml
+    description: >-
+      Fraction of the call that the media endpoint detected the render device
+      was not working properly.
+  renderZeroVolumeEventRatio:
+    oneOf:
+      - type: number
+        format: float
+        nullable: true
+      - type: string
+        nullable: true
+      - $ref: .\ReferenceNumeric.yaml
+    description: >-
+      Fraction of the call that media endpoint detected device render volume is
+      set to 0.
+  sentNoiseLevel:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    description: >-
+      Average energy level of sent audio for audio classified as mono noise or
+      left channel of stereo noise by the media endpoint.
+    format: int32
+    nullable: true
+  sentSignalLevel:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    description: >-
+      Average energy level of sent audio for audio classified as mono speech, or
+      left channel of stereo speech by the media endpoint.
+    format: int32
+    nullable: true
+  speakerGlitchRate:
+    oneOf:
+      - type: number
+        format: float
+        nullable: true
+      - type: string
+        nullable: true
+      - $ref: .\ReferenceNumeric.yaml
+    description: Glitches per 5 minute internal for the media endpoint's loudspeaker.
+  '@odata.type':
+    type: string

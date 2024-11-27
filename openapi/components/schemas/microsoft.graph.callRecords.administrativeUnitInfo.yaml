@@ -1,0 +1,11 @@
+title: administrativeUnitInfo
+required:
+  - '@odata.type'
+type: object
+properties:
+  id:
+    type: string
+    description: Unique identifier for the administrative unit.
+    nullable: true
+  '@odata.type':
+    type: string

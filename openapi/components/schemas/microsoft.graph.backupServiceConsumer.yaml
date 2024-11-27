@@ -1,0 +1,7 @@
+title: backupServiceConsumer
+enum:
+  - unknown
+  - firstparty
+  - thirdparty
+  - unknownFutureValue
+type: string

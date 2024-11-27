@@ -1,0 +1,28 @@
+title: callOptions
+required:
+  - '@odata.type'
+type: object
+properties:
+  hideBotAfterEscalation:
+    type: boolean
+    description: Indicates whether to hide the app after the call is escalated.
+    nullable: true
+  isContentSharingNotificationEnabled:
+    type: boolean
+    description: >-
+      Indicates whether content sharing notifications should be enabled for the
+      call.
+    nullable: true
+  isDeltaRosterEnabled:
+    type: boolean
+    description: Indicates whether delta roster is enabled for the call.
+    nullable: true
+  '@odata.type':
+    type: string
+discriminator:
+  propertyName: '@odata.type'
+  mapping:
+    '#microsoft.graph.incomingCallOptions': .\microsoft.graph.incomingCallOptions.yaml
+    '#microsoft.graph.outgoingCallOptions': .\microsoft.graph.outgoingCallOptions.yaml
+    microsoft.graph.incomingCallOptions: .\microsoft.graph.incomingCallOptions.yaml
+    microsoft.graph.outgoingCallOptions: .\microsoft.graph.outgoingCallOptions.yaml

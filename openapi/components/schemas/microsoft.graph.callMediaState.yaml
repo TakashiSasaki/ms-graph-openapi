@@ -1,0 +1,15 @@
+title: callMediaState
+required:
+  - '@odata.type'
+type: object
+properties:
+  audio:
+    anyOf:
+      - $ref: .\microsoft.graph.mediaState.yaml
+      - type: object
+        nullable: true
+    description: >-
+      The audio media state. Possible values are: active, inactive,
+      unknownFutureValue.
+  '@odata.type':
+    type: string

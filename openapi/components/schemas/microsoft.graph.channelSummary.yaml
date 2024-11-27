@@ -1,0 +1,32 @@
+title: channelSummary
+required:
+  - '@odata.type'
+type: object
+properties:
+  guestsCount:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    description: Count of guests in a channel.
+    format: int32
+    nullable: true
+  hasMembersFromOtherTenants:
+    type: boolean
+    description: Indicates whether external members are included on the channel.
+    nullable: true
+  membersCount:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    description: Count of members in a channel.
+    format: int32
+    nullable: true
+  ownersCount:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    description: Count of owners in a channel.
+    format: int32
+    nullable: true
+  '@odata.type':
+    type: string

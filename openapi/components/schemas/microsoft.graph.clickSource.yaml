@@ -1,0 +1,7 @@
+title: clickSource
+enum:
+  - unknown
+  - qrCode
+  - phishingUrl
+  - unknownFutureValue
+type: string

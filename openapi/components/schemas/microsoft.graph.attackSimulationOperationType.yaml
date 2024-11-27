@@ -1,0 +1,6 @@
+title: attackSimulationOperationType
+enum:
+  - createSimualation
+  - updateSimulation
+  - unknownFutureValue
+type: string

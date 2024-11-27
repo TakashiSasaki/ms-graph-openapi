@@ -1,0 +1,31 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: authenticationEventListener
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      authenticationEventsFlowId:
+        type: string
+        description: >-
+          Indicates the authenticationEventListener is associated with an
+          authenticationEventsFlow. Read-only.
+        nullable: true
+      conditions:
+        anyOf:
+          - $ref: .\microsoft.graph.authenticationConditions.yaml
+          - type: object
+            nullable: true
+        description: >-
+          The conditions on which this authenticationEventListener should
+          trigger.
+      '@odata.type':
+        type: string
+    discriminator:
+      propertyName: '@odata.type'
+      mapping:
+        '#microsoft.graph.onAttributeCollectionListener': .\microsoft.graph.onAttributeCollectionListener.yaml
+        '#microsoft.graph.onAuthenticationMethodLoadStartListener': .\microsoft.graph.onAuthenticationMethodLoadStartListener.yaml
+        '#microsoft.graph.onInteractiveAuthFlowStartListener': .\microsoft.graph.onInteractiveAuthFlowStartListener.yaml
+        '#microsoft.graph.onTokenIssuanceStartListener': .\microsoft.graph.onTokenIssuanceStartListener.yaml
+        '#microsoft.graph.onUserCreateStartListener': .\microsoft.graph.onUserCreateStartListener.yaml

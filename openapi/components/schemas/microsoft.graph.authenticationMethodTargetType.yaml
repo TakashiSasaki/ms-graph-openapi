@@ -1,0 +1,6 @@
+title: authenticationMethodTargetType
+enum:
+  - user
+  - group
+  - unknownFutureValue
+type: string

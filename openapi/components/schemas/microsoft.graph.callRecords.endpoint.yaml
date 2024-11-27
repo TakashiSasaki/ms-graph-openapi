@@ -1,0 +1,20 @@
+title: endpoint
+required:
+  - '@odata.type'
+type: object
+properties:
+  userAgent:
+    anyOf:
+      - $ref: .\microsoft.graph.callRecords.userAgent.yaml
+      - type: object
+        nullable: true
+    description: User-agent reported by this endpoint.
+  '@odata.type':
+    type: string
+discriminator:
+  propertyName: '@odata.type'
+  mapping:
+    '#microsoft.graph.callRecords.participantEndpoint': .\microsoft.graph.callRecords.participantEndpoint.yaml
+    '#microsoft.graph.callRecords.serviceEndpoint': .\microsoft.graph.callRecords.serviceEndpoint.yaml
+    microsoft.graph.callRecords.participantEndpoint: .\microsoft.graph.callRecords.participantEndpoint.yaml
+    microsoft.graph.callRecords.serviceEndpoint: .\microsoft.graph.callRecords.serviceEndpoint.yaml

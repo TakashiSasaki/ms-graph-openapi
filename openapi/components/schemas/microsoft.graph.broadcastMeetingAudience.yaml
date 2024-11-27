@@ -1,0 +1,7 @@
+title: broadcastMeetingAudience
+enum:
+  - roleIsAttendee
+  - organization
+  - everyone
+  - unknownFutureValue
+type: string

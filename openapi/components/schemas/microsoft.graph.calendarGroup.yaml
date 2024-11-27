@@ -1,0 +1,36 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: calendarGroup
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      changeKey:
+        type: string
+        description: >-
+          Identifies the version of the calendar group. Every time the calendar
+          group is changed, ChangeKey changes as well. This allows Exchange to
+          apply changes to the correct version of the object. Read-only.
+        nullable: true
+      classId:
+        pattern: >-
+          ^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$
+        type: string
+        description: The class identifier. Read-only.
+        format: uuid
+        nullable: true
+      name:
+        type: string
+        description: The group name.
+        nullable: true
+      calendars:
+        type: array
+        items:
+          $ref: .\microsoft.graph.calendar.yaml
+        description: >-
+          The calendars in the calendar group. Navigation property. Read-only.
+          Nullable.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.calendarGroup'

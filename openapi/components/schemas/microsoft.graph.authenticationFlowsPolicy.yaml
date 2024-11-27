@@ -1,0 +1,30 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: authenticationFlowsPolicy
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      description:
+        type: string
+        description: Inherited property. A description of the policy. Optional. Read-only.
+        nullable: true
+      displayName:
+        type: string
+        description: >-
+          Inherited property. The human-readable name of the policy. Optional.
+          Read-only.
+        nullable: true
+      selfServiceSignUp:
+        anyOf:
+          - $ref: >-
+              .\microsoft.graph.selfServiceSignUpAuthenticationFlowConfiguration.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Contains selfServiceSignUpAuthenticationFlowConfiguration settings
+          that convey whether self-service sign-up is enabled or disabled.
+          Optional. Read-only.
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.authenticationFlowsPolicy'

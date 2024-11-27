@@ -1,0 +1,9 @@
+title: chatMessagePolicyViolationVerdictDetailsTypes
+enum:
+  - none
+  - allowFalsePositiveOverride
+  - allowOverrideWithoutJustification
+  - allowOverrideWithJustification
+type: string
+x-ms-enum-flags:
+  isFlags: true

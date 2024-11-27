@@ -1,0 +1,28 @@
+allOf:
+  - $ref: .\microsoft.graph.attendeeBase.yaml
+  - title: attendee
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      proposedNewTime:
+        anyOf:
+          - $ref: .\microsoft.graph.timeSlot.yaml
+          - type: object
+            nullable: true
+        description: >-
+          An alternate date/time proposed by the attendee for a meeting request
+          to start and end. If the attendee hasn't proposed another time, then
+          this property isn't included in a response of a GET event.
+      status:
+        anyOf:
+          - $ref: .\microsoft.graph.responseStatus.yaml
+          - type: object
+            nullable: true
+        description: >-
+          The attendee's response (none, accepted, declined, etc.) for the event
+          and date-time that the response was sent.
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.attendee'
+x-ms-discriminator-value: '#microsoft.graph.attendee'

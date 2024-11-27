@@ -1,0 +1,9 @@
+title: chatMessageActions
+enum:
+  - reactionAdded
+  - reactionRemoved
+  - actionUndefined
+  - unknownFutureValue
+type: string
+x-ms-enum-flags:
+  isFlags: true

@@ -1,0 +1,23 @@
+title: cloudAppSecurityState
+required:
+  - '@odata.type'
+type: object
+properties:
+  destinationServiceIp:
+    type: string
+    description: Destination IP Address of the connection to the cloud application/service.
+    nullable: true
+  destinationServiceName:
+    type: string
+    description: >-
+      Cloud application/service name (for example 'Salesforce', 'DropBox',
+      etc.).
+    nullable: true
+  riskScore:
+    type: string
+    description: >-
+      Provider-generated/calculated risk score of the Cloud Application/Service.
+      Recommended value range of 0-1, which equates to a percentage.
+    nullable: true
+  '@odata.type':
+    type: string

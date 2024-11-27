@@ -1,0 +1,16 @@
+title: baseAuthenticationMethod
+enum:
+  - password
+  - voice
+  - hardwareOath
+  - softwareOath
+  - sms
+  - fido2
+  - windowsHelloForBusiness
+  - microsoftAuthenticator
+  - temporaryAccessPass
+  - email
+  - x509Certificate
+  - federation
+  - unknownFutureValue
+type: string

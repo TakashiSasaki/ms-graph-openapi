@@ -1,0 +1,6 @@
+title: automaticRepliesStatus
+enum:
+  - disabled
+  - alwaysEnabled
+  - scheduled
+type: string

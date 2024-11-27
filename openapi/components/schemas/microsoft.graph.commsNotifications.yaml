@@ -1,0 +1,12 @@
+title: commsNotifications
+required:
+  - '@odata.type'
+type: object
+properties:
+  value:
+    type: array
+    items:
+      $ref: .\microsoft.graph.commsNotification.yaml
+    description: The notification of a change in the resource.
+  '@odata.type':
+    type: string

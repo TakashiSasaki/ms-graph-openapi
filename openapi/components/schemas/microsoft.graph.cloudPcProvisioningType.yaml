@@ -1,0 +1,6 @@
+title: cloudPcProvisioningType
+enum:
+  - dedicated
+  - shared
+  - unknownFutureValue
+type: string

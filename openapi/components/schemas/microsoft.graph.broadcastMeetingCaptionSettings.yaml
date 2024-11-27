@@ -1,0 +1,21 @@
+title: broadcastMeetingCaptionSettings
+required:
+  - '@odata.type'
+type: object
+properties:
+  isCaptionEnabled:
+    type: boolean
+    description: Indicates whether captions are enabled for this Teams live event.
+    nullable: true
+  spokenLanguage:
+    type: string
+    description: The spoken language.
+    nullable: true
+  translationLanguages:
+    type: array
+    items:
+      type: string
+      nullable: true
+    description: The translation languages (choose up to 6).
+  '@odata.type':
+    type: string

@@ -1,0 +1,32 @@
+title: automaticUpdateMode
+enum:
+  - userDefined
+  - notifyDownload
+  - autoInstallAtMaintenanceTime
+  - autoInstallAndRebootAtMaintenanceTime
+  - autoInstallAndRebootAtScheduledTime
+  - autoInstallAndRebootWithoutEndUserControl
+type: string
+description: Possible values for automatic update mode.
+x-ms-enum:
+  name: automaticUpdateMode
+  modelAsString: false
+  values:
+    - value: userDefined
+      description: User Defined, default value, no intent.
+      name: userDefined
+    - value: notifyDownload
+      description: Notify on download.
+      name: notifyDownload
+    - value: autoInstallAtMaintenanceTime
+      description: Auto-install at maintenance time.
+      name: autoInstallAtMaintenanceTime
+    - value: autoInstallAndRebootAtMaintenanceTime
+      description: Auto-install and reboot at maintenance time.
+      name: autoInstallAndRebootAtMaintenanceTime
+    - value: autoInstallAndRebootAtScheduledTime
+      description: Auto-install and reboot at scheduled time.
+      name: autoInstallAndRebootAtScheduledTime
+    - value: autoInstallAndRebootWithoutEndUserControl
+      description: Auto-install and restart without end-user control
+      name: autoInstallAndRebootWithoutEndUserControl

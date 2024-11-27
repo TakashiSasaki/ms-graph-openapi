@@ -1,0 +1,22 @@
+title: collapseProperty
+required:
+  - '@odata.type'
+type: object
+properties:
+  fields:
+    type: array
+    items:
+      type: string
+    description: >-
+      Defines the collapse group to trim results. The properties in this
+      collection must be sortable/refinable properties. Required.
+  limit:
+    maximum: 32767
+    minimum: -32768
+    type: number
+    description: >-
+      Defines a maximum limit count for this field. This numeric value must be a
+      positive integer. Required.
+    format: int16
+  '@odata.type':
+    type: string

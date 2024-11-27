@@ -1,0 +1,25 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: auditLogRoot
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      directoryAudits:
+        type: array
+        items:
+          $ref: .\microsoft.graph.directoryAudit.yaml
+        x-ms-navigationProperty: true
+      provisioning:
+        type: array
+        items:
+          $ref: .\microsoft.graph.provisioningObjectSummary.yaml
+        x-ms-navigationProperty: true
+      signIns:
+        type: array
+        items:
+          $ref: .\microsoft.graph.signIn.yaml
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.auditLogRoot'

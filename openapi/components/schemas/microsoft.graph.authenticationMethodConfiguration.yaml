@@ -1,0 +1,34 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: authenticationMethodConfiguration
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      excludeTargets:
+        type: array
+        items:
+          $ref: .\microsoft.graph.excludeTarget.yaml
+        description: Groups of users that are excluded from a policy.
+      state:
+        anyOf:
+          - $ref: .\microsoft.graph.authenticationMethodState.yaml
+          - type: object
+            nullable: true
+        description: 'The state of the policy. Possible values are: enabled, disabled.'
+      '@odata.type':
+        type: string
+    discriminator:
+      propertyName: '@odata.type'
+      mapping:
+        '#microsoft.graph.emailAuthenticationMethodConfiguration': .\microsoft.graph.emailAuthenticationMethodConfiguration.yaml
+        '#microsoft.graph.fido2AuthenticationMethodConfiguration': .\microsoft.graph.fido2AuthenticationMethodConfiguration.yaml
+        '#microsoft.graph.microsoftAuthenticatorAuthenticationMethodConfiguration': >-
+          .\microsoft.graph.microsoftAuthenticatorAuthenticationMethodConfiguration.yaml
+        '#microsoft.graph.smsAuthenticationMethodConfiguration': .\microsoft.graph.smsAuthenticationMethodConfiguration.yaml
+        '#microsoft.graph.softwareOathAuthenticationMethodConfiguration': .\microsoft.graph.softwareOathAuthenticationMethodConfiguration.yaml
+        '#microsoft.graph.temporaryAccessPassAuthenticationMethodConfiguration': >-
+          .\microsoft.graph.temporaryAccessPassAuthenticationMethodConfiguration.yaml
+        '#microsoft.graph.voiceAuthenticationMethodConfiguration': .\microsoft.graph.voiceAuthenticationMethodConfiguration.yaml
+        '#microsoft.graph.x509CertificateAuthenticationMethodConfiguration': >-
+          .\microsoft.graph.x509CertificateAuthenticationMethodConfiguration.yaml

@@ -1,0 +1,12 @@
+title: cloudPcManagementAssignmentTarget
+required:
+  - '@odata.type'
+type: object
+properties:
+  '@odata.type':
+    type: string
+discriminator:
+  propertyName: '@odata.type'
+  mapping:
+    '#microsoft.graph.cloudPcManagementGroupAssignmentTarget': .\microsoft.graph.cloudPcManagementGroupAssignmentTarget.yaml
+    microsoft.graph.cloudPcManagementGroupAssignmentTarget: .\microsoft.graph.cloudPcManagementGroupAssignmentTarget.yaml

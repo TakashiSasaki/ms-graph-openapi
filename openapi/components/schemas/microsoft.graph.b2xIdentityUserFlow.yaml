@@ -1,0 +1,46 @@
+allOf:
+  - $ref: .\microsoft.graph.identityUserFlow.yaml
+  - title: b2xIdentityUserFlow
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      apiConnectorConfiguration:
+        anyOf:
+          - $ref: .\microsoft.graph.userFlowApiConnectorConfiguration.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Configuration for enabling an API connector for use as part of the
+          self-service sign-up user flow. You can only obtain the value of this
+          object using Get userFlowApiConnectorConfiguration.
+      identityProviders:
+        type: array
+        items:
+          $ref: .\microsoft.graph.identityProvider.yaml
+        description: The identity providers included in the user flow.
+        x-ms-navigationProperty: true
+      languages:
+        type: array
+        items:
+          $ref: .\microsoft.graph.userFlowLanguageConfiguration.yaml
+        description: >-
+          The languages supported for customization within the user flow.
+          Language customization is enabled by default in self-service sign-up
+          user flow. You can't create custom languages in self-service sign-up
+          user flows.
+        x-ms-navigationProperty: true
+      userAttributeAssignments:
+        type: array
+        items:
+          $ref: .\microsoft.graph.identityUserFlowAttributeAssignment.yaml
+        description: The user attribute assignments included in the user flow.
+        x-ms-navigationProperty: true
+      userFlowIdentityProviders:
+        type: array
+        items:
+          $ref: .\microsoft.graph.identityProviderBase.yaml
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.b2xIdentityUserFlow'

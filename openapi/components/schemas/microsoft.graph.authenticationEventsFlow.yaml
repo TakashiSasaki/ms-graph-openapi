@@ -1,0 +1,30 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: authenticationEventsFlow
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      conditions:
+        anyOf:
+          - $ref: .\microsoft.graph.authenticationConditions.yaml
+          - type: object
+            nullable: true
+        description: >-
+          The conditions representing the context of the authentication request
+          that's used to decide whether the events policy is invoked.  Supports
+          $filter (eq). See support for filtering on user flows for syntax
+          information.
+      description:
+        type: string
+        description: The description of the events policy.
+        nullable: true
+      displayName:
+        type: string
+        description: Required. The display name for the events policy.
+      '@odata.type':
+        type: string
+    discriminator:
+      propertyName: '@odata.type'
+      mapping:
+        '#microsoft.graph.externalUsersSelfServiceSignUpEventsFlow': .\microsoft.graph.externalUsersSelfServiceSignUpEventsFlow.yaml

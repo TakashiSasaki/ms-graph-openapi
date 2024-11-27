@@ -1,0 +1,7 @@
+title: chatMessageImportance
+enum:
+  - normal
+  - high
+  - urgent
+  - unknownFutureValue
+type: string

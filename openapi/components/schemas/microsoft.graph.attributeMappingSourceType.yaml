@@ -1,0 +1,6 @@
+title: attributeMappingSourceType
+enum:
+  - Attribute
+  - Constant
+  - Function
+type: string

@@ -1,0 +1,22 @@
+allOf:
+  - $ref: .\microsoft.graph.cloudPcManagementAssignmentTarget.yaml
+  - title: cloudPcManagementGroupAssignmentTarget
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      groupId:
+        type: string
+        description: The ID of the target group for the assignment.
+        nullable: true
+      servicePlanId:
+        type: string
+        description: >-
+          The unique identifier for the service plan that indicates which size
+          of the Cloud PC to provision for the user. Use a null value, when the
+          provisioningType is dedicated.
+        nullable: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.cloudPcManagementGroupAssignmentTarget'
+x-ms-discriminator-value: '#microsoft.graph.cloudPcManagementGroupAssignmentTarget'

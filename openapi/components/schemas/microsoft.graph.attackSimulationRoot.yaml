@@ -1,0 +1,60 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: attackSimulationRoot
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      endUserNotifications:
+        type: array
+        items:
+          $ref: .\microsoft.graph.endUserNotification.yaml
+        description: >-
+          Represents an end user's notification for an attack simulation
+          training.
+        x-ms-navigationProperty: true
+      landingPages:
+        type: array
+        items:
+          $ref: .\microsoft.graph.landingPage.yaml
+        description: Represents an attack simulation training landing page.
+        x-ms-navigationProperty: true
+      loginPages:
+        type: array
+        items:
+          $ref: .\microsoft.graph.loginPage.yaml
+        description: Represents an attack simulation training login page.
+        x-ms-navigationProperty: true
+      operations:
+        type: array
+        items:
+          $ref: .\microsoft.graph.attackSimulationOperation.yaml
+        description: Represents an attack simulation training operation.
+        x-ms-navigationProperty: true
+      payloads:
+        type: array
+        items:
+          $ref: .\microsoft.graph.payload.yaml
+        description: Represents an attack simulation training campaign payload in a tenant.
+        x-ms-navigationProperty: true
+      simulationAutomations:
+        type: array
+        items:
+          $ref: .\microsoft.graph.simulationAutomation.yaml
+        description: Represents simulation automation created to run on a tenant.
+        x-ms-navigationProperty: true
+      simulations:
+        type: array
+        items:
+          $ref: .\microsoft.graph.simulation.yaml
+        description: Represents an attack simulation training campaign in a tenant.
+        x-ms-navigationProperty: true
+      trainings:
+        type: array
+        items:
+          $ref: .\microsoft.graph.training.yaml
+        description: Represents details about attack simulation trainings.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.attackSimulationRoot'

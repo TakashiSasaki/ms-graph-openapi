@@ -1,0 +1,45 @@
+title: bookingQuestionAnswer
+required:
+  - '@odata.type'
+type: object
+properties:
+  answer:
+    type: string
+    description: The answer given by the user in case the answerInputType is text.
+    nullable: true
+  answerInputType:
+    anyOf:
+      - $ref: .\microsoft.graph.answerInputType.yaml
+      - type: object
+        nullable: true
+    description: >-
+      The expected answer type. The possible values are: text, radioButton,
+      unknownFutureValue.
+  answerOptions:
+    type: array
+    items:
+      type: string
+      nullable: true
+    description: >-
+      In case the answerInputType is radioButton, this will consists of a list
+      of possible answer values.
+  isRequired:
+    type: boolean
+    description: Indicates whether it is mandatory to answer the custom question.
+    nullable: true
+  question:
+    type: string
+    description: The question.
+    nullable: true
+  questionId:
+    type: string
+    description: The ID of the custom question.
+    nullable: true
+  selectedOptions:
+    type: array
+    items:
+      type: string
+      nullable: true
+    description: The answers selected by the user.
+  '@odata.type':
+    type: string

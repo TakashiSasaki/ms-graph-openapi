@@ -1,0 +1,52 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: calendarPermission
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      allowedRoles:
+        type: array
+        items:
+          anyOf:
+            - $ref: .\microsoft.graph.calendarRoleType.yaml
+            - type: object
+              nullable: true
+        description: >-
+          List of allowed sharing or delegating permission levels for the
+          calendar. Possible values are: none, freeBusyRead, limitedRead, read,
+          write, delegateWithoutPrivateEventAccess,
+          delegateWithPrivateEventAccess, custom.
+      emailAddress:
+        anyOf:
+          - $ref: .\microsoft.graph.emailAddress.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Represents a share recipient or delegate who has access to the
+          calendar. For the 'My Organization' share recipient, the address
+          property is null. Read-only.
+      isInsideOrganization:
+        type: boolean
+        description: >-
+          True if the user in context (recipient or delegate) is inside the same
+          organization as the calendar owner.
+        nullable: true
+      isRemovable:
+        type: boolean
+        description: >-
+          True if the user can be removed from the list of recipients or
+          delegates for the specified calendar, false otherwise. The 'My
+          organization' user determines the permissions other people within your
+          organization have to the given calendar. You can't remove 'My
+          organization' as a share recipient to a calendar.
+        nullable: true
+      role:
+        anyOf:
+          - $ref: .\microsoft.graph.calendarRoleType.yaml
+          - type: object
+            nullable: true
+        description: Current permission level of the calendar share recipient or delegate.
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.calendarPermission'

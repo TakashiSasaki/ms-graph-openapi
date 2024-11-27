@@ -1,0 +1,5 @@
+title: pstnCallDurationSource
+enum:
+  - microsoft
+  - operator
+type: string

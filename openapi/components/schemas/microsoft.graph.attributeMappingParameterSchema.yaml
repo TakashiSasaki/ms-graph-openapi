@@ -1,0 +1,21 @@
+title: attributeMappingParameterSchema
+required:
+  - '@odata.type'
+type: object
+properties:
+  allowMultipleOccurrences:
+    type: boolean
+    description: >-
+      The given parameter can be provided multiple times (for example, multiple
+      input strings in the Concatenate(string,string,...) function).
+  name:
+    type: string
+    description: Parameter name.
+    nullable: true
+  required:
+    type: boolean
+    description: true if the parameter is required; otherwise false.
+  type:
+    $ref: .\microsoft.graph.attributeType.yaml
+  '@odata.type':
+    type: string

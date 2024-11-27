@@ -1,0 +1,24 @@
+title: bitLockerEncryptionMethod
+enum:
+  - aesCbc128
+  - aesCbc256
+  - xtsAes128
+  - xtsAes256
+type: string
+description: BitLockerEncryptionMethod types
+x-ms-enum:
+  name: bitLockerEncryptionMethod
+  modelAsString: false
+  values:
+    - value: aesCbc128
+      description: AES-CBC 128-bit.
+      name: aesCbc128
+    - value: aesCbc256
+      description: AES-CBC 256-bit.
+      name: aesCbc256
+    - value: xtsAes128
+      description: XTS-AES 128-bit.
+      name: xtsAes128
+    - value: xtsAes256
+      description: XTS-AES 256-bit.
+      name: xtsAes256

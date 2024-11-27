@@ -1,0 +1,8 @@
+title: bookingsAvailabilityStatus
+enum:
+  - available
+  - busy
+  - slotsAvailable
+  - outOfOffice
+  - unknownFutureValue
+type: string

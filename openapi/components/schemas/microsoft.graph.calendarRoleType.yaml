@@ -1,0 +1,11 @@
+title: calendarRoleType
+enum:
+  - none
+  - freeBusyRead
+  - limitedRead
+  - read
+  - write
+  - delegateWithoutPrivateEventAccess
+  - delegateWithPrivateEventAccess
+  - custom
+type: string

@@ -1,0 +1,27 @@
+title: bitLockerRemovableDrivePolicy
+required:
+  - '@odata.type'
+type: object
+properties:
+  blockCrossOrganizationWriteAccess:
+    type: boolean
+    description: >-
+      This policy setting determines whether BitLocker protection is required
+      for removable data drives to be writable on a computer.
+  encryptionMethod:
+    anyOf:
+      - $ref: .\microsoft.graph.bitLockerEncryptionMethod.yaml
+      - type: object
+        nullable: true
+    description: >-
+      Select the encryption method for removable  drives. Possible values are:
+      aesCbc128, aesCbc256, xtsAes128, xtsAes256.
+  requireEncryptionForWriteAccess:
+    type: boolean
+    description: >-
+      Indicates whether to block write access to devices configured in another
+      organization.  If requireEncryptionForWriteAccess is false, this value
+      does not affect.
+  '@odata.type':
+    type: string
+description: BitLocker Removable Drive Policies.

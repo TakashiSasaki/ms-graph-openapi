@@ -1,0 +1,20 @@
+title: bundle
+required:
+  - '@odata.type'
+type: object
+properties:
+  album:
+    anyOf:
+      - $ref: .\microsoft.graph.album.yaml
+      - type: object
+        nullable: true
+    description: If the bundle is an album, then the album property is included
+  childCount:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    description: Number of children contained immediately within this container.
+    format: int32
+    nullable: true
+  '@odata.type':
+    type: string

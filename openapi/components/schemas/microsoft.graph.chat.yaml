@@ -1,0 +1,107 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: chat
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      chatType:
+        $ref: .\microsoft.graph.chatType.yaml
+      createdDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: Date and time at which the chat was created. Read-only.
+        format: date-time
+        nullable: true
+      lastUpdatedDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: >-
+          Date and time at which the chat was renamed or the list of members was
+          last changed. Read-only.
+        format: date-time
+        nullable: true
+      onlineMeetingInfo:
+        anyOf:
+          - $ref: .\microsoft.graph.teamworkOnlineMeetingInfo.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Represents details about an online meeting. If the chat isn't
+          associated with an online meeting, the property is empty. Read-only.
+      tenantId:
+        type: string
+        description: The identifier of the tenant in which the chat was created. Read-only.
+        nullable: true
+      topic:
+        type: string
+        description: >-
+          (Optional) Subject or topic for the chat. Only available for group
+          chats.
+        nullable: true
+      viewpoint:
+        anyOf:
+          - $ref: .\microsoft.graph.chatViewpoint.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Represents caller-specific information about the chat, such as the
+          last message read date and time. This property is populated only when
+          the request is made in a delegated context.
+      webUrl:
+        type: string
+        description: >-
+          The URL for the chat in Microsoft Teams. The URL should be treated as
+          an opaque blob, and not parsed. Read-only.
+        nullable: true
+      installedApps:
+        type: array
+        items:
+          $ref: .\microsoft.graph.teamsAppInstallation.yaml
+        description: A collection of all the apps in the chat. Nullable.
+        x-ms-navigationProperty: true
+      lastMessagePreview:
+        anyOf:
+          - $ref: .\microsoft.graph.chatMessageInfo.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Preview of the last message sent in the chat. Null if no messages were
+          sent in the chat. Currently, only the list chats operation supports
+          this property.
+        x-ms-navigationProperty: true
+      members:
+        type: array
+        items:
+          $ref: .\microsoft.graph.conversationMember.yaml
+        description: A collection of all the members in the chat. Nullable.
+        x-ms-navigationProperty: true
+      messages:
+        type: array
+        items:
+          $ref: .\microsoft.graph.chatMessage.yaml
+        description: A collection of all the messages in the chat. Nullable.
+        x-ms-navigationProperty: true
+      permissionGrants:
+        type: array
+        items:
+          $ref: .\microsoft.graph.resourceSpecificPermissionGrant.yaml
+        description: A collection of permissions granted to apps for the chat.
+        x-ms-navigationProperty: true
+      pinnedMessages:
+        type: array
+        items:
+          $ref: .\microsoft.graph.pinnedChatMessageInfo.yaml
+        description: A collection of all the pinned messages in the chat. Nullable.
+        x-ms-navigationProperty: true
+      tabs:
+        type: array
+        items:
+          $ref: .\microsoft.graph.teamsTab.yaml
+        description: A collection of all the tabs in the chat. Nullable.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.chat'

@@ -1,0 +1,7 @@
+title: bookingsServiceAvailabilityType
+enum:
+  - bookWhenStaffAreFree
+  - notBookable
+  - customWeeklyHours
+  - unknownFutureValue
+type: string

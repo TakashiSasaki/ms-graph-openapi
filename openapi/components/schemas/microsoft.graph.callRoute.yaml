@@ -1,0 +1,13 @@
+title: callRoute
+required:
+  - '@odata.type'
+type: object
+properties:
+  final:
+    $ref: .\microsoft.graph.identitySet.yaml
+  original:
+    $ref: .\microsoft.graph.identitySet.yaml
+  routingType:
+    $ref: .\microsoft.graph.routingType.yaml
+  '@odata.type':
+    type: string

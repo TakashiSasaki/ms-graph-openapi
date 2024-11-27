@@ -1,0 +1,27 @@
+title: cloudCommunications
+required:
+  - '@odata.type'
+type: object
+properties:
+  callRecords:
+    type: array
+    items:
+      $ref: .\microsoft.graph.callRecords.callRecord.yaml
+    x-ms-navigationProperty: true
+  calls:
+    type: array
+    items:
+      $ref: .\microsoft.graph.call.yaml
+    x-ms-navigationProperty: true
+  onlineMeetings:
+    type: array
+    items:
+      $ref: .\microsoft.graph.onlineMeeting.yaml
+    x-ms-navigationProperty: true
+  presences:
+    type: array
+    items:
+      $ref: .\microsoft.graph.presence.yaml
+    x-ms-navigationProperty: true
+  '@odata.type':
+    type: string

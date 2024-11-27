@@ -1,0 +1,13 @@
+allOf:
+  - $ref: .\microsoft.graph.callRecords.userAgent.yaml
+  - title: serviceUserAgent
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      role:
+        $ref: .\microsoft.graph.callRecords.serviceRole.yaml
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.callRecords.serviceUserAgent'
+x-ms-discriminator-value: '#microsoft.graph.callRecords.serviceUserAgent'

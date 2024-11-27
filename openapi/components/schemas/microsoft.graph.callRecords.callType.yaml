@@ -1,0 +1,7 @@
+title: callType
+enum:
+  - unknown
+  - groupCall
+  - peerToPeer
+  - unknownFutureValue
+type: string

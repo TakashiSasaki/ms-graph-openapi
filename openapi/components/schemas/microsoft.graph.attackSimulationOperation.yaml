@@ -1,0 +1,29 @@
+allOf:
+  - $ref: .\microsoft.graph.longRunningOperation.yaml
+  - title: attackSimulationOperation
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      percentageCompleted:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: Percentage of completion of the respective operation.
+        format: int32
+      tenantId:
+        type: string
+        description: Tenant identifier.
+        nullable: true
+      type:
+        anyOf:
+          - $ref: .\microsoft.graph.attackSimulationOperationType.yaml
+          - type: object
+            nullable: true
+        description: >-
+          The attack simulation operation type. Possible values are:
+          createSimulation, updateSimulation, unknownFutureValue.
+      '@odata.type':
+        type: string
+    description: The status of a long-running operation.
+x-ms-discriminator-value: '#microsoft.graph.attackSimulationOperation'

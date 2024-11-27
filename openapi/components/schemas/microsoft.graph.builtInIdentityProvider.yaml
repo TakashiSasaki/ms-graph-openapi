@@ -1,0 +1,17 @@
+allOf:
+  - $ref: .\microsoft.graph.identityProviderBase.yaml
+  - title: builtInIdentityProvider
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      identityProviderType:
+        type: string
+        description: >-
+          The identity provider type. For a B2B scenario, possible values:
+          AADSignup, MicrosoftAccount, EmailOTP. Required.
+        nullable: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.builtInIdentityProvider'
+x-ms-discriminator-value: '#microsoft.graph.builtInIdentityProvider'

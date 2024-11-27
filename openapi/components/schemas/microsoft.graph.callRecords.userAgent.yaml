@@ -1,0 +1,22 @@
+title: userAgent
+required:
+  - '@odata.type'
+type: object
+properties:
+  applicationVersion:
+    type: string
+    description: Identifies the version of application software used by this endpoint.
+    nullable: true
+  headerValue:
+    type: string
+    description: User-agent header value reported by this endpoint.
+    nullable: true
+  '@odata.type':
+    type: string
+discriminator:
+  propertyName: '@odata.type'
+  mapping:
+    '#microsoft.graph.callRecords.clientUserAgent': .\microsoft.graph.callRecords.clientUserAgent.yaml
+    '#microsoft.graph.callRecords.serviceUserAgent': .\microsoft.graph.callRecords.serviceUserAgent.yaml
+    microsoft.graph.callRecords.clientUserAgent: .\microsoft.graph.callRecords.clientUserAgent.yaml
+    microsoft.graph.callRecords.serviceUserAgent: .\microsoft.graph.callRecords.serviceUserAgent.yaml

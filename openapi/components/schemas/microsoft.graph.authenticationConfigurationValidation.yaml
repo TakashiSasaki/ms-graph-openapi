@@ -1,0 +1,17 @@
+title: authenticationConfigurationValidation
+required:
+  - '@odata.type'
+type: object
+properties:
+  errors:
+    type: array
+    items:
+      $ref: .\microsoft.graph.genericError.yaml
+    description: Errors in the validation result of a customAuthenticationExtension.
+  warnings:
+    type: array
+    items:
+      $ref: .\microsoft.graph.genericError.yaml
+    description: Warnings in the validation result of a customAuthenticationExtension.
+  '@odata.type':
+    type: string

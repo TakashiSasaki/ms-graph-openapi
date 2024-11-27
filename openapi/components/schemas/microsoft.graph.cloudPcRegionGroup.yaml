@@ -1,0 +1,24 @@
+title: cloudPcRegionGroup
+enum:
+  - default
+  - australia
+  - canada
+  - usCentral
+  - usEast
+  - usWest
+  - france
+  - germany
+  - europeUnion
+  - unitedKingdom
+  - japan
+  - asia
+  - india
+  - southAmerica
+  - euap
+  - usGovernment
+  - usGovernmentDOD
+  - norway
+  - switzerland
+  - southKorea
+  - unknownFutureValue
+type: string

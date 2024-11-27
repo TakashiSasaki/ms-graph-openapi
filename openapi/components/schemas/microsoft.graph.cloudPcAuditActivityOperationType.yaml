@@ -1,0 +1,7 @@
+title: cloudPcAuditActivityOperationType
+enum:
+  - create
+  - delete
+  - patch
+  - unknownFutureValue
+type: string

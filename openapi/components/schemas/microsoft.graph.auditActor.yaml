@@ -1,0 +1,42 @@
+title: auditActor
+required:
+  - '@odata.type'
+type: object
+properties:
+  applicationDisplayName:
+    type: string
+    description: Name of the Application.
+    nullable: true
+  applicationId:
+    type: string
+    description: AAD Application Id.
+    nullable: true
+  auditActorType:
+    type: string
+    description: Actor Type.
+    nullable: true
+  ipAddress:
+    type: string
+    description: IPAddress.
+    nullable: true
+  servicePrincipalName:
+    type: string
+    description: Service Principal Name (SPN).
+    nullable: true
+  userId:
+    type: string
+    description: User Id.
+    nullable: true
+  userPermissions:
+    type: array
+    items:
+      type: string
+      nullable: true
+    description: List of user permissions when the audit was performed.
+  userPrincipalName:
+    type: string
+    description: User Principal Name (UPN).
+    nullable: true
+  '@odata.type':
+    type: string
+description: A class containing the properties for Audit Actor.

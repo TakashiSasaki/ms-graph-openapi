@@ -1,0 +1,8 @@
+title: cloudPcAuditActivityResult
+enum:
+  - success
+  - clientError
+  - failure
+  - timeout
+  - unknownFutureValue
+type: string

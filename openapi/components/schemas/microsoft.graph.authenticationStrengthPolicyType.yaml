@@ -1,0 +1,6 @@
+title: authenticationStrengthPolicyType
+enum:
+  - builtIn
+  - custom
+  - unknownFutureValue
+type: string

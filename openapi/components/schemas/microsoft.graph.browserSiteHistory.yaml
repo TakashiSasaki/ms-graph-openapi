@@ -1,0 +1,63 @@
+title: browserSiteHistory
+required:
+  - '@odata.type'
+type: object
+properties:
+  allowRedirect:
+    type: boolean
+    description: >-
+      Controls the behavior of redirected sites. If true, indicates that the
+      site will open in Internet Explorer 11 or Microsoft Edge even if the site
+      is navigated to as part of a HTTP or meta refresh redirection chain.
+    nullable: true
+  comment:
+    type: string
+    description: The comment for the site.
+  compatibilityMode:
+    anyOf:
+      - $ref: .\microsoft.graph.browserSiteCompatibilityMode.yaml
+      - type: object
+        nullable: true
+    description: >-
+      Controls what compatibility setting is used for specific sites or domains.
+      The possible values are: default, internetExplorer8Enterprise,
+      internetExplorer7Enterprise, internetExplorer11, internetExplorer10,
+      internetExplorer9, internetExplorer8, internetExplorer7,
+      internetExplorer5, unknownFutureValue.
+  lastModifiedBy:
+    anyOf:
+      - $ref: .\microsoft.graph.identitySet.yaml
+      - type: object
+        nullable: true
+    description: The user who last modified the site.
+  mergeType:
+    anyOf:
+      - $ref: .\microsoft.graph.browserSiteMergeType.yaml
+      - type: object
+        nullable: true
+    description: >-
+      The merge type of the site. The possible values are: noMerge, default,
+      unknownFutureValue.
+  publishedDateTime:
+    pattern: >-
+      ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+    type: string
+    description: The date and time when the site was last published.
+    format: date-time
+  targetEnvironment:
+    anyOf:
+      - $ref: .\microsoft.graph.browserSiteTargetEnvironment.yaml
+      - type: object
+        nullable: true
+    description: >-
+      The target environment that the site should open in. The possible values
+      are: internetExplorerMode, internetExplorer11, microsoftEdge,
+      configurable, none, unknownFutureValue.Prior to June 15, 2022, the
+      internetExplorer11 option would allow opening a site in the Internet
+      Explorer 11 (IE11) desktop application. Following the retirement of IE11
+      on June 15, 2022, the internetExplorer11 option will no longer open an
+      IE11 window and will instead behave the same as the internetExplorerMode
+      option.
+  '@odata.type':
+    type: string
+description: The history for the site modifications

@@ -1,0 +1,5 @@
+title: bodyType
+enum:
+  - text
+  - html
+type: string

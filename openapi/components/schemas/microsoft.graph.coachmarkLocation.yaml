@@ -1,0 +1,29 @@
+title: coachmarkLocation
+required:
+  - '@odata.type'
+type: object
+properties:
+  length:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    description: Length of coachmark.
+    format: int32
+    nullable: true
+  offset:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    description: Offset of coachmark.
+    format: int32
+    nullable: true
+  type:
+    anyOf:
+      - $ref: .\microsoft.graph.coachmarkLocationType.yaml
+      - type: object
+        nullable: true
+    description: >-
+      Type of coachmark location. The possible values are: unknown, fromEmail,
+      subject, externalTag, displayName, messageBody, unknownFutureValue.
+  '@odata.type':
+    type: string

@@ -1,0 +1,7 @@
+title: authenticationMethodsPolicyMigrationState
+enum:
+  - preMigration
+  - migrationInProgress
+  - migrationComplete
+  - unknownFutureValue
+type: string

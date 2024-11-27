@@ -1,0 +1,15 @@
+title: azureADJoinPolicy
+required:
+  - '@odata.type'
+type: object
+properties:
+  allowedToJoin:
+    anyOf:
+      - $ref: .\microsoft.graph.deviceRegistrationMembership.yaml
+      - type: object
+        nullable: true
+  isAdminConfigurable:
+    type: boolean
+    nullable: true
+  '@odata.type':
+    type: string

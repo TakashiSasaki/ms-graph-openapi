@@ -1,0 +1,25 @@
+title: columnValidation
+required:
+  - '@odata.type'
+type: object
+properties:
+  defaultLanguage:
+    type: string
+    description: Default BCP 47 language tag for the description.
+    nullable: true
+  descriptions:
+    type: array
+    items:
+      $ref: .\microsoft.graph.displayNameLocalization.yaml
+    description: >-
+      Localized messages that explain what is needed for this column's value to
+      be considered valid. User will be prompted with this message if validation
+      fails.
+  formula:
+    type: string
+    description: >-
+      The formula to validate column value. For examples, see Examples of common
+      formulas in lists.
+    nullable: true
+  '@odata.type':
+    type: string

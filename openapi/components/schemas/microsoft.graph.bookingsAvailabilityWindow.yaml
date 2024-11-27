@@ -1,0 +1,23 @@
+allOf:
+  - $ref: .\microsoft.graph.bookingsAvailability.yaml
+  - title: bookingsAvailabilityWindow
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      endDate:
+        pattern: ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$
+        type: string
+        description: End date of the availability window.
+        format: date
+        nullable: true
+      startDate:
+        pattern: ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$
+        type: string
+        description: Start date of the availability window.
+        format: date
+        nullable: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.bookingsAvailabilityWindow'
+x-ms-discriminator-value: '#microsoft.graph.bookingsAvailabilityWindow'

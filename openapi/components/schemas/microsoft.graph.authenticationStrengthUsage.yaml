@@ -1,0 +1,17 @@
+title: authenticationStrengthUsage
+required:
+  - '@odata.type'
+type: object
+properties:
+  mfa:
+    type: array
+    items:
+      $ref: .\microsoft.graph.conditionalAccessPolicy.yaml
+    x-ms-navigationProperty: true
+  none:
+    type: array
+    items:
+      $ref: .\microsoft.graph.conditionalAccessPolicy.yaml
+    x-ms-navigationProperty: true
+  '@odata.type':
+    type: string

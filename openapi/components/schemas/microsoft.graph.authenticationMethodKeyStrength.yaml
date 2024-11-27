@@ -1,0 +1,6 @@
+title: authenticationMethodKeyStrength
+enum:
+  - normal
+  - weak
+  - unknown
+type: string

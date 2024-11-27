@@ -1,0 +1,33 @@
+title: browserSiteTargetEnvironment
+enum:
+  - internetExplorerMode
+  - internetExplorer11
+  - microsoftEdge
+  - configurable
+  - none
+  - unknownFutureValue
+type: string
+x-ms-enum:
+  name: browserSiteTargetEnvironment
+  modelAsString: false
+  values:
+    - value: internetExplorerMode
+      description: Open in Internet Explorer Mode
+      name: internetExplorerMode
+    - value: internetExplorer11
+      description: Open in standalone Internet Explorer 11
+      name: internetExplorer11
+    - value: microsoftEdge
+      description: Open in Microsoft Edge
+      name: microsoftEdge
+    - value: configurable
+      description: Configurable type
+      name: configurable
+    - value: none
+      description: Open in the browser the employee chooses.
+      name: none
+    - value: unknownFutureValue
+      description: >-
+        Placeholder for evolvable enum, but this enum is never returned to the
+        caller, so it shouldn't be necessary.
+      name: unknownFutureValue

@@ -1,0 +1,10 @@
+title: coachmarkLocationType
+enum:
+  - unknown
+  - fromEmail
+  - subject
+  - externalTag
+  - displayName
+  - messageBody
+  - unknownFutureValue
+type: string

@@ -1,0 +1,88 @@
+title: audio
+required:
+  - '@odata.type'
+type: object
+properties:
+  album:
+    type: string
+    description: The title of the album for this audio file.
+    nullable: true
+  albumArtist:
+    type: string
+    description: The artist named on the album for the audio file.
+    nullable: true
+  artist:
+    type: string
+    description: The performing artist for the audio file.
+    nullable: true
+  bitrate:
+    type: number
+    description: Bitrate expressed in kbps.
+    format: int64
+    nullable: true
+  composers:
+    type: string
+    description: The name of the composer of the audio file.
+    nullable: true
+  copyright:
+    type: string
+    description: Copyright information for the audio file.
+    nullable: true
+  disc:
+    maximum: 32767
+    minimum: -32768
+    type: number
+    description: The number of the disc this audio file came from.
+    format: int16
+    nullable: true
+  discCount:
+    maximum: 32767
+    minimum: -32768
+    type: number
+    description: The total number of discs in this album.
+    format: int16
+    nullable: true
+  duration:
+    type: number
+    description: Duration of the audio file, expressed in milliseconds
+    format: int64
+    nullable: true
+  genre:
+    type: string
+    description: The genre of this audio file.
+    nullable: true
+  hasDrm:
+    type: boolean
+    description: Indicates if the file is protected with digital rights management.
+    nullable: true
+  isVariableBitrate:
+    type: boolean
+    description: Indicates if the file is encoded with a variable bitrate.
+    nullable: true
+  title:
+    type: string
+    description: The title of the audio file.
+    nullable: true
+  track:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    description: The number of the track on the original disc for this audio file.
+    format: int32
+    nullable: true
+  trackCount:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    description: The total number of tracks on the original disc for this audio file.
+    format: int32
+    nullable: true
+  year:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    description: The year the audio file was recorded.
+    format: int32
+    nullable: true
+  '@odata.type':
+    type: string

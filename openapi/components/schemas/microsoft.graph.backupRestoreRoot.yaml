@@ -1,0 +1,120 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: backupRestoreRoot
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      serviceStatus:
+        anyOf:
+          - $ref: .\microsoft.graph.serviceStatus.yaml
+          - type: object
+            nullable: true
+        description: Represents the tenant-level status of the Backup Storage service.
+      driveInclusionRules:
+        type: array
+        items:
+          $ref: .\microsoft.graph.driveProtectionRule.yaml
+        description: The list of drive inclusion rules applied to the tenant.
+        x-ms-navigationProperty: true
+      driveProtectionUnits:
+        type: array
+        items:
+          $ref: .\microsoft.graph.driveProtectionUnit.yaml
+        description: The list of drive protection units in the tenant.
+        x-ms-navigationProperty: true
+      exchangeProtectionPolicies:
+        type: array
+        items:
+          $ref: .\microsoft.graph.exchangeProtectionPolicy.yaml
+        description: The list of Exchange protection policies in the tenant.
+        x-ms-navigationProperty: true
+      exchangeRestoreSessions:
+        type: array
+        items:
+          $ref: .\microsoft.graph.exchangeRestoreSession.yaml
+        description: The list of Exchange restore sessions available in the tenant.
+        x-ms-navigationProperty: true
+      mailboxInclusionRules:
+        type: array
+        items:
+          $ref: .\microsoft.graph.mailboxProtectionRule.yaml
+        description: The list of mailbox inclusion rules applied to the tenant.
+        x-ms-navigationProperty: true
+      mailboxProtectionUnits:
+        type: array
+        items:
+          $ref: .\microsoft.graph.mailboxProtectionUnit.yaml
+        description: The list of mailbox protection units in the tenant.
+        x-ms-navigationProperty: true
+      oneDriveForBusinessProtectionPolicies:
+        type: array
+        items:
+          $ref: .\microsoft.graph.oneDriveForBusinessProtectionPolicy.yaml
+        description: The list of OneDrive for Business protection policies in the tenant.
+        x-ms-navigationProperty: true
+      oneDriveForBusinessRestoreSessions:
+        type: array
+        items:
+          $ref: .\microsoft.graph.oneDriveForBusinessRestoreSession.yaml
+        description: >-
+          The list of OneDrive for Business restore sessions available in the
+          tenant.
+        x-ms-navigationProperty: true
+      protectionPolicies:
+        type: array
+        items:
+          $ref: .\microsoft.graph.protectionPolicyBase.yaml
+        description: List of protection policies in the tenant.
+        x-ms-navigationProperty: true
+      protectionUnits:
+        type: array
+        items:
+          $ref: .\microsoft.graph.protectionUnitBase.yaml
+        description: List of protection units in the tenant.
+        x-ms-navigationProperty: true
+      restorePoints:
+        type: array
+        items:
+          $ref: .\microsoft.graph.restorePoint.yaml
+        description: List of restore points in the tenant.
+        x-ms-navigationProperty: true
+      restoreSessions:
+        type: array
+        items:
+          $ref: .\microsoft.graph.restoreSessionBase.yaml
+        description: List of restore sessions in the tenant.
+        x-ms-navigationProperty: true
+      serviceApps:
+        type: array
+        items:
+          $ref: .\microsoft.graph.serviceApp.yaml
+        description: List of Backup Storage apps in the tenant.
+        x-ms-navigationProperty: true
+      sharePointProtectionPolicies:
+        type: array
+        items:
+          $ref: .\microsoft.graph.sharePointProtectionPolicy.yaml
+        description: The list of SharePoint protection policies in the tenant.
+        x-ms-navigationProperty: true
+      sharePointRestoreSessions:
+        type: array
+        items:
+          $ref: .\microsoft.graph.sharePointRestoreSession.yaml
+        description: The list of SharePoint restore sessions available in the tenant.
+        x-ms-navigationProperty: true
+      siteInclusionRules:
+        type: array
+        items:
+          $ref: .\microsoft.graph.siteProtectionRule.yaml
+        description: The list of site inclusion rules applied to the tenant.
+        x-ms-navigationProperty: true
+      siteProtectionUnits:
+        type: array
+        items:
+          $ref: .\microsoft.graph.siteProtectionUnit.yaml
+        description: The list of site protection units in the tenant.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.backupRestoreRoot'

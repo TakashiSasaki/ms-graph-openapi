@@ -1,0 +1,10 @@
+title: cloudPcOnPremisesConnectionStatus
+enum:
+  - pending
+  - running
+  - passed
+  - failed
+  - warning
+  - informational
+  - unknownFutureValue
+type: string

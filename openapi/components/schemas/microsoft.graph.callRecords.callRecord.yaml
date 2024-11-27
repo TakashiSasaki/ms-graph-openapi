@@ -1,0 +1,105 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: callRecord
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      endDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: >-
+          UTC time when the last user left the call. The DateTimeOffset type
+          represents date and time information using ISO 8601 format and is
+          always in UTC time. For example, midnight UTC on Jan 1, 2014 is
+          2014-01-01T00:00:00Z
+        format: date-time
+      joinWebUrl:
+        type: string
+        description: >-
+          Meeting URL associated to the call. May not be available for a
+          peerToPeer call record type.
+        nullable: true
+      lastModifiedDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: >-
+          UTC time when the call record was created. The DatetimeOffset type
+          represents date and time information using ISO 8601 format and is
+          always in UTC time. For example, midnight UTC on Jan 1, 2014 is
+          2014-01-01T00:00:00Z
+        format: date-time
+      modalities:
+        type: array
+        items:
+          $ref: .\microsoft.graph.callRecords.modality.yaml
+        description: >-
+          List of all the modalities used in the call. Possible values are:
+          unknown, audio, video, videoBasedScreenSharing, data, screenSharing,
+          unknownFutureValue.
+      organizer:
+        anyOf:
+          - $ref: .\microsoft.graph.identitySet.yaml
+          - type: object
+            nullable: true
+        description: >-
+          The organizing party's identity. The organizer property is deprecated
+          and will stop returning data on June 30, 2026. Going forward, use the
+          organizer_v2 relationship.
+      participants:
+        type: array
+        items:
+          $ref: .\microsoft.graph.identitySet.yaml
+        description: >-
+          List of distinct identities involved in the call. Limited to 130
+          entries. The participants property is deprecated and will stop
+          returning data on June 30, 2026. Going forward, use the
+          participants_v2 relationship.
+      startDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: >-
+          UTC time when the first user joined the call. The DatetimeOffset type
+          represents date and time information using ISO 8601 format and is
+          always in UTC time. For example, midnight UTC on Jan 1, 2014 is
+          2014-01-01T00:00:00Z.
+        format: date-time
+      type:
+        $ref: .\microsoft.graph.callRecords.callType.yaml
+      version:
+        type: number
+        description: >-
+          Monotonically increasing version of the call record. Higher version
+          call records with the same id includes additional data compared to the
+          lower version.
+        format: int64
+      organizer_v2:
+        anyOf:
+          - $ref: .\microsoft.graph.callRecords.organizer.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Identity of the organizer of the call. This relationship is expanded
+          by default in callRecord methods.
+        x-ms-navigationProperty: true
+      participants_v2:
+        type: array
+        items:
+          $ref: .\microsoft.graph.callRecords.participant.yaml
+        description: List of distinct participants in the call.
+        x-ms-navigationProperty: true
+      sessions:
+        type: array
+        items:
+          $ref: .\microsoft.graph.callRecords.session.yaml
+        description: >-
+          List of sessions involved in the call. Peer-to-peer calls typically
+          only have one session, whereas group calls typically have at least one
+          session per participant. Read-only. Nullable.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.callRecords.callRecord'

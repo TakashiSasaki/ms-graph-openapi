@@ -1,0 +1,10 @@
+title: userFeedbackRating
+enum:
+  - notRated
+  - bad
+  - poor
+  - fair
+  - good
+  - excellent
+  - unknownFutureValue
+type: string

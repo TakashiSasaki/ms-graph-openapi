@@ -1,0 +1,18 @@
+title: authenticationMethodsRegistrationCampaignIncludeTarget
+required:
+  - '@odata.type'
+type: object
+properties:
+  id:
+    type: string
+    description: The object identifier of a Microsoft Entra user or group.
+  targetedAuthenticationMethod:
+    type: string
+    description: >-
+      The authentication method that the user is prompted to register. The value
+      must be microsoftAuthenticator.
+    nullable: true
+  targetType:
+    $ref: .\microsoft.graph.authenticationMethodTargetType.yaml
+  '@odata.type':
+    type: string

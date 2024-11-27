@@ -1,0 +1,23 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: authenticationCombinationConfiguration
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      appliesToCombinations:
+        type: array
+        items:
+          $ref: .\microsoft.graph.authenticationMethodModes.yaml
+        description: >-
+          Which authentication method combinations this configuration applies
+          to. Must be an allowedCombinations object, part of the
+          authenticationStrengthPolicy. The only possible value for
+          fido2combinationConfigurations is 'fido2'.
+      '@odata.type':
+        type: string
+    discriminator:
+      propertyName: '@odata.type'
+      mapping:
+        '#microsoft.graph.fido2CombinationConfiguration': .\microsoft.graph.fido2CombinationConfiguration.yaml
+        '#microsoft.graph.x509CertificateCombinationConfiguration': .\microsoft.graph.x509CertificateCombinationConfiguration.yaml

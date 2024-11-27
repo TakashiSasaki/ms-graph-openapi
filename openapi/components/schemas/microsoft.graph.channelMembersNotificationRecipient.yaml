@@ -1,0 +1,19 @@
+allOf:
+  - $ref: .\microsoft.graph.teamworkNotificationRecipient.yaml
+  - title: channelMembersNotificationRecipient
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      channelId:
+        type: string
+        description: >-
+          The unique identifier for the channel whose members should receive the
+          notification.
+      teamId:
+        type: string
+        description: The unique identifier for the team under which the channel resides.
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.channelMembersNotificationRecipient'
+x-ms-discriminator-value: '#microsoft.graph.channelMembersNotificationRecipient'

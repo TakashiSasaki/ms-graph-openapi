@@ -1,0 +1,22 @@
+title: commentAction
+required:
+  - '@odata.type'
+type: object
+properties:
+  isReply:
+    type: boolean
+    description: If true, this activity was a reply to an existing comment thread.
+    nullable: true
+  parentAuthor:
+    anyOf:
+      - $ref: .\microsoft.graph.identitySet.yaml
+      - type: object
+        nullable: true
+    description: The identity of the user who started the comment thread.
+  participants:
+    type: array
+    items:
+      $ref: .\microsoft.graph.identitySet.yaml
+    description: The identities of the users participating in this comment thread.
+  '@odata.type':
+    type: string

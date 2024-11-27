@@ -1,0 +1,10 @@
+title: Collection of microsoft.graph.callRecords.mediaStream
+type: object
+allOf:
+  - $ref: .\BaseCollectionPaginationCountResponse.yaml
+  - type: object
+    properties:
+      value:
+        type: array
+        items:
+          $ref: .\microsoft.graph.callRecords.mediaStream.yaml

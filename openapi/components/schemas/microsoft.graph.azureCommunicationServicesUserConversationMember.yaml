@@ -1,0 +1,15 @@
+allOf:
+  - $ref: .\microsoft.graph.conversationMember.yaml
+  - title: azureCommunicationServicesUserConversationMember
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      azureCommunicationServicesId:
+        type: string
+        description: Azure Communication Services ID of the user.
+        nullable: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.azureCommunicationServicesUserConversationMember'
+x-ms-discriminator-value: '#microsoft.graph.azureCommunicationServicesUserConversationMember'

@@ -1,0 +1,24 @@
+title: authenticationAttributeCollectionPageViewConfiguration
+required:
+  - '@odata.type'
+type: object
+properties:
+  description:
+    type: string
+    description: The description of the page.
+    nullable: true
+  inputs:
+    type: array
+    items:
+      $ref: >-
+        .\microsoft.graph.authenticationAttributeCollectionInputConfiguration.yaml
+    description: >-
+      The display configuration of attributes being collected on the attribute
+      collection page. You must specify all attributes that you want to retain,
+      otherwise they're removed from the user flow.
+  title:
+    type: string
+    description: The title of the attribute collection page.
+    nullable: true
+  '@odata.type':
+    type: string

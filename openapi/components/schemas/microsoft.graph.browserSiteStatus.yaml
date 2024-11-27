@@ -1,0 +1,29 @@
+title: browserSiteStatus
+enum:
+  - published
+  - pendingAdd
+  - pendingEdit
+  - pendingDelete
+  - unknownFutureValue
+type: string
+x-ms-enum:
+  name: browserSiteStatus
+  modelAsString: false
+  values:
+    - value: published
+      description: A site that has been published
+      name: published
+    - value: pendingAdd
+      description: A site that has been added pending publish
+      name: pendingAdd
+    - value: pendingEdit
+      description: A site that has been edited pending publish
+      name: pendingEdit
+    - value: pendingDelete
+      description: A site that has been deleted pending publish
+      name: pendingDelete
+    - value: unknownFutureValue
+      description: >-
+        Placeholder for evolvable enum, but this enum is never returned to the
+        caller, so it shouldn't be necessary.
+      name: unknownFutureValue

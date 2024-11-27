@@ -1,0 +1,17 @@
+title: bookingWorkTimeSlot
+required:
+  - '@odata.type'
+type: object
+properties:
+  endTime:
+    pattern: ^([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?$
+    type: string
+    description: The time of the day when work stops. For example, 17:00:00.0000000.
+    format: time
+  startTime:
+    pattern: ^([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?$
+    type: string
+    description: The time of the day when work starts. For example, 08:00:00.0000000.
+    format: time
+  '@odata.type':
+    type: string

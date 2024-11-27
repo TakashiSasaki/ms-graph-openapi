@@ -1,0 +1,25 @@
+allOf:
+  - $ref: .\microsoft.graph.eventMessageDetail.yaml
+  - title: channelAddedEventMessageDetail
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      channelDisplayName:
+        type: string
+        description: Display name of the channel.
+        nullable: true
+      channelId:
+        type: string
+        description: Unique identifier of the channel.
+        nullable: true
+      initiator:
+        anyOf:
+          - $ref: .\microsoft.graph.identitySet.yaml
+          - type: object
+            nullable: true
+        description: Initiator of the event.
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.channelAddedEventMessageDetail'
+x-ms-discriminator-value: '#microsoft.graph.channelAddedEventMessageDetail'

@@ -1,0 +1,22 @@
+allOf:
+  - $ref: .\microsoft.graph.subjectSet.yaml
+  - title: attributeRuleMembers
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      description:
+        type: string
+        description: A description of the membership rule.
+        nullable: true
+      membershipRule:
+        type: string
+        description: >-
+          Determines the allowed target users for this policy. For more
+          information about the syntax of the membership rule, see Membership
+          Rules syntax.
+        nullable: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.attributeRuleMembers'
+x-ms-discriminator-value: '#microsoft.graph.attributeRuleMembers'

@@ -1,0 +1,9 @@
+title: productFamily
+enum:
+  - unknown
+  - teams
+  - skypeForBusiness
+  - lync
+  - unknownFutureValue
+  - azureCommunicationServices
+type: string

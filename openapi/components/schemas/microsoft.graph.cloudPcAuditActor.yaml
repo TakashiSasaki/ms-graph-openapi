@@ -1,0 +1,51 @@
+title: cloudPcAuditActor
+required:
+  - '@odata.type'
+type: object
+properties:
+  applicationDisplayName:
+    type: string
+    description: Name of the application.
+    nullable: true
+  applicationId:
+    type: string
+    description: Microsoft Entra application ID.
+    nullable: true
+  ipAddress:
+    type: string
+    description: IP address.
+    nullable: true
+  remoteTenantId:
+    type: string
+    description: The delegated partner tenant ID.
+    nullable: true
+  remoteUserId:
+    type: string
+    description: The delegated partner user ID.
+    nullable: true
+  servicePrincipalName:
+    type: string
+    description: Service Principal Name (SPN).
+    nullable: true
+  userId:
+    type: string
+    description: Microsoft Entra user ID.
+    nullable: true
+  userPermissions:
+    type: array
+    items:
+      type: string
+    description: >-
+      List of user permissions and application permissions when the audit event
+      was performed.
+  userPrincipalName:
+    type: string
+    description: User Principal Name (UPN).
+    nullable: true
+  userRoleScopeTags:
+    type: array
+    items:
+      $ref: .\microsoft.graph.cloudPcUserRoleScopeTagInfo.yaml
+    description: List of role scope tags.
+  '@odata.type':
+    type: string

@@ -1,0 +1,22 @@
+title: columnTypes
+enum:
+  - note
+  - text
+  - choice
+  - multichoice
+  - number
+  - currency
+  - dateTime
+  - lookup
+  - boolean
+  - user
+  - url
+  - calculated
+  - location
+  - geolocation
+  - term
+  - multiterm
+  - thumbnail
+  - approvalStatus
+  - unknownFutureValue
+type: string

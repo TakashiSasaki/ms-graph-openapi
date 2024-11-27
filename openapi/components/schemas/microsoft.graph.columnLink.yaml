@@ -1,0 +1,14 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: columnLink
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      name:
+        type: string
+        description: The name of the column  in this content type.
+        nullable: true
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.columnLink'

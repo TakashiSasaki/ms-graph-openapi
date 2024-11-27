@@ -1,0 +1,76 @@
+title: changeNotification
+required:
+  - '@odata.type'
+type: object
+properties:
+  changeType:
+    $ref: .\microsoft.graph.changeType.yaml
+  clientState:
+    type: string
+    description: >-
+      Value of the clientState property sent in the subscription request (if
+      any). The maximum length is 255 characters. The client can check whether
+      the change notification came from the service by comparing the values of
+      the clientState property. The value of the clientState property sent with
+      the subscription is compared with the value of the clientState property
+      received with each change notification. Optional.
+    nullable: true
+  encryptedContent:
+    anyOf:
+      - $ref: .\microsoft.graph.changeNotificationEncryptedContent.yaml
+      - type: object
+        nullable: true
+    description: >-
+      (Preview) Encrypted content attached with the change notification. Only
+      provided if encryptionCertificate and includeResourceData were defined
+      during the subscription request and if the resource supports it. Optional.
+  id:
+    type: string
+    description: Unique ID for the notification. Optional.
+    nullable: true
+  lifecycleEvent:
+    anyOf:
+      - $ref: .\microsoft.graph.lifecycleEventType.yaml
+      - type: object
+        nullable: true
+    description: >-
+      The type of lifecycle notification if the current notification is a
+      lifecycle notification. Optional. Supported values are missed,
+      subscriptionRemoved, reauthorizationRequired. Optional.
+  resource:
+    type: string
+    description: >-
+      The URI of the resource that emitted the change notification relative to
+      https://graph.microsoft.com. Required.
+  resourceData:
+    anyOf:
+      - $ref: .\microsoft.graph.resourceData.yaml
+      - type: object
+        nullable: true
+    description: >-
+      The content of this property depends on the type of resource being
+      subscribed to. Optional.
+  subscriptionExpirationDateTime:
+    pattern: >-
+      ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+    type: string
+    description: The expiration time for the subscription. Required.
+    format: date-time
+  subscriptionId:
+    pattern: >-
+      ^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$
+    type: string
+    description: >-
+      The unique identifier of the subscription that generated the
+      notification.Required.
+    format: uuid
+  tenantId:
+    pattern: >-
+      ^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$
+    type: string
+    description: >-
+      The unique identifier of the tenant from which the change notification
+      originated. Required.
+    format: uuid
+  '@odata.type':
+    type: string

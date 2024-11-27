@@ -1,0 +1,45 @@
+title: broadcastMeetingSettings
+required:
+  - '@odata.type'
+type: object
+properties:
+  allowedAudience:
+    anyOf:
+      - $ref: .\microsoft.graph.broadcastMeetingAudience.yaml
+      - type: object
+        nullable: true
+    description: >-
+      Defines who can join the Teams live event. Possible values are listed in
+      the following table.
+  captions:
+    anyOf:
+      - $ref: .\microsoft.graph.broadcastMeetingCaptionSettings.yaml
+      - type: object
+        nullable: true
+    description: Caption settings of a Teams live event.
+  isAttendeeReportEnabled:
+    type: boolean
+    description: >-
+      Indicates whether attendee report is enabled for this Teams live event.
+      Default value is false.
+    nullable: true
+  isQuestionAndAnswerEnabled:
+    type: boolean
+    description: >-
+      Indicates whether Q&A is enabled for this Teams live event. Default value
+      is false.
+    nullable: true
+  isRecordingEnabled:
+    type: boolean
+    description: >-
+      Indicates whether recording is enabled for this Teams live event. Default
+      value is false.
+    nullable: true
+  isVideoOnDemandEnabled:
+    type: boolean
+    description: >-
+      Indicates whether video on demand is enabled for this Teams live event.
+      Default value is false.
+    nullable: true
+  '@odata.type':
+    type: string

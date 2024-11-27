@@ -1,0 +1,6 @@
+title: cloudPcOnPremisesConnectionType
+enum:
+  - hybridAzureADJoin
+  - azureADJoin
+  - unknownFutureValue
+type: string

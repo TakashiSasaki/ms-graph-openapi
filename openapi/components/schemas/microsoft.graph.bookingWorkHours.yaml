@@ -1,0 +1,15 @@
+title: bookingWorkHours
+required:
+  - '@odata.type'
+type: object
+properties:
+  day:
+    $ref: .\microsoft.graph.dayOfWeek.yaml
+  timeSlots:
+    type: array
+    items:
+      $ref: .\microsoft.graph.bookingWorkTimeSlot.yaml
+    description: A list of start/end times during a day.
+  '@odata.type':
+    type: string
+description: This type represents the set of working hours in a single day of the week.

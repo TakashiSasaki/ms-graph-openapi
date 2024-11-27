@@ -1,0 +1,19 @@
+title: cloudPcAuditResource
+required:
+  - '@odata.type'
+type: object
+properties:
+  displayName:
+    type: string
+    description: The display name of the modified resource entity.
+    nullable: true
+  modifiedProperties:
+    type: array
+    items:
+      $ref: .\microsoft.graph.cloudPcAuditProperty.yaml
+    description: The list of modified properties.
+  resourceId:
+    type: string
+    description: The unique identifier of the modified resource entity.
+  '@odata.type':
+    type: string

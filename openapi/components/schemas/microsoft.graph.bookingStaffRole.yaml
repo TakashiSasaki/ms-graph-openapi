@@ -1,0 +1,10 @@
+title: bookingStaffRole
+enum:
+  - guest
+  - administrator
+  - viewer
+  - externalGuest
+  - unknownFutureValue
+  - scheduler
+  - teamMember
+type: string

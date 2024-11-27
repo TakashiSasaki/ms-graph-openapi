@@ -1,0 +1,7 @@
+title: callTranscriptionState
+enum:
+  - notStarted
+  - active
+  - inactive
+  - unknownFutureValue
+type: string

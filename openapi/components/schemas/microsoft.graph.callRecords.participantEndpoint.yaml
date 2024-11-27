@@ -1,0 +1,56 @@
+allOf:
+  - $ref: .\microsoft.graph.callRecords.endpoint.yaml
+  - title: participantEndpoint
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      associatedIdentity:
+        anyOf:
+          - $ref: .\microsoft.graph.identity.yaml
+          - type: object
+            nullable: true
+        description: Identity associated with the endpoint.
+      cpuCoresCount:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: CPU number of cores used by the media endpoint.
+        format: int32
+        nullable: true
+      cpuName:
+        type: string
+        description: CPU name used by the media endpoint.
+        nullable: true
+      cpuProcessorSpeedInMhz:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: CPU processor speed used by the media endpoint.
+        format: int32
+        nullable: true
+      feedback:
+        anyOf:
+          - $ref: .\microsoft.graph.callRecords.userFeedback.yaml
+          - type: object
+            nullable: true
+        description: >-
+          The feedback provided by the user of this endpoint about the quality
+          of the session.
+      identity:
+        anyOf:
+          - $ref: .\microsoft.graph.identitySet.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Identity associated with the endpoint. The identity property is
+          deprecated and will stop returning data on June 30, 2026. Going
+          forward, use the associatedIdentity property.
+      name:
+        type: string
+        description: Name of the device used by the media endpoint.
+        nullable: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.callRecords.participantEndpoint'
+x-ms-discriminator-value: '#microsoft.graph.callRecords.participantEndpoint'

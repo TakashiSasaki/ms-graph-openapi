@@ -1,0 +1,13 @@
+title: callState
+enum:
+  - incoming
+  - establishing
+  - established
+  - hold
+  - transferring
+  - transferAccepted
+  - redirecting
+  - terminating
+  - terminated
+  - unknownFutureValue
+type: string

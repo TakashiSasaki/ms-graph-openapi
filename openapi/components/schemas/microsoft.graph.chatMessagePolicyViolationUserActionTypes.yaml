@@ -1,0 +1,8 @@
+title: chatMessagePolicyViolationUserActionTypes
+enum:
+  - none
+  - override
+  - reportFalsePositive
+type: string
+x-ms-enum-flags:
+  isFlags: true

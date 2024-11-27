@@ -1,0 +1,7 @@
+title: chatType
+enum:
+  - oneOnOne
+  - group
+  - meeting
+  - unknownFutureValue
+type: string

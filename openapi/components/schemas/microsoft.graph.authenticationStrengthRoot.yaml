@@ -1,0 +1,30 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: authenticationStrengthRoot
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      combinations:
+        type: array
+        items:
+          $ref: .\microsoft.graph.authenticationMethodModes.yaml
+      authenticationMethodModes:
+        type: array
+        items:
+          $ref: .\microsoft.graph.authenticationMethodModeDetail.yaml
+        description: >-
+          Names and descriptions of all valid authentication method modes in the
+          system.
+        x-ms-navigationProperty: true
+      policies:
+        type: array
+        items:
+          $ref: .\microsoft.graph.authenticationStrengthPolicy.yaml
+        description: >-
+          A collection of authentication strength policies that exist for this
+          tenant, including both built-in and custom policies.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.authenticationStrengthRoot'

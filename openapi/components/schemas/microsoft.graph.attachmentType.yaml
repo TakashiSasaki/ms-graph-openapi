@@ -1,0 +1,6 @@
+title: attachmentType
+enum:
+  - file
+  - item
+  - reference
+type: string

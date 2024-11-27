@@ -1,0 +1,167 @@
+title: networkInfo
+required:
+  - '@odata.type'
+type: object
+properties:
+  bandwidthLowEventRatio:
+    oneOf:
+      - type: number
+        format: float
+        nullable: true
+      - type: string
+        nullable: true
+      - $ref: .\ReferenceNumeric.yaml
+    description: >-
+      Fraction of the call that the media endpoint detected the available
+      bandwidth or bandwidth policy was low enough to cause poor quality of the
+      audio sent.
+  basicServiceSetIdentifier:
+    type: string
+    description: >-
+      The wireless LAN basic service set identifier of the media endpoint used
+      to connect to the network.
+    nullable: true
+  connectionType:
+    $ref: .\microsoft.graph.callRecords.networkConnectionType.yaml
+  delayEventRatio:
+    oneOf:
+      - type: number
+        format: float
+        nullable: true
+      - type: string
+        nullable: true
+      - $ref: .\ReferenceNumeric.yaml
+    description: >-
+      Fraction of the call that the media endpoint detected the network delay
+      was significant enough to impact the ability to have real-time two-way
+      communication.
+  dnsSuffix:
+    type: string
+    description: DNS suffix associated with the network adapter of the media endpoint.
+    nullable: true
+  ipAddress:
+    type: string
+    description: IP address of the media endpoint.
+    nullable: true
+  linkSpeed:
+    type: number
+    description: >-
+      Link speed in bits per second reported by the network adapter used by the
+      media endpoint.
+    format: int64
+    nullable: true
+  macAddress:
+    type: string
+    description: >-
+      The media access control (MAC) address of the media endpoint's network
+      device. This value may be missing or shown as 02:00:00:00:00:00 due to
+      operating system privacy policies.
+    nullable: true
+  networkTransportProtocol:
+    $ref: .\microsoft.graph.callRecords.networkTransportProtocol.yaml
+  port:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    description: Network port number used by media endpoint.
+    format: int32
+    nullable: true
+  receivedQualityEventRatio:
+    oneOf:
+      - type: number
+        format: float
+        nullable: true
+      - type: string
+        nullable: true
+      - $ref: .\ReferenceNumeric.yaml
+    description: >-
+      Fraction of the call that the media endpoint detected the network was
+      causing poor quality of the audio received.
+  reflexiveIPAddress:
+    type: string
+    description: >-
+      IP address of the media endpoint as seen by the media relay server. This
+      is typically the public internet IP address associated to the endpoint.
+    nullable: true
+  relayIPAddress:
+    type: string
+    description: IP address of the media relay server allocated by the media endpoint.
+    nullable: true
+  relayPort:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    description: >-
+      Network port number allocated on the media relay server by the media
+      endpoint.
+    format: int32
+    nullable: true
+  sentQualityEventRatio:
+    oneOf:
+      - type: number
+        format: float
+        nullable: true
+      - type: string
+        nullable: true
+      - $ref: .\ReferenceNumeric.yaml
+    description: >-
+      Fraction of the call that the media endpoint detected the network was
+      causing poor quality of the audio sent.
+  subnet:
+    type: string
+    description: Subnet used for media stream by the media endpoint.
+    nullable: true
+  traceRouteHops:
+    type: array
+    items:
+      $ref: .\microsoft.graph.callRecords.traceRouteHop.yaml
+    description: List of network trace route hops collected for this media stream.*
+  wifiBand:
+    $ref: .\microsoft.graph.callRecords.wifiBand.yaml
+  wifiBatteryCharge:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    description: >-
+      Estimated remaining battery charge in percentage reported by the media
+      endpoint.
+    format: int32
+    nullable: true
+  wifiChannel:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    description: WiFi channel used by the media endpoint.
+    format: int32
+    nullable: true
+  wifiMicrosoftDriver:
+    type: string
+    description: >-
+      Name of the Microsoft WiFi driver used by the media endpoint. Value may be
+      localized based on the language used by endpoint.
+    nullable: true
+  wifiMicrosoftDriverVersion:
+    type: string
+    description: Version of the Microsoft WiFi driver used by the media endpoint.
+    nullable: true
+  wifiRadioType:
+    $ref: .\microsoft.graph.callRecords.wifiRadioType.yaml
+  wifiSignalStrength:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    description: WiFi signal strength in percentage reported by the media endpoint.
+    format: int32
+    nullable: true
+  wifiVendorDriver:
+    type: string
+    description: >-
+      Name of the WiFi driver used by the media endpoint. Value may be localized
+      based on the language used by endpoint.
+    nullable: true
+  wifiVendorDriverVersion:
+    type: string
+    description: Version of the WiFi driver used by the media endpoint.
+    nullable: true
+  '@odata.type':
+    type: string

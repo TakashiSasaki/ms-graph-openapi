@@ -1,0 +1,29 @@
+title: automaticRepliesMailTips
+required:
+  - '@odata.type'
+type: object
+properties:
+  message:
+    type: string
+    description: The automatic reply message.
+    nullable: true
+  messageLanguage:
+    anyOf:
+      - $ref: .\microsoft.graph.localeInfo.yaml
+      - type: object
+        nullable: true
+    description: The language that the automatic reply message is in.
+  scheduledEndTime:
+    anyOf:
+      - $ref: .\microsoft.graph.dateTimeTimeZone.yaml
+      - type: object
+        nullable: true
+    description: The date and time that automatic replies are set to end.
+  scheduledStartTime:
+    anyOf:
+      - $ref: .\microsoft.graph.dateTimeTimeZone.yaml
+      - type: object
+        nullable: true
+    description: The date and time that automatic replies are set to begin.
+  '@odata.type':
+    type: string

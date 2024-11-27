@@ -1,0 +1,7 @@
+title: authenticationPhoneType
+enum:
+  - mobile
+  - alternateMobile
+  - office
+  - unknownFutureValue
+type: string

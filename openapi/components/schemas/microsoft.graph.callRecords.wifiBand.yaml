@@ -1,0 +1,8 @@
+title: wifiBand
+enum:
+  - unknown
+  - frequency24GHz
+  - frequency50GHz
+  - frequency60GHz
+  - unknownFutureValue
+type: string

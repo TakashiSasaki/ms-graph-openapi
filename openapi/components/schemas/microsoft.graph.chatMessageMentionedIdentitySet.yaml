@@ -1,0 +1,19 @@
+allOf:
+  - $ref: .\microsoft.graph.identitySet.yaml
+  - title: chatMessageMentionedIdentitySet
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      conversation:
+        anyOf:
+          - $ref: .\microsoft.graph.teamworkConversationIdentity.yaml
+          - type: object
+            nullable: true
+        description: >-
+          If present, represents a conversation (for example, team or channel)
+          @mentioned in a message.
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.chatMessageMentionedIdentitySet'
+x-ms-discriminator-value: '#microsoft.graph.chatMessageMentionedIdentitySet'

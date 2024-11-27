@@ -1,0 +1,21 @@
+allOf:
+  - $ref: .\microsoft.graph.eventMessageDetail.yaml
+  - title: channelUnsetAsFavoriteByDefaultEventMessageDetail
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      channelId:
+        type: string
+        description: Unique identifier of the channel.
+        nullable: true
+      initiator:
+        anyOf:
+          - $ref: .\microsoft.graph.identitySet.yaml
+          - type: object
+            nullable: true
+        description: Initiator of the event.
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.channelUnsetAsFavoriteByDefaultEventMessageDetail'
+x-ms-discriminator-value: '#microsoft.graph.channelUnsetAsFavoriteByDefaultEventMessageDetail'

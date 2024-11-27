@@ -1,0 +1,26 @@
+allOf:
+  - $ref: .\microsoft.graph.message.yaml
+  - title: calendarSharingMessage
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      canAccept:
+        type: boolean
+        nullable: true
+      sharingMessageAction:
+        anyOf:
+          - $ref: .\microsoft.graph.calendarSharingMessageAction.yaml
+          - type: object
+            nullable: true
+      sharingMessageActions:
+        type: array
+        items:
+          $ref: .\microsoft.graph.calendarSharingMessageAction.yaml
+      suggestedCalendarName:
+        type: string
+        nullable: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.calendarSharingMessage'
+x-ms-discriminator-value: '#microsoft.graph.calendarSharingMessage'

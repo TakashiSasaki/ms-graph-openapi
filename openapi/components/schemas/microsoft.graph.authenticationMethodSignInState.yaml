@@ -1,0 +1,10 @@
+title: authenticationMethodSignInState
+enum:
+  - notSupported
+  - notAllowedByPolicy
+  - notEnabled
+  - phoneNumberNotUnique
+  - ready
+  - notConfigured
+  - unknownFutureValue
+type: string

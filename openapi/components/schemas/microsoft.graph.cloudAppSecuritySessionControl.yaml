@@ -1,0 +1,20 @@
+allOf:
+  - $ref: .\microsoft.graph.conditionalAccessSessionControl.yaml
+  - title: cloudAppSecuritySessionControl
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      cloudAppSecurityType:
+        anyOf:
+          - $ref: .\microsoft.graph.cloudAppSecuritySessionControlType.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Possible values are: mcasConfigured, monitorOnly, blockDownloads,
+          unknownFutureValue. For more information, see Deploy Conditional
+          Access App Control for featured apps.
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.cloudAppSecuritySessionControl'
+x-ms-discriminator-value: '#microsoft.graph.cloudAppSecuritySessionControl'

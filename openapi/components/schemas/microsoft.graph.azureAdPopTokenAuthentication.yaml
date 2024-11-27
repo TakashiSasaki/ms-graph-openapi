@@ -1,0 +1,11 @@
+allOf:
+  - $ref: .\microsoft.graph.customExtensionAuthenticationConfiguration.yaml
+  - title: azureAdPopTokenAuthentication
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.azureAdPopTokenAuthentication'
+x-ms-discriminator-value: '#microsoft.graph.azureAdPopTokenAuthentication'

@@ -1,0 +1,16 @@
+allOf:
+  - $ref: .\microsoft.graph.teamworkNotificationRecipient.yaml
+  - title: chatMembersNotificationRecipient
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      chatId:
+        type: string
+        description: >-
+          The unique identifier for the chat whose members should receive the
+          notifications.
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.chatMembersNotificationRecipient'
+x-ms-discriminator-value: '#microsoft.graph.chatMembersNotificationRecipient'

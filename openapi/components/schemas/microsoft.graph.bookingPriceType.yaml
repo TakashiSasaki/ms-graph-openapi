@@ -1,0 +1,45 @@
+title: bookingPriceType
+enum:
+  - undefined
+  - fixedPrice
+  - startingAt
+  - hourly
+  - free
+  - priceVaries
+  - callUs
+  - notSet
+  - unknownFutureValue
+type: string
+description: Represents the type of pricing of a booking service.
+x-ms-enum:
+  name: bookingPriceType
+  modelAsString: false
+  values:
+    - value: undefined
+      description: The price of the service is not defined.
+      name: undefined
+    - value: fixedPrice
+      description: The price of the service is fixed.
+      name: fixedPrice
+    - value: startingAt
+      description: >-
+        The price of the service starts with a particular value, but can be
+        higher based on the final services performed.
+      name: startingAt
+    - value: hourly
+      description: >-
+        The price of the service depends on the number of hours a staff member
+        works on the service.
+      name: hourly
+    - value: free
+      description: The service is free.
+      name: free
+    - value: priceVaries
+      description: The price of the service varies.
+      name: priceVaries
+    - value: callUs
+      description: The price of the service is not listed.
+      name: callUs
+    - value: notSet
+      description: The price of the service is not set.
+      name: notSet

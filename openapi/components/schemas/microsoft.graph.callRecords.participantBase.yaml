@@ -1,0 +1,25 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: participantBase
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      administrativeUnitInfos:
+        type: array
+        items:
+          $ref: .\microsoft.graph.callRecords.administrativeUnitInfo.yaml
+        description: List of administrativeUnitInfo objects for the call participant.
+      identity:
+        anyOf:
+          - $ref: .\microsoft.graph.communicationsIdentitySet.yaml
+          - type: object
+            nullable: true
+        description: The identity of the call participant.
+      '@odata.type':
+        type: string
+    discriminator:
+      propertyName: '@odata.type'
+      mapping:
+        '#microsoft.graph.callRecords.organizer': .\microsoft.graph.callRecords.organizer.yaml
+        '#microsoft.graph.callRecords.participant': .\microsoft.graph.callRecords.participant.yaml
