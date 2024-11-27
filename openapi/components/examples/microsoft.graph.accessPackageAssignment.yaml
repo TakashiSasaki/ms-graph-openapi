@@ -1,0 +1,15 @@
+value:
+  accessPackage:
+    '@odata.type': microsoft.graph.accessPackage
+  assignmentPolicy:
+    '@odata.type': microsoft.graph.accessPackageAssignmentPolicy
+  customExtensionCalloutInstances:
+    - '@odata.type': microsoft.graph.customExtensionCalloutInstance
+  expiredDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  schedule:
+    '@odata.type': microsoft.graph.entitlementManagementSchedule
+  state:
+    '@odata.type': microsoft.graph.accessPackageAssignmentState
+  status: String
+  target:
+    '@odata.type': microsoft.graph.accessPackageSubject

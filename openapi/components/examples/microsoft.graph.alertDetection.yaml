@@ -1,0 +1,4 @@
+value:
+  detectionType: String
+  method: String
+  name: String

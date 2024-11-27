@@ -1,0 +1,24 @@
+value:
+  deviceThreatProtectionEnabled: 'true'
+  deviceThreatProtectionRequiredSecurityLevel:
+    '@odata.type': microsoft.graph.deviceThreatProtectionLevel
+  minAndroidSecurityPatchLevel: String
+  osMaximumVersion: String
+  osMinimumVersion: String
+  passwordExpirationDays: '0'
+  passwordMinimumLength: '0'
+  passwordMinutesOfInactivityBeforeLock: '0'
+  passwordPreviousPasswordBlockCount: '0'
+  passwordRequired: 'true'
+  passwordRequiredType:
+    '@odata.type': microsoft.graph.androidRequiredPasswordType
+  securityBlockJailbrokenDevices: 'true'
+  securityDisableUsbDebugging: 'true'
+  securityPreventInstallAppsFromUnknownSources: 'true'
+  securityRequireCompanyPortalAppIntegrity: 'true'
+  securityRequireGooglePlayServices: 'true'
+  securityRequireSafetyNetAttestationBasicIntegrity: 'true'
+  securityRequireSafetyNetAttestationCertifiedDevice: 'true'
+  securityRequireUpToDateSecurityProviders: 'true'
+  securityRequireVerifyApps: 'true'
+  storageRequireEncryption: 'true'

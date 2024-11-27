@@ -1,0 +1,27 @@
+value:
+  accessPackage:
+    '@odata.type': microsoft.graph.accessPackage
+  allowedTargetScope:
+    '@odata.type': microsoft.graph.allowedTargetScope
+  automaticRequestSettings:
+    '@odata.type': microsoft.graph.accessPackageAutomaticRequestSettings
+  catalog:
+    '@odata.type': microsoft.graph.accessPackageCatalog
+  createdDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  customExtensionStageSettings:
+    - '@odata.type': microsoft.graph.customExtensionStageSetting
+  description: String
+  displayName: String
+  expiration:
+    '@odata.type': microsoft.graph.expirationPattern
+  modifiedDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  questions:
+    - '@odata.type': microsoft.graph.accessPackageQuestion
+  requestApprovalSettings:
+    '@odata.type': microsoft.graph.accessPackageAssignmentApprovalSettings
+  requestorSettings:
+    '@odata.type': microsoft.graph.accessPackageAssignmentRequestorSettings
+  reviewSettings:
+    '@odata.type': microsoft.graph.accessPackageAssignmentReviewSettings
+  specificAllowedTargets:
+    - '@odata.type': microsoft.graph.subjectSet

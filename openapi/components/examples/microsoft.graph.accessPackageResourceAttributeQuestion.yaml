@@ -1,0 +1,3 @@
+value:
+  question:
+    '@odata.type': microsoft.graph.accessPackageQuestion

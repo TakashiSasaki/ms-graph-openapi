@@ -1,0 +1,3 @@
+value:
+  installationOptions:
+    '@odata.type': microsoft.graph.m365AppsInstallationOptions

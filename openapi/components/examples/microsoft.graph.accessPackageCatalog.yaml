@@ -1,0 +1,20 @@
+value:
+  accessPackages:
+    - '@odata.type': microsoft.graph.accessPackage
+  catalogType:
+    '@odata.type': microsoft.graph.accessPackageCatalogType
+  createdDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  customWorkflowExtensions:
+    - '@odata.type': microsoft.graph.customCalloutExtension
+  description: String
+  displayName: String
+  isExternallyVisible: 'true'
+  modifiedDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  resourceRoles:
+    - '@odata.type': microsoft.graph.accessPackageResourceRole
+  resources:
+    - '@odata.type': microsoft.graph.accessPackageResource
+  resourceScopes:
+    - '@odata.type': microsoft.graph.accessPackageResourceScope
+  state:
+    '@odata.type': microsoft.graph.accessPackageCatalogState

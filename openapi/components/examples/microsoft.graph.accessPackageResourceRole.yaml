@@ -1,0 +1,7 @@
+value:
+  description: String
+  displayName: String
+  originId: String
+  originSystem: String
+  resource:
+    '@odata.type': microsoft.graph.accessPackageResource

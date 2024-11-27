@@ -1,0 +1,15 @@
+value:
+  agreementFileId: String
+  agreementId: String
+  deviceDisplayName: String
+  deviceId: String
+  deviceOSType: String
+  deviceOSVersion: String
+  expirationDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  recordedDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  state:
+    '@odata.type': microsoft.graph.agreementAcceptanceState
+  userDisplayName: String
+  userEmail: String
+  userId: String
+  userPrincipalName: String

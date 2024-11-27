@@ -1,0 +1,10 @@
+value:
+  connectedOrganization:
+    '@odata.type': microsoft.graph.connectedOrganization
+  displayName: String
+  email: String
+  objectId: String
+  onPremisesSecurityIdentifier: String
+  principalName: String
+  subjectType:
+    '@odata.type': microsoft.graph.accessPackageSubjectType

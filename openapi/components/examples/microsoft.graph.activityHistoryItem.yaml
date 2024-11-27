@@ -1,0 +1,12 @@
+value:
+  activeDurationSeconds: '0'
+  activity:
+    '@odata.type': microsoft.graph.userActivity
+  createdDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  expirationDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  lastActiveDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  lastModifiedDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  startedDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  status:
+    '@odata.type': microsoft.graph.status
+  userTimezone: String

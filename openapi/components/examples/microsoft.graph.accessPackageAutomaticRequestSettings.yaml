@@ -1,0 +1,4 @@
+value:
+  gracePeriodBeforeAccessRemoval: Duration
+  removeAccessWhenTargetLeavesAllowedTargets: 'true'
+  requestAccessForAllowedTargets: 'true'

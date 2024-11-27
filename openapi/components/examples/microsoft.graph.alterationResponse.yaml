@@ -1,0 +1,6 @@
+value:
+  originalQueryString: String
+  queryAlteration:
+    '@odata.type': microsoft.graph.searchAlteration
+  queryAlterationType:
+    '@odata.type': microsoft.graph.searchAlterationType

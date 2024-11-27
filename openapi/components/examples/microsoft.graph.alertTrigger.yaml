@@ -1,0 +1,4 @@
+value:
+  name: String
+  type: String
+  value: String

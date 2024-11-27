@@ -1,0 +1,13 @@
+value:
+  acceptances:
+    - '@odata.type': microsoft.graph.agreementAcceptance
+  displayName: String
+  file:
+    '@odata.type': microsoft.graph.agreementFile
+  files:
+    - '@odata.type': microsoft.graph.agreementFileLocalization
+  isPerDeviceAcceptanceRequired: 'true'
+  isViewingBeforeAcceptanceRequired: 'true'
+  termsExpiration:
+    '@odata.type': microsoft.graph.termsExpiration
+  userReacceptRequiredFrequency: Duration

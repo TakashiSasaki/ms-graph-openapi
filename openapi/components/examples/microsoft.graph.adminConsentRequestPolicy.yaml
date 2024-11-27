@@ -1,0 +1,8 @@
+value:
+  isEnabled: 'true'
+  notifyReviewers: 'true'
+  remindersEnabled: 'true'
+  requestDurationInDays: '0'
+  reviewers:
+    - '@odata.type': microsoft.graph.accessReviewReviewerScope
+  version: '0'

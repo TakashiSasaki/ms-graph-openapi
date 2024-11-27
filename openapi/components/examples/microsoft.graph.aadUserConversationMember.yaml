@@ -1,0 +1,6 @@
+value:
+  email: String
+  tenantId: String
+  user:
+    '@odata.type': microsoft.graph.user
+  userId: String

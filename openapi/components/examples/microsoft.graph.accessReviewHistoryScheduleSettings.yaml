@@ -1,0 +1,4 @@
+value:
+  recurrence:
+    '@odata.type': microsoft.graph.patternedRecurrence
+  reportRange: String

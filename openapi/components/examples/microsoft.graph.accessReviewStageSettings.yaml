@@ -1,0 +1,14 @@
+value:
+  decisionsThatWillMoveToNextStage:
+    - String
+  dependsOn:
+    - String
+  durationInDays: '0'
+  fallbackReviewers:
+    - '@odata.type': microsoft.graph.accessReviewReviewerScope
+  recommendationInsightSettings:
+    - '@odata.type': microsoft.graph.accessReviewRecommendationInsightSetting
+  recommendationsEnabled: 'true'
+  reviewers:
+    - '@odata.type': microsoft.graph.accessReviewReviewerScope
+  stageId: String

@@ -1,0 +1,8 @@
+value:
+  destination:
+    '@odata.type': microsoft.graph.accessPackageResourceAttributeDestination
+  isEditable: 'true'
+  isPersistedOnAssignmentRemoval: 'true'
+  name: String
+  source:
+    '@odata.type': microsoft.graph.accessPackageResourceAttributeSource

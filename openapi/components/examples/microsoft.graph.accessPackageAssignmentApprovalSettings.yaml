@@ -1,0 +1,5 @@
+value:
+  isApprovalRequiredForAdd: 'true'
+  isApprovalRequiredForUpdate: 'true'
+  stages:
+    - '@odata.type': microsoft.graph.accessPackageApprovalStage

@@ -1,0 +1,13 @@
+value:
+  expirationBehavior:
+    '@odata.type': microsoft.graph.accessReviewExpirationBehavior
+  fallbackReviewers:
+    - '@odata.type': microsoft.graph.subjectSet
+  isEnabled: 'true'
+  isRecommendationEnabled: 'true'
+  isReviewerJustificationRequired: 'true'
+  isSelfReview: 'true'
+  primaryReviewers:
+    - '@odata.type': microsoft.graph.subjectSet
+  schedule:
+    '@odata.type': microsoft.graph.entitlementManagementSchedule

@@ -1,0 +1,18 @@
+value:
+  accessPackagesIncompatibleWith:
+    - '@odata.type': microsoft.graph.accessPackage
+  assignmentPolicies:
+    - '@odata.type': microsoft.graph.accessPackageAssignmentPolicy
+  catalog:
+    '@odata.type': microsoft.graph.accessPackageCatalog
+  createdDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  description: String
+  displayName: String
+  incompatibleAccessPackages:
+    - '@odata.type': microsoft.graph.accessPackage
+  incompatibleGroups:
+    - '@odata.type': microsoft.graph.group
+  isHidden: 'true'
+  modifiedDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  resourceRoleScopes:
+    - '@odata.type': microsoft.graph.accessPackageResourceRoleScope

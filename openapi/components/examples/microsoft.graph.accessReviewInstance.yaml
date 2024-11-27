@@ -1,0 +1,16 @@
+value:
+  contactedReviewers:
+    - '@odata.type': microsoft.graph.accessReviewReviewer
+  decisions:
+    - '@odata.type': microsoft.graph.accessReviewInstanceDecisionItem
+  endDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  fallbackReviewers:
+    - '@odata.type': microsoft.graph.accessReviewReviewerScope
+  reviewers:
+    - '@odata.type': microsoft.graph.accessReviewReviewerScope
+  scope:
+    '@odata.type': microsoft.graph.accessReviewScope
+  stages:
+    - '@odata.type': microsoft.graph.accessReviewStage
+  startDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  status: String

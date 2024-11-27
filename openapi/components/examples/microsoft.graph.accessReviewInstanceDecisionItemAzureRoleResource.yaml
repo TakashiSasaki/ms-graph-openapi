@@ -1,0 +1,3 @@
+value:
+  scope:
+    '@odata.type': microsoft.graph.accessReviewInstanceDecisionItemResource

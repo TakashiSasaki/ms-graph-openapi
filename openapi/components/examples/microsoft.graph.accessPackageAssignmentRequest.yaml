@@ -1,0 +1,20 @@
+value:
+  accessPackage:
+    '@odata.type': microsoft.graph.accessPackage
+  answers:
+    - '@odata.type': microsoft.graph.accessPackageAnswer
+  assignment:
+    '@odata.type': microsoft.graph.accessPackageAssignment
+  completedDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  createdDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  customExtensionCalloutInstances:
+    - '@odata.type': microsoft.graph.customExtensionCalloutInstance
+  requestor:
+    '@odata.type': microsoft.graph.accessPackageSubject
+  requestType:
+    '@odata.type': microsoft.graph.accessPackageRequestType
+  schedule:
+    '@odata.type': microsoft.graph.entitlementManagementSchedule
+  state:
+    '@odata.type': microsoft.graph.accessPackageRequestState
+  status: String

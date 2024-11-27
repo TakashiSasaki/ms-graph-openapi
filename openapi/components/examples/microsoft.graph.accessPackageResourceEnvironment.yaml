@@ -1,0 +1,12 @@
+value:
+  connectionInfo:
+    '@odata.type': microsoft.graph.connectionInfo
+  createdDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  description: String
+  displayName: String
+  isDefaultEnvironment: 'true'
+  modifiedDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  originId: String
+  originSystem: String
+  resources:
+    - '@odata.type': microsoft.graph.accessPackageResource
