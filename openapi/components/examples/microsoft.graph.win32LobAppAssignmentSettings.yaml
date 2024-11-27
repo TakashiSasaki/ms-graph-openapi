@@ -1,0 +1,11 @@
+value:
+  autoUpdateSettings:
+    '@odata.type': microsoft.graph.win32LobAppAutoUpdateSettings
+  deliveryOptimizationPriority:
+    '@odata.type': microsoft.graph.win32LobAppDeliveryOptimizationPriority
+  installTimeSettings:
+    '@odata.type': microsoft.graph.mobileAppInstallTimeSettings
+  notifications:
+    '@odata.type': microsoft.graph.win32LobAppNotification
+  restartSettings:
+    '@odata.type': microsoft.graph.win32LobAppRestartSettings

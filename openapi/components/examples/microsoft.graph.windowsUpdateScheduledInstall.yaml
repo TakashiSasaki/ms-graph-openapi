@@ -1,0 +1,4 @@
+value:
+  scheduledInstallDay:
+    '@odata.type': microsoft.graph.weeklySchedule
+  scheduledInstallTime: TimeOfDay (timestamp)

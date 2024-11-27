@@ -1,0 +1,5 @@
+value:
+  deviceRestartBehavior:
+    '@odata.type': microsoft.graph.win32LobAppRestartBehavior
+  runAsAccount:
+    '@odata.type': microsoft.graph.runAsAccountType

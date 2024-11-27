@@ -1,0 +1,7 @@
+value:
+  rules:
+    - '@odata.type': microsoft.graph.x509CertificateRule
+  x509CertificateAuthenticationDefaultMode:
+    '@odata.type': microsoft.graph.x509CertificateAuthenticationMode
+  x509CertificateDefaultRequiredAffinityLevel:
+    '@odata.type': microsoft.graph.x509CertificateAffinityLevel

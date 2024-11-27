@@ -1,0 +1,15 @@
+value:
+  application:
+    '@odata.type': microsoft.graph.workbookApplication
+  comments:
+    - '@odata.type': microsoft.graph.workbookComment
+  functions:
+    '@odata.type': microsoft.graph.workbookFunctions
+  names:
+    - '@odata.type': microsoft.graph.workbookNamedItem
+  operations:
+    - '@odata.type': microsoft.graph.workbookOperation
+  tables:
+    - '@odata.type': microsoft.graph.workbookTable
+  worksheets:
+    - '@odata.type': microsoft.graph.workbookWorksheet

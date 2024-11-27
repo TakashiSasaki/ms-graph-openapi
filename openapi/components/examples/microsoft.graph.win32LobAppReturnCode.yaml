@@ -1,0 +1,4 @@
+value:
+  returnCode: '0'
+  type:
+    '@odata.type': microsoft.graph.win32LobAppReturnCodeType

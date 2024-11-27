@@ -1,0 +1,18 @@
+value:
+  addressableUserName: String
+  azureActiveDirectoryDeviceId: String
+  displayName: String
+  enrollmentState:
+    '@odata.type': microsoft.graph.enrollmentState
+  groupTag: String
+  lastContactedDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  managedDeviceId: String
+  manufacturer: String
+  model: String
+  productKey: String
+  purchaseOrderIdentifier: String
+  resourceName: String
+  serialNumber: String
+  skuNumber: String
+  systemFamily: String
+  userPrincipalName: String

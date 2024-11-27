@@ -1,0 +1,41 @@
+value:
+  assignments:
+    - '@odata.type': microsoft.graph.targetedManagedAppPolicyAssignment
+  azureRightsManagementServicesAllowed: 'true'
+  dataRecoveryCertificate:
+    '@odata.type': microsoft.graph.windowsInformationProtectionDataRecoveryCertificate
+  enforcementLevel:
+    '@odata.type': microsoft.graph.windowsInformationProtectionEnforcementLevel
+  enterpriseDomain: String
+  enterpriseInternalProxyServers:
+    - '@odata.type': microsoft.graph.windowsInformationProtectionResourceCollection
+  enterpriseIPRanges:
+    - '@odata.type': microsoft.graph.windowsInformationProtectionIPRangeCollection
+  enterpriseIPRangesAreAuthoritative: 'true'
+  enterpriseNetworkDomainNames:
+    - '@odata.type': microsoft.graph.windowsInformationProtectionResourceCollection
+  enterpriseProtectedDomainNames:
+    - '@odata.type': microsoft.graph.windowsInformationProtectionResourceCollection
+  enterpriseProxiedDomains:
+    - '@odata.type': microsoft.graph.windowsInformationProtectionProxiedDomainCollection
+  enterpriseProxyServers:
+    - '@odata.type': microsoft.graph.windowsInformationProtectionResourceCollection
+  enterpriseProxyServersAreAuthoritative: 'true'
+  exemptAppLockerFiles:
+    - '@odata.type': microsoft.graph.windowsInformationProtectionAppLockerFile
+  exemptApps:
+    - '@odata.type': microsoft.graph.windowsInformationProtectionApp
+  iconsVisible: 'true'
+  indexingEncryptedStoresOrItemsBlocked: 'true'
+  isAssigned: 'true'
+  neutralDomainResources:
+    - '@odata.type': microsoft.graph.windowsInformationProtectionResourceCollection
+  protectedAppLockerFiles:
+    - '@odata.type': microsoft.graph.windowsInformationProtectionAppLockerFile
+  protectedApps:
+    - '@odata.type': microsoft.graph.windowsInformationProtectionApp
+  protectionUnderLockConfigRequired: 'true'
+  revokeOnUnenrollDisabled: 'true'
+  rightsManagementServicesTemplateId: 00000000-0000-0000-0000-000000000000
+  smbAutoEncryptedFileExtensions:
+    - '@odata.type': microsoft.graph.windowsInformationProtectionResourceCollection

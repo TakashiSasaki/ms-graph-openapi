@@ -1,0 +1,16 @@
+description: Action parameters
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        EmailAddresses:
+          type: array
+          items:
+            type: string
+        MailTipsOptions:
+          anyOf:
+            - $ref: ..\schemas\microsoft.graph.mailTipsType.yaml
+            - type: object
+              nullable: true
+required: true

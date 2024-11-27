@@ -1,0 +1,8 @@
+value:
+  audience:
+    '@odata.type': microsoft.graph.meetingAudience
+  coOrganizers:
+    - '@odata.type': microsoft.graph.communicationsUserIdentity
+  invitedAttendees:
+    - '@odata.type': microsoft.graph.identity
+  isInviteOnly: 'true'

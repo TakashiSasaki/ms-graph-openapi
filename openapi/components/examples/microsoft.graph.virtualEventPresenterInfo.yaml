@@ -1,0 +1,3 @@
+value:
+  presenterDetails:
+    '@odata.type': microsoft.graph.virtualEventPresenterDetails

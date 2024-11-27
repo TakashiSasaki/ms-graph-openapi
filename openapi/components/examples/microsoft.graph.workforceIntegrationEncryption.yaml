@@ -1,0 +1,4 @@
+value:
+  protocol:
+    '@odata.type': microsoft.graph.workforceIntegrationEncryptionProtocol
+  secret: String

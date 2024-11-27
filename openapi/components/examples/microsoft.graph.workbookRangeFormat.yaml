@@ -1,0 +1,14 @@
+value:
+  borders:
+    - '@odata.type': microsoft.graph.workbookRangeBorder
+  columnWidth: '0'
+  fill:
+    '@odata.type': microsoft.graph.workbookRangeFill
+  font:
+    '@odata.type': microsoft.graph.workbookRangeFont
+  horizontalAlignment: String
+  protection:
+    '@odata.type': microsoft.graph.workbookFormatProtection
+  rowHeight: '0'
+  verticalAlignment: String
+  wrapText: 'true'

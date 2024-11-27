@@ -1,0 +1,5 @@
+value:
+  address: String
+  displayName: String
+  type:
+    '@odata.type': microsoft.graph.websiteType

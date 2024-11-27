@@ -1,0 +1,6 @@
+value:
+  error:
+    '@odata.type': microsoft.graph.workbookOperationError
+  resourceLocation: String
+  status:
+    '@odata.type': microsoft.graph.workbookOperationStatus

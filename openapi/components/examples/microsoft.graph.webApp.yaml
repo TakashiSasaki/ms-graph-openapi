@@ -1,0 +1,3 @@
+value:
+  appUrl: String
+  useManagedBrowser: 'true'

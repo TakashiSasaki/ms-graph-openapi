@@ -1,0 +1,7 @@
+value:
+  categoryAxis:
+    '@odata.type': microsoft.graph.workbookChartAxis
+  seriesAxis:
+    '@odata.type': microsoft.graph.workbookChartAxis
+  valueAxis:
+    '@odata.type': microsoft.graph.workbookChartAxis

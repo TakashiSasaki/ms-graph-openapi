@@ -1,0 +1,4 @@
+value:
+  displayName: String
+  ranges:
+    - '@odata.type': microsoft.graph.ipRange

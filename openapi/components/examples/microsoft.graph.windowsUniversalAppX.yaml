@@ -1,0 +1,14 @@
+value:
+  applicableArchitectures:
+    '@odata.type': microsoft.graph.windowsArchitecture
+  applicableDeviceTypes:
+    '@odata.type': microsoft.graph.windowsDeviceType
+  committedContainedApps:
+    - '@odata.type': microsoft.graph.mobileContainedApp
+  identityName: String
+  identityPublisherHash: String
+  identityResourceIdentifier: String
+  identityVersion: String
+  isBundle: 'true'
+  minimumSupportedOperatingSystem:
+    '@odata.type': microsoft.graph.windowsMinimumOperatingSystem

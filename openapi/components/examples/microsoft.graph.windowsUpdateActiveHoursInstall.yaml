@@ -1,0 +1,3 @@
+value:
+  activeHoursEnd: TimeOfDay (timestamp)
+  activeHoursStart: TimeOfDay (timestamp)

@@ -1,0 +1,6 @@
+value:
+  email: String
+  identity:
+    '@odata.type': microsoft.graph.identity
+  presenterDetails:
+    '@odata.type': microsoft.graph.virtualEventPresenterDetails

@@ -1,0 +1,33 @@
+value:
+  applyOnlyToWindowsPhone81: 'true'
+  appsBlockCopyPaste: 'true'
+  bluetoothBlocked: 'true'
+  cameraBlocked: 'true'
+  cellularBlockWifiTethering: 'true'
+  compliantAppListType:
+    '@odata.type': microsoft.graph.appListType
+  compliantAppsList:
+    - '@odata.type': microsoft.graph.appListItem
+  diagnosticDataBlockSubmission: 'true'
+  emailBlockAddingAccounts: 'true'
+  locationServicesBlocked: 'true'
+  microsoftAccountBlocked: 'true'
+  nfcBlocked: 'true'
+  passwordBlockSimple: 'true'
+  passwordExpirationDays: '0'
+  passwordMinimumCharacterSetCount: '0'
+  passwordMinimumLength: '0'
+  passwordMinutesOfInactivityBeforeScreenTimeout: '0'
+  passwordPreviousPasswordBlockCount: '0'
+  passwordRequired: 'true'
+  passwordRequiredType:
+    '@odata.type': microsoft.graph.requiredPasswordType
+  passwordSignInFailureCountBeforeFactoryReset: '0'
+  screenCaptureBlocked: 'true'
+  storageBlockRemovableStorage: 'true'
+  storageRequireEncryption: 'true'
+  webBrowserBlocked: 'true'
+  wifiBlockAutomaticConnectHotspots: 'true'
+  wifiBlocked: 'true'
+  wifiBlockHotspotReporting: 'true'
+  windowsStoreBlocked: 'true'

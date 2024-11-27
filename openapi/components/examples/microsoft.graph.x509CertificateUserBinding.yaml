@@ -1,0 +1,6 @@
+value:
+  priority: '0'
+  trustAffinityLevel:
+    '@odata.type': microsoft.graph.x509CertificateAffinityLevel
+  userProperty: String
+  x509CertificateField: String

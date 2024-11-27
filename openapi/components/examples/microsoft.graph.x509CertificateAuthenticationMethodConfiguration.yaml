@@ -1,0 +1,7 @@
+value:
+  authenticationModeConfiguration:
+    '@odata.type': microsoft.graph.x509CertificateAuthenticationModeConfiguration
+  certificateUserBindings:
+    - '@odata.type': microsoft.graph.x509CertificateUserBinding
+  includeTargets:
+    - '@odata.type': microsoft.graph.authenticationMethodTarget

@@ -1,0 +1,4 @@
+value:
+  includeTargets:
+    - '@odata.type': microsoft.graph.authenticationMethodTarget
+  isOfficePhoneAllowed: 'true'

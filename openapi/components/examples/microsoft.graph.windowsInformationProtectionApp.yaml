@@ -1,0 +1,6 @@
+value:
+  denied: 'true'
+  description: String
+  displayName: String
+  productName: String
+  publisherName: String

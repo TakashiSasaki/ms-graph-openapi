@@ -1,0 +1,3 @@
+value:
+  authenticationMethod: String
+  userCount: '0'

@@ -1,0 +1,4 @@
+value:
+  options:
+    '@odata.type': microsoft.graph.workbookWorksheetProtectionOptions
+  protected: 'true'

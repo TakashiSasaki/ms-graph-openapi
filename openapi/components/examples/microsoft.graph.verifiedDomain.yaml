@@ -1,0 +1,6 @@
+value:
+  capabilities: String
+  isDefault: 'true'
+  isInitial: 'true'
+  name: String
+  type: String

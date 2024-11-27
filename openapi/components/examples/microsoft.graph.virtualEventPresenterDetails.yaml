@@ -1,0 +1,9 @@
+value:
+  bio:
+    '@odata.type': microsoft.graph.itemBody
+  company: String
+  jobTitle: String
+  linkedInProfileWebUrl: String
+  personalSiteWebUrl: String
+  photo: Stream
+  twitterProfileWebUrl: String

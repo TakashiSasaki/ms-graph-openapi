@@ -1,0 +1,9 @@
+value:
+  audience:
+    '@odata.type': microsoft.graph.meetingAudience
+  coOrganizers:
+    - '@odata.type': microsoft.graph.communicationsUserIdentity
+  registrationConfiguration:
+    '@odata.type': microsoft.graph.virtualEventWebinarRegistrationConfiguration
+  registrations:
+    - '@odata.type': microsoft.graph.virtualEventRegistration

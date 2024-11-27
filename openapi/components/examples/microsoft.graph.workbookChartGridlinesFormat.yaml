@@ -1,0 +1,3 @@
+value:
+  line:
+    '@odata.type': microsoft.graph.workbookChartLineFormat

@@ -1,0 +1,5 @@
+value:
+  emphasis:
+    '@odata.type': microsoft.graph.sectionEmphasisType
+  webparts:
+    - '@odata.type': microsoft.graph.webPart

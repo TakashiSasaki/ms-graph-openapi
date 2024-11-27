@@ -1,0 +1,7 @@
+value:
+  booleanValue: 'true'
+  displayName: String
+  multiChoiceValues:
+    - String
+  questionId: String
+  value: String

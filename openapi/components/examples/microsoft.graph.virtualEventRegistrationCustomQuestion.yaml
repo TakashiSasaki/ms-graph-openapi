@@ -1,0 +1,5 @@
+value:
+  answerChoices:
+    - String
+  answerInputType:
+    '@odata.type': microsoft.graph.virtualEventRegistrationQuestionAnswerInputType

@@ -1,0 +1,5 @@
+value:
+  commandLine: String
+  ignoreVersionDetection: 'true'
+  productCode: String
+  productVersion: String

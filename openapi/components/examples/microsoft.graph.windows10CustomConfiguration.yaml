@@ -1,0 +1,3 @@
+value:
+  omaSettings:
+    - '@odata.type': microsoft.graph.omaSetting

@@ -1,0 +1,5 @@
+value:
+  color: String
+  sideIndex: String
+  style: String
+  weight: String

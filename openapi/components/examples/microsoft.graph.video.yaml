@@ -1,0 +1,11 @@
+value:
+  audioBitsPerSample: '0'
+  audioChannels: '0'
+  audioFormat: String
+  audioSamplesPerSecond: '0'
+  bitrate: '0'
+  duration: '0'
+  fourCC: String
+  frameRate: '0'
+  height: '0'
+  width: '0'

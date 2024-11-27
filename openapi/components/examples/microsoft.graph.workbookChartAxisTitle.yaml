@@ -1,0 +1,5 @@
+value:
+  format:
+    '@odata.type': microsoft.graph.workbookChartAxisTitleFormat
+  text: String
+  visible: 'true'

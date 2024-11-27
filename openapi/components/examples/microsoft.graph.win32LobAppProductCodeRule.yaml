@@ -1,0 +1,5 @@
+value:
+  productCode: String
+  productVersion: String
+  productVersionOperator:
+    '@odata.type': microsoft.graph.win32LobAppRuleOperator

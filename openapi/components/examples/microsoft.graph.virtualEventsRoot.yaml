@@ -1,0 +1,7 @@
+value:
+  events:
+    - '@odata.type': microsoft.graph.virtualEvent
+  townhalls:
+    - '@odata.type': microsoft.graph.virtualEventTownhall
+  webinars:
+    - '@odata.type': microsoft.graph.virtualEventWebinar

@@ -1,0 +1,15 @@
+value:
+  auditEvents:
+    - '@odata.type': microsoft.graph.cloudPcAuditEvent
+  cloudPCs:
+    - '@odata.type': microsoft.graph.cloudPC
+  deviceImages:
+    - '@odata.type': microsoft.graph.cloudPcDeviceImage
+  galleryImages:
+    - '@odata.type': microsoft.graph.cloudPcGalleryImage
+  onPremisesConnections:
+    - '@odata.type': microsoft.graph.cloudPcOnPremisesConnection
+  provisioningPolicies:
+    - '@odata.type': microsoft.graph.cloudPcProvisioningPolicy
+  userSettings:
+    - '@odata.type': microsoft.graph.cloudPcUserSetting

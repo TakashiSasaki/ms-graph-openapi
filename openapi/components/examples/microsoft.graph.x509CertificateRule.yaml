@@ -1,0 +1,10 @@
+value:
+  identifier: String
+  issuerSubjectIdentifier: String
+  policyOidIdentifier: String
+  x509CertificateAuthenticationMode:
+    '@odata.type': microsoft.graph.x509CertificateAuthenticationMode
+  x509CertificateRequiredAffinityLevel:
+    '@odata.type': microsoft.graph.x509CertificateAffinityLevel
+  x509CertificateRuleType:
+    '@odata.type': microsoft.graph.x509CertificateRuleType

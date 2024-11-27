@@ -1,0 +1,6 @@
+description: New navigation property ref value
+content:
+  application/json:
+    schema:
+      $ref: ..\schemas\ReferenceCreate.yaml
+required: true

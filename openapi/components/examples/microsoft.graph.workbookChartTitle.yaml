@@ -1,0 +1,6 @@
+value:
+  format:
+    '@odata.type': microsoft.graph.workbookChartTitleFormat
+  overlay: 'true'
+  text: String
+  visible: 'true'

@@ -1,0 +1,8 @@
+value:
+  ascending: 'true'
+  color: String
+  dataOption: String
+  icon:
+    '@odata.type': microsoft.graph.workbookIcon
+  key: '0'
+  sortOn: String

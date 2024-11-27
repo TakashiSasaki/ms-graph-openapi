@@ -1,0 +1,10 @@
+value:
+  displayName: String
+  latestTrainingStatus:
+    '@odata.type': microsoft.graph.trainingStatus
+  trainingAssignedProperties:
+    '@odata.type': microsoft.graph.userTrainingContentEventInfo
+  trainingCompletedProperties:
+    '@odata.type': microsoft.graph.userTrainingContentEventInfo
+  trainingUpdatedProperties:
+    '@odata.type': microsoft.graph.userTrainingContentEventInfo

@@ -1,0 +1,9 @@
+value:
+  packageType:
+    '@odata.type': microsoft.graph.win32LobAppMsiPackageType
+  productCode: String
+  productName: String
+  productVersion: String
+  publisher: String
+  requiresReboot: 'true'
+  upgradeCode: String

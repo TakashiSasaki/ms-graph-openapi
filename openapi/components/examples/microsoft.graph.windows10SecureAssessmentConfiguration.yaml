@@ -1,0 +1,6 @@
+value:
+  allowPrinting: 'true'
+  allowScreenCapture: 'true'
+  allowTextSuggestion: 'true'
+  configurationAccount: String
+  launchUri: String

@@ -1,0 +1,7 @@
+value:
+  daysOfWeek:
+    - '@odata.type': microsoft.graph.dayOfWeek
+  endTime: TimeOfDay (timestamp)
+  startTime: TimeOfDay (timestamp)
+  timeZone:
+    '@odata.type': microsoft.graph.timeZoneBase

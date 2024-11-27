@@ -1,0 +1,18 @@
+value:
+  aadUserId: String
+  accountName: String
+  domainName: String
+  emailRole:
+    '@odata.type': microsoft.graph.emailRole
+  isVpn: 'true'
+  logonDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  logonId: String
+  logonIp: String
+  logonLocation: String
+  logonType:
+    '@odata.type': microsoft.graph.logonType
+  onPremisesSecurityIdentifier: String
+  riskScore: String
+  userAccountType:
+    '@odata.type': microsoft.graph.userAccountSecurityType
+  userPrincipalName: String

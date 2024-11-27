@@ -1,0 +1,3 @@
+value:
+  font:
+    '@odata.type': microsoft.graph.workbookChartFont

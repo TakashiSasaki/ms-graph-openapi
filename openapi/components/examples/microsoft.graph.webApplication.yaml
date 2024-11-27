@@ -1,0 +1,9 @@
+value:
+  homePageUrl: String
+  implicitGrantSettings:
+    '@odata.type': microsoft.graph.implicitGrantSettings
+  logoutUrl: String
+  redirectUris:
+    - String
+  redirectUriSettings:
+    - '@odata.type': microsoft.graph.redirectUriSettings

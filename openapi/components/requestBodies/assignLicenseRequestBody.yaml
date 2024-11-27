@@ -1,0 +1,18 @@
+description: Action parameters
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        addLicenses:
+          type: array
+          items:
+            $ref: ..\schemas\microsoft.graph.assignedLicense.yaml
+        removeLicenses:
+          type: array
+          items:
+            pattern: >-
+              ^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$
+            type: string
+            format: uuid
+required: true

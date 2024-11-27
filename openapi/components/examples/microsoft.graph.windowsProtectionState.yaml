@@ -1,0 +1,25 @@
+value:
+  antiMalwareVersion: String
+  detectedMalwareState:
+    - '@odata.type': microsoft.graph.windowsDeviceMalwareState
+  deviceState:
+    '@odata.type': microsoft.graph.windowsDeviceHealthState
+  engineVersion: String
+  fullScanOverdue: 'true'
+  fullScanRequired: 'true'
+  isVirtualMachine: 'true'
+  lastFullScanDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  lastFullScanSignatureVersion: String
+  lastQuickScanDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  lastQuickScanSignatureVersion: String
+  lastReportedDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  malwareProtectionEnabled: 'true'
+  networkInspectionSystemEnabled: 'true'
+  productStatus:
+    '@odata.type': microsoft.graph.windowsDefenderProductStatus
+  quickScanOverdue: 'true'
+  realTimeProtectionEnabled: 'true'
+  rebootRequired: 'true'
+  signatureUpdateOverdue: 'true'
+  signatureVersion: String
+  tamperProtectionEnabled: 'true'

@@ -1,0 +1,23 @@
+value:
+  azureOperationalInsightsBlockTelemetry: 'true'
+  azureOperationalInsightsWorkspaceId: String
+  azureOperationalInsightsWorkspaceKey: String
+  connectAppBlockAutoLaunch: 'true'
+  maintenanceWindowBlocked: 'true'
+  maintenanceWindowDurationInHours: '0'
+  maintenanceWindowStartTime: TimeOfDay (timestamp)
+  miracastBlocked: 'true'
+  miracastChannel:
+    '@odata.type': microsoft.graph.miracastChannel
+  miracastRequirePin: 'true'
+  settingsBlockMyMeetingsAndFiles: 'true'
+  settingsBlockSessionResume: 'true'
+  settingsBlockSigninSuggestions: 'true'
+  settingsDefaultVolume: '0'
+  settingsScreenTimeoutInMinutes: '0'
+  settingsSessionTimeoutInMinutes: '0'
+  settingsSleepTimeoutInMinutes: '0'
+  welcomeScreenBackgroundImageUrl: String
+  welcomeScreenBlockAutomaticWakeUp: 'true'
+  welcomeScreenMeetingInformation:
+    '@odata.type': microsoft.graph.welcomeScreenMeetingInformation

@@ -1,0 +1,3 @@
+value:
+  workingTimeSchedule:
+    '@odata.type': microsoft.graph.workingTimeSchedule

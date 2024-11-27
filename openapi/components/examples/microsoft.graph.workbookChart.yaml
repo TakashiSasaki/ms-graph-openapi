@@ -1,0 +1,20 @@
+value:
+  axes:
+    '@odata.type': microsoft.graph.workbookChartAxes
+  dataLabels:
+    '@odata.type': microsoft.graph.workbookChartDataLabels
+  format:
+    '@odata.type': microsoft.graph.workbookChartAreaFormat
+  height: '0'
+  left: '0'
+  legend:
+    '@odata.type': microsoft.graph.workbookChartLegend
+  name: String
+  series:
+    - '@odata.type': microsoft.graph.workbookChartSeries
+  title:
+    '@odata.type': microsoft.graph.workbookChartTitle
+  top: '0'
+  width: '0'
+  worksheet:
+    '@odata.type': microsoft.graph.workbookWorksheet

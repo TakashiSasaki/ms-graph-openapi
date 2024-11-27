@@ -1,0 +1,4 @@
+value:
+  feature:
+    '@odata.type': microsoft.graph.authenticationMethodFeature
+  userCount: '0'
