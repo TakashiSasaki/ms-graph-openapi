@@ -1,0 +1,64 @@
+value:
+  allowNewTimeProposals: 'true'
+  attachments:
+    - '@odata.type': microsoft.graph.attachment
+  attendees:
+    - '@odata.type': microsoft.graph.attendee
+  body:
+    '@odata.type': microsoft.graph.itemBody
+  bodyPreview: String
+  calendar:
+    '@odata.type': microsoft.graph.calendar
+  end:
+    '@odata.type': microsoft.graph.dateTimeTimeZone
+  extensions:
+    - '@odata.type': microsoft.graph.extension
+  hasAttachments: 'true'
+  hideAttendees: 'true'
+  iCalUId: String
+  importance:
+    '@odata.type': microsoft.graph.importance
+  instances:
+    - '@odata.type': microsoft.graph.event
+  isAllDay: 'true'
+  isCancelled: 'true'
+  isDraft: 'true'
+  isOnlineMeeting: 'true'
+  isOrganizer: 'true'
+  isReminderOn: 'true'
+  location:
+    '@odata.type': microsoft.graph.location
+  locations:
+    - '@odata.type': microsoft.graph.location
+  multiValueExtendedProperties:
+    - '@odata.type': microsoft.graph.multiValueLegacyExtendedProperty
+  onlineMeeting:
+    '@odata.type': microsoft.graph.onlineMeetingInfo
+  onlineMeetingProvider:
+    '@odata.type': microsoft.graph.onlineMeetingProviderType
+  onlineMeetingUrl: String
+  organizer:
+    '@odata.type': microsoft.graph.recipient
+  originalEndTimeZone: String
+  originalStart: '0001-01-01T00:00:00.0000000+00:00'
+  originalStartTimeZone: String
+  recurrence:
+    '@odata.type': microsoft.graph.patternedRecurrence
+  reminderMinutesBeforeStart: '0'
+  responseRequested: 'true'
+  responseStatus:
+    '@odata.type': microsoft.graph.responseStatus
+  sensitivity:
+    '@odata.type': microsoft.graph.sensitivity
+  seriesMasterId: String
+  showAs:
+    '@odata.type': microsoft.graph.freeBusyStatus
+  singleValueExtendedProperties:
+    - '@odata.type': microsoft.graph.singleValueLegacyExtendedProperty
+  start:
+    '@odata.type': microsoft.graph.dateTimeTimeZone
+  subject: String
+  transactionId: String
+  type:
+    '@odata.type': microsoft.graph.eventType
+  webLink: String

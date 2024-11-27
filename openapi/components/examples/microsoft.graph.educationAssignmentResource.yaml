@@ -1,0 +1,4 @@
+value:
+  distributeForStudentWork: 'true'
+  resource:
+    '@odata.type': microsoft.graph.educationResource

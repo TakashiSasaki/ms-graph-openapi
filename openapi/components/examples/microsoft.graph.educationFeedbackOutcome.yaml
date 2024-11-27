@@ -1,0 +1,5 @@
+value:
+  feedback:
+    '@odata.type': microsoft.graph.educationFeedback
+  publishedFeedback:
+    '@odata.type': microsoft.graph.educationFeedback

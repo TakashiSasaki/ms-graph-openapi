@@ -1,0 +1,3 @@
+value:
+  mailExchange: String
+  preference: '0'

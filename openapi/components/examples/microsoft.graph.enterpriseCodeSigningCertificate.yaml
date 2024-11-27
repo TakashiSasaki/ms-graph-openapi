@@ -1,0 +1,10 @@
+value:
+  content: AA==
+  expirationDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  issuer: String
+  issuerName: String
+  status:
+    '@odata.type': microsoft.graph.certificateStatus
+  subject: String
+  subjectName: String
+  uploadDateTime: '0001-01-01T00:00:00.0000000+00:00'

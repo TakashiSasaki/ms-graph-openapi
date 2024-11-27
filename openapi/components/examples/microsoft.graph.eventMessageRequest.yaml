@@ -1,0 +1,11 @@
+value:
+  allowNewTimeProposals: 'true'
+  meetingRequestType:
+    '@odata.type': microsoft.graph.meetingRequestType
+  previousEndDateTime:
+    '@odata.type': microsoft.graph.dateTimeTimeZone
+  previousLocation:
+    '@odata.type': microsoft.graph.location
+  previousStartDateTime:
+    '@odata.type': microsoft.graph.dateTimeTimeZone
+  responseRequested: 'true'

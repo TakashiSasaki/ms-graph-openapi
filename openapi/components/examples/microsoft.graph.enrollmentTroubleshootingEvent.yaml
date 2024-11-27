@@ -1,0 +1,11 @@
+value:
+  deviceId: String
+  enrollmentType:
+    '@odata.type': microsoft.graph.deviceEnrollmentType
+  failureCategory:
+    '@odata.type': microsoft.graph.deviceEnrollmentFailureReason
+  failureReason: String
+  managedDeviceIdentifier: String
+  operatingSystem: String
+  osVersion: String
+  userId: String

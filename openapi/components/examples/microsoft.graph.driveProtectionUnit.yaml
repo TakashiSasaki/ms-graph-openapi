@@ -1,0 +1,4 @@
+value:
+  directoryObjectId: String
+  displayName: String
+  email: String

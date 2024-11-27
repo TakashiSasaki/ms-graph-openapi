@@ -1,0 +1,4 @@
+value:
+  alias: String
+  email: String
+  objectId: String

@@ -1,0 +1,26 @@
+value:
+  authenticationType: String
+  availabilityStatus: String
+  domainNameReferences:
+    - '@odata.type': microsoft.graph.directoryObject
+  federationConfiguration:
+    - '@odata.type': microsoft.graph.internalDomainFederation
+  isAdminManaged: 'true'
+  isDefault: 'true'
+  isInitial: 'true'
+  isRoot: 'true'
+  isVerified: 'true'
+  manufacturer: String
+  model: String
+  passwordNotificationWindowInDays: '0'
+  passwordValidityPeriodInDays: '0'
+  rootDomain:
+    '@odata.type': microsoft.graph.domain
+  serviceConfigurationRecords:
+    - '@odata.type': microsoft.graph.domainDnsRecord
+  state:
+    '@odata.type': microsoft.graph.domainState
+  supportedServices:
+    - String
+  verificationDnsRecords:
+    - '@odata.type': microsoft.graph.domainDnsRecord

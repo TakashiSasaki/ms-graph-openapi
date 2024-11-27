@@ -1,0 +1,10 @@
+value:
+  enrolledByUser: String
+  expirationDateTimeUTC: '0001-01-01T00:00:00.0000000+00:00'
+  initiatedByUserPrincipalName: String
+  managedDeviceId: 00000000-0000-0000-0000-000000000000
+  receivedDateTimeUTC: '0001-01-01T00:00:00.0000000+00:00'
+  requestedDateTimeUTC: '0001-01-01T00:00:00.0000000+00:00'
+  sizeInKB: '0'
+  status:
+    '@odata.type': microsoft.graph.appLogUploadState

@@ -1,0 +1,4 @@
+value:
+  itemId: String
+  title: String
+  versionId: String

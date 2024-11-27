@@ -1,0 +1,11 @@
+value:
+  androidRestriction:
+    '@odata.type': microsoft.graph.deviceEnrollmentPlatformRestriction
+  iosRestriction:
+    '@odata.type': microsoft.graph.deviceEnrollmentPlatformRestriction
+  macOSRestriction:
+    '@odata.type': microsoft.graph.deviceEnrollmentPlatformRestriction
+  windowsMobileRestriction:
+    '@odata.type': microsoft.graph.deviceEnrollmentPlatformRestriction
+  windowsRestriction:
+    '@odata.type': microsoft.graph.deviceEnrollmentPlatformRestriction

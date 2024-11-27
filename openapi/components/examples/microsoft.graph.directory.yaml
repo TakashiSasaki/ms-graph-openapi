@@ -1,0 +1,17 @@
+value:
+  administrativeUnits:
+    - '@odata.type': microsoft.graph.administrativeUnit
+  attributeSets:
+    - '@odata.type': microsoft.graph.attributeSet
+  customSecurityAttributeDefinitions:
+    - '@odata.type': microsoft.graph.customSecurityAttributeDefinition
+  deletedItems:
+    - '@odata.type': microsoft.graph.directoryObject
+  deviceLocalCredentials:
+    - '@odata.type': microsoft.graph.deviceLocalCredentialInfo
+  federationConfigurations:
+    - '@odata.type': microsoft.graph.identityProviderBase
+  onPremisesSynchronization:
+    - '@odata.type': microsoft.graph.onPremisesDirectorySynchronization
+  subscriptions:
+    - '@odata.type': microsoft.graph.companySubscription

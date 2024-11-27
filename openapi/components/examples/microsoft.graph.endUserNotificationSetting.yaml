@@ -1,0 +1,7 @@
+value:
+  notificationPreference:
+    '@odata.type': microsoft.graph.endUserNotificationPreference
+  positiveReinforcement:
+    '@odata.type': microsoft.graph.positiveReinforcementNotification
+  settingType:
+    '@odata.type': microsoft.graph.endUserNotificationSettingType

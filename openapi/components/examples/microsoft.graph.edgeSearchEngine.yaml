@@ -1,0 +1,3 @@
+value:
+  edgeSearchEngineType:
+    '@odata.type': microsoft.graph.edgeSearchEngineType

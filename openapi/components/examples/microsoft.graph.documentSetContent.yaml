@@ -1,0 +1,5 @@
+value:
+  contentType:
+    '@odata.type': microsoft.graph.contentTypeInfo
+  fileName: String
+  folderName: String

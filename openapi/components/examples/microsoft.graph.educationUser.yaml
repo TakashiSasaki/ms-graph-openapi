@@ -1,0 +1,59 @@
+value:
+  accountEnabled: 'true'
+  assignedLicenses:
+    - '@odata.type': microsoft.graph.assignedLicense
+  assignedPlans:
+    - '@odata.type': microsoft.graph.assignedPlan
+  assignments:
+    - '@odata.type': microsoft.graph.educationAssignment
+  businessPhones:
+    - String
+  classes:
+    - '@odata.type': microsoft.graph.educationClass
+  createdBy:
+    '@odata.type': microsoft.graph.identitySet
+  department: String
+  displayName: String
+  externalSource:
+    '@odata.type': microsoft.graph.educationExternalSource
+  externalSourceDetail: String
+  givenName: String
+  mail: String
+  mailingAddress:
+    '@odata.type': microsoft.graph.physicalAddress
+  mailNickname: String
+  middleName: String
+  mobilePhone: String
+  officeLocation: String
+  onPremisesInfo:
+    '@odata.type': microsoft.graph.educationOnPremisesInfo
+  passwordPolicies: String
+  passwordProfile:
+    '@odata.type': microsoft.graph.passwordProfile
+  preferredLanguage: String
+  primaryRole:
+    '@odata.type': microsoft.graph.educationUserRole
+  provisionedPlans:
+    - '@odata.type': microsoft.graph.provisionedPlan
+  refreshTokensValidFromDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  relatedContacts:
+    - '@odata.type': microsoft.graph.relatedContact
+  residenceAddress:
+    '@odata.type': microsoft.graph.physicalAddress
+  rubrics:
+    - '@odata.type': microsoft.graph.educationRubric
+  schools:
+    - '@odata.type': microsoft.graph.educationSchool
+  showInAddressList: 'true'
+  student:
+    '@odata.type': microsoft.graph.educationStudent
+  surname: String
+  taughtClasses:
+    - '@odata.type': microsoft.graph.educationClass
+  teacher:
+    '@odata.type': microsoft.graph.educationTeacher
+  usageLocation: String
+  user:
+    '@odata.type': microsoft.graph.user
+  userPrincipalName: String
+  userType: String

@@ -1,0 +1,6 @@
+value:
+  allowedDeviceCount: '0'
+  blockedDeviceCount: '0'
+  quarantinedDeviceCount: '0'
+  unavailableDeviceCount: '0'
+  unknownDeviceCount: '0'

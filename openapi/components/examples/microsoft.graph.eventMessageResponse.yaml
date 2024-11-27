@@ -1,0 +1,5 @@
+value:
+  proposedNewTime:
+    '@odata.type': microsoft.graph.timeSlot
+  responseType:
+    '@odata.type': microsoft.graph.responseType

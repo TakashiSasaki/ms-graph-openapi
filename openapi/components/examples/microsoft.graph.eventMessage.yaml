@@ -1,0 +1,18 @@
+value:
+  endDateTime:
+    '@odata.type': microsoft.graph.dateTimeTimeZone
+  event:
+    '@odata.type': microsoft.graph.event
+  isAllDay: 'true'
+  isDelegated: 'true'
+  isOutOfDate: 'true'
+  location:
+    '@odata.type': microsoft.graph.location
+  meetingMessageType:
+    '@odata.type': microsoft.graph.meetingMessageType
+  recurrence:
+    '@odata.type': microsoft.graph.patternedRecurrence
+  startDateTime:
+    '@odata.type': microsoft.graph.dateTimeTimeZone
+  type:
+    '@odata.type': microsoft.graph.eventType

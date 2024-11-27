@@ -1,0 +1,3 @@
+value:
+  resource:
+    '@odata.type': microsoft.graph.educationResource

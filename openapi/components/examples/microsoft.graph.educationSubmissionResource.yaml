@@ -1,0 +1,4 @@
+value:
+  assignmentResourceUrl: String
+  resource:
+    '@odata.type': microsoft.graph.educationResource

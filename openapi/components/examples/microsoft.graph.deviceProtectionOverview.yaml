@@ -1,0 +1,12 @@
+value:
+  cleanDeviceCount: '0'
+  criticalFailuresDeviceCount: '0'
+  inactiveThreatAgentDeviceCount: '0'
+  pendingFullScanDeviceCount: '0'
+  pendingManualStepsDeviceCount: '0'
+  pendingOfflineScanDeviceCount: '0'
+  pendingQuickScanDeviceCount: '0'
+  pendingRestartDeviceCount: '0'
+  pendingSignatureUpdateDeviceCount: '0'
+  totalReportedDeviceCount: '0'
+  unknownStateThreatAgentDeviceCount: '0'

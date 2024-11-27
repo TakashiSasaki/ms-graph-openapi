@@ -1,0 +1,18 @@
+value:
+  assignments:
+    - '@odata.type': microsoft.graph.deviceConfigurationAssignment
+  createdDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  description: String
+  deviceSettingStateSummaries:
+    - '@odata.type': microsoft.graph.settingStateDeviceSummary
+  deviceStatuses:
+    - '@odata.type': microsoft.graph.deviceConfigurationDeviceStatus
+  deviceStatusOverview:
+    '@odata.type': microsoft.graph.deviceConfigurationDeviceOverview
+  displayName: String
+  lastModifiedDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  userStatuses:
+    - '@odata.type': microsoft.graph.deviceConfigurationUserStatus
+  userStatusOverview:
+    '@odata.type': microsoft.graph.deviceConfigurationUserOverview
+  version: '0'

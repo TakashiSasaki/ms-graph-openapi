@@ -1,0 +1,4 @@
+value:
+  mode:
+    '@odata.type': microsoft.graph.crossTenantAccessPolicyTargetConfigurationAccessType
+  rule: String

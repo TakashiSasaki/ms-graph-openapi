@@ -1,0 +1,4 @@
+value:
+  gradingCategories:
+    - '@odata.type': microsoft.graph.educationGradingCategory
+  submissionAnimationDisabled: 'true'

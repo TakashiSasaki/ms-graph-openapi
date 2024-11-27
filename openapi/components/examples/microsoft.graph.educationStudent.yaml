@@ -1,0 +1,8 @@
+value:
+  birthDate: '0001-01-01'
+  externalId: String
+  gender:
+    '@odata.type': microsoft.graph.educationGender
+  grade: String
+  graduationYear: String
+  studentNumber: String

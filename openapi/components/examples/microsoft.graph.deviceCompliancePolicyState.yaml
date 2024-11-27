@@ -1,0 +1,10 @@
+value:
+  displayName: String
+  platformType:
+    '@odata.type': microsoft.graph.policyPlatformType
+  settingCount: '0'
+  settingStates:
+    - '@odata.type': microsoft.graph.deviceCompliancePolicySettingState
+  state:
+    '@odata.type': microsoft.graph.complianceStatus
+  version: '0'

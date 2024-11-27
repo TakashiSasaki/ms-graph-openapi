@@ -1,0 +1,8 @@
+value:
+  description: String
+  displayName: String
+  members:
+    - '@odata.type': microsoft.graph.directoryObject
+  roleTemplateId: String
+  scopedMembers:
+    - '@odata.type': microsoft.graph.scopedRoleMembership

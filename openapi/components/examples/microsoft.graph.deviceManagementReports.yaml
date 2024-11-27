@@ -1,0 +1,3 @@
+value:
+  exportJobs:
+    - '@odata.type': microsoft.graph.deviceManagementExportJob

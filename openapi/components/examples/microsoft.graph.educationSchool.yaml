@@ -1,0 +1,20 @@
+value:
+  address:
+    '@odata.type': microsoft.graph.physicalAddress
+  administrativeUnit:
+    '@odata.type': microsoft.graph.administrativeUnit
+  classes:
+    - '@odata.type': microsoft.graph.educationClass
+  createdBy:
+    '@odata.type': microsoft.graph.identitySet
+  externalId: String
+  externalPrincipalId: String
+  fax: String
+  highestGrade: String
+  lowestGrade: String
+  phone: String
+  principalEmail: String
+  principalName: String
+  schoolNumber: String
+  users:
+    - '@odata.type': microsoft.graph.educationUser

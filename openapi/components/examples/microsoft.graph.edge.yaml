@@ -1,0 +1,3 @@
+value:
+  internetExplorerMode:
+    '@odata.type': microsoft.graph.internetExplorerMode

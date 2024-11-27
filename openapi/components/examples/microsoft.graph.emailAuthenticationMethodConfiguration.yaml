@@ -1,0 +1,5 @@
+value:
+  allowExternalIdToUseEmailOtp:
+    '@odata.type': microsoft.graph.externalEmailOtpState
+  includeTargets:
+    - '@odata.type': microsoft.graph.authenticationMethodTarget

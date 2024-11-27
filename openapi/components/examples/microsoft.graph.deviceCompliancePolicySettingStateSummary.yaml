@@ -1,0 +1,14 @@
+value:
+  compliantDeviceCount: '0'
+  conflictDeviceCount: '0'
+  deviceComplianceSettingStates:
+    - '@odata.type': microsoft.graph.deviceComplianceSettingState
+  errorDeviceCount: '0'
+  nonCompliantDeviceCount: '0'
+  notApplicableDeviceCount: '0'
+  platformType:
+    '@odata.type': microsoft.graph.policyPlatformType
+  remediatedDeviceCount: '0'
+  setting: String
+  settingName: String
+  unknownDeviceCount: '0'

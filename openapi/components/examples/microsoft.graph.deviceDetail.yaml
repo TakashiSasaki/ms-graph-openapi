@@ -1,0 +1,8 @@
+value:
+  browser: String
+  deviceId: String
+  displayName: String
+  isCompliant: 'true'
+  isManaged: 'true'
+  operatingSystem: String
+  trustType: String

@@ -1,0 +1,5 @@
+value:
+  points:
+    '@odata.type': microsoft.graph.educationAssignmentPointsGrade
+  publishedPoints:
+    '@odata.type': microsoft.graph.educationAssignmentPointsGrade

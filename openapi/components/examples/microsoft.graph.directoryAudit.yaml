@@ -1,0 +1,16 @@
+value:
+  activityDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  activityDisplayName: String
+  additionalDetails:
+    - '@odata.type': microsoft.graph.keyValue
+  category: String
+  correlationId: String
+  initiatedBy:
+    '@odata.type': microsoft.graph.auditActivityInitiator
+  loggedByService: String
+  operationType: String
+  result:
+    '@odata.type': microsoft.graph.operationResult
+  resultReason: String
+  targetResources:
+    - '@odata.type': microsoft.graph.targetResource

@@ -1,0 +1,7 @@
+value:
+  nameTarget: String
+  port: '0'
+  priority: '0'
+  protocol: String
+  service: String
+  weight: '0'

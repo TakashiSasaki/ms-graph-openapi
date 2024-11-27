@@ -1,0 +1,4 @@
+value:
+  deviceComplianceCheckinThresholdDays: '0'
+  isScheduledActionEnabled: 'true'
+  secureByDefault: 'true'
