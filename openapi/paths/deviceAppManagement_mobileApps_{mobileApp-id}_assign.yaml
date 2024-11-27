@@ -1,0 +1,40 @@
+description: Provides operations to call the assign method.
+post:
+  tags:
+    - deviceAppManagement.mobileApp
+  summary: Invoke action assign
+  operationId: deviceAppManagement.mobileApps.mobileApp.assign
+  requestBody:
+    description: Action parameters
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            mobileAppAssignments:
+              type: array
+              items:
+                $ref: ..\components\schemas\microsoft.graph.mobileAppAssignment.yaml
+    required: true
+  responses:
+    '204':
+      description: Success
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: action
+parameters:
+  - name: mobileApp-id
+    in: path
+    description: The unique identifier of mobileApp
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: mobileApp
+x-ms-docs-grouped-path:
+  - /deviceAppManagement/managedEBooks/{managedEBook-id}/assign
+  - >-
+    /deviceAppManagement/mobileAppConfigurations/{managedDeviceMobileAppConfiguration-id}/assign
+  - >-
+    /deviceAppManagement/targetedManagedAppConfigurations/{targetedManagedAppConfiguration-id}/assign

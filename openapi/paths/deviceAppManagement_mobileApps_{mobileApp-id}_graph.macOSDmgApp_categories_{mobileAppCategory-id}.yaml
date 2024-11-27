@@ -1,0 +1,90 @@
+description: >-
+  Provides operations to manage the categories property of the
+  microsoft.graph.mobileApp entity.
+get:
+  tags:
+    - deviceAppManagement.mobileApp
+  summary: Get categories from deviceAppManagement
+  description: The list of categories for this app.
+  operationId: deviceAppManagement.mobileApps.AsMacOSDmgApp.GetCategories
+  parameters:
+    - name: $select
+      in: query
+      description: Select properties to be returned
+      style: form
+      explode: false
+      schema:
+        uniqueItems: true
+        type: array
+        items:
+          type: string
+    - name: $expand
+      in: query
+      description: Expand related entities
+      style: form
+      explode: false
+      schema:
+        uniqueItems: true
+        type: array
+        items:
+          type: string
+  responses:
+    2XX:
+      description: Retrieved navigation property
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\microsoft.graph.mobileAppCategory.yaml
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: operation
+parameters:
+  - name: mobileApp-id
+    in: path
+    description: The unique identifier of mobileApp
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: mobileApp
+  - name: mobileAppCategory-id
+    in: path
+    description: The unique identifier of mobileAppCategory
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: mobileAppCategory
+x-ms-docs-grouped-path:
+  - >-
+    /deviceAppManagement/mobileApps/{mobileApp-id}/categories/{mobileAppCategory-id}
+  - >-
+    /deviceAppManagement/mobileApps/{mobileApp-id}/graph.androidLobApp/categories/{mobileAppCategory-id}
+  - >-
+    /deviceAppManagement/mobileApps/{mobileApp-id}/graph.androidStoreApp/categories/{mobileAppCategory-id}
+  - >-
+    /deviceAppManagement/mobileApps/{mobileApp-id}/graph.iosLobApp/categories/{mobileAppCategory-id}
+  - >-
+    /deviceAppManagement/mobileApps/{mobileApp-id}/graph.iosStoreApp/categories/{mobileAppCategory-id}
+  - >-
+    /deviceAppManagement/mobileApps/{mobileApp-id}/graph.iosVppApp/categories/{mobileAppCategory-id}
+  - >-
+    /deviceAppManagement/mobileApps/{mobileApp-id}/graph.macOSLobApp/categories/{mobileAppCategory-id}
+  - >-
+    /deviceAppManagement/mobileApps/{mobileApp-id}/graph.managedAndroidLobApp/categories/{mobileAppCategory-id}
+  - >-
+    /deviceAppManagement/mobileApps/{mobileApp-id}/graph.managedIOSLobApp/categories/{mobileAppCategory-id}
+  - >-
+    /deviceAppManagement/mobileApps/{mobileApp-id}/graph.managedMobileLobApp/categories/{mobileAppCategory-id}
+  - >-
+    /deviceAppManagement/mobileApps/{mobileApp-id}/graph.microsoftStoreForBusinessApp/categories/{mobileAppCategory-id}
+  - >-
+    /deviceAppManagement/mobileApps/{mobileApp-id}/graph.win32LobApp/categories/{mobileAppCategory-id}
+  - >-
+    /deviceAppManagement/mobileApps/{mobileApp-id}/graph.windowsAppX/categories/{mobileAppCategory-id}
+  - >-
+    /deviceAppManagement/mobileApps/{mobileApp-id}/graph.windowsMobileMSI/categories/{mobileAppCategory-id}
+  - >-
+    /deviceAppManagement/mobileApps/{mobileApp-id}/graph.windowsUniversalAppX/categories/{mobileAppCategory-id}
+  - >-
+    /deviceAppManagement/mobileApps/{mobileApp-id}/graph.windowsWebApp/categories/{mobileAppCategory-id}
