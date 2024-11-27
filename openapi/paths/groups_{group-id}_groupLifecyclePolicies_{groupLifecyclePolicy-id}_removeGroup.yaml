@@ -1,0 +1,52 @@
+description: Provides operations to call the removeGroup method.
+post:
+  tags:
+    - groups.groupLifecyclePolicy
+  summary: Invoke action removeGroup
+  description: Removes a group from a lifecycle policy.
+  externalDocs:
+    description: Find more info here
+    url: >-
+      https://learn.microsoft.com/graph/api/grouplifecyclepolicy-removegroup?view=graph-rest-1.0
+  operationId: groups.group.groupLifecyclePolicies.groupLifecyclePolicy.removeGroup
+  requestBody:
+    description: Action parameters
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            groupId:
+              type: string
+    required: true
+  responses:
+    2XX:
+      description: Success
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              value:
+                type: boolean
+                default: false
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: action
+parameters:
+  - name: group-id
+    in: path
+    description: The unique identifier of group
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: group
+  - name: groupLifecyclePolicy-id
+    in: path
+    description: The unique identifier of groupLifecyclePolicy
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: groupLifecyclePolicy

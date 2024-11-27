@@ -1,0 +1,118 @@
+description: Provides operations to manage the collection of group entities.
+get:
+  tags:
+    - groups.directoryObject
+  summary: List group members
+  description: >-
+    Get a list of the group's direct members. A group can have users,
+    organizational contacts, devices, service principals and other groups as
+    members. This operation is not transitive.
+  externalDocs:
+    description: Find more info here
+    url: >-
+      https://learn.microsoft.com/graph/api/group-list-members?view=graph-rest-1.0
+  operationId: groups.ListRefMembers
+  parameters:
+    - name: ConsistencyLevel
+      in: header
+      description: >-
+        Indicates the requested consistency level. Documentation URL:
+        https://docs.microsoft.com/graph/aad-advanced-queries
+      schema:
+        type: string
+      examples:
+        example-1:
+          description: >-
+            $search and $count queries require the client to set the
+            ConsistencyLevel HTTP header to 'eventual'.
+          value: eventual
+    - $ref: ..\components\parameters\top.yaml
+    - $ref: ..\components\parameters\skip.yaml
+    - $ref: ..\components\parameters\search.yaml
+    - $ref: ..\components\parameters\filter.yaml
+    - $ref: ..\components\parameters\count.yaml
+    - name: $orderby
+      in: query
+      description: Order items by property values
+      style: form
+      explode: false
+      schema:
+        uniqueItems: true
+        type: array
+        items:
+          type: string
+  responses:
+    2XX:
+      $ref: ..\components\responses\StringCollectionResponse.yaml
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-pageable:
+    nextLinkName: '@odata.nextLink'
+    operationName: listMore
+  x-ms-docs-operation-type: operation
+post:
+  tags:
+    - groups.directoryObject
+  summary: Add members
+  description: >-
+    Add a member to a security or Microsoft 365 group. When using the API to add
+    multiple members in one request, you can add up to only 20 members.  The
+    following table shows the types of members that can be added to either
+    security groups or Microsoft 365 groups.
+  externalDocs:
+    description: Find more info here
+    url: >-
+      https://learn.microsoft.com/graph/api/group-post-members?view=graph-rest-1.0
+  operationId: groups.CreateRefMembers
+  requestBody:
+    $ref: ..\components\requestBodies\refPostBody.yaml
+  responses:
+    '204':
+      description: Success
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: operation
+delete:
+  tags:
+    - groups.directoryObject
+  summary: Remove member
+  description: >-
+    Remove a member from a group via the members navigation property. You can't
+    remove a member from groups with dynamic memberships.
+  externalDocs:
+    description: Find more info here
+    url: >-
+      https://learn.microsoft.com/graph/api/group-delete-members?view=graph-rest-1.0
+  operationId: groups.DeleteRefMembers
+  parameters:
+    - name: If-Match
+      in: header
+      description: ETag
+      schema:
+        type: string
+    - name: '@id'
+      in: query
+      description: The delete Uri
+      required: true
+      schema:
+        type: string
+  responses:
+    '204':
+      description: Success
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: operation
+parameters:
+  - name: group-id
+    in: path
+    description: The unique identifier of group
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: group

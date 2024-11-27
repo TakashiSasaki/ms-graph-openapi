@@ -1,0 +1,62 @@
+description: Provides operations to call the getRecentNotebooks method.
+get:
+  tags:
+    - groups.onenote
+  summary: Invoke function getRecentNotebooks
+  description: >-
+    Get a list of recentNotebook instances that have been accessed by the
+    signed-in user.
+  externalDocs:
+    description: Find more info here
+    url: >-
+      https://learn.microsoft.com/graph/api/notebook-getrecentnotebooks?view=graph-rest-1.0
+  operationId: groups.group.onenote.notebooks.getRecentNotebooks
+  parameters:
+    - $ref: ..\components\parameters\top.yaml
+    - $ref: ..\components\parameters\skip.yaml
+    - $ref: ..\components\parameters\search.yaml
+    - $ref: ..\components\parameters\filter.yaml
+    - $ref: ..\components\parameters\count.yaml
+  responses:
+    2XX:
+      description: Success
+      content:
+        application/json:
+          schema:
+            type: object
+            allOf:
+              - $ref: >-
+                  ..\components\schemas\BaseCollectionPaginationCountResponse.yaml
+              - type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: >-
+                        ..\components\schemas\microsoft.graph.recentNotebook.yaml
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: function
+  x-ms-pageable:
+    nextLinkName: '@odata.nextLink'
+    operationName: listMore
+parameters:
+  - name: group-id
+    in: path
+    description: The unique identifier of group
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: group
+  - name: includePersonalNotebooks
+    in: path
+    description: 'Usage: includePersonalNotebooks={includePersonalNotebooks}'
+    required: true
+    schema:
+      type: boolean
+      default: false
+x-ms-docs-grouped-path:
+  - >-
+    /groups/{group-id}/sites/{site-id}/onenote/notebooks/getRecentNotebooks(includePersonalNotebooks={includePersonalNotebooks})

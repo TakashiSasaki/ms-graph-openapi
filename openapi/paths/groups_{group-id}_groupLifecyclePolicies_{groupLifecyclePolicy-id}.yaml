@@ -1,0 +1,100 @@
+description: >-
+  Provides operations to manage the groupLifecyclePolicies property of the
+  microsoft.graph.group entity.
+get:
+  tags:
+    - groups.groupLifecyclePolicy
+  summary: Get groupLifecyclePolicies from groups
+  description: The collection of lifecycle policies for this group. Read-only. Nullable.
+  operationId: groups.GetGroupLifecyclePolicies
+  parameters:
+    - name: $select
+      in: query
+      description: Select properties to be returned
+      style: form
+      explode: false
+      schema:
+        uniqueItems: true
+        type: array
+        items:
+          type: string
+    - name: $expand
+      in: query
+      description: Expand related entities
+      style: form
+      explode: false
+      schema:
+        uniqueItems: true
+        type: array
+        items:
+          type: string
+  responses:
+    2XX:
+      description: Retrieved navigation property
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\microsoft.graph.groupLifecyclePolicy.yaml
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: operation
+patch:
+  tags:
+    - groups.groupLifecyclePolicy
+  summary: Update the navigation property groupLifecyclePolicies in groups
+  operationId: groups.UpdateGroupLifecyclePolicies
+  requestBody:
+    description: New navigation property values
+    content:
+      application/json:
+        schema:
+          $ref: ..\components\schemas\microsoft.graph.groupLifecyclePolicy.yaml
+    required: true
+  responses:
+    2XX:
+      description: Success
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\microsoft.graph.groupLifecyclePolicy.yaml
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: operation
+delete:
+  tags:
+    - groups.groupLifecyclePolicy
+  summary: Delete navigation property groupLifecyclePolicies for groups
+  operationId: groups.DeleteGroupLifecyclePolicies
+  parameters:
+    - name: If-Match
+      in: header
+      description: ETag
+      schema:
+        type: string
+  responses:
+    '204':
+      description: Success
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: operation
+parameters:
+  - name: group-id
+    in: path
+    description: The unique identifier of group
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: group
+  - name: groupLifecyclePolicy-id
+    in: path
+    description: The unique identifier of groupLifecyclePolicy
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: groupLifecyclePolicy
