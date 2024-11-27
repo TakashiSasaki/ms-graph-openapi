@@ -1,0 +1,29 @@
+title: serviceProvisioningError
+required:
+  - '@odata.type'
+type: object
+properties:
+  createdDateTime:
+    pattern: >-
+      ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+    type: string
+    description: The date and time at which the error occurred.
+    format: date-time
+    nullable: true
+  isResolved:
+    type: boolean
+    description: Indicates whether the error has been attended to.
+    nullable: true
+  serviceInstance:
+    type: string
+    description: >-
+      Qualified service instance (for example, 'SharePoint/Dublin') that
+      published the service error information.
+    nullable: true
+  '@odata.type':
+    type: string
+discriminator:
+  propertyName: '@odata.type'
+  mapping:
+    '#microsoft.graph.serviceProvisioningXmlError': .\microsoft.graph.serviceProvisioningXmlError.yaml
+    microsoft.graph.serviceProvisioningXmlError: .\microsoft.graph.serviceProvisioningXmlError.yaml

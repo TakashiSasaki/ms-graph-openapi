@@ -1,0 +1,26 @@
+title: targetedManagedAppGroupType
+enum:
+  - selectedPublicApps
+  - allCoreMicrosoftApps
+  - allMicrosoftApps
+  - allApps
+type: string
+description: >-
+  Indicates a collection of apps to target which can be one of several
+  pre-defined lists of apps or a manually selected list of apps
+x-ms-enum:
+  name: targetedManagedAppGroupType
+  modelAsString: false
+  values:
+    - value: selectedPublicApps
+      description: Target the collection of apps manually selected by the admin.
+      name: selectedPublicApps
+    - value: allCoreMicrosoftApps
+      description: Target the core set of Microsoft apps (Office, Edge, etc).
+      name: allCoreMicrosoftApps
+    - value: allMicrosoftApps
+      description: Target all apps with Microsoft as publisher.
+      name: allMicrosoftApps
+    - value: allApps
+      description: Target all apps with an available assignment.
+      name: allApps

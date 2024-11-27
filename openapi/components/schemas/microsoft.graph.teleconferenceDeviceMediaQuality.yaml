@@ -1,0 +1,160 @@
+title: teleconferenceDeviceMediaQuality
+required:
+  - '@odata.type'
+type: object
+properties:
+  averageInboundJitter:
+    pattern: ^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$
+    type: string
+    description: The average inbound stream network jitter.
+    format: duration
+    nullable: true
+  averageInboundPacketLossRateInPercentage:
+    oneOf:
+      - type: number
+        format: double
+        nullable: true
+      - type: string
+        nullable: true
+      - $ref: .\ReferenceNumeric.yaml
+    description: >-
+      The average inbound stream packet loss rate in percentage (0-100). For
+      example, 0.01 means 0.01%.
+  averageInboundRoundTripDelay:
+    pattern: ^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$
+    type: string
+    description: The average inbound stream network round trip delay.
+    format: duration
+    nullable: true
+  averageOutboundJitter:
+    pattern: ^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$
+    type: string
+    description: The average outbound stream network jitter.
+    format: duration
+    nullable: true
+  averageOutboundPacketLossRateInPercentage:
+    oneOf:
+      - type: number
+        format: double
+        nullable: true
+      - type: string
+        nullable: true
+      - $ref: .\ReferenceNumeric.yaml
+    description: >-
+      The average outbound stream packet loss rate in percentage (0-100). For
+      example, 0.01 means 0.01%.
+  averageOutboundRoundTripDelay:
+    pattern: ^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$
+    type: string
+    description: The average outbound stream network round trip delay.
+    format: duration
+    nullable: true
+  channelIndex:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    description: >-
+      The channel index of media. Indexing begins with 1.  If a media session
+      contains 3 video modalities, channel indexes will be 1, 2, and 3.
+    format: int32
+  inboundPackets:
+    type: number
+    description: The total number of the inbound packets.
+    format: int64
+    nullable: true
+  localIPAddress:
+    type: string
+    description: the local IP address for the media session.
+    nullable: true
+  localPort:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    description: The local media port.
+    format: int32
+    nullable: true
+  maximumInboundJitter:
+    pattern: ^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$
+    type: string
+    description: The maximum inbound stream network jitter.
+    format: duration
+    nullable: true
+  maximumInboundPacketLossRateInPercentage:
+    oneOf:
+      - type: number
+        format: double
+        nullable: true
+      - type: string
+        nullable: true
+      - $ref: .\ReferenceNumeric.yaml
+    description: >-
+      The maximum inbound stream packet loss rate in percentage (0-100). For
+      example, 0.01 means 0.01%.
+  maximumInboundRoundTripDelay:
+    pattern: ^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$
+    type: string
+    description: The maximum inbound stream network round trip delay.
+    format: duration
+    nullable: true
+  maximumOutboundJitter:
+    pattern: ^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$
+    type: string
+    description: The maximum outbound stream network jitter.
+    format: duration
+    nullable: true
+  maximumOutboundPacketLossRateInPercentage:
+    oneOf:
+      - type: number
+        format: double
+        nullable: true
+      - type: string
+        nullable: true
+      - $ref: .\ReferenceNumeric.yaml
+    description: >-
+      The maximum outbound stream packet loss rate in percentage (0-100). For
+      example, 0.01 means 0.01%.
+  maximumOutboundRoundTripDelay:
+    pattern: ^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$
+    type: string
+    description: The maximum outbound stream network round trip delay.
+    format: duration
+    nullable: true
+  mediaDuration:
+    pattern: ^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$
+    type: string
+    description: >-
+      The total modality duration. If the media enabled and disabled multiple
+      times, MediaDuration will the summation of all of the durations.
+    format: duration
+    nullable: true
+  networkLinkSpeedInBytes:
+    type: number
+    description: The network link speed in bytes
+    format: int64
+    nullable: true
+  outboundPackets:
+    type: number
+    description: The total number of the outbound packets.
+    format: int64
+    nullable: true
+  remoteIPAddress:
+    type: string
+    description: The remote IP address for the media session.
+    nullable: true
+  remotePort:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    description: The remote media port.
+    format: int32
+    nullable: true
+  '@odata.type':
+    type: string
+discriminator:
+  propertyName: '@odata.type'
+  mapping:
+    '#microsoft.graph.teleconferenceDeviceAudioQuality': .\microsoft.graph.teleconferenceDeviceAudioQuality.yaml
+    '#microsoft.graph.teleconferenceDeviceVideoQuality': .\microsoft.graph.teleconferenceDeviceVideoQuality.yaml
+    '#microsoft.graph.teleconferenceDeviceScreenSharingQuality': .\microsoft.graph.teleconferenceDeviceScreenSharingQuality.yaml
+    microsoft.graph.teleconferenceDeviceAudioQuality: .\microsoft.graph.teleconferenceDeviceAudioQuality.yaml
+    microsoft.graph.teleconferenceDeviceVideoQuality: .\microsoft.graph.teleconferenceDeviceVideoQuality.yaml

@@ -1,0 +1,7 @@
+title: siteArchiveStatus
+enum:
+  - recentlyArchived
+  - fullyArchived
+  - reactivating
+  - unknownFutureValue
+type: string

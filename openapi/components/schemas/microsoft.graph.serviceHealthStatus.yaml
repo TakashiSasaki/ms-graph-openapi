@@ -1,0 +1,21 @@
+title: serviceHealthStatus
+enum:
+  - serviceOperational
+  - investigating
+  - restoringService
+  - verifyingService
+  - serviceRestored
+  - postIncidentReviewPublished
+  - serviceDegradation
+  - serviceInterruption
+  - extendedRecovery
+  - falsePositive
+  - investigationSuspended
+  - resolved
+  - mitigatedExternal
+  - mitigated
+  - resolvedExternal
+  - confirmed
+  - reported
+  - unknownFutureValue
+type: string

@@ -1,0 +1,11 @@
+title: subjectRightsRequestStage
+enum:
+  - contentRetrieval
+  - contentReview
+  - generateReport
+  - contentDeletion
+  - caseResolved
+  - contentEstimate
+  - unknownFutureValue
+  - approval
+type: string

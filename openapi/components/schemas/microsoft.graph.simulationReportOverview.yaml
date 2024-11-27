@@ -1,0 +1,37 @@
+title: simulationReportOverview
+required:
+  - '@odata.type'
+type: object
+properties:
+  recommendedActions:
+    type: array
+    items:
+      $ref: .\microsoft.graph.recommendedAction.yaml
+    description: >-
+      List of recommended actions for a tenant to improve its security posture
+      based on the attack simulation and training campaign attack type.
+  resolvedTargetsCount:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    description: Number of valid users in the attack simulation and training campaign.
+    format: int32
+    nullable: true
+  simulationEventsContent:
+    anyOf:
+      - $ref: .\microsoft.graph.simulationEventsContent.yaml
+      - type: object
+        nullable: true
+    description: >-
+      Summary of simulation events in the attack simulation and training
+      campaign.
+  trainingEventsContent:
+    anyOf:
+      - $ref: .\microsoft.graph.trainingEventsContent.yaml
+      - type: object
+        nullable: true
+    description: >-
+      Summary of assigned trainings in the attack simulation and training
+      campaign.
+  '@odata.type':
+    type: string

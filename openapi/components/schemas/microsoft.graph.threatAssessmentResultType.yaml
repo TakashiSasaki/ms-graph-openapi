@@ -1,0 +1,6 @@
+title: threatAssessmentResultType
+enum:
+  - checkPolicy
+  - rescan
+  - unknownFutureValue
+type: string

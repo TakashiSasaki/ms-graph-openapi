@@ -1,0 +1,16 @@
+allOf:
+  - $ref: .\microsoft.graph.identitySource.yaml
+  - title: socialIdentitySource
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      displayName:
+        type: string
+        nullable: true
+      socialIdentitySourceType:
+        $ref: .\microsoft.graph.socialIdentitySourceType.yaml
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.socialIdentitySource'
+x-ms-discriminator-value: '#microsoft.graph.socialIdentitySource'

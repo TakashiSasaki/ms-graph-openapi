@@ -1,0 +1,25 @@
+title: sizeRange
+required:
+  - '@odata.type'
+type: object
+properties:
+  maximumSize:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    description: >-
+      The maximum size (in kilobytes) that an incoming message must have in
+      order for a condition or exception to apply.
+    format: int32
+    nullable: true
+  minimumSize:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    description: >-
+      The minimum size (in kilobytes) that an incoming message must have in
+      order for a condition or exception to apply.
+    format: int32
+    nullable: true
+  '@odata.type':
+    type: string

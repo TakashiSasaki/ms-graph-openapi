@@ -1,0 +1,25 @@
+allOf:
+  - $ref: .\microsoft.graph.protectionUnitBase.yaml
+  - title: siteProtectionUnit
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      siteId:
+        type: string
+        description: Unique identifier of the SharePoint site.
+        nullable: true
+      siteName:
+        type: string
+        description: Name of the SharePoint site.
+        nullable: true
+        readOnly: true
+      siteWebUrl:
+        type: string
+        description: The web URL of the SharePoint site.
+        nullable: true
+        readOnly: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.siteProtectionUnit'
+x-ms-discriminator-value: '#microsoft.graph.siteProtectionUnit'

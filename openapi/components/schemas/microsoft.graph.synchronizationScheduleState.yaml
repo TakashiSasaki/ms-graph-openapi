@@ -1,0 +1,6 @@
+title: synchronizationScheduleState
+enum:
+  - Active
+  - Disabled
+  - Paused
+type: string

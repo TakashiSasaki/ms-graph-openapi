@@ -1,0 +1,15 @@
+title: sharePointOneDriveOptions
+required:
+  - '@odata.type'
+type: object
+properties:
+  includeContent:
+    anyOf:
+      - $ref: .\microsoft.graph.searchContent.yaml
+      - type: object
+        nullable: true
+    description: >-
+      The type of search content. The possible values are: sharedContent,
+      privateContent, unknownFutureValue. Read-only.
+  '@odata.type':
+    type: string

@@ -1,0 +1,20 @@
+allOf:
+  - $ref: .\microsoft.graph.identity.yaml
+  - title: teamworkUserIdentity
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      userIdentityType:
+        anyOf:
+          - $ref: .\microsoft.graph.teamworkUserIdentityType.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Type of user. Possible values are: aadUser, onPremiseAadUser,
+          anonymousGuest, federatedUser, personalMicrosoftAccountUser,
+          skypeUser, phoneUser, unknownFutureValue and emailUser.
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.teamworkUserIdentity'
+x-ms-discriminator-value: '#microsoft.graph.teamworkUserIdentity'

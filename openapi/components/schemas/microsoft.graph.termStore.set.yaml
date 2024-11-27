@@ -1,0 +1,53 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: set
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      createdDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: Date and time of set creation. Read-only.
+        format: date-time
+        nullable: true
+      description:
+        type: string
+        description: Description that gives details on the term usage.
+        nullable: true
+      localizedNames:
+        type: array
+        items:
+          $ref: .\microsoft.graph.termStore.localizedName.yaml
+        description: Name of the set for each languageTag.
+      properties:
+        type: array
+        items:
+          $ref: .\microsoft.graph.keyValue.yaml
+        description: Custom properties for the set.
+      children:
+        type: array
+        items:
+          $ref: .\microsoft.graph.termStore.term.yaml
+        description: Children terms of set in term [store].
+        x-ms-navigationProperty: true
+      parentGroup:
+        $ref: .\microsoft.graph.termStore.group.yaml
+      relations:
+        type: array
+        items:
+          $ref: .\microsoft.graph.termStore.relation.yaml
+        description: >-
+          Indicates which terms have been pinned or reused directly under the
+          set.
+        x-ms-navigationProperty: true
+      terms:
+        type: array
+        items:
+          $ref: .\microsoft.graph.termStore.term.yaml
+        description: All the terms under the set.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.termStore.set'

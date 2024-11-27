@@ -1,0 +1,15 @@
+allOf:
+  - $ref: .\microsoft.graph.attachmentBase.yaml
+  - title: taskFileAttachment
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      contentBytes:
+        type: string
+        description: The base64-encoded contents of the file.
+        format: base64url
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.taskFileAttachment'
+x-ms-discriminator-value: '#microsoft.graph.taskFileAttachment'

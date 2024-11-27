@@ -1,0 +1,15 @@
+allOf:
+  - $ref: .\microsoft.graph.serviceProvisioningError.yaml
+  - title: serviceProvisioningXmlError
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      errorDetail:
+        type: string
+        description: Error Information published by the Federated Service as an xml string.
+        nullable: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.serviceProvisioningXmlError'
+x-ms-discriminator-value: '#microsoft.graph.serviceProvisioningXmlError'

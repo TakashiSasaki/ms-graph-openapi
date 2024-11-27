@@ -1,0 +1,15 @@
+title: teamGuestSettings
+required:
+  - '@odata.type'
+type: object
+properties:
+  allowCreateUpdateChannels:
+    type: boolean
+    description: If set to true, guests can add and update channels.
+    nullable: true
+  allowDeleteChannels:
+    type: boolean
+    description: If set to true, guests can delete channels.
+    nullable: true
+  '@odata.type':
+    type: string

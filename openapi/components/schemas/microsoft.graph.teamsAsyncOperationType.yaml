@@ -1,0 +1,13 @@
+title: teamsAsyncOperationType
+enum:
+  - invalid
+  - cloneTeam
+  - archiveTeam
+  - unarchiveTeam
+  - createTeam
+  - unknownFutureValue
+  - teamifyGroup
+  - createChannel
+  - archiveChannel
+  - unarchiveChannel
+type: string

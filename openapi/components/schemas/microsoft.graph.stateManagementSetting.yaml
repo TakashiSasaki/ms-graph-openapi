@@ -1,0 +1,20 @@
+title: stateManagementSetting
+enum:
+  - notConfigured
+  - blocked
+  - allowed
+type: string
+description: State Management Setting.
+x-ms-enum:
+  name: stateManagementSetting
+  modelAsString: false
+  values:
+    - value: notConfigured
+      description: Not configured.
+      name: notConfigured
+    - value: blocked
+      description: Blocked.
+      name: blocked
+    - value: allowed
+      description: Allowed.
+      name: allowed

@@ -1,0 +1,22 @@
+title: shiftAvailability
+required:
+  - '@odata.type'
+type: object
+properties:
+  recurrence:
+    anyOf:
+      - $ref: .\microsoft.graph.patternedRecurrence.yaml
+      - type: object
+        nullable: true
+    description: Specifies the pattern for recurrence
+  timeSlots:
+    type: array
+    items:
+      $ref: .\microsoft.graph.timeRange.yaml
+    description: The time slot(s) preferred by the user.
+  timeZone:
+    type: string
+    description: Specifies the time zone for the indicated time.
+    nullable: true
+  '@odata.type':
+    type: string

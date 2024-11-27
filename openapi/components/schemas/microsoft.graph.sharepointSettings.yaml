@@ -1,0 +1,191 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: sharepointSettings
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      allowedDomainGuidsForSyncApp:
+        type: array
+        items:
+          pattern: >-
+            ^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$
+          type: string
+          format: uuid
+          nullable: true
+        description: Collection of trusted domain GUIDs for the OneDrive sync app.
+      availableManagedPathsForSiteCreation:
+        type: array
+        items:
+          type: string
+        description: Collection of managed paths available for site creation. Read-only.
+      deletedUserPersonalSiteRetentionPeriodInDays:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: The number of days for preserving a deleted user's OneDrive.
+        format: int32
+        nullable: true
+      excludedFileExtensionsForSyncApp:
+        type: array
+        items:
+          type: string
+          nullable: true
+        description: Collection of file extensions not uploaded by the OneDrive sync app.
+      idleSessionSignOut:
+        anyOf:
+          - $ref: .\microsoft.graph.idleSessionSignOut.yaml
+          - type: object
+            nullable: true
+        description: Specifies the idle session sign-out policies for the tenant.
+      imageTaggingOption:
+        anyOf:
+          - $ref: .\microsoft.graph.imageTaggingChoice.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Specifies the image tagging option for the tenant. Possible values
+          are: disabled, basic, enhanced.
+      isCommentingOnSitePagesEnabled:
+        type: boolean
+        description: >-
+          Indicates whether comments are allowed on modern site pages in
+          SharePoint.
+        nullable: true
+      isFileActivityNotificationEnabled:
+        type: boolean
+        description: Indicates whether push notifications are enabled for OneDrive events.
+        nullable: true
+      isLegacyAuthProtocolsEnabled:
+        type: boolean
+        description: >-
+          Indicates whether legacy authentication protocols are enabled for the
+          tenant.
+        nullable: true
+      isLoopEnabled:
+        type: boolean
+        description: Indicates whether if Fluid Framework is allowed on SharePoint sites.
+        nullable: true
+      isMacSyncAppEnabled:
+        type: boolean
+        description: >-
+          Indicates whether files can be synced using the OneDrive sync app for
+          Mac.
+        nullable: true
+      isRequireAcceptingUserToMatchInvitedUserEnabled:
+        type: boolean
+        description: >-
+          Indicates whether guests must sign in using the same account to which
+          sharing invitations are sent.
+        nullable: true
+      isResharingByExternalUsersEnabled:
+        type: boolean
+        description: >-
+          Indicates whether guests are allowed to reshare files, folders, and
+          sites they don't own.
+        nullable: true
+      isSharePointMobileNotificationEnabled:
+        type: boolean
+        description: >-
+          Indicates whether mobile push notifications are enabled for
+          SharePoint.
+        nullable: true
+      isSharePointNewsfeedEnabled:
+        type: boolean
+        description: >-
+          Indicates whether the newsfeed is allowed on the modern site pages in
+          SharePoint.
+        nullable: true
+      isSiteCreationEnabled:
+        type: boolean
+        description: Indicates whether users are allowed to create sites.
+        nullable: true
+      isSiteCreationUIEnabled:
+        type: boolean
+        description: Indicates whether the UI commands for creating sites are shown.
+        nullable: true
+      isSitePagesCreationEnabled:
+        type: boolean
+        description: >-
+          Indicates whether creating new modern pages is allowed on SharePoint
+          sites.
+        nullable: true
+      isSitesStorageLimitAutomatic:
+        type: boolean
+        description: >-
+          Indicates whether site storage space is automatically managed or if
+          specific storage limits are set per site.
+        nullable: true
+      isSyncButtonHiddenOnPersonalSite:
+        type: boolean
+        description: Indicates whether the sync button in OneDrive is hidden.
+        nullable: true
+      isUnmanagedSyncAppForTenantRestricted:
+        type: boolean
+        description: >-
+          Indicates whether users are allowed to sync files only on PCs joined
+          to specific domains.
+        nullable: true
+      personalSiteDefaultStorageLimitInMB:
+        type: number
+        description: >-
+          The default OneDrive storage limit for all new and existing users who
+          are assigned a qualifying license. Measured in megabytes (MB).
+        format: int64
+        nullable: true
+      sharingAllowedDomainList:
+        type: array
+        items:
+          type: string
+          nullable: true
+        description: >-
+          Collection of email domains that are allowed for sharing outside the
+          organization.
+      sharingBlockedDomainList:
+        type: array
+        items:
+          type: string
+          nullable: true
+        description: >-
+          Collection of email domains that are blocked for sharing outside the
+          organization.
+      sharingCapability:
+        anyOf:
+          - $ref: .\microsoft.graph.sharingCapabilities.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Sharing capability for the tenant. Possible values are: disabled,
+          externalUserSharingOnly, externalUserAndGuestSharing,
+          existingExternalUserSharingOnly.
+      sharingDomainRestrictionMode:
+        anyOf:
+          - $ref: .\microsoft.graph.sharingDomainRestrictionMode.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Specifies the external sharing mode for domains. Possible values are:
+          none, allowList, blockList.
+      siteCreationDefaultManagedPath:
+        type: string
+        description: >-
+          The value of the team site managed path. This is the path under which
+          new team sites will be created.
+      siteCreationDefaultStorageLimitInMB:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: >-
+          The default storage quota for a new site upon creation. Measured in
+          megabytes (MB).
+        format: int32
+        nullable: true
+      tenantDefaultTimezone:
+        type: string
+        description: >-
+          The default timezone of a tenant for newly created sites. For a list
+          of possible values, see SPRegionalSettings.TimeZones property.
+        nullable: true
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.sharepointSettings'

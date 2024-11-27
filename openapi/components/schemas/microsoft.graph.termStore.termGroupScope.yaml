@@ -1,0 +1,7 @@
+title: termGroupScope
+enum:
+  - global
+  - system
+  - siteCollection
+  - unknownFutureValue
+type: string

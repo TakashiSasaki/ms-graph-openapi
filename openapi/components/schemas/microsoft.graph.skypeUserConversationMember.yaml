@@ -1,0 +1,15 @@
+allOf:
+  - $ref: .\microsoft.graph.conversationMember.yaml
+  - title: skypeUserConversationMember
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      skypeId:
+        type: string
+        description: Skype ID of the user.
+        nullable: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.skypeUserConversationMember'
+x-ms-discriminator-value: '#microsoft.graph.skypeUserConversationMember'

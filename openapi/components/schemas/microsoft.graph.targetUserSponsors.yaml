@@ -1,0 +1,11 @@
+allOf:
+  - $ref: .\microsoft.graph.subjectSet.yaml
+  - title: targetUserSponsors
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.targetUserSponsors'
+x-ms-discriminator-value: '#microsoft.graph.targetUserSponsors'

@@ -1,0 +1,8 @@
+title: taskStatus
+enum:
+  - notStarted
+  - inProgress
+  - completed
+  - waitingOnOthers
+  - deferred
+type: string

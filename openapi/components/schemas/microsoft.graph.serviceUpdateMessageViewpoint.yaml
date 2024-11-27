@@ -1,0 +1,19 @@
+title: serviceUpdateMessageViewpoint
+required:
+  - '@odata.type'
+type: object
+properties:
+  isArchived:
+    type: boolean
+    description: Indicates whether the user archived the message.
+    nullable: true
+  isFavorited:
+    type: boolean
+    description: Indicates whether the user marked the message as favorite.
+    nullable: true
+  isRead:
+    type: boolean
+    description: Indicates whether the user read the message.
+    nullable: true
+  '@odata.type':
+    type: string

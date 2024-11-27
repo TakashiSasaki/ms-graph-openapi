@@ -1,0 +1,21 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: termsAndConditionsAssignment
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      target:
+        anyOf:
+          - $ref: .\microsoft.graph.deviceAndAppManagementAssignmentTarget.yaml
+          - type: object
+            nullable: true
+        description: Assignment target that the T&C policy is assigned to.
+      '@odata.type':
+        type: string
+    description: >-
+      A termsAndConditionsAssignment entity represents the assignment of a given
+      Terms and Conditions (T&C) policy to a given group. Users in the group
+      will be required to accept the terms in order to have devices enrolled
+      into Intune.
+x-ms-discriminator-value: '#microsoft.graph.termsAndConditionsAssignment'

@@ -1,0 +1,16 @@
+allOf:
+  - $ref: .\microsoft.graph.mediaConfig.yaml
+  - title: serviceHostedMediaConfig
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      preFetchMedia:
+        type: array
+        items:
+          $ref: .\microsoft.graph.mediaInfo.yaml
+        description: The list of media to pre-fetch.
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.serviceHostedMediaConfig'
+x-ms-discriminator-value: '#microsoft.graph.serviceHostedMediaConfig'

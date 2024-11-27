@@ -1,0 +1,6 @@
+title: signInUserType
+enum:
+  - member
+  - guest
+  - unknownFutureValue
+type: string

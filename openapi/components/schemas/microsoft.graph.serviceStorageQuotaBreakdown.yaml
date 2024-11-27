@@ -1,0 +1,10 @@
+allOf:
+  - $ref: .\microsoft.graph.storageQuotaBreakdown.yaml
+  - title: serviceStorageQuotaBreakdown
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.serviceStorageQuotaBreakdown'

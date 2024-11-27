@@ -1,0 +1,12 @@
+title: synchronizationJobRestartScope
+enum:
+  - None
+  - ConnectorDataStore
+  - Escrows
+  - Watermark
+  - QuarantineState
+  - Full
+  - ForceDeletes
+type: string
+x-ms-enum-flags:
+  isFlags: true

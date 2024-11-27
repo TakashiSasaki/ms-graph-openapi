@@ -1,0 +1,9 @@
+title: simulationAutomationStatus
+enum:
+  - unknown
+  - draft
+  - notRunning
+  - running
+  - completed
+  - unknownFutureValue
+type: string

@@ -1,0 +1,189 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: team
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      classification:
+        type: string
+        description: >-
+          An optional label. Typically describes the data or business
+          sensitivity of the team. Must match one of a pre-configured set in the
+          tenant's directory.
+        nullable: true
+      createdDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: Timestamp at which the team was created.
+        format: date-time
+        nullable: true
+      description:
+        type: string
+        description: 'An optional description for the team. Maximum length: 1024 characters.'
+        nullable: true
+      displayName:
+        type: string
+        description: The name of the team.
+        nullable: true
+      funSettings:
+        anyOf:
+          - $ref: .\microsoft.graph.teamFunSettings.yaml
+          - type: object
+            nullable: true
+        description: Settings to configure use of Giphy, memes, and stickers in the team.
+      guestSettings:
+        anyOf:
+          - $ref: .\microsoft.graph.teamGuestSettings.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Settings to configure whether guests can create, update, or delete
+          channels in the team.
+      internalId:
+        type: string
+        description: >-
+          A unique ID for the team that has been used in a few places such as
+          the audit log/Office 365 Management Activity API.
+        nullable: true
+      isArchived:
+        type: boolean
+        description: Whether this team is in read-only mode.
+        nullable: true
+      memberSettings:
+        anyOf:
+          - $ref: .\microsoft.graph.teamMemberSettings.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Settings to configure whether members can perform certain actions, for
+          example, create channels and add bots, in the team.
+      messagingSettings:
+        anyOf:
+          - $ref: .\microsoft.graph.teamMessagingSettings.yaml
+          - type: object
+            nullable: true
+        description: Settings to configure messaging and mentions in the team.
+      specialization:
+        anyOf:
+          - $ref: .\microsoft.graph.teamSpecialization.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Optional. Indicates whether the team is intended for a particular use
+          case.  Each team specialization has access to unique behaviors and
+          experiences targeted to its use case.
+      summary:
+        anyOf:
+          - $ref: .\microsoft.graph.teamSummary.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Contains summary information about the team, including number of
+          owners, members, and guests.
+      tenantId:
+        type: string
+        description: The ID of the Microsoft Entra tenant.
+        nullable: true
+      visibility:
+        anyOf:
+          - $ref: .\microsoft.graph.teamVisibilityType.yaml
+          - type: object
+            nullable: true
+        description: The visibility of the group and team. Defaults to Public.
+      webUrl:
+        type: string
+        description: >-
+          A hyperlink that will go to the team in the Microsoft Teams client.
+          This is the URL that you get when you right-click a team in the
+          Microsoft Teams client and select Get link to team. This URL should be
+          treated as an opaque blob, and not parsed.
+        nullable: true
+      allChannels:
+        type: array
+        items:
+          $ref: .\microsoft.graph.channel.yaml
+        description: >-
+          List of channels either hosted in or shared with the team (incoming
+          channels).
+        x-ms-navigationProperty: true
+      channels:
+        type: array
+        items:
+          $ref: .\microsoft.graph.channel.yaml
+        description: The collection of channels and messages associated with the team.
+        x-ms-navigationProperty: true
+      group:
+        anyOf:
+          - $ref: .\microsoft.graph.group.yaml
+          - type: object
+            nullable: true
+        x-ms-navigationProperty: true
+      incomingChannels:
+        type: array
+        items:
+          $ref: .\microsoft.graph.channel.yaml
+        description: List of channels shared with the team.
+        x-ms-navigationProperty: true
+      installedApps:
+        type: array
+        items:
+          $ref: .\microsoft.graph.teamsAppInstallation.yaml
+        description: The apps installed in this team.
+        x-ms-navigationProperty: true
+      members:
+        type: array
+        items:
+          $ref: .\microsoft.graph.conversationMember.yaml
+        description: Members and owners of the team.
+        x-ms-navigationProperty: true
+      operations:
+        type: array
+        items:
+          $ref: .\microsoft.graph.teamsAsyncOperation.yaml
+        description: The async operations that ran or are running on this team.
+        x-ms-navigationProperty: true
+      permissionGrants:
+        type: array
+        items:
+          $ref: .\microsoft.graph.resourceSpecificPermissionGrant.yaml
+        description: A collection of permissions granted to apps to access the team.
+        x-ms-navigationProperty: true
+      photo:
+        anyOf:
+          - $ref: .\microsoft.graph.profilePhoto.yaml
+          - type: object
+            nullable: true
+        description: The profile photo for the team.
+        x-ms-navigationProperty: true
+      primaryChannel:
+        anyOf:
+          - $ref: .\microsoft.graph.channel.yaml
+          - type: object
+            nullable: true
+        description: The general channel for the team.
+        x-ms-navigationProperty: true
+      schedule:
+        anyOf:
+          - $ref: .\microsoft.graph.schedule.yaml
+          - type: object
+            nullable: true
+        description: The schedule of shifts for this team.
+        x-ms-navigationProperty: true
+      tags:
+        type: array
+        items:
+          $ref: .\microsoft.graph.teamworkTag.yaml
+        description: The tags associated with the team.
+        x-ms-navigationProperty: true
+      template:
+        anyOf:
+          - $ref: .\microsoft.graph.teamsTemplate.yaml
+          - type: object
+            nullable: true
+        description: The template this team was created from. See available templates.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.team'

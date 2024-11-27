@@ -1,0 +1,11 @@
+allOf:
+  - $ref: .\microsoft.graph.subjectRightsRequestMailboxLocation.yaml
+  - title: subjectRightsRequestAllMailboxLocation
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.subjectRightsRequestAllMailboxLocation'
+x-ms-discriminator-value: '#microsoft.graph.subjectRightsRequestAllMailboxLocation'

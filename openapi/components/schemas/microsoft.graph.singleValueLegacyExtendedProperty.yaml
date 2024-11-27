@@ -1,0 +1,14 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: singleValueLegacyExtendedProperty
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      value:
+        type: string
+        description: A property value.
+        nullable: true
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.singleValueLegacyExtendedProperty'

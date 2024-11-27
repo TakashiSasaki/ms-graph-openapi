@@ -1,0 +1,72 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: subscribedSku
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      accountId:
+        type: string
+        description: The unique ID of the account this SKU belongs to.
+        nullable: true
+      accountName:
+        type: string
+        description: The name of the account this SKU belongs to.
+        nullable: true
+      appliesTo:
+        type: string
+        description: >-
+          The target class for this SKU. Only SKUs with target class User are
+          assignable. Possible values are: User, Company.
+        nullable: true
+      capabilityStatus:
+        type: string
+        description: >-
+          Enabled indicates that the prepaidUnits property has at least one unit
+          that is enabled. LockedOut indicates that the customer canceled their
+          subscription. Possible values are: Enabled, Warning, Suspended,
+          Deleted, LockedOut.
+        nullable: true
+      consumedUnits:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: The number of licenses that have been assigned.
+        format: int32
+        nullable: true
+      prepaidUnits:
+        anyOf:
+          - $ref: .\microsoft.graph.licenseUnitsDetail.yaml
+          - type: object
+            nullable: true
+        description: Information about the number and status of prepaid licenses.
+      servicePlans:
+        type: array
+        items:
+          $ref: .\microsoft.graph.servicePlanInfo.yaml
+        description: >-
+          Information about the service plans that are available with the SKU.
+          Not nullable.
+      skuId:
+        pattern: >-
+          ^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$
+        type: string
+        description: The unique identifier (GUID) for the service SKU.
+        format: uuid
+        nullable: true
+      skuPartNumber:
+        type: string
+        description: >-
+          The SKU part number; for example: AAD_PREMIUM or RMSBASIC. To get a
+          list of commercial subscriptions that an organization has acquired,
+          see List subscribedSkus.
+        nullable: true
+      subscriptionIds:
+        type: array
+        items:
+          type: string
+          nullable: true
+        description: A list of all subscription IDs associated with this SKU.
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.subscribedSku'

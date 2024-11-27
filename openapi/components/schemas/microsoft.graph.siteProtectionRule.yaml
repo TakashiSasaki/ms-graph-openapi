@@ -1,0 +1,15 @@
+allOf:
+  - $ref: .\microsoft.graph.protectionRuleBase.yaml
+  - title: siteProtectionRule
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      siteExpression:
+        type: string
+        description: Contains a site expression. For examples, see siteExpression example.
+        nullable: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.siteProtectionRule'
+x-ms-discriminator-value: '#microsoft.graph.siteProtectionRule'

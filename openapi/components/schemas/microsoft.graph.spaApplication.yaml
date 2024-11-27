@@ -1,0 +1,14 @@
+title: spaApplication
+required:
+  - '@odata.type'
+type: object
+properties:
+  redirectUris:
+    type: array
+    items:
+      type: string
+    description: >-
+      Specifies the URLs where user tokens are sent for sign-in, or the redirect
+      URIs where OAuth 2.0 authorization codes and access tokens are sent.
+  '@odata.type':
+    type: string

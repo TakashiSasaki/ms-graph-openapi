@@ -1,0 +1,18 @@
+title: staffAvailabilityItem
+required:
+  - '@odata.type'
+type: object
+properties:
+  availabilityItems:
+    type: array
+    items:
+      $ref: .\microsoft.graph.availabilityItem.yaml
+    description: >-
+      Each item in this collection indicates a slot and the status of the staff
+      member.
+  staffId:
+    type: string
+    description: The ID of the staff member.
+    nullable: true
+  '@odata.type':
+    type: string

@@ -1,0 +1,25 @@
+allOf:
+  - $ref: .\microsoft.graph.protectionPolicyBase.yaml
+  - title: sharePointProtectionPolicy
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      siteInclusionRules:
+        type: array
+        items:
+          $ref: .\microsoft.graph.siteProtectionRule.yaml
+        description: The rules associated with the SharePoint Protection policy.
+        x-ms-navigationProperty: true
+      siteProtectionUnits:
+        type: array
+        items:
+          $ref: .\microsoft.graph.siteProtectionUnit.yaml
+        description: >-
+          The protection units (sites) that are protected under the site
+          protection policy.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.sharePointProtectionPolicy'
+x-ms-discriminator-value: '#microsoft.graph.sharePointProtectionPolicy'

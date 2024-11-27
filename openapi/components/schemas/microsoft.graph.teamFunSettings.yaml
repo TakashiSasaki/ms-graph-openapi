@@ -1,0 +1,25 @@
+title: teamFunSettings
+required:
+  - '@odata.type'
+type: object
+properties:
+  allowCustomMemes:
+    type: boolean
+    description: If set to true, enables users to include custom memes.
+    nullable: true
+  allowGiphy:
+    type: boolean
+    description: If set to true, enables Giphy use.
+    nullable: true
+  allowStickersAndMemes:
+    type: boolean
+    description: If set to true, enables users to include stickers and memes.
+    nullable: true
+  giphyContentRating:
+    anyOf:
+      - $ref: .\microsoft.graph.giphyRatingType.yaml
+      - type: object
+        nullable: true
+    description: 'Giphy content rating. Possible values are: moderate, strict.'
+  '@odata.type':
+    type: string

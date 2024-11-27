@@ -1,0 +1,25 @@
+allOf:
+  - $ref: .\microsoft.graph.eventMessageDetail.yaml
+  - title: teamRenamedEventMessageDetail
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      initiator:
+        anyOf:
+          - $ref: .\microsoft.graph.identitySet.yaml
+          - type: object
+            nullable: true
+        description: Initiator of the event.
+      teamDisplayName:
+        type: string
+        description: The updated name of the team.
+        nullable: true
+      teamId:
+        type: string
+        description: Unique identifier of the team.
+        nullable: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.teamRenamedEventMessageDetail'
+x-ms-discriminator-value: '#microsoft.graph.teamRenamedEventMessageDetail'

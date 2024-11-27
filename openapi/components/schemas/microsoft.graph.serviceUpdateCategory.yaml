@@ -1,0 +1,7 @@
+title: serviceUpdateCategory
+enum:
+  - preventOrFixIssue
+  - planForChange
+  - stayInformed
+  - unknownFutureValue
+type: string

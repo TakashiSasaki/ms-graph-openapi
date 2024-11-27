@@ -1,0 +1,31 @@
+title: teamMemberSettings
+required:
+  - '@odata.type'
+type: object
+properties:
+  allowAddRemoveApps:
+    type: boolean
+    description: If set to true, members can add and remove apps.
+    nullable: true
+  allowCreatePrivateChannels:
+    type: boolean
+    description: If set to true, members can add and update private channels.
+    nullable: true
+  allowCreateUpdateChannels:
+    type: boolean
+    description: If set to true, members can add and update channels.
+    nullable: true
+  allowCreateUpdateRemoveConnectors:
+    type: boolean
+    description: If set to true, members can add, update, and remove connectors.
+    nullable: true
+  allowCreateUpdateRemoveTabs:
+    type: boolean
+    description: If set to true, members can add, update, and remove tabs.
+    nullable: true
+  allowDeleteChannels:
+    type: boolean
+    description: If set to true, members can delete channels.
+    nullable: true
+  '@odata.type':
+    type: string

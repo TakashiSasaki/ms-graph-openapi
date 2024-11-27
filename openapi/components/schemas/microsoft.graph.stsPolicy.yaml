@@ -1,0 +1,38 @@
+allOf:
+  - $ref: .\microsoft.graph.policyBase.yaml
+  - title: stsPolicy
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      definition:
+        type: array
+        items:
+          type: string
+        description: >-
+          A string collection containing a JSON string that defines the rules
+          and settings for a policy. The syntax for the definition differs for
+          each derived policy type. Required.
+      isOrganizationDefault:
+        type: boolean
+        description: >-
+          If set to true, activates this policy. There can be many policies for
+          the same policy type, but only one can be activated as the
+          organization default. Optional, default value is false.
+        nullable: true
+      appliesTo:
+        type: array
+        items:
+          $ref: .\microsoft.graph.directoryObject.yaml
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.stsPolicy'
+    discriminator:
+      propertyName: '@odata.type'
+      mapping:
+        '#microsoft.graph.activityBasedTimeoutPolicy': .\microsoft.graph.activityBasedTimeoutPolicy.yaml
+        '#microsoft.graph.claimsMappingPolicy': .\microsoft.graph.claimsMappingPolicy.yaml
+        '#microsoft.graph.homeRealmDiscoveryPolicy': .\microsoft.graph.homeRealmDiscoveryPolicy.yaml
+        '#microsoft.graph.tokenIssuancePolicy': .\microsoft.graph.tokenIssuancePolicy.yaml
+        '#microsoft.graph.tokenLifetimePolicy': .\microsoft.graph.tokenLifetimePolicy.yaml

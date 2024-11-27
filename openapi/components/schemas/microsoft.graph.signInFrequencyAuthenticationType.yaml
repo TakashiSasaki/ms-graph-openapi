@@ -1,0 +1,6 @@
+title: signInFrequencyAuthenticationType
+enum:
+  - primaryAndSecondaryAuthentication
+  - secondaryAuthentication
+  - unknownFutureValue
+type: string

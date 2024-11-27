@@ -1,0 +1,32 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: store
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      defaultLanguageTag:
+        type: string
+        description: Default language of the term store.
+      languageTags:
+        type: array
+        items:
+          type: string
+        description: List of languages for the term store.
+      groups:
+        type: array
+        items:
+          $ref: .\microsoft.graph.termStore.group.yaml
+        description: Collection of all groups available in the term store.
+        x-ms-navigationProperty: true
+      sets:
+        type: array
+        items:
+          $ref: .\microsoft.graph.termStore.set.yaml
+        description: >-
+          Collection of all sets available in the term store. This relationship
+          can only be used to load a specific term set.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.termStore.store'

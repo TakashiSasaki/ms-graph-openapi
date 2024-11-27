@@ -1,0 +1,27 @@
+title: teamMessagingSettings
+required:
+  - '@odata.type'
+type: object
+properties:
+  allowChannelMentions:
+    type: boolean
+    description: If set to true, @channel mentions are allowed.
+    nullable: true
+  allowOwnerDeleteMessages:
+    type: boolean
+    description: If set to true, owners can delete any message.
+    nullable: true
+  allowTeamMentions:
+    type: boolean
+    description: If set to true, @team mentions are allowed.
+    nullable: true
+  allowUserDeleteMessages:
+    type: boolean
+    description: If set to true, users can delete their messages.
+    nullable: true
+  allowUserEditMessages:
+    type: boolean
+    description: If set to true, users can edit their messages.
+    nullable: true
+  '@odata.type':
+    type: string

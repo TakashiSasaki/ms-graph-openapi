@@ -1,0 +1,7 @@
+title: serviceUpdateSeverity
+enum:
+  - normal
+  - high
+  - critical
+  - unknownFutureValue
+type: string

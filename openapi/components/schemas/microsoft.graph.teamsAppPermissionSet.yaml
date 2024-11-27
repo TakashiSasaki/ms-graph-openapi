@@ -1,0 +1,12 @@
+title: teamsAppPermissionSet
+required:
+  - '@odata.type'
+type: object
+properties:
+  resourceSpecificPermissions:
+    type: array
+    items:
+      $ref: .\microsoft.graph.teamsAppResourceSpecificPermission.yaml
+    description: A collection of resource-specific permissions.
+  '@odata.type':
+    type: string

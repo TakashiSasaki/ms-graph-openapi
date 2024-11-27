@@ -1,0 +1,9 @@
+title: teamworkApplicationIdentityType
+enum:
+  - aadApplication
+  - bot
+  - tenantBot
+  - office365Connector
+  - outgoingWebhook
+  - unknownFutureValue
+type: string

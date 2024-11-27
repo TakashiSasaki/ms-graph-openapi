@@ -1,0 +1,29 @@
+title: solutionsRoot
+required:
+  - '@odata.type'
+type: object
+properties:
+  backupRestore:
+    anyOf:
+      - $ref: .\microsoft.graph.backupRestoreRoot.yaml
+      - type: object
+        nullable: true
+    x-ms-navigationProperty: true
+  bookingBusinesses:
+    type: array
+    items:
+      $ref: .\microsoft.graph.bookingBusiness.yaml
+    x-ms-navigationProperty: true
+  bookingCurrencies:
+    type: array
+    items:
+      $ref: .\microsoft.graph.bookingCurrency.yaml
+    x-ms-navigationProperty: true
+  virtualEvents:
+    anyOf:
+      - $ref: .\microsoft.graph.virtualEventsRoot.yaml
+      - type: object
+        nullable: true
+    x-ms-navigationProperty: true
+  '@odata.type':
+    type: string

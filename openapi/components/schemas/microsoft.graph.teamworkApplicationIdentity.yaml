@@ -1,0 +1,20 @@
+allOf:
+  - $ref: .\microsoft.graph.identity.yaml
+  - title: teamworkApplicationIdentity
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      applicationIdentityType:
+        anyOf:
+          - $ref: .\microsoft.graph.teamworkApplicationIdentityType.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Type of application that is referenced. Possible values are:
+          aadApplication, bot, tenantBot, office365Connector, outgoingWebhook,
+          and unknownFutureValue.
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.teamworkApplicationIdentity'
+x-ms-discriminator-value: '#microsoft.graph.teamworkApplicationIdentity'

@@ -1,0 +1,20 @@
+allOf:
+  - $ref: .\microsoft.graph.subjectRightsRequestMailboxLocation.yaml
+  - title: subjectRightsRequestEnumeratedMailboxLocation
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      userPrincipalNames:
+        type: array
+        items:
+          type: string
+          nullable: true
+        description: >-
+          Collection of mailboxes that should be included in the search.
+          Includes the user principal name (UPN) of each mailbox, for example,
+          Monica.Thompson@contoso.com.
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.subjectRightsRequestEnumeratedMailboxLocation'
+x-ms-discriminator-value: '#microsoft.graph.subjectRightsRequestEnumeratedMailboxLocation'

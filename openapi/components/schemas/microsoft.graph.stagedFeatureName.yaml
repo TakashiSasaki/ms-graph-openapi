@@ -1,0 +1,10 @@
+title: stagedFeatureName
+enum:
+  - passthroughAuthentication
+  - seamlessSso
+  - passwordHashSync
+  - emailAsAlternateId
+  - unknownFutureValue
+  - certificateBasedAuthentication
+  - multiFactorAuthentication
+type: string

@@ -1,0 +1,14 @@
+title: teamClassSettings
+required:
+  - '@odata.type'
+type: object
+properties:
+  notifyGuardiansAboutAssignments:
+    type: boolean
+    description: >-
+      If set to true, enables sending of weekly assignments digest emails to
+      parents/guardians, provided the tenant admin has enabled the setting
+      globally.
+    nullable: true
+  '@odata.type':
+    type: string

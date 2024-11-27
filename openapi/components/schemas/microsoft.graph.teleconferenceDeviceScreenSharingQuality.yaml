@@ -1,0 +1,10 @@
+allOf:
+  - $ref: .\microsoft.graph.teleconferenceDeviceVideoQuality.yaml
+  - title: teleconferenceDeviceScreenSharingQuality
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.teleconferenceDeviceScreenSharingQuality'

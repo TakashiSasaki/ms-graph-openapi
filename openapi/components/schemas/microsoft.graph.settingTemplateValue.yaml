@@ -1,0 +1,23 @@
+title: settingTemplateValue
+required:
+  - '@odata.type'
+type: object
+properties:
+  defaultValue:
+    type: string
+    description: Default value for the setting.
+    nullable: true
+  description:
+    type: string
+    description: Description of the setting.
+    nullable: true
+  name:
+    type: string
+    description: Name of the setting.
+    nullable: true
+  type:
+    type: string
+    description: Type of the setting.
+    nullable: true
+  '@odata.type':
+    type: string

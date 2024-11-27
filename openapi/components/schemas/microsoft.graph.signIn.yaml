@@ -1,0 +1,208 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: signIn
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      appDisplayName:
+        type: string
+        description: >-
+          App name displayed in the Microsoft Entra admin center.  Supports
+          $filter (eq, startsWith).
+        nullable: true
+      appId:
+        type: string
+        description: >-
+          Unique GUID that represents the app ID in the Microsoft Entra ID. 
+          Supports $filter (eq).
+        nullable: true
+      appliedConditionalAccessPolicies:
+        type: array
+        items:
+          $ref: .\microsoft.graph.appliedConditionalAccessPolicy.yaml
+        description: >-
+          Provides a list of conditional access policies that the corresponding
+          sign-in activity triggers. Apps need more Conditional Access-related
+          privileges to read the details of this property. For more information,
+          see Permissions for viewing applied conditional access (CA) policies
+          in sign-ins.
+      clientAppUsed:
+        type: string
+        description: >-
+          Identifies the client used for the sign-in activity. Modern
+          authentication clients include Browser, modern clients. Legacy
+          authentication clients include Exchange ActiveSync, IMAP, MAPI, SMTP,
+          POP, and other clients.  Supports $filter (eq).
+        nullable: true
+      conditionalAccessStatus:
+        anyOf:
+          - $ref: .\microsoft.graph.conditionalAccessStatus.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Reports status of an activated conditional access policy. Possible
+          values are: success, failure, notApplied, and unknownFutureValue. 
+          Supports $filter (eq).
+      correlationId:
+        type: string
+        description: >-
+          The request ID sent from the client when the sign-in is initiated.
+          Used to troubleshoot sign-in activity.  Supports $filter (eq).
+        nullable: true
+      createdDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: >-
+          Date and time (UTC) the sign-in was initiated. Example: midnight on
+          Jan 1, 2014 is reported as 2014-01-01T00:00:00Z.  Supports $orderby,
+          $filter (eq, le, and ge).
+        format: date-time
+      deviceDetail:
+        anyOf:
+          - $ref: .\microsoft.graph.deviceDetail.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Device information from where the sign-in occurred; includes device
+          ID, operating system, and browser.  Supports $filter (eq, startsWith)
+          on browser and operatingSytem properties.
+      ipAddress:
+        type: string
+        description: >-
+          IP address of the client used to sign in.  Supports $filter (eq,
+          startsWith).
+        nullable: true
+      isInteractive:
+        type: boolean
+        description: Indicates whether a sign-in is interactive.
+        nullable: true
+      location:
+        anyOf:
+          - $ref: .\microsoft.graph.signInLocation.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Provides the city, state, and country code where the sign-in
+          originated.  Supports $filter (eq, startsWith) on city, state, and
+          countryOrRegion properties.
+      resourceDisplayName:
+        type: string
+        description: Name of the resource the user signed into.  Supports $filter (eq).
+        nullable: true
+      resourceId:
+        type: string
+        description: ID of the resource that the user signed into.  Supports $filter (eq).
+        nullable: true
+      riskDetail:
+        anyOf:
+          - $ref: .\microsoft.graph.riskDetail.yaml
+          - type: object
+            nullable: true
+        description: >-
+          The reason behind a specific state of a risky user, sign-in, or a risk
+          event. The possible values are none, adminGeneratedTemporaryPassword,
+          userPerformedSecuredPasswordChange, userPerformedSecuredPasswordReset,
+          adminConfirmedSigninSafe, aiConfirmedSigninSafe,
+          userPassedMFADrivenByRiskBasedPolicy, adminDismissedAllRiskForUser,
+          adminConfirmedSigninCompromised, hidden,
+          adminConfirmedUserCompromised, unknownFutureValue,
+          adminConfirmedServicePrincipalCompromised,
+          adminDismissedAllRiskForServicePrincipal,
+          m365DAdminDismissedDetection, userChangedPasswordOnPremises,
+          adminDismissedRiskForSignIn, adminConfirmedAccountSafe. You must use
+          the Prefer: include-unknown-enum-members request header to get the
+          following value or values in this evolvable enum:
+          adminConfirmedServicePrincipalCompromised,
+          adminDismissedAllRiskForServicePrincipal,
+          m365DAdminDismissedDetection, userChangedPasswordOnPremises,
+          adminDismissedRiskForSignIn, adminConfirmedAccountSafe.The value none
+          means that Microsoft Entra risk detection did not flag the user or the
+          sign-in as a risky event so far.  Supports $filter (eq). Note: Details
+          for this property are only available for Microsoft Entra ID P2
+          customers. All other customers are returned hidden.
+      riskEventTypes:
+        type: array
+        items:
+          anyOf:
+            - $ref: .\microsoft.graph.riskEventType.yaml
+            - type: object
+              nullable: true
+      riskEventTypes_v2:
+        type: array
+        items:
+          type: string
+          nullable: true
+        description: >-
+          The list of risk event types associated with the sign-in. Possible
+          values: unlikelyTravel, anonymizedIPAddress, maliciousIPAddress,
+          unfamiliarFeatures, malwareInfectedIPAddress, suspiciousIPAddress,
+          leakedCredentials, investigationsThreatIntelligence, generic, or
+          unknownFutureValue.  Supports $filter (eq, startsWith).
+      riskLevelAggregated:
+        anyOf:
+          - $ref: .\microsoft.graph.riskLevel.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Aggregated risk level. The possible values are: none, low, medium,
+          high, hidden, and unknownFutureValue. The value hidden means the user
+          or sign-in wasn't enabled for Microsoft Entra ID Protection.  Supports
+          $filter (eq).  Note: Details for this property are only available for
+          Microsoft Entra ID P2 customers. All other customers are returned
+          hidden.
+      riskLevelDuringSignIn:
+        anyOf:
+          - $ref: .\microsoft.graph.riskLevel.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Risk level during sign-in. The possible values are: none, low, medium,
+          high, hidden, and unknownFutureValue. The value hidden means the user
+          or sign-in wasn't enabled for Microsoft Entra ID Protection.  Supports
+          $filter (eq). Note: Details for this property are only available for
+          Microsoft Entra ID P2 customers. All other customers are returned
+          hidden.
+      riskState:
+        anyOf:
+          - $ref: .\microsoft.graph.riskState.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Reports status of the risky user, sign-in, or a risk event. The
+          possible values are: none, confirmedSafe, remediated, dismissed,
+          atRisk, confirmedCompromised, unknownFutureValue.  Supports $filter
+          (eq).
+      status:
+        anyOf:
+          - $ref: .\microsoft.graph.signInStatus.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Sign-in status. Includes the error code and description of the error
+          (if a sign-in failure occurs).  Supports $filter (eq) on errorCode
+          property.
+      userDisplayName:
+        type: string
+        description: >-
+          Display name of the user that initiated the sign-in.  Supports $filter
+          (eq, startsWith).
+        nullable: true
+      userId:
+        type: string
+        description: ID of the user that initiated the sign-in.  Supports $filter (eq).
+      userPrincipalName:
+        type: string
+        description: >-
+          User principal name of the user that initiated the sign-in. This value
+          is always in lowercase. For guest users whose values in the user
+          object typically contain #EXT# before the domain part, this property
+          stores the value in both lowercase and the 'true' format. For example,
+          while the user object stores AdeleVance_fabrikam.com#EXT#@contoso.com,
+          the sign-in logs store adelevance@fabrikam.com. Supports $filter (eq,
+          startsWith).
+        nullable: true
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.signIn'

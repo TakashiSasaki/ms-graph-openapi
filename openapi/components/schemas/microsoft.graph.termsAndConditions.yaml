@@ -1,0 +1,78 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: termsAndConditions
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      acceptanceStatement:
+        type: string
+        description: >-
+          Administrator-supplied explanation of the terms and conditions,
+          typically describing what it means to accept the terms and conditions
+          set out in the T&C policy. This is shown to the user on prompts to
+          accept the T&C policy.
+        nullable: true
+      bodyText:
+        type: string
+        description: >-
+          Administrator-supplied body text of the terms and conditions,
+          typically the terms themselves. This is shown to the user on prompts
+          to accept the T&C policy.
+        nullable: true
+      createdDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: DateTime the object was created.
+        format: date-time
+      description:
+        type: string
+        description: Administrator-supplied description of the T&C policy.
+        nullable: true
+      displayName:
+        type: string
+        description: Administrator-supplied name for the T&C policy.
+      lastModifiedDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: DateTime the object was last modified.
+        format: date-time
+      title:
+        type: string
+        description: >-
+          Administrator-supplied title of the terms and conditions. This is
+          shown to the user on prompts to accept the T&C policy.
+        nullable: true
+      version:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: >-
+          Integer indicating the current version of the terms. Incremented when
+          an administrator makes a change to the terms and wishes to require
+          users to re-accept the modified T&C policy.
+        format: int32
+      acceptanceStatuses:
+        type: array
+        items:
+          $ref: .\microsoft.graph.termsAndConditionsAcceptanceStatus.yaml
+        description: The list of acceptance statuses for this T&C policy.
+        x-ms-navigationProperty: true
+      assignments:
+        type: array
+        items:
+          $ref: .\microsoft.graph.termsAndConditionsAssignment.yaml
+        description: The list of assignments for this T&C policy.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+    description: >-
+      A termsAndConditions entity represents the metadata and contents of a
+      given Terms and Conditions (T&C) policy. T&C policies’ contents are
+      presented to users upon their first attempt to enroll into Intune and
+      subsequently upon edits where an administrator has required re-acceptance.
+      They enable administrators to communicate the provisions to which a user
+      must agree in order to have devices enrolled into Intune.
+x-ms-discriminator-value: '#microsoft.graph.termsAndConditions'

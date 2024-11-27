@@ -1,0 +1,10 @@
+title: simulationAttackTechnique
+enum:
+  - unknown
+  - credentialHarvesting
+  - attachmentMalware
+  - driveByUrl
+  - linkInAttachment
+  - linkToMalwareFile
+  - unknownFutureValue
+type: string

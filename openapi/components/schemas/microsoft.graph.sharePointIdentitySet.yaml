@@ -1,0 +1,29 @@
+allOf:
+  - $ref: .\microsoft.graph.identitySet.yaml
+  - title: sharePointIdentitySet
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      group:
+        anyOf:
+          - $ref: .\microsoft.graph.identity.yaml
+          - type: object
+            nullable: true
+        description: The group associated with this action. Optional.
+      siteGroup:
+        anyOf:
+          - $ref: .\microsoft.graph.sharePointIdentity.yaml
+          - type: object
+            nullable: true
+        description: The SharePoint group associated with this action. Optional.
+      siteUser:
+        anyOf:
+          - $ref: .\microsoft.graph.sharePointIdentity.yaml
+          - type: object
+            nullable: true
+        description: The SharePoint user associated with this action. Optional.
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.sharePointIdentitySet'
+x-ms-discriminator-value: '#microsoft.graph.sharePointIdentitySet'

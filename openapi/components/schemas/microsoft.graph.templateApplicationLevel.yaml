@@ -1,0 +1,9 @@
+title: templateApplicationLevel
+enum:
+  - none
+  - newPartners
+  - existingPartners
+  - unknownFutureValue
+type: string
+x-ms-enum-flags:
+  isFlags: true

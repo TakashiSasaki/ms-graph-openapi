@@ -1,0 +1,15 @@
+allOf:
+  - $ref: .\microsoft.graph.identity.yaml
+  - title: servicePrincipalIdentity
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      appId:
+        type: string
+        description: The application identifier of the service principal.
+        nullable: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.servicePrincipalIdentity'
+x-ms-discriminator-value: '#microsoft.graph.servicePrincipalIdentity'

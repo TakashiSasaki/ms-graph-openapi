@@ -1,0 +1,189 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: simulation
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      attackTechnique:
+        anyOf:
+          - $ref: .\microsoft.graph.simulationAttackTechnique.yaml
+          - type: object
+            nullable: true
+        description: >-
+          The social engineering technique used in the attack simulation and
+          training campaign. Supports $filter and $orderby. Possible values are:
+          unknown, credentialHarvesting, attachmentMalware, driveByUrl,
+          linkInAttachment, linkToMalwareFile, unknownFutureValue,
+          oAuthConsentGrant. Note that you must use the Prefer:
+          include-unknown-enum-members request header to get the following
+          values from this evolvable enum: oAuthConsentGrant. For more
+          information on the types of social engineering attack techniques, see
+          simulations.
+      attackType:
+        anyOf:
+          - $ref: .\microsoft.graph.simulationAttackType.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Attack type of the attack simulation and training campaign. Supports
+          $filter and $orderby. Possible values are: unknown, social, cloud,
+          endpoint, unknownFutureValue.
+      automationId:
+        type: string
+        description: Unique identifier for the attack simulation automation.
+        nullable: true
+      completionDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: >-
+          Date and time of completion of the attack simulation and training
+          campaign. Supports $filter and $orderby.
+        format: date-time
+        nullable: true
+      createdBy:
+        anyOf:
+          - $ref: .\microsoft.graph.emailIdentity.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Identity of the user who created the attack simulation and training
+          campaign.
+      createdDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: >-
+          Date and time of creation of the attack simulation and training
+          campaign.
+        format: date-time
+        nullable: true
+      description:
+        type: string
+        description: Description of the attack simulation and training campaign.
+        nullable: true
+      displayName:
+        type: string
+        description: >-
+          Display name of the attack simulation and training campaign. Supports
+          $filter and $orderby.
+        nullable: true
+      durationInDays:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: Simulation duration in days.
+        format: int32
+        nullable: true
+      endUserNotificationSetting:
+        anyOf:
+          - $ref: .\microsoft.graph.endUserNotificationSetting.yaml
+          - type: object
+            nullable: true
+        description: Details about the end user notification setting.
+      excludedAccountTarget:
+        anyOf:
+          - $ref: .\microsoft.graph.accountTargetContent.yaml
+          - type: object
+            nullable: true
+        description: Users excluded from the simulation.
+      includedAccountTarget:
+        anyOf:
+          - $ref: .\microsoft.graph.accountTargetContent.yaml
+          - type: object
+            nullable: true
+        description: Users targeted in the simulation.
+      isAutomated:
+        type: boolean
+        description: >-
+          Flag that represents if the attack simulation and training campaign
+          was created from a simulation automation flow. Supports $filter and
+          $orderby.
+        nullable: true
+      lastModifiedBy:
+        anyOf:
+          - $ref: .\microsoft.graph.emailIdentity.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Identity of the user who most recently modified the attack simulation
+          and training campaign.
+      lastModifiedDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: >-
+          Date and time of the most recent modification of the attack simulation
+          and training campaign.
+        format: date-time
+        nullable: true
+      launchDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: >-
+          Date and time of the launch/start of the attack simulation and
+          training campaign. Supports $filter and $orderby.
+        format: date-time
+        nullable: true
+      oAuthConsentAppDetail:
+        anyOf:
+          - $ref: .\microsoft.graph.oAuthConsentAppDetail.yaml
+          - type: object
+            nullable: true
+        description: OAuth app details for the OAuth technique.
+      payloadDeliveryPlatform:
+        anyOf:
+          - $ref: .\microsoft.graph.payloadDeliveryPlatform.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Method of delivery of the phishing payload used in the attack
+          simulation and training campaign. Possible values are: unknown, sms,
+          email, teams, unknownFutureValue.
+      report:
+        anyOf:
+          - $ref: .\microsoft.graph.simulationReport.yaml
+          - type: object
+            nullable: true
+        description: Report of the attack simulation and training campaign.
+      status:
+        anyOf:
+          - $ref: .\microsoft.graph.simulationStatus.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Status of the attack simulation and training campaign. Supports
+          $filter and $orderby. Possible values are: unknown, draft, running,
+          scheduled, succeeded, failed, cancelled, excluded, unknownFutureValue.
+      trainingSetting:
+        anyOf:
+          - $ref: .\microsoft.graph.trainingSetting.yaml
+          - type: object
+            nullable: true
+        description: Details about the training settings for a simulation.
+      landingPage:
+        anyOf:
+          - $ref: .\microsoft.graph.landingPage.yaml
+          - type: object
+            nullable: true
+        description: The landing page associated with a simulation during its creation.
+        x-ms-navigationProperty: true
+      loginPage:
+        anyOf:
+          - $ref: .\microsoft.graph.loginPage.yaml
+          - type: object
+            nullable: true
+        description: The login page associated with a simulation during its creation.
+        x-ms-navigationProperty: true
+      payload:
+        anyOf:
+          - $ref: .\microsoft.graph.payload.yaml
+          - type: object
+            nullable: true
+        description: The payload associated with a simulation during its creation.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.simulation'

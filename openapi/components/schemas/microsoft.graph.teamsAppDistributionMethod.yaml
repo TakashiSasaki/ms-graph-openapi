@@ -1,0 +1,7 @@
+title: teamsAppDistributionMethod
+enum:
+  - store
+  - organization
+  - sideloaded
+  - unknownFutureValue
+type: string

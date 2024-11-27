@@ -1,0 +1,13 @@
+title: storagePlanInformation
+required:
+  - '@odata.type'
+type: object
+properties:
+  upgradeAvailable:
+    type: boolean
+    description: >-
+      Indicates whether there are higher storage quota plans available.
+      Read-only.
+    nullable: true
+  '@odata.type':
+    type: string

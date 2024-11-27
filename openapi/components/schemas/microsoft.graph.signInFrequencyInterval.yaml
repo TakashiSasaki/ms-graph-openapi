@@ -1,0 +1,6 @@
+title: signInFrequencyInterval
+enum:
+  - timeBased
+  - everyTime
+  - unknownFutureValue
+type: string

@@ -1,0 +1,35 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: teamsTab
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      configuration:
+        anyOf:
+          - $ref: .\microsoft.graph.teamsTabConfiguration.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Container for custom settings applied to a tab. The tab is considered
+          configured only once this property is set.
+      displayName:
+        type: string
+        description: Name of the tab.
+        nullable: true
+      webUrl:
+        type: string
+        description: Deep link URL of the tab instance. Read only.
+        nullable: true
+      teamsApp:
+        anyOf:
+          - $ref: .\microsoft.graph.teamsApp.yaml
+          - type: object
+            nullable: true
+        description: >-
+          The application that is linked to the tab. This can't be changed after
+          tab creation.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.teamsTab'

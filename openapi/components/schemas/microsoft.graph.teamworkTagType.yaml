@@ -1,0 +1,5 @@
+title: teamworkTagType
+enum:
+  - standard
+  - unknownFutureValue
+type: string

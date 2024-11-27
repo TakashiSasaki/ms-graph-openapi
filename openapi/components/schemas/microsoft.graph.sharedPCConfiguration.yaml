@@ -1,0 +1,78 @@
+allOf:
+  - $ref: .\microsoft.graph.deviceConfiguration.yaml
+  - title: sharedPCConfiguration
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      accountManagerPolicy:
+        anyOf:
+          - $ref: .\microsoft.graph.sharedPCAccountManagerPolicy.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Specifies how accounts are managed on a shared PC. Only applies when
+          disableAccountManager is false.
+      allowedAccounts:
+        $ref: .\microsoft.graph.sharedPCAllowedAccountType.yaml
+      allowLocalStorage:
+        type: boolean
+        description: Specifies whether local storage is allowed on a shared PC.
+      disableAccountManager:
+        type: boolean
+        description: Disables the account manager for shared PC mode.
+      disableEduPolicies:
+        type: boolean
+        description: >-
+          Specifies whether the default shared PC education environment policies
+          should be disabled. For Windows 10 RS2 and later, this policy will be
+          applied without setting Enabled to true.
+      disablePowerPolicies:
+        type: boolean
+        description: >-
+          Specifies whether the default shared PC power policies should be
+          disabled.
+      disableSignInOnResume:
+        type: boolean
+        description: >-
+          Disables the requirement to sign in whenever the device wakes up from
+          sleep mode.
+      enabled:
+        type: boolean
+        description: Enables shared PC mode and applies the shared pc policies.
+      idleTimeBeforeSleepInSeconds:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: >-
+          Specifies the time in seconds that a device must sit idle before the
+          PC goes to sleep. Setting this value to 0 prevents the sleep timeout
+          from occurring.
+        format: int32
+        nullable: true
+      kioskAppDisplayName:
+        type: string
+        description: >-
+          Specifies the display text for the account shown on the sign-in screen
+          which launches the app specified by SetKioskAppUserModelId. Only
+          applies when KioskAppUserModelId is set.
+        nullable: true
+      kioskAppUserModelId:
+        type: string
+        description: >-
+          Specifies the application user model ID of the app to use with
+          assigned access.
+        nullable: true
+      maintenanceStartTime:
+        pattern: ^([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?$
+        type: string
+        description: Specifies the daily start time of maintenance hour.
+        format: time
+        nullable: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.sharedPCConfiguration'
+    description: >-
+      This topic provides descriptions of the declared methods, properties and
+      relationships exposed by the sharedPCConfiguration resource.
+x-ms-discriminator-value: '#microsoft.graph.sharedPCConfiguration'

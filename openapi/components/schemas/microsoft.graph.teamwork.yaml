@@ -1,0 +1,48 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: teamwork
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      isTeamsEnabled:
+        type: boolean
+        description: Indicates whether Microsoft Teams is enabled for the organization.
+      region:
+        type: string
+        description: >-
+          Represents the region of the organization or the tenant. The region
+          value can be any region supported by the Teams payload. The possible
+          values are: Americas, Europe and MiddleEast, Asia Pacific, UAE,
+          Australia, Brazil, Canada, Switzerland, Germany, France, India, Japan,
+          South Korea, Norway, Singapore, United Kingdom, South Africa, Sweden,
+          Qatar, Poland, Italy, Israel, Spain, Mexico, USGov Community Cloud,
+          USGov Community Cloud High, USGov Department of Defense, and China.
+        nullable: true
+      deletedChats:
+        type: array
+        items:
+          $ref: .\microsoft.graph.deletedChat.yaml
+        description: A collection of deleted chats.
+        x-ms-navigationProperty: true
+      deletedTeams:
+        type: array
+        items:
+          $ref: .\microsoft.graph.deletedTeam.yaml
+        description: The deleted team.
+        x-ms-navigationProperty: true
+      teamsAppSettings:
+        anyOf:
+          - $ref: .\microsoft.graph.teamsAppSettings.yaml
+          - type: object
+            nullable: true
+        description: Represents tenant-wide settings for all Teams apps in the tenant.
+        x-ms-navigationProperty: true
+      workforceIntegrations:
+        type: array
+        items:
+          $ref: .\microsoft.graph.workforceIntegration.yaml
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.teamwork'

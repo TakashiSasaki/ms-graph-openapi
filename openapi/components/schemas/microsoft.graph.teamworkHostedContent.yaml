@@ -1,0 +1,22 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: teamworkHostedContent
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      contentBytes:
+        type: string
+        description: Write only. Bytes for the hosted content (such as images).
+        format: base64url
+        nullable: true
+      contentType:
+        type: string
+        description: Write only. Content type. such as image/png, image/jpg.
+        nullable: true
+      '@odata.type':
+        type: string
+    discriminator:
+      propertyName: '@odata.type'
+      mapping:
+        '#microsoft.graph.chatMessageHostedContent': .\microsoft.graph.chatMessageHostedContent.yaml

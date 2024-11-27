@@ -1,0 +1,165 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: servicePrincipalRiskDetection
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      activity:
+        anyOf:
+          - $ref: .\microsoft.graph.activityType.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Indicates the activity type the detected risk is linked to.  The
+          possible values are: signin, servicePrincipal. Note that you must use
+          the Prefer: include-unknown-enum-members request header to get the
+          following value(s) in this evolvable enum: servicePrincipal.
+      activityDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: >-
+          Date and time when the risky activity occurred. The DateTimeOffset
+          type represents date and time information using ISO 8601 format and is
+          always in UTC time. For example, midnight UTC on Jan 1, 2014 is
+          2014-01-01T00:00:00Z
+        format: date-time
+        nullable: true
+      additionalInfo:
+        type: string
+        description: >-
+          Additional information associated with the risk detection. This string
+          value is represented as a JSON object with the quotations escaped.
+        nullable: true
+      appId:
+        type: string
+        description: The unique identifier for the associated application.
+        nullable: true
+      correlationId:
+        type: string
+        description: >-
+          Correlation ID of the sign-in activity associated with the risk
+          detection. This property is null if the risk detection is not
+          associated with a sign-in activity.
+        nullable: true
+      detectedDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: >-
+          Date and time when the risk was detected. The DateTimeOffset type
+          represents date and time information using ISO 8601 format and is
+          always in UTC time. For example, midnight UTC on Jan 1, 2014 is
+          2014-01-01T00:00:00Z.
+        format: date-time
+        nullable: true
+      detectionTimingType:
+        anyOf:
+          - $ref: .\microsoft.graph.riskDetectionTimingType.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Timing of the detected risk , whether real-time or offline. The
+          possible values are: notDefined, realtime, nearRealtime, offline,
+          unknownFutureValue.
+      ipAddress:
+        type: string
+        description: Provides the IP address of the client from where the risk occurred.
+        nullable: true
+      keyIds:
+        type: array
+        items:
+          type: string
+          nullable: true
+        description: >-
+          The unique identifier for the key credential associated with the risk
+          detection.
+      lastUpdatedDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: Date and time when the risk detection was last updated.
+        format: date-time
+        nullable: true
+      location:
+        anyOf:
+          - $ref: .\microsoft.graph.signInLocation.yaml
+          - type: object
+            nullable: true
+        description: Location from where the sign-in was initiated.
+      requestId:
+        type: string
+        description: >-
+          Request identifier of the sign-in activity associated with the risk
+          detection. This property is null if the risk detection is not
+          associated with a sign-in activity. Supports $filter (eq).
+        nullable: true
+      riskDetail:
+        anyOf:
+          - $ref: .\microsoft.graph.riskDetail.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Details of the detected risk. Note: Details for this property are only
+          available for Workload Identities Premium customers. Events in tenants
+          without this license will be returned hidden. The possible values are:
+          none, hidden, adminConfirmedServicePrincipalCompromised,
+          adminDismissedAllRiskForServicePrincipal. Note that you must use the
+          Prefer: include-unknown-enum-members request header to get the
+          following value(s) in this evolvable enum:
+          adminConfirmedServicePrincipalCompromised ,
+          adminDismissedAllRiskForServicePrincipal.
+      riskEventType:
+        type: string
+        description: >-
+          The type of risk event detected. The possible values are:
+          investigationsThreatIntelligence, generic,
+          adminConfirmedServicePrincipalCompromised, suspiciousSignins,
+          leakedCredentials, anomalousServicePrincipalActivity,
+          maliciousApplication, suspiciousApplication.
+        nullable: true
+      riskLevel:
+        anyOf:
+          - $ref: .\microsoft.graph.riskLevel.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Level of the detected risk. Note: Details for this property are only
+          available for Workload Identities Premium customers. Events in tenants
+          without this license will be returned hidden. The possible values are:
+          low, medium, high, hidden, none.
+      riskState:
+        anyOf:
+          - $ref: .\microsoft.graph.riskState.yaml
+          - type: object
+            nullable: true
+        description: >-
+          The state of a detected risky service principal or sign-in activity.
+          The possible values are: none, dismissed, atRisk,
+          confirmedCompromised.
+      servicePrincipalDisplayName:
+        type: string
+        description: The display name for the service principal.
+        nullable: true
+      servicePrincipalId:
+        type: string
+        description: >-
+          The unique identifier for the service principal. Supports $filter
+          (eq).
+        nullable: true
+      source:
+        type: string
+        description: Source of the risk detection. For example, identityProtection.
+        nullable: true
+      tokenIssuerType:
+        anyOf:
+          - $ref: .\microsoft.graph.tokenIssuerType.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Indicates the type of token issuer for the detected sign-in risk. The
+          possible values are: AzureAD.
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.servicePrincipalRiskDetection'

@@ -1,0 +1,19 @@
+title: stringKeyLongValuePair
+required:
+  - '@odata.type'
+type: object
+properties:
+  key:
+    type: string
+    description: >-
+      The mapping of the user type from the source system to the target system.
+      For example:User to User - For Microsoft Entra ID to Microsoft Entra ID
+      synchronization worker to user - For Workday to Microsoft Entra
+      synchronization.
+    nullable: true
+  value:
+    type: number
+    description: Total number of synchronized objects.
+    format: int64
+  '@odata.type':
+    type: string

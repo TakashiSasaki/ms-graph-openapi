@@ -1,0 +1,7 @@
+title: teamsAppPublishingState
+enum:
+  - submitted
+  - rejected
+  - published
+  - unknownFutureValue
+type: string

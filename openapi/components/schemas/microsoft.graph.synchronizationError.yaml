@@ -1,0 +1,22 @@
+title: synchronizationError
+required:
+  - '@odata.type'
+type: object
+properties:
+  code:
+    type: string
+    description: >-
+      The error code. For example,
+      AzureDirectoryB2BManagementPolicyCheckFailure.
+    nullable: true
+  message:
+    type: string
+    description: >-
+      The error message. For example, Policy permitting auto-redemption of
+      invitations not configured.
+    nullable: true
+  tenantActionable:
+    type: boolean
+    description: The action to take to resolve the error. For example, false.
+  '@odata.type':
+    type: string

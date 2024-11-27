@@ -1,0 +1,8 @@
+title: sharingCapabilities
+enum:
+  - disabled
+  - externalUserSharingOnly
+  - externalUserAndGuestSharing
+  - existingExternalUserSharingOnly
+  - unknownFutureValue
+type: string

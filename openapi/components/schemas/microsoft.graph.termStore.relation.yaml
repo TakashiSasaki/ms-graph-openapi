@@ -1,0 +1,42 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: relation
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      relationship:
+        anyOf:
+          - $ref: .\microsoft.graph.termStore.relationType.yaml
+          - type: object
+            nullable: true
+        description: 'The type of relation. Possible values are: pin, reuse.'
+      fromTerm:
+        anyOf:
+          - $ref: .\microsoft.graph.termStore.term.yaml
+          - type: object
+            nullable: true
+        description: >-
+          The from [term] of the relation. The term from which the relationship
+          is defined. A null value would indicate the relation is directly with
+          the [set].
+        x-ms-navigationProperty: true
+      set:
+        anyOf:
+          - $ref: .\microsoft.graph.termStore.set.yaml
+          - type: object
+            nullable: true
+        description: The [set] in which the relation is relevant.
+        x-ms-navigationProperty: true
+      toTerm:
+        anyOf:
+          - $ref: .\microsoft.graph.termStore.term.yaml
+          - type: object
+            nullable: true
+        description: >-
+          The to [term] of the relation. The term to which the relationship is
+          defined.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.termStore.relation'

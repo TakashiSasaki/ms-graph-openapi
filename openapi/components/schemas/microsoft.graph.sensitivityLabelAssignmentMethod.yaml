@@ -1,0 +1,7 @@
+title: sensitivityLabelAssignmentMethod
+enum:
+  - standard
+  - privileged
+  - auto
+  - unknownFutureValue
+type: string

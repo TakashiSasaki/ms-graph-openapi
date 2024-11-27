@@ -1,0 +1,17 @@
+title: sensitivityLabelAssignment
+required:
+  - '@odata.type'
+type: object
+properties:
+  assignmentMethod:
+    $ref: .\microsoft.graph.sensitivityLabelAssignmentMethod.yaml
+  sensitivityLabelId:
+    type: string
+    description: The unique identifier for the sensitivity label assigned to the file.
+  tenantId:
+    type: string
+    description: >-
+      The unique identifier for the tenant that hosts the file when this label
+      is applied.
+  '@odata.type':
+    type: string

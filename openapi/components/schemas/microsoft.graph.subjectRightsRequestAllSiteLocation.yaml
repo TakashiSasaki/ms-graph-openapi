@@ -1,0 +1,11 @@
+allOf:
+  - $ref: .\microsoft.graph.subjectRightsRequestSiteLocation.yaml
+  - title: subjectRightsRequestAllSiteLocation
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.subjectRightsRequestAllSiteLocation'
+x-ms-discriminator-value: '#microsoft.graph.subjectRightsRequestAllSiteLocation'

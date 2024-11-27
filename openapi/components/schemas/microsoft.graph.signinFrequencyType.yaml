@@ -1,0 +1,5 @@
+title: signinFrequencyType
+enum:
+  - days
+  - hours
+type: string

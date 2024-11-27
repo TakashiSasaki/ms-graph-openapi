@@ -1,0 +1,23 @@
+title: simulationEventsContent
+required:
+  - '@odata.type'
+type: object
+properties:
+  compromisedRate:
+    oneOf:
+      - type: number
+        format: double
+        nullable: true
+      - type: string
+        nullable: true
+      - $ref: .\ReferenceNumeric.yaml
+    description: >-
+      Actual percentage of users who fell for the simulated attack in an attack
+      simulation and training campaign.
+  events:
+    type: array
+    items:
+      $ref: .\microsoft.graph.simulationEvent.yaml
+    description: List of simulation events in an attack simulation and training campaign.
+  '@odata.type':
+    type: string

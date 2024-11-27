@@ -1,0 +1,32 @@
+title: subjectRightsRequestStageDetail
+required:
+  - '@odata.type'
+type: object
+properties:
+  error:
+    anyOf:
+      - $ref: .\microsoft.graph.publicError.yaml
+      - type: object
+        nullable: true
+    description: Describes the error, if any, for the current stage.
+  stage:
+    anyOf:
+      - $ref: .\microsoft.graph.subjectRightsRequestStage.yaml
+      - type: object
+        nullable: true
+    description: >-
+      The stage of the subject rights request. Possible values are:
+      contentRetrieval, contentReview, generateReport, contentDeletion,
+      caseResolved, unknownFutureValue, approval. You must use the Prefer:
+      include-unknown-enum-members request header to get the following value in
+      this evolvable enum: approval.
+  status:
+    anyOf:
+      - $ref: .\microsoft.graph.subjectRightsRequestStageStatus.yaml
+      - type: object
+        nullable: true
+    description: >-
+      Status of the current stage. Possible values are: notStarted, current,
+      completed, failed, unknownFutureValue.
+  '@odata.type':
+    type: string

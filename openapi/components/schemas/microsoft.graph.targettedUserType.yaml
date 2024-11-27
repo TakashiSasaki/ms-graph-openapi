@@ -1,0 +1,8 @@
+title: targettedUserType
+enum:
+  - unknown
+  - clicked
+  - compromised
+  - allUsers
+  - unknownFutureValue
+type: string

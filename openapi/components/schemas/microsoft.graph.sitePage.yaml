@@ -1,0 +1,59 @@
+allOf:
+  - $ref: .\microsoft.graph.baseSitePage.yaml
+  - title: sitePage
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      promotionKind:
+        anyOf:
+          - $ref: .\microsoft.graph.pagePromotionType.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Indicates the promotion kind of the sitePage. The possible values are:
+          microsoftReserved, page, newsPost, unknownFutureValue.
+      reactions:
+        anyOf:
+          - $ref: .\microsoft.graph.reactionsFacet.yaml
+          - type: object
+            nullable: true
+        description: Reactions information for the page.
+      showComments:
+        type: boolean
+        description: Determines whether or not to show comments at the bottom of the page.
+        nullable: true
+      showRecommendedPages:
+        type: boolean
+        description: >-
+          Determines whether or not to show recommended pages at the bottom of
+          the page.
+        nullable: true
+      thumbnailWebUrl:
+        type: string
+        description: Url of the sitePage's thumbnail image
+        nullable: true
+      titleArea:
+        anyOf:
+          - $ref: .\microsoft.graph.titleArea.yaml
+          - type: object
+            nullable: true
+        description: Title area on the SharePoint page.
+      canvasLayout:
+        anyOf:
+          - $ref: .\microsoft.graph.canvasLayout.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Indicates the layout of the content in a given SharePoint page,
+          including horizontal sections and vertical sections.
+        x-ms-navigationProperty: true
+      webParts:
+        type: array
+        items:
+          $ref: .\microsoft.graph.webPart.yaml
+        description: Collection of webparts on the SharePoint page.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.sitePage'

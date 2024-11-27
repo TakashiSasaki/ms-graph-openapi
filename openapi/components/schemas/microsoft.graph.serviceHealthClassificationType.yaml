@@ -1,0 +1,6 @@
+title: serviceHealthClassificationType
+enum:
+  - advisory
+  - incident
+  - unknownFutureValue
+type: string

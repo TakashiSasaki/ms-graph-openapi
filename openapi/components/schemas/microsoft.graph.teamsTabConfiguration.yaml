@@ -1,0 +1,23 @@
+title: teamsTabConfiguration
+required:
+  - '@odata.type'
+type: object
+properties:
+  contentUrl:
+    type: string
+    description: Url used for rendering tab contents in Teams. Required.
+    nullable: true
+  entityId:
+    type: string
+    description: Identifier for the entity hosted by the tab provider.
+    nullable: true
+  removeUrl:
+    type: string
+    description: Url called by Teams client when a Tab is removed using the Teams Client.
+    nullable: true
+  websiteUrl:
+    type: string
+    description: Url for showing tab contents outside of Teams.
+    nullable: true
+  '@odata.type':
+    type: string

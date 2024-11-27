@@ -1,0 +1,43 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: teamworkTag
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      description:
+        type: string
+        description: >-
+          The description of the tag as it appears to the user in Microsoft
+          Teams. A teamworkTag can't have more than 200 teamworkTagMembers.
+        nullable: true
+      displayName:
+        type: string
+        description: The name of the tag as it appears to the user in Microsoft Teams.
+        nullable: true
+      memberCount:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: The number of users assigned to the tag.
+        format: int32
+        nullable: true
+      tagType:
+        anyOf:
+          - $ref: .\microsoft.graph.teamworkTagType.yaml
+          - type: object
+            nullable: true
+        description: The type of the tag. Default is standard.
+      teamId:
+        type: string
+        description: ID of the team in which the tag is defined.
+        nullable: true
+      members:
+        type: array
+        items:
+          $ref: .\microsoft.graph.teamworkTagMember.yaml
+        description: Users assigned to the tag.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.teamworkTag'

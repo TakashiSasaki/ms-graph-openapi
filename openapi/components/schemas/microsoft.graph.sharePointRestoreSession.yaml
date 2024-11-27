@@ -1,0 +1,19 @@
+allOf:
+  - $ref: .\microsoft.graph.restoreSessionBase.yaml
+  - title: sharePointRestoreSession
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      siteRestoreArtifacts:
+        type: array
+        items:
+          $ref: .\microsoft.graph.siteRestoreArtifact.yaml
+        description: >-
+          A collection of restore points and destination details that can be
+          used to restore SharePoint sites.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.sharePointRestoreSession'
+x-ms-discriminator-value: '#microsoft.graph.sharePointRestoreSession'

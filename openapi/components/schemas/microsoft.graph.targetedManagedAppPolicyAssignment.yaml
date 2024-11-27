@@ -1,0 +1,17 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: targetedManagedAppPolicyAssignment
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      target:
+        anyOf:
+          - $ref: .\microsoft.graph.deviceAndAppManagementAssignmentTarget.yaml
+          - type: object
+            nullable: true
+        description: Identifier for deployment to a group or app
+      '@odata.type':
+        type: string
+    description: The type for deployment of groups or apps.
+x-ms-discriminator-value: '#microsoft.graph.targetedManagedAppPolicyAssignment'

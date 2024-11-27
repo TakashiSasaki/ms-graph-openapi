@@ -1,0 +1,16 @@
+title: siteArchivalDetails
+required:
+  - '@odata.type'
+type: object
+properties:
+  archiveStatus:
+    anyOf:
+      - $ref: .\microsoft.graph.siteArchiveStatus.yaml
+      - type: object
+        nullable: true
+    description: >-
+      Represents the current archive status of the site collection. Returned
+      only on $select. The possible values are: recentlyArchived, fullyArchived,
+      reactivating, unknownFutureValue.
+  '@odata.type':
+    type: string

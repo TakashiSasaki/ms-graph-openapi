@@ -1,0 +1,35 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: teamsAppInstallation
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      consentedPermissionSet:
+        anyOf:
+          - $ref: .\microsoft.graph.teamsAppPermissionSet.yaml
+          - type: object
+            nullable: true
+        description: >-
+          The set of resource-specific permissions consented to while installing
+          or upgrading the teamsApp.
+      teamsApp:
+        anyOf:
+          - $ref: .\microsoft.graph.teamsApp.yaml
+          - type: object
+            nullable: true
+        description: The app that is installed.
+        x-ms-navigationProperty: true
+      teamsAppDefinition:
+        anyOf:
+          - $ref: .\microsoft.graph.teamsAppDefinition.yaml
+          - type: object
+            nullable: true
+        description: The details of this version of the app.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+    discriminator:
+      propertyName: '@odata.type'
+      mapping:
+        '#microsoft.graph.userScopeTeamsAppInstallation': .\microsoft.graph.userScopeTeamsAppInstallation.yaml

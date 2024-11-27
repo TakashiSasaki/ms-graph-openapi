@@ -1,0 +1,7 @@
+title: sharingDomainRestrictionMode
+enum:
+  - none
+  - allowList
+  - blockList
+  - unknownFutureValue
+type: string

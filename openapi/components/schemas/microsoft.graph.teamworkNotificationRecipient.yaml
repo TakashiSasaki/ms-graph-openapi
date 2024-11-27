@@ -1,0 +1,18 @@
+title: teamworkNotificationRecipient
+required:
+  - '@odata.type'
+type: object
+properties:
+  '@odata.type':
+    type: string
+discriminator:
+  propertyName: '@odata.type'
+  mapping:
+    '#microsoft.graph.aadUserNotificationRecipient': .\microsoft.graph.aadUserNotificationRecipient.yaml
+    '#microsoft.graph.channelMembersNotificationRecipient': .\microsoft.graph.channelMembersNotificationRecipient.yaml
+    '#microsoft.graph.chatMembersNotificationRecipient': .\microsoft.graph.chatMembersNotificationRecipient.yaml
+    '#microsoft.graph.teamMembersNotificationRecipient': .\microsoft.graph.teamMembersNotificationRecipient.yaml
+    microsoft.graph.aadUserNotificationRecipient: .\microsoft.graph.aadUserNotificationRecipient.yaml
+    microsoft.graph.channelMembersNotificationRecipient: .\microsoft.graph.channelMembersNotificationRecipient.yaml
+    microsoft.graph.chatMembersNotificationRecipient: .\microsoft.graph.chatMembersNotificationRecipient.yaml
+    microsoft.graph.teamMembersNotificationRecipient: .\microsoft.graph.teamMembersNotificationRecipient.yaml

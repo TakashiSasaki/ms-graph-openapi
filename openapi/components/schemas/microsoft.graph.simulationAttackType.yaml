@@ -1,0 +1,8 @@
+title: simulationAttackType
+enum:
+  - unknown
+  - social
+  - cloud
+  - endpoint
+  - unknownFutureValue
+type: string

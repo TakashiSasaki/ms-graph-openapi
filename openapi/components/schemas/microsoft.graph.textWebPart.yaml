@@ -1,0 +1,15 @@
+allOf:
+  - $ref: .\microsoft.graph.webPart.yaml
+  - title: textWebPart
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      innerHtml:
+        type: string
+        description: The HTML string in text web part.
+        nullable: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.textWebPart'
+x-ms-discriminator-value: '#microsoft.graph.textWebPart'
