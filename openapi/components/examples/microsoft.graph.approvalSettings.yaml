@@ -1,0 +1,7 @@
+value:
+  approvalMode: String
+  approvalStages:
+    - '@odata.type': microsoft.graph.unifiedApprovalStage
+  isApprovalRequired: 'true'
+  isApprovalRequiredForExtension: 'true'
+  isRequestorJustificationRequired: 'true'

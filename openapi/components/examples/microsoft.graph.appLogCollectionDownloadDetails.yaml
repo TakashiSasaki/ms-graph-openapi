@@ -1,0 +1,5 @@
+value:
+  appLogDecryptionAlgorithm:
+    '@odata.type': microsoft.graph.appLogDecryptionAlgorithm
+  decryptionKey: String
+  downloadUrl: String

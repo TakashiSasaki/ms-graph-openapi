@@ -1,0 +1,7 @@
+value:
+  receivers:
+    - String
+  routingMode:
+    '@odata.type': microsoft.graph.routingMode
+  sources:
+    - String

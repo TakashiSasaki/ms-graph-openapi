@@ -1,0 +1,3 @@
+value:
+  views:
+    - '@odata.type': microsoft.graph.authenticationAttributeCollectionPageViewConfiguration

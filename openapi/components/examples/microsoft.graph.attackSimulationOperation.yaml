@@ -1,0 +1,5 @@
+value:
+  percentageCompleted: '0'
+  tenantId: String
+  type:
+    '@odata.type': microsoft.graph.attackSimulationOperationType

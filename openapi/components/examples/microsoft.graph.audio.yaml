@@ -1,0 +1,17 @@
+value:
+  album: String
+  albumArtist: String
+  artist: String
+  bitrate: '0'
+  composers: String
+  copyright: String
+  disc: '0'
+  discCount: '0'
+  duration: '0'
+  genre: String
+  hasDrm: 'true'
+  isVariableBitrate: 'true'
+  title: String
+  track: '0'
+  trackCount: '0'
+  year: '0'

@@ -1,0 +1,5 @@
+value:
+  certificateData: String
+  developerId: String
+  keyId: String
+  serviceId: String

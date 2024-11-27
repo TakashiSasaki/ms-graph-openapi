@@ -1,0 +1,18 @@
+value:
+  anchor: 'true'
+  apiExpressions:
+    - '@odata.type': microsoft.graph.stringKeyStringValuePair
+  caseExact: 'true'
+  defaultValue: String
+  flowNullValues: 'true'
+  metadata:
+    - '@odata.type': microsoft.graph.attributeDefinitionMetadataEntry
+  multivalued: 'true'
+  mutability:
+    '@odata.type': microsoft.graph.mutability
+  name: String
+  referencedObjects:
+    - '@odata.type': microsoft.graph.referencedObject
+  required: 'true'
+  type:
+    '@odata.type': microsoft.graph.attributeType

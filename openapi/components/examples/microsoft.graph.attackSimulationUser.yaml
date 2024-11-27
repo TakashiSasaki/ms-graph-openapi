@@ -1,0 +1,4 @@
+value:
+  displayName: String
+  email: String
+  userId: String

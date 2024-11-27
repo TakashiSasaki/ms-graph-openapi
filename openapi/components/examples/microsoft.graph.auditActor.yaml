@@ -1,0 +1,10 @@
+value:
+  applicationDisplayName: String
+  applicationId: String
+  auditActorType: String
+  ipAddress: String
+  servicePrincipalName: String
+  userId: String
+  userPermissions:
+    - String
+  userPrincipalName: String

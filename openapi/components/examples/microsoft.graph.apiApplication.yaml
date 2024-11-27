@@ -1,0 +1,9 @@
+value:
+  acceptMappedClaims: 'true'
+  knownClientApplications:
+    - 00000000-0000-0000-0000-000000000000
+  oauth2PermissionScopes:
+    - '@odata.type': microsoft.graph.permissionScope
+  preAuthorizedApplications:
+    - '@odata.type': microsoft.graph.preAuthorizedApplication
+  requestedAccessTokenVersion: '0'

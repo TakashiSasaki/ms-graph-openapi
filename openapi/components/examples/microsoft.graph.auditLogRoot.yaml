@@ -1,0 +1,7 @@
+value:
+  directoryAudits:
+    - '@odata.type': microsoft.graph.directoryAudit
+  provisioning:
+    - '@odata.type': microsoft.graph.provisioningObjectSummary
+  signIns:
+    - '@odata.type': microsoft.graph.signIn

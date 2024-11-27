@@ -1,0 +1,3 @@
+value:
+  parameters:
+    - '@odata.type': microsoft.graph.attributeMappingParameterSchema

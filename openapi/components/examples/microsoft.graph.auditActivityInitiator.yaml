@@ -1,0 +1,5 @@
+value:
+  app:
+    '@odata.type': microsoft.graph.appIdentity
+  user:
+    '@odata.type': microsoft.graph.userIdentity

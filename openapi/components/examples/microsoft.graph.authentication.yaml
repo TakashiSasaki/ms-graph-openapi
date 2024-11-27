@@ -1,0 +1,21 @@
+value:
+  emailMethods:
+    - '@odata.type': microsoft.graph.emailAuthenticationMethod
+  fido2Methods:
+    - '@odata.type': microsoft.graph.fido2AuthenticationMethod
+  methods:
+    - '@odata.type': microsoft.graph.authenticationMethod
+  microsoftAuthenticatorMethods:
+    - '@odata.type': microsoft.graph.microsoftAuthenticatorAuthenticationMethod
+  operations:
+    - '@odata.type': microsoft.graph.longRunningOperation
+  passwordMethods:
+    - '@odata.type': microsoft.graph.passwordAuthenticationMethod
+  phoneMethods:
+    - '@odata.type': microsoft.graph.phoneAuthenticationMethod
+  softwareOathMethods:
+    - '@odata.type': microsoft.graph.softwareOathAuthenticationMethod
+  temporaryAccessPassMethods:
+    - '@odata.type': microsoft.graph.temporaryAccessPassAuthenticationMethod
+  windowsHelloForBusinessMethods:
+    - '@odata.type': microsoft.graph.windowsHelloForBusinessAuthenticationMethod

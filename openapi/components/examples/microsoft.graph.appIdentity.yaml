@@ -1,0 +1,5 @@
+value:
+  appId: String
+  displayName: String
+  servicePrincipalId: String
+  servicePrincipalName: String

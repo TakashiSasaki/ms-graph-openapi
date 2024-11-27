@@ -1,0 +1,6 @@
+value:
+  auditResourceType: String
+  displayName: String
+  modifiedProperties:
+    - '@odata.type': microsoft.graph.auditProperty
+  resourceId: String

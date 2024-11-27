@@ -1,0 +1,5 @@
+value:
+  conditions:
+    '@odata.type': microsoft.graph.authenticationConditions
+  description: String
+  displayName: String

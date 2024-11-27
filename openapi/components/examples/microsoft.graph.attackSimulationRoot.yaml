@@ -1,0 +1,17 @@
+value:
+  endUserNotifications:
+    - '@odata.type': microsoft.graph.endUserNotification
+  landingPages:
+    - '@odata.type': microsoft.graph.landingPage
+  loginPages:
+    - '@odata.type': microsoft.graph.loginPage
+  operations:
+    - '@odata.type': microsoft.graph.attackSimulationOperation
+  payloads:
+    - '@odata.type': microsoft.graph.payload
+  simulationAutomations:
+    - '@odata.type': microsoft.graph.simulationAutomation
+  simulations:
+    - '@odata.type': microsoft.graph.simulation
+  trainings:
+    - '@odata.type': microsoft.graph.training

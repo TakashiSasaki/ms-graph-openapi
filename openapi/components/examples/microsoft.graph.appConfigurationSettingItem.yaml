@@ -1,0 +1,5 @@
+value:
+  appConfigKey: String
+  appConfigKeyType:
+    '@odata.type': microsoft.graph.mdmAppConfigKeyType
+  appConfigKeyValue: String

@@ -1,0 +1,4 @@
+value:
+  authenticationEventsFlowId: String
+  conditions:
+    '@odata.type': microsoft.graph.authenticationConditions

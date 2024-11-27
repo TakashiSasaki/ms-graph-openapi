@@ -1,0 +1,4 @@
+value:
+  artifactType:
+    '@odata.type': microsoft.graph.restorableArtifact
+  queryExpression: String

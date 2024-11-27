@@ -1,0 +1,3 @@
+value:
+  type:
+    '@odata.type': microsoft.graph.attendeeType

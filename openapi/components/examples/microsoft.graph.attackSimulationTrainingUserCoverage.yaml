@@ -1,0 +1,5 @@
+value:
+  attackSimulationUser:
+    '@odata.type': microsoft.graph.attackSimulationUser
+  userTrainings:
+    - '@odata.type': microsoft.graph.userTrainingStatusInfo

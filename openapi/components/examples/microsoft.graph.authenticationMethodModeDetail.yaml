@@ -1,0 +1,4 @@
+value:
+  authenticationMethod:
+    '@odata.type': microsoft.graph.baseAuthenticationMethod
+  displayName: String

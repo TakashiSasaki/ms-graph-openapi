@@ -1,0 +1,3 @@
+value:
+  appConsentRequests:
+    - '@odata.type': microsoft.graph.appConsentRequest
