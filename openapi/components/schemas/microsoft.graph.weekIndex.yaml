@@ -1,0 +1,8 @@
+title: weekIndex
+enum:
+  - first
+  - second
+  - third
+  - fourth
+  - last
+type: string

@@ -1,0 +1,32 @@
+title: webPartData
+required:
+  - '@odata.type'
+type: object
+properties:
+  dataVersion:
+    type: string
+    description: >-
+      Data version of the web part. The value is defined by the web part
+      developer. Different dataVersions usually refers to a different property
+      structure.
+    nullable: true
+  description:
+    type: string
+    description: Description of the web part.
+    nullable: true
+  properties:
+    description: Properties bag of the web part.
+  serverProcessedContent:
+    anyOf:
+      - $ref: .\microsoft.graph.serverProcessedContent.yaml
+      - type: object
+        nullable: true
+    description: >-
+      Contains collections of data that can be processed by server side services
+      like search index and link fixup.
+  title:
+    type: string
+    description: Title of the web part.
+    nullable: true
+  '@odata.type':
+    type: string

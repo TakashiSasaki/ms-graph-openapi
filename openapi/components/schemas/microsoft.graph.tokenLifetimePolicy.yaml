@@ -1,0 +1,11 @@
+allOf:
+  - $ref: .\microsoft.graph.stsPolicy.yaml
+  - title: tokenLifetimePolicy
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.tokenLifetimePolicy'
+x-ms-discriminator-value: '#microsoft.graph.tokenLifetimePolicy'

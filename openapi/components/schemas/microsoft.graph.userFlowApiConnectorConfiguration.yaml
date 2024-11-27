@@ -1,0 +1,19 @@
+title: userFlowApiConnectorConfiguration
+required:
+  - '@odata.type'
+type: object
+properties:
+  postAttributeCollection:
+    anyOf:
+      - $ref: .\microsoft.graph.identityApiConnector.yaml
+      - type: object
+        nullable: true
+    x-ms-navigationProperty: true
+  postFederationSignup:
+    anyOf:
+      - $ref: .\microsoft.graph.identityApiConnector.yaml
+      - type: object
+        nullable: true
+    x-ms-navigationProperty: true
+  '@odata.type':
+    type: string

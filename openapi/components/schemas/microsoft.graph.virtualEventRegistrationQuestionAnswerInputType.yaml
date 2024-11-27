@@ -1,0 +1,9 @@
+title: virtualEventRegistrationQuestionAnswerInputType
+enum:
+  - text
+  - multilineText
+  - singleChoice
+  - multiChoice
+  - boolean
+  - unknownFutureValue
+type: string

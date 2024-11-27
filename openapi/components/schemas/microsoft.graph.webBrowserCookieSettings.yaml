@@ -1,0 +1,28 @@
+title: webBrowserCookieSettings
+enum:
+  - browserDefault
+  - blockAlways
+  - allowCurrentWebSite
+  - allowFromWebsitesVisited
+  - allowAlways
+type: string
+description: Web Browser Cookie Settings.
+x-ms-enum:
+  name: webBrowserCookieSettings
+  modelAsString: false
+  values:
+    - value: browserDefault
+      description: Browser default value, no intent.
+      name: browserDefault
+    - value: blockAlways
+      description: Always block cookies.
+      name: blockAlways
+    - value: allowCurrentWebSite
+      description: Allow cookies from current Web site.
+      name: allowCurrentWebSite
+    - value: allowFromWebsitesVisited
+      description: Allow Cookies from websites visited.
+      name: allowFromWebsitesVisited
+    - value: allowAlways
+      description: Always allow cookies.
+      name: allowAlways

@@ -1,0 +1,38 @@
+allOf:
+  - $ref: .\microsoft.graph.virtualEvent.yaml
+  - title: virtualEventTownhall
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      audience:
+        anyOf:
+          - $ref: .\microsoft.graph.meetingAudience.yaml
+          - type: object
+            nullable: true
+        description: >-
+          The audience to whom the town hall is visible. Possible values are:
+          everyone, organization, and unknownFutureValue.
+      coOrganizers:
+        type: array
+        items:
+          $ref: .\microsoft.graph.communicationsUserIdentity.yaml
+        description: Identity information of the coorganizers of the town hall.
+      invitedAttendees:
+        type: array
+        items:
+          $ref: .\microsoft.graph.identity.yaml
+        description: >-
+          The attendees invited to the town hall. The supported identities are:
+          communicationsUserIdentity and communicationsGuestIdentity.
+      isInviteOnly:
+        type: boolean
+        description: >-
+          Indicates whether the town hall is only open to invited people and
+          groups within your organization. The isInviteOnly property can only be
+          true if the value of the audience property is set to organization.
+        nullable: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.virtualEventTownhall'
+x-ms-discriminator-value: '#microsoft.graph.virtualEventTownhall'

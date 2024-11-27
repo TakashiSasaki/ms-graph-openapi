@@ -1,0 +1,14 @@
+allOf:
+  - $ref: .\microsoft.graph.threatAssessmentRequest.yaml
+  - title: urlAssessmentRequest
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      url:
+        type: string
+        description: The URL string.
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.urlAssessmentRequest'
+x-ms-discriminator-value: '#microsoft.graph.urlAssessmentRequest'

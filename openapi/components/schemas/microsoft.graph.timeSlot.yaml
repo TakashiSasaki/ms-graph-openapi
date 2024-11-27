@@ -1,0 +1,11 @@
+title: timeSlot
+required:
+  - '@odata.type'
+type: object
+properties:
+  end:
+    $ref: .\microsoft.graph.dateTimeTimeZone.yaml
+  start:
+    $ref: .\microsoft.graph.dateTimeTimeZone.yaml
+  '@odata.type':
+    type: string

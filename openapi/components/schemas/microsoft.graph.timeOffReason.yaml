@@ -1,0 +1,31 @@
+allOf:
+  - $ref: .\microsoft.graph.changeTrackedEntity.yaml
+  - title: timeOffReason
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      displayName:
+        type: string
+        description: The name of the timeOffReason. Required.
+        nullable: true
+      iconType:
+        anyOf:
+          - $ref: .\microsoft.graph.timeOffReasonIconType.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Supported icon types are: none, car, calendar, running, plane,
+          firstAid, doctor, notWorking, clock, juryDuty, globe, cup, phone,
+          weather, umbrella, piggyBank, dog, cake, trafficCone, pin, sunny.
+          Required.
+      isActive:
+        type: boolean
+        description: >-
+          Indicates whether the timeOffReason can be used when creating new
+          entities or updating existing ones. Required.
+        nullable: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.timeOffReason'
+x-ms-discriminator-value: '#microsoft.graph.timeOffReason'

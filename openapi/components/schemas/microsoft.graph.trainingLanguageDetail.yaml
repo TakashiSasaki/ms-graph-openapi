@@ -1,0 +1,62 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: trainingLanguageDetail
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      content:
+        type: string
+        description: Language specific content for the training.
+      createdBy:
+        anyOf:
+          - $ref: .\microsoft.graph.emailIdentity.yaml
+          - type: object
+            nullable: true
+        description: Identity of the user who created the language details.
+      createdDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: >-
+          Date and time when the language details were created. The timestamp
+          type represents date and time information using ISO 8601 format and is
+          always in UTC. For example, midnight UTC on Jan 1, 2014 is
+          2014-01-01T00:00:00Z.
+        format: date-time
+        nullable: true
+      description:
+        type: string
+        description: Description as defined by the user.
+        nullable: true
+      displayName:
+        type: string
+        description: Display name as defined by the user.
+        nullable: true
+      isDefaultLangauge:
+        type: boolean
+        description: Indicates whether the training has a default language.
+        nullable: true
+      lastModifiedBy:
+        anyOf:
+          - $ref: .\microsoft.graph.emailIdentity.yaml
+          - type: object
+            nullable: true
+        description: Identity of the user who last modified the details.
+      lastModifiedDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: >-
+          Date and time when the trainingLanguageDetail was last modified. The
+          timestamp type represents date and time information using ISO 8601
+          format and is always in UTC. For example, midnight UTC on Jan 1, 2014
+          is 2014-01-01T00:00:00Z.
+        format: date-time
+        nullable: true
+      locale:
+        type: string
+        description: Content locale for the training detail.
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.trainingLanguageDetail'

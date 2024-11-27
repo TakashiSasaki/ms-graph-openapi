@@ -1,0 +1,9 @@
+title: virtualEventAttendeeRegistrationStatus
+enum:
+  - registered
+  - canceled
+  - waitlisted
+  - pendingApproval
+  - rejectedByOrganizer
+  - unknownFutureValue
+type: string

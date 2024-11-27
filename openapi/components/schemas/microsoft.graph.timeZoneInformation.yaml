@@ -1,0 +1,15 @@
+title: timeZoneInformation
+required:
+  - '@odata.type'
+type: object
+properties:
+  alias:
+    type: string
+    description: An identifier for the time zone.
+    nullable: true
+  displayName:
+    type: string
+    description: A display string that represents the time zone.
+    nullable: true
+  '@odata.type':
+    type: string

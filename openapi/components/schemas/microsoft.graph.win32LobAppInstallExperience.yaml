@@ -1,0 +1,12 @@
+title: win32LobAppInstallExperience
+required:
+  - '@odata.type'
+type: object
+properties:
+  deviceRestartBehavior:
+    $ref: .\microsoft.graph.win32LobAppRestartBehavior.yaml
+  runAsAccount:
+    $ref: .\microsoft.graph.runAsAccountType.yaml
+  '@odata.type':
+    type: string
+description: Contains installation experience properties for a Win32 App

@@ -1,0 +1,25 @@
+allOf:
+  - $ref: .\microsoft.graph.unifiedRoleManagementPolicyRule.yaml
+  - title: unifiedRoleManagementPolicyExpirationRule
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      isExpirationRequired:
+        type: boolean
+        description: >-
+          Indicates whether expiration is required or if it's a permanently
+          active assignment or eligibility.
+        nullable: true
+      maximumDuration:
+        pattern: ^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$
+        type: string
+        description: >-
+          The maximum duration allowed for eligibility or assignment that isn't
+          permanent. Required when isExpirationRequired is true.
+        format: duration
+        nullable: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.unifiedRoleManagementPolicyExpirationRule'
+x-ms-discriminator-value: '#microsoft.graph.unifiedRoleManagementPolicyExpirationRule'

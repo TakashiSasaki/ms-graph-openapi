@@ -1,0 +1,16 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: todo
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      lists:
+        type: array
+        items:
+          $ref: .\microsoft.graph.todoTaskList.yaml
+        description: The task lists in the users mailbox.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.todo'

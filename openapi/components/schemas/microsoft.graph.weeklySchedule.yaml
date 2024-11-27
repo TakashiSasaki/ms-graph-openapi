@@ -1,0 +1,44 @@
+title: weeklySchedule
+enum:
+  - userDefined
+  - everyday
+  - sunday
+  - monday
+  - tuesday
+  - wednesday
+  - thursday
+  - friday
+  - saturday
+type: string
+description: Possible values for a weekly schedule.
+x-ms-enum:
+  name: weeklySchedule
+  modelAsString: false
+  values:
+    - value: userDefined
+      description: User Defined, default value, no intent.
+      name: userDefined
+    - value: everyday
+      description: Everyday.
+      name: everyday
+    - value: sunday
+      description: Sunday.
+      name: sunday
+    - value: monday
+      description: Monday.
+      name: monday
+    - value: tuesday
+      description: Tuesday.
+      name: tuesday
+    - value: wednesday
+      description: Wednesday.
+      name: wednesday
+    - value: thursday
+      description: Thursday.
+      name: thursday
+    - value: friday
+      description: Friday.
+      name: friday
+    - value: saturday
+      description: Saturday.
+      name: saturday

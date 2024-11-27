@@ -1,0 +1,43 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: userExperienceAnalyticsDeviceStartupProcess
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      managedDeviceId:
+        type: string
+        description: >-
+          The Intune device id of the device. Supports: $select, $OrderBy.
+          Read-only.
+        nullable: true
+      processName:
+        type: string
+        description: >-
+          The name of the process. Examples: outlook, excel. Supports: $select,
+          $OrderBy. Read-only.
+        nullable: true
+      productName:
+        type: string
+        description: >-
+          The product name of the process. Examples: Microsoft Outlook,
+          Microsoft Excel. Supports: $select, $OrderBy. Read-only.
+        nullable: true
+      publisher:
+        type: string
+        description: >-
+          The publisher of the process. Examples: Microsoft Corporation, Contoso
+          Corp. Supports: $select, $OrderBy. Read-only.
+        nullable: true
+      startupImpactInMs:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: >-
+          The impact of startup process on device boot time in milliseconds.
+          Supports: $select, $OrderBy. Read-only.
+        format: int32
+      '@odata.type':
+        type: string
+    description: The user experience analytics device startup process details.
+x-ms-discriminator-value: '#microsoft.graph.userExperienceAnalyticsDeviceStartupProcess'

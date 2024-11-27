@@ -1,0 +1,11 @@
+title: userDefaultAuthenticationMethod
+enum:
+  - push
+  - oath
+  - voiceMobile
+  - voiceAlternateMobile
+  - voiceOffice
+  - sms
+  - none
+  - unknownFutureValue
+type: string

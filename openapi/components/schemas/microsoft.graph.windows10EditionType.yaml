@@ -1,0 +1,56 @@
+title: windows10EditionType
+enum:
+  - windows10Enterprise
+  - windows10EnterpriseN
+  - windows10Education
+  - windows10EducationN
+  - windows10MobileEnterprise
+  - windows10HolographicEnterprise
+  - windows10Professional
+  - windows10ProfessionalN
+  - windows10ProfessionalEducation
+  - windows10ProfessionalEducationN
+  - windows10ProfessionalWorkstation
+  - windows10ProfessionalWorkstationN
+type: string
+description: Windows 10 Edition type.
+x-ms-enum:
+  name: windows10EditionType
+  modelAsString: false
+  values:
+    - value: windows10Enterprise
+      description: Windows 10 Enterprise
+      name: windows10Enterprise
+    - value: windows10EnterpriseN
+      description: Windows 10 EnterpriseN
+      name: windows10EnterpriseN
+    - value: windows10Education
+      description: Windows 10 Education
+      name: windows10Education
+    - value: windows10EducationN
+      description: Windows 10 EducationN
+      name: windows10EducationN
+    - value: windows10MobileEnterprise
+      description: Windows 10 Mobile Enterprise
+      name: windows10MobileEnterprise
+    - value: windows10HolographicEnterprise
+      description: Windows 10 Holographic Enterprise
+      name: windows10HolographicEnterprise
+    - value: windows10Professional
+      description: Windows 10 Professional
+      name: windows10Professional
+    - value: windows10ProfessionalN
+      description: Windows 10 ProfessionalN
+      name: windows10ProfessionalN
+    - value: windows10ProfessionalEducation
+      description: Windows 10 Professional Education
+      name: windows10ProfessionalEducation
+    - value: windows10ProfessionalEducationN
+      description: Windows 10 Professional EducationN
+      name: windows10ProfessionalEducationN
+    - value: windows10ProfessionalWorkstation
+      description: Windows 10 Professional for Workstations
+      name: windows10ProfessionalWorkstation
+    - value: windows10ProfessionalWorkstationN
+      description: Windows 10 Professional for Workstations N
+      name: windows10ProfessionalWorkstationN

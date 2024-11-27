@@ -1,0 +1,39 @@
+allOf:
+  - $ref: .\microsoft.graph.unifiedRoleManagementPolicyRule.yaml
+  - title: unifiedRoleManagementPolicyNotificationRule
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      isDefaultRecipientsEnabled:
+        type: boolean
+        description: >-
+          Indicates whether a default recipient will receive the notification
+          email.
+        nullable: true
+      notificationLevel:
+        type: string
+        description: >-
+          The level of notification. The possible values are None, Critical,
+          All.
+        nullable: true
+      notificationRecipients:
+        type: array
+        items:
+          type: string
+          nullable: true
+        description: The list of recipients of the email notifications.
+      notificationType:
+        type: string
+        description: The type of notification. Only Email is supported.
+        nullable: true
+      recipientType:
+        type: string
+        description: >-
+          The type of recipient of the notification. The possible values are
+          Requestor, Approver, Admin.
+        nullable: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.unifiedRoleManagementPolicyNotificationRule'
+x-ms-discriminator-value: '#microsoft.graph.unifiedRoleManagementPolicyNotificationRule'

@@ -1,0 +1,50 @@
+allOf:
+  - $ref: .\microsoft.graph.win32LobAppRule.yaml
+  - title: win32LobAppPowerShellScriptRule
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      comparisonValue:
+        type: string
+        description: >-
+          The script output comparison value. Do not specify a value if the rule
+          is used for detection.
+        nullable: true
+      displayName:
+        type: string
+        description: >-
+          The display name for the rule. Do not specify this value if the rule
+          is used for detection.
+        nullable: true
+      enforceSignatureCheck:
+        type: boolean
+        description: A value indicating whether a signature check is enforced.
+      operationType:
+        $ref: .\microsoft.graph.win32LobAppPowerShellScriptRuleOperationType.yaml
+      operator:
+        $ref: .\microsoft.graph.win32LobAppRuleOperator.yaml
+      runAs32Bit:
+        type: boolean
+        description: A value indicating whether the script should run as 32-bit.
+      runAsAccount:
+        anyOf:
+          - $ref: .\microsoft.graph.runAsAccountType.yaml
+          - type: object
+            nullable: true
+        description: >-
+          The execution context of the script. Do not specify this value if the
+          rule is used for detection. Script detection rules will run in the
+          same context as the associated app install context. Possible values
+          are: system, user.
+      scriptContent:
+        type: string
+        description: The base64-encoded script content.
+        nullable: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.win32LobAppPowerShellScriptRule'
+    description: >-
+      A complex type to store the PowerShell script rule data for a Win32 LOB
+      app.
+x-ms-discriminator-value: '#microsoft.graph.win32LobAppPowerShellScriptRule'

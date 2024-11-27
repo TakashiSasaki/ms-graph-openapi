@@ -1,0 +1,90 @@
+allOf:
+  - $ref: .\microsoft.graph.mobileLobApp.yaml
+  - title: win32LobApp
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      applicableArchitectures:
+        $ref: .\microsoft.graph.windowsArchitecture.yaml
+      installCommandLine:
+        type: string
+        description: The command line to install this app
+        nullable: true
+      installExperience:
+        anyOf:
+          - $ref: .\microsoft.graph.win32LobAppInstallExperience.yaml
+          - type: object
+            nullable: true
+        description: The install experience for this app.
+      minimumCpuSpeedInMHz:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: >-
+          The value for the minimum CPU speed which is required to install this
+          app.
+        format: int32
+        nullable: true
+      minimumFreeDiskSpaceInMB:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: >-
+          The value for the minimum free disk space which is required to install
+          this app.
+        format: int32
+        nullable: true
+      minimumMemoryInMB:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: >-
+          The value for the minimum physical memory which is required to install
+          this app.
+        format: int32
+        nullable: true
+      minimumNumberOfProcessors:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: >-
+          The value for the minimum number of processors which is required to
+          install this app.
+        format: int32
+        nullable: true
+      minimumSupportedWindowsRelease:
+        type: string
+        description: The value for the minimum supported windows release.
+        nullable: true
+      msiInformation:
+        anyOf:
+          - $ref: .\microsoft.graph.win32LobAppMsiInformation.yaml
+          - type: object
+            nullable: true
+        description: The MSI details if this Win32 app is an MSI app.
+      returnCodes:
+        type: array
+        items:
+          $ref: .\microsoft.graph.win32LobAppReturnCode.yaml
+        description: The return codes for post installation behavior.
+      rules:
+        type: array
+        items:
+          $ref: .\microsoft.graph.win32LobAppRule.yaml
+        description: The detection and requirement rules for this app.
+      setupFilePath:
+        type: string
+        description: >-
+          The relative path of the setup file in the encrypted Win32LobApp
+          package.
+        nullable: true
+      uninstallCommandLine:
+        type: string
+        description: The command line to uninstall this app
+        nullable: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.win32LobApp'
+    description: Contains properties and inherited properties for Win32 apps.
+x-ms-discriminator-value: '#microsoft.graph.win32LobApp'

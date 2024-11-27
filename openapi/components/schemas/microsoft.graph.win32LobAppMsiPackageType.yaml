@@ -1,0 +1,20 @@
+title: win32LobAppMsiPackageType
+enum:
+  - perMachine
+  - perUser
+  - dualPurpose
+type: string
+description: Indicates the package type of an MSI Win32LobApp.
+x-ms-enum:
+  name: win32LobAppMsiPackageType
+  modelAsString: false
+  values:
+    - value: perMachine
+      description: Indicates a per-machine app package.
+      name: perMachine
+    - value: perUser
+      description: Indicates a per-user app package.
+      name: perUser
+    - value: dualPurpose
+      description: Indicates a dual-purpose app package.
+      name: dualPurpose

@@ -1,0 +1,25 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: verticalSection
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      emphasis:
+        anyOf:
+          - $ref: .\microsoft.graph.sectionEmphasisType.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Enumeration value that indicates the emphasis of the section
+          background. The possible values are: none, netural, soft, strong,
+          unknownFutureValue.
+      webparts:
+        type: array
+        items:
+          $ref: .\microsoft.graph.webPart.yaml
+        description: The set of web parts in this section.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.verticalSection'

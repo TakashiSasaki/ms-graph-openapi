@@ -1,0 +1,8 @@
+title: trainingSettingType
+enum:
+  - microsoftCustom
+  - microsoftManaged
+  - noTraining
+  - custom
+  - unknownFutureValue
+type: string

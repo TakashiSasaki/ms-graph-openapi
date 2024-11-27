@@ -1,0 +1,55 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: userExperienceAnalyticsAppHealthDeviceModelPerformance
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      activeDeviceCount:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: >-
+          The number of active devices for the model. Valid values 0 to
+          2147483647. Supports: $filter, $select, $OrderBy. Read-only. Valid
+          values -2147483648 to 2147483647
+        format: int32
+      deviceManufacturer:
+        type: string
+        description: >-
+          The manufacturer name of the device. Supports: $select, $OrderBy.
+          Read-only.
+        nullable: true
+      deviceModel:
+        type: string
+        description: 'The model name of the device. Supports: $select, $OrderBy. Read-only.'
+        nullable: true
+      healthStatus:
+        $ref: .\microsoft.graph.userExperienceAnalyticsHealthState.yaml
+      meanTimeToFailureInMinutes:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: >-
+          The mean time to failure for the application in minutes. Valid values
+          0 to 2147483647. Supports: $filter, $select, $OrderBy. Read-only.
+          Valid values -2147483648 to 2147483647
+        format: int32
+      modelAppHealthScore:
+        oneOf:
+          - type: number
+            format: double
+            nullable: true
+          - type: string
+            nullable: true
+          - $ref: .\ReferenceNumeric.yaml
+        description: >-
+          The application health score of the device model. Valid values 0 to
+          100. Supports: $filter, $select, $OrderBy. Read-only. Valid values
+          -1.79769313486232E+308 to 1.79769313486232E+308
+      '@odata.type':
+        type: string
+    description: >-
+      The user experience analytics device model performance entity contains
+      device model performance details.
+x-ms-discriminator-value: '#microsoft.graph.userExperienceAnalyticsAppHealthDeviceModelPerformance'

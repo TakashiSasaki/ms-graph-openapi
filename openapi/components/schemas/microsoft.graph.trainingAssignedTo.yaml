@@ -1,0 +1,11 @@
+title: trainingAssignedTo
+enum:
+  - none
+  - allUsers
+  - clickedPayload
+  - compromised
+  - reportedPhish
+  - readButNotClicked
+  - didNothing
+  - unknownFutureValue
+type: string

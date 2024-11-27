@@ -1,0 +1,20 @@
+title: win32LobAppNotification
+enum:
+  - showAll
+  - showReboot
+  - hideAll
+type: string
+description: Contains value for notification status.
+x-ms-enum:
+  name: win32LobAppNotification
+  modelAsString: false
+  values:
+    - value: showAll
+      description: Show all notifications.
+      name: showAll
+    - value: showReboot
+      description: Only show restart notification and suppress other notifications.
+      name: showReboot
+    - value: hideAll
+      description: Hide all notifications.
+      name: hideAll

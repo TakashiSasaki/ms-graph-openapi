@@ -1,0 +1,36 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: thumbnailSet
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      large:
+        anyOf:
+          - $ref: .\microsoft.graph.thumbnail.yaml
+          - type: object
+            nullable: true
+        description: A 1920x1920 scaled thumbnail.
+      medium:
+        anyOf:
+          - $ref: .\microsoft.graph.thumbnail.yaml
+          - type: object
+            nullable: true
+        description: A 176x176 scaled thumbnail.
+      small:
+        anyOf:
+          - $ref: .\microsoft.graph.thumbnail.yaml
+          - type: object
+            nullable: true
+        description: A 48x48 cropped thumbnail.
+      source:
+        anyOf:
+          - $ref: .\microsoft.graph.thumbnail.yaml
+          - type: object
+            nullable: true
+        description: >-
+          A custom thumbnail image or the original image used to generate other
+          thumbnails.
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.thumbnailSet'

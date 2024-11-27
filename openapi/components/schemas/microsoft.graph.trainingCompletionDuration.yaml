@@ -1,0 +1,7 @@
+title: trainingCompletionDuration
+enum:
+  - week
+  - fortnite
+  - month
+  - unknownFutureValue
+type: string

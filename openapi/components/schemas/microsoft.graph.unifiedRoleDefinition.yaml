@@ -1,0 +1,75 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: unifiedRoleDefinition
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      description:
+        type: string
+        description: >-
+          The description for the unifiedRoleDefinition. Read-only when
+          isBuiltIn is true.
+        nullable: true
+      displayName:
+        type: string
+        description: >-
+          The display name for the unifiedRoleDefinition. Read-only when
+          isBuiltIn is true. Required.  Supports $filter (eq, in).
+        nullable: true
+      isBuiltIn:
+        type: boolean
+        description: >-
+          Flag indicating whether the role definition is part of the default set
+          included in Microsoft Entra or a custom definition. Read-only.
+          Supports $filter (eq, in).
+        nullable: true
+      isEnabled:
+        type: boolean
+        description: >-
+          Flag indicating whether the role is enabled for assignment. If false
+          the role is not available for assignment. Read-only when isBuiltIn is
+          true.
+        nullable: true
+      resourceScopes:
+        type: array
+        items:
+          type: string
+        description: >-
+          List of the scopes or permissions the role definition applies to.
+          Currently only / is supported. Read-only when isBuiltIn is true. DO
+          NOT USE. This will be deprecated soon. Attach scope to role
+          assignment.
+      rolePermissions:
+        type: array
+        items:
+          $ref: .\microsoft.graph.unifiedRolePermission.yaml
+        description: >-
+          List of permissions included in the role. Read-only when isBuiltIn is
+          true. Required.
+      templateId:
+        type: string
+        description: >-
+          Custom template identifier that can be set when isBuiltIn is false but
+          is read-only when isBuiltIn is true. This identifier is typically used
+          if one needs an identifier to be the same across different
+          directories.
+        nullable: true
+      version:
+        type: string
+        description: >-
+          Indicates version of the role definition. Read-only when isBuiltIn is
+          true.
+        nullable: true
+      inheritsPermissionsFrom:
+        type: array
+        items:
+          $ref: .\microsoft.graph.unifiedRoleDefinition.yaml
+        description: >-
+          Read-only collection of role definitions that the given role
+          definition inherits from. Only Microsoft Entra built-in roles
+          (isBuiltIn is true) support this attribute. Supports $expand.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.unifiedRoleDefinition'

@@ -1,0 +1,16 @@
+title: win32LobAppDeliveryOptimizationPriority
+enum:
+  - notConfigured
+  - foreground
+type: string
+description: Contains value for delivery optimization priority.
+x-ms-enum:
+  name: win32LobAppDeliveryOptimizationPriority
+  modelAsString: false
+  values:
+    - value: notConfigured
+      description: Not configured or background normal delivery optimization priority.
+      name: notConfigured
+    - value: foreground
+      description: Foreground delivery optimization priority.
+      name: foreground

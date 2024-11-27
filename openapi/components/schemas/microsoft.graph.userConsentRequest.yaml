@@ -1,0 +1,23 @@
+allOf:
+  - $ref: .\microsoft.graph.request.yaml
+  - title: userConsentRequest
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      reason:
+        type: string
+        description: >-
+          The user's justification for requiring access to the app. Supports
+          $filter (eq only) and $orderby.
+        nullable: true
+      approval:
+        anyOf:
+          - $ref: .\microsoft.graph.approval.yaml
+          - type: object
+            nullable: true
+        description: Approval decisions associated with a request.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.userConsentRequest'

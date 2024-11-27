@@ -1,0 +1,20 @@
+allOf:
+  - $ref: .\microsoft.graph.baseEndUserNotification.yaml
+  - title: trainingReminderNotification
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      deliveryFrequency:
+        anyOf:
+          - $ref: .\microsoft.graph.notificationDeliveryFrequency.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Configurable frequency for the reminder email introduced during
+          simulation creation. Possible values are: unknown, weekly, biWeekly,
+          unknownFutureValue.
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.trainingReminderNotification'
+x-ms-discriminator-value: '#microsoft.graph.trainingReminderNotification'

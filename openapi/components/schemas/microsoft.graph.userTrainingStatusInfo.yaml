@@ -1,0 +1,33 @@
+title: userTrainingStatusInfo
+required:
+  - '@odata.type'
+type: object
+properties:
+  assignedDateTime:
+    pattern: >-
+      ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+    type: string
+    description: Date and time of assignment of the training to the user.
+    format: date-time
+    nullable: true
+  completionDateTime:
+    pattern: >-
+      ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+    type: string
+    description: Date and time of completion of the training by the user.
+    format: date-time
+    nullable: true
+  displayName:
+    type: string
+    description: Display name of the assigned training.
+    nullable: true
+  trainingStatus:
+    anyOf:
+      - $ref: .\microsoft.graph.trainingStatus.yaml
+      - type: object
+        nullable: true
+    description: >-
+      The status of the training assigned to the user. Possible values are:
+      unknown, assigned, inProgress, completed, overdue, unknownFutureValue.
+  '@odata.type':
+    type: string

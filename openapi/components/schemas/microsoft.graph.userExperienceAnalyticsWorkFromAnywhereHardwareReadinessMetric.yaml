@@ -1,0 +1,144 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: userExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      osCheckFailedPercentage:
+        oneOf:
+          - type: number
+            format: double
+            nullable: true
+          - type: string
+            nullable: true
+          - $ref: .\ReferenceNumeric.yaml
+        description: >-
+          The percentage of devices for which OS check has failed. Valid values
+          0 to 100. Supports: $select, $OrderBy. Read-only. Valid values
+          -1.79769313486232E+308 to 1.79769313486232E+308
+      processor64BitCheckFailedPercentage:
+        oneOf:
+          - type: number
+            format: double
+            nullable: true
+          - type: string
+            nullable: true
+          - $ref: .\ReferenceNumeric.yaml
+        description: >-
+          The percentage of devices for which processor hardware 64-bit
+          architecture check has failed. Valid values 0 to 100. Supports:
+          $select, $OrderBy. Read-only. Valid values -1.79769313486232E+308 to
+          1.79769313486232E+308
+      processorCoreCountCheckFailedPercentage:
+        oneOf:
+          - type: number
+            format: double
+            nullable: true
+          - type: string
+            nullable: true
+          - $ref: .\ReferenceNumeric.yaml
+        description: >-
+          The percentage of devices for which processor hardware core count
+          check has failed. Valid values 0 to 100. Supports: $select, $OrderBy.
+          Read-only. Valid values -1.79769313486232E+308 to
+          1.79769313486232E+308
+      processorFamilyCheckFailedPercentage:
+        oneOf:
+          - type: number
+            format: double
+            nullable: true
+          - type: string
+            nullable: true
+          - $ref: .\ReferenceNumeric.yaml
+        description: >-
+          The percentage of devices for which processor hardware family check
+          has failed. Valid values 0 to 100. Supports: $select, $OrderBy.
+          Read-only. Valid values -1.79769313486232E+308 to
+          1.79769313486232E+308
+      processorSpeedCheckFailedPercentage:
+        oneOf:
+          - type: number
+            format: double
+            nullable: true
+          - type: string
+            nullable: true
+          - $ref: .\ReferenceNumeric.yaml
+        description: >-
+          The percentage of devices for which processor hardware speed check has
+          failed. Valid values 0 to 100. Supports: $select, $OrderBy. Read-only.
+          Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+      ramCheckFailedPercentage:
+        oneOf:
+          - type: number
+            format: double
+            nullable: true
+          - type: string
+            nullable: true
+          - $ref: .\ReferenceNumeric.yaml
+        description: >-
+          The percentage of devices for which RAM hardware check has failed.
+          Valid values 0 to 100. Supports: $select, $OrderBy. Read-only. Valid
+          values -1.79769313486232E+308 to 1.79769313486232E+308
+      secureBootCheckFailedPercentage:
+        oneOf:
+          - type: number
+            format: double
+            nullable: true
+          - type: string
+            nullable: true
+          - $ref: .\ReferenceNumeric.yaml
+        description: >-
+          The percentage of devices for which secure boot hardware check has
+          failed. Valid values 0 to 100. Supports: $select, $OrderBy. Read-only.
+          Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+      storageCheckFailedPercentage:
+        oneOf:
+          - type: number
+            format: double
+            nullable: true
+          - type: string
+            nullable: true
+          - $ref: .\ReferenceNumeric.yaml
+        description: >-
+          The percentage of devices for which storage hardware check has failed.
+          Valid values 0 to 100. Supports: $select, $OrderBy. Read-only. Valid
+          values -1.79769313486232E+308 to 1.79769313486232E+308
+      totalDeviceCount:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: >-
+          The count of total devices in an organization. Valid values 0 to
+          2147483647. Supports: $select, $OrderBy. Read-only. Valid values
+          -2147483648 to 2147483647
+        format: int32
+      tpmCheckFailedPercentage:
+        oneOf:
+          - type: number
+            format: double
+            nullable: true
+          - type: string
+            nullable: true
+          - $ref: .\ReferenceNumeric.yaml
+        description: >-
+          The percentage of devices for which Trusted Platform Module (TPM)
+          hardware check has failed. Valid values 0 to 100. Supports: $select,
+          $OrderBy. Read-only. Valid values -1.79769313486232E+308 to
+          1.79769313486232E+308
+      upgradeEligibleDeviceCount:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: >-
+          The count of devices in an organization eligible for windows upgrade.
+          Valid values 0 to 2147483647. Supports: $select, $OrderBy. Read-only.
+          Valid values -2147483648 to 2147483647
+        format: int32
+      '@odata.type':
+        type: string
+    description: >-
+      The user experience analytics hardware readiness entity contains account
+      level information about hardware blockers for windows upgrade.
+x-ms-discriminator-value: >-
+  #microsoft.graph.userExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric

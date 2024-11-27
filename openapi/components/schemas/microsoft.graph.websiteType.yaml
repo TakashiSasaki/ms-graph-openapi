@@ -1,0 +1,8 @@
+title: websiteType
+enum:
+  - other
+  - home
+  - work
+  - blog
+  - profile
+type: string

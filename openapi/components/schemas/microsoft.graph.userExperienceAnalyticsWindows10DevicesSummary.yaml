@@ -1,0 +1,16 @@
+title: userExperienceAnalyticsWindows10DevicesSummary
+required:
+  - '@odata.type'
+type: object
+properties:
+  unsupportedOSversionDeviceCount:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    description: >-
+      The count of Windows 10 devices that have unsupported OS versions.
+      Read-only.
+    format: int32
+  '@odata.type':
+    type: string
+description: The user experience analytics work from anywhere Windows 10 devices summary.

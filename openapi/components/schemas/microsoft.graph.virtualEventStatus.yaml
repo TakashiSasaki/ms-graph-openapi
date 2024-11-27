@@ -1,0 +1,7 @@
+title: virtualEventStatus
+enum:
+  - draft
+  - published
+  - canceled
+  - unknownFutureValue
+type: string

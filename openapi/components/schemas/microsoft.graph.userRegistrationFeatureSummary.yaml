@@ -1,0 +1,32 @@
+title: userRegistrationFeatureSummary
+required:
+  - '@odata.type'
+type: object
+properties:
+  totalUserCount:
+    type: number
+    description: Total number of users accounts, excluding those that are blocked.
+    format: int64
+  userRegistrationFeatureCounts:
+    type: array
+    items:
+      $ref: .\microsoft.graph.userRegistrationFeatureCount.yaml
+    description: >-
+      Number of users registered or capable for multi-factor authentication,
+      self-service password reset, and passwordless authentication.
+  userRoles:
+    anyOf:
+      - $ref: .\microsoft.graph.includedUserRoles.yaml
+      - type: object
+        nullable: true
+    description: >-
+      The role type of the user. Possible values are: all, privilegedAdmin,
+      admin, user, unknownFutureValue.
+  userTypes:
+    anyOf:
+      - $ref: .\microsoft.graph.includedUserTypes.yaml
+      - type: object
+        nullable: true
+    description: 'User type. Possible values are: all, member, guest, unknownFutureValue.'
+  '@odata.type':
+    type: string

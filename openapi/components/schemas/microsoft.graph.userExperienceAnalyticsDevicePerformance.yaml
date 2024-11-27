@@ -1,0 +1,139 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: userExperienceAnalyticsDevicePerformance
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      averageBlueScreens:
+        oneOf:
+          - type: number
+            format: double
+            nullable: true
+          - type: string
+            nullable: true
+          - $ref: .\ReferenceNumeric.yaml
+        description: >-
+          Average (mean) number of Blue Screens per device in the last 30 days.
+          Valid values 0 to 9999999
+      averageRestarts:
+        oneOf:
+          - type: number
+            format: double
+            nullable: true
+          - type: string
+            nullable: true
+          - $ref: .\ReferenceNumeric.yaml
+        description: >-
+          Average (mean) number of Restarts per device in the last 30 days.
+          Valid values 0 to 9999999
+      blueScreenCount:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: Number of Blue Screens in the last 30 days. Valid values 0 to 9999999
+        format: int32
+      bootScore:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: The user experience analytics device boot score.
+        format: int32
+      coreBootTimeInMs:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: The user experience analytics device core boot time in milliseconds.
+        format: int32
+      coreLoginTimeInMs:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: The user experience analytics device core login time in milliseconds.
+        format: int32
+      deviceCount:
+        type: number
+        description: User experience analytics summarized device count.
+        format: int64
+      deviceName:
+        type: string
+        description: The user experience analytics device name.
+        nullable: true
+      diskType:
+        $ref: .\microsoft.graph.diskType.yaml
+      groupPolicyBootTimeInMs:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: >-
+          The user experience analytics device group policy boot time in
+          milliseconds.
+        format: int32
+      groupPolicyLoginTimeInMs:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: >-
+          The user experience analytics device group policy login time in
+          milliseconds.
+        format: int32
+      healthStatus:
+        $ref: .\microsoft.graph.userExperienceAnalyticsHealthState.yaml
+      loginScore:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: The user experience analytics device login score.
+        format: int32
+      manufacturer:
+        type: string
+        description: The user experience analytics device manufacturer.
+        nullable: true
+      model:
+        type: string
+        description: The user experience analytics device model.
+        nullable: true
+      modelStartupPerformanceScore:
+        oneOf:
+          - type: number
+            format: double
+            nullable: true
+          - type: string
+            nullable: true
+          - $ref: .\ReferenceNumeric.yaml
+        description: >-
+          The user experience analytics model level startup performance score.
+          Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+      operatingSystemVersion:
+        type: string
+        description: The user experience analytics device Operating System version.
+        nullable: true
+      responsiveDesktopTimeInMs:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: The user experience analytics responsive desktop time in milliseconds.
+        format: int32
+      restartCount:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: Number of Restarts in the last 30 days. Valid values 0 to 9999999
+        format: int32
+      startupPerformanceScore:
+        oneOf:
+          - type: number
+            format: double
+            nullable: true
+          - type: string
+            nullable: true
+          - $ref: .\ReferenceNumeric.yaml
+        description: >-
+          The user experience analytics device startup performance score. Valid
+          values -1.79769313486232E+308 to 1.79769313486232E+308
+      '@odata.type':
+        type: string
+    description: >-
+      The user experience analytics device performance entity contains device
+      boot performance details.
+x-ms-discriminator-value: '#microsoft.graph.userExperienceAnalyticsDevicePerformance'

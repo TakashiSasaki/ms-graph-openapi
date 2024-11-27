@@ -1,0 +1,85 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: unifiedRoleAssignment
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      appScopeId:
+        type: string
+        description: >-
+          Identifier of the app specific scope when the assignment scope is app
+          specific. The scope of an assignment determines the set of resources
+          for which the principal has been granted access. App scopes are scopes
+          that are defined and understood by a resource application only. For
+          the entitlement management provider, use this property to specify a
+          catalog. For example,
+          /AccessPackageCatalog/beedadfe-01d5-4025-910b-84abb9369997. Supports
+          $filter (eq, in). For example,
+          /roleManagement/entitlementManagement/roleAssignments?$filter=appScopeId
+          eq '/AccessPackageCatalog/{catalog id}'.
+        nullable: true
+      condition:
+        type: string
+        nullable: true
+      directoryScopeId:
+        type: string
+        description: >-
+          Identifier of the directory object representing the scope of the
+          assignment. The scope of an assignment determines the set of resources
+          for which the principal has been granted access. Directory scopes are
+          shared scopes stored in the directory that are understood by multiple
+          applications, unlike app scopes that are defined and understood by a
+          resource application only. Supports $filter (eq, in).
+        nullable: true
+      principalId:
+        type: string
+        description: >-
+          Identifier of the principal to which the assignment is granted.
+          Supported principals are users, role-assignable groups, and service
+          principals. Supports $filter (eq, in).
+        nullable: true
+      roleDefinitionId:
+        type: string
+        description: >-
+          Identifier of the unifiedRoleDefinition the assignment is for.
+          Read-only. Supports $filter (eq, in).
+        nullable: true
+      appScope:
+        anyOf:
+          - $ref: .\microsoft.graph.appScope.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Read-only property with details of the app specific scope when the
+          assignment scope is app specific. Containment entity. Supports $expand
+          for the entitlement provider only.
+        x-ms-navigationProperty: true
+      directoryScope:
+        anyOf:
+          - $ref: .\microsoft.graph.directoryObject.yaml
+          - type: object
+            nullable: true
+        description: >-
+          The directory object that is the scope of the assignment. Read-only.
+          Supports $expand for the directory provider.
+        x-ms-navigationProperty: true
+      principal:
+        anyOf:
+          - $ref: .\microsoft.graph.directoryObject.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Referencing the assigned principal. Read-only. Supports $expand except
+          for the Exchange provider.
+        x-ms-navigationProperty: true
+      roleDefinition:
+        anyOf:
+          - $ref: .\microsoft.graph.unifiedRoleDefinition.yaml
+          - type: object
+            nullable: true
+        description: The roleDefinition the assignment is for. Supports $expand.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.unifiedRoleAssignment'

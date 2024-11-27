@@ -1,0 +1,87 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: userExperienceAnalyticsAppHealthApplicationPerformance
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      activeDeviceCount:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: >-
+          The health score of the application. Valid values 0 to 100. Supports:
+          $filter, $select, $OrderBy. Read-only. Valid values -2147483648 to
+          2147483647
+        format: int32
+      appCrashCount:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: >-
+          The number of crashes for the application. Valid values 0 to
+          2147483647. Supports: $select, $OrderBy. Read-only. Valid values
+          -2147483648 to 2147483647
+        format: int32
+      appDisplayName:
+        type: string
+        description: >-
+          The friendly name of the application. Possible values are: Outlook,
+          Excel. Supports: $select, $OrderBy. Read-only.
+        nullable: true
+      appHangCount:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: >-
+          The number of hangs for the application. Supports: $select, $OrderBy.
+          Read-only. Valid values -2147483648 to 2147483647
+        format: int32
+      appHealthScore:
+        oneOf:
+          - type: number
+            format: double
+            nullable: true
+          - type: string
+            nullable: true
+          - $ref: .\ReferenceNumeric.yaml
+        description: >-
+          The health score of the application. Valid values 0 to 100. Supports:
+          $filter, $select, $OrderBy. Read-only. Valid values
+          -1.79769313486232E+308 to 1.79769313486232E+308
+      appName:
+        type: string
+        description: >-
+          The name of the application. Possible values are: outlook.exe,
+          excel.exe. Supports: $select, $OrderBy. Read-only.
+        nullable: true
+      appPublisher:
+        type: string
+        description: >-
+          The publisher of the application. Supports: $select, $OrderBy.
+          Read-only.
+        nullable: true
+      appUsageDuration:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: >-
+          The total usage time of the application in minutes. Valid values 0 to
+          2147483647. Supports: $select, $OrderBy. Read-only. Valid values
+          -2147483648 to 2147483647
+        format: int32
+      meanTimeToFailureInMinutes:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: >-
+          The mean time to failure for the application in minutes. Valid values
+          0 to 2147483647. Supports: $select, $OrderBy. Read-only. Valid values
+          -2147483648 to 2147483647
+        format: int32
+      '@odata.type':
+        type: string
+    description: >-
+      The user experience analytics application performance entity contains
+      application performance details.
+x-ms-discriminator-value: '#microsoft.graph.userExperienceAnalyticsAppHealthApplicationPerformance'

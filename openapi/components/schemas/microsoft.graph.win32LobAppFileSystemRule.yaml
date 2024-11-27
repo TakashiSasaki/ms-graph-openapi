@@ -1,0 +1,33 @@
+allOf:
+  - $ref: .\microsoft.graph.win32LobAppRule.yaml
+  - title: win32LobAppFileSystemRule
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      check32BitOn64System:
+        type: boolean
+        description: >-
+          A value indicating whether to expand environment variables in the
+          32-bit context on 64-bit systems.
+      comparisonValue:
+        type: string
+        description: The file or folder comparison value.
+        nullable: true
+      fileOrFolderName:
+        type: string
+        description: The file or folder name to look up.
+        nullable: true
+      operationType:
+        $ref: .\microsoft.graph.win32LobAppFileSystemOperationType.yaml
+      operator:
+        $ref: .\microsoft.graph.win32LobAppRuleOperator.yaml
+      path:
+        type: string
+        description: The file or folder path to look up.
+        nullable: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.win32LobAppFileSystemRule'
+    description: A complex type to store file or folder rule data for a Win32 LOB app.
+x-ms-discriminator-value: '#microsoft.graph.win32LobAppFileSystemRule'

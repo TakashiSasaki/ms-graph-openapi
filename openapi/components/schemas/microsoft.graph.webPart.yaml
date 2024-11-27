@@ -1,0 +1,14 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: webPart
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      '@odata.type':
+        type: string
+    discriminator:
+      propertyName: '@odata.type'
+      mapping:
+        '#microsoft.graph.standardWebPart': .\microsoft.graph.standardWebPart.yaml
+        '#microsoft.graph.textWebPart': .\microsoft.graph.textWebPart.yaml

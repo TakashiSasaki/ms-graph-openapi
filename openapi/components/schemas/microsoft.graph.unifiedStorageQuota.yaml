@@ -1,0 +1,37 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: unifiedStorageQuota
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      deleted:
+        type: number
+        format: int64
+        nullable: true
+      manageWebUrl:
+        type: string
+        nullable: true
+      remaining:
+        type: number
+        format: int64
+        nullable: true
+      state:
+        type: string
+        nullable: true
+      total:
+        type: number
+        format: int64
+        nullable: true
+      used:
+        type: number
+        format: int64
+        nullable: true
+      services:
+        type: array
+        items:
+          $ref: .\microsoft.graph.serviceStorageQuotaBreakdown.yaml
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.unifiedStorageQuota'

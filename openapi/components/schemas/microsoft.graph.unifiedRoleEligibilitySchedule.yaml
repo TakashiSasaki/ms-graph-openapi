@@ -1,0 +1,24 @@
+allOf:
+  - $ref: .\microsoft.graph.unifiedRoleScheduleBase.yaml
+  - title: unifiedRoleEligibilitySchedule
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      memberType:
+        type: string
+        description: >-
+          How the role eligibility is inherited. It can either be Inherited,
+          Direct, or Group. It can further imply whether the
+          unifiedRoleEligibilitySchedule can be managed by the caller. Supports
+          $filter (eq, ne).
+        nullable: true
+      scheduleInfo:
+        anyOf:
+          - $ref: .\microsoft.graph.requestSchedule.yaml
+          - type: object
+            nullable: true
+        description: The period of the role eligibility.
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.unifiedRoleEligibilitySchedule'

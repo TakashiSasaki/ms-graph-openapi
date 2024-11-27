@@ -1,0 +1,23 @@
+allOf:
+  - $ref: .\microsoft.graph.onlineMeetingBase.yaml
+  - title: virtualEventSession
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      endDateTime:
+        anyOf:
+          - $ref: .\microsoft.graph.dateTimeTimeZone.yaml
+          - type: object
+            nullable: true
+        description: The virtual event session end time.
+      startDateTime:
+        anyOf:
+          - $ref: .\microsoft.graph.dateTimeTimeZone.yaml
+          - type: object
+            nullable: true
+        description: The virtual event session start time.
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.virtualEventSession'
+x-ms-discriminator-value: '#microsoft.graph.virtualEventSession'

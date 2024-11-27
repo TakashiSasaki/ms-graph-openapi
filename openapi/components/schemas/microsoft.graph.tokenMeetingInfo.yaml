@@ -1,0 +1,14 @@
+allOf:
+  - $ref: .\microsoft.graph.meetingInfo.yaml
+  - title: tokenMeetingInfo
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      token:
+        type: string
+        description: The token used to join the call.
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.tokenMeetingInfo'
+x-ms-discriminator-value: '#microsoft.graph.tokenMeetingInfo'

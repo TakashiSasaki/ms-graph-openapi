@@ -1,0 +1,13 @@
+title: userRegistrationFeatureCount
+required:
+  - '@odata.type'
+type: object
+properties:
+  feature:
+    $ref: .\microsoft.graph.authenticationMethodFeature.yaml
+  userCount:
+    type: number
+    description: Number of users.
+    format: int64
+  '@odata.type':
+    type: string

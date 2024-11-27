@@ -1,0 +1,9 @@
+title: trainingStatus
+enum:
+  - unknown
+  - assigned
+  - inProgress
+  - completed
+  - overdue
+  - unknownFutureValue
+type: string

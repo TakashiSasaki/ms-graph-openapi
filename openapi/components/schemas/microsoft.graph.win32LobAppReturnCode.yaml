@@ -1,0 +1,16 @@
+title: win32LobAppReturnCode
+required:
+  - '@odata.type'
+type: object
+properties:
+  returnCode:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    description: Return code.
+    format: int32
+  type:
+    $ref: .\microsoft.graph.win32LobAppReturnCodeType.yaml
+  '@odata.type':
+    type: string
+description: Contains return code properties for a Win32 App

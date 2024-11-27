@@ -1,0 +1,7 @@
+title: virtualAppointmentMessageType
+enum:
+  - confirmation
+  - reschedule
+  - cancellation
+  - unknownFutureValue
+type: string

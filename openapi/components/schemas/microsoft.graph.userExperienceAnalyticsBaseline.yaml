@@ -1,0 +1,84 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: userExperienceAnalyticsBaseline
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      createdDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: >-
+          The date the custom baseline was created. The value cannot be modified
+          and is automatically populated when the baseline is created. The
+          Timestamp type represents date and time information using ISO 8601
+          format and is always in UTC time. For example, midnight UTC on Jan 1,
+          2014 would look like this: '2014-01-01T00:00:00Z'. Returned by
+          default.
+        format: date-time
+      displayName:
+        type: string
+        description: The name of the baseline.
+        nullable: true
+      isBuiltIn:
+        type: boolean
+        description: >-
+          When TRUE, indicates the current baseline is the commercial median
+          baseline. When FALSE, indicates it is a custom baseline. FALSE by
+          default.
+      appHealthMetrics:
+        anyOf:
+          - $ref: .\microsoft.graph.userExperienceAnalyticsCategory.yaml
+          - type: object
+            nullable: true
+        description: The scores and insights for the application health metrics.
+        x-ms-navigationProperty: true
+      batteryHealthMetrics:
+        anyOf:
+          - $ref: .\microsoft.graph.userExperienceAnalyticsCategory.yaml
+          - type: object
+            nullable: true
+        description: The scores and insights for the battery health metrics.
+        x-ms-navigationProperty: true
+      bestPracticesMetrics:
+        anyOf:
+          - $ref: .\microsoft.graph.userExperienceAnalyticsCategory.yaml
+          - type: object
+            nullable: true
+        description: The scores and insights for the best practices metrics.
+        x-ms-navigationProperty: true
+      deviceBootPerformanceMetrics:
+        anyOf:
+          - $ref: .\microsoft.graph.userExperienceAnalyticsCategory.yaml
+          - type: object
+            nullable: true
+        description: The scores and insights for the device boot performance metrics.
+        x-ms-navigationProperty: true
+      rebootAnalyticsMetrics:
+        anyOf:
+          - $ref: .\microsoft.graph.userExperienceAnalyticsCategory.yaml
+          - type: object
+            nullable: true
+        description: The scores and insights for the reboot analytics metrics.
+        x-ms-navigationProperty: true
+      resourcePerformanceMetrics:
+        anyOf:
+          - $ref: .\microsoft.graph.userExperienceAnalyticsCategory.yaml
+          - type: object
+            nullable: true
+        description: The scores and insights for the resource performance metrics.
+        x-ms-navigationProperty: true
+      workFromAnywhereMetrics:
+        anyOf:
+          - $ref: .\microsoft.graph.userExperienceAnalyticsCategory.yaml
+          - type: object
+            nullable: true
+        description: The scores and insights for the work from anywhere metrics.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+    description: >-
+      The user experience analytics baseline entity contains baseline values
+      against which to compare the user experience analytics scores.
+x-ms-discriminator-value: '#microsoft.graph.userExperienceAnalyticsBaseline'

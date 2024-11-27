@@ -1,0 +1,19 @@
+title: timeZoneBase
+required:
+  - '@odata.type'
+type: object
+properties:
+  name:
+    type: string
+    description: >-
+      The name of a time zone. It can be a standard time zone name such as
+      'Hawaii-Aleutian Standard Time', or 'Customized Time Zone' for a custom
+      time zone.
+    nullable: true
+  '@odata.type':
+    type: string
+discriminator:
+  propertyName: '@odata.type'
+  mapping:
+    '#microsoft.graph.customTimeZone': .\microsoft.graph.customTimeZone.yaml
+    microsoft.graph.customTimeZone: .\microsoft.graph.customTimeZone.yaml

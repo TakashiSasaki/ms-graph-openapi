@@ -1,0 +1,33 @@
+title: updateWindowsDeviceAccountActionParameter
+required:
+  - '@odata.type'
+type: object
+properties:
+  calendarSyncEnabled:
+    type: boolean
+    description: Not yet documented
+    nullable: true
+  deviceAccount:
+    anyOf:
+      - $ref: .\microsoft.graph.windowsDeviceAccount.yaml
+      - type: object
+        nullable: true
+    description: Not yet documented
+  deviceAccountEmail:
+    type: string
+    description: Not yet documented
+    nullable: true
+  exchangeServer:
+    type: string
+    description: Not yet documented
+    nullable: true
+  passwordRotationEnabled:
+    type: boolean
+    description: Not yet documented
+    nullable: true
+  sessionInitiationProtocalAddress:
+    type: string
+    description: Not yet documented
+    nullable: true
+  '@odata.type':
+    type: string

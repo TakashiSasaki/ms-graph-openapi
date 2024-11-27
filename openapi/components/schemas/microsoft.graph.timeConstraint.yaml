@@ -1,0 +1,19 @@
+title: timeConstraint
+required:
+  - '@odata.type'
+type: object
+properties:
+  activityDomain:
+    anyOf:
+      - $ref: .\microsoft.graph.activityDomain.yaml
+      - type: object
+        nullable: true
+    description: >-
+      The nature of the activity, optional. The possible values are: work,
+      personal, unrestricted, or unknown.
+  timeSlots:
+    type: array
+    items:
+      $ref: .\microsoft.graph.timeSlot.yaml
+  '@odata.type':
+    type: string

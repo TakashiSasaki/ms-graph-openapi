@@ -1,0 +1,21 @@
+title: website
+required:
+  - '@odata.type'
+type: object
+properties:
+  address:
+    type: string
+    description: The URL of the website.
+    nullable: true
+  displayName:
+    type: string
+    description: The display name of the web site.
+    nullable: true
+  type:
+    anyOf:
+      - $ref: .\microsoft.graph.websiteType.yaml
+      - type: object
+        nullable: true
+    description: 'The possible values are: other, home, work, blog, profile.'
+  '@odata.type':
+    type: string

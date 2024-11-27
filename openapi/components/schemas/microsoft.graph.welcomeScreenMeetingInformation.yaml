@@ -1,0 +1,22 @@
+title: welcomeScreenMeetingInformation
+enum:
+  - userDefined
+  - showOrganizerAndTimeOnly
+  - showOrganizerAndTimeAndSubject
+type: string
+description: Possible values for welcome screen meeting information.
+x-ms-enum:
+  name: welcomeScreenMeetingInformation
+  modelAsString: false
+  values:
+    - value: userDefined
+      description: User Defined, default value, no intent.
+      name: userDefined
+    - value: showOrganizerAndTimeOnly
+      description: Show organizer and time only.
+      name: showOrganizerAndTimeOnly
+    - value: showOrganizerAndTimeAndSubject
+      description: >-
+        Show organizer, time and subject (subject is hidden for private
+        meetings).
+      name: showOrganizerAndTimeAndSubject

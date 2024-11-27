@@ -1,0 +1,35 @@
+title: virtualEventRegistrationQuestionAnswer
+required:
+  - '@odata.type'
+type: object
+properties:
+  booleanValue:
+    type: boolean
+    description: >-
+      Boolean answer of the virtual event registration question. Only appears
+      when answerInputType is boolean.
+    nullable: true
+  displayName:
+    type: string
+    description: Display name of the registration question.
+    nullable: true
+  multiChoiceValues:
+    type: array
+    items:
+      type: string
+      nullable: true
+    description: >-
+      Collection of text answer of the virtual event registration question. Only
+      appears when answerInputType is multiChoice.
+  questionId:
+    type: string
+    description: id of the virtual event registration question.
+    nullable: true
+  value:
+    type: string
+    description: >-
+      Text answer of the virtual event registration question. Appears when
+      answerInputType is text, multilineText or singleChoice.
+    nullable: true
+  '@odata.type':
+    type: string

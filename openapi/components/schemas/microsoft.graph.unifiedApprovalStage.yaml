@@ -1,0 +1,47 @@
+title: unifiedApprovalStage
+required:
+  - '@odata.type'
+type: object
+properties:
+  approvalStageTimeOutInDays:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    description: >-
+      The number of days that a request can be pending a response before it is
+      automatically denied.
+    format: int32
+    nullable: true
+  escalationApprovers:
+    type: array
+    items:
+      $ref: .\microsoft.graph.subjectSet.yaml
+    description: >-
+      The escalation approvers for this stage when the primary approvers don't
+      respond.
+  escalationTimeInMinutes:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    description: >-
+      The time a request can be pending a response from a primary approver
+      before it can be escalated to the escalation approvers.
+    format: int32
+    nullable: true
+  isApproverJustificationRequired:
+    type: boolean
+    description: >-
+      Indicates whether the approver must provide justification for their
+      reponse.
+    nullable: true
+  isEscalationEnabled:
+    type: boolean
+    description: Indicates whether escalation if enabled.
+    nullable: true
+  primaryApprovers:
+    type: array
+    items:
+      $ref: .\microsoft.graph.subjectSet.yaml
+    description: The primary approvers of this stage.
+  '@odata.type':
+    type: string

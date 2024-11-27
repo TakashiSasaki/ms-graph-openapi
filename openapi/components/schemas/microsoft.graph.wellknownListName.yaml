@@ -1,0 +1,7 @@
+title: wellknownListName
+enum:
+  - none
+  - defaultList
+  - flaggedEmails
+  - unknownFutureValue
+type: string

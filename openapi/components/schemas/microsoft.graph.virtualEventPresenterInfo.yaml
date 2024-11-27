@@ -1,0 +1,16 @@
+allOf:
+  - $ref: .\microsoft.graph.meetingParticipantInfo.yaml
+  - title: virtualEventPresenterInfo
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      presenterDetails:
+        anyOf:
+          - $ref: .\microsoft.graph.virtualEventPresenterDetails.yaml
+          - type: object
+            nullable: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.virtualEventPresenterInfo'
+x-ms-discriminator-value: '#microsoft.graph.virtualEventPresenterInfo'

@@ -1,0 +1,23 @@
+title: win32LobAppRule
+required:
+  - '@odata.type'
+type: object
+properties:
+  ruleType:
+    $ref: .\microsoft.graph.win32LobAppRuleType.yaml
+  '@odata.type':
+    type: string
+description: >-
+  A base complex type to store the detection or requirement rule data for a
+  Win32 LOB app.
+discriminator:
+  propertyName: '@odata.type'
+  mapping:
+    '#microsoft.graph.win32LobAppFileSystemRule': .\microsoft.graph.win32LobAppFileSystemRule.yaml
+    '#microsoft.graph.win32LobAppPowerShellScriptRule': .\microsoft.graph.win32LobAppPowerShellScriptRule.yaml
+    '#microsoft.graph.win32LobAppProductCodeRule': .\microsoft.graph.win32LobAppProductCodeRule.yaml
+    '#microsoft.graph.win32LobAppRegistryRule': .\microsoft.graph.win32LobAppRegistryRule.yaml
+    microsoft.graph.win32LobAppFileSystemRule: .\microsoft.graph.win32LobAppFileSystemRule.yaml
+    microsoft.graph.win32LobAppPowerShellScriptRule: .\microsoft.graph.win32LobAppPowerShellScriptRule.yaml
+    microsoft.graph.win32LobAppProductCodeRule: .\microsoft.graph.win32LobAppProductCodeRule.yaml
+    microsoft.graph.win32LobAppRegistryRule: .\microsoft.graph.win32LobAppRegistryRule.yaml

@@ -1,0 +1,46 @@
+title: userSimulationEventInfo
+required:
+  - '@odata.type'
+type: object
+properties:
+  browser:
+    type: string
+    description: >-
+      Browser information from where the simulation event was initiated by a
+      user in an attack simulation and training campaign.
+    nullable: true
+  clickSource:
+    anyOf:
+      - $ref: .\microsoft.graph.clickSource.yaml
+      - type: object
+        nullable: true
+  eventDateTime:
+    pattern: >-
+      ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+    type: string
+    description: >-
+      Date and time of the simulation event by a user in an attack simulation
+      and training campaign.
+    format: date-time
+    nullable: true
+  eventName:
+    type: string
+    description: >-
+      Name of the simulation event by a user in an attack simulation and
+      training campaign.
+    nullable: true
+  ipAddress:
+    type: string
+    description: >-
+      IP address from where the simulation event was initiated by a user in an
+      attack simulation and training campaign.
+    nullable: true
+  osPlatformDeviceDetails:
+    type: string
+    description: >-
+      The operating system, platform, and device details from where the
+      simulation event was initiated by a user in an attack simulation and
+      training campaign.
+    nullable: true
+  '@odata.type':
+    type: string

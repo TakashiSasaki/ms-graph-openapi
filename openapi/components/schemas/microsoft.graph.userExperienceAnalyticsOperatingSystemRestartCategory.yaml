@@ -1,0 +1,60 @@
+title: userExperienceAnalyticsOperatingSystemRestartCategory
+enum:
+  - unknown
+  - restartWithUpdate
+  - restartWithoutUpdate
+  - blueScreen
+  - shutdownWithUpdate
+  - shutdownWithoutUpdate
+  - longPowerButtonPress
+  - bootError
+  - update
+  - unknownFutureValue
+type: string
+description: Operating System restart category.
+x-ms-enum:
+  name: userExperienceAnalyticsOperatingSystemRestartCategory
+  modelAsString: false
+  values:
+    - value: unknown
+      description: >-
+        Default. Set to unknown if device operating system restart category has
+        not yet been calculated.
+      name: unknown
+    - value: restartWithUpdate
+      description: >-
+        Indicates that the device operating system restart is along with an
+        update.
+      name: restartWithUpdate
+    - value: restartWithoutUpdate
+      description: Indicates that the device operating system restart is without update.
+      name: restartWithoutUpdate
+    - value: blueScreen
+      description: >-
+        Indicates that the device operating system restart is due to a specific
+        stop error.
+      name: blueScreen
+    - value: shutdownWithUpdate
+      description: >-
+        Indicates that the device operating system restart is due to shutdown
+        with update.
+      name: shutdownWithUpdate
+    - value: shutdownWithoutUpdate
+      description: >-
+        Indicates that the device operating system restart is due to shutdown
+        without update.
+      name: shutdownWithoutUpdate
+    - value: longPowerButtonPress
+      description: >-
+        Indicates that the device operating system restart is due to update long
+        power-button press.
+      name: longPowerButtonPress
+    - value: bootError
+      description: Indicates that the device operating system restart is due to boot error.
+      name: bootError
+    - value: update
+      description: Indicates that the device operating system restarted after an update.
+      name: update
+    - value: unknownFutureValue
+      description: Evolvable enumeration sentinel value. Do not use.
+      name: unknownFutureValue

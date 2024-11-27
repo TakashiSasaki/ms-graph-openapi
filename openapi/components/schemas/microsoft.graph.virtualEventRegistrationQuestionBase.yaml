@@ -1,0 +1,24 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: virtualEventRegistrationQuestionBase
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      displayName:
+        type: string
+        description: Display name of the registration question.
+        nullable: true
+      isRequired:
+        type: boolean
+        description: >-
+          Indicates whether an answer to the question is required. The default
+          value is false.
+        nullable: true
+      '@odata.type':
+        type: string
+    discriminator:
+      propertyName: '@odata.type'
+      mapping:
+        '#microsoft.graph.virtualEventRegistrationCustomQuestion': .\microsoft.graph.virtualEventRegistrationCustomQuestion.yaml
+        '#microsoft.graph.virtualEventRegistrationPredefinedQuestion': .\microsoft.graph.virtualEventRegistrationPredefinedQuestion.yaml

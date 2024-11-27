@@ -1,0 +1,21 @@
+allOf:
+  - $ref: .\microsoft.graph.mobileApp.yaml
+  - title: webApp
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      appUrl:
+        type: string
+        description: The web app URL. This property cannot be PATCHed.
+        nullable: true
+      useManagedBrowser:
+        type: boolean
+        description: >-
+          Whether or not to use managed browser. This property is only
+          applicable for Android and IOS.
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.webApp'
+    description: Contains properties and inherited properties for web apps.
+x-ms-discriminator-value: '#microsoft.graph.webApp'

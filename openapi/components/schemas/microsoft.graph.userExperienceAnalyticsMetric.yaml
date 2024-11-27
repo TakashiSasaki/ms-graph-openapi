@@ -1,0 +1,28 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: userExperienceAnalyticsMetric
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      unit:
+        type: string
+        description: >-
+          The unit of the user experience analytics metric. Examples: none,
+          percentage, count, seconds, score.
+        nullable: true
+      value:
+        oneOf:
+          - type: number
+            format: double
+            nullable: true
+          - type: string
+            nullable: true
+          - $ref: .\ReferenceNumeric.yaml
+        description: The value of the user experience analytics metric.
+      '@odata.type':
+        type: string
+    description: >-
+      The user experience analytics metric contains the score and units of a
+      metric of a user experience anlaytics category.
+x-ms-discriminator-value: '#microsoft.graph.userExperienceAnalyticsMetric'

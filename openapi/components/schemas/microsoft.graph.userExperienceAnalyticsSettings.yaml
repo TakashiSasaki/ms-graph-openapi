@@ -1,0 +1,17 @@
+title: userExperienceAnalyticsSettings
+required:
+  - '@odata.type'
+type: object
+properties:
+  configurationManagerDataConnectorConfigured:
+    type: boolean
+    description: >-
+      When TRUE, indicates Tenant attach is configured properly and System
+      Center Configuration Manager (SCCM) tenant attached devices will show up
+      in endpoint analytics reporting. When FALSE, indicates Tenant attach is
+      not configured. FALSE by default.
+  '@odata.type':
+    type: string
+description: >-
+  The user experience analytics insight is the recomendation to improve the user
+  experience analytics score.

@@ -1,0 +1,179 @@
+allOf:
+  - $ref: .\microsoft.graph.deviceConfiguration.yaml
+  - title: windows10EndpointProtectionConfiguration
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      applicationGuardAllowPersistence:
+        type: boolean
+        description: >-
+          Allow persisting user generated data inside the App Guard Containter
+          (favorites, cookies, web passwords, etc.)
+      applicationGuardAllowPrintToLocalPrinters:
+        type: boolean
+        description: Allow printing to Local Printers from Container
+      applicationGuardAllowPrintToNetworkPrinters:
+        type: boolean
+        description: Allow printing to Network Printers from Container
+      applicationGuardAllowPrintToPDF:
+        type: boolean
+        description: Allow printing to PDF from Container
+      applicationGuardAllowPrintToXPS:
+        type: boolean
+        description: Allow printing to XPS from Container
+      applicationGuardBlockClipboardSharing:
+        $ref: .\microsoft.graph.applicationGuardBlockClipboardSharingType.yaml
+      applicationGuardBlockFileTransfer:
+        $ref: .\microsoft.graph.applicationGuardBlockFileTransferType.yaml
+      applicationGuardBlockNonEnterpriseContent:
+        type: boolean
+        description: >-
+          Block enterprise sites to load non-enterprise content, such as third
+          party plug-ins
+      applicationGuardEnabled:
+        type: boolean
+        description: Enable Windows Defender Application Guard
+      applicationGuardForceAuditing:
+        type: boolean
+        description: >-
+          Force auditing will persist Windows logs and events to meet
+          security/compliance criteria (sample events are user login-logoff, use
+          of privilege rights, software installation, system changes, etc.)
+      appLockerApplicationControl:
+        $ref: .\microsoft.graph.appLockerApplicationControlType.yaml
+      bitLockerDisableWarningForOtherDiskEncryption:
+        type: boolean
+        description: >-
+          Allows the Admin to disable the warning prompt for other disk
+          encryption on the user machines.
+      bitLockerEnableStorageCardEncryptionOnMobile:
+        type: boolean
+        description: >-
+          Allows the admin to require encryption to be turned on using
+          BitLocker. This policy is valid only for a mobile SKU.
+      bitLockerEncryptDevice:
+        type: boolean
+        description: >-
+          Allows the admin to require encryption to be turned on using
+          BitLocker.
+      bitLockerRemovableDrivePolicy:
+        anyOf:
+          - $ref: .\microsoft.graph.bitLockerRemovableDrivePolicy.yaml
+          - type: object
+            nullable: true
+        description: BitLocker Removable Drive Policy.
+      defenderAdditionalGuardedFolders:
+        type: array
+        items:
+          type: string
+          nullable: true
+        description: List of folder paths to be added to the list of protected folders
+      defenderAttackSurfaceReductionExcludedPaths:
+        type: array
+        items:
+          type: string
+          nullable: true
+        description: >-
+          List of exe files and folders to be excluded from attack surface
+          reduction rules
+      defenderExploitProtectionXml:
+        type: string
+        description: >-
+          Xml content containing information regarding exploit protection
+          details.
+        format: base64url
+        nullable: true
+      defenderExploitProtectionXmlFileName:
+        type: string
+        description: Name of the file from which DefenderExploitProtectionXml was obtained.
+        nullable: true
+      defenderGuardedFoldersAllowedAppPaths:
+        type: array
+        items:
+          type: string
+          nullable: true
+        description: List of paths to exe that are allowed to access protected folders
+      defenderSecurityCenterBlockExploitProtectionOverride:
+        type: boolean
+        description: >-
+          Indicates whether or not to block user from overriding Exploit
+          Protection settings.
+      firewallBlockStatefulFTP:
+        type: boolean
+        description: Blocks stateful FTP connections to the device
+        nullable: true
+      firewallCertificateRevocationListCheckMethod:
+        $ref: >-
+          .\microsoft.graph.firewallCertificateRevocationListCheckMethodType.yaml
+      firewallIdleTimeoutForSecurityAssociationInSeconds:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: >-
+          Configures the idle timeout for security associations, in seconds,
+          from 300 to 3600 inclusive. This is the period after which security
+          associations will expire and be deleted. Valid values 300 to 3600
+        format: int32
+        nullable: true
+      firewallIPSecExemptionsAllowDHCP:
+        type: boolean
+        description: Configures IPSec exemptions to allow both IPv4 and IPv6 DHCP traffic
+      firewallIPSecExemptionsAllowICMP:
+        type: boolean
+        description: Configures IPSec exemptions to allow ICMP
+      firewallIPSecExemptionsAllowNeighborDiscovery:
+        type: boolean
+        description: >-
+          Configures IPSec exemptions to allow neighbor discovery IPv6 ICMP
+          type-codes
+      firewallIPSecExemptionsAllowRouterDiscovery:
+        type: boolean
+        description: >-
+          Configures IPSec exemptions to allow router discovery IPv6 ICMP
+          type-codes
+      firewallMergeKeyingModuleSettings:
+        type: boolean
+        description: >-
+          If an authentication set is not fully supported by a keying module,
+          direct the module to ignore only unsupported authentication suites
+          rather than the entire set
+        nullable: true
+      firewallPacketQueueingMethod:
+        $ref: .\microsoft.graph.firewallPacketQueueingMethodType.yaml
+      firewallPreSharedKeyEncodingMethod:
+        $ref: .\microsoft.graph.firewallPreSharedKeyEncodingMethodType.yaml
+      firewallProfileDomain:
+        anyOf:
+          - $ref: .\microsoft.graph.windowsFirewallNetworkProfile.yaml
+          - type: object
+            nullable: true
+        description: Configures the firewall profile settings for domain networks
+      firewallProfilePrivate:
+        anyOf:
+          - $ref: .\microsoft.graph.windowsFirewallNetworkProfile.yaml
+          - type: object
+            nullable: true
+        description: Configures the firewall profile settings for private networks
+      firewallProfilePublic:
+        anyOf:
+          - $ref: .\microsoft.graph.windowsFirewallNetworkProfile.yaml
+          - type: object
+            nullable: true
+        description: Configures the firewall profile settings for public networks
+      smartScreenBlockOverrideForFiles:
+        type: boolean
+        description: >-
+          Allows IT Admins to control whether users can can ignore SmartScreen
+          warnings and run malicious files.
+      smartScreenEnableInShell:
+        type: boolean
+        description: Allows IT Admins to configure SmartScreen for Windows.
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.windows10EndpointProtectionConfiguration'
+    description: >-
+      This topic provides descriptions of the declared methods, properties and
+      relationships exposed by the Windows10EndpointProtectionConfiguration
+      resource.
+x-ms-discriminator-value: '#microsoft.graph.windows10EndpointProtectionConfiguration'

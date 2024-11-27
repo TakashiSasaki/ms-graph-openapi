@@ -1,0 +1,28 @@
+title: trainingSetting
+required:
+  - '@odata.type'
+type: object
+properties:
+  settingType:
+    anyOf:
+      - $ref: .\microsoft.graph.trainingSettingType.yaml
+      - type: object
+        nullable: true
+    description: >-
+      Type of setting. Possible values are: microsoftCustom, microsoftManaged,
+      noTraining, custom, unknownFutureValue.
+  '@odata.type':
+    type: string
+discriminator:
+  propertyName: '@odata.type'
+  mapping:
+    '#microsoft.graph.customTrainingSetting': .\microsoft.graph.customTrainingSetting.yaml
+    '#microsoft.graph.microsoftCustomTrainingSetting': .\microsoft.graph.microsoftCustomTrainingSetting.yaml
+    '#microsoft.graph.microsoftManagedTrainingSetting': .\microsoft.graph.microsoftManagedTrainingSetting.yaml
+    '#microsoft.graph.microsoftTrainingAssignmentMapping': .\microsoft.graph.microsoftTrainingAssignmentMapping.yaml
+    '#microsoft.graph.noTrainingSetting': .\microsoft.graph.noTrainingSetting.yaml
+    microsoft.graph.customTrainingSetting: .\microsoft.graph.customTrainingSetting.yaml
+    microsoft.graph.microsoftCustomTrainingSetting: .\microsoft.graph.microsoftCustomTrainingSetting.yaml
+    microsoft.graph.microsoftManagedTrainingSetting: .\microsoft.graph.microsoftManagedTrainingSetting.yaml
+    microsoft.graph.microsoftTrainingAssignmentMapping: .\microsoft.graph.microsoftTrainingAssignmentMapping.yaml
+    microsoft.graph.noTrainingSetting: .\microsoft.graph.noTrainingSetting.yaml

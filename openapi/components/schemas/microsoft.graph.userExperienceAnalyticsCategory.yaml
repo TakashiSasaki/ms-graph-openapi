@@ -1,0 +1,26 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: userExperienceAnalyticsCategory
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      insights:
+        type: array
+        items:
+          $ref: .\microsoft.graph.userExperienceAnalyticsInsight.yaml
+        description: The insights for the category. Read-only.
+      metricValues:
+        type: array
+        items:
+          $ref: .\microsoft.graph.userExperienceAnalyticsMetric.yaml
+        description: >-
+          The metric values for the user experience analytics category.
+          Read-only.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+    description: >-
+      The user experience analytics category entity contains the scores and
+      insights for the various metrics of a category.
+x-ms-discriminator-value: '#microsoft.graph.userExperienceAnalyticsCategory'

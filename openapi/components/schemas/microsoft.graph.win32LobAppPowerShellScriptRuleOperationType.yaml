@@ -1,0 +1,36 @@
+title: win32LobAppPowerShellScriptRuleOperationType
+enum:
+  - notConfigured
+  - string
+  - dateTime
+  - integer
+  - float
+  - version
+  - boolean
+type: string
+description: Contains all supported Powershell Script output detection type.
+x-ms-enum:
+  name: win32LobAppPowerShellScriptRuleOperationType
+  modelAsString: false
+  values:
+    - value: notConfigured
+      description: Not configured.
+      name: notConfigured
+    - value: string
+      description: Output data type is string.
+      name: string
+    - value: dateTime
+      description: Output data type is date time.
+      name: dateTime
+    - value: integer
+      description: Output data type is integer.
+      name: integer
+    - value: float
+      description: Output data type is float.
+      name: float
+    - value: version
+      description: Output data type is version.
+      name: version
+    - value: boolean
+      description: Output data type is boolean.
+      name: boolean

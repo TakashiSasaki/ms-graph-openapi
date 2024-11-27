@@ -1,0 +1,25 @@
+title: userExperienceAnalyticsInsight
+required:
+  - '@odata.type'
+type: object
+properties:
+  insightId:
+    type: string
+    description: The unique identifier of the user experience analytics insight.
+    nullable: true
+  severity:
+    $ref: .\microsoft.graph.userExperienceAnalyticsInsightSeverity.yaml
+  userExperienceAnalyticsMetricId:
+    type: string
+    description: The unique identifier of the user experience analytics metric.
+    nullable: true
+  values:
+    type: array
+    items:
+      $ref: .\microsoft.graph.userExperienceAnalyticsInsightValue.yaml
+    description: The value of the user experience analytics insight.
+  '@odata.type':
+    type: string
+description: >-
+  The user experience analytics insight is the recomendation to improve the user
+  experience analytics score.
