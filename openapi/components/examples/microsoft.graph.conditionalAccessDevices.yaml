@@ -1,0 +1,3 @@
+value:
+  deviceFilter:
+    '@odata.type': microsoft.graph.conditionalAccessFilter

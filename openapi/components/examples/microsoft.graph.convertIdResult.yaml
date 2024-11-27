@@ -1,0 +1,5 @@
+value:
+  errorDetails:
+    '@odata.type': microsoft.graph.genericError
+  sourceId: String
+  targetId: String

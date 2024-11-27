@@ -1,0 +1,5 @@
+value:
+  controlCategory: String
+  controlName: String
+  description: String
+  score: '0'

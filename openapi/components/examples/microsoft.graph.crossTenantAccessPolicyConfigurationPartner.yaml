@@ -1,0 +1,20 @@
+value:
+  automaticUserConsentSettings:
+    '@odata.type': microsoft.graph.inboundOutboundPolicyConfiguration
+  b2bCollaborationInbound:
+    '@odata.type': microsoft.graph.crossTenantAccessPolicyB2BSetting
+  b2bCollaborationOutbound:
+    '@odata.type': microsoft.graph.crossTenantAccessPolicyB2BSetting
+  b2bDirectConnectInbound:
+    '@odata.type': microsoft.graph.crossTenantAccessPolicyB2BSetting
+  b2bDirectConnectOutbound:
+    '@odata.type': microsoft.graph.crossTenantAccessPolicyB2BSetting
+  identitySynchronization:
+    '@odata.type': microsoft.graph.crossTenantIdentitySyncPolicyPartner
+  inboundTrust:
+    '@odata.type': microsoft.graph.crossTenantAccessPolicyInboundTrust
+  isInMultiTenantOrganization: 'true'
+  isServiceProvider: 'true'
+  tenantId: String (identifier)
+  tenantRestrictions:
+    '@odata.type': microsoft.graph.crossTenantAccessPolicyTenantRestrictions

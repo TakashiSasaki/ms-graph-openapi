@@ -1,0 +1,11 @@
+value:
+  childFolders:
+    - '@odata.type': microsoft.graph.contactFolder
+  contacts:
+    - '@odata.type': microsoft.graph.contact
+  displayName: String
+  multiValueExtendedProperties:
+    - '@odata.type': microsoft.graph.multiValueLegacyExtendedProperty
+  parentFolderId: String
+  singleValueExtendedProperties:
+    - '@odata.type': microsoft.graph.singleValueLegacyExtendedProperty

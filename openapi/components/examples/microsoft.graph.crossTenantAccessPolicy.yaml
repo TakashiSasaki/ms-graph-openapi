@@ -1,0 +1,9 @@
+value:
+  allowedCloudEndpoints:
+    - String
+  default:
+    '@odata.type': microsoft.graph.crossTenantAccessPolicyConfigurationDefault
+  partners:
+    - '@odata.type': microsoft.graph.crossTenantAccessPolicyConfigurationPartner
+  templates:
+    '@odata.type': microsoft.graph.policyTemplate

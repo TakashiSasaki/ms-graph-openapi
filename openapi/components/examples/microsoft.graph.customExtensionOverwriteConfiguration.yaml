@@ -1,0 +1,3 @@
+value:
+  clientConfiguration:
+    '@odata.type': microsoft.graph.customExtensionClientConfiguration

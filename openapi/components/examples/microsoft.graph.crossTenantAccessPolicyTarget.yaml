@@ -1,0 +1,4 @@
+value:
+  target: String
+  targetType:
+    '@odata.type': microsoft.graph.crossTenantAccessPolicyTargetType

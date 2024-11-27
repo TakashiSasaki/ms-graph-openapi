@@ -1,0 +1,5 @@
+value:
+  applications:
+    '@odata.type': microsoft.graph.crossTenantAccessPolicyTargetConfiguration
+  usersAndGroups:
+    '@odata.type': microsoft.graph.crossTenantAccessPolicyTargetConfiguration

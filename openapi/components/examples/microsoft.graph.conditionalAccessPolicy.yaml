@@ -1,0 +1,14 @@
+value:
+  conditions:
+    '@odata.type': microsoft.graph.conditionalAccessConditionSet
+  createdDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  description: String
+  displayName: String
+  grantControls:
+    '@odata.type': microsoft.graph.conditionalAccessGrantControls
+  modifiedDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  sessionControls:
+    '@odata.type': microsoft.graph.conditionalAccessSessionControls
+  state:
+    '@odata.type': microsoft.graph.conditionalAccessPolicyState
+  templateId: String

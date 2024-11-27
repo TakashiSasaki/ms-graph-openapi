@@ -1,0 +1,5 @@
+value:
+  displayName: String
+  serviceManagementDetails:
+    - '@odata.type': microsoft.graph.delegatedAdminServiceManagementDetail
+  tenantId: String

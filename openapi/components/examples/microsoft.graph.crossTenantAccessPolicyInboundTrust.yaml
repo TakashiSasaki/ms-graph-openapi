@@ -1,0 +1,4 @@
+value:
+  isCompliantDeviceAccepted: 'true'
+  isHybridAzureADJoinedDeviceAccepted: 'true'
+  isMfaAccepted: 'true'

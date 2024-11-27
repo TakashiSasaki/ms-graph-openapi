@@ -1,0 +1,7 @@
+value:
+  conversationMemberRoles:
+    - String
+  conversationMemberUser:
+    '@odata.type': microsoft.graph.teamworkUserIdentity
+  initiator:
+    '@odata.type': microsoft.graph.identitySet

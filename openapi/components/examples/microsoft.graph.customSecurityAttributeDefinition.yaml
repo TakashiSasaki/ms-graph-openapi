@@ -1,0 +1,11 @@
+value:
+  allowedValues:
+    - '@odata.type': microsoft.graph.allowedValue
+  attributeSet: String
+  description: String
+  isCollection: 'true'
+  isSearchable: 'true'
+  name: String
+  status: String
+  type: String
+  usePreDefinedValuesOnly: 'true'

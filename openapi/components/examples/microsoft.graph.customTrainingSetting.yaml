@@ -1,0 +1,7 @@
+value:
+  assignedTo:
+    - '@odata.type': microsoft.graph.trainingAssignedTo
+  description: String
+  displayName: String
+  durationInMinutes: '0'
+  url: String

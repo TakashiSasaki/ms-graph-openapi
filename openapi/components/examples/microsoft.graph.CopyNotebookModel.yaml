@@ -1,0 +1,20 @@
+value:
+  createdBy: String
+  createdByIdentity:
+    '@odata.type': microsoft.graph.identitySet
+  createdTime: '0001-01-01T00:00:00.0000000+00:00'
+  id: String
+  isDefault: 'true'
+  isShared: 'true'
+  lastModifiedBy: String
+  lastModifiedByIdentity:
+    '@odata.type': microsoft.graph.identitySet
+  lastModifiedTime: '0001-01-01T00:00:00.0000000+00:00'
+  links:
+    '@odata.type': microsoft.graph.notebookLinks
+  name: String
+  sectionGroupsUrl: String
+  sectionsUrl: String
+  self: String
+  userRole:
+    '@odata.type': microsoft.graph.onenoteUserRole

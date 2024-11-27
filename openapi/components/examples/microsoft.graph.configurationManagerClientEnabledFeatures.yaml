@@ -1,0 +1,7 @@
+value:
+  compliancePolicy: 'true'
+  deviceConfiguration: 'true'
+  inventory: 'true'
+  modernApps: 'true'
+  resourceAccess: 'true'
+  windowsUpdateForBusiness: 'true'

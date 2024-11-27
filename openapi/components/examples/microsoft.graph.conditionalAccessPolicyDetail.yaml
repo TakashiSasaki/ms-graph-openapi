@@ -1,0 +1,7 @@
+value:
+  conditions:
+    '@odata.type': microsoft.graph.conditionalAccessConditionSet
+  grantControls:
+    '@odata.type': microsoft.graph.conditionalAccessGrantControls
+  sessionControls:
+    '@odata.type': microsoft.graph.conditionalAccessSessionControls

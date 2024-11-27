@@ -1,0 +1,7 @@
+value:
+  attributeCollection:
+    - '@odata.type': microsoft.graph.keyValue
+  attributeCollectionRelativeUrl: String
+  registrationCampaign:
+    - '@odata.type': microsoft.graph.keyValue
+  registrationCampaignRelativeUrl: String

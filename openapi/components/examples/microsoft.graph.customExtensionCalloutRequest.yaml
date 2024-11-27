@@ -1,0 +1,5 @@
+value:
+  data:
+    '@odata.type': microsoft.graph.customExtensionData
+  source: String
+  type: String

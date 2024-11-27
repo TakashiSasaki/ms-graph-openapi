@@ -1,0 +1,3 @@
+value:
+  devices:
+    '@odata.type': microsoft.graph.devicesFilter

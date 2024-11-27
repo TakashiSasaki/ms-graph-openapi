@@ -1,0 +1,5 @@
+value:
+  excludePlatforms:
+    - '@odata.type': microsoft.graph.conditionalAccessDevicePlatform
+  includePlatforms:
+    - '@odata.type': microsoft.graph.conditionalAccessDevicePlatform

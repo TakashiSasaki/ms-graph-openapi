@@ -1,0 +1,50 @@
+value:
+  assistantName: String
+  birthday: '0001-01-01T00:00:00.0000000+00:00'
+  businessAddress:
+    '@odata.type': microsoft.graph.physicalAddress
+  businessHomePage: String
+  businessPhones:
+    - String
+  children:
+    - String
+  companyName: String
+  department: String
+  displayName: String
+  emailAddresses:
+    - '@odata.type': microsoft.graph.emailAddress
+  extensions:
+    - '@odata.type': microsoft.graph.extension
+  fileAs: String
+  generation: String
+  givenName: String
+  homeAddress:
+    '@odata.type': microsoft.graph.physicalAddress
+  homePhones:
+    - String
+  imAddresses:
+    - String
+  initials: String
+  jobTitle: String
+  manager: String
+  middleName: String
+  mobilePhone: String
+  multiValueExtendedProperties:
+    - '@odata.type': microsoft.graph.multiValueLegacyExtendedProperty
+  nickName: String
+  officeLocation: String
+  otherAddress:
+    '@odata.type': microsoft.graph.physicalAddress
+  parentFolderId: String
+  personalNotes: String
+  photo:
+    '@odata.type': microsoft.graph.profilePhoto
+  profession: String
+  singleValueExtendedProperties:
+    - '@odata.type': microsoft.graph.singleValueLegacyExtendedProperty
+  spouseName: String
+  surname: String
+  title: String
+  yomiCompanyName: String
+  yomiGivenName: String
+  yomiSurname: String

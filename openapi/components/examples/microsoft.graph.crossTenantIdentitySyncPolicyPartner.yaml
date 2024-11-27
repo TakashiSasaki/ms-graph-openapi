@@ -1,0 +1,5 @@
+value:
+  displayName: String
+  tenantId: String (identifier)
+  userSyncInbound:
+    '@odata.type': microsoft.graph.crossTenantUserSyncInbound

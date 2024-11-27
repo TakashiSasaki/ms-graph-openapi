@@ -1,0 +1,8 @@
+value:
+  allowedToCreateApps: 'true'
+  allowedToCreateSecurityGroups: 'true'
+  allowedToCreateTenants: 'true'
+  allowedToReadBitlockerKeysForOwnedDevice: 'true'
+  allowedToReadOtherUsers: 'true'
+  permissionGrantPoliciesAssigned:
+    - String

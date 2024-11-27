@@ -1,0 +1,7 @@
+value:
+  customExtensionId: String
+  detail: String
+  externalCorrelationId: String
+  id: String
+  status:
+    '@odata.type': microsoft.graph.customExtensionCalloutInstanceStatus

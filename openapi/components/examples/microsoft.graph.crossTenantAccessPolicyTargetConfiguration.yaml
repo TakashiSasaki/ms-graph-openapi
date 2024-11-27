@@ -1,0 +1,5 @@
+value:
+  accessType:
+    '@odata.type': microsoft.graph.crossTenantAccessPolicyTargetConfigurationAccessType
+  targets:
+    - '@odata.type': microsoft.graph.crossTenantAccessPolicyTarget
