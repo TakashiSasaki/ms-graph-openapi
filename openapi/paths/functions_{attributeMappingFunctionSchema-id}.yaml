@@ -1,0 +1,97 @@
+description: >-
+  Provides operations to manage the collection of attributeMappingFunctionSchema
+  entities.
+get:
+  tags:
+    - functions.attributeMappingFunctionSchema
+  summary: Get entity from functions by key
+  operationId: functions.attributeMappingFunctionSchema.GetAttributeMappingFunctionSchema
+  parameters:
+    - name: $select
+      in: query
+      description: Select properties to be returned
+      style: form
+      explode: false
+      schema:
+        uniqueItems: true
+        type: array
+        items:
+          type: string
+    - name: $expand
+      in: query
+      description: Expand related entities
+      style: form
+      explode: false
+      schema:
+        uniqueItems: true
+        type: array
+        items:
+          type: string
+  responses:
+    2XX:
+      description: Retrieved entity
+      content:
+        application/json:
+          schema:
+            $ref: >-
+              ..\components\schemas\microsoft.graph.attributeMappingFunctionSchema.yaml
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: operation
+patch:
+  tags:
+    - functions.attributeMappingFunctionSchema
+  summary: Update entity in functions
+  operationId: >-
+    functions.attributeMappingFunctionSchema.UpdateAttributeMappingFunctionSchema
+  requestBody:
+    description: New property values
+    content:
+      application/json:
+        schema:
+          $ref: >-
+            ..\components\schemas\microsoft.graph.attributeMappingFunctionSchema.yaml
+    required: true
+  responses:
+    2XX:
+      description: Success
+      content:
+        application/json:
+          schema:
+            $ref: >-
+              ..\components\schemas\microsoft.graph.attributeMappingFunctionSchema.yaml
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: operation
+delete:
+  tags:
+    - functions.attributeMappingFunctionSchema
+  summary: Delete entity from functions
+  operationId: >-
+    functions.attributeMappingFunctionSchema.DeleteAttributeMappingFunctionSchema
+  parameters:
+    - name: If-Match
+      in: header
+      description: ETag
+      schema:
+        type: string
+  responses:
+    '204':
+      description: Success
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: operation
+parameters:
+  - name: attributeMappingFunctionSchema-id
+    in: path
+    description: The unique identifier of attributeMappingFunctionSchema
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: attributeMappingFunctionSchema

@@ -1,0 +1,59 @@
+description: Provides operations to call the assignLicense method.
+post:
+  tags:
+    - groups.group
+  summary: Invoke action assignLicense
+  description: >-
+    Add or remove licenses on the group. Licenses assigned to the group will be
+    assigned to all users in the group. Group-based licensing is an alternative
+    to direct user licensing. To learn more about group-based licensing, see
+    What is group-based licensing in Microsoft Entra ID. To get the
+    subscriptions available in the directory, perform a GET subscribedSkus
+    request.
+  externalDocs:
+    description: Find more info here
+    url: >-
+      https://learn.microsoft.com/graph/api/group-assignlicense?view=graph-rest-1.0
+  operationId: groups.group.assignLicense
+  requestBody:
+    description: Action parameters
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            addLicenses:
+              type: array
+              items:
+                $ref: ..\components\schemas\microsoft.graph.assignedLicense.yaml
+            removeLicenses:
+              type: array
+              items:
+                pattern: >-
+                  ^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$
+                type: string
+                format: uuid
+    required: true
+  responses:
+    2XX:
+      description: Success
+      content:
+        application/json:
+          schema:
+            anyOf:
+              - $ref: ..\components\schemas\microsoft.graph.group.yaml
+              - type: object
+                nullable: true
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: action
+parameters:
+  - name: group-id
+    in: path
+    description: The unique identifier of group
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: group

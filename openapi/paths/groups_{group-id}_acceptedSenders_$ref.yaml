@@ -1,0 +1,104 @@
+description: Provides operations to manage the collection of group entities.
+get:
+  tags:
+    - groups.directoryObject
+  summary: List acceptedSenders
+  description: >-
+    Users in the accepted senders list can post to conversations of the group
+    (identified in the GET request URL).
+
+    Make sure you do not specify the same user or group in the accepted senders
+    and rejected senders lists, otherwise you will get an error.
+  externalDocs:
+    description: Find more info here
+    url: >-
+      https://learn.microsoft.com/graph/api/group-list-acceptedsenders?view=graph-rest-1.0
+  operationId: groups.ListRefAcceptedSenders
+  parameters:
+    - $ref: ..\components\parameters\top.yaml
+    - $ref: ..\components\parameters\skip.yaml
+    - $ref: ..\components\parameters\search.yaml
+    - $ref: ..\components\parameters\filter.yaml
+    - $ref: ..\components\parameters\count.yaml
+    - name: $orderby
+      in: query
+      description: Order items by property values
+      style: form
+      explode: false
+      schema:
+        uniqueItems: true
+        type: array
+        items:
+          type: string
+  responses:
+    2XX:
+      $ref: ..\components\responses\StringCollectionResponse.yaml
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-pageable:
+    nextLinkName: '@odata.nextLink'
+    operationName: listMore
+  x-ms-docs-operation-type: operation
+post:
+  tags:
+    - groups.directoryObject
+  summary: Create acceptedSender
+  description: >-
+    Specify the user or group in @odata.id in the request body. Users in the
+    accepted senders list can post to conversations of the group. Make sure you
+    don't specify the same user or group in the accepted senders and rejected
+    senders lists, otherwise you'll get an error.
+  externalDocs:
+    description: Find more info here
+    url: >-
+      https://learn.microsoft.com/graph/api/group-post-acceptedsenders?view=graph-rest-1.0
+  operationId: groups.CreateRefAcceptedSenders
+  requestBody:
+    $ref: ..\components\requestBodies\refPostBody.yaml
+  responses:
+    '204':
+      description: Success
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: operation
+delete:
+  tags:
+    - groups.directoryObject
+  summary: Remove acceptedSender
+  externalDocs:
+    description: Find more info here
+    url: >-
+      https://learn.microsoft.com/graph/api/group-delete-acceptedsenders?view=graph-rest-1.0
+  operationId: groups.DeleteRefAcceptedSenders
+  parameters:
+    - name: If-Match
+      in: header
+      description: ETag
+      schema:
+        type: string
+    - name: '@id'
+      in: query
+      description: The delete Uri
+      required: true
+      schema:
+        type: string
+  responses:
+    '204':
+      description: Success
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: operation
+parameters:
+  - name: group-id
+    in: path
+    description: The unique identifier of group
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: group

@@ -1,0 +1,45 @@
+description: Provides operations to call the dismissReminder method.
+post:
+  tags:
+    - groups.calendar
+  summary: Invoke action dismissReminder
+  description: Dismiss a reminder that has been triggered for an event in a user calendar.
+  externalDocs:
+    description: Find more info here
+    url: >-
+      https://learn.microsoft.com/graph/api/event-dismissreminder?view=graph-rest-1.0
+  operationId: groups.group.calendar.events.event.dismissReminder
+  responses:
+    '204':
+      description: Success
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: action
+parameters:
+  - name: group-id
+    in: path
+    description: The unique identifier of group
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: group
+  - name: event-id
+    in: path
+    description: The unique identifier of event
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: event
+x-ms-docs-grouped-path:
+  - >-
+    /groups/{group-id}/calendar/calendarView/{event-id}/instances/{event-id1}/dismissReminder
+  - /groups/{group-id}/calendar/calendarView/{event-id}/dismissReminder
+  - >-
+    /groups/{group-id}/calendar/events/{event-id}/instances/{event-id1}/dismissReminder
+  - >-
+    /groups/{group-id}/calendarView/{event-id}/instances/{event-id1}/dismissReminder
+  - /groups/{group-id}/calendarView/{event-id}/dismissReminder
+  - /groups/{group-id}/events/{event-id}/instances/{event-id1}/dismissReminder
+  - /groups/{group-id}/events/{event-id}/dismissReminder

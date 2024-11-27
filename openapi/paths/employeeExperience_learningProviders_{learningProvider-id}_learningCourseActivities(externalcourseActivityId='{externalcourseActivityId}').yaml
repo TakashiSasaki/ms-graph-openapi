@@ -1,0 +1,117 @@
+description: >-
+  Provides operations to manage the learningCourseActivities property of the
+  microsoft.graph.learningProvider entity.
+get:
+  tags:
+    - employeeExperience.learningProvider
+  summary: Get learningCourseActivities from employeeExperience
+  operationId: >-
+    employeeExperience.learningProviders.learningCourseActivities.GetByExternalcourseActivityId
+  parameters:
+    - name: $select
+      in: query
+      description: Select properties to be returned
+      style: form
+      explode: false
+      schema:
+        uniqueItems: true
+        type: array
+        items:
+          type: string
+    - name: $expand
+      in: query
+      description: Expand related entities
+      style: form
+      explode: false
+      schema:
+        uniqueItems: true
+        type: array
+        items:
+          type: string
+  responses:
+    2XX:
+      description: Retrieved navigation property
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\microsoft.graph.learningCourseActivity.yaml
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: operation
+patch:
+  tags:
+    - employeeExperience.learningProvider
+  summary: Update learningCourseActivity
+  description: 'Update the properties of a learningCourseActivity object. '
+  externalDocs:
+    description: Find more info here
+    url: >-
+      https://learn.microsoft.com/graph/api/learningcourseactivity-update?view=graph-rest-1.0
+  operationId: >-
+    employeeExperience.learningProviders.learningCourseActivities.UpdateByExternalcourseActivityId
+  requestBody:
+    description: New navigation property values
+    content:
+      application/json:
+        schema:
+          $ref: ..\components\schemas\microsoft.graph.learningCourseActivity.yaml
+    required: true
+  responses:
+    2XX:
+      description: Success
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\microsoft.graph.learningCourseActivity.yaml
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: operation
+delete:
+  tags:
+    - employeeExperience.learningProvider
+  summary: Delete learningCourseActivity
+  description: >-
+    Delete a learningCourseActivity object using the course activity ID of
+    either an assignment or a self-initiated activity.
+  externalDocs:
+    description: Find more info here
+    url: >-
+      https://learn.microsoft.com/graph/api/learningcourseactivity-delete?view=graph-rest-1.0
+  operationId: >-
+    employeeExperience.learningProviders.learningCourseActivities.DeleteByExternalcourseActivityId
+  parameters:
+    - name: If-Match
+      in: header
+      description: ETag
+      schema:
+        type: string
+  responses:
+    '204':
+      description: Success
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: operation
+parameters:
+  - name: learningProvider-id
+    in: path
+    description: The unique identifier of learningProvider
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: learningProvider
+  - name: externalcourseActivityId
+    in: path
+    description: Alternate key of learningCourseActivity
+    required: true
+    schema:
+      type: string
+      nullable: true
+x-ms-docs-grouped-path:
+  - >-
+    /employeeExperience/learningProviders/{learningProvider-id}/learningCourseActivities/{learningCourseActivity-id}

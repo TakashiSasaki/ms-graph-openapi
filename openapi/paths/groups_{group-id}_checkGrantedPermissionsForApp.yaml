@@ -1,0 +1,40 @@
+description: Provides operations to call the checkGrantedPermissionsForApp method.
+post:
+  tags:
+    - groups.group
+  summary: Invoke action checkGrantedPermissionsForApp
+  operationId: groups.group.checkGrantedPermissionsForApp
+  responses:
+    2XX:
+      description: Success
+      content:
+        application/json:
+          schema:
+            title: Collection of resourceSpecificPermissionGrant
+            type: object
+            allOf:
+              - $ref: >-
+                  ..\components\schemas\BaseCollectionPaginationCountResponse.yaml
+              - type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: >-
+                        ..\components\schemas\microsoft.graph.resourceSpecificPermissionGrant.yaml
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: action
+  x-ms-pageable:
+    nextLinkName: '@odata.nextLink'
+    operationName: listMore
+parameters:
+  - name: group-id
+    in: path
+    description: The unique identifier of group
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: group

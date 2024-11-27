@@ -1,0 +1,66 @@
+description: >-
+  Provides operations to manage the calendar property of the
+  microsoft.graph.event entity.
+get:
+  tags:
+    - groups.calendar
+  summary: Get calendar from groups
+  description: The calendar that contains the event. Navigation property. Read-only.
+  operationId: groups.calendar.calendarView.GetCalendar
+  parameters:
+    - name: $select
+      in: query
+      description: Select properties to be returned
+      style: form
+      explode: false
+      schema:
+        uniqueItems: true
+        type: array
+        items:
+          type: string
+    - name: $expand
+      in: query
+      description: Expand related entities
+      style: form
+      explode: false
+      schema:
+        uniqueItems: true
+        type: array
+        items:
+          type: string
+  responses:
+    2XX:
+      description: Retrieved navigation property
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\microsoft.graph.calendar.yaml
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: operation
+parameters:
+  - name: group-id
+    in: path
+    description: The unique identifier of group
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: group
+  - name: event-id
+    in: path
+    description: The unique identifier of event
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: event
+x-ms-docs-grouped-path:
+  - >-
+    /groups/{group-id}/calendar/calendarView/{event-id}/instances/{event-id1}/calendar
+  - /groups/{group-id}/calendar/events/{event-id}/calendar
+  - /groups/{group-id}/calendar/events/{event-id}/instances/{event-id1}/calendar
+  - /groups/{group-id}/calendarView/{event-id}/calendar
+  - /groups/{group-id}/calendarView/{event-id}/instances/{event-id1}/calendar
+  - /groups/{group-id}/events/{event-id}/calendar
+  - /groups/{group-id}/events/{event-id}/instances/{event-id1}/calendar

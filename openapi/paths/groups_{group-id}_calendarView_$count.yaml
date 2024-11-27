@@ -1,0 +1,40 @@
+description: Provides operations to count the resources in the collection.
+get:
+  tags:
+    - groups.event
+  summary: Get the number of the resource
+  operationId: groups.calendarView.GetCount-d2ad
+  parameters:
+    - name: startDateTime
+      in: query
+      description: >-
+        The start date and time of the time range, represented in ISO 8601
+        format. For example, 2019-11-08T19:00:00-08:00
+      required: true
+      schema:
+        type: string
+    - name: endDateTime
+      in: query
+      description: >-
+        The end date and time of the time range, represented in ISO 8601 format.
+        For example, 2019-11-08T20:00:00-08:00
+      required: true
+      schema:
+        type: string
+    - $ref: ..\components\parameters\search.yaml
+    - $ref: ..\components\parameters\filter.yaml
+  responses:
+    2XX:
+      $ref: ..\components\responses\ODataCountResponse.yaml
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+parameters:
+  - name: group-id
+    in: path
+    description: The unique identifier of group
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: group

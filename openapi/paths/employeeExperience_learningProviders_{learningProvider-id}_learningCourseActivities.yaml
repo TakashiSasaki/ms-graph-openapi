@@ -1,0 +1,107 @@
+description: >-
+  Provides operations to manage the learningCourseActivities property of the
+  microsoft.graph.learningProvider entity.
+get:
+  tags:
+    - employeeExperience.learningProvider
+  summary: Get learningCourseActivity
+  description: >-
+    Get the specified learningCourseActivity object using either an ID or an
+    externalCourseActivityId of the learning provider, or a courseActivityId of
+    a user.
+  externalDocs:
+    description: Find more info here
+    url: >-
+      https://learn.microsoft.com/graph/api/learningcourseactivity-get?view=graph-rest-1.0
+  operationId: employeeExperience.learningProviders.ListLearningCourseActivities
+  parameters:
+    - $ref: ..\components\parameters\top.yaml
+    - $ref: ..\components\parameters\skip.yaml
+    - $ref: ..\components\parameters\search.yaml
+    - $ref: ..\components\parameters\filter.yaml
+    - $ref: ..\components\parameters\count.yaml
+    - name: $orderby
+      in: query
+      description: Order items by property values
+      style: form
+      explode: false
+      schema:
+        uniqueItems: true
+        type: array
+        items:
+          type: string
+    - name: $select
+      in: query
+      description: Select properties to be returned
+      style: form
+      explode: false
+      schema:
+        uniqueItems: true
+        type: array
+        items:
+          type: string
+    - name: $expand
+      in: query
+      description: Expand related entities
+      style: form
+      explode: false
+      schema:
+        uniqueItems: true
+        type: array
+        items:
+          type: string
+  responses:
+    2XX:
+      $ref: >-
+        ..\components\responses\microsoft.graph.learningCourseActivityCollectionResponse.yaml
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-pageable:
+    nextLinkName: '@odata.nextLink'
+    operationName: listMore
+  x-ms-docs-operation-type: operation
+post:
+  tags:
+    - employeeExperience.learningProvider
+  summary: Create learningCourseActivity
+  description: >-
+    Create a new learningCourseActivity object. A learning course activity can
+    be one of two types: 
+
+    - Assignment
+
+    - Self-initiated Use this method to create either type of activity.
+  externalDocs:
+    description: Find more info here
+    url: >-
+      https://learn.microsoft.com/graph/api/employeeexperienceuser-post-learningcourseactivities?view=graph-rest-1.0
+  operationId: employeeExperience.learningProviders.CreateLearningCourseActivities
+  requestBody:
+    description: New navigation property
+    content:
+      application/json:
+        schema:
+          $ref: ..\components\schemas\microsoft.graph.learningCourseActivity.yaml
+    required: true
+  responses:
+    2XX:
+      description: Created navigation property.
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\microsoft.graph.learningCourseActivity.yaml
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: operation
+parameters:
+  - name: learningProvider-id
+    in: path
+    description: The unique identifier of learningProvider
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: learningProvider

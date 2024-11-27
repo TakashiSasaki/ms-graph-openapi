@@ -1,0 +1,94 @@
+description: >-
+  Provides operations to manage the learningProviders property of the
+  microsoft.graph.employeeExperience entity.
+get:
+  tags:
+    - employeeExperience.learningProvider
+  summary: List learningProviders
+  description: >-
+    Get a list of the learningProvider resources registered in Viva Learning for
+    a tenant.
+  externalDocs:
+    description: Find more info here
+    url: >-
+      https://learn.microsoft.com/graph/api/employeeexperience-list-learningproviders?view=graph-rest-1.0
+  operationId: employeeExperience.ListLearningProviders
+  parameters:
+    - $ref: ..\components\parameters\top.yaml
+    - $ref: ..\components\parameters\skip.yaml
+    - $ref: ..\components\parameters\search.yaml
+    - $ref: ..\components\parameters\filter.yaml
+    - $ref: ..\components\parameters\count.yaml
+    - name: $orderby
+      in: query
+      description: Order items by property values
+      style: form
+      explode: false
+      schema:
+        uniqueItems: true
+        type: array
+        items:
+          type: string
+    - name: $select
+      in: query
+      description: Select properties to be returned
+      style: form
+      explode: false
+      schema:
+        uniqueItems: true
+        type: array
+        items:
+          type: string
+    - name: $expand
+      in: query
+      description: Expand related entities
+      style: form
+      explode: false
+      schema:
+        uniqueItems: true
+        type: array
+        items:
+          type: string
+  responses:
+    2XX:
+      $ref: >-
+        ..\components\responses\microsoft.graph.learningProviderCollectionResponse.yaml
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-pageable:
+    nextLinkName: '@odata.nextLink'
+    operationName: listMore
+  x-ms-docs-operation-type: operation
+post:
+  tags:
+    - employeeExperience.learningProvider
+  summary: Create learningProvider
+  description: >-
+    Create a new learningProvider object and register it with Viva Learning
+    using the specified display name and logos for different themes.
+  externalDocs:
+    description: Find more info here
+    url: >-
+      https://learn.microsoft.com/graph/api/employeeexperience-post-learningproviders?view=graph-rest-1.0
+  operationId: employeeExperience.CreateLearningProviders
+  requestBody:
+    description: New navigation property
+    content:
+      application/json:
+        schema:
+          $ref: ..\components\schemas\microsoft.graph.learningProvider.yaml
+    required: true
+  responses:
+    2XX:
+      description: Created navigation property.
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\microsoft.graph.learningProvider.yaml
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: operation

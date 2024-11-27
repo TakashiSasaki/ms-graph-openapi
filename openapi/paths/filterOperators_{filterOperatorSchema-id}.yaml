@@ -1,0 +1,90 @@
+description: Provides operations to manage the collection of filterOperatorSchema entities.
+get:
+  tags:
+    - filterOperators.filterOperatorSchema
+  summary: Get entity from filterOperators by key
+  operationId: filterOperators.filterOperatorSchema.GetFilterOperatorSchema
+  parameters:
+    - name: $select
+      in: query
+      description: Select properties to be returned
+      style: form
+      explode: false
+      schema:
+        uniqueItems: true
+        type: array
+        items:
+          type: string
+    - name: $expand
+      in: query
+      description: Expand related entities
+      style: form
+      explode: false
+      schema:
+        uniqueItems: true
+        type: array
+        items:
+          type: string
+  responses:
+    2XX:
+      description: Retrieved entity
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\microsoft.graph.filterOperatorSchema.yaml
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: operation
+patch:
+  tags:
+    - filterOperators.filterOperatorSchema
+  summary: Update entity in filterOperators
+  operationId: filterOperators.filterOperatorSchema.UpdateFilterOperatorSchema
+  requestBody:
+    description: New property values
+    content:
+      application/json:
+        schema:
+          $ref: ..\components\schemas\microsoft.graph.filterOperatorSchema.yaml
+    required: true
+  responses:
+    2XX:
+      description: Success
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\microsoft.graph.filterOperatorSchema.yaml
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: operation
+delete:
+  tags:
+    - filterOperators.filterOperatorSchema
+  summary: Delete entity from filterOperators
+  operationId: filterOperators.filterOperatorSchema.DeleteFilterOperatorSchema
+  parameters:
+    - name: If-Match
+      in: header
+      description: ETag
+      schema:
+        type: string
+  responses:
+    '204':
+      description: Success
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: operation
+parameters:
+  - name: filterOperatorSchema-id
+    in: path
+    description: The unique identifier of filterOperatorSchema
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: filterOperatorSchema
