@@ -1,0 +1,111 @@
+description: Provides operations to call the delta method.
+get:
+  tags:
+    - groups.team
+  summary: Invoke function delta
+  description: >-
+    Get the list of messages from all chats in which a user is a participant,
+    including one-on-one chats, group chats, and meeting chats. When you use
+    delta query, you can get new or updated messages. To get the replies for a
+    message, use the list message replies or the get message reply operations. A
+    GET request with the delta function returns one of the following: State
+    tokens are opaque to the client. To proceed with a round of change tracking,
+    copy and apply the @odata.nextLink or @odata.deltaLink URL returned from the
+    last GET request to the next delta function call. An @odata.deltaLink
+    returned in a response signifies that the current round of change tracking
+    is complete. You can save and use the @odata.deltaLink URL when you begin to
+    retrieve more changes (messages changed or posted after you acquire
+    @odata.deltaLink). For more information, see the delta query documentation.
+  externalDocs:
+    description: Find more info here
+    url: >-
+      https://learn.microsoft.com/graph/api/chatmessage-delta?view=graph-rest-1.0
+  operationId: groups.group.team.primaryChannel.messages.delta
+  parameters:
+    - $ref: ..\components\parameters\top.yaml
+    - $ref: ..\components\parameters\skip.yaml
+    - $ref: ..\components\parameters\search.yaml
+    - $ref: ..\components\parameters\filter.yaml
+    - $ref: ..\components\parameters\count.yaml
+    - name: $select
+      in: query
+      description: Select properties to be returned
+      style: form
+      explode: false
+      schema:
+        uniqueItems: true
+        type: array
+        items:
+          type: string
+    - name: $orderby
+      in: query
+      description: Order items by property values
+      style: form
+      explode: false
+      schema:
+        uniqueItems: true
+        type: array
+        items:
+          type: string
+    - name: $expand
+      in: query
+      description: Expand related entities
+      style: form
+      explode: false
+      schema:
+        uniqueItems: true
+        type: array
+        items:
+          type: string
+  responses:
+    2XX:
+      description: Success
+      content:
+        application/json:
+          schema:
+            title: Collection of chatMessage
+            type: object
+            allOf:
+              - $ref: ..\components\schemas\BaseDeltaFunctionResponse.yaml
+              - type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: ..\components\schemas\microsoft.graph.chatMessage.yaml
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: function
+  x-ms-pageable:
+    nextLinkName: '@odata.nextLink'
+    operationName: listMore
+parameters:
+  - name: group-id
+    in: path
+    description: The unique identifier of group
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: group
+x-ms-docs-grouped-path:
+  - /groups/{group-id}/calendar/calendarView/{event-id}/instances/delta()
+  - /groups/{group-id}/calendar/calendarView/delta()
+  - /groups/{group-id}/calendar/events/{event-id}/instances/delta()
+  - /groups/{group-id}/calendar/events/delta()
+  - /groups/{group-id}/calendarView/{event-id}/instances/delta()
+  - /groups/{group-id}/calendarView/delta()
+  - /groups/{group-id}/events/{event-id}/instances/delta()
+  - /groups/{group-id}/events/delta()
+  - /groups/{group-id}/sites/{site-id}/lists/{list-id}/items/delta()
+  - >-
+    /groups/{group-id}/sites/{site-id}/lists/{list-id}/items/delta(token='{token}')
+  - /groups/{group-id}/sites/delta()
+  - >-
+    /groups/{group-id}/team/channels/{channel-id}/messages/{chatMessage-id}/replies/delta()
+  - /groups/{group-id}/team/channels/{channel-id}/messages/delta()
+  - >-
+    /groups/{group-id}/team/primaryChannel/messages/{chatMessage-id}/replies/delta()
+  - /groups/delta()
+  - /groups/delta()

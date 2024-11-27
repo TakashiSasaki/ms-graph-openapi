@@ -1,0 +1,55 @@
+description: Provides operations to call the unsetReaction method.
+post:
+  tags:
+    - groups.team
+  summary: Invoke action unsetReaction
+  operationId: >-
+    groups.group.team.primaryChannel.messages.chatMessage.replies.chatMessage.unsetReaction
+  requestBody:
+    description: Action parameters
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            reactionType:
+              type: string
+              nullable: true
+    required: true
+  responses:
+    '204':
+      description: Success
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: action
+parameters:
+  - name: group-id
+    in: path
+    description: The unique identifier of group
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: group
+  - name: chatMessage-id
+    in: path
+    description: The unique identifier of chatMessage
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: chatMessage
+  - name: chatMessage-id1
+    in: path
+    description: The unique identifier of chatMessage
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: chatMessage
+x-ms-docs-grouped-path:
+  - >-
+    /groups/{group-id}/team/channels/{channel-id}/messages/{chatMessage-id}/unsetReaction
+  - >-
+    /groups/{group-id}/team/channels/{channel-id}/messages/{chatMessage-id}/replies/{chatMessage-id1}/unsetReaction
+  - >-
+    /groups/{group-id}/team/primaryChannel/messages/{chatMessage-id}/unsetReaction

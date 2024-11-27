@@ -1,0 +1,82 @@
+description: >-
+  Provides operations to manage the posts property of the
+  microsoft.graph.conversationThread entity.
+get:
+  tags:
+    - groups.conversationThread
+  summary: List posts
+  description: >-
+    Get the posts of the specified thread. You can specify both the parent
+    conversation and the thread, or,
+
+    you can specify the thread without referencing the parent conversation.
+  externalDocs:
+    description: Find more info here
+    url: >-
+      https://learn.microsoft.com/graph/api/conversationthread-list-posts?view=graph-rest-1.0
+  operationId: groups.threads.ListPosts
+  parameters:
+    - $ref: ..\components\parameters\top.yaml
+    - $ref: ..\components\parameters\skip.yaml
+    - $ref: ..\components\parameters\search.yaml
+    - $ref: ..\components\parameters\filter.yaml
+    - $ref: ..\components\parameters\count.yaml
+    - name: $orderby
+      in: query
+      description: Order items by property values
+      style: form
+      explode: false
+      schema:
+        uniqueItems: true
+        type: array
+        items:
+          type: string
+    - name: $select
+      in: query
+      description: Select properties to be returned
+      style: form
+      explode: false
+      schema:
+        uniqueItems: true
+        type: array
+        items:
+          type: string
+    - name: $expand
+      in: query
+      description: Expand related entities
+      style: form
+      explode: false
+      schema:
+        uniqueItems: true
+        type: array
+        items:
+          type: string
+  responses:
+    2XX:
+      $ref: ..\components\responses\microsoft.graph.postCollectionResponse.yaml
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-pageable:
+    nextLinkName: '@odata.nextLink'
+    operationName: listMore
+  x-ms-docs-operation-type: operation
+parameters:
+  - name: group-id
+    in: path
+    description: The unique identifier of group
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: group
+  - name: conversationThread-id
+    in: path
+    description: The unique identifier of conversationThread
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: conversationThread
+x-ms-docs-grouped-path:
+  - >-
+    /groups/{group-id}/conversations/{conversation-id}/threads/{conversationThread-id}/posts
