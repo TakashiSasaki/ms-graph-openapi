@@ -1,0 +1,5 @@
+value:
+  isFooterShown: 'true'
+  isHeaderShown: 'true'
+  layoutTemplateType:
+    '@odata.type': microsoft.graph.layoutTemplateType

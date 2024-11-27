@@ -1,0 +1,6 @@
+value:
+  draftOpenShift:
+    '@odata.type': microsoft.graph.openShiftItem
+  schedulingGroupId: String
+  sharedOpenShift:
+    '@odata.type': microsoft.graph.openShiftItem

@@ -1,0 +1,6 @@
+value:
+  featureSettings:
+    '@odata.type': microsoft.graph.microsoftAuthenticatorFeatureSettings
+  includeTargets:
+    - '@odata.type': microsoft.graph.microsoftAuthenticatorAuthenticationMethodTarget
+  isSoftwareOathEnabled: 'true'

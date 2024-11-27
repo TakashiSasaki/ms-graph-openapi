@@ -1,0 +1,15 @@
+value:
+  archiveFolder: String
+  automaticRepliesSetting:
+    '@odata.type': microsoft.graph.automaticRepliesSetting
+  dateFormat: String
+  delegateMeetingMessageDeliveryOptions:
+    '@odata.type': microsoft.graph.delegateMeetingMessageDeliveryOptions
+  language:
+    '@odata.type': microsoft.graph.localeInfo
+  timeFormat: String
+  timeZone: String
+  userPurpose:
+    '@odata.type': microsoft.graph.userPurpose
+  workingHours:
+    '@odata.type': microsoft.graph.workingHours

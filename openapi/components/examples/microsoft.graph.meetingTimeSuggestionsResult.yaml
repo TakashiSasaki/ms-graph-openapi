@@ -1,0 +1,4 @@
+value:
+  emptySuggestionsReason: String
+  meetingTimeSuggestions:
+    - '@odata.type': microsoft.graph.meetingTimeSuggestion

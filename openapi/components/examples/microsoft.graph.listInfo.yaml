@@ -1,0 +1,4 @@
+value:
+  contentTypesEnabled: 'true'
+  hidden: 'true'
+  template: String

@@ -1,0 +1,3 @@
+value:
+  simulationNotification:
+    '@odata.type': microsoft.graph.simulationNotification

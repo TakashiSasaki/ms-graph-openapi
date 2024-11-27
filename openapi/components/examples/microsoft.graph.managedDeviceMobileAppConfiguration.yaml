@@ -1,0 +1,18 @@
+value:
+  assignments:
+    - '@odata.type': microsoft.graph.managedDeviceMobileAppConfigurationAssignment
+  createdDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  description: String
+  deviceStatuses:
+    - '@odata.type': microsoft.graph.managedDeviceMobileAppConfigurationDeviceStatus
+  deviceStatusSummary:
+    '@odata.type': microsoft.graph.managedDeviceMobileAppConfigurationDeviceSummary
+  displayName: String
+  lastModifiedDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  targetedMobileApps:
+    - String
+  userStatuses:
+    - '@odata.type': microsoft.graph.managedDeviceMobileAppConfigurationUserStatus
+  userStatusSummary:
+    '@odata.type': microsoft.graph.managedDeviceMobileAppConfigurationUserSummary
+  version: '0'

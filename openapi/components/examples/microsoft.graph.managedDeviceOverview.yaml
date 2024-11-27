@@ -1,0 +1,8 @@
+value:
+  deviceExchangeAccessStateSummary:
+    '@odata.type': microsoft.graph.deviceExchangeAccessStateSummary
+  deviceOperatingSystemSummary:
+    '@odata.type': microsoft.graph.deviceOperatingSystemSummary
+  dualEnrolledDeviceCount: '0'
+  enrolledDeviceCount: '0'
+  mdmEnrolledCount: '0'

@@ -1,0 +1,8 @@
+value:
+  direction:
+    '@odata.type': microsoft.graph.mediaDirection
+  label: String
+  mediaType:
+    '@odata.type': microsoft.graph.modality
+  serverMuted: 'true'
+  sourceId: String

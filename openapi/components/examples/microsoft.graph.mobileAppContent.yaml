@@ -1,0 +1,5 @@
+value:
+  containedApps:
+    - '@odata.type': microsoft.graph.mobileContainedApp
+  files:
+    - '@odata.type': microsoft.graph.mobileAppContentFile

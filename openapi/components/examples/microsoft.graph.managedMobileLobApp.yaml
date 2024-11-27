@@ -1,0 +1,6 @@
+value:
+  committedContentVersion: String
+  contentVersions:
+    - '@odata.type': microsoft.graph.mobileAppContent
+  fileName: String
+  size: '0'

@@ -1,0 +1,6 @@
+value:
+  identity:
+    '@odata.type': microsoft.graph.identitySet
+  role:
+    '@odata.type': microsoft.graph.onlineMeetingRole
+  upn: String

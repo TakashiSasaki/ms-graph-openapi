@@ -1,0 +1,7 @@
+value:
+  enabled: 'true'
+  excludedGroups:
+    - 00000000-0000-0000-0000-000000000000
+  includedGroups:
+    - 00000000-0000-0000-0000-000000000000
+  overrideDefaultRule: 'true'

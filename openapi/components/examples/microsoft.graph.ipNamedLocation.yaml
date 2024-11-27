@@ -1,0 +1,4 @@
+value:
+  ipRanges:
+    - '@odata.type': microsoft.graph.ipRange
+  isTrusted: 'true'

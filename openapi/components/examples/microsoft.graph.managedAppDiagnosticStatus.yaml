@@ -1,0 +1,4 @@
+value:
+  mitigationInstruction: String
+  state: String
+  validationName: String

@@ -1,0 +1,13 @@
+value:
+  buildNumber: String
+  bundleId: String
+  childApps:
+    - '@odata.type': microsoft.graph.macOSLobChildApp
+  ignoreVersionDetection: 'true'
+  installAsManaged: 'true'
+  md5Hash:
+    - String
+  md5HashChunkSize: '0'
+  minimumSupportedOperatingSystem:
+    '@odata.type': microsoft.graph.macOSMinimumOperatingSystem
+  versionNumber: String

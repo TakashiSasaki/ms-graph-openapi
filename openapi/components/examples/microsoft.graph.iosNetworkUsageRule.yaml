@@ -1,0 +1,5 @@
+value:
+  cellularDataBlocked: 'true'
+  cellularDataBlockWhenRoaming: 'true'
+  managedApps:
+    - '@odata.type': microsoft.graph.appListItem

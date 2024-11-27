@@ -1,0 +1,4 @@
+value:
+  alertThreshold: '0'
+  synchronizationPreventionType:
+    '@odata.type': microsoft.graph.onPremisesDirectorySynchronizationDeletionPreventionType

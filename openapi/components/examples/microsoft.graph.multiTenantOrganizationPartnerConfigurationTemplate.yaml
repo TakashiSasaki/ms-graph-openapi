@@ -1,0 +1,15 @@
+value:
+  automaticUserConsentSettings:
+    '@odata.type': microsoft.graph.inboundOutboundPolicyConfiguration
+  b2bCollaborationInbound:
+    '@odata.type': microsoft.graph.crossTenantAccessPolicyB2BSetting
+  b2bCollaborationOutbound:
+    '@odata.type': microsoft.graph.crossTenantAccessPolicyB2BSetting
+  b2bDirectConnectInbound:
+    '@odata.type': microsoft.graph.crossTenantAccessPolicyB2BSetting
+  b2bDirectConnectOutbound:
+    '@odata.type': microsoft.graph.crossTenantAccessPolicyB2BSetting
+  inboundTrust:
+    '@odata.type': microsoft.graph.crossTenantAccessPolicyInboundTrust
+  templateApplicationLevel:
+    '@odata.type': microsoft.graph.templateApplicationLevel

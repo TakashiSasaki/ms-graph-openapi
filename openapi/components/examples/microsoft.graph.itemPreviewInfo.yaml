@@ -1,0 +1,4 @@
+value:
+  getUrl: String
+  postParameters: String
+  postUrl: String

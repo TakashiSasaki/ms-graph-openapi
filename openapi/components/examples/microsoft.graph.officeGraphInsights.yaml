@@ -1,0 +1,7 @@
+value:
+  shared:
+    - '@odata.type': microsoft.graph.sharedInsight
+  trending:
+    - '@odata.type': microsoft.graph.trending
+  used:
+    - '@odata.type': microsoft.graph.usedInsight

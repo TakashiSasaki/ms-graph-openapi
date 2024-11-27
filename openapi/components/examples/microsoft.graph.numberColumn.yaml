@@ -1,0 +1,5 @@
+value:
+  decimalPlaces: String
+  displayAs: String
+  maximum: '0'
+  minimum: '0'

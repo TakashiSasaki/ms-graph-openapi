@@ -1,0 +1,18 @@
+value:
+  automaticReplies:
+    '@odata.type': microsoft.graph.automaticRepliesMailTips
+  customMailTip: String
+  deliveryRestricted: 'true'
+  emailAddress:
+    '@odata.type': microsoft.graph.emailAddress
+  error:
+    '@odata.type': microsoft.graph.mailTipsError
+  externalMemberCount: '0'
+  isModerated: 'true'
+  mailboxFull: 'true'
+  maxMessageSize: '0'
+  recipientScope:
+    '@odata.type': microsoft.graph.recipientScopeType
+  recipientSuggestions:
+    - '@odata.type': microsoft.graph.recipient
+  totalMemberCount: '0'

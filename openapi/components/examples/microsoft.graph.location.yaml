@@ -1,0 +1,13 @@
+value:
+  address:
+    '@odata.type': microsoft.graph.physicalAddress
+  coordinates:
+    '@odata.type': microsoft.graph.outlookGeoCoordinates
+  displayName: String
+  locationEmailAddress: String
+  locationType:
+    '@odata.type': microsoft.graph.locationType
+  locationUri: String
+  uniqueId: String
+  uniqueIdType:
+    '@odata.type': microsoft.graph.locationUniqueIdType

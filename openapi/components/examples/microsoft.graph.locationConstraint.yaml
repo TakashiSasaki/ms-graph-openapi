@@ -1,0 +1,5 @@
+value:
+  isRequired: 'true'
+  locations:
+    - '@odata.type': microsoft.graph.locationConstraintItem
+  suggestLocation: 'true'

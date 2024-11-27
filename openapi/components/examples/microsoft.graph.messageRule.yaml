@@ -1,0 +1,12 @@
+value:
+  actions:
+    '@odata.type': microsoft.graph.messageRuleActions
+  conditions:
+    '@odata.type': microsoft.graph.messageRulePredicates
+  displayName: String
+  exceptions:
+    '@odata.type': microsoft.graph.messageRulePredicates
+  hasError: 'true'
+  isEnabled: 'true'
+  isReadOnly: 'true'
+  sequence: '0'

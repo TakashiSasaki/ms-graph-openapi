@@ -1,0 +1,7 @@
+value:
+  licenseType:
+    '@odata.type': microsoft.graph.microsoftStoreForBusinessLicenseType
+  packageIdentityName: String
+  productKey: String
+  totalLicenseCount: '0'
+  usedLicenseCount: '0'

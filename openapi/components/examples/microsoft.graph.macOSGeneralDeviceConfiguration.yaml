@@ -1,0 +1,17 @@
+value:
+  compliantAppListType:
+    '@odata.type': microsoft.graph.appListType
+  compliantAppsList:
+    - '@odata.type': microsoft.graph.appListItem
+  emailInDomainSuffixes:
+    - String
+  passwordBlockSimple: 'true'
+  passwordExpirationDays: '0'
+  passwordMinimumCharacterSetCount: '0'
+  passwordMinimumLength: '0'
+  passwordMinutesOfInactivityBeforeLock: '0'
+  passwordMinutesOfInactivityBeforeScreenTimeout: '0'
+  passwordPreviousPasswordBlockCount: '0'
+  passwordRequired: 'true'
+  passwordRequiredType:
+    '@odata.type': microsoft.graph.requiredPasswordType

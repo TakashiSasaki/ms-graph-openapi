@@ -1,0 +1,21 @@
+value:
+  appIdentifier:
+    '@odata.type': microsoft.graph.mobileAppIdentifier
+  applicationVersion: String
+  appliedPolicies:
+    - '@odata.type': microsoft.graph.managedAppPolicy
+  createdDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  deviceName: String
+  deviceTag: String
+  deviceType: String
+  flaggedReasons:
+    - '@odata.type': microsoft.graph.managedAppFlaggedReason
+  intendedPolicies:
+    - '@odata.type': microsoft.graph.managedAppPolicy
+  lastSyncDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  managementSdkVersion: String
+  operations:
+    - '@odata.type': microsoft.graph.managedAppOperation
+  platformVersion: String
+  userId: String
+  version: String

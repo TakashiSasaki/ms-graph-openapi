@@ -1,0 +1,3 @@
+value:
+  item:
+    '@odata.type': microsoft.graph.outlookItem

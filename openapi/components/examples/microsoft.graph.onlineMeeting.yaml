@@ -1,0 +1,15 @@
+value:
+  attendeeReport: Stream
+  broadcastSettings:
+    '@odata.type': microsoft.graph.broadcastMeetingSettings
+  creationDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  endDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  externalId: String
+  isBroadcast: 'true'
+  participants:
+    '@odata.type': microsoft.graph.meetingParticipants
+  recordings:
+    - '@odata.type': microsoft.graph.callRecording
+  startDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  transcripts:
+    - '@odata.type': microsoft.graph.callTranscript

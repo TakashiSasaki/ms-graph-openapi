@@ -1,0 +1,4 @@
+value:
+  isRemovable: 'true'
+  uninstallOnDeviceRemoval: 'true'
+  vpnConfigurationId: String

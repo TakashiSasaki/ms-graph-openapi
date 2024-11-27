@@ -1,0 +1,8 @@
+value:
+  desiredRole:
+    '@odata.type': microsoft.graph.multiTenantOrganizationMemberRole
+  desiredState:
+    '@odata.type': microsoft.graph.multiTenantOrganizationMemberState
+  details: String
+  status:
+    '@odata.type': microsoft.graph.multiTenantOrganizationMemberProcessingStatus

@@ -1,0 +1,5 @@
+value:
+  configuration:
+    '@odata.type': microsoft.graph.onPremisesDirectorySynchronizationConfiguration
+  features:
+    '@odata.type': microsoft.graph.onPremisesDirectorySynchronizationFeature

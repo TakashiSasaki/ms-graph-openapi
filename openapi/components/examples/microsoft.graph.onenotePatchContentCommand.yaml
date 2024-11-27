@@ -1,0 +1,7 @@
+value:
+  action:
+    '@odata.type': microsoft.graph.onenotePatchActionType
+  content: String
+  position:
+    '@odata.type': microsoft.graph.onenotePatchInsertPosition
+  target: String

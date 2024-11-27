@@ -1,0 +1,6 @@
+value:
+  error:
+    '@odata.type': microsoft.graph.onenoteOperationError
+  percentComplete: String
+  resourceId: String
+  resourceLocation: String

@@ -1,0 +1,6 @@
+value:
+  clientId: String
+  consentType: String
+  principalId: String
+  resourceId: String
+  scope: String

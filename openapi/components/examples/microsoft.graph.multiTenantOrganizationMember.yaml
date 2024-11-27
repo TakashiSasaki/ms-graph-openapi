@@ -1,0 +1,12 @@
+value:
+  addedByTenantId: 00000000-0000-0000-0000-000000000000
+  addedDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  displayName: String
+  joinedDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  role:
+    '@odata.type': microsoft.graph.multiTenantOrganizationMemberRole
+  state:
+    '@odata.type': microsoft.graph.multiTenantOrganizationMemberState
+  tenantId: String
+  transitionDetails:
+    '@odata.type': microsoft.graph.multiTenantOrganizationMemberTransitionDetails

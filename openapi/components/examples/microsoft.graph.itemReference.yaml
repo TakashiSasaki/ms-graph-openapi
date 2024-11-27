@@ -1,0 +1,10 @@
+value:
+  driveId: String
+  driveType: String
+  id: String
+  name: String
+  path: String
+  shareId: String
+  sharepointIds:
+    '@odata.type': microsoft.graph.sharepointIds
+  siteId: String

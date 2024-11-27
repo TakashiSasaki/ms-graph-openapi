@@ -1,0 +1,7 @@
+value:
+  intent:
+    '@odata.type': microsoft.graph.installIntent
+  settings:
+    '@odata.type': microsoft.graph.mobileAppAssignmentSettings
+  target:
+    '@odata.type': microsoft.graph.deviceAndAppManagementAssignmentTarget

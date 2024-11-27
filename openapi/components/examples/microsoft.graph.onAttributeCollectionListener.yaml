@@ -1,0 +1,3 @@
+value:
+  handler:
+    '@odata.type': microsoft.graph.onAttributeCollectionHandler

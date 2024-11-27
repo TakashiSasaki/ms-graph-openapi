@@ -1,0 +1,19 @@
+value:
+  assignments:
+    - '@odata.type': microsoft.graph.managedEBookAssignment
+  createdDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  description: String
+  deviceStates:
+    - '@odata.type': microsoft.graph.deviceInstallState
+  displayName: String
+  informationUrl: String
+  installSummary:
+    '@odata.type': microsoft.graph.eBookInstallSummary
+  largeCover:
+    '@odata.type': microsoft.graph.mimeContent
+  lastModifiedDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  privacyInformationUrl: String
+  publishedDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  publisher: String
+  userStateSummary:
+    - '@odata.type': microsoft.graph.userInstallStateSummary

@@ -1,0 +1,4 @@
+value:
+  issuer: String
+  issuerAssignedId: String
+  signInType: String

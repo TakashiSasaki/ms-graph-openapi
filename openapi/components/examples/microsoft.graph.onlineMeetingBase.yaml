@@ -1,0 +1,30 @@
+value:
+  allowAttendeeToEnableCamera: 'true'
+  allowAttendeeToEnableMic: 'true'
+  allowedPresenters:
+    '@odata.type': microsoft.graph.onlineMeetingPresenters
+  allowMeetingChat:
+    '@odata.type': microsoft.graph.meetingChatMode
+  allowParticipantsToChangeName: 'true'
+  allowTeamworkReactions: 'true'
+  attendanceReports:
+    - '@odata.type': microsoft.graph.meetingAttendanceReport
+  audioConferencing:
+    '@odata.type': microsoft.graph.audioConferencing
+  chatInfo:
+    '@odata.type': microsoft.graph.chatInfo
+  isEntryExitAnnounced: 'true'
+  joinInformation:
+    '@odata.type': microsoft.graph.itemBody
+  joinMeetingIdSettings:
+    '@odata.type': microsoft.graph.joinMeetingIdSettings
+  joinWebUrl: String
+  lobbyBypassSettings:
+    '@odata.type': microsoft.graph.lobbyBypassSettings
+  recordAutomatically: 'true'
+  shareMeetingChatHistoryDefault:
+    '@odata.type': microsoft.graph.meetingChatHistoryDefaultMode
+  subject: String
+  videoTeleconferenceId: String
+  watermarkProtection:
+    '@odata.type': microsoft.graph.watermarkProtectionValues

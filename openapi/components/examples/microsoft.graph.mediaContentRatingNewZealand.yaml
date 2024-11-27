@@ -1,0 +1,5 @@
+value:
+  movieRating:
+    '@odata.type': microsoft.graph.ratingNewZealandMoviesType
+  tvRating:
+    '@odata.type': microsoft.graph.ratingNewZealandTelevisionType

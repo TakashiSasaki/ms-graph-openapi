@@ -1,0 +1,5 @@
+value:
+  attributeCollectionPage:
+    '@odata.type': microsoft.graph.authenticationAttributeCollectionPage
+  attributes:
+    - '@odata.type': microsoft.graph.identityUserFlowAttribute

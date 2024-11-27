@@ -1,0 +1,4 @@
+value:
+  managedType:
+    '@odata.type': microsoft.graph.microsoftManagedDesktopType
+  profile: String

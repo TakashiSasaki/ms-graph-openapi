@@ -1,0 +1,3 @@
+value:
+  joinMeetingId: String
+  passcode: String

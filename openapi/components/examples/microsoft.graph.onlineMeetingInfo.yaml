@@ -1,0 +1,9 @@
+value:
+  conferenceId: String
+  joinUrl: String
+  phones:
+    - '@odata.type': microsoft.graph.phone
+  quickDial: String
+  tollFreeNumbers:
+    - String
+  tollNumber: String

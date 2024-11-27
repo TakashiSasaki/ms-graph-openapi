@@ -1,0 +1,3 @@
+value:
+  mentionees:
+    - '@odata.type': microsoft.graph.identitySet

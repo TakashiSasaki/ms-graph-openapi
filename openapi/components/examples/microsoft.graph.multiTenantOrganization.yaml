@@ -1,0 +1,10 @@
+value:
+  createdDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  description: String
+  displayName: String
+  joinRequest:
+    '@odata.type': microsoft.graph.multiTenantOrganizationJoinRequestRecord
+  state:
+    '@odata.type': microsoft.graph.multiTenantOrganizationState
+  tenants:
+    - '@odata.type': microsoft.graph.multiTenantOrganizationMember

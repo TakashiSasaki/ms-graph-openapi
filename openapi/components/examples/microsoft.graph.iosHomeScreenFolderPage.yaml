@@ -1,0 +1,4 @@
+value:
+  apps:
+    - '@odata.type': microsoft.graph.iosHomeScreenApp
+  displayName: String

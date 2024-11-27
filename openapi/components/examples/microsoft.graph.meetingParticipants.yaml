@@ -1,0 +1,5 @@
+value:
+  attendees:
+    - '@odata.type': microsoft.graph.meetingParticipantInfo
+  organizer:
+    '@odata.type': microsoft.graph.meetingParticipantInfo

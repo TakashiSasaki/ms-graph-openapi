@@ -1,0 +1,3 @@
+value:
+  mediaInfo:
+    '@odata.type': microsoft.graph.mediaInfo

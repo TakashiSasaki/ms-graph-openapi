@@ -1,0 +1,34 @@
+value:
+  allowedDataStorageLocations:
+    - '@odata.type': microsoft.graph.managedAppDataStorageLocation
+  allowedInboundDataTransferSources:
+    '@odata.type': microsoft.graph.managedAppDataTransferLevel
+  allowedOutboundClipboardSharingLevel:
+    '@odata.type': microsoft.graph.managedAppClipboardSharingLevel
+  allowedOutboundDataTransferDestinations:
+    '@odata.type': microsoft.graph.managedAppDataTransferLevel
+  contactSyncBlocked: 'true'
+  dataBackupBlocked: 'true'
+  deviceComplianceRequired: 'true'
+  disableAppPinIfDevicePinIsSet: 'true'
+  fingerprintBlocked: 'true'
+  managedBrowser:
+    '@odata.type': microsoft.graph.managedBrowserType
+  managedBrowserToOpenLinksRequired: 'true'
+  maximumPinRetries: '0'
+  minimumPinLength: '0'
+  minimumRequiredAppVersion: String
+  minimumRequiredOsVersion: String
+  minimumWarningAppVersion: String
+  minimumWarningOsVersion: String
+  organizationalCredentialsRequired: 'true'
+  periodBeforePinReset: Duration
+  periodOfflineBeforeAccessCheck: Duration
+  periodOfflineBeforeWipeIsEnforced: Duration
+  periodOnlineBeforeAccessCheck: Duration
+  pinCharacterSet:
+    '@odata.type': microsoft.graph.managedAppPinCharacterSet
+  pinRequired: 'true'
+  printBlocked: 'true'
+  saveAsBlocked: 'true'
+  simplePinBlocked: 'true'

@@ -1,0 +1,3 @@
+value:
+  authenticationMode:
+    '@odata.type': microsoft.graph.microsoftAuthenticatorAuthenticationMode

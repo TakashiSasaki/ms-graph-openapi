@@ -1,0 +1,6 @@
+value:
+  attendanceRecords:
+    - '@odata.type': microsoft.graph.attendanceRecord
+  meetingEndDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  meetingStartDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  totalParticipantCount: '0'

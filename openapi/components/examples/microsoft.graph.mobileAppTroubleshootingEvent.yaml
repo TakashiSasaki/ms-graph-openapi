@@ -1,0 +1,3 @@
+value:
+  appLogCollectionRequests:
+    - '@odata.type': microsoft.graph.appLogCollectionRequest

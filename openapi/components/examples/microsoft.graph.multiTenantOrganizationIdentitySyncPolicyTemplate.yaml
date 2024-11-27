@@ -1,0 +1,5 @@
+value:
+  templateApplicationLevel:
+    '@odata.type': microsoft.graph.templateApplicationLevel
+  userSyncInbound:
+    '@odata.type': microsoft.graph.crossTenantUserSyncInbound

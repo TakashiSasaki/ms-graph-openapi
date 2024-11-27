@@ -1,0 +1,4 @@
+value:
+  isDialInBypassEnabled: 'true'
+  scope:
+    '@odata.type': microsoft.graph.lobbyBypassScope
