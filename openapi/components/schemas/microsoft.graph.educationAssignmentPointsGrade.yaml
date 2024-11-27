@@ -1,0 +1,20 @@
+allOf:
+  - $ref: .\microsoft.graph.educationAssignmentGrade.yaml
+  - title: educationAssignmentPointsGrade
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      points:
+        oneOf:
+          - type: number
+            format: float
+            nullable: true
+          - type: string
+            nullable: true
+          - $ref: .\ReferenceNumeric.yaml
+        description: Number of points a teacher is giving this submission object.
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.educationAssignmentPointsGrade'
+x-ms-discriminator-value: '#microsoft.graph.educationAssignmentPointsGrade'

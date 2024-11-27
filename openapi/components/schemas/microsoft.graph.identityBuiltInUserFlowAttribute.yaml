@@ -1,0 +1,11 @@
+allOf:
+  - $ref: .\microsoft.graph.identityUserFlowAttribute.yaml
+  - title: identityBuiltInUserFlowAttribute
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.identityBuiltInUserFlowAttribute'
+x-ms-discriminator-value: '#microsoft.graph.identityBuiltInUserFlowAttribute'

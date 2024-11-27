@@ -1,0 +1,12 @@
+title: external
+required:
+  - '@odata.type'
+type: object
+properties:
+  connections:
+    type: array
+    items:
+      $ref: .\microsoft.graph.externalConnectors.externalConnection.yaml
+    x-ms-navigationProperty: true
+  '@odata.type':
+    type: string

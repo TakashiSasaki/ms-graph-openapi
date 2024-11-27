@@ -1,0 +1,6 @@
+title: educationAddedStudentAction
+enum:
+  - none
+  - assignIfOpen
+  - unknownFutureValue
+type: string

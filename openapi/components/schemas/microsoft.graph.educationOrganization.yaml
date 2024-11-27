@@ -1,0 +1,32 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: educationOrganization
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      description:
+        type: string
+        description: Organization description.
+        nullable: true
+      displayName:
+        type: string
+        description: Organization display name.
+      externalSource:
+        anyOf:
+          - $ref: .\microsoft.graph.educationExternalSource.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Source where this organization was created from. Possible values are:
+          sis, manual.
+      externalSourceDetail:
+        type: string
+        description: The name of the external source this resource was generated from.
+        nullable: true
+      '@odata.type':
+        type: string
+    discriminator:
+      propertyName: '@odata.type'
+      mapping:
+        '#microsoft.graph.educationSchool': .\microsoft.graph.educationSchool.yaml

@@ -1,0 +1,72 @@
+title: deviceManagementExchangeAccessStateReason
+enum:
+  - none
+  - unknown
+  - exchangeGlobalRule
+  - exchangeIndividualRule
+  - exchangeDeviceRule
+  - exchangeUpgrade
+  - exchangeMailboxPolicy
+  - other
+  - compliant
+  - notCompliant
+  - notEnrolled
+  - unknownLocation
+  - mfaRequired
+  - azureADBlockDueToAccessPolicy
+  - compromisedPassword
+  - deviceNotKnownWithManagedApp
+type: string
+description: Device Exchange Access State Reason.
+x-ms-enum:
+  name: deviceManagementExchangeAccessStateReason
+  modelAsString: false
+  values:
+    - value: none
+      description: No access state reason discovered from Exchange
+      name: none
+    - value: unknown
+      description: Unknown access state reason
+      name: unknown
+    - value: exchangeGlobalRule
+      description: Access state determined by Exchange Global rule
+      name: exchangeGlobalRule
+    - value: exchangeIndividualRule
+      description: Access state determined by Exchange Individual rule
+      name: exchangeIndividualRule
+    - value: exchangeDeviceRule
+      description: Access state determined by Exchange Device rule
+      name: exchangeDeviceRule
+    - value: exchangeUpgrade
+      description: Access state due to Exchange upgrade
+      name: exchangeUpgrade
+    - value: exchangeMailboxPolicy
+      description: Access state determined by Exchange Mailbox Policy
+      name: exchangeMailboxPolicy
+    - value: other
+      description: Access state determined by Exchange
+      name: other
+    - value: compliant
+      description: Access state granted by compliance challenge
+      name: compliant
+    - value: notCompliant
+      description: Access state revoked by compliance challenge
+      name: notCompliant
+    - value: notEnrolled
+      description: Access state revoked by management challenge
+      name: notEnrolled
+    - value: unknownLocation
+      description: Access state due to unknown location
+      name: unknownLocation
+    - value: mfaRequired
+      description: Access state due to MFA challenge
+      name: mfaRequired
+    - value: azureADBlockDueToAccessPolicy
+      description: Access State revoked by AAD Access Policy
+      name: azureADBlockDueToAccessPolicy
+    - value: compromisedPassword
+      description: Access State revoked by compromised password
+      name: compromisedPassword
+    - value: deviceNotKnownWithManagedApp
+      description: Access state revoked by managed application challenge
+      name: deviceNotKnownWithManagedApp

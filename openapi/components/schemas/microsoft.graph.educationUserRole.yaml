@@ -1,0 +1,7 @@
+title: educationUserRole
+enum:
+  - student
+  - teacher
+  - none
+  - unknownFutureValue
+type: string

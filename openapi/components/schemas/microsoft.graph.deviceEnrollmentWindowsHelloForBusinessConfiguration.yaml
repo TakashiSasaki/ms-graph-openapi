@@ -1,0 +1,87 @@
+allOf:
+  - $ref: .\microsoft.graph.deviceEnrollmentConfiguration.yaml
+  - title: deviceEnrollmentWindowsHelloForBusinessConfiguration
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      enhancedBiometricsState:
+        $ref: .\microsoft.graph.enablement.yaml
+      pinExpirationInDays:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: >-
+          Controls the period of time (in days) that a PIN can be used before
+          the system requires the user to change it. This must be set between 0
+          and 730, inclusive. If set to 0, the user's PIN will never expire
+        format: int32
+      pinLowercaseCharactersUsage:
+        $ref: .\microsoft.graph.windowsHelloForBusinessPinUsage.yaml
+      pinMaximumLength:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: >-
+          Controls the maximum number of characters allowed for the Windows
+          Hello for Business PIN. This value must be between 4 and 127,
+          inclusive. This value must be greater than or equal to the value set
+          for the minimum PIN.
+        format: int32
+      pinMinimumLength:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: >-
+          Controls the minimum number of characters required for the Windows
+          Hello for Business PIN.  This value must be between 4 and 127,
+          inclusive, and less than or equal to the value set for the maximum
+          PIN.
+        format: int32
+      pinPreviousBlockCount:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: >-
+          Controls the ability to prevent users from using past PINs. This must
+          be set between 0 and 50, inclusive, and the current PIN of the user is
+          included in that count. If set to 0, previous PINs are not stored. PIN
+          history is not preserved through a PIN reset.
+        format: int32
+      pinSpecialCharactersUsage:
+        $ref: .\microsoft.graph.windowsHelloForBusinessPinUsage.yaml
+      pinUppercaseCharactersUsage:
+        $ref: .\microsoft.graph.windowsHelloForBusinessPinUsage.yaml
+      remotePassportEnabled:
+        type: boolean
+        description: >-
+          Controls the use of Remote Windows Hello for Business. Remote Windows
+          Hello for Business provides the ability for a portable, registered
+          device to be usable as a companion for desktop authentication. The
+          desktop must be Azure AD joined and the companion device must have a
+          Windows Hello for Business PIN.
+      securityDeviceRequired:
+        type: boolean
+        description: >-
+          Controls whether to require a Trusted Platform Module (TPM) for
+          provisioning Windows Hello for Business. A TPM provides an additional
+          security benefit in that data stored on it cannot be used on other
+          devices. If set to False, all devices can provision Windows Hello for
+          Business even if there is not a usable TPM.
+      state:
+        $ref: .\microsoft.graph.enablement.yaml
+      unlockWithBiometricsEnabled:
+        type: boolean
+        description: >-
+          Controls the use of biometric gestures, such as face and fingerprint,
+          as an alternative to the Windows Hello for Business PIN.  If set to
+          False, biometric gestures are not allowed. Users must still configure
+          a PIN as a backup in case of failures.
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.deviceEnrollmentWindowsHelloForBusinessConfiguration'
+    description: >-
+      Windows Hello for Business settings lets users access their devices using
+      a gesture, such as biometric authentication, or a PIN. Configure settings
+      for enrolled Windows 10, Windows 10 Mobile and later.
+x-ms-discriminator-value: '#microsoft.graph.deviceEnrollmentWindowsHelloForBusinessConfiguration'

@@ -1,0 +1,12 @@
+title: educationSubmissionRecipient
+required:
+  - '@odata.type'
+type: object
+properties:
+  '@odata.type':
+    type: string
+discriminator:
+  propertyName: '@odata.type'
+  mapping:
+    '#microsoft.graph.educationSubmissionIndividualRecipient': .\microsoft.graph.educationSubmissionIndividualRecipient.yaml
+    microsoft.graph.educationSubmissionIndividualRecipient: .\microsoft.graph.educationSubmissionIndividualRecipient.yaml

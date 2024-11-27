@@ -1,0 +1,30 @@
+title: firewallPacketQueueingMethodType
+enum:
+  - deviceDefault
+  - disabled
+  - queueInbound
+  - queueOutbound
+  - queueBoth
+type: string
+description: Possible values for firewallPacketQueueingMethod
+x-ms-enum:
+  name: firewallPacketQueueingMethodType
+  modelAsString: false
+  values:
+    - value: deviceDefault
+      description: >-
+        No value configured by Intune, do not override the user-configured
+        device default value
+      name: deviceDefault
+    - value: disabled
+      description: Disable packet queuing
+      name: disabled
+    - value: queueInbound
+      description: Queue inbound encrypted packets
+      name: queueInbound
+    - value: queueOutbound
+      description: Queue decrypted outbound packets for forwarding
+      name: queueOutbound
+    - value: queueBoth
+      description: Queue both inbound and outbound packets
+      name: queueBoth

@@ -1,0 +1,15 @@
+title: educationTeacher
+required:
+  - '@odata.type'
+type: object
+properties:
+  externalId:
+    type: string
+    description: ID of the teacher in the source system.
+    nullable: true
+  teacherNumber:
+    type: string
+    description: Teacher number.
+    nullable: true
+  '@odata.type':
+    type: string

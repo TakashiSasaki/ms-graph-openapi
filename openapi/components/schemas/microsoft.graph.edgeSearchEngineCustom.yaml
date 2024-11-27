@@ -1,0 +1,19 @@
+allOf:
+  - $ref: .\microsoft.graph.edgeSearchEngineBase.yaml
+  - title: edgeSearchEngineCustom
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      edgeSearchEngineOpenSearchXmlUrl:
+        type: string
+        description: >-
+          Points to a https link containing the OpenSearch xml file that
+          contains, at minimum, the short name and the URL to the search Engine.
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.edgeSearchEngineCustom'
+    description: >-
+      Allows IT admins to set a custom default search engine for MDM-Controlled
+      devices.
+x-ms-discriminator-value: '#microsoft.graph.edgeSearchEngineCustom'

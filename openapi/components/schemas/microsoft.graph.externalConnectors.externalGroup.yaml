@@ -1,0 +1,26 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: externalGroup
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      description:
+        type: string
+        description: The description of the external group. Optional.
+        nullable: true
+      displayName:
+        type: string
+        description: The friendly name of the external group. Optional.
+        nullable: true
+      members:
+        type: array
+        items:
+          $ref: .\microsoft.graph.externalConnectors.identity.yaml
+        description: >-
+          A member added to an externalGroup. You can add Microsoft Entra users,
+          Microsoft Entra groups, or an externalGroup as members.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.externalConnectors.externalGroup'

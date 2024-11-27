@@ -1,0 +1,24 @@
+title: deviceManagementReportFileFormat
+enum:
+  - csv
+  - pdf
+  - json
+  - unknownFutureValue
+type: string
+description: Possible values for the file format of a report to be exported.
+x-ms-enum:
+  name: deviceManagementReportFileFormat
+  modelAsString: false
+  values:
+    - value: csv
+      description: CSV Format.
+      name: csv
+    - value: pdf
+      description: PDF Format (Deprecate later).
+      name: pdf
+    - value: json
+      description: JSON Format.
+      name: json
+    - value: unknownFutureValue
+      description: Evolvable enumeration sentinel value. Do not use.
+      name: unknownFutureValue

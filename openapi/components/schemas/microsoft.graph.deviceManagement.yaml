@@ -1,0 +1,438 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: deviceManagement
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      deviceProtectionOverview:
+        anyOf:
+          - $ref: .\microsoft.graph.deviceProtectionOverview.yaml
+          - type: object
+            nullable: true
+        description: Device protection overview.
+      intuneAccountId:
+        pattern: >-
+          ^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$
+        type: string
+        description: Intune Account Id for given tenant
+        format: uuid
+      intuneBrand:
+        anyOf:
+          - $ref: .\microsoft.graph.intuneBrand.yaml
+          - type: object
+            nullable: true
+        description: >-
+          intuneBrand contains data which is used in customizing the appearance
+          of the Company Portal applications as well as the end user web portal.
+      settings:
+        anyOf:
+          - $ref: .\microsoft.graph.deviceManagementSettings.yaml
+          - type: object
+            nullable: true
+        description: Account level settings.
+      subscriptionState:
+        $ref: .\microsoft.graph.deviceManagementSubscriptionState.yaml
+      userExperienceAnalyticsSettings:
+        anyOf:
+          - $ref: .\microsoft.graph.userExperienceAnalyticsSettings.yaml
+          - type: object
+            nullable: true
+        description: User experience analytics device settings
+      windowsMalwareOverview:
+        anyOf:
+          - $ref: .\microsoft.graph.windowsMalwareOverview.yaml
+          - type: object
+            nullable: true
+        description: Malware overview for windows devices.
+      applePushNotificationCertificate:
+        anyOf:
+          - $ref: .\microsoft.graph.applePushNotificationCertificate.yaml
+          - type: object
+            nullable: true
+        description: Apple push notification certificate.
+        x-ms-navigationProperty: true
+      auditEvents:
+        type: array
+        items:
+          $ref: .\microsoft.graph.auditEvent.yaml
+        description: The Audit Events
+        x-ms-navigationProperty: true
+      complianceManagementPartners:
+        type: array
+        items:
+          $ref: .\microsoft.graph.complianceManagementPartner.yaml
+        description: The list of Compliance Management Partners configured by the tenant.
+        x-ms-navigationProperty: true
+      conditionalAccessSettings:
+        anyOf:
+          - $ref: .\microsoft.graph.onPremisesConditionalAccessSettings.yaml
+          - type: object
+            nullable: true
+        description: >-
+          The Exchange on premises conditional access settings. On premises
+          conditional access will require devices to be both enrolled and
+          compliant for mail access
+        x-ms-navigationProperty: true
+      detectedApps:
+        type: array
+        items:
+          $ref: .\microsoft.graph.detectedApp.yaml
+        description: The list of detected apps associated with a device.
+        x-ms-navigationProperty: true
+      deviceCategories:
+        type: array
+        items:
+          $ref: .\microsoft.graph.deviceCategory.yaml
+        description: The list of device categories with the tenant.
+        x-ms-navigationProperty: true
+      deviceCompliancePolicies:
+        type: array
+        items:
+          $ref: .\microsoft.graph.deviceCompliancePolicy.yaml
+        description: The device compliance policies.
+        x-ms-navigationProperty: true
+      deviceCompliancePolicyDeviceStateSummary:
+        anyOf:
+          - $ref: .\microsoft.graph.deviceCompliancePolicyDeviceStateSummary.yaml
+          - type: object
+            nullable: true
+        description: The device compliance state summary for this account.
+        x-ms-navigationProperty: true
+      deviceCompliancePolicySettingStateSummaries:
+        type: array
+        items:
+          $ref: .\microsoft.graph.deviceCompliancePolicySettingStateSummary.yaml
+        description: The summary states of compliance policy settings for this account.
+        x-ms-navigationProperty: true
+      deviceConfigurationDeviceStateSummaries:
+        anyOf:
+          - $ref: .\microsoft.graph.deviceConfigurationDeviceStateSummary.yaml
+          - type: object
+            nullable: true
+        description: The device configuration device state summary for this account.
+        x-ms-navigationProperty: true
+      deviceConfigurations:
+        type: array
+        items:
+          $ref: .\microsoft.graph.deviceConfiguration.yaml
+        description: The device configurations.
+        x-ms-navigationProperty: true
+      deviceEnrollmentConfigurations:
+        type: array
+        items:
+          $ref: .\microsoft.graph.deviceEnrollmentConfiguration.yaml
+        description: The list of device enrollment configurations
+        x-ms-navigationProperty: true
+      deviceManagementPartners:
+        type: array
+        items:
+          $ref: .\microsoft.graph.deviceManagementPartner.yaml
+        description: The list of Device Management Partners configured by the tenant.
+        x-ms-navigationProperty: true
+      exchangeConnectors:
+        type: array
+        items:
+          $ref: .\microsoft.graph.deviceManagementExchangeConnector.yaml
+        description: The list of Exchange Connectors configured by the tenant.
+        x-ms-navigationProperty: true
+      importedWindowsAutopilotDeviceIdentities:
+        type: array
+        items:
+          $ref: .\microsoft.graph.importedWindowsAutopilotDeviceIdentity.yaml
+        description: Collection of imported Windows autopilot devices.
+        x-ms-navigationProperty: true
+      iosUpdateStatuses:
+        type: array
+        items:
+          $ref: .\microsoft.graph.iosUpdateDeviceStatus.yaml
+        description: The IOS software update installation statuses for this account.
+        x-ms-navigationProperty: true
+      managedDeviceOverview:
+        anyOf:
+          - $ref: .\microsoft.graph.managedDeviceOverview.yaml
+          - type: object
+            nullable: true
+        description: Device overview
+        x-ms-navigationProperty: true
+      managedDevices:
+        type: array
+        items:
+          $ref: .\microsoft.graph.managedDevice.yaml
+        description: The list of managed devices.
+        x-ms-navigationProperty: true
+      mobileAppTroubleshootingEvents:
+        type: array
+        items:
+          $ref: .\microsoft.graph.mobileAppTroubleshootingEvent.yaml
+        description: The collection property of MobileAppTroubleshootingEvent.
+        x-ms-navigationProperty: true
+      mobileThreatDefenseConnectors:
+        type: array
+        items:
+          $ref: .\microsoft.graph.mobileThreatDefenseConnector.yaml
+        description: The list of Mobile threat Defense connectors configured by the tenant.
+        x-ms-navigationProperty: true
+      notificationMessageTemplates:
+        type: array
+        items:
+          $ref: .\microsoft.graph.notificationMessageTemplate.yaml
+        description: The Notification Message Templates.
+        x-ms-navigationProperty: true
+      remoteAssistancePartners:
+        type: array
+        items:
+          $ref: .\microsoft.graph.remoteAssistancePartner.yaml
+        description: The remote assist partners.
+        x-ms-navigationProperty: true
+      reports:
+        anyOf:
+          - $ref: .\microsoft.graph.deviceManagementReports.yaml
+          - type: object
+            nullable: true
+        description: Reports singleton
+        x-ms-navigationProperty: true
+      resourceOperations:
+        type: array
+        items:
+          $ref: .\microsoft.graph.resourceOperation.yaml
+        description: The Resource Operations.
+        x-ms-navigationProperty: true
+      roleAssignments:
+        type: array
+        items:
+          $ref: .\microsoft.graph.deviceAndAppManagementRoleAssignment.yaml
+        description: The Role Assignments.
+        x-ms-navigationProperty: true
+      roleDefinitions:
+        type: array
+        items:
+          $ref: .\microsoft.graph.roleDefinition.yaml
+        description: The Role Definitions.
+        x-ms-navigationProperty: true
+      softwareUpdateStatusSummary:
+        anyOf:
+          - $ref: .\microsoft.graph.softwareUpdateStatusSummary.yaml
+          - type: object
+            nullable: true
+        description: The software update status summary.
+        x-ms-navigationProperty: true
+      telecomExpenseManagementPartners:
+        type: array
+        items:
+          $ref: .\microsoft.graph.telecomExpenseManagementPartner.yaml
+        description: The telecom expense management partners.
+        x-ms-navigationProperty: true
+      termsAndConditions:
+        type: array
+        items:
+          $ref: .\microsoft.graph.termsAndConditions.yaml
+        description: >-
+          The terms and conditions associated with device management of the
+          company.
+        x-ms-navigationProperty: true
+      troubleshootingEvents:
+        type: array
+        items:
+          $ref: .\microsoft.graph.deviceManagementTroubleshootingEvent.yaml
+        description: The list of troubleshooting events for the tenant.
+        x-ms-navigationProperty: true
+      userExperienceAnalyticsAppHealthApplicationPerformance:
+        type: array
+        items:
+          $ref: >-
+            .\microsoft.graph.userExperienceAnalyticsAppHealthApplicationPerformance.yaml
+        description: User experience analytics appHealth Application Performance
+        x-ms-navigationProperty: true
+      userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDetails:
+        type: array
+        items:
+          $ref: >-
+            .\microsoft.graph.userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails.yaml
+        description: >-
+          User experience analytics appHealth Application Performance by App
+          Version details
+        x-ms-navigationProperty: true
+      userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDeviceId:
+        type: array
+        items:
+          $ref: >-
+            .\microsoft.graph.userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId.yaml
+        description: >-
+          User experience analytics appHealth Application Performance by App
+          Version Device Id
+        x-ms-navigationProperty: true
+      userExperienceAnalyticsAppHealthApplicationPerformanceByOSVersion:
+        type: array
+        items:
+          $ref: >-
+            .\microsoft.graph.userExperienceAnalyticsAppHealthAppPerformanceByOSVersion.yaml
+        description: >-
+          User experience analytics appHealth Application Performance by OS
+          Version
+        x-ms-navigationProperty: true
+      userExperienceAnalyticsAppHealthDeviceModelPerformance:
+        type: array
+        items:
+          $ref: >-
+            .\microsoft.graph.userExperienceAnalyticsAppHealthDeviceModelPerformance.yaml
+        description: User experience analytics appHealth Model Performance
+        x-ms-navigationProperty: true
+      userExperienceAnalyticsAppHealthDevicePerformance:
+        type: array
+        items:
+          $ref: >-
+            .\microsoft.graph.userExperienceAnalyticsAppHealthDevicePerformance.yaml
+        description: User experience analytics appHealth Device Performance
+        x-ms-navigationProperty: true
+      userExperienceAnalyticsAppHealthDevicePerformanceDetails:
+        type: array
+        items:
+          $ref: >-
+            .\microsoft.graph.userExperienceAnalyticsAppHealthDevicePerformanceDetails.yaml
+        description: User experience analytics device performance details
+        x-ms-navigationProperty: true
+      userExperienceAnalyticsAppHealthOSVersionPerformance:
+        type: array
+        items:
+          $ref: >-
+            .\microsoft.graph.userExperienceAnalyticsAppHealthOSVersionPerformance.yaml
+        description: User experience analytics appHealth OS version Performance
+        x-ms-navigationProperty: true
+      userExperienceAnalyticsAppHealthOverview:
+        anyOf:
+          - $ref: .\microsoft.graph.userExperienceAnalyticsCategory.yaml
+          - type: object
+            nullable: true
+        description: User experience analytics appHealth overview
+        x-ms-navigationProperty: true
+      userExperienceAnalyticsBaselines:
+        type: array
+        items:
+          $ref: .\microsoft.graph.userExperienceAnalyticsBaseline.yaml
+        description: User experience analytics baselines
+        x-ms-navigationProperty: true
+      userExperienceAnalyticsCategories:
+        type: array
+        items:
+          $ref: .\microsoft.graph.userExperienceAnalyticsCategory.yaml
+        description: User experience analytics categories
+        x-ms-navigationProperty: true
+      userExperienceAnalyticsDevicePerformance:
+        type: array
+        items:
+          $ref: .\microsoft.graph.userExperienceAnalyticsDevicePerformance.yaml
+        description: User experience analytics device performance
+        x-ms-navigationProperty: true
+      userExperienceAnalyticsDeviceScores:
+        type: array
+        items:
+          $ref: .\microsoft.graph.userExperienceAnalyticsDeviceScores.yaml
+        description: User experience analytics device scores
+        x-ms-navigationProperty: true
+      userExperienceAnalyticsDeviceStartupHistory:
+        type: array
+        items:
+          $ref: .\microsoft.graph.userExperienceAnalyticsDeviceStartupHistory.yaml
+        description: User experience analytics device Startup History
+        x-ms-navigationProperty: true
+      userExperienceAnalyticsDeviceStartupProcesses:
+        type: array
+        items:
+          $ref: .\microsoft.graph.userExperienceAnalyticsDeviceStartupProcess.yaml
+        description: User experience analytics device Startup Processes
+        x-ms-navigationProperty: true
+      userExperienceAnalyticsDeviceStartupProcessPerformance:
+        type: array
+        items:
+          $ref: >-
+            .\microsoft.graph.userExperienceAnalyticsDeviceStartupProcessPerformance.yaml
+        description: User experience analytics device Startup Process Performance
+        x-ms-navigationProperty: true
+      userExperienceAnalyticsMetricHistory:
+        type: array
+        items:
+          $ref: .\microsoft.graph.userExperienceAnalyticsMetricHistory.yaml
+        description: User experience analytics metric history
+        x-ms-navigationProperty: true
+      userExperienceAnalyticsModelScores:
+        type: array
+        items:
+          $ref: .\microsoft.graph.userExperienceAnalyticsModelScores.yaml
+        description: User experience analytics model scores
+        x-ms-navigationProperty: true
+      userExperienceAnalyticsOverview:
+        anyOf:
+          - $ref: .\microsoft.graph.userExperienceAnalyticsOverview.yaml
+          - type: object
+            nullable: true
+        description: User experience analytics overview
+        x-ms-navigationProperty: true
+      userExperienceAnalyticsScoreHistory:
+        type: array
+        items:
+          $ref: .\microsoft.graph.userExperienceAnalyticsScoreHistory.yaml
+        description: User experience analytics device Startup Score History
+        x-ms-navigationProperty: true
+      userExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric:
+        anyOf:
+          - $ref: >-
+              .\microsoft.graph.userExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric.yaml
+          - type: object
+            nullable: true
+        description: >-
+          User experience analytics work from anywhere hardware readiness
+          metrics.
+        x-ms-navigationProperty: true
+      userExperienceAnalyticsWorkFromAnywhereMetrics:
+        type: array
+        items:
+          $ref: .\microsoft.graph.userExperienceAnalyticsWorkFromAnywhereMetric.yaml
+        description: User experience analytics work from anywhere metrics.
+        x-ms-navigationProperty: true
+      userExperienceAnalyticsWorkFromAnywhereModelPerformance:
+        type: array
+        items:
+          $ref: >-
+            .\microsoft.graph.userExperienceAnalyticsWorkFromAnywhereModelPerformance.yaml
+        description: The user experience analytics work from anywhere model performance
+        x-ms-navigationProperty: true
+      virtualEndpoint:
+        anyOf:
+          - $ref: .\microsoft.graph.virtualEndpoint.yaml
+          - type: object
+            nullable: true
+        description: Virtual endpoint
+        x-ms-navigationProperty: true
+      windowsAutopilotDeviceIdentities:
+        type: array
+        items:
+          $ref: .\microsoft.graph.windowsAutopilotDeviceIdentity.yaml
+        description: The Windows autopilot device identities contained collection.
+        x-ms-navigationProperty: true
+      windowsInformationProtectionAppLearningSummaries:
+        type: array
+        items:
+          $ref: >-
+            .\microsoft.graph.windowsInformationProtectionAppLearningSummary.yaml
+        description: The windows information protection app learning summaries.
+        x-ms-navigationProperty: true
+      windowsInformationProtectionNetworkLearningSummaries:
+        type: array
+        items:
+          $ref: >-
+            .\microsoft.graph.windowsInformationProtectionNetworkLearningSummary.yaml
+        description: The windows information protection network learning summaries.
+        x-ms-navigationProperty: true
+      windowsMalwareInformation:
+        type: array
+        items:
+          $ref: .\microsoft.graph.windowsMalwareInformation.yaml
+        description: The list of affected malware in the tenant.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+    description: >-
+      Singleton entity that acts as a container for all device management
+      functionality.
+x-ms-discriminator-value: '#microsoft.graph.deviceManagement'

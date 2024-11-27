@@ -1,0 +1,28 @@
+title: educationRoot
+required:
+  - '@odata.type'
+type: object
+properties:
+  classes:
+    type: array
+    items:
+      $ref: .\microsoft.graph.educationClass.yaml
+    x-ms-navigationProperty: true
+  me:
+    anyOf:
+      - $ref: .\microsoft.graph.educationUser.yaml
+      - type: object
+        nullable: true
+    x-ms-navigationProperty: true
+  schools:
+    type: array
+    items:
+      $ref: .\microsoft.graph.educationSchool.yaml
+    x-ms-navigationProperty: true
+  users:
+    type: array
+    items:
+      $ref: .\microsoft.graph.educationUser.yaml
+    x-ms-navigationProperty: true
+  '@odata.type':
+    type: string

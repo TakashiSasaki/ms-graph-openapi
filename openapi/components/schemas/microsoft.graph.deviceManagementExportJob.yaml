@@ -1,0 +1,56 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: deviceManagementExportJob
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      expirationDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: Time that the exported report expires
+        format: date-time
+      filter:
+        type: string
+        description: Filters applied on the report
+        nullable: true
+      format:
+        $ref: .\microsoft.graph.deviceManagementReportFileFormat.yaml
+      localizationType:
+        $ref: .\microsoft.graph.deviceManagementExportJobLocalizationType.yaml
+      reportName:
+        type: string
+        description: Name of the report
+      requestDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: Time that the exported report was requested
+        format: date-time
+      select:
+        type: array
+        items:
+          type: string
+          nullable: true
+        description: Columns selected from the report
+      snapshotId:
+        type: string
+        description: >-
+          A snapshot is an identifiable subset of the dataset represented by the
+          ReportName. A sessionId or CachedReportConfiguration id can be used
+          here. If a sessionId is specified, Filter, Select, and OrderBy are
+          applied to the data represented by the sessionId. Filter, Select, and
+          OrderBy cannot be specified together with a CachedReportConfiguration
+          id.
+        nullable: true
+      status:
+        $ref: .\microsoft.graph.deviceManagementReportStatus.yaml
+      url:
+        type: string
+        description: Temporary location of the exported report
+        nullable: true
+      '@odata.type':
+        type: string
+    description: Entity representing a job to export a report.
+x-ms-discriminator-value: '#microsoft.graph.deviceManagementExportJob'

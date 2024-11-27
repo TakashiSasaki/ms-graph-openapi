@@ -1,0 +1,40 @@
+title: deviceRegistrationState
+enum:
+  - notRegistered
+  - registered
+  - revoked
+  - keyConflict
+  - approvalPending
+  - certificateReset
+  - notRegisteredPendingEnrollment
+  - unknown
+type: string
+description: Device registration status.
+x-ms-enum:
+  name: deviceRegistrationState
+  modelAsString: false
+  values:
+    - value: notRegistered
+      description: The device is not registered.
+      name: notRegistered
+    - value: registered
+      description: The device is registered.
+      name: registered
+    - value: revoked
+      description: The device has been blocked, wiped or retired.
+      name: revoked
+    - value: keyConflict
+      description: The device has a key conflict.
+      name: keyConflict
+    - value: approvalPending
+      description: The device is pending approval.
+      name: approvalPending
+    - value: certificateReset
+      description: The device certificate has been reset.
+      name: certificateReset
+    - value: notRegisteredPendingEnrollment
+      description: The device is not registered and pending enrollment.
+      name: notRegisteredPendingEnrollment
+    - value: unknown
+      description: The device registration status is unknown.
+      name: unknown

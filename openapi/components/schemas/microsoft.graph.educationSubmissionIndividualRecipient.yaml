@@ -1,0 +1,15 @@
+allOf:
+  - $ref: .\microsoft.graph.educationSubmissionRecipient.yaml
+  - title: educationSubmissionIndividualRecipient
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      userId:
+        type: string
+        description: User ID of the user to whom the submission is assigned.
+        nullable: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.educationSubmissionIndividualRecipient'
+x-ms-discriminator-value: '#microsoft.graph.educationSubmissionIndividualRecipient'

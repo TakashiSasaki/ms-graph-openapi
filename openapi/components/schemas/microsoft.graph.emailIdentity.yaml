@@ -1,0 +1,15 @@
+allOf:
+  - $ref: .\microsoft.graph.identity.yaml
+  - title: emailIdentity
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      email:
+        type: string
+        description: Email address of the user.
+        nullable: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.emailIdentity'
+x-ms-discriminator-value: '#microsoft.graph.emailIdentity'

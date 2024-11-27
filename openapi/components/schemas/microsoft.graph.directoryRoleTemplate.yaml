@@ -1,0 +1,19 @@
+allOf:
+  - $ref: .\microsoft.graph.directoryObject.yaml
+  - title: directoryRoleTemplate
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      description:
+        type: string
+        description: The description to set for the directory role. Read-only.
+        nullable: true
+      displayName:
+        type: string
+        description: The display name to set for the directory role. Read-only.
+        nullable: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.directoryRoleTemplate'
+x-ms-discriminator-value: '#microsoft.graph.directoryRoleTemplate'

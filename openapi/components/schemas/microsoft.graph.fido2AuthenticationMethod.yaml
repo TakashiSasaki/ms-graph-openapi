@@ -1,0 +1,46 @@
+allOf:
+  - $ref: .\microsoft.graph.authenticationMethod.yaml
+  - title: fido2AuthenticationMethod
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      aaGuid:
+        type: string
+        description: >-
+          Authenticator Attestation GUID, an identifier that indicates the type
+          (e.g. make and model) of the authenticator.
+        nullable: true
+      attestationCertificates:
+        type: array
+        items:
+          type: string
+          nullable: true
+        description: The attestation certificate(s) attached to this security key.
+      attestationLevel:
+        anyOf:
+          - $ref: .\microsoft.graph.attestationLevel.yaml
+          - type: object
+            nullable: true
+        description: >-
+          The attestation level of this FIDO2 security key. Possible values are:
+          attested, or notAttested.
+      createdDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: The timestamp when this key was registered to the user.
+        format: date-time
+        nullable: true
+      displayName:
+        type: string
+        description: The display name of the key as given by the user.
+        nullable: true
+      model:
+        type: string
+        description: The manufacturer-assigned model of the FIDO2 security key.
+        nullable: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.fido2AuthenticationMethod'
+x-ms-discriminator-value: '#microsoft.graph.fido2AuthenticationMethod'

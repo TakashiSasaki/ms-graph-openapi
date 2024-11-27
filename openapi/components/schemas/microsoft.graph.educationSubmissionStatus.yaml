@@ -1,0 +1,10 @@
+title: educationSubmissionStatus
+enum:
+  - working
+  - submitted
+  - released
+  - returned
+  - unknownFutureValue
+  - reassigned
+  - excused
+type: string

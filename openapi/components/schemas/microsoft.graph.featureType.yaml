@@ -1,0 +1,6 @@
+title: featureType
+enum:
+  - registration
+  - reset
+  - unknownFutureValue
+type: string

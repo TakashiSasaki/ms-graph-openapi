@@ -1,0 +1,41 @@
+allOf:
+  - $ref: .\microsoft.graph.listItemVersion.yaml
+  - title: documentSetVersion
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      comment:
+        type: string
+        description: Comment about the captured version.
+        nullable: true
+      createdBy:
+        anyOf:
+          - $ref: .\microsoft.graph.identitySet.yaml
+          - type: object
+            nullable: true
+        description: User who captured the version.
+      createdDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: Date and time when this version was created.
+        format: date-time
+        nullable: true
+      items:
+        type: array
+        items:
+          $ref: .\microsoft.graph.documentSetVersionItem.yaml
+        description: >-
+          Items within the document set that are captured as part of this
+          version.
+      shouldCaptureMinorVersion:
+        type: boolean
+        description: >-
+          If true, minor versions of items are also captured; otherwise, only
+          major versions are captured. The default value is false.
+        nullable: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.documentSetVersion'
+x-ms-discriminator-value: '#microsoft.graph.documentSetVersion'

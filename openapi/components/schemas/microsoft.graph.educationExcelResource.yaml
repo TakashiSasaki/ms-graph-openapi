@@ -1,0 +1,15 @@
+allOf:
+  - $ref: .\microsoft.graph.educationResource.yaml
+  - title: educationExcelResource
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      fileUrl:
+        type: string
+        description: Pointer to the Excel file object.
+        nullable: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.educationExcelResource'
+x-ms-discriminator-value: '#microsoft.graph.educationExcelResource'

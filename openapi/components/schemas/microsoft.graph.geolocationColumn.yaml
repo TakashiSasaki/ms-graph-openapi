@@ -1,0 +1,7 @@
+title: geolocationColumn
+required:
+  - '@odata.type'
+type: object
+properties:
+  '@odata.type':
+    type: string

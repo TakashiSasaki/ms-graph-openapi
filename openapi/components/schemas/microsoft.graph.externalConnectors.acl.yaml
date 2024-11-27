@@ -1,0 +1,18 @@
+title: acl
+required:
+  - '@odata.type'
+type: object
+properties:
+  accessType:
+    $ref: .\microsoft.graph.externalConnectors.accessType.yaml
+  type:
+    $ref: .\microsoft.graph.externalConnectors.aclType.yaml
+  value:
+    type: string
+    description: >-
+      The unique identifer of the identity. For Microsoft Entra identities,
+      value is set to the object identifier of the user, group or tenant for
+      types user, group and everyone (and everyoneExceptGuests) respectively.
+      For external groups value is set to the ID of the externalGroup
+  '@odata.type':
+    type: string

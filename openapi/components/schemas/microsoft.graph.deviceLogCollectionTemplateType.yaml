@@ -1,0 +1,16 @@
+title: deviceLogCollectionTemplateType
+enum:
+  - predefined
+  - unknownFutureValue
+type: string
+description: Enum for the template type used for collecting logs
+x-ms-enum:
+  name: deviceLogCollectionTemplateType
+  modelAsString: false
+  values:
+    - value: predefined
+      description: Predefined template for what will be collected
+      name: predefined
+    - value: unknownFutureValue
+      description: Evolvable enumeration sentinel value. Do not use.
+      name: unknownFutureValue

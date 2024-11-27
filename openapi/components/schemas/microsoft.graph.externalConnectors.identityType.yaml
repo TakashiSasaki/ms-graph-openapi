@@ -1,0 +1,7 @@
+title: identityType
+enum:
+  - user
+  - group
+  - externalGroup
+  - unknownFutureValue
+type: string

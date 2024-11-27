@@ -1,0 +1,24 @@
+allOf:
+  - $ref: .\microsoft.graph.externalConnectors.urlToItemResolverBase.yaml
+  - title: itemIdResolver
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      itemId:
+        type: string
+        description: >-
+          Pattern that specifies how to form the ID of the external item that
+          the URL represents. The named groups from the regular expression in
+          urlPattern within the urlMatchInfo can be referenced by inserting the
+          group name inside curly brackets.
+      urlMatchInfo:
+        anyOf:
+          - $ref: .\microsoft.graph.externalConnectors.urlMatchInfo.yaml
+          - type: object
+            nullable: true
+        description: Configurations to match and resolve URL.
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.externalConnectors.itemIdResolver'
+x-ms-discriminator-value: '#microsoft.graph.externalConnectors.itemIdResolver'

@@ -1,0 +1,122 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: educationClass
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      classCode:
+        type: string
+        description: Class code used by the school to identify the class.
+        nullable: true
+      course:
+        anyOf:
+          - $ref: .\microsoft.graph.educationCourse.yaml
+          - type: object
+            nullable: true
+      createdBy:
+        anyOf:
+          - $ref: .\microsoft.graph.identitySet.yaml
+          - type: object
+            nullable: true
+        description: Entity who created the class
+      description:
+        type: string
+        description: Description of the class.
+        nullable: true
+      displayName:
+        type: string
+        description: Name of the class.
+      externalId:
+        type: string
+        description: ID of the class from the syncing system.
+        nullable: true
+      externalName:
+        type: string
+        description: Name of the class in the syncing system.
+        nullable: true
+      externalSource:
+        anyOf:
+          - $ref: .\microsoft.graph.educationExternalSource.yaml
+          - type: object
+            nullable: true
+        description: 'How this class was created. Possible values are: sis, manual.'
+      externalSourceDetail:
+        type: string
+        description: The name of the external source this resource was generated from.
+        nullable: true
+      grade:
+        type: string
+        description: Grade level of the class.
+        nullable: true
+      mailNickname:
+        type: string
+        description: Mail name for sending email to all members, if this is enabled.
+      term:
+        anyOf:
+          - $ref: .\microsoft.graph.educationTerm.yaml
+          - type: object
+            nullable: true
+        description: Term for this class.
+      assignmentCategories:
+        type: array
+        items:
+          $ref: .\microsoft.graph.educationCategory.yaml
+        description: All categories associated with this class. Nullable.
+        x-ms-navigationProperty: true
+      assignmentDefaults:
+        anyOf:
+          - $ref: .\microsoft.graph.educationAssignmentDefaults.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Specifies class-level defaults respected by new assignments created in
+          the class.
+        x-ms-navigationProperty: true
+      assignments:
+        type: array
+        items:
+          $ref: .\microsoft.graph.educationAssignment.yaml
+        description: All assignments associated with this class. Nullable.
+        x-ms-navigationProperty: true
+      assignmentSettings:
+        anyOf:
+          - $ref: .\microsoft.graph.educationAssignmentSettings.yaml
+          - type: object
+            nullable: true
+        description: Specifies class-level assignments settings.
+        x-ms-navigationProperty: true
+      group:
+        anyOf:
+          - $ref: .\microsoft.graph.group.yaml
+          - type: object
+            nullable: true
+        description: The underlying Microsoft 365 group object.
+        x-ms-navigationProperty: true
+      members:
+        type: array
+        items:
+          $ref: .\microsoft.graph.educationUser.yaml
+        description: All users in the class. Nullable.
+        x-ms-navigationProperty: true
+      modules:
+        type: array
+        items:
+          $ref: .\microsoft.graph.educationModule.yaml
+        description: All modules in the class. Nullable.
+        x-ms-navigationProperty: true
+      schools:
+        type: array
+        items:
+          $ref: .\microsoft.graph.educationSchool.yaml
+        description: All schools that this class is associated with. Nullable.
+        x-ms-navigationProperty: true
+      teachers:
+        type: array
+        items:
+          $ref: .\microsoft.graph.educationUser.yaml
+        description: All teachers in the class. Nullable.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.educationClass'

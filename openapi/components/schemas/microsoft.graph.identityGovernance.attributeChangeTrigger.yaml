@@ -1,0 +1,18 @@
+allOf:
+  - $ref: .\microsoft.graph.identityGovernance.workflowExecutionTrigger.yaml
+  - title: attributeChangeTrigger
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      triggerAttributes:
+        type: array
+        items:
+          $ref: .\microsoft.graph.identityGovernance.triggerAttribute.yaml
+        description: >-
+          The trigger attribute being changed that triggers the
+          workflowexecutiontrigger of a workflow.)
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.identityGovernance.attributeChangeTrigger'
+x-ms-discriminator-value: '#microsoft.graph.identityGovernance.attributeChangeTrigger'

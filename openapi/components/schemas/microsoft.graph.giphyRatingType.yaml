@@ -1,0 +1,6 @@
+title: giphyRatingType
+enum:
+  - strict
+  - moderate
+  - unknownFutureValue
+type: string

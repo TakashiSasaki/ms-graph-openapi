@@ -1,0 +1,26 @@
+allOf:
+  - $ref: .\microsoft.graph.educationOutcome.yaml
+  - title: educationFeedbackResourceOutcome
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      feedbackResource:
+        anyOf:
+          - $ref: .\microsoft.graph.educationResource.yaml
+          - type: object
+            nullable: true
+        description: The actual feedback resource.
+      resourceStatus:
+        anyOf:
+          - $ref: .\microsoft.graph.educationFeedbackResourceOutcomeStatus.yaml
+          - type: object
+            nullable: true
+        description: >-
+          The status of the feedback resource. The possible values are:
+          notPublished, pendingPublish, published, failedPublish,
+          unknownFutureValue.
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.educationFeedbackResourceOutcome'
+x-ms-discriminator-value: '#microsoft.graph.educationFeedbackResourceOutcome'

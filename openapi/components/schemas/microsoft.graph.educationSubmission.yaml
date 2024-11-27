@@ -1,0 +1,147 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: educationSubmission
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      excusedBy:
+        anyOf:
+          - $ref: .\microsoft.graph.identitySet.yaml
+          - type: object
+            nullable: true
+        description: The user that marked the submission as excused.
+        readOnly: true
+      excusedDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: >-
+          The time that the submission was excused. The timestamp type
+          represents date and time information using ISO 8601 format and is
+          always in UTC. For example, midnight UTC on Jan 1, 2014 is
+          2014-01-01T00:00:00Z.
+        format: date-time
+        nullable: true
+        readOnly: true
+      reassignedBy:
+        anyOf:
+          - $ref: .\microsoft.graph.identitySet.yaml
+          - type: object
+            nullable: true
+        description: User who moved the status of this submission to reassigned.
+        readOnly: true
+      reassignedDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: >-
+          Moment in time when the submission was reassigned. The timestamp type
+          represents date and time information using ISO 8601 format and is
+          always in UTC. For example, midnight UTC on Jan 1, 2014 is
+          2014-01-01T00:00:00Z.
+        format: date-time
+        nullable: true
+        readOnly: true
+      recipient:
+        anyOf:
+          - $ref: .\microsoft.graph.educationSubmissionRecipient.yaml
+          - type: object
+            nullable: true
+        description: Who this submission is assigned to.
+      resourcesFolderUrl:
+        type: string
+        description: Folder where all file resources for this submission need to be stored.
+        nullable: true
+        readOnly: true
+      returnedBy:
+        anyOf:
+          - $ref: .\microsoft.graph.identitySet.yaml
+          - type: object
+            nullable: true
+        description: User who moved the status of this submission to returned.
+        readOnly: true
+      returnedDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: >-
+          Moment in time when the submission was returned. The timestamp type
+          represents date and time information using ISO 8601 format and is
+          always in UTC. For example, midnight UTC on Jan 1, 2014 is
+          2014-01-01T00:00:00Z.
+        format: date-time
+        nullable: true
+        readOnly: true
+      status:
+        anyOf:
+          - $ref: .\microsoft.graph.educationSubmissionStatus.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Read-only. Possible values are: excused, reassigned, returned,
+          submitted and working. You must use the Prefer:
+          include-unknown-enum-members request header to get the following
+          values in this evolvable enum: excused and reassigned.
+        readOnly: true
+      submittedBy:
+        anyOf:
+          - $ref: .\microsoft.graph.identitySet.yaml
+          - type: object
+            nullable: true
+        description: User who moved the resource into the submitted state.
+        readOnly: true
+      submittedDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: >-
+          Moment in time when the submission was moved into the submitted state.
+          The timestamp type represents date and time information using ISO 8601
+          format and is always in UTC. For example, midnight UTC on Jan 1, 2014
+          is 2014-01-01T00:00:00Z.
+        format: date-time
+        nullable: true
+        readOnly: true
+      unsubmittedBy:
+        anyOf:
+          - $ref: .\microsoft.graph.identitySet.yaml
+          - type: object
+            nullable: true
+        description: User who moved the resource from submitted into the working state.
+        readOnly: true
+      unsubmittedDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: >-
+          Moment in time when the submission was moved from submitted into the
+          working state. The timestamp type represents date and time information
+          using ISO 8601 format and is always in UTC. For example, midnight UTC
+          on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+        format: date-time
+        nullable: true
+        readOnly: true
+      webUrl:
+        type: string
+        description: The deep link URL for the given submission.
+        nullable: true
+        readOnly: true
+      outcomes:
+        type: array
+        items:
+          $ref: .\microsoft.graph.educationOutcome.yaml
+        x-ms-navigationProperty: true
+      resources:
+        type: array
+        items:
+          $ref: .\microsoft.graph.educationSubmissionResource.yaml
+        x-ms-navigationProperty: true
+      submittedResources:
+        type: array
+        items:
+          $ref: .\microsoft.graph.educationSubmissionResource.yaml
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.educationSubmission'

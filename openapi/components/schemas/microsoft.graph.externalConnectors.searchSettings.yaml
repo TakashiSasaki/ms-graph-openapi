@@ -1,0 +1,15 @@
+title: searchSettings
+required:
+  - '@odata.type'
+type: object
+properties:
+  searchResultTemplates:
+    type: array
+    items:
+      $ref: .\microsoft.graph.externalConnectors.displayTemplate.yaml
+    description: >-
+      Enables the developer to define the appearance of the content and
+      configure conditions that dictate when the template should be displayed.
+      Maximum of 2 search result templates per connection.
+  '@odata.type':
+    type: string

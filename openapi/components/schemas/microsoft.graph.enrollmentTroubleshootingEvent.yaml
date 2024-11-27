@@ -1,0 +1,39 @@
+allOf:
+  - $ref: .\microsoft.graph.deviceManagementTroubleshootingEvent.yaml
+  - title: enrollmentTroubleshootingEvent
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      deviceId:
+        type: string
+        description: Azure AD device identifier.
+        nullable: true
+      enrollmentType:
+        $ref: .\microsoft.graph.deviceEnrollmentType.yaml
+      failureCategory:
+        $ref: .\microsoft.graph.deviceEnrollmentFailureReason.yaml
+      failureReason:
+        type: string
+        description: Detailed failure reason.
+        nullable: true
+      managedDeviceIdentifier:
+        type: string
+        description: Device identifier created or collected by Intune.
+        nullable: true
+      operatingSystem:
+        type: string
+        description: Operating System.
+        nullable: true
+      osVersion:
+        type: string
+        description: OS Version.
+        nullable: true
+      userId:
+        type: string
+        description: Identifier for the user that tried to enroll the device.
+        nullable: true
+      '@odata.type':
+        type: string
+    description: Event representing an enrollment failure.
+x-ms-discriminator-value: '#microsoft.graph.enrollmentTroubleshootingEvent'

@@ -1,0 +1,6 @@
+title: followupFlagStatus
+enum:
+  - notFlagged
+  - complete
+  - flagged
+type: string

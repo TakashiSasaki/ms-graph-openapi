@@ -1,0 +1,35 @@
+title: educationStudent
+required:
+  - '@odata.type'
+type: object
+properties:
+  birthDate:
+    pattern: ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$
+    type: string
+    description: Birth date of the student.
+    format: date
+    nullable: true
+  externalId:
+    type: string
+    description: ID of the student in the source system.
+    nullable: true
+  gender:
+    anyOf:
+      - $ref: .\microsoft.graph.educationGender.yaml
+      - type: object
+        nullable: true
+    description: 'The possible values are: female, male, other, unknownFutureValue.'
+  grade:
+    type: string
+    description: Current grade level of the student.
+    nullable: true
+  graduationYear:
+    type: string
+    description: Year the student is graduating from the school.
+    nullable: true
+  studentNumber:
+    type: string
+    description: Student Number.
+    nullable: true
+  '@odata.type':
+    type: string

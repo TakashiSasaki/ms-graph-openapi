@@ -1,0 +1,16 @@
+title: entityType
+enum:
+  - event
+  - message
+  - driveItem
+  - externalItem
+  - site
+  - list
+  - listItem
+  - drive
+  - unknownFutureValue
+  - chatMessage
+  - person
+  - acronym
+  - bookmark
+type: string

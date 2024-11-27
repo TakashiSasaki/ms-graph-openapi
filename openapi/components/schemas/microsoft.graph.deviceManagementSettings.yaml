@@ -1,0 +1,23 @@
+title: deviceManagementSettings
+required:
+  - '@odata.type'
+type: object
+properties:
+  deviceComplianceCheckinThresholdDays:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    description: >-
+      The number of days a device is allowed to go without checking in to remain
+      compliant.
+    format: int32
+  isScheduledActionEnabled:
+    type: boolean
+    description: Is feature enabled or not for scheduled action for rule.
+  secureByDefault:
+    type: boolean
+    description: >-
+      Device should be noncompliant when there is no compliance policy targeted
+      when this is true
+  '@odata.type':
+    type: string

@@ -1,0 +1,30 @@
+title: fileSystemInfo
+required:
+  - '@odata.type'
+type: object
+properties:
+  createdDateTime:
+    pattern: >-
+      ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+    type: string
+    description: The UTC date and time the file was created on a client.
+    format: date-time
+    nullable: true
+  lastAccessedDateTime:
+    pattern: >-
+      ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+    type: string
+    description: >-
+      The UTC date and time the file was last accessed. Available for the recent
+      file list only.
+    format: date-time
+    nullable: true
+  lastModifiedDateTime:
+    pattern: >-
+      ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+    type: string
+    description: The UTC date and time the file was last modified on a client.
+    format: date-time
+    nullable: true
+  '@odata.type':
+    type: string

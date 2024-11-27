@@ -1,0 +1,9 @@
+title: lifecycleTaskCategory
+enum:
+  - joiner
+  - leaver
+  - unknownFutureValue
+  - mover
+type: string
+x-ms-enum-flags:
+  isFlags: true

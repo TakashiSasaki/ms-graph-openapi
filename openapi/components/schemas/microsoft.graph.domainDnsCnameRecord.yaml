@@ -1,0 +1,16 @@
+allOf:
+  - $ref: .\microsoft.graph.domainDnsRecord.yaml
+  - title: domainDnsCnameRecord
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      canonicalName:
+        type: string
+        description: >-
+          The canonical name of the CNAME record. Used to configure the CNAME
+          record at the DNS host.
+        nullable: true
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.domainDnsCnameRecord'

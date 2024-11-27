@@ -1,0 +1,72 @@
+title: educationResource
+required:
+  - '@odata.type'
+type: object
+properties:
+  createdBy:
+    anyOf:
+      - $ref: .\microsoft.graph.identitySet.yaml
+      - type: object
+        nullable: true
+    description: The individual who created the resource.
+    readOnly: true
+  createdDateTime:
+    pattern: >-
+      ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+    type: string
+    description: >-
+      Moment in time when the resource was created. The Timestamp type
+      represents date and time information using ISO 8601 format and is always
+      in UTC time. For example, midnight UTC on Jan 1, 2014 is
+      2014-01-01T00:00:00Z
+    format: date-time
+    nullable: true
+    readOnly: true
+  displayName:
+    type: string
+    description: Display name of resource.
+    nullable: true
+  lastModifiedBy:
+    anyOf:
+      - $ref: .\microsoft.graph.identitySet.yaml
+      - type: object
+        nullable: true
+    description: The last user to modify the resource.
+    readOnly: true
+  lastModifiedDateTime:
+    pattern: >-
+      ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+    type: string
+    description: >-
+      Moment in time when the resource was last modified.  The Timestamp type
+      represents date and time information using ISO 8601 format and is always
+      in UTC time. For example, midnight UTC on Jan 1, 2014 is
+      2014-01-01T00:00:00Z.
+    format: date-time
+    nullable: true
+    readOnly: true
+  '@odata.type':
+    type: string
+discriminator:
+  propertyName: '@odata.type'
+  mapping:
+    '#microsoft.graph.educationChannelResource': .\microsoft.graph.educationChannelResource.yaml
+    '#microsoft.graph.educationExcelResource': .\microsoft.graph.educationExcelResource.yaml
+    '#microsoft.graph.educationExternalResource': .\microsoft.graph.educationExternalResource.yaml
+    '#microsoft.graph.educationFileResource': .\microsoft.graph.educationFileResource.yaml
+    '#microsoft.graph.educationLinkedAssignmentResource': .\microsoft.graph.educationLinkedAssignmentResource.yaml
+    '#microsoft.graph.educationLinkResource': .\microsoft.graph.educationLinkResource.yaml
+    '#microsoft.graph.educationMediaResource': .\microsoft.graph.educationMediaResource.yaml
+    '#microsoft.graph.educationPowerPointResource': .\microsoft.graph.educationPowerPointResource.yaml
+    '#microsoft.graph.educationTeamsAppResource': .\microsoft.graph.educationTeamsAppResource.yaml
+    '#microsoft.graph.educationWordResource': .\microsoft.graph.educationWordResource.yaml
+    microsoft.graph.educationChannelResource: .\microsoft.graph.educationChannelResource.yaml
+    microsoft.graph.educationExcelResource: .\microsoft.graph.educationExcelResource.yaml
+    microsoft.graph.educationExternalResource: .\microsoft.graph.educationExternalResource.yaml
+    microsoft.graph.educationFileResource: .\microsoft.graph.educationFileResource.yaml
+    microsoft.graph.educationLinkedAssignmentResource: .\microsoft.graph.educationLinkedAssignmentResource.yaml
+    microsoft.graph.educationLinkResource: .\microsoft.graph.educationLinkResource.yaml
+    microsoft.graph.educationMediaResource: .\microsoft.graph.educationMediaResource.yaml
+    microsoft.graph.educationPowerPointResource: .\microsoft.graph.educationPowerPointResource.yaml
+    microsoft.graph.educationTeamsAppResource: .\microsoft.graph.educationTeamsAppResource.yaml
+    microsoft.graph.educationWordResource: .\microsoft.graph.educationWordResource.yaml

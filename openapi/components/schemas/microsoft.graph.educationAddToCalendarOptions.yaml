@@ -1,0 +1,8 @@
+title: educationAddToCalendarOptions
+enum:
+  - none
+  - studentsAndPublisher
+  - studentsAndTeamOwners
+  - unknownFutureValue
+  - studentsOnly
+type: string

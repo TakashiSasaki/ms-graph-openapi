@@ -1,0 +1,17 @@
+allOf:
+  - $ref: .\microsoft.graph.customExtensionCallbackConfiguration.yaml
+  - title: customTaskExtensionCallbackConfiguration
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      authorizedApps:
+        type: array
+        items:
+          $ref: .\microsoft.graph.application.yaml
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+        default: >-
+          #microsoft.graph.identityGovernance.customTaskExtensionCallbackConfiguration
+x-ms-discriminator-value: '#microsoft.graph.identityGovernance.customTaskExtensionCallbackConfiguration'

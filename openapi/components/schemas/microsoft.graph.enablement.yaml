@@ -1,0 +1,20 @@
+title: enablement
+enum:
+  - notConfigured
+  - enabled
+  - disabled
+type: string
+description: Possible values of a property
+x-ms-enum:
+  name: enablement
+  modelAsString: false
+  values:
+    - value: notConfigured
+      description: Device default value, no intent.
+      name: notConfigured
+    - value: enabled
+      description: Enables the setting on the device.
+      name: enabled
+    - value: disabled
+      description: Disables the setting on the device.
+      name: disabled

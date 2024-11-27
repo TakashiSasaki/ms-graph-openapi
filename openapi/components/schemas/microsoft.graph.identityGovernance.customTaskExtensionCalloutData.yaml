@@ -1,0 +1,35 @@
+allOf:
+  - $ref: .\microsoft.graph.customExtensionData.yaml
+  - title: customTaskExtensionCalloutData
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      subject:
+        anyOf:
+          - $ref: .\microsoft.graph.user.yaml
+          - type: object
+            nullable: true
+        x-ms-navigationProperty: true
+      task:
+        anyOf:
+          - $ref: .\microsoft.graph.identityGovernance.task.yaml
+          - type: object
+            nullable: true
+        x-ms-navigationProperty: true
+      taskProcessingresult:
+        anyOf:
+          - $ref: .\microsoft.graph.identityGovernance.taskProcessingResult.yaml
+          - type: object
+            nullable: true
+        x-ms-navigationProperty: true
+      workflow:
+        anyOf:
+          - $ref: .\microsoft.graph.identityGovernance.workflow.yaml
+          - type: object
+            nullable: true
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.identityGovernance.customTaskExtensionCalloutData'
+x-ms-discriminator-value: '#microsoft.graph.identityGovernance.customTaskExtensionCalloutData'

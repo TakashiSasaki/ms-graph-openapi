@@ -1,0 +1,14 @@
+title: driveItemSourceApplication
+enum:
+  - teams
+  - yammer
+  - sharePoint
+  - oneDrive
+  - stream
+  - powerPoint
+  - office
+  - loki
+  - loop
+  - other
+  - unknownFutureValue
+type: string

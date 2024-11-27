@@ -1,0 +1,7 @@
+title: eventType
+enum:
+  - singleInstance
+  - occurrence
+  - exception
+  - seriesMaster
+type: string

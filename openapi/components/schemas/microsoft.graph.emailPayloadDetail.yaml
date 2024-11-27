@@ -1,0 +1,27 @@
+allOf:
+  - $ref: .\microsoft.graph.payloadDetail.yaml
+  - title: emailPayloadDetail
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      fromEmail:
+        type: string
+        description: Email address of the user.
+        nullable: true
+      fromName:
+        type: string
+        description: Display name of the user.
+        nullable: true
+      isExternalSender:
+        type: boolean
+        description: Indicates whether the sender isn't from the user's organization.
+        nullable: true
+      subject:
+        type: string
+        description: The subject of the email address sent to the user.
+        nullable: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.emailPayloadDetail'
+x-ms-discriminator-value: '#microsoft.graph.emailPayloadDetail'

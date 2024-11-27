@@ -1,0 +1,10 @@
+title: Collection of driveItemVersion
+type: object
+allOf:
+  - $ref: .\BaseCollectionPaginationCountResponse.yaml
+  - type: object
+    properties:
+      value:
+        type: array
+        items:
+          $ref: .\microsoft.graph.driveItemVersion.yaml

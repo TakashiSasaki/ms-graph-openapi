@@ -1,0 +1,246 @@
+allOf:
+  - $ref: .\microsoft.graph.baseItem.yaml
+  - title: driveItem
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      audio:
+        anyOf:
+          - $ref: .\microsoft.graph.audio.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Audio metadata, if the item is an audio file. Read-only. Read-only.
+          Only on OneDrive Personal.
+      bundle:
+        anyOf:
+          - $ref: .\microsoft.graph.bundle.yaml
+          - type: object
+            nullable: true
+        description: Bundle metadata, if the item is a bundle. Read-only.
+      content:
+        type: string
+        description: The content stream, if the item represents a file.
+        format: base64url
+        nullable: true
+      cTag:
+        type: string
+        description: >-
+          An eTag for the content of the item. This eTag isn't changed if only
+          the metadata is changed. Note This property isn't returned if the item
+          is a folder. Read-only.
+        nullable: true
+      deleted:
+        anyOf:
+          - $ref: .\microsoft.graph.deleted.yaml
+          - type: object
+            nullable: true
+        description: Information about the deleted state of the item. Read-only.
+      file:
+        anyOf:
+          - $ref: .\microsoft.graph.file.yaml
+          - type: object
+            nullable: true
+        description: File metadata, if the item is a file. Read-only.
+      fileSystemInfo:
+        anyOf:
+          - $ref: .\microsoft.graph.fileSystemInfo.yaml
+          - type: object
+            nullable: true
+        description: File system information on client. Read-write.
+      folder:
+        anyOf:
+          - $ref: .\microsoft.graph.folder.yaml
+          - type: object
+            nullable: true
+        description: Folder metadata, if the item is a folder. Read-only.
+      image:
+        anyOf:
+          - $ref: .\microsoft.graph.image.yaml
+          - type: object
+            nullable: true
+        description: Image metadata, if the item is an image. Read-only.
+      location:
+        anyOf:
+          - $ref: .\microsoft.graph.geoCoordinates.yaml
+          - type: object
+            nullable: true
+        description: Location metadata, if the item has location data. Read-only.
+      malware:
+        anyOf:
+          - $ref: .\microsoft.graph.malware.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Malware metadata, if the item was detected to contain malware.
+          Read-only.
+      package:
+        anyOf:
+          - $ref: .\microsoft.graph.package.yaml
+          - type: object
+            nullable: true
+        description: >-
+          If present, indicates that this item is a package instead of a folder
+          or file. Packages are treated like files in some contexts and folders
+          in others. Read-only.
+      pendingOperations:
+        anyOf:
+          - $ref: .\microsoft.graph.pendingOperations.yaml
+          - type: object
+            nullable: true
+        description: >-
+          If present, indicates that one or more operations that might affect
+          the state of the driveItem are pending completion. Read-only.
+      photo:
+        anyOf:
+          - $ref: .\microsoft.graph.photo.yaml
+          - type: object
+            nullable: true
+        description: Photo metadata, if the item is a photo. Read-only.
+      publication:
+        anyOf:
+          - $ref: .\microsoft.graph.publicationFacet.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Provides information about the published or checked-out state of an
+          item, in locations that support such actions. This property isn't
+          returned by default. Read-only.
+      remoteItem:
+        anyOf:
+          - $ref: .\microsoft.graph.remoteItem.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Remote item data, if the item is shared from a drive other than the
+          one being accessed. Read-only.
+      root:
+        anyOf:
+          - $ref: .\microsoft.graph.root.yaml
+          - type: object
+            nullable: true
+        description: >-
+          If this property is non-null, it indicates that the driveItem is the
+          top-most driveItem in the drive.
+      searchResult:
+        anyOf:
+          - $ref: .\microsoft.graph.searchResult.yaml
+          - type: object
+            nullable: true
+        description: Search metadata, if the item is from a search result. Read-only.
+      shared:
+        anyOf:
+          - $ref: .\microsoft.graph.shared.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Indicates that the item was shared with others and provides
+          information about the shared state of the item. Read-only.
+      sharepointIds:
+        anyOf:
+          - $ref: .\microsoft.graph.sharepointIds.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Returns identifiers useful for SharePoint REST compatibility.
+          Read-only.
+      size:
+        type: number
+        description: Size of the item in bytes. Read-only.
+        format: int64
+        nullable: true
+      specialFolder:
+        anyOf:
+          - $ref: .\microsoft.graph.specialFolder.yaml
+          - type: object
+            nullable: true
+        description: >-
+          If the current item is also available as a special folder, this facet
+          is returned. Read-only.
+      video:
+        anyOf:
+          - $ref: .\microsoft.graph.video.yaml
+          - type: object
+            nullable: true
+        description: Video metadata, if the item is a video. Read-only.
+      webDavUrl:
+        type: string
+        description: WebDAV compatible URL for the item.
+        nullable: true
+      analytics:
+        anyOf:
+          - $ref: .\microsoft.graph.itemAnalytics.yaml
+          - type: object
+            nullable: true
+        description: Analytics about the view activities that took place on this item.
+        x-ms-navigationProperty: true
+      children:
+        type: array
+        items:
+          $ref: .\microsoft.graph.driveItem.yaml
+        description: >-
+          Collection containing Item objects for the immediate children of Item.
+          Only items representing folders have children. Read-only. Nullable.
+        x-ms-navigationProperty: true
+      listItem:
+        anyOf:
+          - $ref: .\microsoft.graph.listItem.yaml
+          - type: object
+            nullable: true
+        description: >-
+          For drives in SharePoint, the associated document library list item.
+          Read-only. Nullable.
+        x-ms-navigationProperty: true
+      permissions:
+        type: array
+        items:
+          $ref: .\microsoft.graph.permission.yaml
+        description: The set of permissions for the item. Read-only. Nullable.
+        x-ms-navigationProperty: true
+      retentionLabel:
+        anyOf:
+          - $ref: .\microsoft.graph.itemRetentionLabel.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Information about retention label and settings enforced on the
+          driveItem. Read-write.
+        x-ms-navigationProperty: true
+      subscriptions:
+        type: array
+        items:
+          $ref: .\microsoft.graph.subscription.yaml
+        description: >-
+          The set of subscriptions on the item. Only supported on the root of a
+          drive.
+        x-ms-navigationProperty: true
+      thumbnails:
+        type: array
+        items:
+          $ref: .\microsoft.graph.thumbnailSet.yaml
+        description: >-
+          Collection of thumbnailSet objects associated with the item. For more
+          information, see getting thumbnails. Read-only. Nullable.
+        x-ms-navigationProperty: true
+      versions:
+        type: array
+        items:
+          $ref: .\microsoft.graph.driveItemVersion.yaml
+        description: >-
+          The list of previous versions of the item. For more info, see getting
+          previous versions. Read-only. Nullable.
+        x-ms-navigationProperty: true
+      workbook:
+        anyOf:
+          - $ref: .\microsoft.graph.workbook.yaml
+          - type: object
+            nullable: true
+        description: >-
+          For files that are Excel spreadsheets, access to the workbook API to
+          work with the spreadsheet's contents. Nullable.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.driveItem'
+x-ms-discriminator-value: '#microsoft.graph.driveItem'

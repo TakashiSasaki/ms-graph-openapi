@@ -1,0 +1,29 @@
+title: enrollmentState
+enum:
+  - unknown
+  - enrolled
+  - pendingReset
+  - failed
+  - notContacted
+type: string
+x-ms-enum:
+  name: enrollmentState
+  modelAsString: false
+  values:
+    - value: unknown
+      description: Device enrollment state is unknown
+      name: unknown
+    - value: enrolled
+      description: Device is Enrolled.
+      name: enrolled
+    - value: pendingReset
+      description: >-
+        Enrolled but it's enrolled via enrollment profile and the enrolled
+        profile is different from the assigned profile.
+      name: pendingReset
+    - value: failed
+      description: Not enrolled and there is enrollment failure record.
+      name: failed
+    - value: notContacted
+      description: Device is imported but not enrolled.
+      name: notContacted

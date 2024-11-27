@@ -1,0 +1,50 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: lifecycleWorkflowsContainer
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      customTaskExtensions:
+        type: array
+        items:
+          $ref: .\microsoft.graph.identityGovernance.customTaskExtension.yaml
+        description: The customTaskExtension instance.
+        x-ms-navigationProperty: true
+      deletedItems:
+        anyOf:
+          - $ref: .\microsoft.graph.deletedItemContainer.yaml
+          - type: object
+            nullable: true
+        description: Deleted workflows in your lifecycle workflows instance.
+        x-ms-navigationProperty: true
+      insights:
+        anyOf:
+          - $ref: .\microsoft.graph.identityGovernance.insights.yaml
+          - type: object
+            nullable: true
+        description: The insight container holding workflow insight summaries for a tenant.
+        x-ms-navigationProperty: true
+      settings:
+        $ref: .\microsoft.graph.identityGovernance.lifecycleManagementSettings.yaml
+      taskDefinitions:
+        type: array
+        items:
+          $ref: .\microsoft.graph.identityGovernance.taskDefinition.yaml
+        description: The definition of tasks within the lifecycle workflows instance.
+        x-ms-navigationProperty: true
+      workflows:
+        type: array
+        items:
+          $ref: .\microsoft.graph.identityGovernance.workflow.yaml
+        description: The workflows in the lifecycle workflows instance.
+        x-ms-navigationProperty: true
+      workflowTemplates:
+        type: array
+        items:
+          $ref: .\microsoft.graph.identityGovernance.workflowTemplate.yaml
+        description: The workflow templates in the lifecycle workflow instance.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.identityGovernance.lifecycleWorkflowsContainer'

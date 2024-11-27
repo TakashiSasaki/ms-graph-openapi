@@ -1,0 +1,15 @@
+title: emailAddress
+required:
+  - '@odata.type'
+type: object
+properties:
+  address:
+    type: string
+    description: The email address of the person or entity.
+    nullable: true
+  name:
+    type: string
+    description: The display name of the person or entity.
+    nullable: true
+  '@odata.type':
+    type: string

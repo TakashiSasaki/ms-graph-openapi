@@ -1,0 +1,9 @@
+title: freeBusyStatus
+enum:
+  - unknown
+  - free
+  - tentative
+  - busy
+  - oof
+  - workingElsewhere
+type: string

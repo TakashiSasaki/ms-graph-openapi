@@ -1,0 +1,51 @@
+title: hostSecurityState
+required:
+  - '@odata.type'
+type: object
+properties:
+  fqdn:
+    type: string
+    description: >-
+      Host FQDN (Fully Qualified Domain Name) (for example,
+      machine.company.com).
+    nullable: true
+  isAzureAdJoined:
+    type: boolean
+    nullable: true
+  isAzureAdRegistered:
+    type: boolean
+    nullable: true
+  isHybridAzureDomainJoined:
+    type: boolean
+    description: >-
+      True if the host is domain joined to an on-premises Active Directory
+      domain.
+    nullable: true
+  netBiosName:
+    type: string
+    description: The local host name, without the DNS domain name.
+    nullable: true
+  os:
+    type: string
+    description: Host Operating System. (For example, Windows 10, macOS, RHEL, etc.).
+    nullable: true
+  privateIpAddress:
+    type: string
+    description: >-
+      Private (not routable) IPv4 or IPv6 address (see RFC 1918) at the time of
+      the alert.
+    nullable: true
+  publicIpAddress:
+    type: string
+    description: >-
+      Publicly routable IPv4 or IPv6 address (see RFC 1918) at time of the
+      alert.
+    nullable: true
+  riskScore:
+    type: string
+    description: >-
+      Provider-generated/calculated risk score of the host.  Recommended value
+      range of 0-1, which equates to a percentage.
+    nullable: true
+  '@odata.type':
+    type: string

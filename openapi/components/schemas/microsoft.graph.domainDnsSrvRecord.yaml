@@ -1,0 +1,55 @@
+allOf:
+  - $ref: .\microsoft.graph.domainDnsRecord.yaml
+  - title: domainDnsSrvRecord
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      nameTarget:
+        type: string
+        description: >-
+          Value to use when configuring the Target property of the SRV record at
+          the DNS host.
+        nullable: true
+      port:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: >-
+          Value to use when configuring the port property of the SRV record at
+          the DNS host.
+        format: int32
+        nullable: true
+      priority:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: >-
+          Value to use when configuring the priority property of the SRV record
+          at the DNS host.
+        format: int32
+        nullable: true
+      protocol:
+        type: string
+        description: >-
+          Value to use when configuring the protocol property of the SRV record
+          at the DNS host.
+        nullable: true
+      service:
+        type: string
+        description: >-
+          Value to use when configuring the service property of the SRV record
+          at the DNS host.
+        nullable: true
+      weight:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: >-
+          Value to use when configuring the weight property of the SRV record at
+          the DNS host.
+        format: int32
+        nullable: true
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.domainDnsSrvRecord'

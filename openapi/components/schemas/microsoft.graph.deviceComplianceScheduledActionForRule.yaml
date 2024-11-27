@@ -1,0 +1,27 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: deviceComplianceScheduledActionForRule
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      ruleName:
+        type: string
+        description: >-
+          Name of the rule which this scheduled action applies to. Currently
+          scheduled actions are created per policy instead of per rule, thus
+          RuleName is always set to default value PasswordRequired.
+        nullable: true
+      scheduledActionConfigurations:
+        type: array
+        items:
+          $ref: .\microsoft.graph.deviceComplianceActionItem.yaml
+        description: >-
+          The list of scheduled action configurations for this compliance
+          policy. Compliance policy must have one and only one block scheduled
+          action.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+    description: Scheduled Action for Rule
+x-ms-discriminator-value: '#microsoft.graph.deviceComplianceScheduledActionForRule'

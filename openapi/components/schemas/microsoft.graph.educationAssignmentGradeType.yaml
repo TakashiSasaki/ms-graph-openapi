@@ -1,0 +1,12 @@
+title: educationAssignmentGradeType
+required:
+  - '@odata.type'
+type: object
+properties:
+  '@odata.type':
+    type: string
+discriminator:
+  propertyName: '@odata.type'
+  mapping:
+    '#microsoft.graph.educationAssignmentPointsGradeType': .\microsoft.graph.educationAssignmentPointsGradeType.yaml
+    microsoft.graph.educationAssignmentPointsGradeType: .\microsoft.graph.educationAssignmentPointsGradeType.yaml

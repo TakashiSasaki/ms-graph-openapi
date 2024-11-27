@@ -1,0 +1,18 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: identity
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      type:
+        anyOf:
+          - $ref: .\microsoft.graph.externalConnectors.identityType.yaml
+          - type: object
+            nullable: true
+        description: >-
+          The type of identity. Possible values are: user or group for Microsoft
+          Entra identities and externalgroup for groups in an external system.
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.externalConnectors.identity'

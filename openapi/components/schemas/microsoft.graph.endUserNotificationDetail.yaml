@@ -1,0 +1,28 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: endUserNotificationDetail
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      emailContent:
+        type: string
+        description: Email HTML content.
+      isDefaultLangauge:
+        type: boolean
+        description: Indicates whether this language is default.
+        nullable: true
+      language:
+        type: string
+        description: Notification language.
+      locale:
+        type: string
+        description: Notification locale.
+      sentFrom:
+        $ref: .\microsoft.graph.emailIdentity.yaml
+      subject:
+        type: string
+        description: Mail subject.
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.endUserNotificationDetail'

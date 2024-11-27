@@ -1,0 +1,22 @@
+title: file
+required:
+  - '@odata.type'
+type: object
+properties:
+  hashes:
+    anyOf:
+      - $ref: .\microsoft.graph.hashes.yaml
+      - type: object
+        nullable: true
+    description: Hashes of the file's binary content, if available. Read-only.
+  mimeType:
+    type: string
+    description: >-
+      The MIME type for the file. This is determined by logic on the server and
+      might not be the value provided when the file was uploaded. Read-only.
+    nullable: true
+  processingMetadata:
+    type: boolean
+    nullable: true
+  '@odata.type':
+    type: string

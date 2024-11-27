@@ -1,0 +1,9 @@
+title: endUserNotificationType
+enum:
+  - unknown
+  - positiveReinforcement
+  - noTraining
+  - trainingAssignment
+  - trainingReminder
+  - unknownFutureValue
+type: string

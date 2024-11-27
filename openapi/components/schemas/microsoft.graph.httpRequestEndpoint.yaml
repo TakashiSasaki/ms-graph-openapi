@@ -1,0 +1,15 @@
+allOf:
+  - $ref: .\microsoft.graph.customExtensionEndpointConfiguration.yaml
+  - title: httpRequestEndpoint
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      targetUrl:
+        type: string
+        description: The HTTP endpoint that a custom extension calls.
+        nullable: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.httpRequestEndpoint'
+x-ms-discriminator-value: '#microsoft.graph.httpRequestEndpoint'

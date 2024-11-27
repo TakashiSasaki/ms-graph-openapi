@@ -1,0 +1,64 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: directory
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      administrativeUnits:
+        type: array
+        items:
+          $ref: .\microsoft.graph.administrativeUnit.yaml
+        description: Conceptual container for user and group directory objects.
+        x-ms-navigationProperty: true
+      attributeSets:
+        type: array
+        items:
+          $ref: .\microsoft.graph.attributeSet.yaml
+        description: Group of related custom security attribute definitions.
+        x-ms-navigationProperty: true
+      customSecurityAttributeDefinitions:
+        type: array
+        items:
+          $ref: .\microsoft.graph.customSecurityAttributeDefinition.yaml
+        description: Schema of a custom security attributes (key-value pairs).
+        x-ms-navigationProperty: true
+      deletedItems:
+        type: array
+        items:
+          $ref: .\microsoft.graph.directoryObject.yaml
+        description: Recently deleted items. Read-only. Nullable.
+        x-ms-navigationProperty: true
+      deviceLocalCredentials:
+        type: array
+        items:
+          $ref: .\microsoft.graph.deviceLocalCredentialInfo.yaml
+        description: >-
+          The credentials of the device's local administrator account backed up
+          to Microsoft Entra ID.
+        x-ms-navigationProperty: true
+      federationConfigurations:
+        type: array
+        items:
+          $ref: .\microsoft.graph.identityProviderBase.yaml
+        description: >-
+          Configure domain federation with organizations whose identity provider
+          (IdP) supports either the SAML or WS-Fed protocol.
+        x-ms-navigationProperty: true
+      onPremisesSynchronization:
+        type: array
+        items:
+          $ref: .\microsoft.graph.onPremisesDirectorySynchronization.yaml
+        description: >-
+          A container for on-premises directory synchronization functionalities
+          that are available for the organization.
+        x-ms-navigationProperty: true
+      subscriptions:
+        type: array
+        items:
+          $ref: .\microsoft.graph.companySubscription.yaml
+        description: List of commercial subscriptions that an organization acquired.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.directory'

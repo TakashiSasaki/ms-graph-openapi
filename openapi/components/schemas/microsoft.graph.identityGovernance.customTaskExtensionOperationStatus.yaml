@@ -1,0 +1,6 @@
+title: customTaskExtensionOperationStatus
+enum:
+  - completed
+  - failed
+  - unknownFutureValue
+type: string

@@ -1,0 +1,90 @@
+allOf:
+  - $ref: .\microsoft.graph.baseItem.yaml
+  - title: drive
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      driveType:
+        type: string
+        description: >-
+          Describes the type of drive represented by this resource. OneDrive
+          personal drives return personal. OneDrive for Business returns
+          business. SharePoint document libraries return documentLibrary.
+          Read-only.
+        nullable: true
+      owner:
+        anyOf:
+          - $ref: .\microsoft.graph.identitySet.yaml
+          - type: object
+            nullable: true
+        description: Optional. The user account that owns the drive. Read-only.
+      quota:
+        anyOf:
+          - $ref: .\microsoft.graph.quota.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Optional. Information about the drive's storage space quota.
+          Read-only.
+      sharePointIds:
+        anyOf:
+          - $ref: .\microsoft.graph.sharepointIds.yaml
+          - type: object
+            nullable: true
+      system:
+        anyOf:
+          - $ref: .\microsoft.graph.systemFacet.yaml
+          - type: object
+            nullable: true
+        description: If present, indicates that it's a system-managed drive. Read-only.
+      bundles:
+        type: array
+        items:
+          $ref: .\microsoft.graph.driveItem.yaml
+        description: >-
+          Collection of bundles (albums and multi-select-shared sets of items).
+          Only in personal OneDrive.
+        x-ms-navigationProperty: true
+      following:
+        type: array
+        items:
+          $ref: .\microsoft.graph.driveItem.yaml
+        description: >-
+          The list of items the user is following. Only in OneDrive for
+          Business.
+        x-ms-navigationProperty: true
+      items:
+        type: array
+        items:
+          $ref: .\microsoft.graph.driveItem.yaml
+        description: All items contained in the drive. Read-only. Nullable.
+        x-ms-navigationProperty: true
+      list:
+        anyOf:
+          - $ref: .\microsoft.graph.list.yaml
+          - type: object
+            nullable: true
+        description: >-
+          For drives in SharePoint, the underlying document library list.
+          Read-only. Nullable.
+        x-ms-navigationProperty: true
+      root:
+        anyOf:
+          - $ref: .\microsoft.graph.driveItem.yaml
+          - type: object
+            nullable: true
+        description: The root folder of the drive. Read-only.
+        x-ms-navigationProperty: true
+      special:
+        type: array
+        items:
+          $ref: .\microsoft.graph.driveItem.yaml
+        description: >-
+          Collection of common folders available in OneDrive. Read-only.
+          Nullable.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.drive'
+x-ms-discriminator-value: '#microsoft.graph.drive'

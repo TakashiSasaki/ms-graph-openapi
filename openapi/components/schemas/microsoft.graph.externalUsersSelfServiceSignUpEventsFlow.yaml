@@ -1,0 +1,43 @@
+allOf:
+  - $ref: .\microsoft.graph.authenticationEventsFlow.yaml
+  - title: externalUsersSelfServiceSignUpEventsFlow
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      onAttributeCollection:
+        anyOf:
+          - $ref: .\microsoft.graph.onAttributeCollectionHandler.yaml
+          - type: object
+            nullable: true
+        description: >-
+          The configuration for what to invoke when attributes are ready to be
+          collected from the user.
+      onAuthenticationMethodLoadStart:
+        anyOf:
+          - $ref: .\microsoft.graph.onAuthenticationMethodLoadStartHandler.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Required. The configuration for what to invoke when authentication
+          methods are ready to be presented to the user. Must have at least one
+          identity provider linked.  Supports $filter (eq). See support for
+          filtering on user flows for syntax information.
+      onInteractiveAuthFlowStart:
+        anyOf:
+          - $ref: .\microsoft.graph.onInteractiveAuthFlowStartHandler.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Required. The configuration for what to invoke when an authentication
+          flow is ready to be initiated.
+      onUserCreateStart:
+        anyOf:
+          - $ref: .\microsoft.graph.onUserCreateStartHandler.yaml
+          - type: object
+            nullable: true
+        description: The configuration for what to invoke during user creation.
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.externalUsersSelfServiceSignUpEventsFlow'
+x-ms-discriminator-value: '#microsoft.graph.externalUsersSelfServiceSignUpEventsFlow'

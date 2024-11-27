@@ -1,0 +1,14 @@
+title: deviceManagementPartnerAssignment
+required:
+  - '@odata.type'
+type: object
+properties:
+  target:
+    anyOf:
+      - $ref: .\microsoft.graph.deviceAndAppManagementAssignmentTarget.yaml
+      - type: object
+        nullable: true
+    description: User groups targeting for devices to be enrolled through partner.
+  '@odata.type':
+    type: string
+description: User group targeting for Device Management Partner

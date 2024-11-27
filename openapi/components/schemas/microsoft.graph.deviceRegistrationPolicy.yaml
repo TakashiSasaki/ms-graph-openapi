@@ -1,0 +1,38 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: deviceRegistrationPolicy
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      azureADJoin:
+        anyOf:
+          - $ref: .\microsoft.graph.azureADJoinPolicy.yaml
+          - type: object
+            nullable: true
+      azureADRegistration:
+        anyOf:
+          - $ref: .\microsoft.graph.azureADRegistrationPolicy.yaml
+          - type: object
+            nullable: true
+      description:
+        type: string
+        nullable: true
+      displayName:
+        type: string
+        nullable: true
+      localAdminPassword:
+        anyOf:
+          - $ref: .\microsoft.graph.localAdminPasswordSettings.yaml
+          - type: object
+            nullable: true
+      multiFactorAuthConfiguration:
+        $ref: .\microsoft.graph.multiFactorAuthConfiguration.yaml
+      userDeviceQuota:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        format: int32
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.deviceRegistrationPolicy'

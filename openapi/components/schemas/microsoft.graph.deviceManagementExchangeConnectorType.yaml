@@ -1,0 +1,30 @@
+title: deviceManagementExchangeConnectorType
+enum:
+  - onPremises
+  - hosted
+  - serviceToService
+  - dedicated
+  - unknownFutureValue
+type: string
+description: The type of Exchange Connector.
+x-ms-enum:
+  name: deviceManagementExchangeConnectorType
+  modelAsString: false
+  values:
+    - value: onPremises
+      description: Connects to on-premises Exchange Environment.
+      name: onPremises
+    - value: hosted
+      description: Connects to O365 multi-tenant Exchange environment
+      name: hosted
+    - value: serviceToService
+      description: >-
+        Intune Service connects directly to O365 multi-tenant Exchange
+        environment
+      name: serviceToService
+    - value: dedicated
+      description: Connects to O365 Dedicated Exchange environment.
+      name: dedicated
+    - value: unknownFutureValue
+      description: Evolvable enumeration sentinel value. Do not use.
+      name: unknownFutureValue

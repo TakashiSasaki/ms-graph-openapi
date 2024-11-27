@@ -1,0 +1,13 @@
+title: externalItemContent
+required:
+  - '@odata.type'
+type: object
+properties:
+  type:
+    $ref: .\microsoft.graph.externalConnectors.externalItemContentType.yaml
+  value:
+    type: string
+    description: The content for the externalItem. Required.
+    nullable: true
+  '@odata.type':
+    type: string

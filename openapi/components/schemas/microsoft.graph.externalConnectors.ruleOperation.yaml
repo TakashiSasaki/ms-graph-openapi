@@ -1,0 +1,12 @@
+title: ruleOperation
+enum:
+  - 'null'
+  - equals
+  - notEquals
+  - contains
+  - notContains
+  - lessThan
+  - greaterThan
+  - startsWith
+  - unknownFutureValue
+type: string

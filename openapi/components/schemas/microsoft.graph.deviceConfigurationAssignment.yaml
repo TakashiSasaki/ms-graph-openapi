@@ -1,0 +1,19 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: deviceConfigurationAssignment
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      target:
+        anyOf:
+          - $ref: .\microsoft.graph.deviceAndAppManagementAssignmentTarget.yaml
+          - type: object
+            nullable: true
+        description: The assignment target for the device configuration.
+      '@odata.type':
+        type: string
+    description: >-
+      The device configuration assignment entity assigns an AAD group to a
+      specific device configuration.
+x-ms-discriminator-value: '#microsoft.graph.deviceConfigurationAssignment'

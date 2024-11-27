@@ -1,0 +1,21 @@
+allOf:
+  - $ref: .\microsoft.graph.customExtensionData.yaml
+  - title: customTaskExtensionCallbackData
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      operationStatus:
+        anyOf:
+          - $ref: >-
+              .\microsoft.graph.identityGovernance.customTaskExtensionOperationStatus.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Operation status that's provided by the Azure Logic App indicating
+          whenever the Azure Logic App has run successfully or not. Supported
+          values: completed, failed, unknownFutureValue.
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.identityGovernance.customTaskExtensionCallbackData'
+x-ms-discriminator-value: '#microsoft.graph.identityGovernance.customTaskExtensionCallbackData'

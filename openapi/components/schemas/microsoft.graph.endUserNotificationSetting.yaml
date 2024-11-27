@@ -1,0 +1,36 @@
+title: endUserNotificationSetting
+required:
+  - '@odata.type'
+type: object
+properties:
+  notificationPreference:
+    anyOf:
+      - $ref: .\microsoft.graph.endUserNotificationPreference.yaml
+      - type: object
+        nullable: true
+    description: >-
+      Notification preference. Possible values are: unknown, microsoft, custom,
+      unknownFutureValue.
+  positiveReinforcement:
+    anyOf:
+      - $ref: .\microsoft.graph.positiveReinforcementNotification.yaml
+      - type: object
+        nullable: true
+    description: Positive reinforcement detail.
+  settingType:
+    anyOf:
+      - $ref: .\microsoft.graph.endUserNotificationSettingType.yaml
+      - type: object
+        nullable: true
+    description: >-
+      End user notification type. Possible values are: unknown, noTraining,
+      trainingSelected, noNotification, unknownFutureValue.
+  '@odata.type':
+    type: string
+discriminator:
+  propertyName: '@odata.type'
+  mapping:
+    '#microsoft.graph.noTrainingNotificationSetting': .\microsoft.graph.noTrainingNotificationSetting.yaml
+    '#microsoft.graph.trainingNotificationSetting': .\microsoft.graph.trainingNotificationSetting.yaml
+    microsoft.graph.noTrainingNotificationSetting: .\microsoft.graph.noTrainingNotificationSetting.yaml
+    microsoft.graph.trainingNotificationSetting: .\microsoft.graph.trainingNotificationSetting.yaml

@@ -1,0 +1,28 @@
+title: deviceManagementExchangeAccessState
+enum:
+  - none
+  - unknown
+  - allowed
+  - blocked
+  - quarantined
+type: string
+description: Device Exchange Access State.
+x-ms-enum:
+  name: deviceManagementExchangeAccessState
+  modelAsString: false
+  values:
+    - value: none
+      description: No access state discovered from Exchange
+      name: none
+    - value: unknown
+      description: Device access state to Exchange is unknown
+      name: unknown
+    - value: allowed
+      description: Device has access to Exchange
+      name: allowed
+    - value: blocked
+      description: Device is Blocked in Exchange
+      name: blocked
+    - value: quarantined
+      description: Device is Quarantined in Exchange
+      name: quarantined

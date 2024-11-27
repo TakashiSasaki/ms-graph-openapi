@@ -1,0 +1,20 @@
+allOf:
+  - $ref: .\microsoft.graph.deviceEnrollmentConfiguration.yaml
+  - title: deviceEnrollmentLimitConfiguration
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      limit:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: The maximum number of devices that a user can enroll
+        format: int32
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.deviceEnrollmentLimitConfiguration'
+    description: >-
+      Device Enrollment Configuration that restricts the number of devices a
+      user can enroll
+x-ms-discriminator-value: '#microsoft.graph.deviceEnrollmentLimitConfiguration'

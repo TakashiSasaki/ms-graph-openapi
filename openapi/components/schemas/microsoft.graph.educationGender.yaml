@@ -1,0 +1,7 @@
+title: educationGender
+enum:
+  - female
+  - male
+  - other
+  - unknownFutureValue
+type: string

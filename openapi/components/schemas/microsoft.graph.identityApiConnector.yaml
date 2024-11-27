@@ -1,0 +1,27 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: identityApiConnector
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      authenticationConfiguration:
+        anyOf:
+          - $ref: .\microsoft.graph.apiAuthenticationConfigurationBase.yaml
+          - type: object
+            nullable: true
+        description: >-
+          The object which describes the authentication configuration details
+          for calling the API. Basic and PKCS 12 client certificate are
+          supported.
+      displayName:
+        type: string
+        description: The name of the API connector.
+        nullable: true
+      targetUrl:
+        type: string
+        description: The URL of the API endpoint to call.
+        nullable: true
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.identityApiConnector'

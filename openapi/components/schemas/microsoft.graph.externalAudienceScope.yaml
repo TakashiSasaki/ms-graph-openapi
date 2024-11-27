@@ -1,0 +1,6 @@
+title: externalAudienceScope
+enum:
+  - none
+  - contactsOnly
+  - all
+type: string

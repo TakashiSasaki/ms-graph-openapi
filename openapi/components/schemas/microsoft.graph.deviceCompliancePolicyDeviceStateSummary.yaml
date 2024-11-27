@@ -1,0 +1,66 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: deviceCompliancePolicyDeviceStateSummary
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      compliantDeviceCount:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: Number of compliant devices
+        format: int32
+      configManagerCount:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: >-
+          Number of devices that have compliance managed by System Center
+          Configuration Manager
+        format: int32
+      conflictDeviceCount:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: Number of conflict devices
+        format: int32
+      errorDeviceCount:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: Number of error devices
+        format: int32
+      inGracePeriodCount:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: Number of devices that are in grace period
+        format: int32
+      nonCompliantDeviceCount:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: Number of NonCompliant devices
+        format: int32
+      notApplicableDeviceCount:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: Number of not applicable devices
+        format: int32
+      remediatedDeviceCount:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: Number of remediated devices
+        format: int32
+      unknownDeviceCount:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: Number of unknown devices
+        format: int32
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.deviceCompliancePolicyDeviceStateSummary'

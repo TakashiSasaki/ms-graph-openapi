@@ -1,0 +1,5 @@
+title: escrowBehavior
+enum:
+  - Default
+  - IgnoreLookupReferenceResolutionFailure
+type: string

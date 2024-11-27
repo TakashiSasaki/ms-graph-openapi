@@ -1,0 +1,35 @@
+title: employeeExperience
+required:
+  - '@odata.type'
+type: object
+properties:
+  communities:
+    type: array
+    items:
+      $ref: .\microsoft.graph.community.yaml
+    description: A collection of communities in Viva Engage.
+    x-ms-navigationProperty: true
+  engagementAsyncOperations:
+    type: array
+    items:
+      $ref: .\microsoft.graph.engagementAsyncOperation.yaml
+    description: >-
+      A collection of long-running, asynchronous operations related to Viva
+      Engage.
+    x-ms-navigationProperty: true
+  learningCourseActivities:
+    type: array
+    items:
+      $ref: .\microsoft.graph.learningCourseActivity.yaml
+    x-ms-navigationProperty: true
+  learningProviders:
+    type: array
+    items:
+      $ref: .\microsoft.graph.learningProvider.yaml
+    description: A collection of learning providers.
+    x-ms-navigationProperty: true
+  '@odata.type':
+    type: string
+description: >-
+  Represents a container that exposes navigation properties for employee
+  experience resources.

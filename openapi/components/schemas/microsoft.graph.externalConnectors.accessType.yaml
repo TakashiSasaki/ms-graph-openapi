@@ -1,0 +1,6 @@
+title: accessType
+enum:
+  - grant
+  - deny
+  - unknownFutureValue
+type: string

@@ -1,0 +1,10 @@
+title: Collection of fido2AuthenticationMethodConfiguration
+type: object
+allOf:
+  - $ref: .\BaseCollectionPaginationCountResponse.yaml
+  - type: object
+    properties:
+      value:
+        type: array
+        items:
+          $ref: .\microsoft.graph.fido2AuthenticationMethodConfiguration.yaml

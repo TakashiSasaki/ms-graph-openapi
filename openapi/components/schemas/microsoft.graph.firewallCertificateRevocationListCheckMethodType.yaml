@@ -1,0 +1,28 @@
+title: firewallCertificateRevocationListCheckMethodType
+enum:
+  - deviceDefault
+  - none
+  - attempt
+  - require
+type: string
+description: Possible values for firewallCertificateRevocationListCheckMethod
+x-ms-enum:
+  name: firewallCertificateRevocationListCheckMethodType
+  modelAsString: false
+  values:
+    - value: deviceDefault
+      description: >-
+        No value configured by Intune, do not override the user-configured
+        device default value
+      name: deviceDefault
+    - value: none
+      description: Do not check certificate revocation list
+      name: none
+    - value: attempt
+      description: >-
+        Attempt CRL check and allow a certificate only if the certificate is
+        confirmed by the check
+      name: attempt
+    - value: require
+      description: Require a successful CRL check before allowing a certificate
+      name: require

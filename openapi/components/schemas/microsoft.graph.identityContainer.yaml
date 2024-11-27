@@ -1,0 +1,66 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: identityContainer
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      apiConnectors:
+        type: array
+        items:
+          $ref: .\microsoft.graph.identityApiConnector.yaml
+        description: Represents entry point for API connectors.
+        x-ms-navigationProperty: true
+      authenticationEventListeners:
+        type: array
+        items:
+          $ref: .\microsoft.graph.authenticationEventListener.yaml
+        description: >-
+          Represents listeners for custom authentication extension events in
+          Azure AD for workforce and customers.
+        x-ms-navigationProperty: true
+      authenticationEventsFlows:
+        type: array
+        items:
+          $ref: .\microsoft.graph.authenticationEventsFlow.yaml
+        description: >-
+          Represents the entry point for self-service sign-up and sign-in user
+          flows in both Microsoft Entra workforce and external tenants.
+        x-ms-navigationProperty: true
+      b2xUserFlows:
+        type: array
+        items:
+          $ref: .\microsoft.graph.b2xIdentityUserFlow.yaml
+        description: >-
+          Represents entry point for B2X/self-service sign-up identity
+          userflows.
+        x-ms-navigationProperty: true
+      conditionalAccess:
+        anyOf:
+          - $ref: .\microsoft.graph.conditionalAccessRoot.yaml
+          - type: object
+            nullable: true
+        description: the entry point for the Conditional Access (CA) object model.
+        x-ms-navigationProperty: true
+      customAuthenticationExtensions:
+        type: array
+        items:
+          $ref: .\microsoft.graph.customAuthenticationExtension.yaml
+        description: >-
+          Represents custom extensions to authentication flows in Azure AD for
+          workforce and customers.
+        x-ms-navigationProperty: true
+      identityProviders:
+        type: array
+        items:
+          $ref: .\microsoft.graph.identityProviderBase.yaml
+        x-ms-navigationProperty: true
+      userFlowAttributes:
+        type: array
+        items:
+          $ref: .\microsoft.graph.identityUserFlowAttribute.yaml
+        description: Represents entry point for identity userflow attributes.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.identityContainer'

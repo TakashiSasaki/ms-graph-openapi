@@ -1,0 +1,24 @@
+title: firewallPreSharedKeyEncodingMethodType
+enum:
+  - deviceDefault
+  - none
+  - utF8
+type: string
+description: Possible values for firewallPreSharedKeyEncodingMethod
+x-ms-enum:
+  name: firewallPreSharedKeyEncodingMethodType
+  modelAsString: false
+  values:
+    - value: deviceDefault
+      description: >-
+        No value configured by Intune, do not override the user-configured
+        device default value
+      name: deviceDefault
+    - value: none
+      description: >-
+        Preshared key is not encoded. Instead, it is kept in its wide-character
+        format
+      name: none
+    - value: utF8
+      description: Encode the preshared key using UTF-8
+      name: utF8

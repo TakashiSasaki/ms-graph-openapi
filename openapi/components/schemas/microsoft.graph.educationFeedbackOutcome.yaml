@@ -1,0 +1,25 @@
+allOf:
+  - $ref: .\microsoft.graph.educationOutcome.yaml
+  - title: educationFeedbackOutcome
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      feedback:
+        anyOf:
+          - $ref: .\microsoft.graph.educationFeedback.yaml
+          - type: object
+            nullable: true
+        description: Teacher's written feedback to the student.
+      publishedFeedback:
+        anyOf:
+          - $ref: .\microsoft.graph.educationFeedback.yaml
+          - type: object
+            nullable: true
+        description: >-
+          A copy of the feedback property that is made when the grade is
+          released to the student.
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.educationFeedbackOutcome'
+x-ms-discriminator-value: '#microsoft.graph.educationFeedbackOutcome'

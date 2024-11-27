@@ -1,0 +1,21 @@
+allOf:
+  - $ref: .\microsoft.graph.baseItemVersion.yaml
+  - title: driveItemVersion
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      content:
+        type: string
+        description: The content stream for this version of the item.
+        format: base64url
+        nullable: true
+      size:
+        type: number
+        description: Indicates the size of the content stream for this version of the item.
+        format: int64
+        nullable: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.driveItemVersion'
+x-ms-discriminator-value: '#microsoft.graph.driveItemVersion'

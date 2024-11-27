@@ -1,0 +1,12 @@
+title: extractSensitivityLabelsResult
+required:
+  - '@odata.type'
+type: object
+properties:
+  labels:
+    type: array
+    items:
+      $ref: .\microsoft.graph.sensitivityLabelAssignment.yaml
+    description: List of sensitivity labels assigned to a file.
+  '@odata.type':
+    type: string

@@ -1,0 +1,6 @@
+title: educationModuleStatus
+enum:
+  - draft
+  - published
+  - unknownFutureValue
+type: string

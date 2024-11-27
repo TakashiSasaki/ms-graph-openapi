@@ -1,0 +1,15 @@
+allOf:
+  - $ref: .\microsoft.graph.educationResource.yaml
+  - title: educationLinkedAssignmentResource
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      url:
+        type: string
+        description: URL of the actual assignment.
+        nullable: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.educationLinkedAssignmentResource'
+x-ms-discriminator-value: '#microsoft.graph.educationLinkedAssignmentResource'

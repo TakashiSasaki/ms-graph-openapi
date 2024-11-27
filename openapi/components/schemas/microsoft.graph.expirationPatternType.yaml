@@ -1,0 +1,7 @@
+title: expirationPatternType
+enum:
+  - notSpecified
+  - noExpiration
+  - afterDateTime
+  - afterDuration
+type: string

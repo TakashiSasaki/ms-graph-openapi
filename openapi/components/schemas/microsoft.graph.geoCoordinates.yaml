@@ -1,0 +1,36 @@
+title: geoCoordinates
+required:
+  - '@odata.type'
+type: object
+properties:
+  altitude:
+    oneOf:
+      - type: number
+        format: double
+        nullable: true
+      - type: string
+        nullable: true
+      - $ref: .\ReferenceNumeric.yaml
+    description: >-
+      Optional. The altitude (height), in feet,  above sea level for the item.
+      Read-only.
+  latitude:
+    oneOf:
+      - type: number
+        format: double
+        nullable: true
+      - type: string
+        nullable: true
+      - $ref: .\ReferenceNumeric.yaml
+    description: Optional. The latitude, in decimal, for the item. Read-only.
+  longitude:
+    oneOf:
+      - type: number
+        format: double
+        nullable: true
+      - type: string
+        nullable: true
+      - $ref: .\ReferenceNumeric.yaml
+    description: Optional. The longitude, in decimal, for the item. Read-only.
+  '@odata.type':
+    type: string

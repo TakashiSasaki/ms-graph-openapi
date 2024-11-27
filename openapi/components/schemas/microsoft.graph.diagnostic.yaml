@@ -1,0 +1,13 @@
+title: diagnostic
+required:
+  - '@odata.type'
+type: object
+properties:
+  message:
+    type: string
+    nullable: true
+  url:
+    type: string
+    nullable: true
+  '@odata.type':
+    type: string

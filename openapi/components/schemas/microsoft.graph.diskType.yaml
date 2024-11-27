@@ -1,0 +1,23 @@
+title: diskType
+enum:
+  - unknown
+  - hdd
+  - ssd
+  - unknownFutureValue
+type: string
+x-ms-enum:
+  name: diskType
+  modelAsString: false
+  values:
+    - value: unknown
+      description: Enum member for unknown or default diskType.
+      name: unknown
+    - value: hdd
+      description: Enum member for HDD devices.
+      name: hdd
+    - value: ssd
+      description: Enum member for SSD devices.
+      name: ssd
+    - value: unknownFutureValue
+      description: Evolvable enumeration sentinel value.Do not use.
+      name: unknownFutureValue

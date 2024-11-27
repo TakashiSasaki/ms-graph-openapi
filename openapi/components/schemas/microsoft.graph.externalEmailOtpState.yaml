@@ -1,0 +1,7 @@
+title: externalEmailOtpState
+enum:
+  - default
+  - enabled
+  - disabled
+  - unknownFutureValue
+type: string

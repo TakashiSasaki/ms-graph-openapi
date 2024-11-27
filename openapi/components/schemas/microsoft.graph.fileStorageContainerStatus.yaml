@@ -1,0 +1,6 @@
+title: fileStorageContainerStatus
+enum:
+  - inactive
+  - active
+  - unknownFutureValue
+type: string

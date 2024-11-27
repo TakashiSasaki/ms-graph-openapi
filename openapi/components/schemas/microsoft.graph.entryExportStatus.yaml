@@ -1,0 +1,8 @@
+title: entryExportStatus
+enum:
+  - Noop
+  - Success
+  - RetryableError
+  - PermanentError
+  - Error
+type: string

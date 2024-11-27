@@ -1,0 +1,7 @@
+title: entrySyncOperation
+enum:
+  - None
+  - Add
+  - Delete
+  - Update
+type: string

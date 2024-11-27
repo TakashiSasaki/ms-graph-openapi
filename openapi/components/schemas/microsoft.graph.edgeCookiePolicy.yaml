@@ -1,0 +1,24 @@
+title: edgeCookiePolicy
+enum:
+  - userDefined
+  - allow
+  - blockThirdParty
+  - blockAll
+type: string
+description: Possible values to specify which cookies are allowed in Microsoft Edge.
+x-ms-enum:
+  name: edgeCookiePolicy
+  modelAsString: false
+  values:
+    - value: userDefined
+      description: Allow the user to set.
+      name: userDefined
+    - value: allow
+      description: Allow.
+      name: allow
+    - value: blockThirdParty
+      description: Block only third party cookies.
+      name: blockThirdParty
+    - value: blockAll
+      description: Block all cookies.
+      name: blockAll

@@ -1,0 +1,20 @@
+allOf:
+  - $ref: .\microsoft.graph.educationAssignmentGradeType.yaml
+  - title: educationAssignmentPointsGradeType
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      maxPoints:
+        oneOf:
+          - type: number
+            format: float
+            nullable: true
+          - type: string
+            nullable: true
+          - $ref: .\ReferenceNumeric.yaml
+        description: Max points possible for this assignment.
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.educationAssignmentPointsGradeType'
+x-ms-discriminator-value: '#microsoft.graph.educationAssignmentPointsGradeType'

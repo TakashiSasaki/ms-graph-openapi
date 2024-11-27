@@ -1,0 +1,27 @@
+title: educationTerm
+required:
+  - '@odata.type'
+type: object
+properties:
+  displayName:
+    type: string
+    description: Display name of the term.
+    nullable: true
+  endDate:
+    pattern: ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$
+    type: string
+    description: End of the term.
+    format: date
+    nullable: true
+  externalId:
+    type: string
+    description: ID of term in the syncing system.
+    nullable: true
+  startDate:
+    pattern: ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$
+    type: string
+    description: Start of the term.
+    format: date
+    nullable: true
+  '@odata.type':
+    type: string

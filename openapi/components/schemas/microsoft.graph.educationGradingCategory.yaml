@@ -1,0 +1,19 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: educationGradingCategory
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      displayName:
+        type: string
+        description: The name of the grading category.
+      percentageWeight:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: The weight of the category; an integer between 0 and 100.
+        format: int32
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.educationGradingCategory'

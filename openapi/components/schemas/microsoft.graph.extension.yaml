@@ -1,0 +1,13 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: extension
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      '@odata.type':
+        type: string
+    discriminator:
+      propertyName: '@odata.type'
+      mapping:
+        '#microsoft.graph.openTypeExtension': .\microsoft.graph.openTypeExtension.yaml

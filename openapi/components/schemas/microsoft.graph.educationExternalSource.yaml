@@ -1,0 +1,6 @@
+title: educationExternalSource
+enum:
+  - sis
+  - manual
+  - unknownFutureValue
+type: string

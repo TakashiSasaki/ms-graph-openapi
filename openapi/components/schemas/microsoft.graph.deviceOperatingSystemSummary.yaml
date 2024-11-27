@@ -1,0 +1,82 @@
+title: deviceOperatingSystemSummary
+required:
+  - '@odata.type'
+type: object
+properties:
+  androidCorporateWorkProfileCount:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    description: >-
+      The count of Corporate work profile Android devices. Also known as
+      Corporate Owned Personally Enabled (COPE). Valid values -1 to 2147483647
+    format: int32
+  androidCount:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    description: Number of android device count.
+    format: int32
+  androidDedicatedCount:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    description: Number of dedicated Android devices.
+    format: int32
+  androidDeviceAdminCount:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    description: Number of device admin Android devices.
+    format: int32
+  androidFullyManagedCount:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    description: Number of fully managed Android devices.
+    format: int32
+  androidWorkProfileCount:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    description: Number of work profile Android devices.
+    format: int32
+  configMgrDeviceCount:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    description: Number of ConfigMgr managed devices.
+    format: int32
+  iosCount:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    description: Number of iOS device count.
+    format: int32
+  macOSCount:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    description: Number of Mac OS X device count.
+    format: int32
+  unknownCount:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    description: Number of unknown device count.
+    format: int32
+  windowsCount:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    description: Number of Windows device count.
+    format: int32
+  windowsMobileCount:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    description: Number of Windows mobile device count.
+    format: int32
+  '@odata.type':
+    type: string
+description: Device operating system summary.

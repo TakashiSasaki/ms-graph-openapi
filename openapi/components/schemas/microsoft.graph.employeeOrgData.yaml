@@ -1,0 +1,19 @@
+title: employeeOrgData
+required:
+  - '@odata.type'
+type: object
+properties:
+  costCenter:
+    type: string
+    description: >-
+      The cost center associated with the user. Returned only on $select.
+      Supports $filter.
+    nullable: true
+  division:
+    type: string
+    description: >-
+      The name of the division in which the user works. Returned only on
+      $select. Supports $filter.
+    nullable: true
+  '@odata.type':
+    type: string

@@ -1,0 +1,77 @@
+allOf:
+  - $ref: .\microsoft.graph.educationOrganization.yaml
+  - title: educationSchool
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      address:
+        anyOf:
+          - $ref: .\microsoft.graph.physicalAddress.yaml
+          - type: object
+            nullable: true
+        description: Address of the school.
+      createdBy:
+        anyOf:
+          - $ref: .\microsoft.graph.identitySet.yaml
+          - type: object
+            nullable: true
+        description: Entity who created the school.
+      externalId:
+        type: string
+        description: ID of school in syncing system.
+        nullable: true
+      externalPrincipalId:
+        type: string
+        description: ID of principal in syncing system.
+        nullable: true
+      fax:
+        type: string
+        nullable: true
+      highestGrade:
+        type: string
+        description: Highest grade taught.
+        nullable: true
+      lowestGrade:
+        type: string
+        description: Lowest grade taught.
+        nullable: true
+      phone:
+        type: string
+        description: Phone number of school.
+        nullable: true
+      principalEmail:
+        type: string
+        description: Email address of the principal.
+        nullable: true
+      principalName:
+        type: string
+        description: Name of the principal.
+        nullable: true
+      schoolNumber:
+        type: string
+        description: School Number.
+        nullable: true
+      administrativeUnit:
+        anyOf:
+          - $ref: .\microsoft.graph.administrativeUnit.yaml
+          - type: object
+            nullable: true
+        description: The underlying administrativeUnit for this school.
+        x-ms-navigationProperty: true
+      classes:
+        type: array
+        items:
+          $ref: .\microsoft.graph.educationClass.yaml
+        description: Classes taught at the school. Nullable.
+        x-ms-navigationProperty: true
+      users:
+        type: array
+        items:
+          $ref: .\microsoft.graph.educationUser.yaml
+        description: Users in the school. Nullable.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.educationSchool'
+x-ms-discriminator-value: '#microsoft.graph.educationSchool'

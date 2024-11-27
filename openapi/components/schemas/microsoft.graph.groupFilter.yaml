@@ -1,0 +1,12 @@
+title: groupFilter
+required:
+  - '@odata.type'
+type: object
+properties:
+  includedGroups:
+    type: array
+    items:
+      type: string
+      nullable: true
+  '@odata.type':
+    type: string

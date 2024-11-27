@@ -1,0 +1,10 @@
+title: fileStorageContainerViewpoint
+required:
+  - '@odata.type'
+type: object
+properties:
+  effectiveRole:
+    type: string
+    description: The current user's effective role. Read-only.
+  '@odata.type':
+    type: string

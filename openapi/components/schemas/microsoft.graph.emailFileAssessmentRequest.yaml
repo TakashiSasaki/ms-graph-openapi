@@ -1,0 +1,30 @@
+allOf:
+  - $ref: .\microsoft.graph.threatAssessmentRequest.yaml
+  - title: emailFileAssessmentRequest
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      contentData:
+        type: string
+        description: >-
+          Base64 encoded .eml email file content. The file content can't fetch
+          back because it isn't stored.
+      destinationRoutingReason:
+        anyOf:
+          - $ref: .\microsoft.graph.mailDestinationRoutingReason.yaml
+          - type: object
+            nullable: true
+        description: >-
+          The reason for mail routed to its destination. Possible values are:
+          none, mailFlowRule, safeSender, blockedSender, advancedSpamFiltering,
+          domainAllowList, domainBlockList, notInAddressBook, firstTimeSender,
+          autoPurgeToInbox, autoPurgeToJunk, autoPurgeToDeleted, outbound,
+          notJunk, junk.
+      recipientEmail:
+        type: string
+        description: The mail recipient whose policies are used to assess the mail.
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.emailFileAssessmentRequest'
+x-ms-discriminator-value: '#microsoft.graph.emailFileAssessmentRequest'
