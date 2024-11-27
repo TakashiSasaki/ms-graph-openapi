@@ -1,0 +1,6 @@
+value:
+  classification:
+    '@odata.type': microsoft.graph.security.hostReputationClassification
+  rules:
+    - '@odata.type': microsoft.graph.security.hostReputationRule
+  score: '0'

@@ -1,0 +1,4 @@
+value:
+  resourceId: String
+  resourceName: String
+  resourceType: String

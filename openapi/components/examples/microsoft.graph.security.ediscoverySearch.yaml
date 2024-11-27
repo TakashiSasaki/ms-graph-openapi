@@ -1,0 +1,13 @@
+value:
+  additionalSources:
+    - '@odata.type': microsoft.graph.security.dataSource
+  addToReviewSetOperation:
+    '@odata.type': microsoft.graph.security.ediscoveryAddToReviewSetOperation
+  custodianSources:
+    - '@odata.type': microsoft.graph.security.dataSource
+  dataSourceScopes:
+    '@odata.type': microsoft.graph.security.dataSourceScopes
+  lastEstimateStatisticsOperation:
+    '@odata.type': microsoft.graph.security.ediscoveryEstimateOperation
+  noncustodialSources:
+    - '@odata.type': microsoft.graph.security.ediscoveryNoncustodialDataSource

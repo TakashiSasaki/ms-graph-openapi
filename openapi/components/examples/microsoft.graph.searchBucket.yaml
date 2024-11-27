@@ -1,0 +1,4 @@
+value:
+  aggregationFilterToken: String
+  count: '0'
+  key: String

@@ -1,0 +1,8 @@
+value:
+  description: String
+  owner: String
+  properties:
+    - '@odata.type': microsoft.graph.extensionSchemaProperty
+  status: String
+  targetTypes:
+    - String

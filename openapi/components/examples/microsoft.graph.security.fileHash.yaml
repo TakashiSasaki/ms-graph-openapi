@@ -1,0 +1,4 @@
+value:
+  algorithm:
+    '@odata.type': microsoft.graph.security.fileHashAlgorithm
+  value: String

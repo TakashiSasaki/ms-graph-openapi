@@ -1,0 +1,8 @@
+value:
+  criteria:
+    - '@odata.type': microsoft.graph.rubricCriterion
+  description:
+    '@odata.type': microsoft.graph.educationItemBody
+  displayName: String
+  qualityId: String
+  weight: '0'

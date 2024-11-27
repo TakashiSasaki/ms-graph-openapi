@@ -1,0 +1,29 @@
+value:
+  azureAdDeviceId: String
+  defenderAvStatus:
+    '@odata.type': microsoft.graph.security.defenderAvStatus
+  deviceDnsName: String
+  dnsDomain: String
+  firstSeenDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  healthStatus:
+    '@odata.type': microsoft.graph.security.deviceHealthStatus
+  hostName: String
+  ipInterfaces:
+    - String
+  lastExternalIpAddress: String
+  lastIpAddress: String
+  loggedOnUsers:
+    - '@odata.type': microsoft.graph.security.loggedOnUser
+  mdeDeviceId: String
+  ntDomain: String
+  onboardingStatus:
+    '@odata.type': microsoft.graph.security.onboardingStatus
+  osBuild: '0'
+  osPlatform: String
+  rbacGroupId: '0'
+  rbacGroupName: String
+  riskScore:
+    '@odata.type': microsoft.graph.security.deviceRiskScore
+  version: String
+  vmMetadata:
+    '@odata.type': microsoft.graph.security.vmMetadata

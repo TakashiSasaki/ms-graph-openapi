@@ -1,0 +1,3 @@
+value:
+  queries:
+    - '@odata.type': microsoft.graph.security.ediscoveryReviewSetQuery

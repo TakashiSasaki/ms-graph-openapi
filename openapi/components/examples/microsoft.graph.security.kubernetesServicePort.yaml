@@ -1,0 +1,8 @@
+value:
+  appProtocol: String
+  name: String
+  nodePort: '0'
+  port: '0'
+  protocol:
+    '@odata.type': microsoft.graph.security.containerPortProtocol
+  targetPort: String

@@ -1,0 +1,5 @@
+value:
+  displayName: String
+  primaryAddress: String
+  userAccount:
+    '@odata.type': microsoft.graph.security.userAccount

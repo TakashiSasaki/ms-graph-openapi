@@ -1,0 +1,15 @@
+value:
+  appId: String
+  displayName: String
+  history:
+    - '@odata.type': microsoft.graph.riskyServicePrincipalHistoryItem
+  isEnabled: 'true'
+  isProcessing: 'true'
+  riskDetail:
+    '@odata.type': microsoft.graph.riskDetail
+  riskLastUpdatedDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  riskLevel:
+    '@odata.type': microsoft.graph.riskLevel
+  riskState:
+    '@odata.type': microsoft.graph.riskState
+  servicePrincipalType: String

@@ -1,0 +1,12 @@
+value:
+  address:
+    '@odata.type': microsoft.graph.physicalAddress
+  alternateNames:
+    - String
+  commonName: String
+  email: String
+  givenName: String
+  organizationName: String
+  organizationUnitName: String
+  serialNumber: String
+  surname: String

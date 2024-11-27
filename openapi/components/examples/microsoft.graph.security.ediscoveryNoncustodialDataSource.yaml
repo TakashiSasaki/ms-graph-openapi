@@ -1,0 +1,5 @@
+value:
+  dataSource:
+    '@odata.type': microsoft.graph.security.dataSource
+  lastIndexOperation:
+    '@odata.type': microsoft.graph.security.ediscoveryIndexOperation

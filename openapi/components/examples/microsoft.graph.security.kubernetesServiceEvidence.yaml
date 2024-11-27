@@ -1,0 +1,16 @@
+value:
+  clusterIP:
+    '@odata.type': microsoft.graph.security.ipEvidence
+  externalIPs:
+    - '@odata.type': microsoft.graph.security.ipEvidence
+  labels:
+    '@odata.type': microsoft.graph.security.dictionary
+  name: String
+  namespace:
+    '@odata.type': microsoft.graph.security.kubernetesNamespaceEvidence
+  selector:
+    '@odata.type': microsoft.graph.security.dictionary
+  servicePorts:
+    - '@odata.type': microsoft.graph.security.kubernetesServicePort
+  serviceType:
+    '@odata.type': microsoft.graph.security.kubernetesServiceType

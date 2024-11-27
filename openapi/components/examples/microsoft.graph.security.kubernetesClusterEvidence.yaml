@@ -1,0 +1,8 @@
+value:
+  cloudResource:
+    '@odata.type': microsoft.graph.security.alertEvidence
+  distribution: String
+  name: String
+  platform:
+    '@odata.type': microsoft.graph.security.kubernetesPlatform
+  version: String

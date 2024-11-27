@@ -1,0 +1,7 @@
+value:
+  mdeDeviceId: String
+  registryHive: String
+  registryKey: String
+  registryValue: String
+  registryValueName: String
+  registryValueType: String

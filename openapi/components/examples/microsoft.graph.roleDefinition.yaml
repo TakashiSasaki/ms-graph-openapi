@@ -1,0 +1,8 @@
+value:
+  description: String
+  displayName: String
+  isBuiltIn: 'true'
+  roleAssignments:
+    - '@odata.type': microsoft.graph.roleAssignment
+  rolePermissions:
+    - '@odata.type': microsoft.graph.rolePermission

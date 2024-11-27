@@ -1,0 +1,5 @@
+value:
+  reviewSet:
+    '@odata.type': microsoft.graph.security.ediscoveryReviewSet
+  search:
+    '@odata.type': microsoft.graph.security.ediscoverySearch

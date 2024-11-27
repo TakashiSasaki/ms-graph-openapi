@@ -1,0 +1,12 @@
+value:
+  action:
+    '@odata.type': microsoft.graph.security.caseAction
+  completedDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  createdBy:
+    '@odata.type': microsoft.graph.identitySet
+  createdDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  percentProgress: '0'
+  resultInfo:
+    '@odata.type': microsoft.graph.resultInfo
+  status:
+    '@odata.type': microsoft.graph.security.caseOperationStatus

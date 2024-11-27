@@ -1,0 +1,7 @@
+value:
+  childSelectability:
+    '@odata.type': microsoft.graph.security.childSelectability
+  childTags:
+    - '@odata.type': microsoft.graph.security.ediscoveryReviewTag
+  parent:
+    '@odata.type': microsoft.graph.security.ediscoveryReviewTag

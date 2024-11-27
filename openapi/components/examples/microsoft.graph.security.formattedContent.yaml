@@ -1,0 +1,4 @@
+value:
+  content: String
+  format:
+    '@odata.type': microsoft.graph.security.contentFormat

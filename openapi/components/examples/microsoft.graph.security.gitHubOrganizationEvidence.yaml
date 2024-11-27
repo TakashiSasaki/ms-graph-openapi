@@ -1,0 +1,7 @@
+value:
+  company: String
+  displayName: String
+  email: String
+  login: String
+  orgId: String
+  webUrl: String

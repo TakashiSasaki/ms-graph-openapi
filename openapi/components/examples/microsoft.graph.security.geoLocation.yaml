@@ -1,0 +1,6 @@
+value:
+  city: String
+  countryName: String
+  latitude: '0'
+  longitude: '0'
+  state: String

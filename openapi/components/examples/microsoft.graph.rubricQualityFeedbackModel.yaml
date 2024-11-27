@@ -1,0 +1,4 @@
+value:
+  feedback:
+    '@odata.type': microsoft.graph.educationItemBody
+  qualityId: String

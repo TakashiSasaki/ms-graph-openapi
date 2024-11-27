@@ -1,0 +1,9 @@
+value:
+  indexedItemCount: '0'
+  indexedItemsSize: '0'
+  mailboxCount: '0'
+  search:
+    '@odata.type': microsoft.graph.security.ediscoverySearch
+  siteCount: '0'
+  unindexedItemCount: '0'
+  unindexedItemsSize: '0'

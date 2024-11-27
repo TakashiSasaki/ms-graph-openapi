@@ -1,0 +1,3 @@
+value:
+  subcategory:
+    '@odata.type': microsoft.graph.security.filePlanSubcategory

@@ -1,0 +1,9 @@
+value:
+  fileName: String
+  filePath: String
+  filePublisher: String
+  fileSize: '0'
+  issuer: String
+  sha1: String
+  sha256: String
+  signer: String

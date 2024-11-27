@@ -1,0 +1,7 @@
+value:
+  labels:
+    '@odata.type': microsoft.graph.security.dictionary
+  name: String
+  namespace:
+    '@odata.type': microsoft.graph.security.kubernetesNamespaceEvidence
+  type: String

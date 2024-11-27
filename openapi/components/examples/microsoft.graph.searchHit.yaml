@@ -1,0 +1,9 @@
+value:
+  contentSource: String
+  hitId: String
+  isCollapsed: 'true'
+  rank: '0'
+  resource:
+    '@odata.type': microsoft.graph.entity
+  resultTemplateId: String
+  summary: String

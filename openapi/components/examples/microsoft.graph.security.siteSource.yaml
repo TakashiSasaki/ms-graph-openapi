@@ -1,0 +1,3 @@
+value:
+  site:
+    '@odata.type': microsoft.graph.site

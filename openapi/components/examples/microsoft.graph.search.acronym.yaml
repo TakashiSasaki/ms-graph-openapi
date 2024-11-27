@@ -1,0 +1,4 @@
+value:
+  standsFor: String
+  state:
+    '@odata.type': microsoft.graph.search.answerState

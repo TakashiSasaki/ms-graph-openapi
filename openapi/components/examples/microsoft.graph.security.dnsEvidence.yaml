@@ -1,0 +1,8 @@
+value:
+  dnsServerIp:
+    '@odata.type': microsoft.graph.security.ipEvidence
+  domainName: String
+  hostIpAddress:
+    '@odata.type': microsoft.graph.security.ipEvidence
+  ipAddresses:
+    - '@odata.type': microsoft.graph.security.ipEvidence

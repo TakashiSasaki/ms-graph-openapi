@@ -1,0 +1,5 @@
+value:
+  oneNoteClientUrl:
+    '@odata.type': microsoft.graph.externalLink
+  oneNoteWebUrl:
+    '@odata.type': microsoft.graph.externalLink

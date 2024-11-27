@@ -1,0 +1,8 @@
+value:
+  appId: '0'
+  displayName: String
+  instanceId: '0'
+  instanceName: String
+  saasAppId: '0'
+  stream:
+    '@odata.type': microsoft.graph.security.stream

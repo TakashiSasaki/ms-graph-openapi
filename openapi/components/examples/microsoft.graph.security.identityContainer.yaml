@@ -1,0 +1,3 @@
+value:
+  healthIssues:
+    - '@odata.type': microsoft.graph.security.healthIssue

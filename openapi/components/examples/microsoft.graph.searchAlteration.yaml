@@ -1,0 +1,5 @@
+value:
+  alteredHighlightedQueryString: String
+  alteredQueryString: String
+  alteredQueryTokens:
+    - '@odata.type': microsoft.graph.alteredQueryToken

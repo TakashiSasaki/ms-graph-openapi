@@ -1,0 +1,6 @@
+value:
+  keywords:
+    - String
+  matchSimilarKeywords: 'true'
+  reservedKeywords:
+    - String

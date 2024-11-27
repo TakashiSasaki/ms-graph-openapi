@@ -1,0 +1,5 @@
+value:
+  score: '0'
+  severity:
+    '@odata.type': microsoft.graph.security.vulnerabilitySeverity
+  vectorString: String

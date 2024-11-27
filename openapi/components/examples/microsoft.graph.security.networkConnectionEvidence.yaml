@@ -1,0 +1,9 @@
+value:
+  destinationAddress:
+    '@odata.type': microsoft.graph.security.ipEvidence
+  destinationPort: '0'
+  protocol:
+    '@odata.type': microsoft.graph.security.protocolType
+  sourceAddress:
+    '@odata.type': microsoft.graph.security.ipEvidence
+  sourcePort: '0'

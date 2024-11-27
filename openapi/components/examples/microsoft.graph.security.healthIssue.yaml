@@ -1,0 +1,22 @@
+value:
+  additionalInformation:
+    - String
+  createdDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  description: String
+  displayName: String
+  domainNames:
+    - String
+  healthIssueType:
+    '@odata.type': microsoft.graph.security.healthIssueType
+  issueTypeId: String
+  lastModifiedDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  recommendations:
+    - String
+  recommendedActionCommands:
+    - String
+  sensorDNSNames:
+    - String
+  severity:
+    '@odata.type': microsoft.graph.security.healthIssueSeverity
+  status:
+    '@odata.type': microsoft.graph.security.healthIssueStatus

@@ -1,0 +1,5 @@
+value:
+  amazonAccountId: String
+  amazonResourceId: String
+  resourceName: String
+  resourceType: String

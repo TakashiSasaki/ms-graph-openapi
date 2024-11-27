@@ -1,0 +1,24 @@
+value:
+  actionType: String
+  actionUrl: String
+  azureTenantId: String
+  complianceInformation:
+    - '@odata.type': microsoft.graph.complianceInformation
+  controlCategory: String
+  controlStateUpdates:
+    - '@odata.type': microsoft.graph.secureScoreControlStateUpdate
+  deprecated: 'true'
+  implementationCost: String
+  lastModifiedDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  maxScore: '0'
+  rank: '0'
+  remediation: String
+  remediationImpact: String
+  service: String
+  threats:
+    - String
+  tier: String
+  title: String
+  userImpact: String
+  vendorInformation:
+    '@odata.type': microsoft.graph.securityVendorInformation

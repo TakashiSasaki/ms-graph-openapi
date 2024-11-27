@@ -1,0 +1,8 @@
+value:
+  appId: String
+  appOwnerTenantId: String
+  servicePrincipalName: String
+  servicePrincipalObjectId: String
+  servicePrincipalType:
+    '@odata.type': microsoft.graph.security.servicePrincipalType
+  tenantId: String

@@ -1,0 +1,5 @@
+value:
+  appId: String
+  displayName: String
+  objectId: String
+  publisher: String

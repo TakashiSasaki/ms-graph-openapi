@@ -1,0 +1,16 @@
+value:
+  additionalOptions:
+    '@odata.type': microsoft.graph.security.additionalOptions
+  description: String
+  displayName: String
+  exportCriteria:
+    '@odata.type': microsoft.graph.security.exportCriteria
+  exportFileMetadata:
+    - '@odata.type': microsoft.graph.security.exportFileMetadata
+  exportFormat:
+    '@odata.type': microsoft.graph.security.exportFormat
+  exportLocation:
+    '@odata.type': microsoft.graph.security.exportLocation
+  exportSingleItems: 'true'
+  search:
+    '@odata.type': microsoft.graph.security.ediscoverySearch

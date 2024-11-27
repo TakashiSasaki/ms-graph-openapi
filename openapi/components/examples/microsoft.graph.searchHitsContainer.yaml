@@ -1,0 +1,7 @@
+value:
+  aggregations:
+    - '@odata.type': microsoft.graph.searchAggregation
+  hits:
+    - '@odata.type': microsoft.graph.searchHit
+  moreResultsAvailable: 'true'
+  total: '0'

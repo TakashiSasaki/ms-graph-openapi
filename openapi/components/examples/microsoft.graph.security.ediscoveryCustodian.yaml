@@ -1,0 +1,11 @@
+value:
+  acknowledgedDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  email: String
+  lastIndexOperation:
+    '@odata.type': microsoft.graph.security.ediscoveryIndexOperation
+  siteSources:
+    - '@odata.type': microsoft.graph.security.siteSource
+  unifiedGroupSources:
+    - '@odata.type': microsoft.graph.security.unifiedGroupSource
+  userSources:
+    - '@odata.type': microsoft.graph.security.userSource

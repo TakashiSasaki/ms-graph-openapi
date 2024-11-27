@@ -1,0 +1,7 @@
+value:
+  description:
+    '@odata.type': microsoft.graph.educationItemBody
+  displayName: String
+  grading:
+    '@odata.type': microsoft.graph.educationAssignmentGradeType
+  levelId: String

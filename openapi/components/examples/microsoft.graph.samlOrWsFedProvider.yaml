@@ -1,0 +1,7 @@
+value:
+  issuerUri: String
+  metadataExchangeUri: String
+  passiveSignInUri: String
+  preferredAuthenticationProtocol:
+    '@odata.type': microsoft.graph.authenticationProtocol
+  signingCertificate: String

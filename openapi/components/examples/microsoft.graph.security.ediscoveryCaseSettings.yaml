@@ -1,0 +1,7 @@
+value:
+  ocr:
+    '@odata.type': microsoft.graph.security.ocrSettings
+  redundancyDetection:
+    '@odata.type': microsoft.graph.security.redundancyDetectionSettings
+  topicModeling:
+    '@odata.type': microsoft.graph.security.topicModelingSettings

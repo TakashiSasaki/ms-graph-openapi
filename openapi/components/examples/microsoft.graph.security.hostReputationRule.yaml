@@ -1,0 +1,6 @@
+value:
+  description: String
+  name: String
+  relatedDetailsUrl: String
+  severity:
+    '@odata.type': microsoft.graph.security.hostReputationRuleSeverity

@@ -1,0 +1,6 @@
+value:
+  baseUrl: String
+  login: String
+  owner: String
+  ownerType: String
+  repoId: String

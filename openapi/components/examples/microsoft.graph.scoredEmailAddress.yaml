@@ -1,0 +1,6 @@
+value:
+  address: String
+  itemId: String
+  relevanceScore: '0'
+  selectionLikelihood:
+    '@odata.type': microsoft.graph.selectionLikelihoodInfo

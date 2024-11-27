@@ -1,0 +1,28 @@
+value:
+  alerts:
+    - '@odata.type': microsoft.graph.security.alert
+  assignedTo: String
+  classification:
+    '@odata.type': microsoft.graph.security.alertClassification
+  comments:
+    - '@odata.type': microsoft.graph.security.alertComment
+  createdDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  customTags:
+    - String
+  description: String
+  determination:
+    '@odata.type': microsoft.graph.security.alertDetermination
+  displayName: String
+  incidentWebUrl: String
+  lastModifiedBy: String
+  lastUpdateDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  redirectIncidentId: String
+  resolvingComment: String
+  severity:
+    '@odata.type': microsoft.graph.security.alertSeverity
+  status:
+    '@odata.type': microsoft.graph.security.incidentStatus
+  summary: String
+  systemTags:
+    - String
+  tenantId: String

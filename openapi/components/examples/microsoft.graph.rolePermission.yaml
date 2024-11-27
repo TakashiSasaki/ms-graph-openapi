@@ -1,0 +1,3 @@
+value:
+  resourceActions:
+    - '@odata.type': microsoft.graph.resourceAction
