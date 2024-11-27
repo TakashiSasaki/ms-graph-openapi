@@ -1,0 +1,12 @@
+/me/calendar
+/me/calendar/calendarPermissions
+/me/calendar/calendarPermissions/{calendarPermission-id}
+/me/calendar/calendarView
+/me/calendar/events
+/me/calendar/events/{event-id}
+/users/{user-id}/calendar
+/users/{user-id}/calendar/calendarPermissions
+/users/{user-id}/calendar/calendarPermissions/{calendarPermission-id}
+/users/{user-id}/calendar/calendarView
+/users/{user-id}/calendar/events
+/users/{user-id}/calendar/events/{event-id}
