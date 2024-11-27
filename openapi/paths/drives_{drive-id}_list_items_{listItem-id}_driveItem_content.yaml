@@ -1,0 +1,84 @@
+description: Provides operations to manage the media for the drive entity.
+get:
+  tags:
+    - drives.list
+  summary: Get content for the navigation property driveItem from drives
+  description: The content stream, if the item represents a file.
+  operationId: drives.list.items.GetDriveItemContent
+  parameters:
+    - name: $format
+      in: query
+      description: Format of the content
+      schema:
+        type: string
+  responses:
+    2XX:
+      description: Retrieved media content
+      content:
+        application/octet-stream:
+          schema:
+            type: string
+            format: binary
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+put:
+  tags:
+    - drives.list
+  summary: Update content for the navigation property driveItem in drives
+  description: The content stream, if the item represents a file.
+  operationId: drives.list.items.UpdateDriveItemContent
+  requestBody:
+    description: New media content.
+    content:
+      application/octet-stream:
+        schema:
+          type: string
+          format: binary
+    required: true
+  responses:
+    2XX:
+      description: Success
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\microsoft.graph.driveItem.yaml
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+delete:
+  tags:
+    - drives.list
+  summary: Delete content for the navigation property driveItem in drives
+  description: The content stream, if the item represents a file.
+  operationId: drives.list.items.DeleteDriveItemContent
+  parameters:
+    - name: If-Match
+      in: header
+      description: ETag
+      schema:
+        type: string
+  responses:
+    '204':
+      description: Success
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+parameters:
+  - name: drive-id
+    in: path
+    description: The unique identifier of drive
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: drive
+  - name: listItem-id
+    in: path
+    description: The unique identifier of listItem
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: listItem

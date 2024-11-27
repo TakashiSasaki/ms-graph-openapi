@@ -1,0 +1,100 @@
+description: >-
+  Provides operations to manage the subscriptions property of the
+  microsoft.graph.list entity.
+get:
+  tags:
+    - drives.list
+  summary: Get subscriptions from drives
+  description: The set of subscriptions on the list.
+  operationId: drives.list.GetSubscriptions
+  parameters:
+    - name: $select
+      in: query
+      description: Select properties to be returned
+      style: form
+      explode: false
+      schema:
+        uniqueItems: true
+        type: array
+        items:
+          type: string
+    - name: $expand
+      in: query
+      description: Expand related entities
+      style: form
+      explode: false
+      schema:
+        uniqueItems: true
+        type: array
+        items:
+          type: string
+  responses:
+    2XX:
+      description: Retrieved navigation property
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\microsoft.graph.subscription.yaml
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: operation
+patch:
+  tags:
+    - drives.list
+  summary: Update the navigation property subscriptions in drives
+  operationId: drives.list.UpdateSubscriptions
+  requestBody:
+    description: New navigation property values
+    content:
+      application/json:
+        schema:
+          $ref: ..\components\schemas\microsoft.graph.subscription.yaml
+    required: true
+  responses:
+    2XX:
+      description: Success
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\microsoft.graph.subscription.yaml
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: operation
+delete:
+  tags:
+    - drives.list
+  summary: Delete navigation property subscriptions for drives
+  operationId: drives.list.DeleteSubscriptions
+  parameters:
+    - name: If-Match
+      in: header
+      description: ETag
+      schema:
+        type: string
+  responses:
+    '204':
+      description: Success
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: operation
+parameters:
+  - name: drive-id
+    in: path
+    description: The unique identifier of drive
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: drive
+  - name: subscription-id
+    in: path
+    description: The unique identifier of subscription
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: subscription

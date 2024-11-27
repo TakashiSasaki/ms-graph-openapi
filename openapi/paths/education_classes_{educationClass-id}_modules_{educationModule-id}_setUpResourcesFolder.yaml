@@ -1,0 +1,57 @@
+description: Provides operations to call the setUpResourcesFolder method.
+post:
+  tags:
+    - education.educationClass
+  summary: Invoke action setUpResourcesFolder
+  description: >-
+    Create a SharePoint folder to upload files for a given educationModule. Only
+    teachers can perform this operation. The teacher determines what resources
+    to upload to the SharePoint folder for the module.
+  externalDocs:
+    description: Find more info here
+    url: >-
+      https://learn.microsoft.com/graph/api/educationmodule-setupresourcesfolder?view=graph-rest-1.0
+  operationId: >-
+    education.classes.educationClass.modules.educationModule.setUpResourcesFolder
+  responses:
+    2XX:
+      description: Success
+      content:
+        application/json:
+          schema:
+            anyOf:
+              - $ref: ..\components\schemas\microsoft.graph.educationModule.yaml
+              - type: object
+                nullable: true
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: action
+parameters:
+  - name: educationClass-id
+    in: path
+    description: The unique identifier of educationClass
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: educationClass
+  - name: educationModule-id
+    in: path
+    description: The unique identifier of educationModule
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: educationModule
+x-ms-docs-grouped-path:
+  - >-
+    /education/classes/{educationClass-id}/assignments/{educationAssignment-id}/setUpResourcesFolder
+  - >-
+    /education/classes/{educationClass-id}/assignments/{educationAssignment-id}/submissions/{educationSubmission-id}/setUpResourcesFolder
+  - /education/me/assignments/{educationAssignment-id}/setUpResourcesFolder
+  - >-
+    /education/me/assignments/{educationAssignment-id}/submissions/{educationSubmission-id}/setUpResourcesFolder
+  - >-
+    /education/users/{educationUser-id}/assignments/{educationAssignment-id}/setUpResourcesFolder
+  - >-
+    /education/users/{educationUser-id}/assignments/{educationAssignment-id}/submissions/{educationSubmission-id}/setUpResourcesFolder

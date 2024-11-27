@@ -1,0 +1,63 @@
+description: >-
+  Provides operations to manage the classes property of the
+  microsoft.graph.educationUser entity.
+get:
+  tags:
+    - education.educationUser
+  summary: List classes of an educationUser
+  description: Get the educationClass resources an educationUser is a member of.
+  externalDocs:
+    description: Find more info here
+    url: >-
+      https://learn.microsoft.com/graph/api/educationuser-list-classes?view=graph-rest-1.0
+  operationId: education.me.ListClasses
+  parameters:
+    - $ref: ..\components\parameters\top.yaml
+    - $ref: ..\components\parameters\skip.yaml
+    - $ref: ..\components\parameters\search.yaml
+    - $ref: ..\components\parameters\filter.yaml
+    - $ref: ..\components\parameters\count.yaml
+    - name: $orderby
+      in: query
+      description: Order items by property values
+      style: form
+      explode: false
+      schema:
+        uniqueItems: true
+        type: array
+        items:
+          type: string
+    - name: $select
+      in: query
+      description: Select properties to be returned
+      style: form
+      explode: false
+      schema:
+        uniqueItems: true
+        type: array
+        items:
+          type: string
+    - name: $expand
+      in: query
+      description: Expand related entities
+      style: form
+      explode: false
+      schema:
+        uniqueItems: true
+        type: array
+        items:
+          type: string
+  responses:
+    2XX:
+      $ref: >-
+        ..\components\responses\microsoft.graph.educationClassCollectionResponse.yaml
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-pageable:
+    nextLinkName: '@odata.nextLink'
+    operationName: listMore
+  x-ms-docs-operation-type: operation
+x-ms-docs-grouped-path:
+  - /education/users/{educationUser-id}/classes

@@ -1,0 +1,49 @@
+description: Provides operations to manage the collection of educationRoot entities.
+delete:
+  tags:
+    - education.educationClass
+  summary: Remove educationCategory
+  description: >-
+    Remove an educationCategory from an educationAssignment. Only teachers can
+    perform this operation.
+  externalDocs:
+    description: Find more info here
+    url: >-
+      https://learn.microsoft.com/graph/api/educationassignment-remove-category?view=graph-rest-1.0
+  operationId: education.classes.assignments.categories.DeleteRefEducationCategory
+  parameters:
+    - name: If-Match
+      in: header
+      description: ETag
+      schema:
+        type: string
+  responses:
+    '204':
+      description: Success
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: operation
+parameters:
+  - name: educationClass-id
+    in: path
+    description: The unique identifier of educationClass
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: educationClass
+  - name: educationAssignment-id
+    in: path
+    description: The unique identifier of educationAssignment
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: educationAssignment
+  - name: educationCategory-id
+    in: path
+    description: The unique identifier of educationCategory
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: educationCategory

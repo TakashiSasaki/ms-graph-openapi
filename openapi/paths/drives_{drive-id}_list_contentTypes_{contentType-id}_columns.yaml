@@ -1,0 +1,96 @@
+description: >-
+  Provides operations to manage the columns property of the
+  microsoft.graph.contentType entity.
+get:
+  tags:
+    - drives.list
+  summary: Get columns from drives
+  description: The collection of column definitions for this content type.
+  operationId: drives.list.contentTypes.ListColumns
+  parameters:
+    - $ref: ..\components\parameters\top.yaml
+    - $ref: ..\components\parameters\skip.yaml
+    - $ref: ..\components\parameters\search.yaml
+    - $ref: ..\components\parameters\filter.yaml
+    - $ref: ..\components\parameters\count.yaml
+    - name: $orderby
+      in: query
+      description: Order items by property values
+      style: form
+      explode: false
+      schema:
+        uniqueItems: true
+        type: array
+        items:
+          type: string
+    - name: $select
+      in: query
+      description: Select properties to be returned
+      style: form
+      explode: false
+      schema:
+        uniqueItems: true
+        type: array
+        items:
+          type: string
+    - name: $expand
+      in: query
+      description: Expand related entities
+      style: form
+      explode: false
+      schema:
+        uniqueItems: true
+        type: array
+        items:
+          type: string
+  responses:
+    2XX:
+      $ref: >-
+        ..\components\responses\microsoft.graph.columnDefinitionCollectionResponse.yaml
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-pageable:
+    nextLinkName: '@odata.nextLink'
+    operationName: listMore
+  x-ms-docs-operation-type: operation
+post:
+  tags:
+    - drives.list
+  summary: Create new navigation property to columns for drives
+  operationId: drives.list.contentTypes.CreateColumns
+  requestBody:
+    description: New navigation property
+    content:
+      application/json:
+        schema:
+          $ref: ..\components\schemas\microsoft.graph.columnDefinition.yaml
+    required: true
+  responses:
+    2XX:
+      description: Created navigation property.
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\microsoft.graph.columnDefinition.yaml
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: operation
+parameters:
+  - name: drive-id
+    in: path
+    description: The unique identifier of drive
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: drive
+  - name: contentType-id
+    in: path
+    description: The unique identifier of contentType
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: contentType

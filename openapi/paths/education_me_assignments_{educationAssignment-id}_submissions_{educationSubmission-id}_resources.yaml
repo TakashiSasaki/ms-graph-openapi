@@ -1,0 +1,102 @@
+description: >-
+  Provides operations to manage the resources property of the
+  microsoft.graph.educationSubmission entity.
+get:
+  tags:
+    - education.educationUser
+  summary: Get resources from education
+  operationId: education.me.assignments.submissions.ListResources
+  parameters:
+    - $ref: ..\components\parameters\top.yaml
+    - $ref: ..\components\parameters\skip.yaml
+    - $ref: ..\components\parameters\search.yaml
+    - $ref: ..\components\parameters\filter.yaml
+    - $ref: ..\components\parameters\count.yaml
+    - name: $orderby
+      in: query
+      description: Order items by property values
+      style: form
+      explode: false
+      schema:
+        uniqueItems: true
+        type: array
+        items:
+          type: string
+    - name: $select
+      in: query
+      description: Select properties to be returned
+      style: form
+      explode: false
+      schema:
+        uniqueItems: true
+        type: array
+        items:
+          type: string
+    - name: $expand
+      in: query
+      description: Expand related entities
+      style: form
+      explode: false
+      schema:
+        uniqueItems: true
+        type: array
+        items:
+          type: string
+  responses:
+    2XX:
+      $ref: >-
+        ..\components\responses\microsoft.graph.educationSubmissionResourceCollectionResponse.yaml
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-pageable:
+    nextLinkName: '@odata.nextLink'
+    operationName: listMore
+  x-ms-docs-operation-type: operation
+post:
+  tags:
+    - education.educationUser
+  summary: Create new navigation property to resources for education
+  operationId: education.me.assignments.submissions.CreateResources
+  requestBody:
+    description: New navigation property
+    content:
+      application/json:
+        schema:
+          $ref: >-
+            ..\components\schemas\microsoft.graph.educationSubmissionResource.yaml
+    required: true
+  responses:
+    2XX:
+      description: Created navigation property.
+      content:
+        application/json:
+          schema:
+            $ref: >-
+              ..\components\schemas\microsoft.graph.educationSubmissionResource.yaml
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: operation
+parameters:
+  - name: educationAssignment-id
+    in: path
+    description: The unique identifier of educationAssignment
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: educationAssignment
+  - name: educationSubmission-id
+    in: path
+    description: The unique identifier of educationSubmission
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: educationSubmission
+x-ms-docs-grouped-path:
+  - >-
+    /education/classes/{educationClass-id}/assignments/{educationAssignment-id}/submissions/{educationSubmission-id}/resources
+  - >-
+    /education/users/{educationUser-id}/assignments/{educationAssignment-id}/submissions/{educationSubmission-id}/resources

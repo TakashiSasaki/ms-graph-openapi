@@ -1,0 +1,35 @@
+description: Provides operations to manage the collection of educationRoot entities.
+delete:
+  tags:
+    - education.educationUser
+  summary: Delete ref of navigation property categories for education
+  operationId: education.me.assignments.categories.DeleteRefEducationCategory
+  parameters:
+    - name: If-Match
+      in: header
+      description: ETag
+      schema:
+        type: string
+  responses:
+    '204':
+      description: Success
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: operation
+parameters:
+  - name: educationAssignment-id
+    in: path
+    description: The unique identifier of educationAssignment
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: educationAssignment
+  - name: educationCategory-id
+    in: path
+    description: The unique identifier of educationCategory
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: educationCategory

@@ -1,0 +1,49 @@
+description: Provides operations to call the copyToDefaultContentLocation method.
+post:
+  tags:
+    - drives.list
+  summary: Invoke action copyToDefaultContentLocation
+  description: >-
+    Copy a file to a default content location in a content type. The file can
+    then be added as a default file or template via a POST operation.
+  externalDocs:
+    description: Find more info here
+    url: >-
+      https://learn.microsoft.com/graph/api/contenttype-copytodefaultcontentlocation?view=graph-rest-1.0
+  operationId: drives.drive.list.contentTypes.contentType.copyToDefaultContentLocation
+  requestBody:
+    description: Action parameters
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            sourceFile:
+              $ref: ..\components\schemas\microsoft.graph.itemReference.yaml
+            destinationFileName:
+              type: string
+              nullable: true
+    required: true
+  responses:
+    '204':
+      description: Success
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: action
+parameters:
+  - name: drive-id
+    in: path
+    description: The unique identifier of drive
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: drive
+  - name: contentType-id
+    in: path
+    description: The unique identifier of contentType
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: contentType

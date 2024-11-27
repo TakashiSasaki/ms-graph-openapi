@@ -1,0 +1,58 @@
+description: Provides operations to call the clearFilters method.
+post:
+  tags:
+    - drives.driveItem
+  summary: Invoke action clearFilters
+  description: Clears all the filters currently applied on the table.
+  externalDocs:
+    description: Find more info here
+    url: >-
+      https://learn.microsoft.com/graph/api/table-clearfilters?view=graph-rest-1.0
+  operationId: >-
+    drives.drive.items.driveItem.workbook.worksheets.workbookWorksheet.tables.itemAt.clearFilters
+  responses:
+    '204':
+      description: Success
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: action
+parameters:
+  - name: drive-id
+    in: path
+    description: The unique identifier of drive
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: drive
+  - name: driveItem-id
+    in: path
+    description: The unique identifier of driveItem
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: driveItem
+  - name: workbookWorksheet-id
+    in: path
+    description: The unique identifier of workbookWorksheet
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: workbookWorksheet
+  - name: index
+    in: path
+    description: 'Usage: index={index}'
+    required: true
+    schema:
+      maximum: 2147483647
+      minimum: -2147483648
+      type: number
+      format: int32
+x-ms-docs-grouped-path:
+  - >-
+    /drives/{drive-id}/items/{driveItem-id}/workbook/tables/{workbookTable-id}/clearFilters
+  - >-
+    /drives/{drive-id}/items/{driveItem-id}/workbook/tables/itemAt(index={index})/clearFilters
+  - >-
+    /drives/{drive-id}/items/{driveItem-id}/workbook/worksheets/{workbookWorksheet-id}/tables/{workbookTable-id}/clearFilters

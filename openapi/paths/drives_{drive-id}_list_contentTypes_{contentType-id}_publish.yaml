@@ -1,0 +1,34 @@
+description: Provides operations to call the publish method.
+post:
+  tags:
+    - drives.list
+  summary: Invoke action publish
+  description: Publishes a contentType present in the content type hub site.
+  externalDocs:
+    description: Find more info here
+    url: >-
+      https://learn.microsoft.com/graph/api/contenttype-publish?view=graph-rest-1.0
+  operationId: drives.drive.list.contentTypes.contentType.publish
+  responses:
+    '204':
+      description: Success
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: action
+parameters:
+  - name: drive-id
+    in: path
+    description: The unique identifier of drive
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: drive
+  - name: contentType-id
+    in: path
+    description: The unique identifier of contentType
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: contentType

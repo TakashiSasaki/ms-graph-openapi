@@ -1,0 +1,44 @@
+description: Provides operations to call the restore method.
+post:
+  tags:
+    - drives.list
+  summary: Invoke action restore
+  description: Restore a document set version.
+  externalDocs:
+    description: Find more info here
+    url: >-
+      https://learn.microsoft.com/graph/api/documentsetversion-restore?view=graph-rest-1.0
+  operationId: >-
+    drives.drive.list.items.listItem.documentSetVersions.documentSetVersion.restore
+  responses:
+    '204':
+      description: Success
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: action
+parameters:
+  - name: drive-id
+    in: path
+    description: The unique identifier of drive
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: drive
+  - name: listItem-id
+    in: path
+    description: The unique identifier of listItem
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: listItem
+  - name: documentSetVersion-id
+    in: path
+    description: The unique identifier of documentSetVersion
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: documentSetVersion
+x-ms-docs-grouped-path:
+  - /drives/{drive-id}/items/{driveItem-id}/restore

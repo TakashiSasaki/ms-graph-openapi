@@ -1,0 +1,50 @@
+description: Provides operations to call the setUpResourcesFolder method.
+post:
+  tags:
+    - education.educationUser
+  summary: Invoke action setUpResourcesFolder
+  description: >-
+    Create a SharePoint folder to upload files for a given educationAssignment.
+    Only teachers can perform this operation. The teacher determines the
+    resources to upload in the assignment's folder. 
+  externalDocs:
+    description: Find more info here
+    url: >-
+      https://learn.microsoft.com/graph/api/educationassignment-setupresourcesfolder?view=graph-rest-1.0
+  operationId: education.me.assignments.educationAssignment.setUpResourcesFolder
+  responses:
+    2XX:
+      description: Success
+      content:
+        application/json:
+          schema:
+            anyOf:
+              - $ref: ..\components\schemas\microsoft.graph.educationAssignment.yaml
+              - type: object
+                nullable: true
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: action
+parameters:
+  - name: educationAssignment-id
+    in: path
+    description: The unique identifier of educationAssignment
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: educationAssignment
+x-ms-docs-grouped-path:
+  - >-
+    /education/classes/{educationClass-id}/assignments/{educationAssignment-id}/setUpResourcesFolder
+  - >-
+    /education/classes/{educationClass-id}/assignments/{educationAssignment-id}/submissions/{educationSubmission-id}/setUpResourcesFolder
+  - >-
+    /education/classes/{educationClass-id}/modules/{educationModule-id}/setUpResourcesFolder
+  - >-
+    /education/me/assignments/{educationAssignment-id}/submissions/{educationSubmission-id}/setUpResourcesFolder
+  - >-
+    /education/users/{educationUser-id}/assignments/{educationAssignment-id}/setUpResourcesFolder
+  - >-
+    /education/users/{educationUser-id}/assignments/{educationAssignment-id}/submissions/{educationSubmission-id}/setUpResourcesFolder
