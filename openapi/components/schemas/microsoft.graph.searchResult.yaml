@@ -1,0 +1,14 @@
+title: searchResult
+required:
+  - '@odata.type'
+type: object
+properties:
+  onClickTelemetryUrl:
+    type: string
+    description: >-
+      A callback URL that can be used to record telemetry information. The
+      application should issue a GET on this URL if the user interacts with this
+      item to improve the quality of results.
+    nullable: true
+  '@odata.type':
+    type: string

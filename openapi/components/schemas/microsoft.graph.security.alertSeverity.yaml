@@ -1,0 +1,9 @@
+title: alertSeverity
+enum:
+  - unknown
+  - informational
+  - low
+  - medium
+  - high
+  - unknownFutureValue
+type: string

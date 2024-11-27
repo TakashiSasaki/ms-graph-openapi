@@ -1,0 +1,14 @@
+title: searchAggregation
+required:
+  - '@odata.type'
+type: object
+properties:
+  buckets:
+    type: array
+    items:
+      $ref: .\microsoft.graph.searchBucket.yaml
+  field:
+    type: string
+    nullable: true
+  '@odata.type':
+    type: string

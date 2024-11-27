@@ -1,0 +1,36 @@
+title: answerVariant
+required:
+  - '@odata.type'
+type: object
+properties:
+  description:
+    type: string
+    description: The answer variation description that is shown on the search results page.
+    nullable: true
+  displayName:
+    type: string
+    description: The answer variation name that is displayed in search results.
+    nullable: true
+  languageTag:
+    type: string
+    description: The country or region that can view this answer variation.
+    nullable: true
+  platform:
+    anyOf:
+      - $ref: .\microsoft.graph.devicePlatformType.yaml
+      - type: object
+        nullable: true
+    description: >-
+      The device or operating system that can view this answer variation.
+      Possible values are: android, androidForWork, ios, macOS, windowsPhone81,
+      windowsPhone81AndLater, windows10AndLater, androidWorkProfile, unknown,
+      androidASOP, androidMobileApplicationManagement,
+      iOSMobileApplicationManagement, unknownFutureValue.
+  webUrl:
+    type: string
+    description: >-
+      The URL link for the answer variation. When users select this answer
+      variation from the search results, they're directed to the specified URL.
+    nullable: true
+  '@odata.type':
+    type: string

@@ -1,0 +1,8 @@
+title: sectionEmphasisType
+enum:
+  - none
+  - neutral
+  - soft
+  - strong
+  - unknownFutureValue
+type: string

@@ -1,0 +1,49 @@
+allOf:
+  - $ref: .\microsoft.graph.onenoteEntityHierarchyModel.yaml
+  - title: sectionGroup
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      sectionGroupsUrl:
+        type: string
+        description: >-
+          The URL for the sectionGroups navigation property, which returns all
+          the section groups in the section group. Read-only.
+        nullable: true
+      sectionsUrl:
+        type: string
+        description: >-
+          The URL for the sections navigation property, which returns all the
+          sections in the section group. Read-only.
+        nullable: true
+      parentNotebook:
+        anyOf:
+          - $ref: .\microsoft.graph.notebook.yaml
+          - type: object
+            nullable: true
+        description: The notebook that contains the section group. Read-only.
+        x-ms-navigationProperty: true
+      parentSectionGroup:
+        anyOf:
+          - $ref: .\microsoft.graph.sectionGroup.yaml
+          - type: object
+            nullable: true
+        description: The section group that contains the section group. Read-only.
+        x-ms-navigationProperty: true
+      sectionGroups:
+        type: array
+        items:
+          $ref: .\microsoft.graph.sectionGroup.yaml
+        description: The section groups in the section. Read-only. Nullable.
+        x-ms-navigationProperty: true
+      sections:
+        type: array
+        items:
+          $ref: .\microsoft.graph.onenoteSection.yaml
+        description: The sections in the section group. Read-only. Nullable.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.sectionGroup'
+x-ms-discriminator-value: '#microsoft.graph.sectionGroup'

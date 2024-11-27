@@ -1,0 +1,19 @@
+title: alertDetermination
+enum:
+  - unknown
+  - apt
+  - malware
+  - securityPersonnel
+  - securityTesting
+  - unwantedSoftware
+  - other
+  - multiStagedAttack
+  - compromisedAccount
+  - phishing
+  - maliciousUserActivity
+  - notMalicious
+  - notEnoughDataToValidate
+  - confirmedActivity
+  - lineOfBusinessApplication
+  - unknownFutureValue
+type: string

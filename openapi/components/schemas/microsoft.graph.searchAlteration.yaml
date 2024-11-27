@@ -1,0 +1,22 @@
+title: searchAlteration
+required:
+  - '@odata.type'
+type: object
+properties:
+  alteredHighlightedQueryString:
+    type: string
+    description: >-
+      Defines the altered highlighted query string with spelling correction. The
+      annotation around the corrected segment is: /ue000, /ue001.
+    nullable: true
+  alteredQueryString:
+    type: string
+    description: Defines the altered query string with spelling correction.
+    nullable: true
+  alteredQueryTokens:
+    type: array
+    items:
+      $ref: .\microsoft.graph.alteredQueryToken.yaml
+    description: Represents changed segments related to an original user query.
+  '@odata.type':
+    type: string

@@ -1,0 +1,13 @@
+title: identity
+required:
+  - '@odata.type'
+type: object
+properties:
+  displayName:
+    type: string
+    nullable: true
+  id:
+    type: string
+    nullable: true
+  '@odata.type':
+    type: string

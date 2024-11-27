@@ -1,0 +1,22 @@
+title: identitySet
+required:
+  - '@odata.type'
+type: object
+properties:
+  application:
+    anyOf:
+      - $ref: .\microsoft.graph.search.identity.yaml
+      - type: object
+        nullable: true
+  device:
+    anyOf:
+      - $ref: .\microsoft.graph.search.identity.yaml
+      - type: object
+        nullable: true
+  user:
+    anyOf:
+      - $ref: .\microsoft.graph.search.identity.yaml
+      - type: object
+        nullable: true
+  '@odata.type':
+    type: string

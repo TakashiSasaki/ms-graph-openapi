@@ -1,0 +1,22 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: artifact
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      '@odata.type':
+        type: string
+    discriminator:
+      propertyName: '@odata.type'
+      mapping:
+        '#microsoft.graph.security.host': .\microsoft.graph.security.host.yaml
+        '#microsoft.graph.security.hostname': .\microsoft.graph.security.hostname.yaml
+        '#microsoft.graph.security.ipAddress': .\microsoft.graph.security.ipAddress.yaml
+        '#microsoft.graph.security.hostComponent': .\microsoft.graph.security.hostComponent.yaml
+        '#microsoft.graph.security.hostCookie': .\microsoft.graph.security.hostCookie.yaml
+        '#microsoft.graph.security.hostSslCertificate': .\microsoft.graph.security.hostSslCertificate.yaml
+        '#microsoft.graph.security.hostTracker': .\microsoft.graph.security.hostTracker.yaml
+        '#microsoft.graph.security.passiveDnsRecord': .\microsoft.graph.security.passiveDnsRecord.yaml
+        '#microsoft.graph.security.sslCertificate': .\microsoft.graph.security.sslCertificate.yaml
+        '#microsoft.graph.security.unclassifiedArtifact': .\microsoft.graph.security.unclassifiedArtifact.yaml

@@ -1,0 +1,8 @@
+title: searchContent
+enum:
+  - sharedContent
+  - privateContent
+  - unknownFutureValue
+type: string
+x-ms-enum-flags:
+  isFlags: true

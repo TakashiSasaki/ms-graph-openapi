@@ -1,0 +1,213 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: alert
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      actorDisplayName:
+        type: string
+        description: The adversary or activity group that is associated with this alert.
+        nullable: true
+      additionalData:
+        anyOf:
+          - $ref: .\microsoft.graph.security.dictionary.yaml
+          - type: object
+            nullable: true
+        description: >-
+          A collection of other alert properties, including user-defined
+          properties. Any custom details defined in the alert, and any dynamic
+          content in the alert details, are stored here.
+      alertPolicyId:
+        type: string
+        description: >-
+          The ID of the policy that generated the alert, and populated when
+          there is a specific policy that generated the alert, whether
+          configured by a customer or a built-in policy.
+        nullable: true
+      alertWebUrl:
+        type: string
+        description: URL for the Microsoft 365 Defender portal alert page.
+        nullable: true
+      assignedTo:
+        type: string
+        description: Owner of the alert, or null if no owner is assigned.
+        nullable: true
+      category:
+        type: string
+        description: >-
+          The attack kill-chain category that the alert belongs to. Aligned with
+          the MITRE ATT&CK framework.
+        nullable: true
+      classification:
+        anyOf:
+          - $ref: .\microsoft.graph.security.alertClassification.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Specifies whether the alert represents a true threat. Possible values
+          are: unknown, falsePositive, truePositive,
+          informationalExpectedActivity, unknownFutureValue.
+      comments:
+        type: array
+        items:
+          $ref: .\microsoft.graph.security.alertComment.yaml
+        description: >-
+          Array of comments created by the Security Operations (SecOps) team
+          during the alert management process.
+      createdDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: Time when Microsoft 365 Defender created the alert.
+        format: date-time
+        nullable: true
+      description:
+        type: string
+        description: String value describing each alert.
+        nullable: true
+      detectionSource:
+        anyOf:
+          - $ref: .\microsoft.graph.security.detectionSource.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Detection technology or sensor that identified the notable component
+          or activity. Possible values are: unknown,
+          microsoftDefenderForEndpoint, antivirus, smartScreen, customTi,
+          microsoftDefenderForOffice365, automatedInvestigation,
+          microsoftThreatExperts, customDetection, microsoftDefenderForIdentity,
+          cloudAppSecurity, microsoft365Defender, azureAdIdentityProtection,
+          manual, microsoftDataLossPrevention, appGovernancePolicy,
+          appGovernanceDetection, unknownFutureValue, microsoftDefenderForCloud,
+          microsoftDefenderForIoT, microsoftDefenderForServers,
+          microsoftDefenderForStorage, microsoftDefenderForDNS,
+          microsoftDefenderForDatabases, microsoftDefenderForContainers,
+          microsoftDefenderForNetwork, microsoftDefenderForAppService,
+          microsoftDefenderForKeyVault, microsoftDefenderForResourceManager,
+          microsoftDefenderForApiManagement, microsoftSentinel, nrtAlerts,
+          scheduledAlerts, microsoftDefenderThreatIntelligenceAnalytics,
+          builtInMl. You must use the Prefer: include-unknown-enum-members
+          request header to get the following value(s) in this evolvable enum:
+          microsoftDefenderForCloud, microsoftDefenderForIoT,
+          microsoftDefenderForServers, microsoftDefenderForStorage,
+          microsoftDefenderForDNS, microsoftDefenderForDatabases,
+          microsoftDefenderForContainers, microsoftDefenderForNetwork,
+          microsoftDefenderForAppService, microsoftDefenderForKeyVault,
+          microsoftDefenderForResourceManager,
+          microsoftDefenderForApiManagement, microsoftSentinel, nrtAlerts,
+          scheduledAlerts, microsoftDefenderThreatIntelligenceAnalytics,
+          builtInMl.
+      detectorId:
+        type: string
+        description: The ID of the detector that triggered the alert.
+        nullable: true
+      determination:
+        anyOf:
+          - $ref: .\microsoft.graph.security.alertDetermination.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Specifies the result of the investigation, whether the alert
+          represents a true attack and if so, the nature of the attack. Possible
+          values are: unknown, apt, malware, securityPersonnel, securityTesting,
+          unwantedSoftware, other, multiStagedAttack, compromisedAccount,
+          phishing, maliciousUserActivity, notMalicious,
+          notEnoughDataToValidate, confirmedUserActivity,
+          lineOfBusinessApplication, unknownFutureValue.
+      evidence:
+        type: array
+        items:
+          $ref: .\microsoft.graph.security.alertEvidence.yaml
+        description: Collection of evidence related to the alert.
+      firstActivityDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: The earliest activity associated with the alert.
+        format: date-time
+        nullable: true
+      incidentId:
+        type: string
+        description: >-
+          Unique identifier to represent the incident this alert resource is
+          associated with.
+        nullable: true
+      incidentWebUrl:
+        type: string
+        description: URL for the incident page in the Microsoft 365 Defender portal.
+        nullable: true
+      lastActivityDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: The oldest activity associated with the alert.
+        format: date-time
+        nullable: true
+      lastUpdateDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: Time when the alert was last updated at Microsoft 365 Defender.
+        format: date-time
+        nullable: true
+      mitreTechniques:
+        type: array
+        items:
+          type: string
+          nullable: true
+        description: The attack techniques, as aligned with the MITRE ATT&CK framework.
+      productName:
+        type: string
+        description: The name of the product which published this alert.
+        nullable: true
+      providerAlertId:
+        type: string
+        description: >-
+          The ID of the alert as it appears in the security provider product
+          that generated the alert.
+        nullable: true
+      recommendedActions:
+        type: string
+        description: >-
+          Recommended response and remediation actions to take in the event this
+          alert was generated.
+        nullable: true
+      resolvedDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: Time when the alert was resolved.
+        format: date-time
+        nullable: true
+      serviceSource:
+        $ref: .\microsoft.graph.security.serviceSource.yaml
+      severity:
+        $ref: .\microsoft.graph.security.alertSeverity.yaml
+      status:
+        $ref: .\microsoft.graph.security.alertStatus.yaml
+      systemTags:
+        type: array
+        items:
+          type: string
+          nullable: true
+        description: The system tags associated with the alert.
+      tenantId:
+        type: string
+        description: The Microsoft Entra tenant the alert was created in.
+        nullable: true
+      threatDisplayName:
+        type: string
+        description: The threat associated with this alert.
+        nullable: true
+      threatFamilyName:
+        type: string
+        description: Threat family associated with this alert.
+        nullable: true
+      title:
+        type: string
+        description: Brief identifying string value describing the alert.
+        nullable: true
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.security.alert'

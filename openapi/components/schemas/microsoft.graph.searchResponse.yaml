@@ -1,0 +1,34 @@
+title: searchResponse
+required:
+  - '@odata.type'
+type: object
+properties:
+  hitsContainers:
+    type: array
+    items:
+      $ref: .\microsoft.graph.searchHitsContainer.yaml
+    description: A collection of search results.
+  queryAlterationResponse:
+    anyOf:
+      - $ref: .\microsoft.graph.alterationResponse.yaml
+      - type: object
+        nullable: true
+    description: >-
+      Provides information related to spelling corrections in the alteration
+      response.
+  resultTemplates:
+    anyOf:
+      - $ref: .\microsoft.graph.resultTemplateDictionary.yaml
+      - type: object
+        nullable: true
+    description: >-
+      A dictionary of resultTemplateIds and associated values, which include the
+      name and JSON schema of the result templates.
+  searchTerms:
+    type: array
+    items:
+      type: string
+      nullable: true
+    description: Contains the search terms sent in the initial search query.
+  '@odata.type':
+    type: string

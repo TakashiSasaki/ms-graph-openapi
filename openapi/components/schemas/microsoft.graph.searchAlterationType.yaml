@@ -1,0 +1,6 @@
+title: searchAlterationType
+enum:
+  - suggestion
+  - modification
+  - unknownFutureValue
+type: string
