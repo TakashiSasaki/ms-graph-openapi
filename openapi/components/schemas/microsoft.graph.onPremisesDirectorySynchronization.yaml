@@ -1,0 +1,21 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: onPremisesDirectorySynchronization
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      configuration:
+        anyOf:
+          - $ref: >-
+              .\microsoft.graph.onPremisesDirectorySynchronizationConfiguration.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Consists of configurations that can be fine-tuned and impact the
+          on-premises directory synchronization process for a tenant. Nullable.
+      features:
+        $ref: .\microsoft.graph.onPremisesDirectorySynchronizationFeature.yaml
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.onPremisesDirectorySynchronization'

@@ -1,0 +1,19 @@
+allOf:
+  - $ref: .\microsoft.graph.customAuthenticationExtension.yaml
+  - title: onTokenIssuanceStartCustomExtension
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      claimsForTokenConfiguration:
+        type: array
+        items:
+          $ref: .\microsoft.graph.onTokenIssuanceStartReturnClaim.yaml
+        description: >-
+          Collection of claims to be returned by the API called by this custom
+          authentication extension. Used to populate claims mapping experience
+          in Microsoft Entra admin center. Optional.
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.onTokenIssuanceStartCustomExtension'
+x-ms-discriminator-value: '#microsoft.graph.onTokenIssuanceStartCustomExtension'

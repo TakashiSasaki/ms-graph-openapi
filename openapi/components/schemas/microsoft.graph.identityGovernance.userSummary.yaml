@@ -1,0 +1,37 @@
+title: userSummary
+required:
+  - '@odata.type'
+type: object
+properties:
+  failedTasks:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    description: The number of failed tasks for users in a user summary.
+    format: int32
+  failedUsers:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    description: The number of failed users in a user summary.
+    format: int32
+  successfulUsers:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    description: The number of successful users in a user summary.
+    format: int32
+  totalTasks:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    description: The total tasks of users in a user summary.
+    format: int32
+  totalUsers:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    description: The total number of users in a user summary
+    format: int32
+  '@odata.type':
+    type: string

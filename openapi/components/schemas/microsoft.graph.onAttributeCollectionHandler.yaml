@@ -1,0 +1,12 @@
+title: onAttributeCollectionHandler
+required:
+  - '@odata.type'
+type: object
+properties:
+  '@odata.type':
+    type: string
+discriminator:
+  propertyName: '@odata.type'
+  mapping:
+    '#microsoft.graph.onAttributeCollectionExternalUsersSelfServiceSignUp': .\microsoft.graph.onAttributeCollectionExternalUsersSelfServiceSignUp.yaml
+    microsoft.graph.onAttributeCollectionExternalUsersSelfServiceSignUp: .\microsoft.graph.onAttributeCollectionExternalUsersSelfServiceSignUp.yaml

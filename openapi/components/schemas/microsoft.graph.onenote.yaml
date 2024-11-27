@@ -1,0 +1,61 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: onenote
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      notebooks:
+        type: array
+        items:
+          $ref: .\microsoft.graph.notebook.yaml
+        description: >-
+          The collection of OneNote notebooks that are owned by the user or
+          group. Read-only. Nullable.
+        x-ms-navigationProperty: true
+      operations:
+        type: array
+        items:
+          $ref: .\microsoft.graph.onenoteOperation.yaml
+        description: >-
+          The status of OneNote operations. Getting an operations collection
+          isn't supported, but you can get the status of long-running operations
+          if the Operation-Location header is returned in the response.
+          Read-only. Nullable.
+        x-ms-navigationProperty: true
+      pages:
+        type: array
+        items:
+          $ref: .\microsoft.graph.onenotePage.yaml
+        description: >-
+          The pages in all OneNote notebooks that are owned by the user or
+          group.  Read-only. Nullable.
+        x-ms-navigationProperty: true
+      resources:
+        type: array
+        items:
+          $ref: .\microsoft.graph.onenoteResource.yaml
+        description: >-
+          The image and other file resources in OneNote pages. Getting a
+          resources collection isn't supported, but you can get the binary
+          content of a specific resource. Read-only. Nullable.
+        x-ms-navigationProperty: true
+      sectionGroups:
+        type: array
+        items:
+          $ref: .\microsoft.graph.sectionGroup.yaml
+        description: >-
+          The section groups in all OneNote notebooks that are owned by the user
+          or group.  Read-only. Nullable.
+        x-ms-navigationProperty: true
+      sections:
+        type: array
+        items:
+          $ref: .\microsoft.graph.onenoteSection.yaml
+        description: >-
+          The sections in all OneNote notebooks that are owned by the user or
+          group.  Read-only. Nullable.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.onenote'

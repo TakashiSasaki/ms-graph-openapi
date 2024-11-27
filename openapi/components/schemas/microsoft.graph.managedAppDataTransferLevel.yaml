@@ -1,0 +1,20 @@
+title: managedAppDataTransferLevel
+enum:
+  - allApps
+  - managedApps
+  - none
+type: string
+description: Data can be transferred from/to these classes of apps
+x-ms-enum:
+  name: managedAppDataTransferLevel
+  modelAsString: false
+  values:
+    - value: allApps
+      description: All apps.
+      name: allApps
+    - value: managedApps
+      description: Managed apps.
+      name: managedApps
+    - value: none
+      description: No apps.
+      name: none

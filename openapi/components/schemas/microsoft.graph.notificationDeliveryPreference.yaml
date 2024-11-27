@@ -1,0 +1,7 @@
+title: notificationDeliveryPreference
+enum:
+  - unknown
+  - deliverImmedietly
+  - deliverAfterCampaignEnd
+  - unknownFutureValue
+type: string

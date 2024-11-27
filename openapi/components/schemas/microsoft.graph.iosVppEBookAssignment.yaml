@@ -1,0 +1,11 @@
+allOf:
+  - $ref: .\microsoft.graph.managedEBookAssignment.yaml
+  - title: iosVppEBookAssignment
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      '@odata.type':
+        type: string
+    description: Contains properties used to assign an iOS VPP EBook to a group.
+x-ms-discriminator-value: '#microsoft.graph.iosVppEBookAssignment'

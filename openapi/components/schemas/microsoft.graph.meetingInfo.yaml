@@ -1,0 +1,16 @@
+title: meetingInfo
+required:
+  - '@odata.type'
+type: object
+properties:
+  '@odata.type':
+    type: string
+discriminator:
+  propertyName: '@odata.type'
+  mapping:
+    '#microsoft.graph.joinMeetingIdMeetingInfo': .\microsoft.graph.joinMeetingIdMeetingInfo.yaml
+    '#microsoft.graph.organizerMeetingInfo': .\microsoft.graph.organizerMeetingInfo.yaml
+    '#microsoft.graph.tokenMeetingInfo': .\microsoft.graph.tokenMeetingInfo.yaml
+    microsoft.graph.joinMeetingIdMeetingInfo: .\microsoft.graph.joinMeetingIdMeetingInfo.yaml
+    microsoft.graph.organizerMeetingInfo: .\microsoft.graph.organizerMeetingInfo.yaml
+    microsoft.graph.tokenMeetingInfo: .\microsoft.graph.tokenMeetingInfo.yaml

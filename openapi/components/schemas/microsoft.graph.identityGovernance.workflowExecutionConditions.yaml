@@ -1,0 +1,14 @@
+title: workflowExecutionConditions
+required:
+  - '@odata.type'
+type: object
+properties:
+  '@odata.type':
+    type: string
+discriminator:
+  propertyName: '@odata.type'
+  mapping:
+    '#microsoft.graph.identityGovernance.onDemandExecutionOnly': .\microsoft.graph.identityGovernance.onDemandExecutionOnly.yaml
+    '#microsoft.graph.identityGovernance.triggerAndScopeBasedConditions': .\microsoft.graph.identityGovernance.triggerAndScopeBasedConditions.yaml
+    microsoft.graph.identityGovernance.onDemandExecutionOnly: .\microsoft.graph.identityGovernance.onDemandExecutionOnly.yaml
+    microsoft.graph.identityGovernance.triggerAndScopeBasedConditions: .\microsoft.graph.identityGovernance.triggerAndScopeBasedConditions.yaml

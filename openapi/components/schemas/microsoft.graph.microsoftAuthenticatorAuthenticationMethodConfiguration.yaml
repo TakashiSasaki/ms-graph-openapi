@@ -1,0 +1,33 @@
+allOf:
+  - $ref: .\microsoft.graph.authenticationMethodConfiguration.yaml
+  - title: microsoftAuthenticatorAuthenticationMethodConfiguration
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      featureSettings:
+        anyOf:
+          - $ref: .\microsoft.graph.microsoftAuthenticatorFeatureSettings.yaml
+          - type: object
+            nullable: true
+        description: >-
+          A collection of Microsoft Authenticator settings such as application
+          context and location context, and whether they are enabled for all
+          users or specific users only.
+      isSoftwareOathEnabled:
+        type: boolean
+        nullable: true
+      includeTargets:
+        type: array
+        items:
+          $ref: >-
+            .\microsoft.graph.microsoftAuthenticatorAuthenticationMethodTarget.yaml
+        description: >-
+          A collection of groups that are enabled to use the authentication
+          method. Expanded by default.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+        default: >-
+          #microsoft.graph.microsoftAuthenticatorAuthenticationMethodConfiguration
+x-ms-discriminator-value: '#microsoft.graph.microsoftAuthenticatorAuthenticationMethodConfiguration'

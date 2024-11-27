@@ -1,0 +1,34 @@
+title: invitationRedemptionIdentityProviderConfiguration
+required:
+  - '@odata.type'
+type: object
+properties:
+  fallbackIdentityProvider:
+    anyOf:
+      - $ref: .\microsoft.graph.b2bIdentityProvidersType.yaml
+      - type: object
+        nullable: true
+    description: >-
+      The fallback identity provider to be used in case no primary identity
+      provider can be used for guest invitation redemption. Possible values are:
+      defaultConfiguredIdp, emailOneTimePasscode, or microsoftAccount.
+  primaryIdentityProviderPrecedenceOrder:
+    type: array
+    items:
+      anyOf:
+        - $ref: .\microsoft.graph.b2bIdentityProvidersType.yaml
+        - type: object
+          nullable: true
+    description: >-
+      Collection of identity providers in priority order of preference to be
+      used for guest invitation redemption. Possible values are:
+      azureActiveDirectory, externalFederation, or socialIdentityProviders.
+  '@odata.type':
+    type: string
+discriminator:
+  propertyName: '@odata.type'
+  mapping:
+    '#microsoft.graph.defaultInvitationRedemptionIdentityProviderConfiguration': >-
+      .\microsoft.graph.defaultInvitationRedemptionIdentityProviderConfiguration.yaml
+    microsoft.graph.defaultInvitationRedemptionIdentityProviderConfiguration: >-
+      .\microsoft.graph.defaultInvitationRedemptionIdentityProviderConfiguration.yaml

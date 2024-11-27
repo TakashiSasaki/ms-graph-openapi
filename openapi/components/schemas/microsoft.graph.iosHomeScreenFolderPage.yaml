@@ -1,0 +1,19 @@
+title: iosHomeScreenFolderPage
+required:
+  - '@odata.type'
+type: object
+properties:
+  apps:
+    type: array
+    items:
+      $ref: .\microsoft.graph.iosHomeScreenApp.yaml
+    description: >-
+      A list of apps and web clips to appear on a page within a folder. This
+      collection can contain a maximum of 500 elements.
+  displayName:
+    type: string
+    description: Name of the folder page
+    nullable: true
+  '@odata.type':
+    type: string
+description: A page for a folder containing apps and web clips on the Home Screen.

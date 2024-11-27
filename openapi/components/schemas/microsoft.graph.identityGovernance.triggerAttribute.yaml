@@ -1,0 +1,12 @@
+title: triggerAttribute
+required:
+  - '@odata.type'
+type: object
+properties:
+  name:
+    type: string
+    description: >-
+      The name of the trigger attribute that is changed to trigger an
+      attributeChangeTrigger workflow.
+  '@odata.type':
+    type: string

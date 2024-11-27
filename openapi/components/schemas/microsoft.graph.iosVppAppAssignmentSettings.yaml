@@ -1,0 +1,19 @@
+allOf:
+  - $ref: .\microsoft.graph.mobileAppAssignmentSettings.yaml
+  - title: iosVppAppAssignmentSettings
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      useDeviceLicensing:
+        type: boolean
+        description: Whether or not to use device licensing.
+      vpnConfigurationId:
+        type: string
+        description: The VPN Configuration Id to apply for this app.
+        nullable: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.iosVppAppAssignmentSettings'
+    description: Contains properties used to assign an iOS VPP mobile app to a group.
+x-ms-discriminator-value: '#microsoft.graph.iosVppAppAssignmentSettings'

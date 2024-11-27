@@ -1,0 +1,31 @@
+title: taskReportSummary
+required:
+  - '@odata.type'
+type: object
+properties:
+  failedTasks:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    description: The number of failed tasks in a report.
+    format: int32
+  successfulTasks:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    description: The total number of successful tasks in a report.
+    format: int32
+  totalTasks:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    description: The total number of tasks in a report.
+    format: int32
+  unprocessedTasks:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    description: The number of unprocessed tasks in a report.
+    format: int32
+  '@odata.type':
+    type: string

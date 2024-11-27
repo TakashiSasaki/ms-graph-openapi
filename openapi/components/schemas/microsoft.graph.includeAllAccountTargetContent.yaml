@@ -1,0 +1,11 @@
+allOf:
+  - $ref: .\microsoft.graph.accountTargetContent.yaml
+  - title: includeAllAccountTargetContent
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.includeAllAccountTargetContent'
+x-ms-discriminator-value: '#microsoft.graph.includeAllAccountTargetContent'

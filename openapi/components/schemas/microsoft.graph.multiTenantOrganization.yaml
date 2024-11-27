@@ -1,0 +1,48 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: multiTenantOrganization
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      createdDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: Date when multitenant organization was created. Read-only.
+        format: date-time
+        nullable: true
+      description:
+        type: string
+        description: Description of the multitenant organization.
+        nullable: true
+      displayName:
+        type: string
+        description: Display name of the multitenant organization.
+        nullable: true
+      state:
+        anyOf:
+          - $ref: .\microsoft.graph.multiTenantOrganizationState.yaml
+          - type: object
+            nullable: true
+        description: >-
+          State of the multitenant organization. The possible values are:
+          active, inactive, unknownFutureValue. active indicates the multitenant
+          organization is created. inactive indicates the multitenant
+          organization isn't created. Read-only.
+      joinRequest:
+        anyOf:
+          - $ref: .\microsoft.graph.multiTenantOrganizationJoinRequestRecord.yaml
+          - type: object
+            nullable: true
+        description: Defines the status of a tenant joining a multitenant organization.
+        x-ms-navigationProperty: true
+      tenants:
+        type: array
+        items:
+          $ref: .\microsoft.graph.multiTenantOrganizationMember.yaml
+        description: Defines tenants added to a multitenant organization.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.multiTenantOrganization'

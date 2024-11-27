@@ -1,0 +1,12 @@
+title: onenotePagePreviewLinks
+required:
+  - '@odata.type'
+type: object
+properties:
+  previewImageUrl:
+    anyOf:
+      - $ref: .\microsoft.graph.externalLink.yaml
+      - type: object
+        nullable: true
+  '@odata.type':
+    type: string

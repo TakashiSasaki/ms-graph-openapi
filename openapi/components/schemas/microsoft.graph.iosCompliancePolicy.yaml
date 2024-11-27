@@ -1,0 +1,74 @@
+allOf:
+  - $ref: .\microsoft.graph.deviceCompliancePolicy.yaml
+  - title: iosCompliancePolicy
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      deviceThreatProtectionEnabled:
+        type: boolean
+        description: Require that devices have enabled device threat protection .
+      deviceThreatProtectionRequiredSecurityLevel:
+        $ref: .\microsoft.graph.deviceThreatProtectionLevel.yaml
+      managedEmailProfileRequired:
+        type: boolean
+        description: Indicates whether or not to require a managed email profile.
+      osMaximumVersion:
+        type: string
+        description: Maximum IOS version.
+        nullable: true
+      osMinimumVersion:
+        type: string
+        description: Minimum IOS version.
+        nullable: true
+      passcodeBlockSimple:
+        type: boolean
+        description: Indicates whether or not to block simple passcodes.
+      passcodeExpirationDays:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: Number of days before the passcode expires. Valid values 1 to 65535
+        format: int32
+        nullable: true
+      passcodeMinimumCharacterSetCount:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: The number of character sets required in the password.
+        format: int32
+        nullable: true
+      passcodeMinimumLength:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: Minimum length of passcode. Valid values 4 to 14
+        format: int32
+        nullable: true
+      passcodeMinutesOfInactivityBeforeLock:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: Minutes of inactivity before a passcode is required.
+        format: int32
+        nullable: true
+      passcodePreviousPasscodeBlockCount:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: Number of previous passcodes to block. Valid values 1 to 24
+        format: int32
+        nullable: true
+      passcodeRequired:
+        type: boolean
+        description: Indicates whether or not to require a passcode.
+      passcodeRequiredType:
+        $ref: .\microsoft.graph.requiredPasswordType.yaml
+      securityBlockJailbrokenDevices:
+        type: boolean
+        description: Devices must not be jailbroken or rooted.
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.iosCompliancePolicy'
+    description: This class contains compliance settings for IOS.
+x-ms-discriminator-value: '#microsoft.graph.iosCompliancePolicy'

@@ -1,0 +1,83 @@
+allOf:
+  - $ref: .\microsoft.graph.onenoteEntitySchemaObjectModel.yaml
+  - title: onenotePage
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      content:
+        type: string
+        description: The page's HTML content.
+        format: base64url
+        nullable: true
+      contentUrl:
+        type: string
+        description: The URL for the page's HTML content.  Read-only.
+        nullable: true
+      createdByAppId:
+        type: string
+        description: >-
+          The unique identifier of the application that created the page.
+          Read-only.
+        nullable: true
+      lastModifiedDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: >-
+          The date and time when the page was last modified. The timestamp
+          represents date and time information using ISO 8601 format and is
+          always in UTC time. For example, midnight UTC on Jan 1, 2014 is
+          2014-01-01T00:00:00Z. Read-only.
+        format: date-time
+        nullable: true
+      level:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: The indentation level of the page. Read-only.
+        format: int32
+        nullable: true
+      links:
+        anyOf:
+          - $ref: .\microsoft.graph.pageLinks.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Links for opening the page. The oneNoteClientURL link opens the page
+          in the OneNote native client if it 's installed. The oneNoteWebUrl
+          link opens the page in OneNote on the web. Read-only.
+      order:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: The order of the page within its parent section. Read-only.
+        format: int32
+        nullable: true
+      title:
+        type: string
+        description: The title of the page.
+        nullable: true
+      userTags:
+        type: array
+        items:
+          type: string
+          nullable: true
+      parentNotebook:
+        anyOf:
+          - $ref: .\microsoft.graph.notebook.yaml
+          - type: object
+            nullable: true
+        description: The notebook that contains the page.  Read-only.
+        x-ms-navigationProperty: true
+      parentSection:
+        anyOf:
+          - $ref: .\microsoft.graph.onenoteSection.yaml
+          - type: object
+            nullable: true
+        description: The section that contains the page. Read-only.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.onenotePage'
+x-ms-discriminator-value: '#microsoft.graph.onenotePage'

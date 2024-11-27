@@ -1,0 +1,15 @@
+title: inboundOutboundPolicyConfiguration
+required:
+  - '@odata.type'
+type: object
+properties:
+  inboundAllowed:
+    type: boolean
+    description: Defines whether external users coming inbound are allowed.
+    nullable: true
+  outboundAllowed:
+    type: boolean
+    description: Defines whether internal users are allowed to go outbound.
+    nullable: true
+  '@odata.type':
+    type: string

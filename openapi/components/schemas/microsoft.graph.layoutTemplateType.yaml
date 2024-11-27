@@ -1,0 +1,6 @@
+title: layoutTemplateType
+enum:
+  - default
+  - verticalSplit
+  - unknownFutureValue
+type: string

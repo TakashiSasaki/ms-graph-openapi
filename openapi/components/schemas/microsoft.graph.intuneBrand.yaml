@@ -1,0 +1,83 @@
+title: intuneBrand
+required:
+  - '@odata.type'
+type: object
+properties:
+  contactITEmailAddress:
+    type: string
+    description: Email address of the person/organization responsible for IT support.
+    nullable: true
+  contactITName:
+    type: string
+    description: Name of the person/organization responsible for IT support.
+    nullable: true
+  contactITNotes:
+    type: string
+    description: >-
+      Text comments regarding the person/organization responsible for IT
+      support.
+    nullable: true
+  contactITPhoneNumber:
+    type: string
+    description: Phone number of the person/organization responsible for IT support.
+    nullable: true
+  darkBackgroundLogo:
+    anyOf:
+      - $ref: .\microsoft.graph.mimeContent.yaml
+      - type: object
+        nullable: true
+    description: >-
+      Logo image displayed in Company Portal apps which have a dark background
+      behind the logo.
+  displayName:
+    type: string
+    description: Company/organization name that is displayed to end users.
+    nullable: true
+  lightBackgroundLogo:
+    anyOf:
+      - $ref: .\microsoft.graph.mimeContent.yaml
+      - type: object
+        nullable: true
+    description: >-
+      Logo image displayed in Company Portal apps which have a light background
+      behind the logo.
+  onlineSupportSiteName:
+    type: string
+    description: Display name of the company/organization’s IT helpdesk site.
+    nullable: true
+  onlineSupportSiteUrl:
+    type: string
+    description: URL to the company/organization’s IT helpdesk site.
+    nullable: true
+  privacyUrl:
+    type: string
+    description: URL to the company/organization’s privacy policy.
+    nullable: true
+  showDisplayNameNextToLogo:
+    type: boolean
+    description: >-
+      Boolean that represents whether the administrator-supplied display name
+      will be shown next to the logo image.
+  showLogo:
+    type: boolean
+    description: >-
+      Boolean that represents whether the administrator-supplied logo images are
+      shown or not shown.
+  showNameNextToLogo:
+    type: boolean
+    description: >-
+      Boolean that represents whether the administrator-supplied display name
+      will be shown next to the logo image.
+  themeColor:
+    anyOf:
+      - $ref: .\microsoft.graph.rgbColor.yaml
+      - type: object
+        nullable: true
+    description: >-
+      Primary theme color used in the Company Portal applications and web
+      portal.
+  '@odata.type':
+    type: string
+description: >-
+  intuneBrand contains data which is used in customizing the appearance of the
+  Company Portal applications as well as the end user web portal.

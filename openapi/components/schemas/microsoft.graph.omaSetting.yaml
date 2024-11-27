@@ -1,0 +1,35 @@
+title: omaSetting
+required:
+  - '@odata.type'
+type: object
+properties:
+  description:
+    type: string
+    description: Description.
+    nullable: true
+  displayName:
+    type: string
+    description: Display Name.
+  omaUri:
+    type: string
+    description: OMA.
+  '@odata.type':
+    type: string
+description: OMA Settings definition.
+discriminator:
+  propertyName: '@odata.type'
+  mapping:
+    '#microsoft.graph.omaSettingBase64': .\microsoft.graph.omaSettingBase64.yaml
+    '#microsoft.graph.omaSettingBoolean': .\microsoft.graph.omaSettingBoolean.yaml
+    '#microsoft.graph.omaSettingDateTime': .\microsoft.graph.omaSettingDateTime.yaml
+    '#microsoft.graph.omaSettingFloatingPoint': .\microsoft.graph.omaSettingFloatingPoint.yaml
+    '#microsoft.graph.omaSettingInteger': .\microsoft.graph.omaSettingInteger.yaml
+    '#microsoft.graph.omaSettingString': .\microsoft.graph.omaSettingString.yaml
+    '#microsoft.graph.omaSettingStringXml': .\microsoft.graph.omaSettingStringXml.yaml
+    microsoft.graph.omaSettingBase64: .\microsoft.graph.omaSettingBase64.yaml
+    microsoft.graph.omaSettingBoolean: .\microsoft.graph.omaSettingBoolean.yaml
+    microsoft.graph.omaSettingDateTime: .\microsoft.graph.omaSettingDateTime.yaml
+    microsoft.graph.omaSettingFloatingPoint: .\microsoft.graph.omaSettingFloatingPoint.yaml
+    microsoft.graph.omaSettingInteger: .\microsoft.graph.omaSettingInteger.yaml
+    microsoft.graph.omaSettingString: .\microsoft.graph.omaSettingString.yaml
+    microsoft.graph.omaSettingStringXml: .\microsoft.graph.omaSettingStringXml.yaml

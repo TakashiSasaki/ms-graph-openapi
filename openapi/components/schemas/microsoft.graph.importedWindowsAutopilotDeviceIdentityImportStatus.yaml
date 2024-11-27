@@ -1,0 +1,27 @@
+title: importedWindowsAutopilotDeviceIdentityImportStatus
+enum:
+  - unknown
+  - pending
+  - partial
+  - complete
+  - error
+type: string
+x-ms-enum:
+  name: importedWindowsAutopilotDeviceIdentityImportStatus
+  modelAsString: false
+  values:
+    - value: unknown
+      description: Unknown status.
+      name: unknown
+    - value: pending
+      description: Pending status.
+      name: pending
+    - value: partial
+      description: Partial status.
+      name: partial
+    - value: complete
+      description: Complete status.
+      name: complete
+    - value: error
+      description: Error status.
+      name: error

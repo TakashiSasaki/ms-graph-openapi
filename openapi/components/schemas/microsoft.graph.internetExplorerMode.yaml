@@ -1,0 +1,16 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: internetExplorerMode
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      siteLists:
+        type: array
+        items:
+          $ref: .\microsoft.graph.browserSiteList.yaml
+        description: A collection of site lists to support Internet Explorer mode.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.internetExplorerMode'

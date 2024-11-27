@@ -1,0 +1,55 @@
+title: itemReference
+required:
+  - '@odata.type'
+type: object
+properties:
+  driveId:
+    type: string
+    description: >-
+      Unique identifier of the drive instance that contains the driveItem. Only
+      returned if the item is located in a drive. Read-only.
+    nullable: true
+  driveType:
+    type: string
+    description: >-
+      Identifies the type of drive. Only returned if the item is located in a
+      drive. See drive resource for values.
+    nullable: true
+  id:
+    type: string
+    description: >-
+      Unique identifier of the driveItem in the drive or a listItem in a list.
+      Read-only.
+    nullable: true
+  name:
+    type: string
+    description: The name of the item being referenced. Read-only.
+    nullable: true
+  path:
+    type: string
+    description: Percent-encoded path that can be used to navigate to the item. Read-only.
+    nullable: true
+  shareId:
+    type: string
+    description: >-
+      A unique identifier for a shared resource that can be accessed via the
+      Shares API.
+    nullable: true
+  sharepointIds:
+    anyOf:
+      - $ref: .\microsoft.graph.sharepointIds.yaml
+      - type: object
+        nullable: true
+    description: Returns identifiers useful for SharePoint REST compatibility. Read-only.
+  siteId:
+    type: string
+    description: >-
+      For OneDrive for Business and SharePoint, this property represents the ID
+      of the site that contains the parent document library of the driveItem
+      resource or the parent list of the listItem resource. The value is the
+      same as the id property of that site resource. It is an opaque string that
+      consists of three identifiers of the site. For OneDrive, this property is
+      not populated.
+    nullable: true
+  '@odata.type':
+    type: string

@@ -1,0 +1,86 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: taskReport
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      completedDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: >-
+          The date time that the associated run completed. Value is null if the
+          run has not completed.Supports $filter(lt, le, gt, ge, eq, ne) and
+          $orderby.
+        format: date-time
+        nullable: true
+      failedUsersCount:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: >-
+          The number of users in the run execution for which the associated task
+          failed.Supports $filter(lt, le, gt, ge, eq, ne) and $orderby.
+        format: int32
+      lastUpdatedDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: The date and time that the task report was last updated.
+        format: date-time
+      processingStatus:
+        $ref: >-
+          .\microsoft.graph.identityGovernance.lifecycleWorkflowProcessingStatus.yaml
+      runId:
+        type: string
+        description: The unique identifier of the associated run.
+        nullable: true
+      startedDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: >-
+          The date time that the associated run started. Value is null if the
+          run has not started.
+        format: date-time
+        nullable: true
+      successfulUsersCount:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: >-
+          The number of users in the run execution for which the associated task
+          succeeded.Supports $filter(lt, le, gt, ge, eq, ne) and $orderby.
+        format: int32
+      totalUsersCount:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: >-
+          The total number of users in the run execution for which the
+          associated task was scheduled to execute.Supports $filter(lt, le, gt,
+          ge, eq, ne) and $orderby.
+        format: int32
+      unprocessedUsersCount:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: >-
+          The number of users in the run execution for which the associated task
+          is queued, in progress, or canceled.Supports $filter(lt, le, gt, ge,
+          eq, ne) and $orderby.
+        format: int32
+      task:
+        $ref: .\microsoft.graph.identityGovernance.task.yaml
+      taskDefinition:
+        $ref: .\microsoft.graph.identityGovernance.taskDefinition.yaml
+      taskProcessingResults:
+        type: array
+        items:
+          $ref: .\microsoft.graph.identityGovernance.taskProcessingResult.yaml
+        description: The related lifecycle workflow taskProcessingResults.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.identityGovernance.taskReport'

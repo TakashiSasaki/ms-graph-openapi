@@ -1,0 +1,9 @@
+title: meetingMessageType
+enum:
+  - none
+  - meetingRequest
+  - meetingCancelled
+  - meetingAccepted
+  - meetingTenativelyAccepted
+  - meetingDeclined
+type: string

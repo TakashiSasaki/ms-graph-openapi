@@ -1,0 +1,6 @@
+title: importance
+enum:
+  - low
+  - normal
+  - high
+type: string

@@ -1,0 +1,19 @@
+title: mediaInfo
+required:
+  - '@odata.type'
+type: object
+properties:
+  resourceId:
+    type: string
+    description: >-
+      Optional. Used to uniquely identity the resource. If passed in, the prompt
+      uri is against this resourceId as a key.
+    nullable: true
+  uri:
+    type: string
+    description: >-
+      Path to the prompt that will be played. Currently supports only Wave file
+      (.wav) format, single-channel, 16-bit samples with a 16,000 (16 KHz)
+      sampling rate.
+  '@odata.type':
+    type: string

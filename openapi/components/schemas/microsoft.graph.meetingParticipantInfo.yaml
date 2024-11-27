@@ -1,0 +1,28 @@
+title: meetingParticipantInfo
+required:
+  - '@odata.type'
+type: object
+properties:
+  identity:
+    anyOf:
+      - $ref: .\microsoft.graph.identitySet.yaml
+      - type: object
+        nullable: true
+    description: Identity information of the participant.
+  role:
+    anyOf:
+      - $ref: .\microsoft.graph.onlineMeetingRole.yaml
+      - type: object
+        nullable: true
+    description: Specifies the participant's role in the meeting.
+  upn:
+    type: string
+    description: User principal name of the participant.
+    nullable: true
+  '@odata.type':
+    type: string
+discriminator:
+  propertyName: '@odata.type'
+  mapping:
+    '#microsoft.graph.virtualEventPresenterInfo': .\microsoft.graph.virtualEventPresenterInfo.yaml
+    microsoft.graph.virtualEventPresenterInfo: .\microsoft.graph.virtualEventPresenterInfo.yaml

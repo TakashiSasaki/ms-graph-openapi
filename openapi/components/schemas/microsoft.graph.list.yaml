@@ -1,0 +1,74 @@
+allOf:
+  - $ref: .\microsoft.graph.baseItem.yaml
+  - title: list
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      displayName:
+        type: string
+        description: The displayable title of the list.
+        nullable: true
+      list:
+        anyOf:
+          - $ref: .\microsoft.graph.listInfo.yaml
+          - type: object
+            nullable: true
+        description: Contains more details about the list.
+      sharepointIds:
+        anyOf:
+          - $ref: .\microsoft.graph.sharepointIds.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Returns identifiers useful for SharePoint REST compatibility.
+          Read-only.
+      system:
+        anyOf:
+          - $ref: .\microsoft.graph.systemFacet.yaml
+          - type: object
+            nullable: true
+        description: If present, indicates that the list is system-managed. Read-only.
+      columns:
+        type: array
+        items:
+          $ref: .\microsoft.graph.columnDefinition.yaml
+        description: The collection of field definitions for this list.
+        x-ms-navigationProperty: true
+      contentTypes:
+        type: array
+        items:
+          $ref: .\microsoft.graph.contentType.yaml
+        description: The collection of content types present in this list.
+        x-ms-navigationProperty: true
+      drive:
+        anyOf:
+          - $ref: .\microsoft.graph.drive.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Allows access to the list as a drive resource with driveItems. Only
+          present on document libraries.
+        x-ms-navigationProperty: true
+      items:
+        type: array
+        items:
+          $ref: .\microsoft.graph.listItem.yaml
+        description: All items contained in the list.
+        x-ms-navigationProperty: true
+      operations:
+        type: array
+        items:
+          $ref: .\microsoft.graph.richLongRunningOperation.yaml
+        description: The collection of long-running operations on the list.
+        x-ms-navigationProperty: true
+      subscriptions:
+        type: array
+        items:
+          $ref: .\microsoft.graph.subscription.yaml
+        description: The set of subscriptions on the list.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.list'
+x-ms-discriminator-value: '#microsoft.graph.list'

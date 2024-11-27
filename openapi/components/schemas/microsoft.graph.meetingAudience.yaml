@@ -1,0 +1,6 @@
+title: meetingAudience
+enum:
+  - everyone
+  - organization
+  - unknownFutureValue
+type: string

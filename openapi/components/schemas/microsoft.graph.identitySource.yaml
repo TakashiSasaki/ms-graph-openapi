@@ -1,0 +1,20 @@
+title: identitySource
+required:
+  - '@odata.type'
+type: object
+properties:
+  '@odata.type':
+    type: string
+discriminator:
+  propertyName: '@odata.type'
+  mapping:
+    '#microsoft.graph.azureActiveDirectoryTenant': .\microsoft.graph.azureActiveDirectoryTenant.yaml
+    '#microsoft.graph.crossCloudAzureActiveDirectoryTenant': .\microsoft.graph.crossCloudAzureActiveDirectoryTenant.yaml
+    '#microsoft.graph.domainIdentitySource': .\microsoft.graph.domainIdentitySource.yaml
+    '#microsoft.graph.externalDomainFederation': .\microsoft.graph.externalDomainFederation.yaml
+    '#microsoft.graph.socialIdentitySource': .\microsoft.graph.socialIdentitySource.yaml
+    microsoft.graph.azureActiveDirectoryTenant: .\microsoft.graph.azureActiveDirectoryTenant.yaml
+    microsoft.graph.crossCloudAzureActiveDirectoryTenant: .\microsoft.graph.crossCloudAzureActiveDirectoryTenant.yaml
+    microsoft.graph.domainIdentitySource: .\microsoft.graph.domainIdentitySource.yaml
+    microsoft.graph.externalDomainFederation: .\microsoft.graph.externalDomainFederation.yaml
+    microsoft.graph.socialIdentitySource: .\microsoft.graph.socialIdentitySource.yaml

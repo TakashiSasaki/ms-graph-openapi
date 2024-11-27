@@ -1,0 +1,14 @@
+title: mediaConfig
+required:
+  - '@odata.type'
+type: object
+properties:
+  '@odata.type':
+    type: string
+discriminator:
+  propertyName: '@odata.type'
+  mapping:
+    '#microsoft.graph.appHostedMediaConfig': .\microsoft.graph.appHostedMediaConfig.yaml
+    '#microsoft.graph.serviceHostedMediaConfig': .\microsoft.graph.serviceHostedMediaConfig.yaml
+    microsoft.graph.appHostedMediaConfig: .\microsoft.graph.appHostedMediaConfig.yaml
+    microsoft.graph.serviceHostedMediaConfig: .\microsoft.graph.serviceHostedMediaConfig.yaml

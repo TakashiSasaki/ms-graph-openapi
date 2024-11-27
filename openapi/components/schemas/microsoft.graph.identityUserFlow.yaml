@@ -1,0 +1,23 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: identityUserFlow
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      userFlowType:
+        $ref: .\microsoft.graph.userFlowType.yaml
+      userFlowTypeVersion:
+        oneOf:
+          - type: number
+            format: float
+            nullable: true
+          - type: string
+            nullable: true
+          - $ref: .\ReferenceNumeric.yaml
+      '@odata.type':
+        type: string
+    discriminator:
+      propertyName: '@odata.type'
+      mapping:
+        '#microsoft.graph.b2xIdentityUserFlow': .\microsoft.graph.b2xIdentityUserFlow.yaml

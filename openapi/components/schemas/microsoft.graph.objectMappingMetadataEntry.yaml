@@ -1,0 +1,20 @@
+title: objectMappingMetadataEntry
+required:
+  - '@odata.type'
+type: object
+properties:
+  key:
+    anyOf:
+      - $ref: .\microsoft.graph.objectMappingMetadata.yaml
+      - type: object
+        nullable: true
+    description: >-
+      Possible values are: EscrowBehavior, DisableMonitoringForChanges,
+      OriginalJoiningProperty, Disposition, IsCustomerDefined,
+      ExcludeFromReporting, Unsynchronized.
+  value:
+    type: string
+    description: Value of the metadata property.
+    nullable: true
+  '@odata.type':
+    type: string

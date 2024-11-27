@@ -1,0 +1,17 @@
+allOf:
+  - $ref: .\microsoft.graph.endUserNotificationSetting.yaml
+  - title: noTrainingNotificationSetting
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      simulationNotification:
+        anyOf:
+          - $ref: .\microsoft.graph.simulationNotification.yaml
+          - type: object
+            nullable: true
+        description: The notification for the user who is part of the simulation.
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.noTrainingNotificationSetting'
+x-ms-discriminator-value: '#microsoft.graph.noTrainingNotificationSetting'

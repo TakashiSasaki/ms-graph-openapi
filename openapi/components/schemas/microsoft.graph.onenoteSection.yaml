@@ -1,0 +1,50 @@
+allOf:
+  - $ref: .\microsoft.graph.onenoteEntityHierarchyModel.yaml
+  - title: onenoteSection
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      isDefault:
+        type: boolean
+        description: Indicates whether this is the user's default section. Read-only.
+        nullable: true
+      links:
+        anyOf:
+          - $ref: .\microsoft.graph.sectionLinks.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Links for opening the section. The oneNoteClientURL link opens the
+          section in the OneNote native client if it's installed. The
+          oneNoteWebURL link opens the section in OneNote on the web.
+      pagesUrl:
+        type: string
+        description: >-
+          The pages endpoint where you can get details for all the pages in the
+          section. Read-only.
+        nullable: true
+      pages:
+        type: array
+        items:
+          $ref: .\microsoft.graph.onenotePage.yaml
+        description: The collection of pages in the section.  Read-only. Nullable.
+        x-ms-navigationProperty: true
+      parentNotebook:
+        anyOf:
+          - $ref: .\microsoft.graph.notebook.yaml
+          - type: object
+            nullable: true
+        description: The notebook that contains the section.  Read-only.
+        x-ms-navigationProperty: true
+      parentSectionGroup:
+        anyOf:
+          - $ref: .\microsoft.graph.sectionGroup.yaml
+          - type: object
+            nullable: true
+        description: The section group that contains the section.  Read-only.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.onenoteSection'
+x-ms-discriminator-value: '#microsoft.graph.onenoteSection'

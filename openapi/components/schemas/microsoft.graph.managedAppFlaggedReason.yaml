@@ -1,0 +1,16 @@
+title: managedAppFlaggedReason
+enum:
+  - none
+  - rootedDevice
+type: string
+description: The reason for which a user has been flagged
+x-ms-enum:
+  name: managedAppFlaggedReason
+  modelAsString: false
+  values:
+    - value: none
+      description: No issue.
+      name: none
+    - value: rootedDevice
+      description: The app registration is running on a rooted/unlocked device.
+      name: rootedDevice

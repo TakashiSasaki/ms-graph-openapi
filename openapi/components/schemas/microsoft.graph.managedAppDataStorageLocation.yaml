@@ -1,0 +1,24 @@
+title: managedAppDataStorageLocation
+enum:
+  - oneDriveForBusiness
+  - sharePoint
+  - box
+  - localStorage
+type: string
+description: Storage locations where managed apps can potentially store their data
+x-ms-enum:
+  name: managedAppDataStorageLocation
+  modelAsString: false
+  values:
+    - value: oneDriveForBusiness
+      description: OneDrive for business
+      name: oneDriveForBusiness
+    - value: sharePoint
+      description: SharePoint
+      name: sharePoint
+    - value: box
+      description: Box
+      name: box
+    - value: localStorage
+      description: Local storage on the device
+      name: localStorage

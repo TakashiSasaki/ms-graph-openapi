@@ -1,0 +1,10 @@
+title: licenseProcessingState
+required:
+  - '@odata.type'
+type: object
+properties:
+  state:
+    type: string
+    nullable: true
+  '@odata.type':
+    type: string

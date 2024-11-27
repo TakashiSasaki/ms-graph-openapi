@@ -1,0 +1,59 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: learningProvider
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      displayName:
+        type: string
+        description: The display name that appears in Viva Learning. Required.
+      isCourseActivitySyncEnabled:
+        type: boolean
+        description: >-
+          Indicates whether a provider can ingest learning course activity
+          records. The default value is false. Set to true to make
+          learningCourseActivities available for this provider.
+        nullable: true
+      loginWebUrl:
+        type: string
+        description: Authentication URL to access the courses for the provider. Optional.
+        nullable: true
+      longLogoWebUrlForDarkTheme:
+        type: string
+        description: >-
+          The long logo URL for the dark mode that needs to be a publicly
+          accessible image. This image would be saved to the blob storage of
+          Viva Learning for rendering within the Viva Learning app. Required.
+      longLogoWebUrlForLightTheme:
+        type: string
+        description: >-
+          The long logo URL for the light mode that needs to be a publicly
+          accessible image. This image would be saved to the blob storage of
+          Viva Learning for rendering within the Viva Learning app. Required.
+      squareLogoWebUrlForDarkTheme:
+        type: string
+        description: >-
+          The square logo URL for the dark mode that needs to be a publicly
+          accessible image. This image would be saved to the blob storage of
+          Viva Learning for rendering within the Viva Learning app. Required.
+      squareLogoWebUrlForLightTheme:
+        type: string
+        description: >-
+          The square logo URL for the light mode that needs to be a publicly
+          accessible image. This image would be saved to the blob storage of
+          Viva Learning for rendering within the Viva Learning app. Required.
+      learningContents:
+        type: array
+        items:
+          $ref: .\microsoft.graph.learningContent.yaml
+        description: Learning catalog items for the provider.
+        x-ms-navigationProperty: true
+      learningCourseActivities:
+        type: array
+        items:
+          $ref: .\microsoft.graph.learningCourseActivity.yaml
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.learningProvider'

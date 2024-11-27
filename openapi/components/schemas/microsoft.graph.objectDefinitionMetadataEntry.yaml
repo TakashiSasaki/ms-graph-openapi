@@ -1,0 +1,20 @@
+title: objectDefinitionMetadataEntry
+required:
+  - '@odata.type'
+type: object
+properties:
+  key:
+    anyOf:
+      - $ref: .\microsoft.graph.objectDefinitionMetadata.yaml
+      - type: object
+        nullable: true
+    description: >-
+      Possible values are: PropertyNameAccountEnabled, PropertyNameSoftDeleted,
+      IsSoftDeletionSupported, IsSynchronizeAllSupported,
+      ConnectorDataStorageRequired, Extensions, LinkTypeName.
+  value:
+    type: string
+    description: Value of the metadata property.
+    nullable: true
+  '@odata.type':
+    type: string

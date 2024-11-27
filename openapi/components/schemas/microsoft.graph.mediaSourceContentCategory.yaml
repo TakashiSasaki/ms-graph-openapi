@@ -1,0 +1,13 @@
+title: mediaSourceContentCategory
+enum:
+  - meeting
+  - liveStream
+  - presentation
+  - screenRecording
+  - story
+  - profile
+  - chat
+  - note
+  - comment
+  - unknownFutureValue
+type: string

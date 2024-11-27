@@ -1,0 +1,61 @@
+title: workflowsInsightsByCategory
+required:
+  - '@odata.type'
+type: object
+properties:
+  failedJoinerRuns:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    description: Failed 'Joiner' workflows processed in a tenant.
+    format: int32
+  failedLeaverRuns:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    description: Failed 'Leaver' workflows processed in a tenant.
+    format: int32
+  failedMoverRuns:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    description: Failed 'Mover' workflows processed in a tenant.
+    format: int32
+  successfulJoinerRuns:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    description: Successful 'Joiner' workflows processed in a tenant.
+    format: int32
+  successfulLeaverRuns:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    description: Successful 'Leaver' workflows processed in a tenant.
+    format: int32
+  successfulMoverRuns:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    description: Successful 'Mover' workflows processed in a tenant.
+    format: int32
+  totalJoinerRuns:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    description: Total 'Joiner' workflows processed in a tenant.
+    format: int32
+  totalLeaverRuns:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    description: Total 'Leaver' workflows processed in a tenant.
+    format: int32
+  totalMoverRuns:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    description: Total 'Mover' workflows processed in a tenant.
+    format: int32
+  '@odata.type':
+    type: string

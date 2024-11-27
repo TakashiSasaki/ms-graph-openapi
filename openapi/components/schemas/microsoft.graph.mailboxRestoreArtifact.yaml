@@ -1,0 +1,22 @@
+allOf:
+  - $ref: .\microsoft.graph.restoreArtifactBase.yaml
+  - title: mailboxRestoreArtifact
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      restoredFolderId:
+        type: string
+        description: The new restored folder identifier for the user.
+        nullable: true
+      restoredFolderName:
+        type: string
+        description: The new restored folder name.
+        nullable: true
+        readOnly: true
+      '@odata.type':
+        type: string
+    discriminator:
+      propertyName: '@odata.type'
+      mapping:
+        '#microsoft.graph.granularMailboxRestoreArtifact': .\microsoft.graph.granularMailboxRestoreArtifact.yaml

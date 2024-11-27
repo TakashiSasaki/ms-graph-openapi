@@ -1,0 +1,21 @@
+title: meetingTimeSuggestionsResult
+required:
+  - '@odata.type'
+type: object
+properties:
+  emptySuggestionsReason:
+    type: string
+    description: >-
+      A reason for not returning any meeting suggestions. The possible values
+      are: attendeesUnavailable, attendeesUnavailableOrUnknown,
+      locationsUnavailable, organizerUnavailable, or unknown. This property is
+      an empty string if the meetingTimeSuggestions property does include any
+      meeting suggestions.
+    nullable: true
+  meetingTimeSuggestions:
+    type: array
+    items:
+      $ref: .\microsoft.graph.meetingTimeSuggestion.yaml
+    description: An array of meeting suggestions.
+  '@odata.type':
+    type: string

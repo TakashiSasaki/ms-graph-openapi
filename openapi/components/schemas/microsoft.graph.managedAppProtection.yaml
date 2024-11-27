@@ -1,0 +1,146 @@
+allOf:
+  - $ref: .\microsoft.graph.managedAppPolicy.yaml
+  - title: managedAppProtection
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      allowedDataStorageLocations:
+        type: array
+        items:
+          $ref: .\microsoft.graph.managedAppDataStorageLocation.yaml
+        description: Data storage locations where a user may store managed data.
+      allowedInboundDataTransferSources:
+        $ref: .\microsoft.graph.managedAppDataTransferLevel.yaml
+      allowedOutboundClipboardSharingLevel:
+        $ref: .\microsoft.graph.managedAppClipboardSharingLevel.yaml
+      allowedOutboundDataTransferDestinations:
+        $ref: .\microsoft.graph.managedAppDataTransferLevel.yaml
+      contactSyncBlocked:
+        type: boolean
+        description: Indicates whether contacts can be synced to the user's device.
+      dataBackupBlocked:
+        type: boolean
+        description: Indicates whether the backup of a managed app's data is blocked.
+      deviceComplianceRequired:
+        type: boolean
+        description: Indicates whether device compliance is required.
+      disableAppPinIfDevicePinIsSet:
+        type: boolean
+        description: >-
+          Indicates whether use of the app pin is required if the device pin is
+          set.
+      fingerprintBlocked:
+        type: boolean
+        description: >-
+          Indicates whether use of the fingerprint reader is allowed in place of
+          a pin if PinRequired is set to True.
+      managedBrowser:
+        $ref: .\microsoft.graph.managedBrowserType.yaml
+      managedBrowserToOpenLinksRequired:
+        type: boolean
+        description: >-
+          Indicates whether internet links should be opened in the managed
+          browser app, or any custom browser specified by CustomBrowserProtocol
+          (for iOS) or CustomBrowserPackageId/CustomBrowserDisplayName (for
+          Android)
+      maximumPinRetries:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: >-
+          Maximum number of incorrect pin retry attempts before the managed app
+          is either blocked or wiped.
+        format: int32
+      minimumPinLength:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: >-
+          Minimum pin length required for an app-level pin if PinRequired is set
+          to True
+        format: int32
+      minimumRequiredAppVersion:
+        type: string
+        description: >-
+          Versions less than the specified version will block the managed app
+          from accessing company data.
+        nullable: true
+      minimumRequiredOsVersion:
+        type: string
+        description: >-
+          Versions less than the specified version will block the managed app
+          from accessing company data.
+        nullable: true
+      minimumWarningAppVersion:
+        type: string
+        description: >-
+          Versions less than the specified version will result in warning
+          message on the managed app.
+        nullable: true
+      minimumWarningOsVersion:
+        type: string
+        description: >-
+          Versions less than the specified version will result in warning
+          message on the managed app from accessing company data.
+        nullable: true
+      organizationalCredentialsRequired:
+        type: boolean
+        description: Indicates whether organizational credentials are required for app use.
+      periodBeforePinReset:
+        pattern: ^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$
+        type: string
+        description: >-
+          TimePeriod before the all-level pin must be reset if PinRequired is
+          set to True.
+        format: duration
+      periodOfflineBeforeAccessCheck:
+        pattern: ^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$
+        type: string
+        description: >-
+          The period after which access is checked when the device is not
+          connected to the internet.
+        format: duration
+      periodOfflineBeforeWipeIsEnforced:
+        pattern: ^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$
+        type: string
+        description: >-
+          The amount of time an app is allowed to remain disconnected from the
+          internet before all managed data it is wiped.
+        format: duration
+      periodOnlineBeforeAccessCheck:
+        pattern: ^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$
+        type: string
+        description: >-
+          The period after which access is checked when the device is connected
+          to the internet.
+        format: duration
+      pinCharacterSet:
+        $ref: .\microsoft.graph.managedAppPinCharacterSet.yaml
+      pinRequired:
+        type: boolean
+        description: Indicates whether an app-level pin is required.
+      printBlocked:
+        type: boolean
+        description: Indicates whether printing is allowed from managed apps.
+      saveAsBlocked:
+        type: boolean
+        description: >-
+          Indicates whether users may use the 'Save As' menu item to save a copy
+          of protected files.
+      simplePinBlocked:
+        type: boolean
+        description: Indicates whether simplePin is blocked.
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.managedAppProtection'
+    description: >-
+      Policy used to configure detailed management settings for a specified set
+      of apps
+    discriminator:
+      propertyName: '@odata.type'
+      mapping:
+        '#microsoft.graph.defaultManagedAppProtection': .\microsoft.graph.defaultManagedAppProtection.yaml
+        '#microsoft.graph.targetedManagedAppProtection': .\microsoft.graph.targetedManagedAppProtection.yaml
+        '#microsoft.graph.androidManagedAppProtection': .\microsoft.graph.androidManagedAppProtection.yaml
+        '#microsoft.graph.iosManagedAppProtection': .\microsoft.graph.iosManagedAppProtection.yaml

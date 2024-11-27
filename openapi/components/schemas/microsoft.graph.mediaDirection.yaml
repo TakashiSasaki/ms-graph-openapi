@@ -1,0 +1,7 @@
+title: mediaDirection
+enum:
+  - inactive
+  - sendOnly
+  - receiveOnly
+  - sendReceive
+type: string

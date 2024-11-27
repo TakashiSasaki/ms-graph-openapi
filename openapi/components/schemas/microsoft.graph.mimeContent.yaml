@@ -1,0 +1,17 @@
+title: mimeContent
+required:
+  - '@odata.type'
+type: object
+properties:
+  type:
+    type: string
+    description: Indicates the content mime type.
+    nullable: true
+  value:
+    type: string
+    description: The byte array that contains the actual content.
+    format: base64url
+    nullable: true
+  '@odata.type':
+    type: string
+description: Contains properties for a generic mime content.

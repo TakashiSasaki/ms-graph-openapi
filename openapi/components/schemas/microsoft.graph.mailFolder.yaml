@@ -1,0 +1,83 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: mailFolder
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      childFolderCount:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: The number of immediate child mailFolders in the current mailFolder.
+        format: int32
+        nullable: true
+      displayName:
+        type: string
+        description: The mailFolder's display name.
+        nullable: true
+      isHidden:
+        type: boolean
+        description: >-
+          Indicates whether the mailFolder is hidden. This property can be set
+          only when creating the folder. Find more information in Hidden mail
+          folders.
+        nullable: true
+      parentFolderId:
+        type: string
+        description: The unique identifier for the mailFolder's parent mailFolder.
+        nullable: true
+      totalItemCount:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: The number of items in the mailFolder.
+        format: int32
+        nullable: true
+      unreadItemCount:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: The number of items in the mailFolder marked as unread.
+        format: int32
+        nullable: true
+      childFolders:
+        type: array
+        items:
+          $ref: .\microsoft.graph.mailFolder.yaml
+        description: The collection of child folders in the mailFolder.
+        x-ms-navigationProperty: true
+      messageRules:
+        type: array
+        items:
+          $ref: .\microsoft.graph.messageRule.yaml
+        description: The collection of rules that apply to the user's Inbox folder.
+        x-ms-navigationProperty: true
+      messages:
+        type: array
+        items:
+          $ref: .\microsoft.graph.message.yaml
+        description: The collection of messages in the mailFolder.
+        x-ms-navigationProperty: true
+      multiValueExtendedProperties:
+        type: array
+        items:
+          $ref: .\microsoft.graph.multiValueLegacyExtendedProperty.yaml
+        description: >-
+          The collection of multi-value extended properties defined for the
+          mailFolder. Read-only. Nullable.
+        x-ms-navigationProperty: true
+      singleValueExtendedProperties:
+        type: array
+        items:
+          $ref: .\microsoft.graph.singleValueLegacyExtendedProperty.yaml
+        description: >-
+          The collection of single-value extended properties defined for the
+          mailFolder. Read-only. Nullable.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+    discriminator:
+      propertyName: '@odata.type'
+      mapping:
+        '#microsoft.graph.mailSearchFolder': .\microsoft.graph.mailSearchFolder.yaml

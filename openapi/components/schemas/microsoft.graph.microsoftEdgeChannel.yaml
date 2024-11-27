@@ -1,0 +1,33 @@
+title: microsoftEdgeChannel
+enum:
+  - dev
+  - beta
+  - stable
+  - unknownFutureValue
+type: string
+description: The enum to specify the channels for Microsoft Edge apps.
+x-ms-enum:
+  name: microsoftEdgeChannel
+  modelAsString: false
+  values:
+    - value: dev
+      description: >-
+        The Dev Channel is intended to help you plan and develop with the latest
+        capabilities of Microsoft Edge.
+      name: dev
+    - value: beta
+      description: >-
+        The Beta Channel is intended for production deployment to a
+        representative sample set of users. New features ship about every 4
+        weeks. Security and quality updates ship as needed.
+      name: beta
+    - value: stable
+      description: >-
+        The Stable Channel is intended for broad deployment within
+        organizations, and it's the channel that most users should be on. New
+        features ship about every 4 weeks. Security and quality updates ship as
+        needed.
+      name: stable
+    - value: unknownFutureValue
+      description: Evolvable enumeration sentinel value. Do not use.
+      name: unknownFutureValue

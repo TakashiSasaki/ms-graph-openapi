@@ -1,0 +1,12 @@
+title: onTokenIssuanceStartHandler
+required:
+  - '@odata.type'
+type: object
+properties:
+  '@odata.type':
+    type: string
+discriminator:
+  propertyName: '@odata.type'
+  mapping:
+    '#microsoft.graph.onTokenIssuanceStartCustomExtensionHandler': .\microsoft.graph.onTokenIssuanceStartCustomExtensionHandler.yaml
+    microsoft.graph.onTokenIssuanceStartCustomExtensionHandler: .\microsoft.graph.onTokenIssuanceStartCustomExtensionHandler.yaml

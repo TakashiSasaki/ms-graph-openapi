@@ -1,0 +1,15 @@
+allOf:
+  - $ref: .\microsoft.graph.conversationMember.yaml
+  - title: microsoftAccountUserConversationMember
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      userId:
+        type: string
+        description: Microsoft Account ID of the user.
+        nullable: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.microsoftAccountUserConversationMember'
+x-ms-discriminator-value: '#microsoft.graph.microsoftAccountUserConversationMember'

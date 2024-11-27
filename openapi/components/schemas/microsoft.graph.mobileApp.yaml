@@ -1,0 +1,116 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: mobileApp
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      createdDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: The date and time the app was created.
+        format: date-time
+        readOnly: true
+      description:
+        type: string
+        description: The description of the app.
+        nullable: true
+      developer:
+        type: string
+        description: The developer of the app.
+        nullable: true
+      displayName:
+        type: string
+        description: The admin provided or imported title of the app.
+        nullable: true
+      informationUrl:
+        type: string
+        description: The more information Url.
+        nullable: true
+      isFeatured:
+        type: boolean
+        description: >-
+          The value indicating whether the app is marked as featured by the
+          admin.
+      largeIcon:
+        anyOf:
+          - $ref: .\microsoft.graph.mimeContent.yaml
+          - type: object
+            nullable: true
+        description: >-
+          The large icon, to be displayed in the app details and used for upload
+          of the icon.
+      lastModifiedDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: The date and time the app was last modified.
+        format: date-time
+        readOnly: true
+      notes:
+        type: string
+        description: Notes for the app.
+        nullable: true
+      owner:
+        type: string
+        description: The owner of the app.
+        nullable: true
+      privacyInformationUrl:
+        type: string
+        description: The privacy statement Url.
+        nullable: true
+      publisher:
+        type: string
+        description: The publisher of the app.
+        nullable: true
+      publishingState:
+        $ref: .\microsoft.graph.mobileAppPublishingState.yaml
+      assignments:
+        type: array
+        items:
+          $ref: .\microsoft.graph.mobileAppAssignment.yaml
+        description: The list of group assignments for this mobile app.
+        x-ms-navigationProperty: true
+      categories:
+        type: array
+        items:
+          $ref: .\microsoft.graph.mobileAppCategory.yaml
+        description: The list of categories for this app.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+    description: >-
+      An abstract class containing the base properties for Intune mobile apps.
+      Note: Listing mobile apps with `$expand=assignments` has been deprecated.
+      Instead get the list of apps without the `$expand` query on `assignments`.
+      Then, perform the expansion on individual applications.
+    discriminator:
+      propertyName: '@odata.type'
+      mapping:
+        '#microsoft.graph.androidStoreApp': .\microsoft.graph.androidStoreApp.yaml
+        '#microsoft.graph.iosiPadOSWebClip': .\microsoft.graph.iosiPadOSWebClip.yaml
+        '#microsoft.graph.iosStoreApp': .\microsoft.graph.iosStoreApp.yaml
+        '#microsoft.graph.iosVppApp': .\microsoft.graph.iosVppApp.yaml
+        '#microsoft.graph.macOSMicrosoftDefenderApp': .\microsoft.graph.macOSMicrosoftDefenderApp.yaml
+        '#microsoft.graph.macOSMicrosoftEdgeApp': .\microsoft.graph.macOSMicrosoftEdgeApp.yaml
+        '#microsoft.graph.macOSOfficeSuiteApp': .\microsoft.graph.macOSOfficeSuiteApp.yaml
+        '#microsoft.graph.managedApp': .\microsoft.graph.managedApp.yaml
+        '#microsoft.graph.managedAndroidStoreApp': .\microsoft.graph.managedAndroidStoreApp.yaml
+        '#microsoft.graph.managedIOSStoreApp': .\microsoft.graph.managedIOSStoreApp.yaml
+        '#microsoft.graph.managedMobileLobApp': .\microsoft.graph.managedMobileLobApp.yaml
+        '#microsoft.graph.managedAndroidLobApp': .\microsoft.graph.managedAndroidLobApp.yaml
+        '#microsoft.graph.managedIOSLobApp': .\microsoft.graph.managedIOSLobApp.yaml
+        '#microsoft.graph.microsoftStoreForBusinessApp': .\microsoft.graph.microsoftStoreForBusinessApp.yaml
+        '#microsoft.graph.mobileLobApp': .\microsoft.graph.mobileLobApp.yaml
+        '#microsoft.graph.androidLobApp': .\microsoft.graph.androidLobApp.yaml
+        '#microsoft.graph.iosLobApp': .\microsoft.graph.iosLobApp.yaml
+        '#microsoft.graph.macOSDmgApp': .\microsoft.graph.macOSDmgApp.yaml
+        '#microsoft.graph.macOSLobApp': .\microsoft.graph.macOSLobApp.yaml
+        '#microsoft.graph.win32LobApp': .\microsoft.graph.win32LobApp.yaml
+        '#microsoft.graph.windowsAppX': .\microsoft.graph.windowsAppX.yaml
+        '#microsoft.graph.windowsMobileMSI': .\microsoft.graph.windowsMobileMSI.yaml
+        '#microsoft.graph.windowsUniversalAppX': .\microsoft.graph.windowsUniversalAppX.yaml
+        '#microsoft.graph.webApp': .\microsoft.graph.webApp.yaml
+        '#microsoft.graph.windowsMicrosoftEdgeApp': .\microsoft.graph.windowsMicrosoftEdgeApp.yaml
+        '#microsoft.graph.windowsWebApp': .\microsoft.graph.windowsWebApp.yaml

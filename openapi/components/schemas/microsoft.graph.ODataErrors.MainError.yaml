@@ -1,0 +1,19 @@
+required:
+  - code
+  - message
+type: object
+properties:
+  code:
+    type: string
+  message:
+    type: string
+    x-ms-primary-error-message: true
+  target:
+    type: string
+    nullable: true
+  details:
+    type: array
+    items:
+      $ref: .\microsoft.graph.ODataErrors.ErrorDetails.yaml
+  innerError:
+    $ref: .\microsoft.graph.ODataErrors.InnerError.yaml

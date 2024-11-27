@@ -1,0 +1,10 @@
+title: logonType
+enum:
+  - unknown
+  - interactive
+  - remoteInteractive
+  - network
+  - batch
+  - service
+  - unknownFutureValue
+type: string

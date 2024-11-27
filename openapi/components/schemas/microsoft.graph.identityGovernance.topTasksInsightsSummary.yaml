@@ -1,0 +1,49 @@
+title: topTasksInsightsSummary
+required:
+  - '@odata.type'
+type: object
+properties:
+  failedTasks:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    description: Count of failed runs of the task.
+    format: int32
+  failedUsers:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    description: Count of failed users who were processed by the task.
+    format: int32
+  successfulTasks:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    description: Count of successful runs of the task.
+    format: int32
+  successfulUsers:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    description: Count of successful users processed by the task.
+    format: int32
+  taskDefinitionDisplayName:
+    type: string
+    description: The name of the task.
+  taskDefinitionId:
+    type: string
+    description: The task ID.
+  totalTasks:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    description: Count of total runs of the task.
+    format: int32
+  totalUsers:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    description: Count of total users processed by the task.
+    format: int32
+  '@odata.type':
+    type: string

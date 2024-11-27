@@ -1,0 +1,7 @@
+title: identityUserFlowAttributeType
+enum:
+  - builtIn
+  - custom
+  - required
+  - unknownFutureValue
+type: string

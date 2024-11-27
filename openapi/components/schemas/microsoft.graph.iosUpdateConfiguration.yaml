@@ -1,0 +1,42 @@
+allOf:
+  - $ref: .\microsoft.graph.deviceConfiguration.yaml
+  - title: iosUpdateConfiguration
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      activeHoursEnd:
+        pattern: ^([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?$
+        type: string
+        description: >-
+          Active Hours End (active hours mean the time window when updates
+          install should not happen)
+        format: time
+      activeHoursStart:
+        pattern: ^([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?$
+        type: string
+        description: >-
+          Active Hours Start (active hours mean the time window when updates
+          install should not happen)
+        format: time
+      scheduledInstallDays:
+        type: array
+        items:
+          $ref: .\microsoft.graph.dayOfWeek.yaml
+        description: >-
+          Days in week for which active hours are configured. This collection
+          can contain a maximum of 7 elements.
+      utcTimeOffsetInMinutes:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: UTC Time Offset indicated in minutes
+        format: int32
+        nullable: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.iosUpdateConfiguration'
+    description: >-
+      IOS Update Configuration, allows you to configure time window within week
+      to install iOS updates
+x-ms-discriminator-value: '#microsoft.graph.iosUpdateConfiguration'

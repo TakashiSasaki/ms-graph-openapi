@@ -1,0 +1,8 @@
+title: locationUniqueIdType
+enum:
+  - unknown
+  - locationStore
+  - directory
+  - private
+  - bing
+type: string

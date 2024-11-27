@@ -1,0 +1,16 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: mobileAppTroubleshootingEvent
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      appLogCollectionRequests:
+        type: array
+        items:
+          $ref: .\microsoft.graph.appLogCollectionRequest.yaml
+        description: Indicates collection of App Log Upload Request.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.mobileAppTroubleshootingEvent'

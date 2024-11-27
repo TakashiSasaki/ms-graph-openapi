@@ -1,0 +1,28 @@
+title: mobileThreatPartnerTenantState
+enum:
+  - unavailable
+  - available
+  - enabled
+  - unresponsive
+  - unknownFutureValue
+type: string
+description: Partner state of this tenant.
+x-ms-enum:
+  name: mobileThreatPartnerTenantState
+  modelAsString: false
+  values:
+    - value: unavailable
+      description: Partner is unavailable.
+      name: unavailable
+    - value: available
+      description: Partner is available.
+      name: available
+    - value: enabled
+      description: Partner is enabled.
+      name: enabled
+    - value: unresponsive
+      description: Partner is unresponsive.
+      name: unresponsive
+    - value: unknownFutureValue
+      description: Evolvable enumeration sentinel value. Do not use.
+      name: unknownFutureValue

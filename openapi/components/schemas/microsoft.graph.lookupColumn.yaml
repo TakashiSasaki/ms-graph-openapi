@@ -1,0 +1,32 @@
+title: lookupColumn
+required:
+  - '@odata.type'
+type: object
+properties:
+  allowMultipleValues:
+    type: boolean
+    description: Indicates whether multiple values can be selected from the source.
+    nullable: true
+  allowUnlimitedLength:
+    type: boolean
+    description: >-
+      Indicates whether values in the column should be able to exceed the
+      standard limit of 255 characters.
+    nullable: true
+  columnName:
+    type: string
+    description: The name of the lookup source column.
+    nullable: true
+  listId:
+    type: string
+    description: The unique identifier of the lookup source list.
+    nullable: true
+  primaryLookupColumnId:
+    type: string
+    description: >-
+      If specified, this column is a secondary lookup, pulling an additional
+      field from the list item looked up by the primary lookup. Use the list
+      item looked up by the primary as the source for the column named here.
+    nullable: true
+  '@odata.type':
+    type: string

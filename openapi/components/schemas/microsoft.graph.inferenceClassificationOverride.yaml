@@ -1,0 +1,26 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: inferenceClassificationOverride
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      classifyAs:
+        anyOf:
+          - $ref: .\microsoft.graph.inferenceClassificationType.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Specifies how incoming messages from a specific sender should always
+          be classified as. The possible values are: focused, other.
+      senderEmailAddress:
+        anyOf:
+          - $ref: .\microsoft.graph.emailAddress.yaml
+          - type: object
+            nullable: true
+        description: >-
+          The email address information of the sender for whom the override is
+          created.
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.inferenceClassificationOverride'

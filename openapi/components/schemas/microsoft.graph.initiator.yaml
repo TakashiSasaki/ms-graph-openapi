@@ -1,0 +1,19 @@
+allOf:
+  - $ref: .\microsoft.graph.identity.yaml
+  - title: initiator
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      initiatorType:
+        anyOf:
+          - $ref: .\microsoft.graph.initiatorType.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Type of initiator. Possible values are: user, application, system,
+          unknownFutureValue.
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.initiator'
+x-ms-discriminator-value: '#microsoft.graph.initiator'

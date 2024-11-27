@@ -1,0 +1,43 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: managedDeviceOverview
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      deviceExchangeAccessStateSummary:
+        anyOf:
+          - $ref: .\microsoft.graph.deviceExchangeAccessStateSummary.yaml
+          - type: object
+            nullable: true
+        description: Distribution of Exchange Access State in Intune
+      deviceOperatingSystemSummary:
+        anyOf:
+          - $ref: .\microsoft.graph.deviceOperatingSystemSummary.yaml
+          - type: object
+            nullable: true
+        description: Device operating system summary.
+      dualEnrolledDeviceCount:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: The number of devices enrolled in both MDM and EAS
+        format: int32
+      enrolledDeviceCount:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: >-
+          Total enrolled device count. Does not include PC devices managed via
+          Intune PC Agent
+        format: int32
+      mdmEnrolledCount:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: The number of devices enrolled in MDM
+        format: int32
+      '@odata.type':
+        type: string
+    description: Summary data for managed devices
+x-ms-discriminator-value: '#microsoft.graph.managedDeviceOverview'

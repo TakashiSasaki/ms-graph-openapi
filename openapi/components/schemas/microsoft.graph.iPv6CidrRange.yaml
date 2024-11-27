@@ -1,0 +1,14 @@
+allOf:
+  - $ref: .\microsoft.graph.ipRange.yaml
+  - title: iPv6CidrRange
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      cidrAddress:
+        type: string
+        description: IPv6 address in CIDR notation. Not nullable.
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.iPv6CidrRange'
+x-ms-discriminator-value: '#microsoft.graph.iPv6CidrRange'

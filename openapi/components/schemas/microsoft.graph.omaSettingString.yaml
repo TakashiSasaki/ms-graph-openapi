@@ -1,0 +1,15 @@
+allOf:
+  - $ref: .\microsoft.graph.omaSetting.yaml
+  - title: omaSettingString
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      value:
+        type: string
+        description: Value.
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.omaSettingString'
+    description: OMA Settings String definition.
+x-ms-discriminator-value: '#microsoft.graph.omaSettingString'

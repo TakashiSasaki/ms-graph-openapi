@@ -1,0 +1,16 @@
+title: itemPreviewInfo
+required:
+  - '@odata.type'
+type: object
+properties:
+  getUrl:
+    type: string
+    nullable: true
+  postParameters:
+    type: string
+    nullable: true
+  postUrl:
+    type: string
+    nullable: true
+  '@odata.type':
+    type: string

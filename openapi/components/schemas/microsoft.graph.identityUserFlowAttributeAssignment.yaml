@@ -1,0 +1,43 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: identityUserFlowAttributeAssignment
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      displayName:
+        type: string
+        description: The display name of the identityUserFlowAttribute within a user flow.
+        nullable: true
+      isOptional:
+        type: boolean
+        description: >-
+          Determines whether the identityUserFlowAttribute is optional. true
+          means the user doesn't have to provide a value. false means the user
+          can't complete sign-up without providing a value.
+      requiresVerification:
+        type: boolean
+        description: >-
+          Determines whether the identityUserFlowAttribute requires
+          verification, and is only used for verifying the user's phone number
+          or email address.
+      userAttributeValues:
+        type: array
+        items:
+          $ref: .\microsoft.graph.userAttributeValuesItem.yaml
+        description: >-
+          The input options for the user flow attribute. Only applicable when
+          the userInputType is radioSingleSelect, dropdownSingleSelect, or
+          checkboxMultiSelect.
+      userInputType:
+        $ref: .\microsoft.graph.identityUserFlowAttributeInputType.yaml
+      userAttribute:
+        anyOf:
+          - $ref: .\microsoft.graph.identityUserFlowAttribute.yaml
+          - type: object
+            nullable: true
+        description: The user attribute that you want to add to your user flow.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.identityUserFlowAttributeAssignment'

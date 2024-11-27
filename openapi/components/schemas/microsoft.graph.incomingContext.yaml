@@ -1,0 +1,27 @@
+title: incomingContext
+required:
+  - '@odata.type'
+type: object
+properties:
+  observedParticipantId:
+    type: string
+    description: The ID of the participant that is under observation. Read-only.
+    nullable: true
+  onBehalfOf:
+    anyOf:
+      - $ref: .\microsoft.graph.identitySet.yaml
+      - type: object
+        nullable: true
+    description: The identity that the call is happening on behalf of.
+  sourceParticipantId:
+    type: string
+    description: The ID of the participant that triggered the incoming call. Read-only.
+    nullable: true
+  transferor:
+    anyOf:
+      - $ref: .\microsoft.graph.identitySet.yaml
+      - type: object
+        nullable: true
+    description: The identity that transferred the call.
+  '@odata.type':
+    type: string

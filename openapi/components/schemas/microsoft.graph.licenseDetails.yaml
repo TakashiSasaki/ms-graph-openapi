@@ -1,0 +1,32 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: licenseDetails
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      servicePlans:
+        type: array
+        items:
+          $ref: .\microsoft.graph.servicePlanInfo.yaml
+        description: >-
+          Information about the service plans assigned with the license.
+          Read-only. Not nullable.
+      skuId:
+        pattern: >-
+          ^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$
+        type: string
+        description: >-
+          Unique identifier (GUID) for the service SKU. Equal to the skuId
+          property on the related subscribedSku object. Read-only.
+        format: uuid
+        nullable: true
+      skuPartNumber:
+        type: string
+        description: >-
+          Unique SKU display name. Equal to the skuPartNumber on the related
+          subscribedSku object; for example, AAD_Premium. Read-only.
+        nullable: true
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.licenseDetails'

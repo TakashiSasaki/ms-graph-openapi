@@ -1,0 +1,37 @@
+allOf:
+  - $ref: .\microsoft.graph.managedApp.yaml
+  - title: managedMobileLobApp
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      committedContentVersion:
+        type: string
+        description: The internal committed content version.
+        nullable: true
+      fileName:
+        type: string
+        description: The name of the main Lob application file.
+        nullable: true
+      size:
+        type: number
+        description: The total size, including all uploaded files.
+        format: int64
+        readOnly: true
+      contentVersions:
+        type: array
+        items:
+          $ref: .\microsoft.graph.mobileAppContent.yaml
+        description: The list of content versions for this app.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.managedMobileLobApp'
+    description: >-
+      An abstract base class containing properties for all managed mobile line
+      of business apps.
+    discriminator:
+      propertyName: '@odata.type'
+      mapping:
+        '#microsoft.graph.managedAndroidLobApp': .\microsoft.graph.managedAndroidLobApp.yaml
+        '#microsoft.graph.managedIOSLobApp': .\microsoft.graph.managedIOSLobApp.yaml

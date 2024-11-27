@@ -1,0 +1,25 @@
+allOf:
+  - $ref: .\microsoft.graph.eventMessageDetail.yaml
+  - title: meetingPolicyUpdatedEventMessageDetail
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      initiator:
+        anyOf:
+          - $ref: .\microsoft.graph.identitySet.yaml
+          - type: object
+            nullable: true
+        description: Initiator of the event.
+      meetingChatEnabled:
+        type: boolean
+        description: Represents whether the meeting chat is enabled or not.
+        nullable: true
+      meetingChatId:
+        type: string
+        description: Unique identifier of the meeting chat.
+        nullable: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.meetingPolicyUpdatedEventMessageDetail'
+x-ms-discriminator-value: '#microsoft.graph.meetingPolicyUpdatedEventMessageDetail'

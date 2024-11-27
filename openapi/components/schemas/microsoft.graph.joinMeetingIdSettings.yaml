@@ -1,0 +1,21 @@
+title: joinMeetingIdSettings
+required:
+  - '@odata.type'
+type: object
+properties:
+  isPasscodeRequired:
+    type: boolean
+    description: >-
+      Indicates whether a passcode is required to join a meeting when using
+      joinMeetingId. Optional.
+    nullable: true
+  joinMeetingId:
+    type: string
+    description: The meeting ID to be used to join a meeting. Optional. Read-only.
+    nullable: true
+  passcode:
+    type: string
+    description: The passcode to join a meeting.  Optional. Read-only.
+    nullable: true
+  '@odata.type':
+    type: string

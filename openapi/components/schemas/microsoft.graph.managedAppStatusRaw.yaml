@@ -1,0 +1,16 @@
+allOf:
+  - $ref: .\microsoft.graph.managedAppStatus.yaml
+  - title: managedAppStatusRaw
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      content:
+        description: Status report content.
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.managedAppStatusRaw'
+    description: >-
+      Represents an un-typed status report about organizations app protection
+      and configuration.
+x-ms-discriminator-value: '#microsoft.graph.managedAppStatusRaw'

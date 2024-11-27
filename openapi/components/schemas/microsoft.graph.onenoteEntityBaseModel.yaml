@@ -1,0 +1,23 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: onenoteEntityBaseModel
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      self:
+        type: string
+        description: The endpoint where you can get details about the page. Read-only.
+        nullable: true
+      '@odata.type':
+        type: string
+    discriminator:
+      propertyName: '@odata.type'
+      mapping:
+        '#microsoft.graph.onenoteEntitySchemaObjectModel': .\microsoft.graph.onenoteEntitySchemaObjectModel.yaml
+        '#microsoft.graph.onenoteEntityHierarchyModel': .\microsoft.graph.onenoteEntityHierarchyModel.yaml
+        '#microsoft.graph.notebook': .\microsoft.graph.notebook.yaml
+        '#microsoft.graph.onenoteSection': .\microsoft.graph.onenoteSection.yaml
+        '#microsoft.graph.sectionGroup': .\microsoft.graph.sectionGroup.yaml
+        '#microsoft.graph.onenotePage': .\microsoft.graph.onenotePage.yaml
+        '#microsoft.graph.onenoteResource': .\microsoft.graph.onenoteResource.yaml

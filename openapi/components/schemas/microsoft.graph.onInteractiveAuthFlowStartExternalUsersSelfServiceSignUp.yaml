@@ -1,0 +1,18 @@
+allOf:
+  - $ref: .\microsoft.graph.onInteractiveAuthFlowStartHandler.yaml
+  - title: onInteractiveAuthFlowStartExternalUsersSelfServiceSignUp
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      isSignUpAllowed:
+        type: boolean
+        description: >-
+          Optional. Specifies whether the authentication flow includes an option
+          to sign up (create account) and sign in. Default value is false
+          meaning only sign in is enabled.
+      '@odata.type':
+        type: string
+        default: >-
+          #microsoft.graph.onInteractiveAuthFlowStartExternalUsersSelfServiceSignUp
+x-ms-discriminator-value: '#microsoft.graph.onInteractiveAuthFlowStartExternalUsersSelfServiceSignUp'

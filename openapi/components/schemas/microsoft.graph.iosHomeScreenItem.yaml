@@ -1,0 +1,19 @@
+title: iosHomeScreenItem
+required:
+  - '@odata.type'
+type: object
+properties:
+  displayName:
+    type: string
+    description: Name of the app
+    nullable: true
+  '@odata.type':
+    type: string
+description: Represents an item on the iOS Home Screen
+discriminator:
+  propertyName: '@odata.type'
+  mapping:
+    '#microsoft.graph.iosHomeScreenApp': .\microsoft.graph.iosHomeScreenApp.yaml
+    '#microsoft.graph.iosHomeScreenFolder': .\microsoft.graph.iosHomeScreenFolder.yaml
+    microsoft.graph.iosHomeScreenApp: .\microsoft.graph.iosHomeScreenApp.yaml
+    microsoft.graph.iosHomeScreenFolder: .\microsoft.graph.iosHomeScreenFolder.yaml

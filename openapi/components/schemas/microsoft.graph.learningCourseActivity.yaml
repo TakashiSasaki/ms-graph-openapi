@@ -1,0 +1,49 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: learningCourseActivity
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      completedDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: Date and time when the assignment was completed. Optional.
+        format: date-time
+        nullable: true
+      completionPercentage:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: The percentage completion value of the course activity. Optional.
+        format: int32
+        nullable: true
+      externalcourseActivityId:
+        type: string
+        nullable: true
+      learnerUserId:
+        type: string
+        description: The user ID of the learner to whom the activity is assigned. Required.
+      learningContentId:
+        type: string
+        description: The ID of the learning content created in Viva Learning. Required.
+      learningProviderId:
+        type: string
+        description: The registration ID of the provider. Required.
+        nullable: true
+      status:
+        anyOf:
+          - $ref: .\microsoft.graph.courseStatus.yaml
+          - type: object
+            nullable: true
+        description: >-
+          The status of the course activity. Possible values are: notStarted,
+          inProgress, completed. Required.
+      '@odata.type':
+        type: string
+    discriminator:
+      propertyName: '@odata.type'
+      mapping:
+        '#microsoft.graph.learningAssignment': .\microsoft.graph.learningAssignment.yaml
+        '#microsoft.graph.learningSelfInitiatedCourse': .\microsoft.graph.learningSelfInitiatedCourse.yaml

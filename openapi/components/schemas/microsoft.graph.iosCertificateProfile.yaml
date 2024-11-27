@@ -1,0 +1,12 @@
+allOf:
+  - $ref: .\microsoft.graph.deviceConfiguration.yaml
+  - title: iosCertificateProfile
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.iosCertificateProfile'
+    description: Device Configuration.
+x-ms-discriminator-value: '#microsoft.graph.iosCertificateProfile'

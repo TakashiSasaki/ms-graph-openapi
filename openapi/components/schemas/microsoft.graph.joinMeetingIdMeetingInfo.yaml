@@ -1,0 +1,18 @@
+allOf:
+  - $ref: .\microsoft.graph.meetingInfo.yaml
+  - title: joinMeetingIdMeetingInfo
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      joinMeetingId:
+        type: string
+        description: The ID used to join the meeting.
+      passcode:
+        type: string
+        description: The passcode used to join the meeting. Optional.
+        nullable: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.joinMeetingIdMeetingInfo'
+x-ms-discriminator-value: '#microsoft.graph.joinMeetingIdMeetingInfo'

@@ -1,0 +1,24 @@
+title: installIntent
+enum:
+  - available
+  - required
+  - uninstall
+  - availableWithoutEnrollment
+type: string
+description: Possible values for the install intent chosen by the admin.
+x-ms-enum:
+  name: installIntent
+  modelAsString: false
+  values:
+    - value: available
+      description: Available install intent.
+      name: available
+    - value: required
+      description: Required install intent.
+      name: required
+    - value: uninstall
+      description: Uninstall install intent.
+      name: uninstall
+    - value: availableWithoutEnrollment
+      description: Available without enrollment install intent.
+      name: availableWithoutEnrollment

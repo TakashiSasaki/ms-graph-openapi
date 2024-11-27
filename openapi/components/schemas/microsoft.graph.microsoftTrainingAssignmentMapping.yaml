@@ -1,0 +1,29 @@
+allOf:
+  - $ref: .\microsoft.graph.trainingSetting.yaml
+  - title: microsoftTrainingAssignmentMapping
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      assignedTo:
+        type: array
+        items:
+          anyOf:
+            - $ref: .\microsoft.graph.trainingAssignedTo.yaml
+            - type: object
+              nullable: true
+        description: >-
+          A user collection that specifies to whom the training should be
+          assigned. Possible values are: none, allUsers, clickedPayload,
+          compromised, reportedPhish, readButNotClicked, didNothing,
+          unknownFutureValue.
+      training:
+        anyOf:
+          - $ref: .\microsoft.graph.training.yaml
+          - type: object
+            nullable: true
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.microsoftTrainingAssignmentMapping'
+x-ms-discriminator-value: '#microsoft.graph.microsoftTrainingAssignmentMapping'

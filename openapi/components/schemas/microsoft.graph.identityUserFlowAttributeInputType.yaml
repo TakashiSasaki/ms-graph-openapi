@@ -1,0 +1,9 @@
+title: identityUserFlowAttributeInputType
+enum:
+  - textBox
+  - dateTimeDropdown
+  - radioSingleSelect
+  - dropdownSingleSelect
+  - emailBox
+  - checkboxMultiSelect
+type: string

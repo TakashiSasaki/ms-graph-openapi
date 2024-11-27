@@ -1,0 +1,13 @@
+title: instanceResourceAccess
+required:
+  - '@odata.type'
+type: object
+properties:
+  permissions:
+    type: array
+    items:
+      $ref: .\microsoft.graph.resourcePermission.yaml
+  resourceAppId:
+    type: string
+  '@odata.type':
+    type: string

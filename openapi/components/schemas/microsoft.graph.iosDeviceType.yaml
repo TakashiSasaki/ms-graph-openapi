@@ -1,0 +1,16 @@
+title: iosDeviceType
+required:
+  - '@odata.type'
+type: object
+properties:
+  iPad:
+    type: boolean
+    description: Whether the app should run on iPads.
+  iPhoneAndIPod:
+    type: boolean
+    description: Whether the app should run on iPhones and iPods.
+  '@odata.type':
+    type: string
+description: >-
+  Contains properties of the possible iOS device types the mobile app can run
+  on.

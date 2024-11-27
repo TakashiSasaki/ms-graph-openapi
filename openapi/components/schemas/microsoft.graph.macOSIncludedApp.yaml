@@ -1,0 +1,18 @@
+title: macOSIncludedApp
+required:
+  - '@odata.type'
+type: object
+properties:
+  bundleId:
+    type: string
+    description: >-
+      The bundleId of the app. This maps to the CFBundleIdentifier in the app's
+      bundle configuration.
+  bundleVersion:
+    type: string
+    description: >-
+      The version of the app. This maps to the CFBundleShortVersion in the app's
+      bundle configuration.
+  '@odata.type':
+    type: string
+description: Contains properties of an included .app in a MacOS app.

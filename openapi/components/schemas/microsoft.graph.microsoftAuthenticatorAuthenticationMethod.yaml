@@ -1,0 +1,42 @@
+allOf:
+  - $ref: .\microsoft.graph.authenticationMethod.yaml
+  - title: microsoftAuthenticatorAuthenticationMethod
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      createdDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: >-
+          The date and time that this app was registered. This property is null
+          if the device isn't registered for passwordless Phone Sign-In.
+        format: date-time
+        nullable: true
+      deviceTag:
+        type: string
+        description: Tags containing app metadata.
+        nullable: true
+      displayName:
+        type: string
+        description: The name of the device on which this app is registered.
+        nullable: true
+      phoneAppVersion:
+        type: string
+        description: Numerical version of this instance of the Authenticator app.
+        nullable: true
+      device:
+        anyOf:
+          - $ref: .\microsoft.graph.device.yaml
+          - type: object
+            nullable: true
+        description: >-
+          The registered device on which Microsoft Authenticator resides. This
+          property is null if the device isn't registered for passwordless Phone
+          Sign-In.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.microsoftAuthenticatorAuthenticationMethod'
+x-ms-discriminator-value: '#microsoft.graph.microsoftAuthenticatorAuthenticationMethod'

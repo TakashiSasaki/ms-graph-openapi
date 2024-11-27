@@ -1,0 +1,6 @@
+title: meetingChatHistoryDefaultMode
+enum:
+  - none
+  - all
+  - unknownFutureValue
+type: string

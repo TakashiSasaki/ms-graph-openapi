@@ -1,0 +1,6 @@
+title: lifecycleEventType
+enum:
+  - missed
+  - subscriptionRemoved
+  - reauthorizationRequired
+type: string

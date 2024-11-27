@@ -1,0 +1,9 @@
+title: objectFlowTypes
+enum:
+  - None
+  - Add
+  - Update
+  - Delete
+type: string
+x-ms-enum-flags:
+  isFlags: true

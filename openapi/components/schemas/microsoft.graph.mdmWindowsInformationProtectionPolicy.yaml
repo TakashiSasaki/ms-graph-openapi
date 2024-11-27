@@ -1,0 +1,12 @@
+allOf:
+  - $ref: .\microsoft.graph.windowsInformationProtection.yaml
+  - title: mdmWindowsInformationProtectionPolicy
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.mdmWindowsInformationProtectionPolicy'
+    description: Policy for Windows information protection with MDM
+x-ms-discriminator-value: '#microsoft.graph.mdmWindowsInformationProtectionPolicy'

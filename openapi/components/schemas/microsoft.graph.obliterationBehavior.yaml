@@ -1,0 +1,49 @@
+title: obliterationBehavior
+enum:
+  - default
+  - doNotObliterate
+  - obliterateWithWarning
+  - always
+  - unknownFutureValue
+type: string
+description: >-
+  In macOS 12 and later, this command uses Erase All Content and Settings (EACS)
+  on Mac computers with the Apple M1 chip or the Apple T2 Security Chip. On
+  those devices, if EACS can’t run, the device can use obliteration (macOS 11.x
+  behavior). This key has no effect on machines prior to the T2 chip. Upon
+  receiving this command, the device performs preflight checks to determine if
+  the device is in a state that allows EACS. The ObliterationBehavior value
+  defines the device's fallback behavior.
+x-ms-enum:
+  name: obliterationBehavior
+  modelAsString: false
+  values:
+    - value: default
+      description: >-
+        Default. If Erase All Content and Settings (EACS) preflight fails, the
+        device responds to the server with an Error status and then attempts to
+        erase itself. If EACS preflight succeeds but EACS fails, then the device
+        attempts to erase itself.
+      name: default
+    - value: doNotObliterate
+      description: >-
+        If Erase All Content and Settings (EACS) preflight fails, the device
+        responds to the server with an Error status and doesn’t attempt to erase
+        itself. If EACS preflight succeeds but EACS fails, then the device
+        doesn’t attempt to erase itself.
+      name: doNotObliterate
+    - value: obliterateWithWarning
+      description: >-
+        If Erase All Content and Settings (EACS) preflight fails, the device
+        responds with an Acknowledged status and then attempts to erase itself.
+        If EACS preflight succeeds but EACS fails, then the device attempts to
+        erase itself.
+      name: obliterateWithWarning
+    - value: always
+      description: >-
+        The system doesn’t attempt Erase All Content and Settings (EACS). T2 and
+        later devices always obliterate.
+      name: always
+    - value: unknownFutureValue
+      description: Evolvable enumeration sentinel value. Do not use.
+      name: unknownFutureValue

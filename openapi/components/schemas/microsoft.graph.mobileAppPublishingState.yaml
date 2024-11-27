@@ -1,0 +1,20 @@
+title: mobileAppPublishingState
+enum:
+  - notPublished
+  - processing
+  - published
+type: string
+description: Indicates the publishing state of an app.
+x-ms-enum:
+  name: mobileAppPublishingState
+  modelAsString: false
+  values:
+    - value: notPublished
+      description: The app is not yet published.
+      name: notPublished
+    - value: processing
+      description: The app is pending service-side processing.
+      name: processing
+    - value: published
+      description: The app is published.
+      name: published

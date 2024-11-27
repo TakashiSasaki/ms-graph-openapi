@@ -1,0 +1,14 @@
+allOf:
+  - $ref: .\microsoft.graph.mobileApp.yaml
+  - title: macOSMicrosoftDefenderApp
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.macOSMicrosoftDefenderApp'
+    description: >-
+      Contains properties and inherited properties for the macOS Microsoft
+      Defender App.
+x-ms-discriminator-value: '#microsoft.graph.macOSMicrosoftDefenderApp'

@@ -1,0 +1,61 @@
+title: managedDevicePartnerReportedHealthState
+enum:
+  - unknown
+  - activated
+  - deactivated
+  - secured
+  - lowSeverity
+  - mediumSeverity
+  - highSeverity
+  - unresponsive
+  - compromised
+  - misconfigured
+type: string
+description: Available health states for the Device Health API
+x-ms-enum:
+  name: managedDevicePartnerReportedHealthState
+  modelAsString: false
+  values:
+    - value: unknown
+      description: Device health state is not yet reported
+      name: unknown
+    - value: activated
+      description: >-
+        Device has been activated by a mobile threat defense partner, but has
+        not yet reported health.
+      name: activated
+    - value: deactivated
+      description: >-
+        Device has been deactivated by a mobile threat defense partner. The
+        device health is not known.
+      name: deactivated
+    - value: secured
+      description: Device is considered secured by the mobile threat defense partner.
+      name: secured
+    - value: lowSeverity
+      description: Device is considered low threat by the mobile threat defense partner.
+      name: lowSeverity
+    - value: mediumSeverity
+      description: Device is considered medium threat by the mobile threat defense partner.
+      name: mediumSeverity
+    - value: highSeverity
+      description: Device is considered high threat by the mobile threat defense partner.
+      name: highSeverity
+    - value: unresponsive
+      description: >-
+        Device is considered unresponsive by the mobile threat defense partner.
+        The device health is not known.
+      name: unresponsive
+    - value: compromised
+      description: >-
+        Device is considered compromised by the Threat Defense partner. This
+        means the device has an active Threat or Risk which cannot be easily
+        remediated by the end user and the user should contact their IT Admin.
+      name: compromised
+    - value: misconfigured
+      description: >-
+        Device is considered misconfigured with the Threat Defense partner. This
+        means the device is missing a required profile or configuration for the
+        Threat Defense Partner to function properly and is thus threat or risk
+        analysis is not able to complete.
+      name: misconfigured

@@ -1,0 +1,22 @@
+allOf:
+  - $ref: .\microsoft.graph.namedLocation.yaml
+  - title: ipNamedLocation
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      ipRanges:
+        type: array
+        items:
+          $ref: .\microsoft.graph.ipRange.yaml
+        description: >-
+          List of IP address ranges in IPv4 CIDR format (for example,
+          1.2.3.4/32) or any allowable IPv6 format from IETF RFC5969. Required.
+      isTrusted:
+        type: boolean
+        description: >-
+          true if this location is explicitly trusted. Optional. Default value
+          is false.
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.ipNamedLocation'

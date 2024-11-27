@@ -1,0 +1,16 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: multiValueLegacyExtendedProperty
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      value:
+        type: array
+        items:
+          type: string
+          nullable: true
+        description: A collection of property values.
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.multiValueLegacyExtendedProperty'

@@ -1,0 +1,19 @@
+allOf:
+  - $ref: .\microsoft.graph.authenticationEventListener.yaml
+  - title: onTokenIssuanceStartListener
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      handler:
+        anyOf:
+          - $ref: .\microsoft.graph.onTokenIssuanceStartHandler.yaml
+          - type: object
+            nullable: true
+        description: >-
+          The handler to invoke when conditions are met for this
+          onTokenIssuanceStartListener.
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.onTokenIssuanceStartListener'
+x-ms-discriminator-value: '#microsoft.graph.onTokenIssuanceStartListener'

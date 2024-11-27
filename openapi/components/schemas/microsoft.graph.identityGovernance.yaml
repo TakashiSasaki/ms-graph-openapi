@@ -1,0 +1,43 @@
+title: identityGovernance
+required:
+  - '@odata.type'
+type: object
+properties:
+  accessReviews:
+    anyOf:
+      - $ref: .\microsoft.graph.accessReviewSet.yaml
+      - type: object
+        nullable: true
+    x-ms-navigationProperty: true
+  appConsent:
+    anyOf:
+      - $ref: .\microsoft.graph.appConsentApprovalRoute.yaml
+      - type: object
+        nullable: true
+    x-ms-navigationProperty: true
+  entitlementManagement:
+    anyOf:
+      - $ref: .\microsoft.graph.entitlementManagement.yaml
+      - type: object
+        nullable: true
+    x-ms-navigationProperty: true
+  lifecycleWorkflows:
+    anyOf:
+      - $ref: .\microsoft.graph.identityGovernance.lifecycleWorkflowsContainer.yaml
+      - type: object
+        nullable: true
+    x-ms-navigationProperty: true
+  privilegedAccess:
+    anyOf:
+      - $ref: .\microsoft.graph.privilegedAccessRoot.yaml
+      - type: object
+        nullable: true
+    x-ms-navigationProperty: true
+  termsOfUse:
+    anyOf:
+      - $ref: .\microsoft.graph.termsOfUseContainer.yaml
+      - type: object
+        nullable: true
+    x-ms-navigationProperty: true
+  '@odata.type':
+    type: string

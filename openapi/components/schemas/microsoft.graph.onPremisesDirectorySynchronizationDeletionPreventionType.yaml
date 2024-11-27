@@ -1,0 +1,7 @@
+title: onPremisesDirectorySynchronizationDeletionPreventionType
+enum:
+  - disabled
+  - enabledForCount
+  - enabledForPercentage
+  - unknownFutureValue
+type: string

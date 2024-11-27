@@ -1,0 +1,11 @@
+allOf:
+  - $ref: .\microsoft.graph.subjectSet.yaml
+  - title: internalSponsors
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.internalSponsors'
+x-ms-discriminator-value: '#microsoft.graph.internalSponsors'

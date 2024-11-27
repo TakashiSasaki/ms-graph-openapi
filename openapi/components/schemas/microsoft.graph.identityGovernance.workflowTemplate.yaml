@@ -1,0 +1,38 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: workflowTemplate
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      category:
+        $ref: .\microsoft.graph.identityGovernance.lifecycleWorkflowCategory.yaml
+      description:
+        type: string
+        description: The description of the workflowTemplate.
+        nullable: true
+      displayName:
+        type: string
+        description: >-
+          The display name of the workflowTemplate.Supports $filter(eq, ne) and
+          $orderby.
+      executionConditions:
+        anyOf:
+          - $ref: >-
+              .\microsoft.graph.identityGovernance.workflowExecutionConditions.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Conditions describing when to execute the workflow and the criteria to
+          identify in-scope subject set.
+      tasks:
+        type: array
+        items:
+          $ref: .\microsoft.graph.identityGovernance.task.yaml
+        description: >-
+          Represents the configured tasks to execute and their execution
+          sequence within a workflow. This relationship is expanded by default.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.identityGovernance.workflowTemplate'

@@ -1,0 +1,77 @@
+title: workflowBase
+required:
+  - '@odata.type'
+type: object
+properties:
+  category:
+    $ref: .\microsoft.graph.identityGovernance.lifecycleWorkflowCategory.yaml
+  createdDateTime:
+    pattern: >-
+      ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+    type: string
+    description: When a workflow was created.
+    format: date-time
+    nullable: true
+  description:
+    type: string
+    description: A string that describes the purpose of the workflow.
+    nullable: true
+  displayName:
+    type: string
+    description: A string to identify the workflow.
+  executionConditions:
+    anyOf:
+      - $ref: .\microsoft.graph.identityGovernance.workflowExecutionConditions.yaml
+      - type: object
+        nullable: true
+    description: Defines when and for who the workflow will run.
+  isEnabled:
+    type: boolean
+    description: >-
+      Whether the workflow is enabled or disabled. If this setting is true, the
+      workflow can be run on demand or on schedule when isSchedulingEnabled is
+      true.
+  isSchedulingEnabled:
+    type: boolean
+    description: >-
+      If true, the Lifecycle Workflow engine executes the workflow based on the
+      schedule defined by tenant settings. Can't be true for a disabled workflow
+      (where isEnabled is false).
+  lastModifiedDateTime:
+    pattern: >-
+      ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+    type: string
+    description: When the workflow was last modified.
+    format: date-time
+    nullable: true
+  createdBy:
+    anyOf:
+      - $ref: .\microsoft.graph.user.yaml
+      - type: object
+        nullable: true
+    description: The user who created the workflow.
+    x-ms-navigationProperty: true
+  lastModifiedBy:
+    anyOf:
+      - $ref: .\microsoft.graph.user.yaml
+      - type: object
+        nullable: true
+    description: >-
+      The unique identifier of the Microsoft Entra identity that last modified
+      the workflow.
+    x-ms-navigationProperty: true
+  tasks:
+    type: array
+    items:
+      $ref: .\microsoft.graph.identityGovernance.task.yaml
+    description: The tasks in the workflow.
+    x-ms-navigationProperty: true
+  '@odata.type':
+    type: string
+discriminator:
+  propertyName: '@odata.type'
+  mapping:
+    '#microsoft.graph.identityGovernance.workflow': .\microsoft.graph.identityGovernance.workflow.yaml
+    '#microsoft.graph.identityGovernance.workflowVersion': .\microsoft.graph.identityGovernance.workflowVersion.yaml
+    microsoft.graph.identityGovernance.workflow: .\microsoft.graph.identityGovernance.workflow.yaml
+    microsoft.graph.identityGovernance.workflowVersion: .\microsoft.graph.identityGovernance.workflowVersion.yaml

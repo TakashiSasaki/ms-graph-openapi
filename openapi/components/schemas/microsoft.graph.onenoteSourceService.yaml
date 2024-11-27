@@ -1,0 +1,7 @@
+title: onenoteSourceService
+enum:
+  - Unknown
+  - OneDrive
+  - OneDriveForBusiness
+  - OnPremOneDriveForBusiness
+type: string

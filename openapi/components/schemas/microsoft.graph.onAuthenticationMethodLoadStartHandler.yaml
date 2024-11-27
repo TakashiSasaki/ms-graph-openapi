@@ -1,0 +1,14 @@
+title: onAuthenticationMethodLoadStartHandler
+required:
+  - '@odata.type'
+type: object
+properties:
+  '@odata.type':
+    type: string
+discriminator:
+  propertyName: '@odata.type'
+  mapping:
+    '#microsoft.graph.onAuthenticationMethodLoadStartExternalUsersSelfServiceSignUp': >-
+      .\microsoft.graph.onAuthenticationMethodLoadStartExternalUsersSelfServiceSignUp.yaml
+    microsoft.graph.onAuthenticationMethodLoadStartExternalUsersSelfServiceSignUp: >-
+      .\microsoft.graph.onAuthenticationMethodLoadStartExternalUsersSelfServiceSignUp.yaml

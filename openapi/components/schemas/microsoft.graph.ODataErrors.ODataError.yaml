@@ -1,0 +1,6 @@
+required:
+  - error
+type: object
+properties:
+  error:
+    $ref: .\microsoft.graph.ODataErrors.MainError.yaml

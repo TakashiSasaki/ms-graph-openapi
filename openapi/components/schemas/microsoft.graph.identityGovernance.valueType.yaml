@@ -1,0 +1,8 @@
+title: valueType
+enum:
+  - enum
+  - string
+  - int
+  - bool
+  - unknownFutureValue
+type: string

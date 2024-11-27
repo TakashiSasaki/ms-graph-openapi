@@ -1,0 +1,67 @@
+title: mailboxSettings
+required:
+  - '@odata.type'
+type: object
+properties:
+  archiveFolder:
+    type: string
+    description: Folder ID of an archive folder for the user.
+    nullable: true
+  automaticRepliesSetting:
+    anyOf:
+      - $ref: .\microsoft.graph.automaticRepliesSetting.yaml
+      - type: object
+        nullable: true
+    description: >-
+      Configuration settings to automatically notify the sender of an incoming
+      email with a message from the signed-in user.
+  dateFormat:
+    type: string
+    description: The date format for the user's mailbox.
+    nullable: true
+  delegateMeetingMessageDeliveryOptions:
+    anyOf:
+      - $ref: .\microsoft.graph.delegateMeetingMessageDeliveryOptions.yaml
+      - type: object
+        nullable: true
+    description: >-
+      If the user has a calendar delegate, this specifies whether the delegate,
+      mailbox owner, or both receive meeting messages and meeting responses.
+      Possible values are: sendToDelegateAndInformationToPrincipal,
+      sendToDelegateAndPrincipal, sendToDelegateOnly.
+  language:
+    anyOf:
+      - $ref: .\microsoft.graph.localeInfo.yaml
+      - type: object
+        nullable: true
+    description: >-
+      The locale information for the user, including the preferred language and
+      country/region.
+  timeFormat:
+    type: string
+    description: The time format for the user's mailbox.
+    nullable: true
+  timeZone:
+    type: string
+    description: The default time zone for the user's mailbox.
+    nullable: true
+  userPurpose:
+    anyOf:
+      - $ref: .\microsoft.graph.userPurpose.yaml
+      - type: object
+        nullable: true
+    description: >-
+      The purpose of the mailbox. Differentiates a mailbox for a single user
+      from a shared mailbox and equipment mailbox in Exchange Online. Possible
+      values are: user, linked, shared, room, equipment, others,
+      unknownFutureValue. Read-only.
+  workingHours:
+    anyOf:
+      - $ref: .\microsoft.graph.workingHours.yaml
+      - type: object
+        nullable: true
+    description: >-
+      The days of the week and hours in a specific time zone that the user
+      works.
+  '@odata.type':
+    type: string

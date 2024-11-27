@@ -1,0 +1,7 @@
+title: level
+enum:
+  - beginner
+  - intermediate
+  - advanced
+  - unknownFutureValue
+type: string

@@ -1,0 +1,19 @@
+allOf:
+  - $ref: .\microsoft.graph.identityGovernance.workflowBase.yaml
+  - title: workflowVersion
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      versionNumber:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: >-
+          The version of the workflow.Supports $filter(lt, le, gt, ge, eq, ne)
+          and $orderby.
+        format: int32
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.identityGovernance.workflowVersion'
+x-ms-discriminator-value: '#microsoft.graph.identityGovernance.workflowVersion'

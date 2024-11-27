@@ -1,0 +1,13 @@
+title: onTokenIssuanceStartReturnClaim
+required:
+  - '@odata.type'
+type: object
+properties:
+  claimIdInApiResponse:
+    type: string
+    description: >-
+      The identifier of the claim returned by an API that is to be add to a
+      token being issued.
+    nullable: true
+  '@odata.type':
+    type: string

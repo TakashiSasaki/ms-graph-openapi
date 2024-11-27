@@ -1,0 +1,65 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: multiTenantOrganizationPartnerConfigurationTemplate
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      automaticUserConsentSettings:
+        anyOf:
+          - $ref: .\microsoft.graph.inboundOutboundPolicyConfiguration.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Determines the partner-specific configuration for automatic user
+          consent settings. Unless configured, the inboundAllowed and
+          outboundAllowed properties are null and inherit from the default
+          settings, which is always false.
+      b2bCollaborationInbound:
+        anyOf:
+          - $ref: .\microsoft.graph.crossTenantAccessPolicyB2BSetting.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Defines your partner-specific configuration for users from other
+          organizations accessing your resources via Microsoft Entra B2B
+          collaboration.
+      b2bCollaborationOutbound:
+        anyOf:
+          - $ref: .\microsoft.graph.crossTenantAccessPolicyB2BSetting.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Defines your partner-specific configuration for users in your
+          organization going outbound to access resources in another
+          organization via Microsoft Entra B2B collaboration.
+      b2bDirectConnectInbound:
+        anyOf:
+          - $ref: .\microsoft.graph.crossTenantAccessPolicyB2BSetting.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Defines your partner-specific configuration for users from other
+          organizations accessing your resources via Azure B2B direct connect.
+      b2bDirectConnectOutbound:
+        anyOf:
+          - $ref: .\microsoft.graph.crossTenantAccessPolicyB2BSetting.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Defines your partner-specific configuration for users in your
+          organization going outbound to access resources in another
+          organization via Microsoft Entra B2B direct connect.
+      inboundTrust:
+        anyOf:
+          - $ref: .\microsoft.graph.crossTenantAccessPolicyInboundTrust.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Determines the partner-specific configuration for trusting other
+          Conditional Access claims from external Microsoft Entra organizations.
+      templateApplicationLevel:
+        $ref: .\microsoft.graph.templateApplicationLevel.yaml
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.multiTenantOrganizationPartnerConfigurationTemplate'

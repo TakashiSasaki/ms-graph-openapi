@@ -1,0 +1,27 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: mobileAppContent
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      containedApps:
+        type: array
+        items:
+          $ref: .\microsoft.graph.mobileContainedApp.yaml
+        description: >-
+          The collection of contained apps in a MobileLobApp acting as a
+          package.
+        x-ms-navigationProperty: true
+      files:
+        type: array
+        items:
+          $ref: .\microsoft.graph.mobileAppContentFile.yaml
+        description: The list of files for this app content version.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+    description: >-
+      Contains content properties for a specific app version. Each
+      mobileAppContent can have multiple mobileAppContentFile.
+x-ms-discriminator-value: '#microsoft.graph.mobileAppContent'

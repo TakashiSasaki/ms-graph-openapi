@@ -1,0 +1,38 @@
+title: identitySet
+required:
+  - '@odata.type'
+type: object
+properties:
+  application:
+    anyOf:
+      - $ref: .\microsoft.graph.identity.yaml
+      - type: object
+        nullable: true
+    description: Optional. The application associated with this action.
+  device:
+    anyOf:
+      - $ref: .\microsoft.graph.identity.yaml
+      - type: object
+        nullable: true
+    description: Optional. The device associated with this action.
+  user:
+    anyOf:
+      - $ref: .\microsoft.graph.identity.yaml
+      - type: object
+        nullable: true
+    description: Optional. The user associated with this action.
+  '@odata.type':
+    type: string
+discriminator:
+  propertyName: '@odata.type'
+  mapping:
+    '#microsoft.graph.chatMessageFromIdentitySet': .\microsoft.graph.chatMessageFromIdentitySet.yaml
+    '#microsoft.graph.chatMessageMentionedIdentitySet': .\microsoft.graph.chatMessageMentionedIdentitySet.yaml
+    '#microsoft.graph.chatMessageReactionIdentitySet': .\microsoft.graph.chatMessageReactionIdentitySet.yaml
+    '#microsoft.graph.communicationsIdentitySet': .\microsoft.graph.communicationsIdentitySet.yaml
+    '#microsoft.graph.sharePointIdentitySet': .\microsoft.graph.sharePointIdentitySet.yaml
+    microsoft.graph.chatMessageFromIdentitySet: .\microsoft.graph.chatMessageFromIdentitySet.yaml
+    microsoft.graph.chatMessageMentionedIdentitySet: .\microsoft.graph.chatMessageMentionedIdentitySet.yaml
+    microsoft.graph.chatMessageReactionIdentitySet: .\microsoft.graph.chatMessageReactionIdentitySet.yaml
+    microsoft.graph.communicationsIdentitySet: .\microsoft.graph.communicationsIdentitySet.yaml
+    microsoft.graph.sharePointIdentitySet: .\microsoft.graph.sharePointIdentitySet.yaml

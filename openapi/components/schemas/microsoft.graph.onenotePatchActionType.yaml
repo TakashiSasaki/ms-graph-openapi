@@ -1,0 +1,8 @@
+title: onenotePatchActionType
+enum:
+  - Replace
+  - Append
+  - Delete
+  - Insert
+  - Prepend
+type: string

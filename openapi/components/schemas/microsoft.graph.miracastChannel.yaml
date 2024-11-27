@@ -1,0 +1,92 @@
+title: miracastChannel
+enum:
+  - userDefined
+  - one
+  - two
+  - three
+  - four
+  - five
+  - six
+  - seven
+  - eight
+  - nine
+  - ten
+  - eleven
+  - thirtySix
+  - forty
+  - fortyFour
+  - fortyEight
+  - oneHundredFortyNine
+  - oneHundredFiftyThree
+  - oneHundredFiftySeven
+  - oneHundredSixtyOne
+  - oneHundredSixtyFive
+type: string
+description: Possible values for Miracast channel.
+x-ms-enum:
+  name: miracastChannel
+  modelAsString: false
+  values:
+    - value: userDefined
+      description: User Defined, default value, no intent.
+      name: userDefined
+    - value: one
+      description: One.
+      name: one
+    - value: two
+      description: Two.
+      name: two
+    - value: three
+      description: Three.
+      name: three
+    - value: four
+      description: Four.
+      name: four
+    - value: five
+      description: Five.
+      name: five
+    - value: six
+      description: Six.
+      name: six
+    - value: seven
+      description: Seven.
+      name: seven
+    - value: eight
+      description: Eight.
+      name: eight
+    - value: nine
+      description: Nine.
+      name: nine
+    - value: ten
+      description: Ten.
+      name: ten
+    - value: eleven
+      description: Eleven.
+      name: eleven
+    - value: thirtySix
+      description: Thirty-Six.
+      name: thirtySix
+    - value: forty
+      description: Forty.
+      name: forty
+    - value: fortyFour
+      description: Forty-Four.
+      name: fortyFour
+    - value: fortyEight
+      description: Forty-Eight.
+      name: fortyEight
+    - value: oneHundredFortyNine
+      description: OneHundredForty-Nine.
+      name: oneHundredFortyNine
+    - value: oneHundredFiftyThree
+      description: OneHundredFifty-Three.
+      name: oneHundredFiftyThree
+    - value: oneHundredFiftySeven
+      description: OneHundredFifty-Seven.
+      name: oneHundredFiftySeven
+    - value: oneHundredSixtyOne
+      description: OneHundredSixty-One.
+      name: oneHundredSixtyOne
+    - value: oneHundredSixtyFive
+      description: OneHundredSixty-Five.
+      name: oneHundredSixtyFive

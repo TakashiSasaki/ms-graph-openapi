@@ -1,0 +1,46 @@
+allOf:
+  - $ref: .\microsoft.graph.governanceInsight.yaml
+  - title: membershipOutlierInsight
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      containerId:
+        type: string
+        description: Indicates the identifier of the container, for example, a group ID.
+      memberId:
+        type: string
+        description: Indicates the identifier of the user.
+      outlierContainerType:
+        $ref: .\microsoft.graph.outlierContainerType.yaml
+      outlierMemberType:
+        $ref: .\microsoft.graph.outlierMemberType.yaml
+      container:
+        anyOf:
+          - $ref: .\microsoft.graph.directoryObject.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Navigation link to the container directory object. For example, to a
+          group.
+        x-ms-navigationProperty: true
+      lastModifiedBy:
+        anyOf:
+          - $ref: .\microsoft.graph.user.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Navigation link to a member object who modified the record. For
+          example, to a user.
+        x-ms-navigationProperty: true
+      member:
+        anyOf:
+          - $ref: .\microsoft.graph.directoryObject.yaml
+          - type: object
+            nullable: true
+        description: Navigation link to a member object. For example, to a user.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.membershipOutlierInsight'
+x-ms-discriminator-value: '#microsoft.graph.membershipOutlierInsight'

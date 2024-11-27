@@ -1,0 +1,20 @@
+allOf:
+  - $ref: .\microsoft.graph.location.yaml
+  - title: locationConstraintItem
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      resolveAvailability:
+        type: boolean
+        description: >-
+          If set to true and the specified resource is busy, findMeetingTimes
+          looks for another resource that is free. If set to false and the
+          specified resource is busy, findMeetingTimes returns the resource best
+          ranked in the user's cache without checking if it's free. Default is
+          true.
+        nullable: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.locationConstraintItem'
+x-ms-discriminator-value: '#microsoft.graph.locationConstraintItem'

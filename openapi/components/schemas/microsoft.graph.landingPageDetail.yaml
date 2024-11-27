@@ -1,0 +1,22 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: landingPageDetail
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      content:
+        type: string
+        description: Landing page detail content.
+      isDefaultLangauge:
+        type: boolean
+        description: >-
+          Indicates whether this language detail is default for the landing
+          page.
+        nullable: true
+      language:
+        type: string
+        description: The content language for the landing page.
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.landingPageDetail'

@@ -1,0 +1,32 @@
+title: installState
+enum:
+  - notApplicable
+  - installed
+  - failed
+  - notInstalled
+  - uninstallFailed
+  - unknown
+type: string
+description: Possible values for install state.
+x-ms-enum:
+  name: installState
+  modelAsString: false
+  values:
+    - value: notApplicable
+      description: Not Applicable.
+      name: notApplicable
+    - value: installed
+      description: Installed.
+      name: installed
+    - value: failed
+      description: Failed.
+      name: failed
+    - value: notInstalled
+      description: Not Installed.
+      name: notInstalled
+    - value: uninstallFailed
+      description: Uninstall Failed.
+      name: uninstallFailed
+    - value: unknown
+      description: Unknown.
+      name: unknown

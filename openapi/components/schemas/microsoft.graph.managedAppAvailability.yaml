@@ -1,0 +1,16 @@
+title: managedAppAvailability
+enum:
+  - global
+  - lineOfBusiness
+type: string
+description: A managed (MAM) application's availability.
+x-ms-enum:
+  name: managedAppAvailability
+  modelAsString: false
+  values:
+    - value: global
+      description: A globally available app to all tenants.
+      name: global
+    - value: lineOfBusiness
+      description: A line of business apps private to an organization.
+      name: lineOfBusiness

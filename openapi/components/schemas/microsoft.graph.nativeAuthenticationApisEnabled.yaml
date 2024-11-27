@@ -1,0 +1,8 @@
+title: nativeAuthenticationApisEnabled
+enum:
+  - none
+  - all
+  - unknownFutureValue
+type: string
+x-ms-enum-flags:
+  isFlags: true

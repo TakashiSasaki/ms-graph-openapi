@@ -1,0 +1,10 @@
+title: lobbyBypassScope
+enum:
+  - organizer
+  - organization
+  - organizationAndFederated
+  - everyone
+  - unknownFutureValue
+  - invited
+  - organizationExcludingGuests
+type: string

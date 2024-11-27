@@ -1,0 +1,5 @@
+title: microsoftStoreForBusinessLicenseType
+enum:
+  - offline
+  - online
+type: string

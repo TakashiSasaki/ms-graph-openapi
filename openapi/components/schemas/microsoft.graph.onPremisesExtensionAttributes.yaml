@@ -1,0 +1,67 @@
+title: onPremisesExtensionAttributes
+required:
+  - '@odata.type'
+type: object
+properties:
+  extensionAttribute1:
+    type: string
+    description: First customizable extension attribute.
+    nullable: true
+  extensionAttribute10:
+    type: string
+    description: Tenth customizable extension attribute.
+    nullable: true
+  extensionAttribute11:
+    type: string
+    description: Eleventh customizable extension attribute.
+    nullable: true
+  extensionAttribute12:
+    type: string
+    description: Twelfth customizable extension attribute.
+    nullable: true
+  extensionAttribute13:
+    type: string
+    description: Thirteenth customizable extension attribute.
+    nullable: true
+  extensionAttribute14:
+    type: string
+    description: Fourteenth customizable extension attribute.
+    nullable: true
+  extensionAttribute15:
+    type: string
+    description: Fifteenth customizable extension attribute.
+    nullable: true
+  extensionAttribute2:
+    type: string
+    description: Second customizable extension attribute.
+    nullable: true
+  extensionAttribute3:
+    type: string
+    description: Third customizable extension attribute.
+    nullable: true
+  extensionAttribute4:
+    type: string
+    description: Fourth customizable extension attribute.
+    nullable: true
+  extensionAttribute5:
+    type: string
+    description: Fifth customizable extension attribute.
+    nullable: true
+  extensionAttribute6:
+    type: string
+    description: Sixth customizable extension attribute.
+    nullable: true
+  extensionAttribute7:
+    type: string
+    description: Seventh customizable extension attribute.
+    nullable: true
+  extensionAttribute8:
+    type: string
+    description: Eighth customizable extension attribute.
+    nullable: true
+  extensionAttribute9:
+    type: string
+    description: Ninth customizable extension attribute.
+    nullable: true
+  '@odata.type':
+    type: string

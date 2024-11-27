@@ -1,0 +1,7 @@
+title: includedUserTypes
+enum:
+  - all
+  - member
+  - guest
+  - unknownFutureValue
+type: string

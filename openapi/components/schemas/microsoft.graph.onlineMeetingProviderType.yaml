@@ -1,0 +1,7 @@
+title: onlineMeetingProviderType
+enum:
+  - unknown
+  - skypeForBusiness
+  - skypeForConsumer
+  - teamsForBusiness
+type: string

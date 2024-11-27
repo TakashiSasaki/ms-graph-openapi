@@ -1,0 +1,8 @@
+title: multiTenantOrganizationMemberProcessingStatus
+enum:
+  - notStarted
+  - running
+  - succeeded
+  - failed
+  - unknownFutureValue
+type: string

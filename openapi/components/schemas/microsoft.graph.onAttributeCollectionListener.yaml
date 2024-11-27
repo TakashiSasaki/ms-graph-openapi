@@ -1,0 +1,19 @@
+allOf:
+  - $ref: .\microsoft.graph.authenticationEventListener.yaml
+  - title: onAttributeCollectionListener
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      handler:
+        anyOf:
+          - $ref: .\microsoft.graph.onAttributeCollectionHandler.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Required. Configuration for what to invoke if the event resolves to
+          this listener.
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.onAttributeCollectionListener'
+x-ms-discriminator-value: '#microsoft.graph.onAttributeCollectionListener'

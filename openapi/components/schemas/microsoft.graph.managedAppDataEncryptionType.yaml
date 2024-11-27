@@ -1,0 +1,28 @@
+title: managedAppDataEncryptionType
+enum:
+  - useDeviceSettings
+  - afterDeviceRestart
+  - whenDeviceLockedExceptOpenFiles
+  - whenDeviceLocked
+type: string
+description: Represents the level to which app data is encrypted for managed apps
+x-ms-enum:
+  name: managedAppDataEncryptionType
+  modelAsString: false
+  values:
+    - value: useDeviceSettings
+      description: App data is encrypted based on the default settings on the device.
+      name: useDeviceSettings
+    - value: afterDeviceRestart
+      description: App data is encrypted when the device is restarted.
+      name: afterDeviceRestart
+    - value: whenDeviceLockedExceptOpenFiles
+      description: >-
+        App data associated with this policy is encrypted when the device is
+        locked, except data in files that are open
+      name: whenDeviceLockedExceptOpenFiles
+    - value: whenDeviceLocked
+      description: >-
+        App data associated with this policy is encrypted when the device is
+        locked
+      name: whenDeviceLocked

@@ -1,0 +1,40 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: taskDefinition
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      category:
+        $ref: .\microsoft.graph.identityGovernance.lifecycleTaskCategory.yaml
+      continueOnError:
+        type: boolean
+        description: Defines if the workflow will continue if the task has an error.
+      description:
+        type: string
+        description: The description of the taskDefinition.
+        nullable: true
+      displayName:
+        type: string
+        description: >-
+          The display name of the taskDefinition.Supports $filter(eq, ne) and
+          $orderby.
+      parameters:
+        type: array
+        items:
+          $ref: .\microsoft.graph.identityGovernance.parameter.yaml
+        description: >-
+          The parameters that must be supplied when creating a workflow task
+          object.Supports $filter(any).
+      version:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: >-
+          The version number of the taskDefinition. New records are pushed when
+          we add support for new parameters.Supports $filter(ge, gt, le, lt, eq,
+          ne) and $orderby.
+        format: int32
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.identityGovernance.taskDefinition'

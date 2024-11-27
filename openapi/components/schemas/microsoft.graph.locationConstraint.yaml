@@ -1,0 +1,27 @@
+title: locationConstraint
+required:
+  - '@odata.type'
+type: object
+properties:
+  isRequired:
+    type: boolean
+    description: >-
+      The client requests the service to include in the response a meeting
+      location for the meeting. If this is true and all the resources are busy,
+      findMeetingTimes won't return any meeting time suggestions. If this is
+      false and all the resources are busy, findMeetingTimes would still look
+      for meeting times without locations.
+    nullable: true
+  locations:
+    type: array
+    items:
+      $ref: .\microsoft.graph.locationConstraintItem.yaml
+    description: >-
+      Constraint information for one or more locations that the client requests
+      for the meeting.
+  suggestLocation:
+    type: boolean
+    description: The client requests the service to suggest one or more meeting locations.
+    nullable: true
+  '@odata.type':
+    type: string

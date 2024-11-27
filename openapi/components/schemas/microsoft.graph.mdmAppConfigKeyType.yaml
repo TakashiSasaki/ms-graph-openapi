@@ -1,0 +1,9 @@
+title: mdmAppConfigKeyType
+enum:
+  - stringType
+  - integerType
+  - realType
+  - booleanType
+  - tokenType
+type: string
+description: App configuration key types.

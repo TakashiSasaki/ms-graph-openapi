@@ -1,0 +1,12 @@
+allOf:
+  - $ref: .\microsoft.graph.authenticationMethodTarget.yaml
+  - title: microsoftAuthenticatorAuthenticationMethodTarget
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      authenticationMode:
+        $ref: .\microsoft.graph.microsoftAuthenticatorAuthenticationMode.yaml
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.microsoftAuthenticatorAuthenticationMethodTarget'

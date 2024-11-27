@@ -1,0 +1,19 @@
+allOf:
+  - $ref: .\microsoft.graph.restoreSessionBase.yaml
+  - title: oneDriveForBusinessRestoreSession
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      driveRestoreArtifacts:
+        type: array
+        items:
+          $ref: .\microsoft.graph.driveRestoreArtifact.yaml
+        description: >-
+          A collection of restore points and destination details that can be
+          used to restore a OneDrive for Business drive.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.oneDriveForBusinessRestoreSession'
+x-ms-discriminator-value: '#microsoft.graph.oneDriveForBusinessRestoreSession'

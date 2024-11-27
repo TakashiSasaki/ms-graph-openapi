@@ -1,0 +1,16 @@
+allOf:
+  - $ref: .\microsoft.graph.policyBase.yaml
+  - title: identitySecurityDefaultsEnforcementPolicy
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      isEnabled:
+        type: boolean
+        description: >-
+          If set to true, Microsoft Entra security defaults are enabled for the
+          tenant.
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.identitySecurityDefaultsEnforcementPolicy'
+x-ms-discriminator-value: '#microsoft.graph.identitySecurityDefaultsEnforcementPolicy'

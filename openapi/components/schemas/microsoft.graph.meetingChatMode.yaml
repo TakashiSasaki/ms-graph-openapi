@@ -1,0 +1,7 @@
+title: meetingChatMode
+enum:
+  - enabled
+  - disabled
+  - limited
+  - unknownFutureValue
+type: string

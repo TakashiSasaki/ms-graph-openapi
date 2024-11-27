@@ -1,0 +1,56 @@
+title: managementAgentType
+enum:
+  - eas
+  - mdm
+  - easMdm
+  - intuneClient
+  - easIntuneClient
+  - configurationManagerClient
+  - configurationManagerClientMdm
+  - configurationManagerClientMdmEas
+  - unknown
+  - jamf
+  - googleCloudDevicePolicyController
+  - microsoft365ManagedMdm
+  - msSense
+type: string
+x-ms-enum:
+  name: managementAgentType
+  modelAsString: false
+  values:
+    - value: eas
+      description: The device is managed by Exchange server.
+      name: eas
+    - value: mdm
+      description: The device is managed by Intune MDM.
+      name: mdm
+    - value: easMdm
+      description: The device is managed by both Exchange server and Intune MDM.
+      name: easMdm
+    - value: intuneClient
+      description: Intune client managed.
+      name: intuneClient
+    - value: easIntuneClient
+      description: The device is EAS and Intune client dual managed.
+      name: easIntuneClient
+    - value: configurationManagerClient
+      description: The device is managed by Configuration Manager.
+      name: configurationManagerClient
+    - value: configurationManagerClientMdm
+      description: The device is managed by Configuration Manager and MDM.
+      name: configurationManagerClientMdm
+    - value: configurationManagerClientMdmEas
+      description: The device is managed by Configuration Manager, MDM and Eas.
+      name: configurationManagerClientMdmEas
+    - value: unknown
+      description: Unknown management agent type.
+      name: unknown
+    - value: jamf
+      description: The device attributes are fetched from Jamf.
+      name: jamf
+    - value: googleCloudDevicePolicyController
+      description: The device is managed by Google's CloudDPC.
+      name: googleCloudDevicePolicyController
+    - value: microsoft365ManagedMdm
+      description: This device is managed by Microsoft 365 through Intune.
+      name: microsoft365ManagedMdm

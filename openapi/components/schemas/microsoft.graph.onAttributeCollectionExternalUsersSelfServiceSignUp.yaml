@@ -1,0 +1,26 @@
+allOf:
+  - $ref: .\microsoft.graph.onAttributeCollectionHandler.yaml
+  - title: onAttributeCollectionExternalUsersSelfServiceSignUp
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      attributeCollectionPage:
+        anyOf:
+          - $ref: .\microsoft.graph.authenticationAttributeCollectionPage.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Required. The configuration for how attributes are displayed in the
+          sign-up experience defined by a user flow, like the
+          externalUsersSelfServiceSignupEventsFlow, specifically on the
+          attribute collection page.
+      attributes:
+        type: array
+        items:
+          $ref: .\microsoft.graph.identityUserFlowAttribute.yaml
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.onAttributeCollectionExternalUsersSelfServiceSignUp'
+x-ms-discriminator-value: '#microsoft.graph.onAttributeCollectionExternalUsersSelfServiceSignUp'

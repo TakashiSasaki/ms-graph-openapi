@@ -1,0 +1,24 @@
+title: listInfo
+required:
+  - '@odata.type'
+type: object
+properties:
+  contentTypesEnabled:
+    type: boolean
+    description: If true, indicates that content types are enabled for this list.
+    nullable: true
+  hidden:
+    type: boolean
+    description: >-
+      If true, indicates that the list isn't normally visible in the SharePoint
+      user experience.
+    nullable: true
+  template:
+    type: string
+    description: >-
+      An enumerated value that represents the base list template used in
+      creating the list. Possible values include documentLibrary, genericList,
+      task, survey, announcements, contacts, and more.
+    nullable: true
+  '@odata.type':
+    type: string

@@ -1,0 +1,6 @@
+title: microsoftAuthenticatorAuthenticationMode
+enum:
+  - deviceBasedPush
+  - push
+  - any
+type: string

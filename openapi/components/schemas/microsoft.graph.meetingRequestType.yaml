@@ -1,0 +1,10 @@
+title: meetingRequestType
+enum:
+  - none
+  - newMeetingRequest
+  - fullUpdate
+  - informationalUpdate
+  - silentUpdate
+  - outdated
+  - principalWantsCopy
+type: string

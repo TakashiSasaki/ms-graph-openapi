@@ -1,0 +1,82 @@
+allOf:
+  - $ref: .\microsoft.graph.deviceConfiguration.yaml
+  - title: macOSGeneralDeviceConfiguration
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      compliantAppListType:
+        $ref: .\microsoft.graph.appListType.yaml
+      compliantAppsList:
+        type: array
+        items:
+          $ref: .\microsoft.graph.appListItem.yaml
+        description: >-
+          List of apps in the compliance (either allow list or block list,
+          controlled by CompliantAppListType). This collection can contain a
+          maximum of 10000 elements.
+      emailInDomainSuffixes:
+        type: array
+        items:
+          type: string
+          nullable: true
+        description: >-
+          An email address lacking a suffix that matches any of these strings
+          will be considered out-of-domain.
+      passwordBlockSimple:
+        type: boolean
+        description: Block simple passwords.
+      passwordExpirationDays:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: Number of days before the password expires.
+        format: int32
+        nullable: true
+      passwordMinimumCharacterSetCount:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: Number of character sets a password must contain. Valid values 0 to 4
+        format: int32
+        nullable: true
+      passwordMinimumLength:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: Minimum length of passwords.
+        format: int32
+        nullable: true
+      passwordMinutesOfInactivityBeforeLock:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: Minutes of inactivity required before a password is required.
+        format: int32
+        nullable: true
+      passwordMinutesOfInactivityBeforeScreenTimeout:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: Minutes of inactivity required before the screen times out.
+        format: int32
+        nullable: true
+      passwordPreviousPasswordBlockCount:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: Number of previous passwords to block.
+        format: int32
+        nullable: true
+      passwordRequired:
+        type: boolean
+        description: Whether or not to require a password.
+      passwordRequiredType:
+        $ref: .\microsoft.graph.requiredPasswordType.yaml
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.macOSGeneralDeviceConfiguration'
+    description: >-
+      This topic provides descriptions of the declared methods, properties and
+      relationships exposed by the macOSGeneralDeviceConfiguration resource.
+x-ms-discriminator-value: '#microsoft.graph.macOSGeneralDeviceConfiguration'

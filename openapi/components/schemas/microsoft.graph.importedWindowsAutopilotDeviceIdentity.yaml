@@ -1,0 +1,42 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: importedWindowsAutopilotDeviceIdentity
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      assignedUserPrincipalName:
+        type: string
+        description: UPN of the user the device will be assigned
+        nullable: true
+      groupTag:
+        type: string
+        description: Group Tag of the Windows autopilot device.
+        nullable: true
+      hardwareIdentifier:
+        type: string
+        description: Hardware Blob of the Windows autopilot device.
+        format: base64url
+        nullable: true
+      importId:
+        type: string
+        description: The Import Id of the Windows autopilot device.
+        nullable: true
+      productKey:
+        type: string
+        description: Product Key of the Windows autopilot device.
+        nullable: true
+      serialNumber:
+        type: string
+        description: Serial number of the Windows autopilot device.
+        nullable: true
+      state:
+        anyOf:
+          - $ref: .\microsoft.graph.importedWindowsAutopilotDeviceIdentityState.yaml
+          - type: object
+            nullable: true
+        description: Current state of the imported device.
+      '@odata.type':
+        type: string
+    description: Imported windows autopilot devices.
+x-ms-discriminator-value: '#microsoft.graph.importedWindowsAutopilotDeviceIdentity'

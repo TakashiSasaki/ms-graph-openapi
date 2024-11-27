@@ -1,0 +1,37 @@
+title: onlineMeetingInfo
+required:
+  - '@odata.type'
+type: object
+properties:
+  conferenceId:
+    type: string
+    description: The ID of the conference.
+    nullable: true
+  joinUrl:
+    type: string
+    description: >-
+      The external link that launches the online meeting. This is a URL that
+      clients launch into a browser and will redirect the user to join the
+      meeting.
+    nullable: true
+  phones:
+    type: array
+    items:
+      $ref: .\microsoft.graph.phone.yaml
+    description: All of the phone numbers associated with this conference.
+  quickDial:
+    type: string
+    description: The preformatted quick dial for this call.
+    nullable: true
+  tollFreeNumbers:
+    type: array
+    items:
+      type: string
+      nullable: true
+    description: The toll free numbers that can be used to join the conference.
+  tollNumber:
+    type: string
+    description: The toll number that can be used to join the conference.
+    nullable: true
+  '@odata.type':
+    type: string

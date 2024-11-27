@@ -1,0 +1,22 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: managedAppStatus
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      displayName:
+        type: string
+        description: Friendly name of the status report.
+        nullable: true
+      version:
+        type: string
+        description: Version of the entity.
+        nullable: true
+      '@odata.type':
+        type: string
+    description: Represents app protection and configuration status for the organization.
+    discriminator:
+      propertyName: '@odata.type'
+      mapping:
+        '#microsoft.graph.managedAppStatusRaw': .\microsoft.graph.managedAppStatusRaw.yaml
