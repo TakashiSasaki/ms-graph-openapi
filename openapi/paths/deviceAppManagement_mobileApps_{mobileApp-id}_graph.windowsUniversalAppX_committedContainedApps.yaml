@@ -1,0 +1,95 @@
+description: >-
+  Provides operations to manage the committedContainedApps property of the
+  microsoft.graph.windowsUniversalAppX entity.
+get:
+  tags:
+    - deviceAppManagement.mobileApp
+  summary: Get committedContainedApps from deviceAppManagement
+  description: >-
+    The collection of contained apps in the committed mobileAppContent of a
+    windowsUniversalAppX app.
+  operationId: >-
+    deviceAppManagement.mobileApps.AsWindowsUniversalAppX.ListCommittedContainedApps
+  parameters:
+    - $ref: ..\components\parameters\top.yaml
+    - $ref: ..\components\parameters\skip.yaml
+    - $ref: ..\components\parameters\search.yaml
+    - $ref: ..\components\parameters\filter.yaml
+    - $ref: ..\components\parameters\count.yaml
+    - name: $orderby
+      in: query
+      description: Order items by property values
+      style: form
+      explode: false
+      schema:
+        uniqueItems: true
+        type: array
+        items:
+          type: string
+    - name: $select
+      in: query
+      description: Select properties to be returned
+      style: form
+      explode: false
+      schema:
+        uniqueItems: true
+        type: array
+        items:
+          type: string
+    - name: $expand
+      in: query
+      description: Expand related entities
+      style: form
+      explode: false
+      schema:
+        uniqueItems: true
+        type: array
+        items:
+          type: string
+  responses:
+    2XX:
+      $ref: >-
+        ..\components\responses\microsoft.graph.mobileContainedAppCollectionResponse.yaml
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-pageable:
+    nextLinkName: '@odata.nextLink'
+    operationName: listMore
+  x-ms-docs-operation-type: operation
+post:
+  tags:
+    - deviceAppManagement.mobileApp
+  summary: >-
+    Create new navigation property to committedContainedApps for
+    deviceAppManagement
+  operationId: >-
+    deviceAppManagement.mobileApps.AsWindowsUniversalAppX.CreateCommittedContainedApps
+  requestBody:
+    description: New navigation property
+    content:
+      application/json:
+        schema:
+          $ref: ..\components\schemas\microsoft.graph.mobileContainedApp.yaml
+    required: true
+  responses:
+    2XX:
+      description: Created navigation property.
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\microsoft.graph.mobileContainedApp.yaml
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: operation
+parameters:
+  - name: mobileApp-id
+    in: path
+    description: The unique identifier of mobileApp
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: mobileApp

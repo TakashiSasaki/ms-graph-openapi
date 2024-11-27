@@ -1,0 +1,41 @@
+description: Provides operations to call the createDownloadUrl method.
+post:
+  tags:
+    - deviceManagement.managedDevice
+  summary: Invoke action createDownloadUrl
+  operationId: >-
+    deviceManagement.managedDevices.managedDevice.logCollectionRequests.deviceLogCollectionResponse.createDownloadUrl
+  responses:
+    2XX:
+      description: Success
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              value:
+                type: string
+                nullable: true
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: action
+parameters:
+  - name: managedDevice-id
+    in: path
+    description: The unique identifier of managedDevice
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: managedDevice
+  - name: deviceLogCollectionResponse-id
+    in: path
+    description: The unique identifier of deviceLogCollectionResponse
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: deviceLogCollectionResponse
+x-ms-docs-grouped-path:
+  - >-
+    /deviceManagement/mobileAppTroubleshootingEvents/{mobileAppTroubleshootingEvent-id}/appLogCollectionRequests/{appLogCollectionRequest-id}/createDownloadUrl

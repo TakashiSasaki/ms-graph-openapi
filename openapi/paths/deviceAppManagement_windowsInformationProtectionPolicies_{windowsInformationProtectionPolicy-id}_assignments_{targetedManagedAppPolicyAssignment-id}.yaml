@@ -1,0 +1,106 @@
+description: >-
+  Provides operations to manage the assignments property of the
+  microsoft.graph.windowsInformationProtection entity.
+get:
+  tags:
+    - deviceAppManagement.windowsInformationProtectionPolicy
+  summary: Get assignments from deviceAppManagement
+  description: Navigation property to list of security groups targeted for policy.
+  operationId: deviceAppManagement.windowsInformationProtectionPolicies.GetAssignments
+  parameters:
+    - name: $select
+      in: query
+      description: Select properties to be returned
+      style: form
+      explode: false
+      schema:
+        uniqueItems: true
+        type: array
+        items:
+          type: string
+    - name: $expand
+      in: query
+      description: Expand related entities
+      style: form
+      explode: false
+      schema:
+        uniqueItems: true
+        type: array
+        items:
+          type: string
+  responses:
+    2XX:
+      description: Retrieved navigation property
+      content:
+        application/json:
+          schema:
+            $ref: >-
+              ..\components\schemas\microsoft.graph.targetedManagedAppPolicyAssignment.yaml
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: operation
+patch:
+  tags:
+    - deviceAppManagement.windowsInformationProtectionPolicy
+  summary: Update the navigation property assignments in deviceAppManagement
+  operationId: deviceAppManagement.windowsInformationProtectionPolicies.UpdateAssignments
+  requestBody:
+    description: New navigation property values
+    content:
+      application/json:
+        schema:
+          $ref: >-
+            ..\components\schemas\microsoft.graph.targetedManagedAppPolicyAssignment.yaml
+    required: true
+  responses:
+    2XX:
+      description: Success
+      content:
+        application/json:
+          schema:
+            $ref: >-
+              ..\components\schemas\microsoft.graph.targetedManagedAppPolicyAssignment.yaml
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: operation
+delete:
+  tags:
+    - deviceAppManagement.windowsInformationProtectionPolicy
+  summary: Delete navigation property assignments for deviceAppManagement
+  operationId: deviceAppManagement.windowsInformationProtectionPolicies.DeleteAssignments
+  parameters:
+    - name: If-Match
+      in: header
+      description: ETag
+      schema:
+        type: string
+  responses:
+    '204':
+      description: Success
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: operation
+parameters:
+  - name: windowsInformationProtectionPolicy-id
+    in: path
+    description: The unique identifier of windowsInformationProtectionPolicy
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: windowsInformationProtectionPolicy
+  - name: targetedManagedAppPolicyAssignment-id
+    in: path
+    description: The unique identifier of targetedManagedAppPolicyAssignment
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: targetedManagedAppPolicyAssignment
+x-ms-docs-grouped-path:
+  - >-
+    /deviceAppManagement/mdmWindowsInformationProtectionPolicies/{mdmWindowsInformationProtectionPolicy-id}/assignments/{targetedManagedAppPolicyAssignment-id}

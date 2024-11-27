@@ -1,0 +1,49 @@
+description: Provides operations to call the assign method.
+post:
+  tags:
+    - deviceManagement.deviceEnrollmentConfiguration
+  summary: Invoke action assign
+  description: Not yet documented
+  externalDocs:
+    description: Find more info here
+    url: >-
+      https://learn.microsoft.com/graph/api/intune-onboarding-deviceenrollmentconfiguration-assign?view=graph-rest-1.0
+  operationId: >-
+    deviceManagement.deviceEnrollmentConfigurations.deviceEnrollmentConfiguration.assign
+  requestBody:
+    description: Action parameters
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            enrollmentConfigurationAssignments:
+              type: array
+              items:
+                $ref: >-
+                  ..\components\schemas\microsoft.graph.enrollmentConfigurationAssignment.yaml
+    required: true
+  responses:
+    '204':
+      description: Success
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: action
+parameters:
+  - name: deviceEnrollmentConfiguration-id
+    in: path
+    description: The unique identifier of deviceEnrollmentConfiguration
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: deviceEnrollmentConfiguration
+x-ms-docs-grouped-path:
+  - >-
+    /deviceManagement/deviceCompliancePolicies/{deviceCompliancePolicy-id}/assign
+  - /deviceManagement/deviceConfigurations/{deviceConfiguration-id}/assign
+  - >-
+    /deviceManagement/virtualEndpoint/provisioningPolicies/{cloudPcProvisioningPolicy-id}/assign
+  - >-
+    /deviceManagement/virtualEndpoint/userSettings/{cloudPcUserSetting-id}/assign

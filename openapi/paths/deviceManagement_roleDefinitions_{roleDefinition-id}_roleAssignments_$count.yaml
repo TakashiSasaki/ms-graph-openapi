@@ -1,0 +1,24 @@
+description: Provides operations to count the resources in the collection.
+get:
+  tags:
+    - deviceManagement.roleDefinition
+  summary: Get the number of the resource
+  operationId: deviceManagement.roleDefinitions.roleAssignments.GetCount-3dca
+  parameters:
+    - $ref: ..\components\parameters\search.yaml
+    - $ref: ..\components\parameters\filter.yaml
+  responses:
+    2XX:
+      $ref: ..\components\responses\ODataCountResponse.yaml
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+parameters:
+  - name: roleDefinition-id
+    in: path
+    description: The unique identifier of roleDefinition
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: roleDefinition

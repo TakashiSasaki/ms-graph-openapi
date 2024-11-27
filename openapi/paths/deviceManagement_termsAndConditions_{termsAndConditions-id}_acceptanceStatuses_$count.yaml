@@ -1,0 +1,24 @@
+description: Provides operations to count the resources in the collection.
+get:
+  tags:
+    - deviceManagement.termsAndConditions
+  summary: Get the number of the resource
+  operationId: deviceManagement.termsAndConditions.acceptanceStatuses.GetCount-d4f9
+  parameters:
+    - $ref: ..\components\parameters\search.yaml
+    - $ref: ..\components\parameters\filter.yaml
+  responses:
+    2XX:
+      $ref: ..\components\responses\ODataCountResponse.yaml
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+parameters:
+  - name: termsAndConditions-id
+    in: path
+    description: The unique identifier of termsAndConditions
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: termsAndConditions

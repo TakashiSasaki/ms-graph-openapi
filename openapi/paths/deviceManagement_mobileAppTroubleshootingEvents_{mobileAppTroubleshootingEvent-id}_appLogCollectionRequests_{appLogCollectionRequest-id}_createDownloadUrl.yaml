@@ -1,0 +1,46 @@
+description: Provides operations to call the createDownloadUrl method.
+post:
+  tags:
+    - deviceManagement.mobileAppTroubleshootingEvent
+  summary: Invoke action createDownloadUrl
+  description: Not yet documented
+  externalDocs:
+    description: Find more info here
+    url: >-
+      https://learn.microsoft.com/graph/api/intune-devices-applogcollectionrequest-createdownloadurl?view=graph-rest-1.0
+  operationId: >-
+    deviceManagement.mobileAppTroubleshootingEvents.mobileAppTroubleshootingEvent.appLogCollectionRequests.appLogCollectionRequest.createDownloadUrl
+  responses:
+    2XX:
+      description: Success
+      content:
+        application/json:
+          schema:
+            anyOf:
+              - $ref: >-
+                  ..\components\schemas\microsoft.graph.appLogCollectionDownloadDetails.yaml
+              - type: object
+                nullable: true
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: action
+parameters:
+  - name: mobileAppTroubleshootingEvent-id
+    in: path
+    description: The unique identifier of mobileAppTroubleshootingEvent
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: mobileAppTroubleshootingEvent
+  - name: appLogCollectionRequest-id
+    in: path
+    description: The unique identifier of appLogCollectionRequest
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: appLogCollectionRequest
+x-ms-docs-grouped-path:
+  - >-
+    /deviceManagement/managedDevices/{managedDevice-id}/logCollectionRequests/{deviceLogCollectionResponse-id}/createDownloadUrl
