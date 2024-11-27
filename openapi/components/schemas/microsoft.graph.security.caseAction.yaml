@@ -1,0 +1,14 @@
+title: caseAction
+enum:
+  - contentExport
+  - applyTags
+  - convertToPdf
+  - index
+  - estimateStatistics
+  - addToReviewSet
+  - holdUpdate
+  - unknownFutureValue
+  - purgeData
+  - exportReport
+  - exportResult
+type: string

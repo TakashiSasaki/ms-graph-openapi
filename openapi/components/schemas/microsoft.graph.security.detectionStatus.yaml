@@ -1,0 +1,7 @@
+title: detectionStatus
+enum:
+  - detected
+  - blocked
+  - prevented
+  - unknownFutureValue
+type: string

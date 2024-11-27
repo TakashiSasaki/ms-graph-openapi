@@ -1,0 +1,28 @@
+title: filePlanDescriptorBase
+required:
+  - '@odata.type'
+type: object
+properties:
+  displayName:
+    type: string
+    description: >-
+      Unique string that defines the name for the file plan descriptor
+      associated with a particular retention label.
+    nullable: true
+  '@odata.type':
+    type: string
+discriminator:
+  propertyName: '@odata.type'
+  mapping:
+    '#microsoft.graph.security.filePlanAppliedCategory': .\microsoft.graph.security.filePlanAppliedCategory.yaml
+    '#microsoft.graph.security.filePlanAuthority': .\microsoft.graph.security.filePlanAuthority.yaml
+    '#microsoft.graph.security.filePlanCitation': .\microsoft.graph.security.filePlanCitation.yaml
+    '#microsoft.graph.security.filePlanDepartment': .\microsoft.graph.security.filePlanDepartment.yaml
+    '#microsoft.graph.security.filePlanReference': .\microsoft.graph.security.filePlanReference.yaml
+    '#microsoft.graph.security.filePlanSubcategory': .\microsoft.graph.security.filePlanSubcategory.yaml
+    microsoft.graph.security.filePlanAppliedCategory: .\microsoft.graph.security.filePlanAppliedCategory.yaml
+    microsoft.graph.security.filePlanAuthority: .\microsoft.graph.security.filePlanAuthority.yaml
+    microsoft.graph.security.filePlanCitation: .\microsoft.graph.security.filePlanCitation.yaml
+    microsoft.graph.security.filePlanDepartment: .\microsoft.graph.security.filePlanDepartment.yaml
+    microsoft.graph.security.filePlanReference: .\microsoft.graph.security.filePlanReference.yaml
+    microsoft.graph.security.filePlanSubcategory: .\microsoft.graph.security.filePlanSubcategory.yaml

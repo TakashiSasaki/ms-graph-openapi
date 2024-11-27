@@ -1,0 +1,126 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: retentionLabel
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      actionAfterRetentionPeriod:
+        anyOf:
+          - $ref: .\microsoft.graph.security.actionAfterRetentionPeriod.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Specifies the action to take on the labeled document after the period
+          specified by the retentionDuration property expires. The possible
+          values are: none, delete, startDispositionReview, unknownFutureValue.
+      behaviorDuringRetentionPeriod:
+        anyOf:
+          - $ref: .\microsoft.graph.security.behaviorDuringRetentionPeriod.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Specifies how the behavior of a document with this label should be
+          during the retention period. The possible values are: doNotRetain,
+          retain, retainAsRecord, retainAsRegulatoryRecord, unknownFutureValue.
+      createdBy:
+        anyOf:
+          - $ref: .\microsoft.graph.identitySet.yaml
+          - type: object
+            nullable: true
+        description: Represents the user who created the retentionLabel.
+      createdDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: Represents the date and time in which the retentionLabel is created.
+        format: date-time
+        nullable: true
+      defaultRecordBehavior:
+        anyOf:
+          - $ref: .\microsoft.graph.security.defaultRecordBehavior.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Specifies the locked or unlocked state of a record label when it is
+          created.The possible values are: startLocked, startUnlocked,
+          unknownFutureValue.
+      descriptionForAdmins:
+        type: string
+        description: Provides label information for the admin. Optional.
+        nullable: true
+      descriptionForUsers:
+        type: string
+        description: Provides the label information for the user. Optional.
+        nullable: true
+      displayName:
+        type: string
+        description: Unique string that defines a label name.
+        nullable: true
+      isInUse:
+        type: boolean
+        description: Specifies whether the label is currently being used.
+        nullable: true
+      labelToBeApplied:
+        type: string
+        description: >-
+          Specifies the replacement label to be applied automatically after the
+          retention period of the current label ends.
+        nullable: true
+      lastModifiedBy:
+        anyOf:
+          - $ref: .\microsoft.graph.identitySet.yaml
+          - type: object
+            nullable: true
+        description: The user who last modified the retentionLabel.
+      lastModifiedDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: The latest date time when the retentionLabel was modified.
+        format: date-time
+        nullable: true
+      retentionDuration:
+        anyOf:
+          - $ref: .\microsoft.graph.security.retentionDuration.yaml
+          - type: object
+            nullable: true
+        description: Specifies the number of days to retain the content.
+      retentionTrigger:
+        anyOf:
+          - $ref: .\microsoft.graph.security.retentionTrigger.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Specifies whether the retention duration is calculated from the
+          content creation date, labeled date, or last modification date. The
+          possible values are: dateLabeled, dateCreated, dateModified,
+          dateOfEvent, unknownFutureValue.
+      descriptors:
+        anyOf:
+          - $ref: .\microsoft.graph.security.filePlanDescriptor.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Represents out-of-the-box values that provide more options to improve
+          the manageability and organization of the content you need to label.
+        x-ms-navigationProperty: true
+      dispositionReviewStages:
+        type: array
+        items:
+          $ref: .\microsoft.graph.security.dispositionReviewStage.yaml
+        description: >-
+          When action at the end of retention is chosen as 'dispositionReview',
+          dispositionReviewStages specifies a sequential set of stages with at
+          least one reviewer in each stage.
+        x-ms-navigationProperty: true
+      retentionEventType:
+        anyOf:
+          - $ref: .\microsoft.graph.security.retentionEventType.yaml
+          - type: object
+            nullable: true
+        description: Represents the type associated with a retention event.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.security.retentionLabel'

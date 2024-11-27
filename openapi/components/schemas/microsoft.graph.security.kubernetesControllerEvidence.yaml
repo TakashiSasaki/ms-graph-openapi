@@ -1,0 +1,31 @@
+allOf:
+  - $ref: .\microsoft.graph.security.alertEvidence.yaml
+  - title: kubernetesControllerEvidence
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      labels:
+        anyOf:
+          - $ref: .\microsoft.graph.security.dictionary.yaml
+          - type: object
+            nullable: true
+        description: The labels for the Kubernetes pod.
+      name:
+        type: string
+        description: The controller name.
+        nullable: true
+      namespace:
+        anyOf:
+          - $ref: .\microsoft.graph.security.kubernetesNamespaceEvidence.yaml
+          - type: object
+            nullable: true
+        description: The service account namespace.
+      type:
+        type: string
+        description: The controller type.
+        nullable: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.security.kubernetesControllerEvidence'
+x-ms-discriminator-value: '#microsoft.graph.security.kubernetesControllerEvidence'

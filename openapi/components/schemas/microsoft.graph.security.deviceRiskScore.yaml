@@ -1,0 +1,9 @@
+title: deviceRiskScore
+enum:
+  - none
+  - informational
+  - low
+  - medium
+  - high
+  - unknownFutureValue
+type: string

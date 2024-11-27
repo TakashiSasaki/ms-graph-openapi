@@ -1,0 +1,15 @@
+title: loggedOnUser
+required:
+  - '@odata.type'
+type: object
+properties:
+  accountName:
+    type: string
+    description: User account name of the logged-on user.
+    nullable: true
+  domainName:
+    type: string
+    description: User account domain of the logged-on user.
+    nullable: true
+  '@odata.type':
+    type: string

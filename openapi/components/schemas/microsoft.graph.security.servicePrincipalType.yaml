@@ -1,0 +1,8 @@
+title: servicePrincipalType
+enum:
+  - unknown
+  - application
+  - managedIdentity
+  - legacy
+  - unknownFutureValue
+type: string

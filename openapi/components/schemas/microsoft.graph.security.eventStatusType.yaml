@@ -1,0 +1,8 @@
+title: eventStatusType
+enum:
+  - pending
+  - error
+  - success
+  - notAvaliable
+  - unknownFutureValue
+type: string

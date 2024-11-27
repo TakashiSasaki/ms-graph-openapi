@@ -1,0 +1,8 @@
+title: hostReputationRuleSeverity
+enum:
+  - unknown
+  - low
+  - medium
+  - high
+  - unknownFutureValue
+type: string

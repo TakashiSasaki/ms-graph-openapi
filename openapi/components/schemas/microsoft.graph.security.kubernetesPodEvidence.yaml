@@ -1,0 +1,60 @@
+allOf:
+  - $ref: .\microsoft.graph.security.alertEvidence.yaml
+  - title: kubernetesPodEvidence
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      containers:
+        type: array
+        items:
+          $ref: .\microsoft.graph.security.containerEvidence.yaml
+        description: The list of pod containers which are not init or ephemeral containers.
+      controller:
+        anyOf:
+          - $ref: .\microsoft.graph.security.kubernetesControllerEvidence.yaml
+          - type: object
+            nullable: true
+        description: The pod controller.
+      ephemeralContainers:
+        type: array
+        items:
+          $ref: .\microsoft.graph.security.containerEvidence.yaml
+        description: The list of pod ephemeral containers.
+      initContainers:
+        type: array
+        items:
+          $ref: .\microsoft.graph.security.containerEvidence.yaml
+        description: The list of pod init containers.
+      labels:
+        anyOf:
+          - $ref: .\microsoft.graph.security.dictionary.yaml
+          - type: object
+            nullable: true
+        description: The pod labels.
+      name:
+        type: string
+        description: The pod name.
+        nullable: true
+      namespace:
+        anyOf:
+          - $ref: .\microsoft.graph.security.kubernetesNamespaceEvidence.yaml
+          - type: object
+            nullable: true
+        description: The pod namespace.
+      podIp:
+        anyOf:
+          - $ref: .\microsoft.graph.security.ipEvidence.yaml
+          - type: object
+            nullable: true
+        description: The pod IP.
+      serviceAccount:
+        anyOf:
+          - $ref: .\microsoft.graph.security.kubernetesServiceAccountEvidence.yaml
+          - type: object
+            nullable: true
+        description: The pod service account.
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.security.kubernetesPodEvidence'
+x-ms-discriminator-value: '#microsoft.graph.security.kubernetesPodEvidence'

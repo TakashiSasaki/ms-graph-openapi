@@ -1,0 +1,39 @@
+title: detectionSource
+enum:
+  - unknown
+  - microsoftDefenderForEndpoint
+  - antivirus
+  - smartScreen
+  - customTi
+  - microsoftDefenderForOffice365
+  - automatedInvestigation
+  - microsoftThreatExperts
+  - customDetection
+  - microsoftDefenderForIdentity
+  - cloudAppSecurity
+  - microsoft365Defender
+  - azureAdIdentityProtection
+  - manual
+  - microsoftDataLossPrevention
+  - appGovernancePolicy
+  - appGovernanceDetection
+  - unknownFutureValue
+  - microsoftDefenderForCloud
+  - microsoftDefenderForIoT
+  - microsoftDefenderForServers
+  - microsoftDefenderForStorage
+  - microsoftDefenderForDNS
+  - microsoftDefenderForDatabases
+  - microsoftDefenderForContainers
+  - microsoftDefenderForNetwork
+  - microsoftDefenderForAppService
+  - microsoftDefenderForKeyVault
+  - microsoftDefenderForResourceManager
+  - microsoftDefenderForApiManagement
+  - nrtAlerts
+  - scheduledAlerts
+  - microsoftDefenderThreatIntelligenceAnalytics
+  - builtInMl
+  - microsoftInsiderRiskManagement
+  - microsoftSentinel
+type: string

@@ -1,0 +1,9 @@
+title: incidentStatus
+enum:
+  - active
+  - resolved
+  - inProgress
+  - redirected
+  - unknownFutureValue
+  - awaitingAction
+type: string

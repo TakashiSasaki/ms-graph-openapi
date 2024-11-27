@@ -1,0 +1,17 @@
+title: huntingQueryResults
+required:
+  - '@odata.type'
+type: object
+properties:
+  results:
+    type: array
+    items:
+      $ref: .\microsoft.graph.security.huntingRowResult.yaml
+    description: The results of the hunting query.
+  schema:
+    type: array
+    items:
+      $ref: .\microsoft.graph.security.singlePropertySchema.yaml
+    description: The schema for the response.
+  '@odata.type':
+    type: string

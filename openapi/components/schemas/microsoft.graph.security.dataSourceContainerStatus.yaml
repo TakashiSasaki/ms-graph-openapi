@@ -1,0 +1,6 @@
+title: dataSourceContainerStatus
+enum:
+  - active
+  - released
+  - unknownFutureValue
+type: string

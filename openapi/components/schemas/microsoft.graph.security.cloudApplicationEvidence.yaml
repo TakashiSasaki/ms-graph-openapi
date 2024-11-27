@@ -1,0 +1,41 @@
+allOf:
+  - $ref: .\microsoft.graph.security.alertEvidence.yaml
+  - title: cloudApplicationEvidence
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      appId:
+        type: number
+        description: Unique identifier of the application.
+        format: int64
+        nullable: true
+      displayName:
+        type: string
+        description: Name of the application.
+        nullable: true
+      instanceId:
+        type: number
+        description: >-
+          Identifier of the instance of the Software as a Service (SaaS)
+          application.
+        format: int64
+        nullable: true
+      instanceName:
+        type: string
+        description: Name of the instance of the SaaS application.
+        nullable: true
+      saasAppId:
+        type: number
+        description: The identifier of the SaaS application.
+        format: int64
+        nullable: true
+      stream:
+        anyOf:
+          - $ref: .\microsoft.graph.security.stream.yaml
+          - type: object
+            nullable: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.security.cloudApplicationEvidence'
+x-ms-discriminator-value: '#microsoft.graph.security.cloudApplicationEvidence'

@@ -1,0 +1,29 @@
+title: securityVendorInformation
+required:
+  - '@odata.type'
+type: object
+properties:
+  provider:
+    type: string
+    description: >-
+      Specific provider (product/service - not vendor company); for example,
+      WindowsDefenderATP.
+    nullable: true
+  providerVersion:
+    type: string
+    description: >-
+      Version of the provider or subprovider, if it exists, that generated the
+      alert. Required
+    nullable: true
+  subProvider:
+    type: string
+    description: >-
+      Specific subprovider (under aggregating provider); for example,
+      WindowsDefenderATP.SmartScreen.
+    nullable: true
+  vendor:
+    type: string
+    description: Name of the alert vendor (for example, Microsoft, Dell, FireEye). Required
+    nullable: true
+  '@odata.type':
+    type: string

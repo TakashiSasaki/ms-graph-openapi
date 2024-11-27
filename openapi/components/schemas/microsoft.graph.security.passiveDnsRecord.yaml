@@ -1,0 +1,48 @@
+allOf:
+  - $ref: .\microsoft.graph.security.artifact.yaml
+  - title: passiveDnsRecord
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      collectedDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: >-
+          The date and time that this passiveDnsRecord entry was collected by
+          Microsoft. The Timestamp type represents date and time information
+          using ISO 8601 format and is always in UTC time. For example, midnight
+          UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+        format: date-time
+      firstSeenDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: >-
+          The date and time when this passiveDnsRecord entry was first seen. The
+          Timestamp type represents date and time information using ISO 8601
+          format and is always in UTC time. For example, midnight UTC on Jan 1,
+          2014 is 2014-01-01T00:00:00Z.
+        format: date-time
+      lastSeenDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: >-
+          The date and time when this passiveDnsRecord entry was most recently
+          seen. The Timestamp type represents date and time information using
+          ISO 8601 format and is always in UTC time. For example, midnight UTC
+          on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+        format: date-time
+      recordType:
+        type: string
+        description: The DNS record type for this passiveDnsRecord entry.
+      artifact:
+        $ref: .\microsoft.graph.security.artifact.yaml
+      parentHost:
+        $ref: .\microsoft.graph.security.host.yaml
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.security.passiveDnsRecord'
+x-ms-discriminator-value: '#microsoft.graph.security.passiveDnsRecord'

@@ -1,0 +1,51 @@
+allOf:
+  - $ref: .\microsoft.graph.security.dataSourceContainer.yaml
+  - title: ediscoveryCustodian
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      acknowledgedDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: Date and time the custodian acknowledged a hold notification.
+        format: date-time
+        nullable: true
+      email:
+        type: string
+        description: Email address of the custodian.
+        nullable: true
+      lastIndexOperation:
+        anyOf:
+          - $ref: .\microsoft.graph.security.ediscoveryIndexOperation.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Operation entity that represents the latest indexing for the
+          custodian.
+        x-ms-navigationProperty: true
+      siteSources:
+        type: array
+        items:
+          $ref: .\microsoft.graph.security.siteSource.yaml
+        description: Data source entity for SharePoint sites associated with the custodian.
+        x-ms-navigationProperty: true
+      unifiedGroupSources:
+        type: array
+        items:
+          $ref: .\microsoft.graph.security.unifiedGroupSource.yaml
+        description: Data source entity for groups associated with the custodian.
+        x-ms-navigationProperty: true
+      userSources:
+        type: array
+        items:
+          $ref: .\microsoft.graph.security.userSource.yaml
+        description: >-
+          Data source entity for a the custodian. This is the container for a
+          custodian's mailbox and OneDrive for Business site.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.security.ediscoveryCustodian'
+x-ms-discriminator-value: '#microsoft.graph.security.ediscoveryCustodian'

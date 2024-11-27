@@ -1,0 +1,40 @@
+allOf:
+  - $ref: .\microsoft.graph.security.alertEvidence.yaml
+  - title: kubernetesClusterEvidence
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      cloudResource:
+        anyOf:
+          - $ref: .\microsoft.graph.security.alertEvidence.yaml
+          - type: object
+            nullable: true
+        description: >-
+          The cloud identifier of the cluster. Can be either an
+          amazonResourceEvidence, azureResourceEvidence, or
+          googleCloudResourceEvidence object.
+      distribution:
+        type: string
+        description: The distribution type of the cluster.
+        nullable: true
+      name:
+        type: string
+        description: The cluster name.
+        nullable: true
+      platform:
+        anyOf:
+          - $ref: .\microsoft.graph.security.kubernetesPlatform.yaml
+          - type: object
+            nullable: true
+        description: >-
+          The platform the cluster runs on. Possible values are: unknown, aks,
+          eks, gke, arc, unknownFutureValue.
+      version:
+        type: string
+        description: The kubernetes version of the cluster.
+        nullable: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.security.kubernetesClusterEvidence'
+x-ms-discriminator-value: '#microsoft.graph.security.kubernetesClusterEvidence'

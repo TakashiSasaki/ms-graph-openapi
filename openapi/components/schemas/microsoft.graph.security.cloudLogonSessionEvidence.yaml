@@ -1,0 +1,55 @@
+allOf:
+  - $ref: .\microsoft.graph.security.alertEvidence.yaml
+  - title: cloudLogonSessionEvidence
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      account:
+        anyOf:
+          - $ref: .\microsoft.graph.security.userEvidence.yaml
+          - type: object
+            nullable: true
+        description: The account associated with the sign-in session.
+      browser:
+        type: string
+        description: The browser that is used for the sign-in, if known.
+        nullable: true
+      deviceName:
+        type: string
+        description: The friendly name of the device, if known.
+        nullable: true
+      operatingSystem:
+        type: string
+        description: The operating system that the device is running, if known.
+        nullable: true
+      previousLogonDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: The previous sign-in time for this account, if known.
+        format: date-time
+        nullable: true
+      protocol:
+        type: string
+        description: The authentication protocol that is used in this session, if known.
+        nullable: true
+      sessionId:
+        type: string
+        description: The session ID for the account reported in the alert.
+        nullable: true
+      startUtcDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: The session start time, if known.
+        format: date-time
+        nullable: true
+      userAgent:
+        type: string
+        description: The user agent that is used for the sign-in, if known.
+        nullable: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.security.cloudLogonSessionEvidence'
+x-ms-discriminator-value: '#microsoft.graph.security.cloudLogonSessionEvidence'

@@ -1,0 +1,29 @@
+allOf:
+  - $ref: .\microsoft.graph.security.alertEvidence.yaml
+  - title: gitHubOrganizationEvidence
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      company:
+        type: string
+        nullable: true
+      displayName:
+        type: string
+        nullable: true
+      email:
+        type: string
+        nullable: true
+      login:
+        type: string
+        nullable: true
+      orgId:
+        type: string
+        nullable: true
+      webUrl:
+        type: string
+        nullable: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.security.gitHubOrganizationEvidence'
+x-ms-discriminator-value: '#microsoft.graph.security.gitHubOrganizationEvidence'

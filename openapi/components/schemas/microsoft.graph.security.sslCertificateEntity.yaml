@@ -1,0 +1,51 @@
+title: sslCertificateEntity
+required:
+  - '@odata.type'
+type: object
+properties:
+  address:
+    anyOf:
+      - $ref: .\microsoft.graph.physicalAddress.yaml
+      - type: object
+        nullable: true
+    description: A physical address of the entity.
+  alternateNames:
+    type: array
+    items:
+      type: string
+      nullable: true
+    description: Alternate names for this entity that are part of the certificate.
+  commonName:
+    type: string
+    description: A common name for this entity.
+    nullable: true
+  email:
+    type: string
+    description: An email for this entity.
+    nullable: true
+  givenName:
+    type: string
+    description: If the entity is a person, this is the person's given name (first name).
+    nullable: true
+  organizationName:
+    type: string
+    description: If the entity is an organization, this is the name of the organization.
+    nullable: true
+  organizationUnitName:
+    type: string
+    description: >-
+      If the entity is an organization, this communicates if a unit in the
+      organization is named on the entity.
+    nullable: true
+  serialNumber:
+    type: string
+    description: >-
+      A serial number assigned to the entity; usually only available if the
+      entity is the issuer.
+    nullable: true
+  surname:
+    type: string
+    description: If the entity is a person, this is the person's surname (last name).
+    nullable: true
+  '@odata.type':
+    type: string

@@ -1,0 +1,7 @@
+title: sendDtmfCompletionReason
+enum:
+  - unknown
+  - completedSuccessfully
+  - mediaOperationCanceled
+  - unknownFutureValue
+type: string

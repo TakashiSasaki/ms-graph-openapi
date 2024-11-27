@@ -1,0 +1,8 @@
+title: exportLocation
+enum:
+  - responsiveLocations
+  - nonresponsiveLocations
+  - unknownFutureValue
+type: string
+x-ms-enum-flags:
+  isFlags: true

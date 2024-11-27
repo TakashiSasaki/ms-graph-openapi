@@ -1,0 +1,9 @@
+title: kubernetesServiceType
+enum:
+  - unknown
+  - clusterIP
+  - externalName
+  - nodePort
+  - loadBalancer
+  - unknownFutureValue
+type: string

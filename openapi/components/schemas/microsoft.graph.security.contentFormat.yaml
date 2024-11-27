@@ -1,0 +1,7 @@
+title: contentFormat
+enum:
+  - text
+  - html
+  - markdown
+  - unknownFutureValue
+type: string

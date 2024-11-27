@@ -1,0 +1,8 @@
+title: googleCloudLocationType
+enum:
+  - unknown
+  - regional
+  - zonal
+  - global
+  - unknownFutureValue
+type: string

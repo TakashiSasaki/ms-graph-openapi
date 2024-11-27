@@ -1,0 +1,34 @@
+allOf:
+  - $ref: .\microsoft.graph.security.alertEvidence.yaml
+  - title: blobEvidence
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      blobContainer:
+        anyOf:
+          - $ref: .\microsoft.graph.security.blobContainerEvidence.yaml
+          - type: object
+            nullable: true
+        description: The container which the blob belongs to.
+      etag:
+        type: string
+        description: The Etag associated with this blob.
+        nullable: true
+      fileHashes:
+        type: array
+        items:
+          $ref: .\microsoft.graph.security.fileHash.yaml
+        description: The file hashes associated with this blob.
+      name:
+        type: string
+        description: The name of the blob.
+        nullable: true
+      url:
+        type: string
+        description: The full URL representation of the blob.
+        nullable: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.security.blobEvidence'
+x-ms-discriminator-value: '#microsoft.graph.security.blobEvidence'

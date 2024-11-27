@@ -1,0 +1,136 @@
+allOf:
+  - $ref: .\microsoft.graph.security.alertEvidence.yaml
+  - title: ioTDeviceEvidence
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      deviceId:
+        type: string
+        description: The device ID.
+        nullable: true
+      deviceName:
+        type: string
+        description: The friendly name of the device.
+        nullable: true
+      devicePageLink:
+        type: string
+        description: The URL to the device page in the IoT Defender portal.
+        nullable: true
+      deviceSubType:
+        type: string
+        description: The device subtype.
+        nullable: true
+      deviceType:
+        type: string
+        description: >-
+          The type of the device. For example, 'temperature sensor,' 'freezer,'
+          'wind turbine,' and so on.
+        nullable: true
+      importance:
+        anyOf:
+          - $ref: .\microsoft.graph.security.ioTDeviceImportanceType.yaml
+          - type: object
+            nullable: true
+        description: >-
+          The importance level for the IoT device. Possible values are low,
+          normal, high, and unknownFutureValue.
+      ioTHub:
+        anyOf:
+          - $ref: .\microsoft.graph.security.azureResourceEvidence.yaml
+          - type: object
+            nullable: true
+        description: >-
+          The azureResourceEvidence entity that represents the IoT Hub that the
+          device belongs to.
+      ioTSecurityAgentId:
+        type: string
+        description: >-
+          The ID of the Azure Security Center for the IoT agent that is running
+          on the device.
+        nullable: true
+      ipAddress:
+        anyOf:
+          - $ref: .\microsoft.graph.security.ipEvidence.yaml
+          - type: object
+            nullable: true
+        description: The current IP address of the device.
+      isAuthorized:
+        type: boolean
+        description: Indicates whether the device classified as an authorized device.
+        nullable: true
+      isProgramming:
+        type: boolean
+        description: Indicates whether the device classified as a programming device.
+        nullable: true
+      isScanner:
+        type: boolean
+        description: Indicates whether the device classified as a scanner.
+        nullable: true
+      macAddress:
+        type: string
+        description: The MAC address of the device.
+        nullable: true
+      manufacturer:
+        type: string
+        description: The manufacturer of the device.
+        nullable: true
+      model:
+        type: string
+        description: The model of the device.
+        nullable: true
+      nics:
+        type: array
+        items:
+          $ref: .\microsoft.graph.security.nicEvidence.yaml
+        description: The current network interface controllers on the device.
+      operatingSystem:
+        type: string
+        description: The operating system the device is running.
+        nullable: true
+      owners:
+        type: array
+        items:
+          type: string
+          nullable: true
+        description: The owners for the device.
+      protocols:
+        type: array
+        items:
+          type: string
+          nullable: true
+        description: The list of protocols that the device supports.
+      purdueLayer:
+        type: string
+        description: The Purdue Layer of the device.
+        nullable: true
+      sensor:
+        type: string
+        description: The sensor that monitors the device.
+        nullable: true
+      serialNumber:
+        type: string
+        description: The serial number of the device.
+        nullable: true
+      site:
+        type: string
+        description: The site location of the device.
+        nullable: true
+      source:
+        type: string
+        description: The source (microsoft/vendor) of the device entity.
+        nullable: true
+      sourceRef:
+        anyOf:
+          - $ref: .\microsoft.graph.security.urlEvidence.yaml
+          - type: object
+            nullable: true
+        description: A URL reference to the source item where the device is managed.
+      zone:
+        type: string
+        description: The zone location of the device within a site.
+        nullable: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.security.ioTDeviceEvidence'
+x-ms-discriminator-value: '#microsoft.graph.security.ioTDeviceEvidence'

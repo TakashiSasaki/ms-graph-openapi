@@ -1,0 +1,28 @@
+allOf:
+  - $ref: .\microsoft.graph.security.alertEvidence.yaml
+  - title: dnsEvidence
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      dnsServerIp:
+        anyOf:
+          - $ref: .\microsoft.graph.security.ipEvidence.yaml
+          - type: object
+            nullable: true
+      domainName:
+        type: string
+        nullable: true
+      hostIpAddress:
+        anyOf:
+          - $ref: .\microsoft.graph.security.ipEvidence.yaml
+          - type: object
+            nullable: true
+      ipAddresses:
+        type: array
+        items:
+          $ref: .\microsoft.graph.security.ipEvidence.yaml
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.security.dnsEvidence'
+x-ms-discriminator-value: '#microsoft.graph.security.dnsEvidence'

@@ -1,0 +1,93 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: filePlanDescriptor
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      authority:
+        anyOf:
+          - $ref: .\microsoft.graph.security.filePlanAuthority.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Represents the file plan descriptor of type authority applied to a
+          particular retention label.
+      category:
+        anyOf:
+          - $ref: .\microsoft.graph.security.filePlanAppliedCategory.yaml
+          - type: object
+            nullable: true
+      citation:
+        anyOf:
+          - $ref: .\microsoft.graph.security.filePlanCitation.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Represents the file plan descriptor of type citation applied to a
+          particular retention label.
+      department:
+        anyOf:
+          - $ref: .\microsoft.graph.security.filePlanDepartment.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Represents the file plan descriptor of type department applied to a
+          particular retention label.
+      filePlanReference:
+        anyOf:
+          - $ref: .\microsoft.graph.security.filePlanReference.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Represents the file plan descriptor of type filePlanReference applied
+          to a particular retention label.
+      authorityTemplate:
+        anyOf:
+          - $ref: .\microsoft.graph.security.authorityTemplate.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Specifies the underlying authority that describes the type of content
+          to be retained and its retention schedule.
+        x-ms-navigationProperty: true
+      categoryTemplate:
+        anyOf:
+          - $ref: .\microsoft.graph.security.categoryTemplate.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Specifies a group of similar types of content in a particular
+          department.
+        x-ms-navigationProperty: true
+      citationTemplate:
+        anyOf:
+          - $ref: .\microsoft.graph.security.citationTemplate.yaml
+          - type: object
+            nullable: true
+        description: >-
+          The specific rule or regulation created by a jurisdiction used to
+          determine whether certain labels and content should be retained or
+          deleted.
+        x-ms-navigationProperty: true
+      departmentTemplate:
+        anyOf:
+          - $ref: .\microsoft.graph.security.departmentTemplate.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Specifies the  department or business unit of an organization to which
+          a label belongs.
+        x-ms-navigationProperty: true
+      filePlanReferenceTemplate:
+        anyOf:
+          - $ref: .\microsoft.graph.security.filePlanReferenceTemplate.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Specifies a unique alpha-numeric identifier for an organization’s
+          retention schedule.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.security.filePlanDescriptor'

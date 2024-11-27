@@ -1,0 +1,8 @@
+title: onboardingStatus
+enum:
+  - insufficientInfo
+  - onboarded
+  - canBeOnboarded
+  - unsupported
+  - unknownFutureValue
+type: string

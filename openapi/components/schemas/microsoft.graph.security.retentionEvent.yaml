@@ -1,0 +1,90 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: retentionEvent
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      createdBy:
+        anyOf:
+          - $ref: .\microsoft.graph.identitySet.yaml
+          - type: object
+            nullable: true
+        description: The user who created the retentionEvent.
+      createdDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: The date time when the retentionEvent was created.
+        format: date-time
+        nullable: true
+      description:
+        type: string
+        description: Optional information about the event.
+        nullable: true
+      displayName:
+        type: string
+        description: Name of the event.
+        nullable: true
+      eventPropagationResults:
+        type: array
+        items:
+          $ref: .\microsoft.graph.security.eventPropagationResult.yaml
+        description: >-
+          Represents the success status of a created event and additional
+          information.
+      eventQueries:
+        type: array
+        items:
+          $ref: .\microsoft.graph.security.eventQuery.yaml
+        description: >-
+          Represents the workload (SharePoint Online, OneDrive for Business,
+          Exchange Online) and identification information associated with a
+          retention event.
+      eventStatus:
+        anyOf:
+          - $ref: .\microsoft.graph.security.retentionEventStatus.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Status of event propogation to the scoped locations after the event
+          has been created.
+      eventTriggerDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: Optional time when the event should be triggered.
+        format: date-time
+        nullable: true
+      lastModifiedBy:
+        anyOf:
+          - $ref: .\microsoft.graph.identitySet.yaml
+          - type: object
+            nullable: true
+        description: The user who last modified the retentionEvent.
+      lastModifiedDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: The latest date time when the retentionEvent was modified.
+        format: date-time
+        nullable: true
+      lastStatusUpdateDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: Last time the status of the event was updated.
+        format: date-time
+        nullable: true
+      retentionEventType:
+        anyOf:
+          - $ref: .\microsoft.graph.security.retentionEventType.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Specifies the event that will start the retention period for labels
+          that use this event type when an event is created.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.security.retentionEvent'

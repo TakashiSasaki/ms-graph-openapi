@@ -1,0 +1,10 @@
+title: caseOperationStatus
+enum:
+  - notStarted
+  - submissionFailed
+  - running
+  - succeeded
+  - partiallySucceeded
+  - failed
+  - unknownFutureValue
+type: string

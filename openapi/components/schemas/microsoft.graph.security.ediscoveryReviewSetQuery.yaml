@@ -1,0 +1,11 @@
+allOf:
+  - $ref: .\microsoft.graph.security.search.yaml
+  - title: ediscoveryReviewSetQuery
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.security.ediscoveryReviewSetQuery'
+x-ms-discriminator-value: '#microsoft.graph.security.ediscoveryReviewSetQuery'

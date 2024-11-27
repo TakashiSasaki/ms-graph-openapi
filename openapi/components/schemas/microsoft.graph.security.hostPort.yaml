@@ -1,0 +1,95 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: hostPort
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      banners:
+        type: array
+        items:
+          $ref: .\microsoft.graph.security.hostPortBanner.yaml
+        description: The hostPortBanners retrieved from scanning the port.
+      firstSeenDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: >-
+          The first date and time when Microsoft Defender Threat Intelligence
+          observed the hostPort. The timestamp type represents date and time
+          information using ISO 8601 format and is always in UTC. For example,
+          midnight UTC on Jan 1, 2014, is 2014-01-01T00:00:00Z.
+        format: date-time
+        nullable: true
+      lastScanDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: >-
+          The last date and time when Microsoft Defender Threat Intelligence
+          scanned the hostPort. The timestamp type represents date and time
+          information using ISO 8601 format and is always in UTC. For example,
+          midnight UTC on Jan 1, 2014, is 2014-01-01T00:00:00Z.
+        format: date-time
+        nullable: true
+      lastSeenDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: >-
+          The last date and time when Microsoft Defender Threat Intelligence
+          observed the hostPort. The timestamp type represents date and time
+          information using ISO 8601 format and is always in UTC. For example,
+          midnight UTC on Jan 1, 2014, is 2014-01-01T00:00:00Z.
+        format: date-time
+        nullable: true
+      port:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: >-
+          The numerical identifier of the port which is standardized across the
+          internet.
+        format: int32
+      protocol:
+        anyOf:
+          - $ref: .\microsoft.graph.security.hostPortProtocol.yaml
+          - type: object
+            nullable: true
+        description: >-
+          The general protocol used to scan the port. The possible values are:
+          tcp, udp, unknownFutureValue.
+      services:
+        type: array
+        items:
+          $ref: .\microsoft.graph.security.hostPortComponent.yaml
+        description: The hostPortComponents retrieved from scanning the port.
+      status:
+        anyOf:
+          - $ref: .\microsoft.graph.security.hostPortStatus.yaml
+          - type: object
+            nullable: true
+        description: >-
+          The status of the port. The possible values are: open, filtered,
+          closed, unknownFutureValue.
+      timesObserved:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: >-
+          The total amount of times that Microsoft Defender Threat Intelligence
+          has observed the hostPort in all its scans.
+        format: int32
+        nullable: true
+      host:
+        $ref: .\microsoft.graph.security.host.yaml
+      mostRecentSslCertificate:
+        anyOf:
+          - $ref: .\microsoft.graph.security.sslCertificate.yaml
+          - type: object
+            nullable: true
+        description: The most recent sslCertificate used to communicate on the port.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.security.hostPort'

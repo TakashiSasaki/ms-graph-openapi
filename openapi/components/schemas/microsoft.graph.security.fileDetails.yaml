@@ -1,0 +1,40 @@
+title: fileDetails
+required:
+  - '@odata.type'
+type: object
+properties:
+  fileName:
+    type: string
+    description: The name of the file.
+    nullable: true
+  filePath:
+    type: string
+    description: The file path (location) of the file instance.
+    nullable: true
+  filePublisher:
+    type: string
+    description: The publisher of the file.
+    nullable: true
+  fileSize:
+    type: number
+    description: The size of the file in bytes.
+    format: int64
+    nullable: true
+  issuer:
+    type: string
+    description: The certificate authority (CA) that issued the certificate.
+    nullable: true
+  sha1:
+    type: string
+    description: The Sha1 cryptographic hash of the file content.
+    nullable: true
+  sha256:
+    type: string
+    description: The Sha256 cryptographic hash of the file content.
+    nullable: true
+  signer:
+    type: string
+    description: The signer of the signed file.
+    nullable: true
+  '@odata.type':
+    type: string

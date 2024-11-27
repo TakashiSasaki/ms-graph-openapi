@@ -1,0 +1,19 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: identityContainer
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      healthIssues:
+        type: array
+        items:
+          $ref: .\microsoft.graph.security.healthIssue.yaml
+        description: >-
+          Represents potential issues identified by Microsoft Defender for
+          Identity within a customer's Microsoft Defender for Identity
+          configuration.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.security.identityContainer'

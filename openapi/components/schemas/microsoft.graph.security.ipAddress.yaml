@@ -1,0 +1,31 @@
+allOf:
+  - $ref: .\microsoft.graph.security.host.yaml
+  - title: ipAddress
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      autonomousSystem:
+        anyOf:
+          - $ref: .\microsoft.graph.security.autonomousSystem.yaml
+          - type: object
+            nullable: true
+        description: >-
+          The details about the autonomous system to which this IP address
+          belongs.
+      countryOrRegion:
+        type: string
+        description: The country/region for this IP address.
+        nullable: true
+      hostingProvider:
+        type: string
+        description: The hosting company listed for this host.
+        nullable: true
+      netblock:
+        type: string
+        description: The block of IP addresses this IP address belongs to.
+        nullable: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.security.ipAddress'
+x-ms-discriminator-value: '#microsoft.graph.security.ipAddress'

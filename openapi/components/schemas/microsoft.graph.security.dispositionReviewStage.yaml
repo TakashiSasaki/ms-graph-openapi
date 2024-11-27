@@ -1,0 +1,23 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: dispositionReviewStage
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      name:
+        type: string
+        description: Name representing each stage within a collection.
+        nullable: true
+      reviewersEmailAddresses:
+        type: array
+        items:
+          type: string
+          nullable: true
+        description: A collection of reviewers at each stage.
+      stageNumber:
+        type: string
+        description: The unique sequence number for each stage of the disposition review.
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.security.dispositionReviewStage'

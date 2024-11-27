@@ -1,0 +1,8 @@
+title: evidenceVerdict
+enum:
+  - unknown
+  - suspicious
+  - malicious
+  - noThreatsFound
+  - unknownFutureValue
+type: string

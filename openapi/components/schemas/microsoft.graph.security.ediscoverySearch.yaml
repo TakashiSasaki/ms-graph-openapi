@@ -1,0 +1,54 @@
+allOf:
+  - $ref: .\microsoft.graph.security.search.yaml
+  - title: ediscoverySearch
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      dataSourceScopes:
+        anyOf:
+          - $ref: .\microsoft.graph.security.dataSourceScopes.yaml
+          - type: object
+            nullable: true
+        description: >-
+          When specified, the collection spans across a service for an entire
+          workload. Possible values are: none, allTenantMailboxes,
+          allTenantSites, allCaseCustodians, allCaseNoncustodialDataSources.
+      additionalSources:
+        type: array
+        items:
+          $ref: .\microsoft.graph.security.dataSource.yaml
+        description: Adds an additional source to the eDiscovery search.
+        x-ms-navigationProperty: true
+      addToReviewSetOperation:
+        anyOf:
+          - $ref: .\microsoft.graph.security.ediscoveryAddToReviewSetOperation.yaml
+          - type: object
+            nullable: true
+        description: Adds the results of the eDiscovery search to the specified reviewSet.
+        x-ms-navigationProperty: true
+      custodianSources:
+        type: array
+        items:
+          $ref: .\microsoft.graph.security.dataSource.yaml
+        description: Custodian sources that are included in the eDiscovery search.
+        x-ms-navigationProperty: true
+      lastEstimateStatisticsOperation:
+        anyOf:
+          - $ref: .\microsoft.graph.security.ediscoveryEstimateOperation.yaml
+          - type: object
+            nullable: true
+        description: The last estimate operation associated with the eDiscovery search.
+        x-ms-navigationProperty: true
+      noncustodialSources:
+        type: array
+        items:
+          $ref: .\microsoft.graph.security.ediscoveryNoncustodialDataSource.yaml
+        description: >-
+          noncustodialDataSource sources that are included in the eDiscovery
+          search
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.security.ediscoverySearch'
+x-ms-discriminator-value: '#microsoft.graph.security.ediscoverySearch'

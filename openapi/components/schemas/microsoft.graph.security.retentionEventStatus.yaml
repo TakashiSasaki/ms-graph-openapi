@@ -1,0 +1,21 @@
+title: retentionEventStatus
+required:
+  - '@odata.type'
+type: object
+properties:
+  error:
+    anyOf:
+      - $ref: .\microsoft.graph.publicError.yaml
+      - type: object
+        nullable: true
+    description: The error if the status isn't successful.
+  status:
+    anyOf:
+      - $ref: .\microsoft.graph.security.eventStatusType.yaml
+      - type: object
+        nullable: true
+    description: >-
+      The status of the distribution. The possible values are: pending, error,
+      success, notAvaliable.
+  '@odata.type':
+    type: string

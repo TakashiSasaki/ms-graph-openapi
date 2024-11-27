@@ -1,0 +1,15 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: casesRoot
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      ediscoveryCases:
+        type: array
+        items:
+          $ref: .\microsoft.graph.security.ediscoveryCase.yaml
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.security.casesRoot'

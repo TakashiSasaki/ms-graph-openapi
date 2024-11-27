@@ -1,0 +1,6 @@
+title: protocolType
+enum:
+  - tcp
+  - udp
+  - unknownFutureValue
+type: string

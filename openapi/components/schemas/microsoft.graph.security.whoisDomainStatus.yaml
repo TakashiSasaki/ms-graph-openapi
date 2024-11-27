@@ -1,0 +1,9 @@
+title: whoisDomainStatus
+enum:
+  - clientDeleteProhibited
+  - clientHold
+  - clientRenewProhibited
+  - clientTransferProhibited
+  - clientUpdateProhibited
+  - unknownFutureValue
+type: string

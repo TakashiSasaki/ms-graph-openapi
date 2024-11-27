@@ -1,0 +1,9 @@
+title: evidenceRemediationStatus
+enum:
+  - none
+  - remediated
+  - prevented
+  - blocked
+  - notFound
+  - unknownFutureValue
+type: string

@@ -1,0 +1,19 @@
+title: securityResource
+required:
+  - '@odata.type'
+type: object
+properties:
+  resource:
+    type: string
+    description: Name of the resource that is related to current alert. Required.
+    nullable: true
+  resourceType:
+    anyOf:
+      - $ref: .\microsoft.graph.securityResourceType.yaml
+      - type: object
+        nullable: true
+    description: >-
+      Represents type of security resources related to an alert. Possible values
+      are: attacked, related.
+  '@odata.type':
+    type: string

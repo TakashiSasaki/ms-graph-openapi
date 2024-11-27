@@ -1,0 +1,19 @@
+title: evidenceRole
+enum:
+  - unknown
+  - contextual
+  - scanned
+  - source
+  - destination
+  - created
+  - added
+  - compromised
+  - edited
+  - attacked
+  - attacker
+  - commandAndControl
+  - loaded
+  - suspicious
+  - policyViolator
+  - unknownFutureValue
+type: string

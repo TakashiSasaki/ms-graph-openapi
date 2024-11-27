@@ -1,0 +1,38 @@
+allOf:
+  - $ref: .\microsoft.graph.security.alertEvidence.yaml
+  - title: networkConnectionEvidence
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      destinationAddress:
+        anyOf:
+          - $ref: .\microsoft.graph.security.ipEvidence.yaml
+          - type: object
+            nullable: true
+      destinationPort:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        format: int32
+        nullable: true
+      protocol:
+        anyOf:
+          - $ref: .\microsoft.graph.security.protocolType.yaml
+          - type: object
+            nullable: true
+      sourceAddress:
+        anyOf:
+          - $ref: .\microsoft.graph.security.ipEvidence.yaml
+          - type: object
+            nullable: true
+      sourcePort:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        format: int32
+        nullable: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.security.networkConnectionEvidence'
+x-ms-discriminator-value: '#microsoft.graph.security.networkConnectionEvidence'

@@ -1,0 +1,10 @@
+title: deviceHealthStatus
+enum:
+  - active
+  - inactive
+  - impairedCommunication
+  - noSensorData
+  - noSensorDataImpairedCommunication
+  - unknown
+  - unknownFutureValue
+type: string

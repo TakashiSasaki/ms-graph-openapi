@@ -1,0 +1,46 @@
+allOf:
+  - $ref: .\microsoft.graph.security.alertEvidence.yaml
+  - title: containerEvidence
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      args:
+        type: array
+        items:
+          type: string
+          nullable: true
+        description: The list of arguments.
+      command:
+        type: array
+        items:
+          type: string
+          nullable: true
+        description: The list of commands.
+      containerId:
+        type: string
+        description: The container ID.
+        nullable: true
+      image:
+        anyOf:
+          - $ref: .\microsoft.graph.security.containerImageEvidence.yaml
+          - type: object
+            nullable: true
+        description: The image used to run the container.
+      isPrivileged:
+        type: boolean
+        description: The privileged status.
+      name:
+        type: string
+        description: The container name.
+        nullable: true
+      pod:
+        anyOf:
+          - $ref: .\microsoft.graph.security.kubernetesPodEvidence.yaml
+          - type: object
+            nullable: true
+        description: The pod this container belongs to.
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.security.containerEvidence'
+x-ms-discriminator-value: '#microsoft.graph.security.containerEvidence'

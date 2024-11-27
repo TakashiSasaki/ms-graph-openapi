@@ -1,0 +1,8 @@
+title: eventPropagationStatus
+enum:
+  - none
+  - inProcessing
+  - failed
+  - success
+  - unknownFutureValue
+type: string

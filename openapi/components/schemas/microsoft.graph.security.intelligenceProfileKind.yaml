@@ -1,0 +1,6 @@
+title: intelligenceProfileKind
+enum:
+  - actor
+  - tool
+  - unknownFutureValue
+type: string

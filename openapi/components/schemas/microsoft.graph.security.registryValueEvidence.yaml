@@ -1,0 +1,39 @@
+allOf:
+  - $ref: .\microsoft.graph.security.alertEvidence.yaml
+  - title: registryValueEvidence
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      mdeDeviceId:
+        type: string
+        description: >-
+          A unique identifier assigned to a device by Microsoft Defender for
+          Endpoint.
+        nullable: true
+      registryHive:
+        type: string
+        description: Registry hive of the key that the recorded action was applied to.
+        nullable: true
+      registryKey:
+        type: string
+        description: Registry key that the recorded action was applied to.
+        nullable: true
+      registryValue:
+        type: string
+        description: Data of the registry value that the recorded action was applied to.
+        nullable: true
+      registryValueName:
+        type: string
+        description: Name of the registry value that the recorded action was applied to.
+        nullable: true
+      registryValueType:
+        type: string
+        description: >-
+          Data type, such as binary or string, of the registry value that the
+          recorded action was applied to.
+        nullable: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.security.registryValueEvidence'
+x-ms-discriminator-value: '#microsoft.graph.security.registryValueEvidence'

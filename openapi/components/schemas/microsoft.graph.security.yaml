@@ -1,0 +1,88 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: security
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      alerts:
+        type: array
+        items:
+          $ref: .\microsoft.graph.alert.yaml
+        x-ms-navigationProperty: true
+      alerts_v2:
+        type: array
+        items:
+          $ref: .\microsoft.graph.security.alert.yaml
+        description: A collection of alerts in Microsoft 365 Defender.
+        x-ms-navigationProperty: true
+      attackSimulation:
+        anyOf:
+          - $ref: .\microsoft.graph.attackSimulationRoot.yaml
+          - type: object
+            nullable: true
+        x-ms-navigationProperty: true
+      cases:
+        anyOf:
+          - $ref: .\microsoft.graph.security.casesRoot.yaml
+          - type: object
+            nullable: true
+        x-ms-navigationProperty: true
+      identities:
+        anyOf:
+          - $ref: .\microsoft.graph.security.identityContainer.yaml
+          - type: object
+            nullable: true
+        description: A container for security identities APIs.
+        x-ms-navigationProperty: true
+      incidents:
+        type: array
+        items:
+          $ref: .\microsoft.graph.security.incident.yaml
+        description: >-
+          A collection of incidents in Microsoft 365 Defender, each of which is
+          a set of correlated alerts and associated metadata that reflects the
+          story of an attack.
+        x-ms-navigationProperty: true
+      labels:
+        anyOf:
+          - $ref: .\microsoft.graph.security.labelsRoot.yaml
+          - type: object
+            nullable: true
+        x-ms-navigationProperty: true
+      secureScoreControlProfiles:
+        type: array
+        items:
+          $ref: .\microsoft.graph.secureScoreControlProfile.yaml
+        x-ms-navigationProperty: true
+      secureScores:
+        type: array
+        items:
+          $ref: .\microsoft.graph.secureScore.yaml
+        x-ms-navigationProperty: true
+      subjectRightsRequests:
+        type: array
+        items:
+          $ref: .\microsoft.graph.subjectRightsRequest.yaml
+        x-ms-navigationProperty: true
+      threatIntelligence:
+        anyOf:
+          - $ref: .\microsoft.graph.security.threatIntelligence.yaml
+          - type: object
+            nullable: true
+        x-ms-navigationProperty: true
+      triggers:
+        anyOf:
+          - $ref: .\microsoft.graph.security.triggersRoot.yaml
+          - type: object
+            nullable: true
+        x-ms-navigationProperty: true
+      triggerTypes:
+        anyOf:
+          - $ref: .\microsoft.graph.security.triggerTypesRoot.yaml
+          - type: object
+            nullable: true
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.security'

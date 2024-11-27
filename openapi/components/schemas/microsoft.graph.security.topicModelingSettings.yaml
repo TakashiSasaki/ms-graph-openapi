@@ -1,0 +1,33 @@
+title: topicModelingSettings
+required:
+  - '@odata.type'
+type: object
+properties:
+  dynamicallyAdjustTopicCount:
+    type: boolean
+    description: >-
+      Indicates whether the themes model should dynamically optimize the number
+      of generated topics. To learn more, see Adjust maximum number of themes
+      dynamically.
+    nullable: true
+  ignoreNumbers:
+    type: boolean
+    description: >-
+      Indicates whether the themes model should exclude numbers while parsing
+      document texts. To learn more, see Include numbers in themes.
+    nullable: true
+  isEnabled:
+    type: boolean
+    description: Indicates whether themes model is enabled for the case.
+    nullable: true
+  topicCount:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    description: >-
+      The total number of topics that the themes model will generate for a
+      review set. To learn more, see Maximum number of themes.
+    format: int32
+    nullable: true
+  '@odata.type':
+    type: string

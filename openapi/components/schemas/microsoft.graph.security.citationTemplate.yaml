@@ -1,0 +1,18 @@
+allOf:
+  - $ref: .\microsoft.graph.security.filePlanDescriptorTemplate.yaml
+  - title: citationTemplate
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      citationJurisdiction:
+        type: string
+        description: Represents the jurisdiction or agency that published the citation.
+        nullable: true
+      citationUrl:
+        type: string
+        description: Represents the URL to the published citation.
+        nullable: true
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.security.citationTemplate'

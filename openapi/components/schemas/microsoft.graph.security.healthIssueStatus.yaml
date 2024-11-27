@@ -1,0 +1,7 @@
+title: healthIssueStatus
+enum:
+  - open
+  - closed
+  - suppressed
+  - unknownFutureValue
+type: string

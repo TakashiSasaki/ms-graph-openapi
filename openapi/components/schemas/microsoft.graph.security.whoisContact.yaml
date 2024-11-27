@@ -1,0 +1,33 @@
+title: whoisContact
+required:
+  - '@odata.type'
+type: object
+properties:
+  address:
+    anyOf:
+      - $ref: .\microsoft.graph.physicalAddress.yaml
+      - type: object
+        nullable: true
+    description: The physical address of the entity.
+  email:
+    type: string
+    description: The email of this WHOIS contact.
+    nullable: true
+  fax:
+    type: string
+    description: The fax of this WHOIS contact. No format is guaranteed.
+    nullable: true
+  name:
+    type: string
+    description: The name of this WHOIS contact.
+    nullable: true
+  organization:
+    type: string
+    description: The organization of this WHOIS contact.
+    nullable: true
+  telephone:
+    type: string
+    description: The telephone of this WHOIS contact. No format is guaranteed.
+    nullable: true
+  '@odata.type':
+    type: string

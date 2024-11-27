@@ -1,0 +1,19 @@
+title: emailSender
+required:
+  - '@odata.type'
+type: object
+properties:
+  displayName:
+    type: string
+    description: The name of the sender.
+    nullable: true
+  domainName:
+    type: string
+    description: Sender domain.
+    nullable: true
+  emailAddress:
+    type: string
+    description: Sender email address.
+    nullable: true
+  '@odata.type':
+    type: string

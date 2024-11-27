@@ -1,0 +1,13 @@
+title: intelligenceProfileCountryOrRegionOfOrigin
+required:
+  - '@odata.type'
+type: object
+properties:
+  code:
+    type: string
+    description: A codified representation for this country/region of origin.
+  label:
+    type: string
+    description: A display label for this ountry/region of origin.
+  '@odata.type':
+    type: string

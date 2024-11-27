@@ -1,0 +1,7 @@
+title: securityResourceType
+enum:
+  - unknown
+  - attacked
+  - related
+  - unknownFutureValue
+type: string

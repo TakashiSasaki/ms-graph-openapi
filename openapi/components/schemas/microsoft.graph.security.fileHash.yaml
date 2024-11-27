@@ -1,0 +1,13 @@
+title: fileHash
+required:
+  - '@odata.type'
+type: object
+properties:
+  algorithm:
+    $ref: .\microsoft.graph.security.fileHashAlgorithm.yaml
+  value:
+    type: string
+    description: The hash value.
+    nullable: true
+  '@odata.type':
+    type: string

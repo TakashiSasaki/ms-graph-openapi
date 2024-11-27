@@ -1,0 +1,6 @@
+title: childSelectability
+enum:
+  - One
+  - Many
+  - unknownFutureValue
+type: string

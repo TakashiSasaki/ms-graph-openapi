@@ -1,0 +1,6 @@
+title: purgeType
+enum:
+  - recoverable
+  - unknownFutureValue
+  - permanentlyDelete
+type: string

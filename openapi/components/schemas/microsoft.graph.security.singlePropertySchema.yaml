@@ -1,0 +1,15 @@
+title: singlePropertySchema
+required:
+  - '@odata.type'
+type: object
+properties:
+  name:
+    type: string
+    description: The name of the property.
+    nullable: true
+  type:
+    type: string
+    description: The type of the property.
+    nullable: true
+  '@odata.type':
+    type: string

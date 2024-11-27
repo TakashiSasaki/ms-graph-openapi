@@ -1,0 +1,7 @@
+title: healthIssueSeverity
+enum:
+  - low
+  - medium
+  - high
+  - unknownFutureValue
+type: string

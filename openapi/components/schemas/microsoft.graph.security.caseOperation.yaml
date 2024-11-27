@@ -1,0 +1,74 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: caseOperation
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      action:
+        anyOf:
+          - $ref: .\microsoft.graph.security.caseAction.yaml
+          - type: object
+            nullable: true
+        description: >-
+          The type of action the operation represents. Possible values are:
+          contentExport,  applyTags, convertToPdf, index, estimateStatistics,
+          addToReviewSet, holdUpdate, unknownFutureValue, purgeData,
+          exportReport, exportResult. You must use the Prefer:
+          include-unknown-enum-members request header to get the following
+          values from this evolvable enum: purgeData, exportReport,
+          exportResult.
+      completedDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: The date and time the operation was completed.
+        format: date-time
+        nullable: true
+      createdBy:
+        anyOf:
+          - $ref: .\microsoft.graph.identitySet.yaml
+          - type: object
+            nullable: true
+        description: The user that created the operation.
+      createdDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: The date and time the operation was created.
+        format: date-time
+        nullable: true
+      percentProgress:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: The progress of the operation.
+        format: int32
+        nullable: true
+      resultInfo:
+        anyOf:
+          - $ref: .\microsoft.graph.resultInfo.yaml
+          - type: object
+            nullable: true
+        description: Contains success and failure-specific result information.
+      status:
+        anyOf:
+          - $ref: .\microsoft.graph.security.caseOperationStatus.yaml
+          - type: object
+            nullable: true
+        description: >-
+          The status of the case operation. Possible values are: notStarted,
+          submissionFailed, running, succeeded, partiallySucceeded, failed.
+      '@odata.type':
+        type: string
+    discriminator:
+      propertyName: '@odata.type'
+      mapping:
+        '#microsoft.graph.security.ediscoveryAddToReviewSetOperation': .\microsoft.graph.security.ediscoveryAddToReviewSetOperation.yaml
+        '#microsoft.graph.security.ediscoveryEstimateOperation': .\microsoft.graph.security.ediscoveryEstimateOperation.yaml
+        '#microsoft.graph.security.ediscoveryExportOperation': .\microsoft.graph.security.ediscoveryExportOperation.yaml
+        '#microsoft.graph.security.ediscoveryHoldOperation': .\microsoft.graph.security.ediscoveryHoldOperation.yaml
+        '#microsoft.graph.security.ediscoveryIndexOperation': .\microsoft.graph.security.ediscoveryIndexOperation.yaml
+        '#microsoft.graph.security.ediscoveryPurgeDataOperation': .\microsoft.graph.security.ediscoveryPurgeDataOperation.yaml
+        '#microsoft.graph.security.ediscoverySearchExportOperation': .\microsoft.graph.security.ediscoverySearchExportOperation.yaml
+        '#microsoft.graph.security.ediscoveryTagOperation': .\microsoft.graph.security.ediscoveryTagOperation.yaml

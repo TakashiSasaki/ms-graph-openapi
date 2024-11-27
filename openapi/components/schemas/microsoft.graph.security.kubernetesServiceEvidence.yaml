@@ -1,0 +1,51 @@
+allOf:
+  - $ref: .\microsoft.graph.security.alertEvidence.yaml
+  - title: kubernetesServiceEvidence
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      clusterIP:
+        anyOf:
+          - $ref: .\microsoft.graph.security.ipEvidence.yaml
+          - type: object
+            nullable: true
+        description: The service cluster IP.
+      externalIPs:
+        type: array
+        items:
+          $ref: .\microsoft.graph.security.ipEvidence.yaml
+        description: The service external IPs.
+      labels:
+        anyOf:
+          - $ref: .\microsoft.graph.security.dictionary.yaml
+          - type: object
+            nullable: true
+        description: The service labels.
+      name:
+        type: string
+        description: The service name.
+        nullable: true
+      namespace:
+        anyOf:
+          - $ref: .\microsoft.graph.security.kubernetesNamespaceEvidence.yaml
+          - type: object
+            nullable: true
+        description: The service namespace.
+      selector:
+        anyOf:
+          - $ref: .\microsoft.graph.security.dictionary.yaml
+          - type: object
+            nullable: true
+        description: The service selector.
+      servicePorts:
+        type: array
+        items:
+          $ref: .\microsoft.graph.security.kubernetesServicePort.yaml
+        description: The list of service ports.
+      serviceType:
+        $ref: .\microsoft.graph.security.kubernetesServiceType.yaml
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.security.kubernetesServiceEvidence'
+x-ms-discriminator-value: '#microsoft.graph.security.kubernetesServiceEvidence'

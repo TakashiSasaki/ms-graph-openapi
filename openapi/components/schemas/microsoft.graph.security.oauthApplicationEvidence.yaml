@@ -1,0 +1,27 @@
+allOf:
+  - $ref: .\microsoft.graph.security.alertEvidence.yaml
+  - title: oauthApplicationEvidence
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      appId:
+        type: string
+        description: Unique identifier of the application.
+        nullable: true
+      displayName:
+        type: string
+        description: Name of the application.
+        nullable: true
+      objectId:
+        type: string
+        description: The unique identifier of the application object in Azure AD.
+        nullable: true
+      publisher:
+        type: string
+        description: The name of the application publisher.
+        nullable: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.security.oauthApplicationEvidence'
+x-ms-discriminator-value: '#microsoft.graph.security.oauthApplicationEvidence'

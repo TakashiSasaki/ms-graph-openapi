@@ -1,0 +1,18 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: indicator
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      source:
+        $ref: .\microsoft.graph.security.indicatorSource.yaml
+      artifact:
+        $ref: .\microsoft.graph.security.artifact.yaml
+      '@odata.type':
+        type: string
+    discriminator:
+      propertyName: '@odata.type'
+      mapping:
+        '#microsoft.graph.security.articleIndicator': .\microsoft.graph.security.articleIndicator.yaml
+        '#microsoft.graph.security.intelligenceProfileIndicator': .\microsoft.graph.security.intelligenceProfileIndicator.yaml

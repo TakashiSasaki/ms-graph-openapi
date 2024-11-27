@@ -1,0 +1,27 @@
+allOf:
+  - $ref: .\microsoft.graph.security.alertEvidence.yaml
+  - title: containerImageEvidence
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      digestImage:
+        anyOf:
+          - $ref: .\microsoft.graph.security.containerImageEvidence.yaml
+          - type: object
+            nullable: true
+        description: The digest image entity, in case this is a tag image.
+      imageId:
+        type: string
+        description: The unique identifier for the container image entity.
+        nullable: true
+      registry:
+        anyOf:
+          - $ref: .\microsoft.graph.security.containerRegistryEvidence.yaml
+          - type: object
+            nullable: true
+        description: The container registry for this image.
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.security.containerImageEvidence'
+x-ms-discriminator-value: '#microsoft.graph.security.containerImageEvidence'

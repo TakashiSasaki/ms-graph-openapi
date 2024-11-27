@@ -1,0 +1,85 @@
+allOf:
+  - $ref: .\microsoft.graph.security.artifact.yaml
+  - title: sslCertificate
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      expirationDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: >-
+          The date and time when a certificate expires. The timestamp type
+          represents date and time information using ISO 8601 format and is
+          always in UTC. For example, midnight UTC on Jan 1, 2014 is
+          2014-01-01T00:00:00Z.
+        format: date-time
+        nullable: true
+      fingerprint:
+        type: string
+        description: A hash of the certificate calculated on the data and signature.
+        nullable: true
+      firstSeenDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: >-
+          The first date and time when this sslCertificate was observed. The
+          timestamp type represents date and time information using ISO 8601
+          format and is always in UTC. For example, midnight UTC on Jan 1, 2014
+          is 2014-01-01T00:00:00Z.
+        format: date-time
+        nullable: true
+      issueDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: >-
+          The date and time when a certificate was issued. The timestamp type
+          represents date and time information using ISO 8601 format and is
+          always in UTC. For example, midnight UTC on Jan 1, 2014 is
+          2014-01-01T00:00:00Z.
+        format: date-time
+        nullable: true
+      issuer:
+        anyOf:
+          - $ref: .\microsoft.graph.security.sslCertificateEntity.yaml
+          - type: object
+            nullable: true
+        description: The entity that grants this certificate.
+      lastSeenDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: >-
+          The most recent date and time when this sslCertificate was observed.
+          The timestamp type represents date and time information using ISO 8601
+          format and is always in UTC. For example, midnight UTC on Jan 1, 2014
+          is 2014-01-01T00:00:00Z.
+        format: date-time
+        nullable: true
+      serialNumber:
+        type: string
+        description: The serial number associated with an SSL certificate.
+        nullable: true
+      sha1:
+        type: string
+        description: 'A SHA-1 hash of the certificate. Note: This is not the signature.'
+        nullable: true
+      subject:
+        anyOf:
+          - $ref: .\microsoft.graph.security.sslCertificateEntity.yaml
+          - type: object
+            nullable: true
+        description: The person, site, machine, and so on, this certificate is for.
+      relatedHosts:
+        type: array
+        items:
+          $ref: .\microsoft.graph.security.host.yaml
+        description: The host resources related with this sslCertificate.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.security.sslCertificate'
+x-ms-discriminator-value: '#microsoft.graph.security.sslCertificate'

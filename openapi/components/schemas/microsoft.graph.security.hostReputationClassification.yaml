@@ -1,0 +1,8 @@
+title: hostReputationClassification
+enum:
+  - unknown
+  - neutral
+  - suspicious
+  - malicious
+  - unknownFutureValue
+type: string

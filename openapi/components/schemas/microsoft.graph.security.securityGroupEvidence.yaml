@@ -1,0 +1,19 @@
+allOf:
+  - $ref: .\microsoft.graph.security.alertEvidence.yaml
+  - title: securityGroupEvidence
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      displayName:
+        type: string
+        description: The name of the security group.
+        nullable: true
+      securityGroupId:
+        type: string
+        description: Unique identifier of the security group.
+        nullable: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.security.securityGroupEvidence'
+x-ms-discriminator-value: '#microsoft.graph.security.securityGroupEvidence'

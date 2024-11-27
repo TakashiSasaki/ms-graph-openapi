@@ -1,0 +1,7 @@
+title: exportFormat
+enum:
+  - pst
+  - msg
+  - eml
+  - unknownFutureValue
+type: string

@@ -1,0 +1,69 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: intelligenceProfile
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      aliases:
+        type: array
+        items:
+          type: string
+          nullable: true
+        description: >-
+          A list of commonly-known aliases for the threat intelligence included
+          in the intelligenceProfile.
+      countriesOrRegionsOfOrigin:
+        type: array
+        items:
+          $ref: >-
+            .\microsoft.graph.security.intelligenceProfileCountryOrRegionOfOrigin.yaml
+        description: >-
+          The country/region of origin for the given actor or threat associated
+          with this intelligenceProfile.
+      description:
+        $ref: .\microsoft.graph.security.formattedContent.yaml
+      firstActiveDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: >-
+          The date and time when this intelligenceProfile was first active. The
+          timestamp type represents date and time information using ISO 8601
+          format and is always in UTC time. For example, midnight UTC on Jan 1,
+          2014 is 2014-01-01T00:00:00Z.
+        format: date-time
+      kind:
+        $ref: .\microsoft.graph.security.intelligenceProfileKind.yaml
+      summary:
+        $ref: .\microsoft.graph.security.formattedContent.yaml
+      targets:
+        type: array
+        items:
+          type: string
+          nullable: true
+        description: Known targets related to this intelligenceProfile.
+      title:
+        type: string
+        description: The title of this intelligenceProfile.
+      tradecraft:
+        anyOf:
+          - $ref: .\microsoft.graph.security.formattedContent.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Formatted information featuring a description of the distinctive
+          tactics, techniques, and procedures (TTP) of the group, followed by a
+          list of all known custom, commodity, and publicly available implants
+          used by the group.
+      indicators:
+        type: array
+        items:
+          $ref: .\microsoft.graph.security.intelligenceProfileIndicator.yaml
+        description: >-
+          Includes an assemblage of high-fidelity network indicators of
+          compromise.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.security.intelligenceProfile'

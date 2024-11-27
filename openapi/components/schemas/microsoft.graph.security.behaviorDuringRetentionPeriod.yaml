@@ -1,0 +1,8 @@
+title: behaviorDuringRetentionPeriod
+enum:
+  - doNotRetain
+  - retain
+  - retainAsRecord
+  - retainAsRegulatoryRecord
+  - unknownFutureValue
+type: string

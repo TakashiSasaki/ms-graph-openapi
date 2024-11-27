@@ -1,0 +1,10 @@
+title: defenderAvStatus
+enum:
+  - notReporting
+  - disabled
+  - notUpdated
+  - updated
+  - unknown
+  - notSupported
+  - unknownFutureValue
+type: string

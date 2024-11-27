@@ -1,0 +1,31 @@
+allOf:
+  - $ref: .\microsoft.graph.security.alertEvidence.yaml
+  - title: fileEvidence
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      detectionStatus:
+        anyOf:
+          - $ref: .\microsoft.graph.security.detectionStatus.yaml
+          - type: object
+            nullable: true
+        description: >-
+          The status of the detection.The possible values are: detected,
+          blocked, prevented, unknownFutureValue.
+      fileDetails:
+        anyOf:
+          - $ref: .\microsoft.graph.security.fileDetails.yaml
+          - type: object
+            nullable: true
+        description: The file details.
+      mdeDeviceId:
+        type: string
+        description: >-
+          A unique identifier assigned to a device by Microsoft Defender for
+          Endpoint.
+        nullable: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.security.fileEvidence'
+x-ms-discriminator-value: '#microsoft.graph.security.fileEvidence'

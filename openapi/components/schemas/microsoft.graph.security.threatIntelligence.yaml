@@ -1,0 +1,137 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: threatIntelligence
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      articleIndicators:
+        type: array
+        items:
+          $ref: .\microsoft.graph.security.articleIndicator.yaml
+        description: >-
+          Refers to indicators of threat or compromise highlighted in an
+          article.Note: List retrieval is not yet supported.
+        x-ms-navigationProperty: true
+      articles:
+        type: array
+        items:
+          $ref: .\microsoft.graph.security.article.yaml
+        description: A list of article objects.
+        x-ms-navigationProperty: true
+      hostComponents:
+        type: array
+        items:
+          $ref: .\microsoft.graph.security.hostComponent.yaml
+        description: >-
+          Retrieve details about hostComponent objects.Note: List retrieval is
+          not yet supported.
+        x-ms-navigationProperty: true
+      hostCookies:
+        type: array
+        items:
+          $ref: .\microsoft.graph.security.hostCookie.yaml
+        description: >-
+          Retrieve details about hostCookie objects.Note: List retrieval is not
+          yet supported.
+        x-ms-navigationProperty: true
+      hostPairs:
+        type: array
+        items:
+          $ref: .\microsoft.graph.security.hostPair.yaml
+        description: >-
+          Retrieve details about hostTracker objects.Note: List retrieval is not
+          yet supported.
+        x-ms-navigationProperty: true
+      hostPorts:
+        type: array
+        items:
+          $ref: .\microsoft.graph.security.hostPort.yaml
+        description: >-
+          Retrieve details about hostPort objects.Note: List retrieval is not
+          yet supported.
+        x-ms-navigationProperty: true
+      hosts:
+        type: array
+        items:
+          $ref: .\microsoft.graph.security.host.yaml
+        description: >-
+          Refers to host objects that Microsoft Threat Intelligence has
+          observed.Note: List retrieval is not yet supported.
+        x-ms-navigationProperty: true
+      hostSslCertificates:
+        type: array
+        items:
+          $ref: .\microsoft.graph.security.hostSslCertificate.yaml
+        description: >-
+          Retrieve details about hostSslCertificate objects.Note: List retrieval
+          is not yet supported.
+        x-ms-navigationProperty: true
+      hostTrackers:
+        type: array
+        items:
+          $ref: .\microsoft.graph.security.hostTracker.yaml
+        description: >-
+          Retrieve details about hostTracker objects.Note: List retrieval is not
+          yet supported.
+        x-ms-navigationProperty: true
+      intelligenceProfileIndicators:
+        type: array
+        items:
+          $ref: .\microsoft.graph.security.intelligenceProfileIndicator.yaml
+        x-ms-navigationProperty: true
+      intelProfiles:
+        type: array
+        items:
+          $ref: .\microsoft.graph.security.intelligenceProfile.yaml
+        description: A list of intelligenceProfile objects.
+        x-ms-navigationProperty: true
+      passiveDnsRecords:
+        type: array
+        items:
+          $ref: .\microsoft.graph.security.passiveDnsRecord.yaml
+        description: >-
+          Retrieve details about passiveDnsRecord objects.Note: List retrieval
+          is not yet supported.
+        x-ms-navigationProperty: true
+      sslCertificates:
+        type: array
+        items:
+          $ref: .\microsoft.graph.security.sslCertificate.yaml
+        description: >-
+          Retrieve details about sslCertificate objects.Note: List retrieval is
+          not yet supported.
+        x-ms-navigationProperty: true
+      subdomains:
+        type: array
+        items:
+          $ref: .\microsoft.graph.security.subdomain.yaml
+        description: >-
+          Retrieve details about the subdomain.Note: List retrieval is not yet
+          supported.
+        x-ms-navigationProperty: true
+      vulnerabilities:
+        type: array
+        items:
+          $ref: .\microsoft.graph.security.vulnerability.yaml
+        description: >-
+          Retrieve details about vulnerabilities.Note: List retrieval is not yet
+          supported.
+        x-ms-navigationProperty: true
+      whoisHistoryRecords:
+        type: array
+        items:
+          $ref: .\microsoft.graph.security.whoisHistoryRecord.yaml
+        description: >-
+          Retrieve details about whoisHistoryRecord objects.Note: List retrieval
+          is not yet supported.
+        x-ms-navigationProperty: true
+      whoisRecords:
+        type: array
+        items:
+          $ref: .\microsoft.graph.security.whoisRecord.yaml
+        description: A list of whoisRecord objects.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.security.threatIntelligence'

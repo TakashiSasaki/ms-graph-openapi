@@ -1,0 +1,27 @@
+title: securityNetworkProtocol
+enum:
+  - unknown
+  - ip
+  - icmp
+  - igmp
+  - ggp
+  - ipv4
+  - tcp
+  - pup
+  - udp
+  - idp
+  - ipv6
+  - ipv6RoutingHeader
+  - ipv6FragmentHeader
+  - ipSecEncapsulatingSecurityPayload
+  - ipSecAuthenticationHeader
+  - icmpV6
+  - ipv6NoNextHeader
+  - ipv6DestinationOptions
+  - nd
+  - raw
+  - ipx
+  - spx
+  - spxII
+  - unknownFutureValue
+type: string
