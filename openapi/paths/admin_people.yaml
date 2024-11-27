@@ -1,0 +1,46 @@
+description: >-
+  Provides operations to manage the people property of the microsoft.graph.admin
+  entity.
+get:
+  tags:
+    - admin.peopleAdminSettings
+  summary: Get peopleAdminSettings
+  description: Retrieve the properties and relationships of a peopleAdminSettings object.
+  externalDocs:
+    description: Find more info here
+    url: >-
+      https://learn.microsoft.com/graph/api/peopleadminsettings-get?view=graph-rest-1.0
+  operationId: admin.GetPeople
+  parameters:
+    - name: $select
+      in: query
+      description: Select properties to be returned
+      style: form
+      explode: false
+      schema:
+        uniqueItems: true
+        type: array
+        items:
+          type: string
+    - name: $expand
+      in: query
+      description: Expand related entities
+      style: form
+      explode: false
+      schema:
+        uniqueItems: true
+        type: array
+        items:
+          type: string
+  responses:
+    2XX:
+      description: Retrieved navigation property
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\microsoft.graph.peopleAdminSettings.yaml
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: operation

@@ -1,0 +1,82 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: workbookRangeFormat
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      columnWidth:
+        oneOf:
+          - type: number
+            format: double
+            nullable: true
+          - type: string
+            nullable: true
+          - $ref: .\ReferenceNumeric.yaml
+        description: >-
+          The width of all columns within the range. If the column widths aren't
+          uniform, null will be returned.
+      horizontalAlignment:
+        type: string
+        description: >-
+          The horizontal alignment for the specified object. Possible values
+          are: General, Left, Center, Right, Fill, Justify,
+          CenterAcrossSelection, Distributed.
+        nullable: true
+      rowHeight:
+        oneOf:
+          - type: number
+            format: double
+            nullable: true
+          - type: string
+            nullable: true
+          - $ref: .\ReferenceNumeric.yaml
+        description: >-
+          The height of all rows in the range. If the row heights aren't uniform
+          null will be returned.
+      verticalAlignment:
+        type: string
+        description: >-
+          The vertical alignment for the specified object. Possible values are:
+          Top, Center, Bottom, Justify, Distributed.
+        nullable: true
+      wrapText:
+        type: boolean
+        description: >-
+          Indicates whether Excel wraps the text in the object. A null value
+          indicates that the entire range doesn't have a uniform wrap setting.
+        nullable: true
+      borders:
+        type: array
+        items:
+          $ref: .\microsoft.graph.workbookRangeBorder.yaml
+        description: >-
+          Collection of border objects that apply to the overall range selected
+          Read-only.
+        x-ms-navigationProperty: true
+      fill:
+        anyOf:
+          - $ref: .\microsoft.graph.workbookRangeFill.yaml
+          - type: object
+            nullable: true
+        description: Returns the fill object defined on the overall range. Read-only.
+        x-ms-navigationProperty: true
+      font:
+        anyOf:
+          - $ref: .\microsoft.graph.workbookRangeFont.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Returns the font object defined on the overall range selected
+          Read-only.
+        x-ms-navigationProperty: true
+      protection:
+        anyOf:
+          - $ref: .\microsoft.graph.workbookFormatProtection.yaml
+          - type: object
+            nullable: true
+        description: Returns the format protection object for a range. Read-only.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.workbookRangeFormat'

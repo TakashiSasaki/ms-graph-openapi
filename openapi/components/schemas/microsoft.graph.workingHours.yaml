@@ -1,0 +1,33 @@
+title: workingHours
+required:
+  - '@odata.type'
+type: object
+properties:
+  daysOfWeek:
+    type: array
+    items:
+      anyOf:
+        - $ref: .\microsoft.graph.dayOfWeek.yaml
+        - type: object
+          nullable: true
+    description: The days of the week on which the user works.
+  endTime:
+    pattern: ^([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?$
+    type: string
+    description: The time of the day that the user stops working.
+    format: time
+    nullable: true
+  startTime:
+    pattern: ^([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?$
+    type: string
+    description: The time of the day that the user starts working.
+    format: time
+    nullable: true
+  timeZone:
+    anyOf:
+      - $ref: .\microsoft.graph.timeZoneBase.yaml
+      - type: object
+        nullable: true
+    description: The time zone to which the working hours apply.
+  '@odata.type':
+    type: string

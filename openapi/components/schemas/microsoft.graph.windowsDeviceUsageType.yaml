@@ -1,0 +1,19 @@
+title: windowsDeviceUsageType
+enum:
+  - singleUser
+  - shared
+  - unknownFutureValue
+type: string
+x-ms-enum:
+  name: windowsDeviceUsageType
+  modelAsString: false
+  values:
+    - value: singleUser
+      description: Default. Indicates that a device is a single-user device.
+      name: singleUser
+    - value: shared
+      description: Indicates that a device is a multi-user device.
+      name: shared
+    - value: unknownFutureValue
+      description: Evolvable enumeration sentinel value. Do not use.
+      name: unknownFutureValue

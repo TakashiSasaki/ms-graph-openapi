@@ -1,0 +1,38 @@
+title: windowsDeliveryOptimizationMode
+enum:
+  - userDefined
+  - httpOnly
+  - httpWithPeeringNat
+  - httpWithPeeringPrivateGroup
+  - httpWithInternetPeering
+  - simpleDownload
+  - bypassMode
+type: string
+description: Delivery optimization mode for peer distribution
+x-ms-enum:
+  name: windowsDeliveryOptimizationMode
+  modelAsString: false
+  values:
+    - value: userDefined
+      description: Allow the user to set.
+      name: userDefined
+    - value: httpOnly
+      description: HTTP only, no peering
+      name: httpOnly
+    - value: httpWithPeeringNat
+      description: >-
+        OS default – Http blended with peering behind the same network address
+        translator
+      name: httpWithPeeringNat
+    - value: httpWithPeeringPrivateGroup
+      description: HTTP blended with peering across a private group
+      name: httpWithPeeringPrivateGroup
+    - value: httpWithInternetPeering
+      description: HTTP blended with Internet peering
+      name: httpWithInternetPeering
+    - value: simpleDownload
+      description: Simple download mode with no peering
+      name: simpleDownload
+    - value: bypassMode
+      description: Bypass mode. Do not use Delivery Optimization and use BITS instead
+      name: bypassMode

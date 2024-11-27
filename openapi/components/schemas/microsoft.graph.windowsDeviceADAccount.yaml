@@ -1,0 +1,19 @@
+allOf:
+  - $ref: .\microsoft.graph.windowsDeviceAccount.yaml
+  - title: windowsDeviceADAccount
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      domainName:
+        type: string
+        description: Not yet documented
+        nullable: true
+      userName:
+        type: string
+        description: Not yet documented
+        nullable: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.windowsDeviceADAccount'
+x-ms-discriminator-value: '#microsoft.graph.windowsDeviceADAccount'

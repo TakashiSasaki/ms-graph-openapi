@@ -1,0 +1,22 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: workbookOperation
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      error:
+        anyOf:
+          - $ref: .\microsoft.graph.workbookOperationError.yaml
+          - type: object
+            nullable: true
+        description: The error returned by the operation.
+      resourceLocation:
+        type: string
+        description: The resource URI for the result.
+        nullable: true
+      status:
+        $ref: .\microsoft.graph.workbookOperationStatus.yaml
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.workbookOperation'

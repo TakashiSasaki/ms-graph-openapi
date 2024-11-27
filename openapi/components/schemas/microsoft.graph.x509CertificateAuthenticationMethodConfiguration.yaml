@@ -1,0 +1,39 @@
+allOf:
+  - $ref: .\microsoft.graph.authenticationMethodConfiguration.yaml
+  - title: x509CertificateAuthenticationMethodConfiguration
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      authenticationModeConfiguration:
+        anyOf:
+          - $ref: >-
+              .\microsoft.graph.x509CertificateAuthenticationModeConfiguration.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Defines strong authentication configurations. This configuration
+          includes the default authentication mode and the different rules for
+          strong authentication bindings.
+      certificateUserBindings:
+        type: array
+        items:
+          $ref: .\microsoft.graph.x509CertificateUserBinding.yaml
+        description: >-
+          Defines fields in the X.509 certificate that map to attributes of the
+          Microsoft Entra user object in order to bind the certificate to the
+          user. The priority of the object determines the order in which the
+          binding is carried out. The first binding that matches will be used
+          and the rest ignored.
+      includeTargets:
+        type: array
+        items:
+          $ref: .\microsoft.graph.authenticationMethodTarget.yaml
+        description: >-
+          A collection of groups that are enabled to use the authentication
+          method.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.x509CertificateAuthenticationMethodConfiguration'
+x-ms-discriminator-value: '#microsoft.graph.x509CertificateAuthenticationMethodConfiguration'

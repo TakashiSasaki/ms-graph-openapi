@@ -1,0 +1,10 @@
+title: workbookRangeReference
+required:
+  - '@odata.type'
+type: object
+properties:
+  address:
+    type: string
+    nullable: true
+  '@odata.type':
+    type: string

@@ -1,0 +1,27 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: workbookTableSort
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      fields:
+        type: array
+        items:
+          $ref: .\microsoft.graph.workbookSortField.yaml
+        description: >-
+          The list of the current conditions last used to sort the table.
+          Read-only.
+      matchCase:
+        type: boolean
+        description: >-
+          Indicates whether the casing impacted the last sort of the table.
+          Read-only.
+      method:
+        type: string
+        description: >-
+          The Chinese character ordering method last used to sort the table. The
+          possible values are: PinYin, StrokeCount. Read-only.
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.workbookTableSort'

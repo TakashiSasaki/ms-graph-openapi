@@ -1,0 +1,24 @@
+title: windowsInformationProtectionEnforcementLevel
+enum:
+  - noProtection
+  - encryptAndAuditOnly
+  - encryptAuditAndPrompt
+  - encryptAuditAndBlock
+type: string
+description: Possible values for WIP Protection enforcement levels
+x-ms-enum:
+  name: windowsInformationProtectionEnforcementLevel
+  modelAsString: false
+  values:
+    - value: noProtection
+      description: No protection enforcement
+      name: noProtection
+    - value: encryptAndAuditOnly
+      description: Encrypt and Audit only
+      name: encryptAndAuditOnly
+    - value: encryptAuditAndPrompt
+      description: Encrypt, Audit and Prompt
+      name: encryptAuditAndPrompt
+    - value: encryptAuditAndBlock
+      description: Encrypt, Audit and Block
+      name: encryptAuditAndBlock

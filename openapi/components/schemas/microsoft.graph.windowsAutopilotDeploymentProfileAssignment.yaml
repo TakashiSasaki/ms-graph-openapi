@@ -1,0 +1,11 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: windowsAutopilotDeploymentProfileAssignment
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      '@odata.type':
+        type: string
+    description: An assignment of a Windows Autopilot deployment profile to an AAD group.
+x-ms-discriminator-value: '#microsoft.graph.windowsAutopilotDeploymentProfileAssignment'

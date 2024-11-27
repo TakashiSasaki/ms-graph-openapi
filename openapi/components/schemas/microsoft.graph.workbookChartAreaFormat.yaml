@@ -1,0 +1,28 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: workbookChartAreaFormat
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      fill:
+        anyOf:
+          - $ref: .\microsoft.graph.workbookChartFill.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Represents the fill format of an object, which includes background
+          formatting information. Read-only.
+        x-ms-navigationProperty: true
+      font:
+        anyOf:
+          - $ref: .\microsoft.graph.workbookChartFont.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Represents the font attributes (font name, font size, color, etc.) for
+          the current object. Read-only.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.workbookChartAreaFormat'

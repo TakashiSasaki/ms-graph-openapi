@@ -1,0 +1,71 @@
+description: Provides operations to manage the media for the admin entity.
+get:
+  tags:
+    - admin.serviceAnnouncement
+  summary: List attachments
+  description: Get the list of attachments associated with a service message.
+  externalDocs:
+    description: Find more info here
+    url: >-
+      https://learn.microsoft.com/graph/api/serviceupdatemessage-list-attachments?view=graph-rest-1.0
+  operationId: admin.serviceAnnouncement.GetMessagesAttachmentsArchive
+  responses:
+    2XX:
+      description: Retrieved media content
+      content:
+        application/octet-stream:
+          schema:
+            type: string
+            format: binary
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+put:
+  tags:
+    - admin.serviceAnnouncement
+  summary: Update attachmentsArchive for the navigation property messages in admin
+  description: The zip file that contains all attachments for a message.
+  operationId: admin.serviceAnnouncement.UpdateMessagesAttachmentsArchive
+  requestBody:
+    description: New media content.
+    content:
+      application/octet-stream:
+        schema:
+          type: string
+          format: binary
+    required: true
+  responses:
+    2XX:
+      description: Success
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+delete:
+  tags:
+    - admin.serviceAnnouncement
+  summary: Delete attachmentsArchive for the navigation property messages in admin
+  description: The zip file that contains all attachments for a message.
+  operationId: admin.serviceAnnouncement.DeleteMessagesAttachmentsArchive
+  parameters:
+    - name: If-Match
+      in: header
+      description: ETag
+      schema:
+        type: string
+  responses:
+    '204':
+      description: Success
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+parameters:
+  - name: serviceUpdateMessage-id
+    in: path
+    description: The unique identifier of serviceUpdateMessage
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: serviceUpdateMessage

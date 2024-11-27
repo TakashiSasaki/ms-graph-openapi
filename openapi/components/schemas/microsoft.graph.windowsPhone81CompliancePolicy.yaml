@@ -1,0 +1,66 @@
+allOf:
+  - $ref: .\microsoft.graph.deviceCompliancePolicy.yaml
+  - title: windowsPhone81CompliancePolicy
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      osMaximumVersion:
+        type: string
+        description: Maximum Windows Phone version.
+        nullable: true
+      osMinimumVersion:
+        type: string
+        description: Minimum Windows Phone version.
+        nullable: true
+      passwordBlockSimple:
+        type: boolean
+        description: Whether or not to block syncing the calendar.
+      passwordExpirationDays:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: Number of days before the password expires.
+        format: int32
+        nullable: true
+      passwordMinimumCharacterSetCount:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: The number of character sets required in the password.
+        format: int32
+        nullable: true
+      passwordMinimumLength:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: Minimum length of passwords.
+        format: int32
+        nullable: true
+      passwordMinutesOfInactivityBeforeLock:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: Minutes of inactivity before a password is required.
+        format: int32
+        nullable: true
+      passwordPreviousPasswordBlockCount:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: Number of previous passwords to block. Valid values 0 to 24
+        format: int32
+        nullable: true
+      passwordRequired:
+        type: boolean
+        description: Whether or not to require a password.
+      passwordRequiredType:
+        $ref: .\microsoft.graph.requiredPasswordType.yaml
+      storageRequireEncryption:
+        type: boolean
+        description: Require encryption on windows phone devices.
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.windowsPhone81CompliancePolicy'
+    description: This class contains compliance settings for Windows 8.1 Mobile.
+x-ms-discriminator-value: '#microsoft.graph.windowsPhone81CompliancePolicy'

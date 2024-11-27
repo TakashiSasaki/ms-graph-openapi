@@ -1,0 +1,30 @@
+title: windowsArchitecture
+enum:
+  - none
+  - x86
+  - x64
+  - arm
+  - neutral
+type: string
+description: Contains properties for Windows architecture.
+x-ms-enum-flags:
+  isFlags: true
+x-ms-enum:
+  name: windowsArchitecture
+  modelAsString: false
+  values:
+    - value: none
+      description: No flags set.
+      name: none
+    - value: x86
+      description: Whether or not the X86 Windows architecture type is supported.
+      name: x86
+    - value: x64
+      description: Whether or not the X64 Windows architecture type is supported.
+      name: x64
+    - value: arm
+      description: Whether or not the Arm Windows architecture type is supported.
+      name: arm
+    - value: neutral
+      description: Whether or not the Neutral Windows architecture type is supported.
+      name: neutral

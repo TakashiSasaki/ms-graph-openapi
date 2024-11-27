@@ -1,0 +1,15 @@
+allOf:
+  - $ref: .\microsoft.graph.deviceActionResult.yaml
+  - title: windowsDefenderScanActionResult
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      scanType:
+        type: string
+        description: Scan type either full scan or quick scan
+        nullable: true
+      '@odata.type':
+        type: string
+    description: Windows Defender last scan result
+x-ms-discriminator-value: '#microsoft.graph.windowsDefenderScanActionResult'

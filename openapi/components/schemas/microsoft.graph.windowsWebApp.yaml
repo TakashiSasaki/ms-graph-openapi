@@ -1,0 +1,16 @@
+allOf:
+  - $ref: .\microsoft.graph.mobileApp.yaml
+  - title: windowsWebApp
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      appUrl:
+        type: string
+        description: 'Indicates the Windows web app URL. Example: ''https://www.contoso.com'''
+        nullable: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.windowsWebApp'
+    description: Contains properties and inherited properties for Windows web apps.
+x-ms-discriminator-value: '#microsoft.graph.windowsWebApp'

@@ -1,0 +1,30 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: windowsSetting
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      payloadType:
+        type: string
+        description: >-
+          The type of setting payloads contained in the instances navigation
+          property.
+        nullable: true
+      settingType:
+        $ref: .\microsoft.graph.windowsSettingType.yaml
+      windowsDeviceId:
+        type: string
+        description: >-
+          A unique identifier for the device the setting might belong to if it
+          is of the settingType backup.
+        nullable: true
+      instances:
+        type: array
+        items:
+          $ref: .\microsoft.graph.windowsSettingInstance.yaml
+        description: A collection of setting values for a given windowsSetting.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.windowsSetting'

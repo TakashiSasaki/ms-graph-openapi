@@ -1,0 +1,13 @@
+title: workforceIntegrationSupportedEntities
+enum:
+  - none
+  - shift
+  - swapRequest
+  - userShiftPreferences
+  - openShift
+  - openShiftRequest
+  - offerShiftRequest
+  - unknownFutureValue
+type: string
+x-ms-enum-flags:
+  isFlags: true

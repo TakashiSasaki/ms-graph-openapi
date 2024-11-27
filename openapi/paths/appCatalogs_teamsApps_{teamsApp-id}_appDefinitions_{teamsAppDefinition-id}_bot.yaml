@@ -1,0 +1,103 @@
+description: >-
+  Provides operations to manage the bot property of the
+  microsoft.graph.teamsAppDefinition entity.
+get:
+  tags:
+    - appCatalogs.teamsApp
+  summary: Get teamworkBot
+  description: Get the bot associated with a specific definition of the  TeamsApp.
+  externalDocs:
+    description: Find more info here
+    url: https://learn.microsoft.com/graph/api/teamworkbot-get?view=graph-rest-1.0
+  operationId: appCatalogs.teamsApps.appDefinitions.GetBot
+  parameters:
+    - name: $select
+      in: query
+      description: Select properties to be returned
+      style: form
+      explode: false
+      schema:
+        uniqueItems: true
+        type: array
+        items:
+          type: string
+    - name: $expand
+      in: query
+      description: Expand related entities
+      style: form
+      explode: false
+      schema:
+        uniqueItems: true
+        type: array
+        items:
+          type: string
+  responses:
+    2XX:
+      description: Retrieved navigation property
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\microsoft.graph.teamworkBot.yaml
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: operation
+patch:
+  tags:
+    - appCatalogs.teamsApp
+  summary: Update the navigation property bot in appCatalogs
+  operationId: appCatalogs.teamsApps.appDefinitions.UpdateBot
+  requestBody:
+    description: New navigation property values
+    content:
+      application/json:
+        schema:
+          $ref: ..\components\schemas\microsoft.graph.teamworkBot.yaml
+    required: true
+  responses:
+    2XX:
+      description: Success
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\microsoft.graph.teamworkBot.yaml
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: operation
+delete:
+  tags:
+    - appCatalogs.teamsApp
+  summary: Delete navigation property bot for appCatalogs
+  operationId: appCatalogs.teamsApps.appDefinitions.DeleteBot
+  parameters:
+    - name: If-Match
+      in: header
+      description: ETag
+      schema:
+        type: string
+  responses:
+    '204':
+      description: Success
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: operation
+parameters:
+  - name: teamsApp-id
+    in: path
+    description: The unique identifier of teamsApp
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: teamsApp
+  - name: teamsAppDefinition-id
+    in: path
+    description: The unique identifier of teamsAppDefinition
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: teamsAppDefinition

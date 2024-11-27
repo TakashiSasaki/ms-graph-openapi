@@ -1,0 +1,20 @@
+title: windowsInformationProtectionPinCharacterRequirements
+enum:
+  - notAllow
+  - requireAtLeastOne
+  - allow
+type: string
+description: Pin Character Requirements
+x-ms-enum:
+  name: windowsInformationProtectionPinCharacterRequirements
+  modelAsString: false
+  values:
+    - value: notAllow
+      description: Not allow
+      name: notAllow
+    - value: requireAtLeastOne
+      description: Require atleast one
+      name: requireAtLeastOne
+    - value: allow
+      description: Allow any number
+      name: allow

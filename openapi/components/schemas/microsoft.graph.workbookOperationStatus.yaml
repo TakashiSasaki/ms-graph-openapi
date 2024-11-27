@@ -1,0 +1,7 @@
+title: workbookOperationStatus
+enum:
+  - notStarted
+  - running
+  - succeeded
+  - failed
+type: string

@@ -1,0 +1,20 @@
+title: windowsStartMenuModeType
+enum:
+  - userDefined
+  - fullScreen
+  - nonFullScreen
+type: string
+description: Type of display modes for the start menu.
+x-ms-enum:
+  name: windowsStartMenuModeType
+  modelAsString: false
+  values:
+    - value: userDefined
+      description: User defined. Default value.
+      name: userDefined
+    - value: fullScreen
+      description: Full screen.
+      name: fullScreen
+    - value: nonFullScreen
+      description: Non-full screen.
+      name: nonFullScreen

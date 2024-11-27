@@ -1,0 +1,23 @@
+allOf:
+  - $ref: .\microsoft.graph.windowsInformationProtectionApp.yaml
+  - title: windowsInformationProtectionDesktopApp
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      binaryName:
+        type: string
+        description: The binary name.
+      binaryVersionHigh:
+        type: string
+        description: The high binary version.
+        nullable: true
+      binaryVersionLow:
+        type: string
+        description: The lower binary version.
+        nullable: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.windowsInformationProtectionDesktopApp'
+    description: Desktop App for Windows information protection
+x-ms-discriminator-value: '#microsoft.graph.windowsInformationProtectionDesktopApp'

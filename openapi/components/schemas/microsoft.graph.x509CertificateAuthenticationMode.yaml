@@ -1,0 +1,6 @@
+title: x509CertificateAuthenticationMode
+enum:
+  - x509CertificateSingleFactor
+  - x509CertificateMultiFactor
+  - unknownFutureValue
+type: string

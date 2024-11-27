@@ -1,0 +1,112 @@
+description: >-
+  Provides operations to manage the versions property of the
+  microsoft.graph.agreementFileLocalization entity.
+get:
+  tags:
+    - agreements.agreementFile
+  summary: Get versions from agreements
+  description: >-
+    Read-only. Customized versions of the terms of use agreement in the
+    Microsoft Entra tenant.
+  operationId: agreements.file.localizations.GetVersions
+  parameters:
+    - name: $select
+      in: query
+      description: Select properties to be returned
+      style: form
+      explode: false
+      schema:
+        uniqueItems: true
+        type: array
+        items:
+          type: string
+    - name: $expand
+      in: query
+      description: Expand related entities
+      style: form
+      explode: false
+      schema:
+        uniqueItems: true
+        type: array
+        items:
+          type: string
+  responses:
+    2XX:
+      description: Retrieved navigation property
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\microsoft.graph.agreementFileVersion.yaml
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: operation
+patch:
+  tags:
+    - agreements.agreementFile
+  summary: Update the navigation property versions in agreements
+  operationId: agreements.file.localizations.UpdateVersions
+  requestBody:
+    description: New navigation property values
+    content:
+      application/json:
+        schema:
+          $ref: ..\components\schemas\microsoft.graph.agreementFileVersion.yaml
+    required: true
+  responses:
+    2XX:
+      description: Success
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\microsoft.graph.agreementFileVersion.yaml
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: operation
+delete:
+  tags:
+    - agreements.agreementFile
+  summary: Delete navigation property versions for agreements
+  operationId: agreements.file.localizations.DeleteVersions
+  parameters:
+    - name: If-Match
+      in: header
+      description: ETag
+      schema:
+        type: string
+  responses:
+    '204':
+      description: Success
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: operation
+parameters:
+  - name: agreement-id
+    in: path
+    description: The unique identifier of agreement
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: agreement
+  - name: agreementFileLocalization-id
+    in: path
+    description: The unique identifier of agreementFileLocalization
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: agreementFileLocalization
+  - name: agreementFileVersion-id
+    in: path
+    description: The unique identifier of agreementFileVersion
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: agreementFileVersion
+x-ms-docs-grouped-path:
+  - >-
+    /agreements/{agreement-id}/files/{agreementFileLocalization-id}/versions/{agreementFileVersion-id}

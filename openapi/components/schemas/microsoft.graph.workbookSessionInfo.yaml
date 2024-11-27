@@ -1,0 +1,15 @@
+title: workbookSessionInfo
+required:
+  - '@odata.type'
+type: object
+properties:
+  id:
+    type: string
+    description: ID of the workbook session.
+    nullable: true
+  persistChanges:
+    type: boolean
+    description: true for persistent session. false for non-persistent session (view mode)
+    nullable: true
+  '@odata.type':
+    type: string

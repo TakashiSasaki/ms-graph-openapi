@@ -1,0 +1,45 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: workbookNamedItem
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      comment:
+        type: string
+        description: The comment associated with this name.
+        nullable: true
+      name:
+        type: string
+        description: The name of the object. Read-only.
+        nullable: true
+      scope:
+        type: string
+        description: >-
+          Indicates whether the name is scoped to the workbook or to a specific
+          worksheet. Read-only.
+      type:
+        type: string
+        description: >-
+          The type of reference is associated with the name. Possible values
+          are: String, Integer, Double, Boolean, Range. Read-only.
+        nullable: true
+      value:
+        description: >-
+          The formula that the name is defined to refer to. For example,
+          =Sheet14!$B$2:$H$12 and =4.75. Read-only.
+      visible:
+        type: boolean
+        description: Indicates whether the object is visible.
+      worksheet:
+        anyOf:
+          - $ref: .\microsoft.graph.workbookWorksheet.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Returns the worksheet to which the named item is scoped. Available
+          only if the item is scoped to the worksheet. Read-only.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.workbookNamedItem'

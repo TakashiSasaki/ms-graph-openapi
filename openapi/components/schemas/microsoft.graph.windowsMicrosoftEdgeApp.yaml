@@ -1,0 +1,22 @@
+allOf:
+  - $ref: .\microsoft.graph.mobileApp.yaml
+  - title: windowsMicrosoftEdgeApp
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      channel:
+        $ref: .\microsoft.graph.microsoftEdgeChannel.yaml
+      displayLanguageLocale:
+        type: string
+        description: >-
+          The language locale to use when the Edge app displays text to the
+          user.
+        nullable: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.windowsMicrosoftEdgeApp'
+    description: >-
+      Contains properties and inherited properties for the Microsoft Edge app on
+      Windows.
+x-ms-discriminator-value: '#microsoft.graph.windowsMicrosoftEdgeApp'

@@ -1,0 +1,279 @@
+allOf:
+  - $ref: .\microsoft.graph.deviceConfiguration.yaml
+  - title: windowsUpdateForBusinessConfiguration
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      allowWindows11Upgrade:
+        type: boolean
+        description: >-
+          When TRUE, allows eligible Windows 10 devices to upgrade to Windows
+          11. When FALSE, implies the device stays on the existing operating
+          system. Returned by default. Query parameters are not supported.
+      automaticUpdateMode:
+        $ref: .\microsoft.graph.automaticUpdateMode.yaml
+      autoRestartNotificationDismissal:
+        $ref: .\microsoft.graph.autoRestartNotificationDismissalMethod.yaml
+      businessReadyUpdatesOnly:
+        $ref: .\microsoft.graph.windowsUpdateType.yaml
+      deadlineForFeatureUpdatesInDays:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: >-
+          Number of days before feature updates are installed automatically with
+          valid range from 0 to 30 days. Returned by default. Query parameters
+          are not supported.
+        format: int32
+        nullable: true
+      deadlineForQualityUpdatesInDays:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: >-
+          Number of days before quality updates are installed automatically with
+          valid range from 0 to 30 days. Returned by default. Query parameters
+          are not supported.
+        format: int32
+        nullable: true
+      deadlineGracePeriodInDays:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: >-
+          Number of days after deadline until restarts occur automatically with
+          valid range from 0 to 7 days. Returned by default. Query parameters
+          are not supported.
+        format: int32
+        nullable: true
+      deliveryOptimizationMode:
+        $ref: .\microsoft.graph.windowsDeliveryOptimizationMode.yaml
+      driversExcluded:
+        type: boolean
+        description: >-
+          When TRUE, excludes Windows update Drivers. When FALSE, does not
+          exclude Windows update Drivers. Returned by default. Query parameters
+          are not supported.
+      engagedRestartDeadlineInDays:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: >-
+          Deadline in days before automatically scheduling and executing a
+          pending restart outside of active hours, with valid range from 2 to 30
+          days. Returned by default. Query parameters are not supported.
+        format: int32
+        nullable: true
+      engagedRestartSnoozeScheduleInDays:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: >-
+          Number of days a user can snooze Engaged Restart reminder
+          notifications with valid range from 1 to 3 days. Returned by default.
+          Query parameters are not supported.
+        format: int32
+        nullable: true
+      engagedRestartTransitionScheduleInDays:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: >-
+          Number of days before transitioning from Auto Restarts scheduled
+          outside of active hours to Engaged Restart, which requires the user to
+          schedule, with valid range from 0 to 30 days. Returned by default.
+          Query parameters are not supported.
+        format: int32
+        nullable: true
+      featureUpdatesDeferralPeriodInDays:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: >-
+          Defer Feature Updates by these many days with valid range from 0 to 30
+          days. Returned by default. Query parameters are not supported.
+        format: int32
+      featureUpdatesPaused:
+        type: boolean
+        description: >-
+          When TRUE, assigned devices are paused from receiving feature updates
+          for up to 35 days from the time you pause the ring. When FALSE, does
+          not pause Feature Updates. Returned by default. Query parameters are
+          not supported.s
+      featureUpdatesPauseExpiryDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: >-
+          The Feature Updates Pause Expiry datetime. This value is 35 days from
+          the time admin paused or extended the pause for the ring. Returned by
+          default. Query parameters are not supported.
+        format: date-time
+      featureUpdatesPauseStartDate:
+        pattern: ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$
+        type: string
+        description: >-
+          The Feature Updates Pause start date. This value is the time when the
+          admin paused or extended the pause for the ring. Returned by default.
+          Query parameters are not supported. This property is read-only.
+        format: date
+        nullable: true
+        readOnly: true
+      featureUpdatesRollbackStartDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: >-
+          The Feature Updates Rollback Start datetime.This value is the time
+          when the admin rolled back the Feature update for the ring.Returned by
+          default.Query parameters are not supported.
+        format: date-time
+      featureUpdatesRollbackWindowInDays:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: >-
+          The number of days after a Feature Update for which a rollback is
+          valid with valid range from 2 to 60 days. Returned by default. Query
+          parameters are not supported.
+        format: int32
+        nullable: true
+      featureUpdatesWillBeRolledBack:
+        type: boolean
+        description: >-
+          When TRUE, rollback Feature Updates on the next device check in. When
+          FALSE, do not rollback Feature Updates on the next device check in.
+          Returned by default.Query parameters are not supported.
+        nullable: true
+      installationSchedule:
+        anyOf:
+          - $ref: .\microsoft.graph.windowsUpdateInstallScheduleType.yaml
+          - type: object
+            nullable: true
+        description: >-
+          The Installation Schedule. Possible values are: ActiveHoursStart,
+          ActiveHoursEnd, ScheduledInstallDay, ScheduledInstallTime. Returned by
+          default. Query parameters are not supported.
+      microsoftUpdateServiceAllowed:
+        type: boolean
+        description: >-
+          When TRUE, allows Microsoft Update Service. When FALSE, does not allow
+          Microsoft Update Service. Returned by default. Query parameters are
+          not supported.
+      postponeRebootUntilAfterDeadline:
+        type: boolean
+        description: >-
+          When TRUE the device should wait until deadline for rebooting outside
+          of active hours. When FALSE the device should not wait until deadline
+          for rebooting outside of active hours. Returned by default. Query
+          parameters are not supported.
+        nullable: true
+      prereleaseFeatures:
+        $ref: .\microsoft.graph.prereleaseFeatures.yaml
+      qualityUpdatesDeferralPeriodInDays:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: >-
+          Defer Quality Updates by these many days with valid range from 0 to 30
+          days. Returned by default. Query parameters are not supported.
+        format: int32
+      qualityUpdatesPaused:
+        type: boolean
+        description: >-
+          When TRUE, assigned devices are paused from receiving quality updates
+          for up to 35 days from the time you pause the ring. When FALSE, does
+          not pause Quality Updates. Returned by default. Query parameters are
+          not supported.
+      qualityUpdatesPauseExpiryDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: >-
+          The Quality Updates Pause Expiry datetime. This value is 35 days from
+          the time admin paused or extended the pause for the ring. Returned by
+          default. Query parameters are not supported.
+        format: date-time
+      qualityUpdatesPauseStartDate:
+        pattern: ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$
+        type: string
+        description: >-
+          The Quality Updates Pause start date. This value is the time when the
+          admin paused or extended the pause for the ring. Returned by default.
+          Query parameters are not supported. This property is read-only.
+        format: date
+        nullable: true
+        readOnly: true
+      qualityUpdatesRollbackStartDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: >-
+          The Quality Updates Rollback Start datetime. This value is the time
+          when the admin rolled back the Quality update for the ring. Returned
+          by default. Query parameters are not supported.
+        format: date-time
+      qualityUpdatesWillBeRolledBack:
+        type: boolean
+        description: >-
+          When TRUE, rollback Quality Updates on the next device check in. When
+          FALSE, do not rollback Quality Updates on the next device check in.
+          Returned by default. Query parameters are not supported.
+        nullable: true
+      scheduleImminentRestartWarningInMinutes:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: >-
+          Specify the period for auto-restart imminent warning notifications.
+          Supported values: 15, 30 or 60 (minutes). Returned by default. Query
+          parameters are not supported.
+        format: int32
+        nullable: true
+      scheduleRestartWarningInHours:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: >-
+          Specify the period for auto-restart warning reminder notifications.
+          Supported values: 2, 4, 8, 12 or 24 (hours). Returned by default.
+          Query parameters are not supported.
+        format: int32
+        nullable: true
+      skipChecksBeforeRestart:
+        type: boolean
+        description: >-
+          When TRUE, skips all checks before restart: Battery level = 40%, User
+          presence, Display Needed, Presentation mode, Full screen mode, phone
+          call state, game mode etc. When FALSE, does not skip all checks before
+          restart. Returned by default. Query parameters are not supported.
+      updateNotificationLevel:
+        $ref: .\microsoft.graph.windowsUpdateNotificationDisplayOption.yaml
+      updateWeeks:
+        anyOf:
+          - $ref: .\microsoft.graph.windowsUpdateForBusinessUpdateWeeks.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Schedule the update installation on the weeks of the month. Possible
+          values are: UserDefined, FirstWeek, SecondWeek, ThirdWeek, FourthWeek,
+          EveryWeek. Returned by default. Query parameters are not supported.
+          Possible values are: userDefined, firstWeek, secondWeek, thirdWeek,
+          fourthWeek, everyWeek, unknownFutureValue.
+      userPauseAccess:
+        $ref: .\microsoft.graph.enablement.yaml
+      userWindowsUpdateScanAccess:
+        $ref: .\microsoft.graph.enablement.yaml
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.windowsUpdateForBusinessConfiguration'
+    description: >-
+      Windows Update for business configuration, allows you to specify how and
+      when Windows as a Service updates your Windows 10/11 devices with feature
+      and quality updates. Supports ODATA clauses that DeviceConfiguration
+      entity supports: $filter by types of DeviceConfiguration, $top, $select
+      only DeviceConfiguration base properties, $orderby only
+      DeviceConfiguration base properties, and $skip. The query parameter
+      '$search' is not supported.
+x-ms-discriminator-value: '#microsoft.graph.windowsUpdateForBusinessConfiguration'

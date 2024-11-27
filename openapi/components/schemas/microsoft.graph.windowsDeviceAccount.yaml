@@ -1,0 +1,18 @@
+title: windowsDeviceAccount
+required:
+  - '@odata.type'
+type: object
+properties:
+  password:
+    type: string
+    description: Not yet documented
+    nullable: true
+  '@odata.type':
+    type: string
+discriminator:
+  propertyName: '@odata.type'
+  mapping:
+    '#microsoft.graph.windowsDeviceADAccount': .\microsoft.graph.windowsDeviceADAccount.yaml
+    '#microsoft.graph.windowsDeviceAzureADAccount': .\microsoft.graph.windowsDeviceAzureADAccount.yaml
+    microsoft.graph.windowsDeviceADAccount: .\microsoft.graph.windowsDeviceADAccount.yaml
+    microsoft.graph.windowsDeviceAzureADAccount: .\microsoft.graph.windowsDeviceAzureADAccount.yaml

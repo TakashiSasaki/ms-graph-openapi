@@ -1,0 +1,24 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: workbookChartAxisTitle
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      text:
+        type: string
+        description: Represents the axis title.
+        nullable: true
+      visible:
+        type: boolean
+        description: A Boolean that specifies the visibility of an axis title.
+      format:
+        anyOf:
+          - $ref: .\microsoft.graph.workbookChartAxisTitleFormat.yaml
+          - type: object
+            nullable: true
+        description: Represents the formatting of chart axis title. Read-only.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.workbookChartAxisTitle'

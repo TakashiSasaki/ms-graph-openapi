@@ -1,0 +1,23 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: workbookComment
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      content:
+        type: string
+        description: The content of the comment.
+        nullable: true
+      contentType:
+        type: string
+        description: The content type of the comment.
+      replies:
+        type: array
+        items:
+          $ref: .\microsoft.graph.workbookCommentReply.yaml
+        description: The list of replies to the comment. Read-only. Nullable.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.workbookComment'

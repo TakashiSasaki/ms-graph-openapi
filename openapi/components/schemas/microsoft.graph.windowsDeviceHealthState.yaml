@@ -1,0 +1,34 @@
+title: windowsDeviceHealthState
+enum:
+  - clean
+  - fullScanPending
+  - rebootPending
+  - manualStepsPending
+  - offlineScanPending
+  - critical
+type: string
+description: Computer endpoint protection state
+x-ms-enum-flags:
+  isFlags: true
+x-ms-enum:
+  name: windowsDeviceHealthState
+  modelAsString: false
+  values:
+    - value: clean
+      description: Computer is clean and no action is required
+      name: clean
+    - value: fullScanPending
+      description: Computer is in pending full scan state
+      name: fullScanPending
+    - value: rebootPending
+      description: Computer is in pending reboot state
+      name: rebootPending
+    - value: manualStepsPending
+      description: Computer is in pending manual steps state
+      name: manualStepsPending
+    - value: offlineScanPending
+      description: Computer is in pending offline scan state
+      name: offlineScanPending
+    - value: critical
+      description: Computer is in critical failure state
+      name: critical

@@ -1,0 +1,18 @@
+allOf:
+  - $ref: .\microsoft.graph.mobileContainedApp.yaml
+  - title: windowsUniversalAppXContainedApp
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      appUserModelId:
+        type: string
+        description: >-
+          The app user model ID of the contained app of a WindowsUniversalAppX
+          app.
+        nullable: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.windowsUniversalAppXContainedApp'
+    description: A class that represents a contained app of a WindowsUniversalAppX app.
+x-ms-discriminator-value: '#microsoft.graph.windowsUniversalAppXContainedApp'

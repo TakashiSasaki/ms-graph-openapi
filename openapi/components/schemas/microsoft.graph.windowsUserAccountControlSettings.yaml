@@ -1,0 +1,28 @@
+title: windowsUserAccountControlSettings
+enum:
+  - userDefined
+  - alwaysNotify
+  - notifyOnAppChanges
+  - notifyOnAppChangesWithoutDimming
+  - neverNotify
+type: string
+description: Possible values for Windows user account control settings.
+x-ms-enum:
+  name: windowsUserAccountControlSettings
+  modelAsString: false
+  values:
+    - value: userDefined
+      description: User Defined, default value, no intent.
+      name: userDefined
+    - value: alwaysNotify
+      description: Always notify.
+      name: alwaysNotify
+    - value: notifyOnAppChanges
+      description: Notify on app changes.
+      name: notifyOnAppChanges
+    - value: notifyOnAppChangesWithoutDimming
+      description: Notify on app changes without dimming desktop.
+      name: notifyOnAppChangesWithoutDimming
+    - value: neverNotify
+      description: Never notify.
+      name: neverNotify

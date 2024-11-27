@@ -1,0 +1,29 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: workbookChartSeries
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      name:
+        type: string
+        description: The name of a series in a chart.
+        nullable: true
+      format:
+        anyOf:
+          - $ref: .\microsoft.graph.workbookChartSeriesFormat.yaml
+          - type: object
+            nullable: true
+        description: >-
+          The formatting of a chart series, which includes fill and line
+          formatting. Read-only.
+        x-ms-navigationProperty: true
+      points:
+        type: array
+        items:
+          $ref: .\microsoft.graph.workbookChartPoint.yaml
+        description: A collection of all points in the series. Read-only.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.workbookChartSeries'

@@ -1,0 +1,7 @@
+type: object
+properties:
+  '@odata.id':
+    type: string
+  '@odata.type':
+    type: string
+    nullable: true

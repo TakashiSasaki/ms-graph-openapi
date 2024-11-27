@@ -1,0 +1,17 @@
+title: workforceIntegrationEncryption
+required:
+  - '@odata.type'
+type: object
+properties:
+  protocol:
+    anyOf:
+      - $ref: .\microsoft.graph.workforceIntegrationEncryptionProtocol.yaml
+      - type: object
+        nullable: true
+    description: 'Possible values are: sharedSecret, unknownFutureValue.'
+  secret:
+    type: string
+    description: Encryption shared secret.
+    nullable: true
+  '@odata.type':
+    type: string

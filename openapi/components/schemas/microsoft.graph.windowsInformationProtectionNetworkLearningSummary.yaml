@@ -1,0 +1,21 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: windowsInformationProtectionNetworkLearningSummary
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      deviceCount:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: Device Count
+        format: int32
+      url:
+        type: string
+        description: Website url
+        nullable: true
+      '@odata.type':
+        type: string
+    description: Windows Information Protection Network learning Summary entity.
+x-ms-discriminator-value: '#microsoft.graph.windowsInformationProtectionNetworkLearningSummary'

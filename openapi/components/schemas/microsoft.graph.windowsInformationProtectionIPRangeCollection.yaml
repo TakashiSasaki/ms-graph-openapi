@@ -1,0 +1,16 @@
+title: windowsInformationProtectionIPRangeCollection
+required:
+  - '@odata.type'
+type: object
+properties:
+  displayName:
+    type: string
+    description: Display name
+  ranges:
+    type: array
+    items:
+      $ref: .\microsoft.graph.ipRange.yaml
+    description: Collection of ip ranges
+  '@odata.type':
+    type: string
+description: Windows Information Protection IP Range Collection

@@ -1,0 +1,46 @@
+allOf:
+  - $ref: .\microsoft.graph.mobileLobApp.yaml
+  - title: windowsAppX
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      applicableArchitectures:
+        $ref: .\microsoft.graph.windowsArchitecture.yaml
+      identityName:
+        type: string
+        description: >-
+          The identity name of the uploaded app package. For example:
+          'Contoso.DemoApp'.
+        nullable: true
+      identityPublisherHash:
+        type: string
+        description: >-
+          The identity publisher hash of the uploaded app package. This is the
+          hash of the publisher from the manifest. For example: 'AB82CD0XYZ'.
+      identityResourceIdentifier:
+        type: string
+        description: >-
+          The identity resource identifier of the uploaded app package. For
+          example: 'TestResourceId'.
+        nullable: true
+      identityVersion:
+        type: string
+        description: >-
+          The identity version of the uploaded app package. For example:
+          '1.0.0.0'.
+        nullable: true
+      isBundle:
+        type: boolean
+        description: >-
+          When TRUE, indicates that the app is a bundle. When FALSE, indicates
+          that the app is not a bundle. By default, property is set to FALSE.
+      minimumSupportedOperatingSystem:
+        $ref: .\microsoft.graph.windowsMinimumOperatingSystem.yaml
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.windowsAppX'
+    description: >-
+      Contains properties and inherited properties for Windows AppX Line Of
+      Business apps.
+x-ms-discriminator-value: '#microsoft.graph.windowsAppX'

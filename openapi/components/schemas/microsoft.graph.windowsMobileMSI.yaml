@@ -1,0 +1,33 @@
+allOf:
+  - $ref: .\microsoft.graph.mobileLobApp.yaml
+  - title: windowsMobileMSI
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      commandLine:
+        type: string
+        description: The command line.
+        nullable: true
+      ignoreVersionDetection:
+        type: boolean
+        description: >-
+          A boolean to control whether the app's version will be used to detect
+          the app after it is installed on a device. Set this to true for
+          Windows Mobile MSI Line of Business (LoB) apps that use a self update
+          feature.
+      productCode:
+        type: string
+        description: The product code.
+        nullable: true
+      productVersion:
+        type: string
+        description: The product version of Windows Mobile MSI Line of Business (LoB) app.
+        nullable: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.windowsMobileMSI'
+    description: >-
+      Contains properties and inherited properties for Windows Mobile MSI Line
+      Of Business apps.
+x-ms-discriminator-value: '#microsoft.graph.windowsMobileMSI'

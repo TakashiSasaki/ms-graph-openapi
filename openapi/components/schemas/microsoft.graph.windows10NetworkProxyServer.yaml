@@ -1,0 +1,25 @@
+title: windows10NetworkProxyServer
+required:
+  - '@odata.type'
+type: object
+properties:
+  address:
+    type: string
+    description: Address to the proxy server. Specify an address in the format [':']
+  exceptions:
+    type: array
+    items:
+      type: string
+      nullable: true
+    description: >-
+      Addresses that should not use the proxy server. The system will not use
+      the proxy server for addresses beginning with what is specified in this
+      node.
+  useForLocalAddresses:
+    type: boolean
+    description: >-
+      Specifies whether the proxy server should be used for local (intranet)
+      addresses.
+  '@odata.type':
+    type: string
+description: Network Proxy Server Policy.

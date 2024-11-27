@@ -1,0 +1,66 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: workbookChartDataLabels
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      position:
+        type: string
+        description: >-
+          DataLabelPosition value that represents the position of the data
+          label. The possible values are: None, Center, InsideEnd, InsideBase,
+          OutsideEnd, Left, Right, Top, Bottom, BestFit, Callout.
+        nullable: true
+      separator:
+        type: string
+        description: >-
+          String that represents the separator used for the data labels on a
+          chart.
+        nullable: true
+      showBubbleSize:
+        type: boolean
+        description: >-
+          Boolean value that represents whether the data label bubble size is
+          visible.
+        nullable: true
+      showCategoryName:
+        type: boolean
+        description: >-
+          Boolean value that represents whether the data label category name is
+          visible.
+        nullable: true
+      showLegendKey:
+        type: boolean
+        description: >-
+          Boolean value that represents whether the data label legend key is
+          visible.
+        nullable: true
+      showPercentage:
+        type: boolean
+        description: >-
+          Boolean value that represents whether the data label percentage is
+          visible.
+        nullable: true
+      showSeriesName:
+        type: boolean
+        description: >-
+          Boolean value that represents whether the data label series name is
+          visible.
+        nullable: true
+      showValue:
+        type: boolean
+        description: Boolean value that represents whether the data label value is visible.
+        nullable: true
+      format:
+        anyOf:
+          - $ref: .\microsoft.graph.workbookChartDataLabelFormat.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Represents the format of chart data labels, which includes fill and
+          font formatting. Read-only.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.workbookChartDataLabels'

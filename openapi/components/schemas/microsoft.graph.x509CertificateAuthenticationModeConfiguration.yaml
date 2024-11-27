@@ -1,0 +1,30 @@
+title: x509CertificateAuthenticationModeConfiguration
+required:
+  - '@odata.type'
+type: object
+properties:
+  rules:
+    type: array
+    items:
+      $ref: .\microsoft.graph.x509CertificateRule.yaml
+    description: >-
+      Rules are configured in addition to the authentication mode to bind a
+      specific x509CertificateRuleType to an x509CertificateAuthenticationMode.
+      For example, bind the policyOID with identifier 1.32.132.343 to
+      x509CertificateMultiFactor authentication mode.
+  x509CertificateAuthenticationDefaultMode:
+    anyOf:
+      - $ref: .\microsoft.graph.x509CertificateAuthenticationMode.yaml
+      - type: object
+        nullable: true
+    description: >-
+      The type of strong authentication mode. The possible values are:
+      x509CertificateSingleFactor, x509CertificateMultiFactor,
+      unknownFutureValue.
+  x509CertificateDefaultRequiredAffinityLevel:
+    anyOf:
+      - $ref: .\microsoft.graph.x509CertificateAffinityLevel.yaml
+      - type: object
+        nullable: true
+  '@odata.type':
+    type: string

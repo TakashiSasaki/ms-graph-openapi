@@ -1,0 +1,21 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: workbookPivotTable
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      name:
+        type: string
+        description: The name of the pivot table.
+        nullable: true
+      worksheet:
+        anyOf:
+          - $ref: .\microsoft.graph.workbookWorksheet.yaml
+          - type: object
+            nullable: true
+        description: The worksheet that contains the current pivot table. Read-only.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.workbookPivotTable'

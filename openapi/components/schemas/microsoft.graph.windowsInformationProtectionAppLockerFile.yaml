@@ -1,0 +1,28 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: windowsInformationProtectionAppLockerFile
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      displayName:
+        type: string
+        description: The friendly name
+        nullable: true
+      file:
+        type: string
+        description: File as a byte array
+        format: base64url
+        nullable: true
+      fileHash:
+        type: string
+        description: SHA256 hash of the file
+        nullable: true
+      version:
+        type: string
+        description: Version of the entity.
+        nullable: true
+      '@odata.type':
+        type: string
+    description: Windows Information Protection AppLocker File
+x-ms-discriminator-value: '#microsoft.graph.windowsInformationProtectionAppLockerFile'

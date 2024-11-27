@@ -1,0 +1,20 @@
+allOf:
+  - $ref: .\microsoft.graph.deviceConfiguration.yaml
+  - title: windowsDefenderAdvancedThreatProtectionConfiguration
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      allowSampleSharing:
+        type: boolean
+        description: Windows Defender AdvancedThreatProtection 'Allow Sample Sharing' Rule
+      enableExpeditedTelemetryReporting:
+        type: boolean
+        description: >-
+          Expedite Windows Defender Advanced Threat Protection telemetry
+          reporting frequency.
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.windowsDefenderAdvancedThreatProtectionConfiguration'
+    description: Windows Defender AdvancedThreatProtection Configuration.
+x-ms-discriminator-value: '#microsoft.graph.windowsDefenderAdvancedThreatProtectionConfiguration'

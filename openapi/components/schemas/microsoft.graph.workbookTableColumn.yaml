@@ -1,0 +1,34 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: workbookTableColumn
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      index:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: >-
+          The index of the column within the columns collection of the table.
+          Zero-indexed. Read-only.
+        format: int32
+      name:
+        type: string
+        description: The name of the table column.
+        nullable: true
+      values:
+        description: >-
+          TRepresents the raw values of the specified range. The data returned
+          could be of type string, number, or a Boolean. Cell that contain an
+          error will return the error string.
+      filter:
+        anyOf:
+          - $ref: .\microsoft.graph.workbookFilter.yaml
+          - type: object
+            nullable: true
+        description: The filter applied to the column. Read-only.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.workbookTableColumn'

@@ -1,0 +1,114 @@
+title: windowsDefenderProductStatus
+enum:
+  - noStatus
+  - serviceNotRunning
+  - serviceStartedWithoutMalwareProtection
+  - pendingFullScanDueToThreatAction
+  - pendingRebootDueToThreatAction
+  - pendingManualStepsDueToThreatAction
+  - avSignaturesOutOfDate
+  - asSignaturesOutOfDate
+  - noQuickScanHappenedForSpecifiedPeriod
+  - noFullScanHappenedForSpecifiedPeriod
+  - systemInitiatedScanInProgress
+  - systemInitiatedCleanInProgress
+  - samplesPendingSubmission
+  - productRunningInEvaluationMode
+  - productRunningInNonGenuineMode
+  - productExpired
+  - offlineScanRequired
+  - serviceShutdownAsPartOfSystemShutdown
+  - threatRemediationFailedCritically
+  - threatRemediationFailedNonCritically
+  - noStatusFlagsSet
+  - platformOutOfDate
+  - platformUpdateInProgress
+  - platformAboutToBeOutdated
+  - signatureOrPlatformEndOfLifeIsPastOrIsImpending
+  - windowsSModeSignaturesInUseOnNonWin10SInstall
+type: string
+description: Product Status of Windows Defender
+x-ms-enum-flags:
+  isFlags: true
+x-ms-enum:
+  name: windowsDefenderProductStatus
+  modelAsString: false
+  values:
+    - value: noStatus
+      description: No status
+      name: noStatus
+    - value: serviceNotRunning
+      description: Service not running
+      name: serviceNotRunning
+    - value: serviceStartedWithoutMalwareProtection
+      description: Service started without any malware protection engine
+      name: serviceStartedWithoutMalwareProtection
+    - value: pendingFullScanDueToThreatAction
+      description: Pending full scan due to threat action
+      name: pendingFullScanDueToThreatAction
+    - value: pendingRebootDueToThreatAction
+      description: Pending reboot due to threat action
+      name: pendingRebootDueToThreatAction
+    - value: pendingManualStepsDueToThreatAction
+      description: 'Pending manual steps due to threat action '
+      name: pendingManualStepsDueToThreatAction
+    - value: avSignaturesOutOfDate
+      description: AV signatures out of date
+      name: avSignaturesOutOfDate
+    - value: asSignaturesOutOfDate
+      description: AS signatures out of date
+      name: asSignaturesOutOfDate
+    - value: noQuickScanHappenedForSpecifiedPeriod
+      description: No quick scan has happened for a specified period
+      name: noQuickScanHappenedForSpecifiedPeriod
+    - value: noFullScanHappenedForSpecifiedPeriod
+      description: No full scan has happened for a specified period
+      name: noFullScanHappenedForSpecifiedPeriod
+    - value: systemInitiatedScanInProgress
+      description: System initiated scan in progress
+      name: systemInitiatedScanInProgress
+    - value: systemInitiatedCleanInProgress
+      description: System initiated clean in progress
+      name: systemInitiatedCleanInProgress
+    - value: samplesPendingSubmission
+      description: There are samples pending submission
+      name: samplesPendingSubmission
+    - value: productRunningInEvaluationMode
+      description: Product running in evaluation mode
+      name: productRunningInEvaluationMode
+    - value: productRunningInNonGenuineMode
+      description: Product running in non-genuine Windows mode
+      name: productRunningInNonGenuineMode
+    - value: productExpired
+      description: Product expired
+      name: productExpired
+    - value: offlineScanRequired
+      description: Off-line scan required
+      name: offlineScanRequired
+    - value: serviceShutdownAsPartOfSystemShutdown
+      description: Service is shutting down as part of system shutdown
+      name: serviceShutdownAsPartOfSystemShutdown
+    - value: threatRemediationFailedCritically
+      description: Threat remediation failed critically
+      name: threatRemediationFailedCritically
+    - value: threatRemediationFailedNonCritically
+      description: Threat remediation failed non-critically
+      name: threatRemediationFailedNonCritically
+    - value: noStatusFlagsSet
+      description: No status flags set (well initialized state)
+      name: noStatusFlagsSet
+    - value: platformOutOfDate
+      description: Platform is out of date
+      name: platformOutOfDate
+    - value: platformUpdateInProgress
+      description: Platform update is in progress
+      name: platformUpdateInProgress
+    - value: platformAboutToBeOutdated
+      description: Platform is about to be outdated
+      name: platformAboutToBeOutdated
+    - value: signatureOrPlatformEndOfLifeIsPastOrIsImpending
+      description: Signature or platform end of life is past or is impending
+      name: signatureOrPlatformEndOfLifeIsPastOrIsImpending
+    - value: windowsSModeSignaturesInUseOnNonWin10SInstall
+      description: Windows SMode signatures still in use on non-Win10S install
+      name: windowsSModeSignaturesInUseOnNonWin10SInstall

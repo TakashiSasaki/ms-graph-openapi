@@ -1,0 +1,22 @@
+title: workbookIcon
+required:
+  - '@odata.type'
+type: object
+properties:
+  index:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    description: The index of the icon in the given set.
+    format: int32
+  set:
+    type: string
+    description: >-
+      The set that the icon is part of. The possible values are: Invalid,
+      ThreeArrows, ThreeArrowsGray, ThreeFlags, ThreeTrafficLights1,
+      ThreeTrafficLights2, ThreeSigns, ThreeSymbols, ThreeSymbols2, FourArrows,
+      FourArrowsGray, FourRedToBlack, FourRating, FourTrafficLights, FiveArrows,
+      FiveArrowsGray, FiveRating, FiveQuarters, ThreeStars, ThreeTriangles,
+      FiveBoxes.
+  '@odata.type':
+    type: string
