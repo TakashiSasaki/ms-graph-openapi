@@ -1,0 +1,11 @@
+value:
+  applicationFilter:
+    '@odata.type': microsoft.graph.conditionalAccessFilter
+  excludeApplications:
+    - String
+  includeApplications:
+    - String
+  includeAuthenticationContextClassReferences:
+    - String
+  includeUserActions:
+    - String

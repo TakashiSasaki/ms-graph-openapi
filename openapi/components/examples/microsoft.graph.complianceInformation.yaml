@@ -1,0 +1,4 @@
+value:
+  certificationControls:
+    - '@odata.type': microsoft.graph.certificationControl
+  certificationName: String

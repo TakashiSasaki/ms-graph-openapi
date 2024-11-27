@@ -1,0 +1,3 @@
+value:
+  certificateList:
+    - '@odata.type': microsoft.graph.pkcs12CertificateInformation

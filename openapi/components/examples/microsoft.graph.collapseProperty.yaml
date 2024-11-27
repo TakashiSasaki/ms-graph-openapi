@@ -1,0 +1,4 @@
+value:
+  fields:
+    - String
+  limit: '0'

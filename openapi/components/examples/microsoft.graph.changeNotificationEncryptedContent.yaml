@@ -1,0 +1,6 @@
+value:
+  data: String
+  dataKey: String
+  dataSignature: String
+  encryptionCertificateId: String
+  encryptionCertificateThumbprint: String

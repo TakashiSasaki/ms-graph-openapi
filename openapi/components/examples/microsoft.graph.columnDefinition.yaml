@@ -1,0 +1,52 @@
+value:
+  boolean:
+    '@odata.type': microsoft.graph.booleanColumn
+  calculated:
+    '@odata.type': microsoft.graph.calculatedColumn
+  choice:
+    '@odata.type': microsoft.graph.choiceColumn
+  columnGroup: String
+  contentApprovalStatus:
+    '@odata.type': microsoft.graph.contentApprovalStatusColumn
+  currency:
+    '@odata.type': microsoft.graph.currencyColumn
+  dateTime:
+    '@odata.type': microsoft.graph.dateTimeColumn
+  defaultValue:
+    '@odata.type': microsoft.graph.defaultColumnValue
+  description: String
+  displayName: String
+  enforceUniqueValues: 'true'
+  geolocation:
+    '@odata.type': microsoft.graph.geolocationColumn
+  hidden: 'true'
+  hyperlinkOrPicture:
+    '@odata.type': microsoft.graph.hyperlinkOrPictureColumn
+  indexed: 'true'
+  isDeletable: 'true'
+  isReorderable: 'true'
+  isSealed: 'true'
+  lookup:
+    '@odata.type': microsoft.graph.lookupColumn
+  name: String
+  number:
+    '@odata.type': microsoft.graph.numberColumn
+  personOrGroup:
+    '@odata.type': microsoft.graph.personOrGroupColumn
+  propagateChanges: 'true'
+  readOnly: 'true'
+  required: 'true'
+  sourceColumn:
+    '@odata.type': microsoft.graph.columnDefinition
+  sourceContentType:
+    '@odata.type': microsoft.graph.contentTypeInfo
+  term:
+    '@odata.type': microsoft.graph.termColumn
+  text:
+    '@odata.type': microsoft.graph.textColumn
+  thumbnail:
+    '@odata.type': microsoft.graph.thumbnailColumn
+  type:
+    '@odata.type': microsoft.graph.columnTypes
+  validation:
+    '@odata.type': microsoft.graph.columnValidation

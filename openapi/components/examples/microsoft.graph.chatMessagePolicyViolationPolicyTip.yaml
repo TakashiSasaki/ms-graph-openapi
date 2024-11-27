@@ -1,0 +1,5 @@
+value:
+  complianceUrl: String
+  generalText: String
+  matchedConditionDescriptions:
+    - String

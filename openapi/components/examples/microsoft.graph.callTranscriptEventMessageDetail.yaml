@@ -1,0 +1,5 @@
+value:
+  callId: String
+  callTranscriptICalUid: String
+  meetingOrganizer:
+    '@odata.type': microsoft.graph.identitySet

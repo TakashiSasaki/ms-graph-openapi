@@ -1,0 +1,11 @@
+value:
+  body:
+    '@odata.type': microsoft.graph.itemBody
+  createdDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  eventDetail:
+    '@odata.type': microsoft.graph.eventMessageDetail
+  from:
+    '@odata.type': microsoft.graph.chatMessageFromIdentitySet
+  isDeleted: 'true'
+  messageType:
+    '@odata.type': microsoft.graph.chatMessageType

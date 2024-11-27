@@ -1,0 +1,10 @@
+value:
+  description: String
+  displayName: String
+  group:
+    '@odata.type': microsoft.graph.group
+  groupId: String
+  owners:
+    - '@odata.type': microsoft.graph.user
+  privacy:
+    '@odata.type': microsoft.graph.communityPrivacy

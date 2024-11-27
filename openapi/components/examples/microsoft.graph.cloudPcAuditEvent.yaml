@@ -1,0 +1,17 @@
+value:
+  activity: String
+  activityDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  activityOperationType:
+    '@odata.type': microsoft.graph.cloudPcAuditActivityOperationType
+  activityResult:
+    '@odata.type': microsoft.graph.cloudPcAuditActivityResult
+  activityType: String
+  actor:
+    '@odata.type': microsoft.graph.cloudPcAuditActor
+  category:
+    '@odata.type': microsoft.graph.cloudPcAuditCategory
+  componentName: String
+  correlationId: String
+  displayName: String
+  resources:
+    - '@odata.type': microsoft.graph.cloudPcAuditResource

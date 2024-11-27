@@ -1,0 +1,3 @@
+value:
+  applicationType: String
+  hidden: 'true'

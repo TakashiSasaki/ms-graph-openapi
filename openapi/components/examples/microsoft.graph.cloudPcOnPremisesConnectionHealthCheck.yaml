@@ -1,0 +1,11 @@
+value:
+  additionalDetail: String
+  correlationId: String
+  displayName: String
+  endDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  errorType:
+    '@odata.type': microsoft.graph.cloudPcOnPremisesConnectionHealthCheckErrorType
+  recommendedAction: String
+  startDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  status:
+    '@odata.type': microsoft.graph.cloudPcOnPremisesConnectionStatus

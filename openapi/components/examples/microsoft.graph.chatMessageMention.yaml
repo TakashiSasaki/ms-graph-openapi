@@ -1,0 +1,5 @@
+value:
+  id: '0'
+  mentioned:
+    '@odata.type': microsoft.graph.chatMessageMentionedIdentitySet
+  mentionText: String

@@ -1,0 +1,4 @@
+value:
+  destinationServiceIp: String
+  destinationServiceName: String
+  riskScore: String

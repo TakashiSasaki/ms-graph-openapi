@@ -1,0 +1,5 @@
+value:
+  horizontalSections:
+    - '@odata.type': microsoft.graph.horizontalSection
+  verticalSection:
+    '@odata.type': microsoft.graph.verticalSection

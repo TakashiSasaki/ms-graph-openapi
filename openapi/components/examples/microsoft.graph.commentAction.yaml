@@ -1,0 +1,6 @@
+value:
+  isReply: 'true'
+  parentAuthor:
+    '@odata.type': microsoft.graph.identitySet
+  participants:
+    - '@odata.type': microsoft.graph.identitySet

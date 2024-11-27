@@ -1,0 +1,7 @@
+value:
+  excludeServicePrincipals:
+    - String
+  includeServicePrincipals:
+    - String
+  servicePrincipalFilter:
+    '@odata.type': microsoft.graph.conditionalAccessFilter

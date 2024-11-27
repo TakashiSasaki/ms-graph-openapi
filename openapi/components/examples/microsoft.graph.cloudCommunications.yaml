@@ -1,0 +1,9 @@
+value:
+  callRecords:
+    - '@odata.type': microsoft.graph.callRecords.callRecord
+  calls:
+    - '@odata.type': microsoft.graph.call
+  onlineMeetings:
+    - '@odata.type': microsoft.graph.onlineMeeting
+  presences:
+    - '@odata.type': microsoft.graph.presence

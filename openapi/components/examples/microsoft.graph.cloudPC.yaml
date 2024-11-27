@@ -1,0 +1,16 @@
+value:
+  aadDeviceId: String
+  displayName: String
+  gracePeriodEndDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  imageDisplayName: String
+  lastModifiedDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  managedDeviceId: String
+  managedDeviceName: String
+  onPremisesConnectionName: String
+  provisioningPolicyId: String
+  provisioningPolicyName: String
+  provisioningType:
+    '@odata.type': microsoft.graph.cloudPcProvisioningType
+  servicePlanId: String
+  servicePlanName: String
+  userPrincipalName: String

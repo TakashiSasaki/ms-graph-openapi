@@ -1,0 +1,23 @@
+value:
+  alternateResourceUrl: String
+  assignments:
+    - '@odata.type': microsoft.graph.cloudPcProvisioningPolicyAssignment
+  cloudPcGroupDisplayName: String
+  cloudPcNamingTemplate: String
+  description: String
+  displayName: String
+  domainJoinConfigurations:
+    - '@odata.type': microsoft.graph.cloudPcDomainJoinConfiguration
+  enableSingleSignOn: 'true'
+  gracePeriodInHours: '0'
+  imageDisplayName: String
+  imageId: String
+  imageType:
+    '@odata.type': microsoft.graph.cloudPcProvisioningPolicyImageType
+  localAdminEnabled: 'true'
+  microsoftManagedDesktop:
+    '@odata.type': microsoft.graph.microsoftManagedDesktop
+  provisioningType:
+    '@odata.type': microsoft.graph.cloudPcProvisioningType
+  windowsSetting:
+    '@odata.type': microsoft.graph.cloudPcWindowsSetting

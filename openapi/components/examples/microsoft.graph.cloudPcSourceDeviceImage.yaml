@@ -1,0 +1,5 @@
+value:
+  displayName: String
+  resourceId: String
+  subscriptionDisplayName: String
+  subscriptionId: String

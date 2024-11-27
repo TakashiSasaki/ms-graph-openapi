@@ -1,0 +1,4 @@
+value:
+  changeType:
+    '@odata.type': microsoft.graph.changeType
+  resourceUrl: String

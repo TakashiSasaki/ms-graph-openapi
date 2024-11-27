@@ -1,0 +1,3 @@
+value:
+  items:
+    - '@odata.type': microsoft.graph.cloudClipboardItem

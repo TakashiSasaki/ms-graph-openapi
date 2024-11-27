@@ -1,0 +1,38 @@
+value:
+  attachments:
+    - '@odata.type': microsoft.graph.chatMessageAttachment
+  body:
+    '@odata.type': microsoft.graph.itemBody
+  channelIdentity:
+    '@odata.type': microsoft.graph.channelIdentity
+  chatId: String
+  createdDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  deletedDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  etag: String
+  eventDetail:
+    '@odata.type': microsoft.graph.eventMessageDetail
+  from:
+    '@odata.type': microsoft.graph.chatMessageFromIdentitySet
+  hostedContents:
+    - '@odata.type': microsoft.graph.chatMessageHostedContent
+  importance:
+    '@odata.type': microsoft.graph.chatMessageImportance
+  lastEditedDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  lastModifiedDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  locale: String
+  mentions:
+    - '@odata.type': microsoft.graph.chatMessageMention
+  messageHistory:
+    - '@odata.type': microsoft.graph.chatMessageHistoryItem
+  messageType:
+    '@odata.type': microsoft.graph.chatMessageType
+  policyViolation:
+    '@odata.type': microsoft.graph.chatMessagePolicyViolation
+  reactions:
+    - '@odata.type': microsoft.graph.chatMessageReaction
+  replies:
+    - '@odata.type': microsoft.graph.chatMessage
+  replyToId: String
+  subject: String
+  summary: String
+  webUrl: String
