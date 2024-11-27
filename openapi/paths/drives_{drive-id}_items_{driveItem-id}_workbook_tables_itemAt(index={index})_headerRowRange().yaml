@@ -1,0 +1,65 @@
+description: Provides operations to call the headerRowRange method.
+get:
+  tags:
+    - drives.driveItem
+  summary: Invoke function headerRowRange
+  description: Gets the range object associated with header row of the table.
+  externalDocs:
+    description: Find more info here
+    url: >-
+      https://learn.microsoft.com/graph/api/table-headerrowrange?view=graph-rest-1.0
+  operationId: drives.drive.items.driveItem.workbook.tables.itemAt.headerRowRange
+  responses:
+    2XX:
+      description: Success
+      content:
+        application/json:
+          schema:
+            anyOf:
+              - $ref: ..\components\schemas\microsoft.graph.workbookRange.yaml
+              - type: object
+                nullable: true
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: function
+parameters:
+  - name: drive-id
+    in: path
+    description: The unique identifier of drive
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: drive
+  - name: driveItem-id
+    in: path
+    description: The unique identifier of driveItem
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: driveItem
+  - name: index
+    in: path
+    description: 'Usage: index={index}'
+    required: true
+    schema:
+      maximum: 2147483647
+      minimum: -2147483648
+      type: number
+      format: int32
+x-ms-docs-grouped-path:
+  - >-
+    /drives/{drive-id}/items/{driveItem-id}/workbook/tables/{workbookTable-id}/columns/{workbookTableColumn-id}/headerRowRange()
+  - >-
+    /drives/{drive-id}/items/{driveItem-id}/workbook/tables/{workbookTable-id}/columns/itemAt(index={index})/headerRowRange()
+  - >-
+    /drives/{drive-id}/items/{driveItem-id}/workbook/tables/{workbookTable-id}/headerRowRange()
+  - >-
+    /drives/{drive-id}/items/{driveItem-id}/workbook/worksheets/{workbookWorksheet-id}/tables/{workbookTable-id}/columns/{workbookTableColumn-id}/headerRowRange()
+  - >-
+    /drives/{drive-id}/items/{driveItem-id}/workbook/worksheets/{workbookWorksheet-id}/tables/{workbookTable-id}/columns/itemAt(index={index})/headerRowRange()
+  - >-
+    /drives/{drive-id}/items/{driveItem-id}/workbook/worksheets/{workbookWorksheet-id}/tables/{workbookTable-id}/headerRowRange()
+  - >-
+    /drives/{drive-id}/items/{driveItem-id}/workbook/worksheets/{workbookWorksheet-id}/tables/itemAt(index={index})/headerRowRange()

@@ -1,0 +1,150 @@
+description: Provides operations to call the rowsBelow method.
+get:
+  tags:
+    - drives.driveItem
+  summary: Invoke function rowsBelow
+  operationId: >-
+    drives.drive.items.driveItem.workbook.tables.workbookTable.columns.workbookTableColumn.totalRowRange.rowsBelow-2035
+  responses:
+    2XX:
+      description: Success
+      content:
+        application/json:
+          schema:
+            anyOf:
+              - $ref: ..\components\schemas\microsoft.graph.workbookRange.yaml
+              - type: object
+                nullable: true
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: function
+parameters:
+  - name: drive-id
+    in: path
+    description: The unique identifier of drive
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: drive
+  - name: driveItem-id
+    in: path
+    description: The unique identifier of driveItem
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: driveItem
+  - name: workbookTable-id
+    in: path
+    description: The unique identifier of workbookTable
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: workbookTable
+  - name: workbookTableColumn-id
+    in: path
+    description: The unique identifier of workbookTableColumn
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: workbookTableColumn
+x-ms-docs-grouped-path:
+  - >-
+    /drives/{drive-id}/items/{driveItem-id}/workbook/names/{workbookNamedItem-id}/range()/rowsBelow()
+  - >-
+    /drives/{drive-id}/items/{driveItem-id}/workbook/names/{workbookNamedItem-id}/range()/rowsBelow(count={count})
+  - >-
+    /drives/{drive-id}/items/{driveItem-id}/workbook/tables/{workbookTable-id}/columns/{workbookTableColumn-id}/dataBodyRange()/rowsBelow()
+  - >-
+    /drives/{drive-id}/items/{driveItem-id}/workbook/tables/{workbookTable-id}/columns/{workbookTableColumn-id}/dataBodyRange()/rowsBelow(count={count})
+  - >-
+    /drives/{drive-id}/items/{driveItem-id}/workbook/tables/{workbookTable-id}/columns/{workbookTableColumn-id}/headerRowRange()/rowsBelow()
+  - >-
+    /drives/{drive-id}/items/{driveItem-id}/workbook/tables/{workbookTable-id}/columns/{workbookTableColumn-id}/headerRowRange()/rowsBelow(count={count})
+  - >-
+    /drives/{drive-id}/items/{driveItem-id}/workbook/tables/{workbookTable-id}/columns/{workbookTableColumn-id}/range()/rowsBelow()
+  - >-
+    /drives/{drive-id}/items/{driveItem-id}/workbook/tables/{workbookTable-id}/columns/{workbookTableColumn-id}/range()/rowsBelow(count={count})
+  - >-
+    /drives/{drive-id}/items/{driveItem-id}/workbook/tables/{workbookTable-id}/columns/{workbookTableColumn-id}/totalRowRange()/rowsBelow(count={count})
+  - >-
+    /drives/{drive-id}/items/{driveItem-id}/workbook/tables/{workbookTable-id}/dataBodyRange()/rowsBelow()
+  - >-
+    /drives/{drive-id}/items/{driveItem-id}/workbook/tables/{workbookTable-id}/dataBodyRange()/rowsBelow(count={count})
+  - >-
+    /drives/{drive-id}/items/{driveItem-id}/workbook/tables/{workbookTable-id}/headerRowRange()/rowsBelow()
+  - >-
+    /drives/{drive-id}/items/{driveItem-id}/workbook/tables/{workbookTable-id}/headerRowRange()/rowsBelow(count={count})
+  - >-
+    /drives/{drive-id}/items/{driveItem-id}/workbook/tables/{workbookTable-id}/range()/rowsBelow()
+  - >-
+    /drives/{drive-id}/items/{driveItem-id}/workbook/tables/{workbookTable-id}/range()/rowsBelow(count={count})
+  - >-
+    /drives/{drive-id}/items/{driveItem-id}/workbook/tables/{workbookTable-id}/totalRowRange()/rowsBelow()
+  - >-
+    /drives/{drive-id}/items/{driveItem-id}/workbook/tables/{workbookTable-id}/totalRowRange()/rowsBelow(count={count})
+  - >-
+    /drives/{drive-id}/items/{driveItem-id}/workbook/tables/{workbookTable-id}/rows/{workbookTableRow-id}/range()/rowsBelow()
+  - >-
+    /drives/{drive-id}/items/{driveItem-id}/workbook/tables/{workbookTable-id}/rows/{workbookTableRow-id}/range()/rowsBelow(count={count})
+  - >-
+    /drives/{drive-id}/items/{driveItem-id}/workbook/worksheets/{workbookWorksheet-id}/cell(row={row},column={column})/rowsBelow()
+  - >-
+    /drives/{drive-id}/items/{driveItem-id}/workbook/worksheets/{workbookWorksheet-id}/cell(row={row},column={column})/rowsBelow(count={count})
+  - >-
+    /drives/{drive-id}/items/{driveItem-id}/workbook/worksheets/{workbookWorksheet-id}/range()/rowsBelow()
+  - >-
+    /drives/{drive-id}/items/{driveItem-id}/workbook/worksheets/{workbookWorksheet-id}/range()/rowsBelow(count={count})
+  - >-
+    /drives/{drive-id}/items/{driveItem-id}/workbook/worksheets/{workbookWorksheet-id}/range(address='{address}')/rowsBelow()
+  - >-
+    /drives/{drive-id}/items/{driveItem-id}/workbook/worksheets/{workbookWorksheet-id}/range(address='{address}')/rowsBelow(count={count})
+  - >-
+    /drives/{drive-id}/items/{driveItem-id}/workbook/worksheets/{workbookWorksheet-id}/usedRange()/rowsBelow()
+  - >-
+    /drives/{drive-id}/items/{driveItem-id}/workbook/worksheets/{workbookWorksheet-id}/usedRange()/rowsBelow(count={count})
+  - >-
+    /drives/{drive-id}/items/{driveItem-id}/workbook/worksheets/{workbookWorksheet-id}/usedRange(valuesOnly={valuesOnly})/rowsBelow()
+  - >-
+    /drives/{drive-id}/items/{driveItem-id}/workbook/worksheets/{workbookWorksheet-id}/usedRange(valuesOnly={valuesOnly})/rowsBelow(count={count})
+  - >-
+    /drives/{drive-id}/items/{driveItem-id}/workbook/worksheets/{workbookWorksheet-id}/names/{workbookNamedItem-id}/range()/rowsBelow()
+  - >-
+    /drives/{drive-id}/items/{driveItem-id}/workbook/worksheets/{workbookWorksheet-id}/names/{workbookNamedItem-id}/range()/rowsBelow(count={count})
+  - >-
+    /drives/{drive-id}/items/{driveItem-id}/workbook/worksheets/{workbookWorksheet-id}/tables/{workbookTable-id}/columns/{workbookTableColumn-id}/dataBodyRange()/rowsBelow()
+  - >-
+    /drives/{drive-id}/items/{driveItem-id}/workbook/worksheets/{workbookWorksheet-id}/tables/{workbookTable-id}/columns/{workbookTableColumn-id}/dataBodyRange()/rowsBelow(count={count})
+  - >-
+    /drives/{drive-id}/items/{driveItem-id}/workbook/worksheets/{workbookWorksheet-id}/tables/{workbookTable-id}/columns/{workbookTableColumn-id}/headerRowRange()/rowsBelow()
+  - >-
+    /drives/{drive-id}/items/{driveItem-id}/workbook/worksheets/{workbookWorksheet-id}/tables/{workbookTable-id}/columns/{workbookTableColumn-id}/headerRowRange()/rowsBelow(count={count})
+  - >-
+    /drives/{drive-id}/items/{driveItem-id}/workbook/worksheets/{workbookWorksheet-id}/tables/{workbookTable-id}/columns/{workbookTableColumn-id}/range()/rowsBelow()
+  - >-
+    /drives/{drive-id}/items/{driveItem-id}/workbook/worksheets/{workbookWorksheet-id}/tables/{workbookTable-id}/columns/{workbookTableColumn-id}/range()/rowsBelow(count={count})
+  - >-
+    /drives/{drive-id}/items/{driveItem-id}/workbook/worksheets/{workbookWorksheet-id}/tables/{workbookTable-id}/columns/{workbookTableColumn-id}/totalRowRange()/rowsBelow()
+  - >-
+    /drives/{drive-id}/items/{driveItem-id}/workbook/worksheets/{workbookWorksheet-id}/tables/{workbookTable-id}/columns/{workbookTableColumn-id}/totalRowRange()/rowsBelow(count={count})
+  - >-
+    /drives/{drive-id}/items/{driveItem-id}/workbook/worksheets/{workbookWorksheet-id}/tables/{workbookTable-id}/dataBodyRange()/rowsBelow()
+  - >-
+    /drives/{drive-id}/items/{driveItem-id}/workbook/worksheets/{workbookWorksheet-id}/tables/{workbookTable-id}/dataBodyRange()/rowsBelow(count={count})
+  - >-
+    /drives/{drive-id}/items/{driveItem-id}/workbook/worksheets/{workbookWorksheet-id}/tables/{workbookTable-id}/headerRowRange()/rowsBelow()
+  - >-
+    /drives/{drive-id}/items/{driveItem-id}/workbook/worksheets/{workbookWorksheet-id}/tables/{workbookTable-id}/headerRowRange()/rowsBelow(count={count})
+  - >-
+    /drives/{drive-id}/items/{driveItem-id}/workbook/worksheets/{workbookWorksheet-id}/tables/{workbookTable-id}/range()/rowsBelow()
+  - >-
+    /drives/{drive-id}/items/{driveItem-id}/workbook/worksheets/{workbookWorksheet-id}/tables/{workbookTable-id}/range()/rowsBelow(count={count})
+  - >-
+    /drives/{drive-id}/items/{driveItem-id}/workbook/worksheets/{workbookWorksheet-id}/tables/{workbookTable-id}/totalRowRange()/rowsBelow()
+  - >-
+    /drives/{drive-id}/items/{driveItem-id}/workbook/worksheets/{workbookWorksheet-id}/tables/{workbookTable-id}/totalRowRange()/rowsBelow(count={count})
+  - >-
+    /drives/{drive-id}/items/{driveItem-id}/workbook/worksheets/{workbookWorksheet-id}/tables/{workbookTable-id}/rows/{workbookTableRow-id}/range()/rowsBelow()
+  - >-
+    /drives/{drive-id}/items/{driveItem-id}/workbook/worksheets/{workbookWorksheet-id}/tables/{workbookTable-id}/rows/{workbookTableRow-id}/range()/rowsBelow(count={count})
