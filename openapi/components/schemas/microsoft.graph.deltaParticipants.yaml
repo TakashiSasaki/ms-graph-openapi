@@ -1,0 +1,25 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: deltaParticipants
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      sequenceNumber:
+        type: number
+        description: >-
+          The sequence number for the roster update that is used to identify the
+          notification order.
+        format: int64
+        nullable: true
+      participants:
+        type: array
+        items:
+          $ref: .\microsoft.graph.participant.yaml
+        description: >-
+          The collection of participants that were updated since the last roster
+          update.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.deltaParticipants'

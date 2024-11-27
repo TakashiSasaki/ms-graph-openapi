@@ -1,0 +1,11 @@
+title: conditionalAccessGrantControl
+enum:
+  - block
+  - mfa
+  - compliantDevice
+  - domainJoinedDevice
+  - approvedApplication
+  - compliantApplication
+  - passwordChange
+  - unknownFutureValue
+type: string

@@ -1,0 +1,20 @@
+title: dateTimeColumn
+required:
+  - '@odata.type'
+type: object
+properties:
+  displayAs:
+    type: string
+    description: >-
+      How the value should be presented in the UX. Must be one of default,
+      friendly, or standard. See below for more details. If unspecified, treated
+      as default.
+    nullable: true
+  format:
+    type: string
+    description: >-
+      Indicates whether the value should be presented as a date only or a date
+      and time. Must be one of dateOnly or dateTime
+    nullable: true
+  '@odata.type':
+    type: string

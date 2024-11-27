@@ -1,0 +1,6 @@
+title: delegatedAdminRelationshipOperationType
+enum:
+  - delegatedAdminAccessAssignmentUpdate
+  - unknownFutureValue
+  - delegatedAdminRelationshipUpdate
+type: string

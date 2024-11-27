@@ -1,0 +1,7 @@
+title: courseStatus
+enum:
+  - notStarted
+  - inProgress
+  - completed
+  - unknownFutureValue
+type: string

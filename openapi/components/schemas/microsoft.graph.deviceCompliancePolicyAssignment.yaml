@@ -1,0 +1,17 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: deviceCompliancePolicyAssignment
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      target:
+        anyOf:
+          - $ref: .\microsoft.graph.deviceAndAppManagementAssignmentTarget.yaml
+          - type: object
+            nullable: true
+        description: Target for the compliance policy assignment.
+      '@odata.type':
+        type: string
+    description: Device compliance policy assignment.
+x-ms-discriminator-value: '#microsoft.graph.deviceCompliancePolicyAssignment'

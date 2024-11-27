@@ -1,0 +1,24 @@
+title: conditionalAccessClientApplications
+required:
+  - '@odata.type'
+type: object
+properties:
+  excludeServicePrincipals:
+    type: array
+    items:
+      type: string
+    description: Service principal IDs excluded from the policy scope.
+  includeServicePrincipals:
+    type: array
+    items:
+      type: string
+    description: >-
+      Service principal IDs included in the policy scope, or
+      ServicePrincipalsInMyTenant.
+  servicePrincipalFilter:
+    anyOf:
+      - $ref: .\microsoft.graph.conditionalAccessFilter.yaml
+      - type: object
+        nullable: true
+  '@odata.type':
+    type: string

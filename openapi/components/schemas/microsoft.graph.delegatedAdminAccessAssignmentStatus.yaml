@@ -1,0 +1,9 @@
+title: delegatedAdminAccessAssignmentStatus
+enum:
+  - pending
+  - active
+  - deleting
+  - deleted
+  - error
+  - unknownFutureValue
+type: string

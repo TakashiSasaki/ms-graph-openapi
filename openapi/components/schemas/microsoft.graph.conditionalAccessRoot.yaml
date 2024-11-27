@@ -1,0 +1,48 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: conditionalAccessRoot
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      authenticationContextClassReferences:
+        type: array
+        items:
+          $ref: .\microsoft.graph.authenticationContextClassReference.yaml
+        description: >-
+          Read-only. Nullable. Returns a collection of the specified
+          authentication context class references.
+        x-ms-navigationProperty: true
+      authenticationStrength:
+        anyOf:
+          - $ref: .\microsoft.graph.authenticationStrengthRoot.yaml
+          - type: object
+            nullable: true
+        x-ms-navigationProperty: true
+      namedLocations:
+        type: array
+        items:
+          $ref: .\microsoft.graph.namedLocation.yaml
+        description: >-
+          Read-only. Nullable. Returns a collection of the specified named
+          locations.
+        x-ms-navigationProperty: true
+      policies:
+        type: array
+        items:
+          $ref: .\microsoft.graph.conditionalAccessPolicy.yaml
+        description: >-
+          Read-only. Nullable. Returns a collection of the specified Conditional
+          Access (CA) policies.
+        x-ms-navigationProperty: true
+      templates:
+        type: array
+        items:
+          $ref: .\microsoft.graph.conditionalAccessTemplate.yaml
+        description: >-
+          Read-only. Nullable. Returns a collection of the specified Conditional
+          Access templates.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.conditionalAccessRoot'

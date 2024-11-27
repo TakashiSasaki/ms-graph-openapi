@@ -1,0 +1,9 @@
+title: conditionalAccessInsiderRiskLevels
+enum:
+  - minor
+  - moderate
+  - elevated
+  - unknownFutureValue
+type: string
+x-ms-enum-flags:
+  isFlags: true

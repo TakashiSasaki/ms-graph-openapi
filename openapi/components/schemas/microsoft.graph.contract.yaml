@@ -1,0 +1,42 @@
+allOf:
+  - $ref: .\microsoft.graph.directoryObject.yaml
+  - title: contract
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      contractType:
+        type: string
+        description: >-
+          Type of contract. Possible values are:  SyndicationPartner,
+          BreadthPartner, ResellerPartner. See more in the table below.
+        nullable: true
+      customerId:
+        pattern: >-
+          ^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$
+        type: string
+        description: >-
+          The unique identifier for the customer tenant referenced by this
+          partnership. Corresponds to the id property of the customer tenant's
+          organization resource.
+        format: uuid
+        nullable: true
+      defaultDomainName:
+        type: string
+        description: >-
+          A copy of the customer tenant's default domain name. The copy is made
+          when the partnership with the customer is established. It isn't
+          automatically updated if the customer tenant's default domain name
+          changes.
+        nullable: true
+      displayName:
+        type: string
+        description: >-
+          A copy of the customer tenant's display name. The copy is made when
+          the partnership with the customer is established. It is not
+          automatically updated if the customer tenant's display name changes.
+        nullable: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.contract'
+x-ms-discriminator-value: '#microsoft.graph.contract'

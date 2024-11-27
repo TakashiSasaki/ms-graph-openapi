@@ -1,0 +1,20 @@
+allOf:
+  - $ref: .\microsoft.graph.standardTimeZoneOffset.yaml
+  - title: daylightTimeZoneOffset
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      daylightBias:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: >-
+          The time offset from Coordinated Universal Time (UTC) for daylight
+          saving time. This value is in minutes.
+        format: int32
+        nullable: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.daylightTimeZoneOffset'
+x-ms-discriminator-value: '#microsoft.graph.daylightTimeZoneOffset'

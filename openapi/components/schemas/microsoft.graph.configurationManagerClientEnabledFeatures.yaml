@@ -1,0 +1,26 @@
+title: configurationManagerClientEnabledFeatures
+required:
+  - '@odata.type'
+type: object
+properties:
+  compliancePolicy:
+    type: boolean
+    description: Whether compliance policy is managed by Intune
+  deviceConfiguration:
+    type: boolean
+    description: Whether device configuration is managed by Intune
+  inventory:
+    type: boolean
+    description: Whether inventory is managed by Intune
+  modernApps:
+    type: boolean
+    description: Whether modern application is managed by Intune
+  resourceAccess:
+    type: boolean
+    description: Whether resource access is managed by Intune
+  windowsUpdateForBusiness:
+    type: boolean
+    description: Whether Windows Update for Business is managed by Intune
+  '@odata.type':
+    type: string
+description: configuration Manager client enabled features

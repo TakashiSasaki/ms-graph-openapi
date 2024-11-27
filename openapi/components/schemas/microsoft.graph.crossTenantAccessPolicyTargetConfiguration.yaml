@@ -1,0 +1,21 @@
+title: crossTenantAccessPolicyTargetConfiguration
+required:
+  - '@odata.type'
+type: object
+properties:
+  accessType:
+    anyOf:
+      - $ref: >-
+          .\microsoft.graph.crossTenantAccessPolicyTargetConfigurationAccessType.yaml
+      - type: object
+        nullable: true
+    description: >-
+      Defines whether access is allowed or blocked. The possible values are:
+      allowed, blocked, unknownFutureValue.
+  targets:
+    type: array
+    items:
+      $ref: .\microsoft.graph.crossTenantAccessPolicyTarget.yaml
+    description: Specifies whether to target users, groups, or applications with this rule.
+  '@odata.type':
+    type: string

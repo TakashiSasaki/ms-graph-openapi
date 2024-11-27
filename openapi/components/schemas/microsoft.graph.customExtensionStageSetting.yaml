@@ -1,0 +1,21 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: customExtensionStageSetting
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      stage:
+        $ref: .\microsoft.graph.accessPackageCustomExtensionStage.yaml
+      customExtension:
+        anyOf:
+          - $ref: .\microsoft.graph.customCalloutExtension.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Indicates the custom workflow extension that will be executed at this
+          stage. Nullable. Supports $expand.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.customExtensionStageSetting'

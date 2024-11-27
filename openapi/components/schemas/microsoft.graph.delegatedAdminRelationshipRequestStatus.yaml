@@ -1,0 +1,8 @@
+title: delegatedAdminRelationshipRequestStatus
+enum:
+  - created
+  - pending
+  - succeeded
+  - failed
+  - unknownFutureValue
+type: string

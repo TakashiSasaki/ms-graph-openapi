@@ -1,0 +1,22 @@
+title: conditionalAccessSessionControl
+required:
+  - '@odata.type'
+type: object
+properties:
+  isEnabled:
+    type: boolean
+    description: Specifies whether the session control is enabled.
+    nullable: true
+  '@odata.type':
+    type: string
+discriminator:
+  propertyName: '@odata.type'
+  mapping:
+    '#microsoft.graph.applicationEnforcedRestrictionsSessionControl': .\microsoft.graph.applicationEnforcedRestrictionsSessionControl.yaml
+    '#microsoft.graph.cloudAppSecuritySessionControl': .\microsoft.graph.cloudAppSecuritySessionControl.yaml
+    '#microsoft.graph.persistentBrowserSessionControl': .\microsoft.graph.persistentBrowserSessionControl.yaml
+    '#microsoft.graph.signInFrequencySessionControl': .\microsoft.graph.signInFrequencySessionControl.yaml
+    microsoft.graph.applicationEnforcedRestrictionsSessionControl: .\microsoft.graph.applicationEnforcedRestrictionsSessionControl.yaml
+    microsoft.graph.cloudAppSecuritySessionControl: .\microsoft.graph.cloudAppSecuritySessionControl.yaml
+    microsoft.graph.persistentBrowserSessionControl: .\microsoft.graph.persistentBrowserSessionControl.yaml
+    microsoft.graph.signInFrequencySessionControl: .\microsoft.graph.signInFrequencySessionControl.yaml

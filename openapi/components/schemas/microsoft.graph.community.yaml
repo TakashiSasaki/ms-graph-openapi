@@ -1,0 +1,47 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: community
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      description:
+        type: string
+        description: >-
+          The description of the community. The maximum length is 1,024
+          characters.
+      displayName:
+        type: string
+        description: The name of the community. The maximum length is 255 characters.
+      groupId:
+        type: string
+        description: >-
+          The ID of the Microsoft 365 group that manages the membership of this
+          community.
+        nullable: true
+      privacy:
+        $ref: .\microsoft.graph.communityPrivacy.yaml
+      group:
+        anyOf:
+          - $ref: .\microsoft.graph.group.yaml
+          - type: object
+            nullable: true
+        description: The Microsoft 365 group that manages the membership of this community.
+        x-ms-navigationProperty: true
+      owners:
+        type: array
+        items:
+          $ref: .\microsoft.graph.user.yaml
+        description: >-
+          The admins of the community. Limited to 100 users. If this property
+          isn't specified when you create the community, the calling user is
+          automatically assigned as the community owner.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+    description: >-
+      Represents a community in Viva Engage that is a central place for
+      conversations,
+
+      files, events, and updates for people sharing a common interest or goal.
+x-ms-discriminator-value: '#microsoft.graph.community'

@@ -1,0 +1,8 @@
+title: delegatedAdminRelationshipRequestAction
+enum:
+  - lockForApproval
+  - approve
+  - terminate
+  - unknownFutureValue
+  - reject
+type: string

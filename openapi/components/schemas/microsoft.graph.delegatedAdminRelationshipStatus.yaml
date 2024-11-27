@@ -1,0 +1,14 @@
+title: delegatedAdminRelationshipStatus
+enum:
+  - activating
+  - active
+  - approvalPending
+  - approved
+  - created
+  - expired
+  - expiring
+  - terminated
+  - terminating
+  - terminationRequested
+  - unknownFutureValue
+type: string

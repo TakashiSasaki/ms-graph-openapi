@@ -1,0 +1,36 @@
+title: deviceComplianceActionType
+enum:
+  - noAction
+  - notification
+  - block
+  - retire
+  - wipe
+  - removeResourceAccessProfiles
+  - pushNotification
+type: string
+description: Scheduled Action Type Enum
+x-ms-enum:
+  name: deviceComplianceActionType
+  modelAsString: false
+  values:
+    - value: noAction
+      description: No Action
+      name: noAction
+    - value: notification
+      description: Send Notification
+      name: notification
+    - value: block
+      description: Block the device in AAD
+      name: block
+    - value: retire
+      description: Retire the device
+      name: retire
+    - value: wipe
+      description: Wipe the device
+      name: wipe
+    - value: removeResourceAccessProfiles
+      description: Remove Resource Access Profiles from the device
+      name: removeResourceAccessProfiles
+    - value: pushNotification
+      description: Send push notification to device
+      name: pushNotification

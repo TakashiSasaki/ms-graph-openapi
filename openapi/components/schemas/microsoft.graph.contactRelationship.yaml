@@ -1,0 +1,11 @@
+title: contactRelationship
+enum:
+  - parent
+  - relative
+  - aide
+  - doctor
+  - guardian
+  - child
+  - other
+  - unknownFutureValue
+type: string

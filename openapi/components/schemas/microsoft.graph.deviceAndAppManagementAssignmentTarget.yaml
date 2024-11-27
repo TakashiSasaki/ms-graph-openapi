@@ -1,0 +1,20 @@
+title: deviceAndAppManagementAssignmentTarget
+required:
+  - '@odata.type'
+type: object
+properties:
+  '@odata.type':
+    type: string
+description: Base type for assignment targets.
+discriminator:
+  propertyName: '@odata.type'
+  mapping:
+    '#microsoft.graph.allDevicesAssignmentTarget': .\microsoft.graph.allDevicesAssignmentTarget.yaml
+    '#microsoft.graph.allLicensedUsersAssignmentTarget': .\microsoft.graph.allLicensedUsersAssignmentTarget.yaml
+    '#microsoft.graph.configurationManagerCollectionAssignmentTarget': .\microsoft.graph.configurationManagerCollectionAssignmentTarget.yaml
+    '#microsoft.graph.groupAssignmentTarget': .\microsoft.graph.groupAssignmentTarget.yaml
+    '#microsoft.graph.exclusionGroupAssignmentTarget': .\microsoft.graph.exclusionGroupAssignmentTarget.yaml
+    microsoft.graph.allDevicesAssignmentTarget: .\microsoft.graph.allDevicesAssignmentTarget.yaml
+    microsoft.graph.allLicensedUsersAssignmentTarget: .\microsoft.graph.allLicensedUsersAssignmentTarget.yaml
+    microsoft.graph.configurationManagerCollectionAssignmentTarget: .\microsoft.graph.configurationManagerCollectionAssignmentTarget.yaml
+    microsoft.graph.groupAssignmentTarget: .\microsoft.graph.groupAssignmentTarget.yaml

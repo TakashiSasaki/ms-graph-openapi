@@ -1,0 +1,36 @@
+title: defenderThreatAction
+enum:
+  - deviceDefault
+  - clean
+  - quarantine
+  - remove
+  - allow
+  - userDefined
+  - block
+type: string
+description: Defender’s default action to take on detected Malware threats.
+x-ms-enum:
+  name: defenderThreatAction
+  modelAsString: false
+  values:
+    - value: deviceDefault
+      description: Apply action based on the update definition.
+      name: deviceDefault
+    - value: clean
+      description: Clean the detected threat.
+      name: clean
+    - value: quarantine
+      description: Quarantine the detected threat.
+      name: quarantine
+    - value: remove
+      description: Remove the detected threat.
+      name: remove
+    - value: allow
+      description: Allow the detected threat.
+      name: allow
+    - value: userDefined
+      description: Allow the user to determine the action to take with the detected threat.
+      name: userDefined
+    - value: block
+      description: Block the detected threat.
+      name: block

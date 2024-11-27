@@ -1,0 +1,11 @@
+allOf:
+  - $ref: .\microsoft.graph.conditionalAccessExternalTenants.yaml
+  - title: conditionalAccessAllExternalTenants
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.conditionalAccessAllExternalTenants'
+x-ms-discriminator-value: '#microsoft.graph.conditionalAccessAllExternalTenants'

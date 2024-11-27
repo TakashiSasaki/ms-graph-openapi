@@ -1,0 +1,19 @@
+title: conditionalAccessGuestsOrExternalUsers
+required:
+  - '@odata.type'
+type: object
+properties:
+  externalTenants:
+    anyOf:
+      - $ref: .\microsoft.graph.conditionalAccessExternalTenants.yaml
+      - type: object
+        nullable: true
+    description: >-
+      The tenant IDs of the selected types of external users. Either all B2B
+      tenant or a collection of tenant IDs. External tenants can be specified
+      only when the property guestOrExternalUserTypes isn't null or an empty
+      String.
+  guestOrExternalUserTypes:
+    $ref: .\microsoft.graph.conditionalAccessGuestOrExternalUserTypes.yaml
+  '@odata.type':
+    type: string

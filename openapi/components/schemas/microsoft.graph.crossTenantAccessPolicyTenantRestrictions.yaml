@@ -1,0 +1,20 @@
+allOf:
+  - $ref: .\microsoft.graph.crossTenantAccessPolicyB2BSetting.yaml
+  - title: crossTenantAccessPolicyTenantRestrictions
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      devices:
+        anyOf:
+          - $ref: .\microsoft.graph.devicesFilter.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Defines the rule for filtering devices and whether devices that
+          satisfy the rule should be allowed or blocked. This property isn't
+          supported on the server side yet.
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.crossTenantAccessPolicyTenantRestrictions'
+x-ms-discriminator-value: '#microsoft.graph.crossTenantAccessPolicyTenantRestrictions'

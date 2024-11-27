@@ -1,0 +1,16 @@
+title: customExtensionData
+required:
+  - '@odata.type'
+type: object
+properties:
+  '@odata.type':
+    type: string
+discriminator:
+  propertyName: '@odata.type'
+  mapping:
+    '#microsoft.graph.accessPackageAssignmentRequestCallbackData': .\microsoft.graph.accessPackageAssignmentRequestCallbackData.yaml
+    '#microsoft.graph.identityGovernance.customTaskExtensionCallbackData': .\microsoft.graph.identityGovernance.customTaskExtensionCallbackData.yaml
+    '#microsoft.graph.identityGovernance.customTaskExtensionCalloutData': .\microsoft.graph.identityGovernance.customTaskExtensionCalloutData.yaml
+    microsoft.graph.accessPackageAssignmentRequestCallbackData: .\microsoft.graph.accessPackageAssignmentRequestCallbackData.yaml
+    microsoft.graph.identityGovernance.customTaskExtensionCallbackData: .\microsoft.graph.identityGovernance.customTaskExtensionCallbackData.yaml
+    microsoft.graph.identityGovernance.customTaskExtensionCalloutData: .\microsoft.graph.identityGovernance.customTaskExtensionCalloutData.yaml

@@ -1,0 +1,16 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: deletedItemContainer
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      workflows:
+        type: array
+        items:
+          $ref: .\microsoft.graph.identityGovernance.workflow.yaml
+        description: Deleted workflows that end up in the deletedItemsContainer.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.deletedItemContainer'

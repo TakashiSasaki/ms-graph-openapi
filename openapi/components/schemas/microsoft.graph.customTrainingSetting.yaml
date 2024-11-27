@@ -1,0 +1,42 @@
+allOf:
+  - $ref: .\microsoft.graph.trainingSetting.yaml
+  - title: customTrainingSetting
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      assignedTo:
+        type: array
+        items:
+          anyOf:
+            - $ref: .\microsoft.graph.trainingAssignedTo.yaml
+            - type: object
+              nullable: true
+        description: >-
+          A user collection that specifies to whom the training should be
+          assigned. Possible values are: none, allUsers, clickedPayload,
+          compromised, reportedPhish, readButNotClicked, didNothing,
+          unknownFutureValue.
+      description:
+        type: string
+        description: The description of the custom training setting.
+        nullable: true
+      displayName:
+        type: string
+        description: The display name of the custom training setting.
+        nullable: true
+      durationInMinutes:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: Training duration.
+        format: int32
+        nullable: true
+      url:
+        type: string
+        description: The training URL.
+        nullable: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.customTrainingSetting'
+x-ms-discriminator-value: '#microsoft.graph.customTrainingSetting'

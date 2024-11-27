@@ -1,0 +1,28 @@
+title: defenderPromptForSampleSubmission
+enum:
+  - userDefined
+  - alwaysPrompt
+  - promptBeforeSendingPersonalData
+  - neverSendData
+  - sendAllDataWithoutPrompting
+type: string
+description: Possible values for prompting user for samples submission.
+x-ms-enum:
+  name: defenderPromptForSampleSubmission
+  modelAsString: false
+  values:
+    - value: userDefined
+      description: User Defined, default value, no intent.
+      name: userDefined
+    - value: alwaysPrompt
+      description: Always prompt.
+      name: alwaysPrompt
+    - value: promptBeforeSendingPersonalData
+      description: Send safe samples automatically.
+      name: promptBeforeSendingPersonalData
+    - value: neverSendData
+      description: Never send data.
+      name: neverSendData
+    - value: sendAllDataWithoutPrompting
+      description: Send all data without prompting.
+      name: sendAllDataWithoutPrompting

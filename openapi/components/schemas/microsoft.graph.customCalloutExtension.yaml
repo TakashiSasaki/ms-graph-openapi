@@ -1,0 +1,51 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: customCalloutExtension
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      authenticationConfiguration:
+        anyOf:
+          - $ref: .\microsoft.graph.customExtensionAuthenticationConfiguration.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Configuration for securing the API call to the logic app. For example,
+          using OAuth client credentials flow.
+      clientConfiguration:
+        anyOf:
+          - $ref: .\microsoft.graph.customExtensionClientConfiguration.yaml
+          - type: object
+            nullable: true
+        description: >-
+          HTTP connection settings that define how long Microsoft Entra ID can
+          wait for a connection to a logic app, how many times you can retry a
+          timed-out connection and the exception scenarios when retries are
+          allowed.
+      description:
+        type: string
+        description: Description for the customCalloutExtension object.
+        nullable: true
+      displayName:
+        type: string
+        description: Display name for the customCalloutExtension object.
+        nullable: true
+      endpointConfiguration:
+        anyOf:
+          - $ref: .\microsoft.graph.customExtensionEndpointConfiguration.yaml
+          - type: object
+            nullable: true
+        description: >-
+          The type and details for configuring the endpoint to call the logic
+          app's workflow.
+      '@odata.type':
+        type: string
+    discriminator:
+      propertyName: '@odata.type'
+      mapping:
+        '#microsoft.graph.accessPackageAssignmentRequestWorkflowExtension': .\microsoft.graph.accessPackageAssignmentRequestWorkflowExtension.yaml
+        '#microsoft.graph.accessPackageAssignmentWorkflowExtension': .\microsoft.graph.accessPackageAssignmentWorkflowExtension.yaml
+        '#microsoft.graph.customAuthenticationExtension': .\microsoft.graph.customAuthenticationExtension.yaml
+        '#microsoft.graph.onTokenIssuanceStartCustomExtension': .\microsoft.graph.onTokenIssuanceStartCustomExtension.yaml
+        '#microsoft.graph.identityGovernance.customTaskExtension': .\microsoft.graph.identityGovernance.customTaskExtension.yaml

@@ -1,0 +1,23 @@
+title: customExtensionCalloutRequest
+required:
+  - '@odata.type'
+type: object
+properties:
+  data:
+    anyOf:
+      - $ref: .\microsoft.graph.customExtensionData.yaml
+      - type: object
+        nullable: true
+    description: Contains the data that will be provided to the external system.
+  source:
+    type: string
+    description: >-
+      Identifies the source system or event context related to the callout
+      request.
+    nullable: true
+  type:
+    type: string
+    description: Describes the type of event related to the callout request.
+    nullable: true
+  '@odata.type':
+    type: string

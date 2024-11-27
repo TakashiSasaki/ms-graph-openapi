@@ -1,0 +1,9 @@
+title: customExtensionCalloutInstanceStatus
+enum:
+  - calloutSent
+  - callbackReceived
+  - calloutFailed
+  - callbackTimedOut
+  - waitingForCallback
+  - unknownFutureValue
+type: string

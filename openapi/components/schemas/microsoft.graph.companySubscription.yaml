@@ -1,0 +1,81 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: companySubscription
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      commerceSubscriptionId:
+        type: string
+        description: The ID of this subscription in the commerce system. Alternate key.
+        nullable: true
+      createdDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: >-
+          The date and time when this subscription was created. The
+          DateTimeOffset type represents date and time information using ISO
+          8601 format and is always in UTC time. For example, midnight UTC on
+          Jan 1, 2014 is 2014-01-01T00:00:00Z.
+        format: date-time
+        nullable: true
+      isTrial:
+        type: boolean
+        description: Whether the subscription is a free trial or purchased.
+        nullable: true
+      nextLifecycleDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: >-
+          The date and time when the subscription will move to the next state
+          (as defined by the status property) if not renewed by the tenant. The
+          DateTimeOffset type represents date and time information using ISO
+          8601 format and is always in UTC time. For example, midnight UTC on
+          Jan 1, 2014 is 2014-01-01T00:00:00Z.
+        format: date-time
+        nullable: true
+      ownerId:
+        type: string
+        description: The object ID of the account admin.
+        nullable: true
+      ownerTenantId:
+        type: string
+        description: >-
+          The unique identifier for the Microsoft partner tenant that created
+          the subscription on a customer tenant.
+        nullable: true
+      ownerType:
+        type: string
+        description: Indicates the entity that ownerId belongs to, for example, 'User'.
+        nullable: true
+      serviceStatus:
+        type: array
+        items:
+          $ref: .\microsoft.graph.servicePlanInfo.yaml
+        description: The provisioning status of each service included in this subscription.
+      skuId:
+        type: string
+        description: The object ID of the SKU associated with this subscription.
+        nullable: true
+      skuPartNumber:
+        type: string
+        description: The SKU associated with this subscription.
+        nullable: true
+      status:
+        type: string
+        description: >-
+          The status of this subscription. Possible values are: Enabled,
+          Deleted, Suspended, Warning, LockedOut.
+        nullable: true
+      totalLicenses:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: The number of licenses included in this subscription.
+        format: int32
+        nullable: true
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.companySubscription'

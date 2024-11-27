@@ -1,0 +1,14 @@
+title: customExtensionAuthenticationConfiguration
+required:
+  - '@odata.type'
+type: object
+properties:
+  '@odata.type':
+    type: string
+discriminator:
+  propertyName: '@odata.type'
+  mapping:
+    '#microsoft.graph.azureAdPopTokenAuthentication': .\microsoft.graph.azureAdPopTokenAuthentication.yaml
+    '#microsoft.graph.azureAdTokenAuthentication': .\microsoft.graph.azureAdTokenAuthentication.yaml
+    microsoft.graph.azureAdPopTokenAuthentication: .\microsoft.graph.azureAdPopTokenAuthentication.yaml
+    microsoft.graph.azureAdTokenAuthentication: .\microsoft.graph.azureAdTokenAuthentication.yaml

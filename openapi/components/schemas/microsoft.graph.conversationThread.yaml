@@ -1,0 +1,58 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: conversationThread
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      ccRecipients:
+        type: array
+        items:
+          $ref: .\microsoft.graph.recipient.yaml
+        description: 'The Cc: recipients for the thread. Returned only on $select.'
+      hasAttachments:
+        type: boolean
+        description: >-
+          Indicates whether any of the posts within this thread has at least one
+          attachment. Returned by default.
+      isLocked:
+        type: boolean
+        description: Indicates if the thread is locked. Returned by default.
+      lastDeliveredDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: >-
+          The Timestamp type represents date and time information using ISO 8601
+          format and is always in UTC time. For example, midnight UTC on Jan 1,
+          2014 is 2014-01-01T00:00:00Z.Returned by default.
+        format: date-time
+      preview:
+        type: string
+        description: >-
+          A short summary from the body of the latest post in this conversation.
+          Returned by default.
+      topic:
+        type: string
+        description: >-
+          The topic of the conversation. This property can be set when the
+          conversation is created, but it cannot be updated. Returned by
+          default.
+      toRecipients:
+        type: array
+        items:
+          $ref: .\microsoft.graph.recipient.yaml
+        description: 'The To: recipients for the thread. Returned only on $select.'
+      uniqueSenders:
+        type: array
+        items:
+          type: string
+        description: All the users that sent a message to this thread. Returned by default.
+      posts:
+        type: array
+        items:
+          $ref: .\microsoft.graph.post.yaml
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.conversationThread'

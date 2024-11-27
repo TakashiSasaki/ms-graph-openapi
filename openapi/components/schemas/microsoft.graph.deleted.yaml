@@ -1,0 +1,11 @@
+title: deleted
+required:
+  - '@odata.type'
+type: object
+properties:
+  state:
+    type: string
+    description: Represents the state of the deleted item.
+    nullable: true
+  '@odata.type':
+    type: string

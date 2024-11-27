@@ -1,0 +1,9 @@
+title: connectionStatus
+enum:
+  - unknown
+  - attempted
+  - succeeded
+  - blocked
+  - failed
+  - unknownFutureValue
+type: string

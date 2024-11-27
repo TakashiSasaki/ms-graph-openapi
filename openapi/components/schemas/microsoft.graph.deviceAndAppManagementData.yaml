@@ -1,0 +1,13 @@
+title: deviceAndAppManagementData
+required:
+  - '@odata.type'
+type: object
+properties:
+  content:
+    type: string
+    description: Not yet documented
+    format: base64url
+    nullable: true
+  '@odata.type':
+    type: string
+description: Exported Data

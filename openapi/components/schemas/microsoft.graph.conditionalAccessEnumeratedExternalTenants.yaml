@@ -1,0 +1,18 @@
+allOf:
+  - $ref: .\microsoft.graph.conditionalAccessExternalTenants.yaml
+  - title: conditionalAccessEnumeratedExternalTenants
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      members:
+        type: array
+        items:
+          type: string
+        description: >-
+          A collection of tenant IDs that define the scope of a policy targeting
+          conditional access for guests and external users.
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.conditionalAccessEnumeratedExternalTenants'
+x-ms-discriminator-value: '#microsoft.graph.conditionalAccessEnumeratedExternalTenants'

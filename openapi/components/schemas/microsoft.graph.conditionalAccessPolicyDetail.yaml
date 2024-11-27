@@ -1,0 +1,23 @@
+title: conditionalAccessPolicyDetail
+required:
+  - '@odata.type'
+type: object
+properties:
+  conditions:
+    $ref: .\microsoft.graph.conditionalAccessConditionSet.yaml
+  grantControls:
+    anyOf:
+      - $ref: .\microsoft.graph.conditionalAccessGrantControls.yaml
+      - type: object
+        nullable: true
+    description: Represents grant controls that must be fulfilled for the policy.
+  sessionControls:
+    anyOf:
+      - $ref: .\microsoft.graph.conditionalAccessSessionControls.yaml
+      - type: object
+        nullable: true
+    description: >-
+      Represents a complex type of session controls that is enforced after
+      sign-in.
+  '@odata.type':
+    type: string

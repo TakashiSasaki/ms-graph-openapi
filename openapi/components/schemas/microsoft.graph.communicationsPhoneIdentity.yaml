@@ -1,0 +1,11 @@
+allOf:
+  - $ref: .\microsoft.graph.identity.yaml
+  - title: communicationsPhoneIdentity
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.communicationsPhoneIdentity'
+x-ms-discriminator-value: '#microsoft.graph.communicationsPhoneIdentity'

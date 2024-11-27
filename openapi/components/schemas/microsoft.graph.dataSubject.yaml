@@ -1,0 +1,25 @@
+title: dataSubject
+required:
+  - '@odata.type'
+type: object
+properties:
+  email:
+    type: string
+    description: Email of the data subject.
+    nullable: true
+  firstName:
+    type: string
+    description: First name of the data subject.
+    nullable: true
+  lastName:
+    type: string
+    description: Last Name of the data subject.
+    nullable: true
+  residency:
+    type: string
+    description: >-
+      The country/region of residency. The residency information is uesed only
+      for internal reporting but not for the content search.
+    nullable: true
+  '@odata.type':
+    type: string

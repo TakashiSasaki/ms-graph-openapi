@@ -1,0 +1,20 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: conditionalAccessTemplate
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      description:
+        type: string
+        description: The user-friendly name of the template.
+      details:
+        $ref: .\microsoft.graph.conditionalAccessPolicyDetail.yaml
+      name:
+        type: string
+        description: The user-friendly name of the template.
+      scenarios:
+        $ref: .\microsoft.graph.templateScenarios.yaml
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.conditionalAccessTemplate'

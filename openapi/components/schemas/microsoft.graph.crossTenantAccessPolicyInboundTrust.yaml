@@ -1,0 +1,25 @@
+title: crossTenantAccessPolicyInboundTrust
+required:
+  - '@odata.type'
+type: object
+properties:
+  isCompliantDeviceAccepted:
+    type: boolean
+    description: >-
+      Specifies whether compliant devices from external Microsoft Entra
+      organizations are trusted.
+    nullable: true
+  isHybridAzureADJoinedDeviceAccepted:
+    type: boolean
+    description: >-
+      Specifies whether Microsoft Entra hybrid joined devices from external
+      Microsoft Entra organizations are trusted.
+    nullable: true
+  isMfaAccepted:
+    type: boolean
+    description: >-
+      Specifies whether MFA from external Microsoft Entra organizations is
+      trusted.
+    nullable: true
+  '@odata.type':
+    type: string

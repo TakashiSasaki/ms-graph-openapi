@@ -1,0 +1,20 @@
+title: contentTypeOrder
+required:
+  - '@odata.type'
+type: object
+properties:
+  default:
+    type: boolean
+    description: Indicates whether this is the default content type
+    nullable: true
+  position:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    description: >-
+      Specifies the position in which the content type appears in the selection
+      UI.
+    format: int32
+    nullable: true
+  '@odata.type':
+    type: string

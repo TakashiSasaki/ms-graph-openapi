@@ -1,0 +1,23 @@
+title: crossTenantIdentitySyncPolicyPartner
+required:
+  - '@odata.type'
+type: object
+properties:
+  displayName:
+    type: string
+    description: >-
+      Display name for the cross-tenant user synchronization policy. Use the
+      name of the partner Microsoft Entra tenant to easily identify the policy.
+      Optional.
+    nullable: true
+  tenantId:
+    type: string
+    description: Tenant identifier for the partner Microsoft Entra organization. Read-only.
+  userSyncInbound:
+    anyOf:
+      - $ref: .\microsoft.graph.crossTenantUserSyncInbound.yaml
+      - type: object
+        nullable: true
+    description: Defines whether users can be synchronized from the partner tenant. Key.
+  '@odata.type':
+    type: string

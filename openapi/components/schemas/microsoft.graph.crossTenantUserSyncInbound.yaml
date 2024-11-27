@@ -1,0 +1,15 @@
+title: crossTenantUserSyncInbound
+required:
+  - '@odata.type'
+type: object
+properties:
+  isSyncAllowed:
+    type: boolean
+    description: >-
+      Defines whether user objects should be synchronized from the partner
+      tenant. false causes any current user synchronization from the source
+      tenant to the target tenant to stop. This property has no impact on
+      existing users who have already been synchronized.
+    nullable: true
+  '@odata.type':
+    type: string

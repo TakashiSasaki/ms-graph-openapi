@@ -1,0 +1,29 @@
+allOf:
+  - $ref: .\microsoft.graph.eventMessageDetail.yaml
+  - title: conversationMemberRoleUpdatedEventMessageDetail
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      conversationMemberRoles:
+        type: array
+        items:
+          type: string
+          nullable: true
+        description: Roles for the coversation member user.
+      conversationMemberUser:
+        anyOf:
+          - $ref: .\microsoft.graph.teamworkUserIdentity.yaml
+          - type: object
+            nullable: true
+        description: Identity of the conversation member user.
+      initiator:
+        anyOf:
+          - $ref: .\microsoft.graph.identitySet.yaml
+          - type: object
+            nullable: true
+        description: Initiator of the event.
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.conversationMemberRoleUpdatedEventMessageDetail'
+x-ms-discriminator-value: '#microsoft.graph.conversationMemberRoleUpdatedEventMessageDetail'

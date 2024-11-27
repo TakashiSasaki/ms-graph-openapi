@@ -1,0 +1,16 @@
+title: customExtensionOverwriteConfiguration
+required:
+  - '@odata.type'
+type: object
+properties:
+  clientConfiguration:
+    anyOf:
+      - $ref: .\microsoft.graph.customExtensionClientConfiguration.yaml
+      - type: object
+        nullable: true
+    description: >-
+      Configuration regarding properties of the custom extension which can be
+      overwritten per event listener. If no values are provided, the properties
+      on the custom extension are used.
+  '@odata.type':
+    type: string

@@ -1,0 +1,44 @@
+title: conditionalAccessApplications
+required:
+  - '@odata.type'
+type: object
+properties:
+  applicationFilter:
+    anyOf:
+      - $ref: .\microsoft.graph.conditionalAccessFilter.yaml
+      - type: object
+        nullable: true
+  excludeApplications:
+    type: array
+    items:
+      type: string
+    description: >-
+      Can be one of the following:  The list of client IDs (appId) explicitly
+      excluded from the policy. Office365 - For the list of apps included in
+      Office365, see Apps included in Conditional Access Office 365 app suite 
+      MicrosoftAdminPortals - For more information, see Conditional Access
+      Target resources: Microsoft Admin Portals
+  includeApplications:
+    type: array
+    items:
+      type: string
+    description: >-
+      Can be one of the following:  The list of client IDs (appId) the policy
+      applies to, unless explicitly excluded (in excludeApplications)  All 
+      Office365 - For the list of apps included in Office365, see Apps included
+      in Conditional Access Office 365 app suite  MicrosoftAdminPortals - For
+      more information, see Conditional Access Target resources: Microsoft Admin
+      Portals
+  includeAuthenticationContextClassReferences:
+    type: array
+    items:
+      type: string
+  includeUserActions:
+    type: array
+    items:
+      type: string
+    description: >-
+      User actions to include. Supported values are
+      urn:user:registersecurityinfo and urn:user:registerdevice
+  '@odata.type':
+    type: string
