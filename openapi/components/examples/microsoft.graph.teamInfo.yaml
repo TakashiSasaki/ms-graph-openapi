@@ -1,0 +1,5 @@
+value:
+  displayName: String
+  team:
+    '@odata.type': microsoft.graph.team
+  tenantId: String

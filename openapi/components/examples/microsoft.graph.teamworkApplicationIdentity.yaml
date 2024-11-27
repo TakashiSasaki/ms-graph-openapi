@@ -1,0 +1,3 @@
+value:
+  applicationIdentityType:
+    '@odata.type': microsoft.graph.teamworkApplicationIdentityType

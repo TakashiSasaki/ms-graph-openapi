@@ -1,0 +1,9 @@
+value:
+  approvalStageTimeOutInDays: '0'
+  escalationApprovers:
+    - '@odata.type': microsoft.graph.subjectSet
+  escalationTimeInMinutes: '0'
+  isApproverJustificationRequired: 'true'
+  isEscalationEnabled: 'true'
+  primaryApprovers:
+    - '@odata.type': microsoft.graph.subjectSet

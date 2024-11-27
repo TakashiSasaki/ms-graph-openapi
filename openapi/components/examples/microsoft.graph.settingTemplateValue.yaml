@@ -1,0 +1,5 @@
+value:
+  defaultValue: String
+  description: String
+  name: String
+  type: String

@@ -1,0 +1,5 @@
+value:
+  provider: String
+  providerVersion: String
+  subProvider: String
+  vendor: String

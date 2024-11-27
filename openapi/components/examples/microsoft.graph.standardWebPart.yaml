@@ -1,0 +1,5 @@
+value:
+  containerTextWebPartId: String
+  data:
+    '@odata.type': microsoft.graph.webPartData
+  webPartType: String

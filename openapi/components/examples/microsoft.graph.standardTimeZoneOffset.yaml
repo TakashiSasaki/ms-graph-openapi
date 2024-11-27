@@ -1,0 +1,7 @@
+value:
+  dayOccurrence: '0'
+  dayOfWeek:
+    '@odata.type': microsoft.graph.dayOfWeek
+  month: '0'
+  time: TimeOfDay (timestamp)
+  year: '0'

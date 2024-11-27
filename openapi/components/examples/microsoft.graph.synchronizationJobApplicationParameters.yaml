@@ -1,0 +1,4 @@
+value:
+  ruleId: String
+  subjects:
+    - '@odata.type': microsoft.graph.synchronizationJobSubject

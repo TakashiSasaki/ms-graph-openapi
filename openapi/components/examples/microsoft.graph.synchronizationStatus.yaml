@@ -1,0 +1,20 @@
+value:
+  code:
+    '@odata.type': microsoft.graph.synchronizationStatusCode
+  countSuccessiveCompleteFailures: '0'
+  escrowsPruned: 'true'
+  lastExecution:
+    '@odata.type': microsoft.graph.synchronizationTaskExecution
+  lastSuccessfulExecution:
+    '@odata.type': microsoft.graph.synchronizationTaskExecution
+  lastSuccessfulExecutionWithExports:
+    '@odata.type': microsoft.graph.synchronizationTaskExecution
+  progress:
+    - '@odata.type': microsoft.graph.synchronizationProgress
+  quarantine:
+    '@odata.type': microsoft.graph.synchronizationQuarantine
+  steadyStateFirstAchievedTime: '0001-01-01T00:00:00.0000000+00:00'
+  steadyStateLastAchievedTime: '0001-01-01T00:00:00.0000000+00:00'
+  synchronizedEntryCountByType:
+    - '@odata.type': microsoft.graph.stringKeyLongValuePair
+  troubleshootingUrl: String

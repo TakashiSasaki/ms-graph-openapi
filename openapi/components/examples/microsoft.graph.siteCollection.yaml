@@ -1,0 +1,7 @@
+value:
+  archivalDetails:
+    '@odata.type': microsoft.graph.siteArchivalDetails
+  dataLocationCode: String
+  hostname: String
+  root:
+    '@odata.type': microsoft.graph.root

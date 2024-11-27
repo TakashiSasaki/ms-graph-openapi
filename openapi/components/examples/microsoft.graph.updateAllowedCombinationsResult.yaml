@@ -1,0 +1,8 @@
+value:
+  additionalInformation: String
+  conditionalAccessReferences:
+    - String
+  currentCombinations:
+    - '@odata.type': microsoft.graph.authenticationMethodModes
+  previousCombinations:
+    - '@odata.type': microsoft.graph.authenticationMethodModes

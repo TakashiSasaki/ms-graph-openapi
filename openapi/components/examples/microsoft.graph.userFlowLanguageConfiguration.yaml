@@ -1,0 +1,7 @@
+value:
+  defaultPages:
+    - '@odata.type': microsoft.graph.userFlowLanguagePage
+  displayName: String
+  isEnabled: 'true'
+  overridesPages:
+    - '@odata.type': microsoft.graph.userFlowLanguagePage

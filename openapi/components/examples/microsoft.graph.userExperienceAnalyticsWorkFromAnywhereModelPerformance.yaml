@@ -1,0 +1,11 @@
+value:
+  cloudIdentityScore: '0'
+  cloudManagementScore: '0'
+  cloudProvisioningScore: '0'
+  healthStatus:
+    '@odata.type': microsoft.graph.userExperienceAnalyticsHealthState
+  manufacturer: String
+  model: String
+  modelDeviceCount: '0'
+  windowsScore: '0'
+  workFromAnywhereScore: '0'

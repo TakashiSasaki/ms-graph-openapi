@@ -1,0 +1,15 @@
+value:
+  authorization:
+    '@odata.type': microsoft.graph.teamsAppAuthorization
+  bot:
+    '@odata.type': microsoft.graph.teamworkBot
+  createdBy:
+    '@odata.type': microsoft.graph.identitySet
+  description: String
+  displayName: String
+  lastModifiedDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  publishingState:
+    '@odata.type': microsoft.graph.teamsAppPublishingState
+  shortDescription: String
+  teamsAppId: String
+  version: String

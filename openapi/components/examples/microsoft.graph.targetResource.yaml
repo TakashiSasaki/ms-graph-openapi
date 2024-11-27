@@ -1,0 +1,9 @@
+value:
+  displayName: String
+  groupType:
+    '@odata.type': microsoft.graph.groupType
+  id: String
+  modifiedProperties:
+    - '@odata.type': microsoft.graph.modifiedProperty
+  type: String
+  userPrincipalName: String

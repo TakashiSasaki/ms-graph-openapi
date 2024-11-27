@@ -1,0 +1,5 @@
+value:
+  stream:
+    '@odata.type': microsoft.graph.security.stream
+  userAccount:
+    '@odata.type': microsoft.graph.security.userAccount

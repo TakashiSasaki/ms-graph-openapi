@@ -1,0 +1,4 @@
+value:
+  key: String
+  value:
+    '@odata.type': microsoft.graph.attributeMappingSource

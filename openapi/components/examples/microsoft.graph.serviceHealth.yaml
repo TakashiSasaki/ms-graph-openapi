@@ -1,0 +1,6 @@
+value:
+  issues:
+    - '@odata.type': microsoft.graph.serviceHealthIssue
+  service: String
+  status:
+    '@odata.type': microsoft.graph.serviceHealthStatus

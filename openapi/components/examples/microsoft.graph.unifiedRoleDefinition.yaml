@@ -1,0 +1,13 @@
+value:
+  description: String
+  displayName: String
+  inheritsPermissionsFrom:
+    - '@odata.type': microsoft.graph.unifiedRoleDefinition
+  isBuiltIn: 'true'
+  isEnabled: 'true'
+  resourceScopes:
+    - String
+  rolePermissions:
+    - '@odata.type': microsoft.graph.unifiedRolePermission
+  templateId: String
+  version: String

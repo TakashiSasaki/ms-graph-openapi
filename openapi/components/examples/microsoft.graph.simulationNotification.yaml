@@ -1,0 +1,3 @@
+value:
+  targettedUserType:
+    '@odata.type': microsoft.graph.targettedUserType

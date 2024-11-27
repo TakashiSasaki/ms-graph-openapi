@@ -1,0 +1,12 @@
+value:
+  callChainId: 00000000-0000-0000-0000-000000000000
+  cloudServiceDeploymentEnvironment: String
+  cloudServiceDeploymentId: String
+  cloudServiceInstanceName: String
+  cloudServiceName: String
+  deviceDescription: String
+  deviceName: String
+  mediaLegId: 00000000-0000-0000-0000-000000000000
+  mediaQualityList:
+    - '@odata.type': microsoft.graph.teleconferenceDeviceMediaQuality
+  participantId: 00000000-0000-0000-0000-000000000000

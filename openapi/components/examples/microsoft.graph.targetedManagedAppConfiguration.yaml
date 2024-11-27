@@ -1,0 +1,9 @@
+value:
+  apps:
+    - '@odata.type': microsoft.graph.managedMobileApp
+  assignments:
+    - '@odata.type': microsoft.graph.targetedManagedAppPolicyAssignment
+  deployedAppCount: '0'
+  deploymentSummary:
+    '@odata.type': microsoft.graph.managedAppPolicyDeploymentSummary
+  isAssigned: 'true'

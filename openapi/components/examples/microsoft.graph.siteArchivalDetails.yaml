@@ -1,0 +1,3 @@
+value:
+  archiveStatus:
+    '@odata.type': microsoft.graph.siteArchiveStatus

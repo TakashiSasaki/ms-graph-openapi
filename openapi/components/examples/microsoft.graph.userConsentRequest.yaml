@@ -1,0 +1,4 @@
+value:
+  approval:
+    '@odata.type': microsoft.graph.approval
+  reason: String

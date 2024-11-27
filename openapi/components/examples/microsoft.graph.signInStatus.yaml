@@ -1,0 +1,4 @@
+value:
+  additionalDetails: String
+  errorCode: '0'
+  failureReason: String

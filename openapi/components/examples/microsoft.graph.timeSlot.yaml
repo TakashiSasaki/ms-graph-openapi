@@ -1,0 +1,5 @@
+value:
+  end:
+    '@odata.type': microsoft.graph.dateTimeTimeZone
+  start:
+    '@odata.type': microsoft.graph.dateTimeTimeZone

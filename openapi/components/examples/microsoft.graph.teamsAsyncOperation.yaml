@@ -1,0 +1,12 @@
+value:
+  attemptsCount: '0'
+  createdDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  error:
+    '@odata.type': microsoft.graph.operationError
+  lastActionDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  operationType:
+    '@odata.type': microsoft.graph.teamsAsyncOperationType
+  status:
+    '@odata.type': microsoft.graph.teamsAsyncOperationStatus
+  targetResourceId: String
+  targetResourceLocation: String

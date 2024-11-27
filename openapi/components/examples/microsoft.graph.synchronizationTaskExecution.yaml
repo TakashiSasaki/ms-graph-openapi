@@ -1,0 +1,17 @@
+value:
+  activityIdentifier: String
+  countEntitled: '0'
+  countEntitledForProvisioning: '0'
+  countEscrowed: '0'
+  countEscrowedRaw: '0'
+  countExported: '0'
+  countExports: '0'
+  countImported: '0'
+  countImportedDeltas: '0'
+  countImportedReferenceDeltas: '0'
+  error:
+    '@odata.type': microsoft.graph.synchronizationError
+  state:
+    '@odata.type': microsoft.graph.synchronizationTaskExecutionResult
+  timeBegan: '0001-01-01T00:00:00.0000000+00:00'
+  timeEnded: '0001-01-01T00:00:00.0000000+00:00'

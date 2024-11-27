@@ -1,0 +1,7 @@
+value:
+  activatedUsing:
+    '@odata.type': microsoft.graph.unifiedRoleEligibilitySchedule
+  assignmentType: String
+  memberType: String
+  scheduleInfo:
+    '@odata.type': microsoft.graph.requestSchedule

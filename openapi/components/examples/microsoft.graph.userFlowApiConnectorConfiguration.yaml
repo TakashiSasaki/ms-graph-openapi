@@ -1,0 +1,5 @@
+value:
+  postAttributeCollection:
+    '@odata.type': microsoft.graph.identityApiConnector
+  postFederationSignup:
+    '@odata.type': microsoft.graph.identityApiConnector

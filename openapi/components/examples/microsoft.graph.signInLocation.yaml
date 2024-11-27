@@ -1,0 +1,6 @@
+value:
+  city: String
+  countryOrRegion: String
+  geoCoordinates:
+    '@odata.type': microsoft.graph.geoCoordinates
+  state: String

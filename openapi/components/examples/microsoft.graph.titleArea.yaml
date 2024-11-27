@@ -1,0 +1,14 @@
+value:
+  alternativeText: String
+  enableGradientEffect: 'true'
+  imageWebUrl: String
+  layout:
+    '@odata.type': microsoft.graph.titleAreaLayoutType
+  serverProcessedContent:
+    '@odata.type': microsoft.graph.serverProcessedContent
+  showAuthor: 'true'
+  showPublishedDate: 'true'
+  showTextBlockAboveTitle: 'true'
+  textAboveTitle: String
+  textAlignment:
+    '@odata.type': microsoft.graph.titleAreaTextAlignmentType

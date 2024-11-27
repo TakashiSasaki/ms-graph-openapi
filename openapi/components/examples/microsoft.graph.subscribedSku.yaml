@@ -1,0 +1,14 @@
+value:
+  accountId: String
+  accountName: String
+  appliesTo: String
+  capabilityStatus: String
+  consumedUnits: '0'
+  prepaidUnits:
+    '@odata.type': microsoft.graph.licenseUnitsDetail
+  servicePlans:
+    - '@odata.type': microsoft.graph.servicePlanInfo
+  skuId: 00000000-0000-0000-0000-000000000000
+  skuPartNumber: String
+  subscriptionIds:
+    - String

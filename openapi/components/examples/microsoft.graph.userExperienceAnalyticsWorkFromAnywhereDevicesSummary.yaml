@@ -1,0 +1,19 @@
+value:
+  autopilotDevicesSummary:
+    '@odata.type': microsoft.graph.userExperienceAnalyticsAutopilotDevicesSummary
+  cloudIdentityDevicesSummary:
+    '@odata.type': microsoft.graph.userExperienceAnalyticsCloudIdentityDevicesSummary
+  cloudManagementDevicesSummary:
+    '@odata.type': microsoft.graph.userExperienceAnalyticsCloudManagementDevicesSummary
+  coManagedDevices: '0'
+  devicesNotAutopilotRegistered: '0'
+  devicesWithoutAutopilotProfileAssigned: '0'
+  devicesWithoutCloudIdentity: '0'
+  intuneDevices: '0'
+  tenantAttachDevices: '0'
+  totalDevices: '0'
+  unsupportedOSversionDevices: '0'
+  windows10Devices: '0'
+  windows10DevicesSummary:
+    '@odata.type': microsoft.graph.userExperienceAnalyticsWindows10DevicesSummary
+  windows10DevicesWithoutTenantAttach: '0'

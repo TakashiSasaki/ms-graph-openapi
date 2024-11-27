@@ -1,0 +1,49 @@
+value:
+  allChannels:
+    - '@odata.type': microsoft.graph.channel
+  channels:
+    - '@odata.type': microsoft.graph.channel
+  classification: String
+  createdDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  description: String
+  displayName: String
+  funSettings:
+    '@odata.type': microsoft.graph.teamFunSettings
+  group:
+    '@odata.type': microsoft.graph.group
+  guestSettings:
+    '@odata.type': microsoft.graph.teamGuestSettings
+  incomingChannels:
+    - '@odata.type': microsoft.graph.channel
+  installedApps:
+    - '@odata.type': microsoft.graph.teamsAppInstallation
+  internalId: String
+  isArchived: 'true'
+  members:
+    - '@odata.type': microsoft.graph.conversationMember
+  memberSettings:
+    '@odata.type': microsoft.graph.teamMemberSettings
+  messagingSettings:
+    '@odata.type': microsoft.graph.teamMessagingSettings
+  operations:
+    - '@odata.type': microsoft.graph.teamsAsyncOperation
+  permissionGrants:
+    - '@odata.type': microsoft.graph.resourceSpecificPermissionGrant
+  photo:
+    '@odata.type': microsoft.graph.profilePhoto
+  primaryChannel:
+    '@odata.type': microsoft.graph.channel
+  schedule:
+    '@odata.type': microsoft.graph.schedule
+  specialization:
+    '@odata.type': microsoft.graph.teamSpecialization
+  summary:
+    '@odata.type': microsoft.graph.teamSummary
+  tags:
+    - '@odata.type': microsoft.graph.teamworkTag
+  template:
+    '@odata.type': microsoft.graph.teamsTemplate
+  tenantId: String
+  visibility:
+    '@odata.type': microsoft.graph.teamVisibilityType
+  webUrl: String

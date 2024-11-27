@@ -1,0 +1,7 @@
+value:
+  insightId: String
+  severity:
+    '@odata.type': microsoft.graph.userExperienceAnalyticsInsightSeverity
+  userExperienceAnalyticsMetricId: String
+  values:
+    - '@odata.type': microsoft.graph.userExperienceAnalyticsInsightValue

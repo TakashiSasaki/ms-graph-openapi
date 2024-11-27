@@ -1,0 +1,4 @@
+value:
+  recommendationLookBackDuration: Duration
+  signInScope:
+    '@odata.type': microsoft.graph.userSignInRecommendationScope

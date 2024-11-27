@@ -1,0 +1,4 @@
+value:
+  clientId: String
+  clientSecret: String
+  identityProviderType: String

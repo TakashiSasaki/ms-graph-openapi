@@ -1,0 +1,37 @@
+value:
+  autoPilotProfileAssigned: 'true'
+  autoPilotRegistered: 'true'
+  azureAdDeviceId: String
+  azureAdJoinType: String
+  azureAdRegistered: 'true'
+  cloudIdentityScore: '0'
+  cloudManagementScore: '0'
+  cloudProvisioningScore: '0'
+  compliancePolicySetToIntune: 'true'
+  deviceId: String
+  deviceName: String
+  healthStatus:
+    '@odata.type': microsoft.graph.userExperienceAnalyticsHealthState
+  isCloudManagedGatewayEnabled: 'true'
+  managedBy: String
+  manufacturer: String
+  model: String
+  osCheckFailed: 'true'
+  osDescription: String
+  osVersion: String
+  otherWorkloadsSetToIntune: 'true'
+  ownership: String
+  processor64BitCheckFailed: 'true'
+  processorCoreCountCheckFailed: 'true'
+  processorFamilyCheckFailed: 'true'
+  processorSpeedCheckFailed: 'true'
+  ramCheckFailed: 'true'
+  secureBootCheckFailed: 'true'
+  serialNumber: String
+  storageCheckFailed: 'true'
+  tenantAttached: 'true'
+  tpmCheckFailed: 'true'
+  upgradeEligibility:
+    '@odata.type': microsoft.graph.operatingSystemUpgradeEligibility
+  windowsScore: '0'
+  workFromAnywhereScore: '0'

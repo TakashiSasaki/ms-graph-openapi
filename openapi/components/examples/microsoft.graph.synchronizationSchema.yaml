@@ -1,0 +1,6 @@
+value:
+  directories:
+    - '@odata.type': microsoft.graph.directoryDefinition
+  synchronizationRules:
+    - '@odata.type': microsoft.graph.synchronizationRule
+  version: String

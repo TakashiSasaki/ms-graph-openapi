@@ -1,0 +1,6 @@
+value:
+  activeDeviceCount: '0'
+  meanTimeToFailureInMinutes: '0'
+  osBuildNumber: String
+  osVersion: String
+  osVersionAppHealthScore: '0'

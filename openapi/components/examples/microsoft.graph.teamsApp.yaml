@@ -1,0 +1,7 @@
+value:
+  appDefinitions:
+    - '@odata.type': microsoft.graph.teamsAppDefinition
+  displayName: String
+  distributionMethod:
+    '@odata.type': microsoft.graph.teamsAppDistributionMethod
+  externalId: String

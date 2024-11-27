@@ -1,0 +1,7 @@
+value:
+  actionVerb: String
+  authenticationContextId: String
+  description: String
+  isAuthenticationContextSettable: 'true'
+  name: String
+  resourceScopeId: String

@@ -1,0 +1,40 @@
+value:
+  attackTechnique:
+    '@odata.type': microsoft.graph.simulationAttackTechnique
+  attackType:
+    '@odata.type': microsoft.graph.simulationAttackType
+  automationId: String
+  completionDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  createdBy:
+    '@odata.type': microsoft.graph.emailIdentity
+  createdDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  description: String
+  displayName: String
+  durationInDays: '0'
+  endUserNotificationSetting:
+    '@odata.type': microsoft.graph.endUserNotificationSetting
+  excludedAccountTarget:
+    '@odata.type': microsoft.graph.accountTargetContent
+  includedAccountTarget:
+    '@odata.type': microsoft.graph.accountTargetContent
+  isAutomated: 'true'
+  landingPage:
+    '@odata.type': microsoft.graph.landingPage
+  lastModifiedBy:
+    '@odata.type': microsoft.graph.emailIdentity
+  lastModifiedDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  launchDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  loginPage:
+    '@odata.type': microsoft.graph.loginPage
+  oAuthConsentAppDetail:
+    '@odata.type': microsoft.graph.oAuthConsentAppDetail
+  payload:
+    '@odata.type': microsoft.graph.payload
+  payloadDeliveryPlatform:
+    '@odata.type': microsoft.graph.payloadDeliveryPlatform
+  report:
+    '@odata.type': microsoft.graph.simulationReport
+  status:
+    '@odata.type': microsoft.graph.simulationStatus
+  trainingSetting:
+    '@odata.type': microsoft.graph.trainingSetting

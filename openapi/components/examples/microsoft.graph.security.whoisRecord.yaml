@@ -1,0 +1,3 @@
+value:
+  history:
+    - '@odata.type': microsoft.graph.security.whoisHistoryRecord

@@ -1,0 +1,7 @@
+value:
+  delegatedAdminCustomers:
+    - '@odata.type': microsoft.graph.delegatedAdminCustomer
+  delegatedAdminRelationships:
+    - '@odata.type': microsoft.graph.delegatedAdminRelationship
+  multiTenantOrganization:
+    '@odata.type': microsoft.graph.multiTenantOrganization

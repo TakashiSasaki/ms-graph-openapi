@@ -1,0 +1,22 @@
+value:
+  averageInboundJitter: Duration
+  averageInboundPacketLossRateInPercentage: '0'
+  averageInboundRoundTripDelay: Duration
+  averageOutboundJitter: Duration
+  averageOutboundPacketLossRateInPercentage: '0'
+  averageOutboundRoundTripDelay: Duration
+  channelIndex: '0'
+  inboundPackets: '0'
+  localIPAddress: String
+  localPort: '0'
+  maximumInboundJitter: Duration
+  maximumInboundPacketLossRateInPercentage: '0'
+  maximumInboundRoundTripDelay: Duration
+  maximumOutboundJitter: Duration
+  maximumOutboundPacketLossRateInPercentage: '0'
+  maximumOutboundRoundTripDelay: Duration
+  mediaDuration: Duration
+  networkLinkSpeedInBytes: '0'
+  outboundPackets: '0'
+  remoteIPAddress: String
+  remotePort: '0'

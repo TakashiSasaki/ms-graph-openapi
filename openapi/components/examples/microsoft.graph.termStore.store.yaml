@@ -1,0 +1,8 @@
+value:
+  defaultLanguageTag: String
+  groups:
+    - '@odata.type': microsoft.graph.termStore.group
+  languageTags:
+    - String
+  sets:
+    - '@odata.type': microsoft.graph.termStore.set

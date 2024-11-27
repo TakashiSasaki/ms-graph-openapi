@@ -1,0 +1,3 @@
+value:
+  conversationIdentityType:
+    '@odata.type': microsoft.graph.teamworkConversationIdentityType

@@ -1,0 +1,5 @@
+value:
+  dynamicallyAdjustTopicCount: 'true'
+  ignoreNumbers: 'true'
+  isEnabled: 'true'
+  topicCount: '0'

@@ -1,0 +1,3 @@
+value:
+  setting:
+    '@odata.type': microsoft.graph.approvalSettings

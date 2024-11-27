@@ -1,0 +1,15 @@
+value:
+  applicationId: String
+  changeType: String
+  clientState: String
+  creatorId: String
+  encryptionCertificate: String
+  encryptionCertificateId: String
+  expirationDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  includeResourceData: 'true'
+  latestSupportedTlsVersion: String
+  lifecycleNotificationUrl: String
+  notificationQueryOptions: String
+  notificationUrl: String
+  notificationUrlAppId: String
+  resource: String

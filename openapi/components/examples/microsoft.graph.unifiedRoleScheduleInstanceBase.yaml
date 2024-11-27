@@ -1,0 +1,13 @@
+value:
+  appScope:
+    '@odata.type': microsoft.graph.appScope
+  appScopeId: String
+  directoryScope:
+    '@odata.type': microsoft.graph.directoryObject
+  directoryScopeId: String
+  principal:
+    '@odata.type': microsoft.graph.directoryObject
+  principalId: String
+  roleDefinition:
+    '@odata.type': microsoft.graph.unifiedRoleDefinition
+  roleDefinitionId: String

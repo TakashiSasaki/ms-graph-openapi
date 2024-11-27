@@ -1,0 +1,6 @@
+value:
+  content: Stream
+  height: '0'
+  sourceItemId: String
+  url: String
+  width: '0'

@@ -1,0 +1,5 @@
+value:
+  activities:
+    - '@odata.type': microsoft.graph.shiftActivity
+  displayName: String
+  notes: String

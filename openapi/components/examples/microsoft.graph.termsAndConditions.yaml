@@ -1,0 +1,13 @@
+value:
+  acceptanceStatement: String
+  acceptanceStatuses:
+    - '@odata.type': microsoft.graph.termsAndConditionsAcceptanceStatus
+  assignments:
+    - '@odata.type': microsoft.graph.termsAndConditionsAssignment
+  bodyText: String
+  createdDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  description: String
+  displayName: String
+  lastModifiedDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  title: String
+  version: '0'

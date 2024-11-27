@@ -1,0 +1,7 @@
+value:
+  error:
+    '@odata.type': microsoft.graph.publicError
+  stage:
+    '@odata.type': microsoft.graph.subjectRightsRequestStage
+  status:
+    '@odata.type': microsoft.graph.subjectRightsRequestStageStatus

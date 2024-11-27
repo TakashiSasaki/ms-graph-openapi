@@ -1,0 +1,35 @@
+value:
+  attachments:
+    - '@odata.type': microsoft.graph.attachmentBase
+  attachmentSessions:
+    - '@odata.type': microsoft.graph.attachmentSession
+  body:
+    '@odata.type': microsoft.graph.itemBody
+  bodyLastModifiedDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  categories:
+    - String
+  checklistItems:
+    - '@odata.type': microsoft.graph.checklistItem
+  completedDateTime:
+    '@odata.type': microsoft.graph.dateTimeTimeZone
+  createdDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  dueDateTime:
+    '@odata.type': microsoft.graph.dateTimeTimeZone
+  extensions:
+    - '@odata.type': microsoft.graph.extension
+  hasAttachments: 'true'
+  importance:
+    '@odata.type': microsoft.graph.importance
+  isReminderOn: 'true'
+  lastModifiedDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  linkedResources:
+    - '@odata.type': microsoft.graph.linkedResource
+  recurrence:
+    '@odata.type': microsoft.graph.patternedRecurrence
+  reminderDateTime:
+    '@odata.type': microsoft.graph.dateTimeTimeZone
+  startDateTime:
+    '@odata.type': microsoft.graph.dateTimeTimeZone
+  status:
+    '@odata.type': microsoft.graph.taskStatus
+  title: String

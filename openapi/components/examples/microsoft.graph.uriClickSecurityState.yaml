@@ -1,0 +1,7 @@
+value:
+  clickAction: String
+  clickDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  id: String
+  sourceId: String
+  uriDomain: String
+  verdict: String

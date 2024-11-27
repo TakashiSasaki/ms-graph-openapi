@@ -1,0 +1,6 @@
+value:
+  cloudProvider:
+    '@odata.type': microsoft.graph.security.vmCloudProvider
+  resourceId: String
+  subscriptionId: String
+  vmId: String

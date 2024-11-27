@@ -1,0 +1,4 @@
+value:
+  allowedMembers:
+    - '@odata.type': microsoft.graph.conversationMember
+  isHostTeam: 'true'

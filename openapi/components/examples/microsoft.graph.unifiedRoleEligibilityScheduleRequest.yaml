@@ -1,0 +1,24 @@
+value:
+  action:
+    '@odata.type': microsoft.graph.unifiedRoleScheduleRequestActions
+  appScope:
+    '@odata.type': microsoft.graph.appScope
+  appScopeId: String
+  directoryScope:
+    '@odata.type': microsoft.graph.directoryObject
+  directoryScopeId: String
+  isValidationOnly: 'true'
+  justification: String
+  principal:
+    '@odata.type': microsoft.graph.directoryObject
+  principalId: String
+  roleDefinition:
+    '@odata.type': microsoft.graph.unifiedRoleDefinition
+  roleDefinitionId: String
+  scheduleInfo:
+    '@odata.type': microsoft.graph.requestSchedule
+  targetSchedule:
+    '@odata.type': microsoft.graph.unifiedRoleEligibilitySchedule
+  targetScheduleId: String
+  ticketInfo:
+    '@odata.type': microsoft.graph.ticketInfo

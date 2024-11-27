@@ -1,0 +1,18 @@
+value:
+  coreBootTimeInMs: '0'
+  coreLoginTimeInMs: '0'
+  deviceId: String
+  featureUpdateBootTimeInMs: '0'
+  groupPolicyBootTimeInMs: '0'
+  groupPolicyLoginTimeInMs: '0'
+  isFeatureUpdate: 'true'
+  isFirstLogin: 'true'
+  operatingSystemVersion: String
+  responsiveDesktopTimeInMs: '0'
+  restartCategory:
+    '@odata.type': microsoft.graph.userExperienceAnalyticsOperatingSystemRestartCategory
+  restartFaultBucket: String
+  restartStopCode: String
+  startTime: '0001-01-01T00:00:00.0000000+00:00'
+  totalBootTimeInMs: '0'
+  totalLoginTimeInMs: '0'

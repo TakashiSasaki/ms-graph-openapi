@@ -1,0 +1,3 @@
+value:
+  deliveryFrequency:
+    '@odata.type': microsoft.graph.notificationDeliveryFrequency

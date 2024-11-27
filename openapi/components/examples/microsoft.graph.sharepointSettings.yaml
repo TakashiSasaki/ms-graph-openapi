@@ -1,0 +1,39 @@
+value:
+  allowedDomainGuidsForSyncApp:
+    - 00000000-0000-0000-0000-000000000000
+  availableManagedPathsForSiteCreation:
+    - String
+  deletedUserPersonalSiteRetentionPeriodInDays: '0'
+  excludedFileExtensionsForSyncApp:
+    - String
+  idleSessionSignOut:
+    '@odata.type': microsoft.graph.idleSessionSignOut
+  imageTaggingOption:
+    '@odata.type': microsoft.graph.imageTaggingChoice
+  isCommentingOnSitePagesEnabled: 'true'
+  isFileActivityNotificationEnabled: 'true'
+  isLegacyAuthProtocolsEnabled: 'true'
+  isLoopEnabled: 'true'
+  isMacSyncAppEnabled: 'true'
+  isRequireAcceptingUserToMatchInvitedUserEnabled: 'true'
+  isResharingByExternalUsersEnabled: 'true'
+  isSharePointMobileNotificationEnabled: 'true'
+  isSharePointNewsfeedEnabled: 'true'
+  isSiteCreationEnabled: 'true'
+  isSiteCreationUIEnabled: 'true'
+  isSitePagesCreationEnabled: 'true'
+  isSitesStorageLimitAutomatic: 'true'
+  isSyncButtonHiddenOnPersonalSite: 'true'
+  isUnmanagedSyncAppForTenantRestricted: 'true'
+  personalSiteDefaultStorageLimitInMB: '0'
+  sharingAllowedDomainList:
+    - String
+  sharingBlockedDomainList:
+    - String
+  sharingCapability:
+    '@odata.type': microsoft.graph.sharingCapabilities
+  sharingDomainRestrictionMode:
+    '@odata.type': microsoft.graph.sharingDomainRestrictionMode
+  siteCreationDefaultManagedPath: String
+  siteCreationDefaultStorageLimitInMB: '0'
+  tenantDefaultTimezone: String

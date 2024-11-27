@@ -1,0 +1,3 @@
+value:
+  includeContent:
+    '@odata.type': microsoft.graph.searchContent

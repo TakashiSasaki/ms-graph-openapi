@@ -1,0 +1,7 @@
+value:
+  group:
+    '@odata.type': microsoft.graph.identity
+  siteGroup:
+    '@odata.type': microsoft.graph.sharePointIdentity
+  siteUser:
+    '@odata.type': microsoft.graph.sharePointIdentity

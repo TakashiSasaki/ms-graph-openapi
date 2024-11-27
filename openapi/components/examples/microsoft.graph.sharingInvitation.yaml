@@ -1,0 +1,6 @@
+value:
+  email: String
+  invitedBy:
+    '@odata.type': microsoft.graph.identitySet
+  redeemedBy: String
+  signInRequired: 'true'

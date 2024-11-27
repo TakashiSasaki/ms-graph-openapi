@@ -1,0 +1,16 @@
+value:
+  compliantDeviceCount: '0'
+  compliantUserCount: '0'
+  conflictDeviceCount: '0'
+  conflictUserCount: '0'
+  displayName: String
+  errorDeviceCount: '0'
+  errorUserCount: '0'
+  nonCompliantDeviceCount: '0'
+  nonCompliantUserCount: '0'
+  notApplicableDeviceCount: '0'
+  notApplicableUserCount: '0'
+  remediatedDeviceCount: '0'
+  remediatedUserCount: '0'
+  unknownDeviceCount: '0'
+  unknownUserCount: '0'

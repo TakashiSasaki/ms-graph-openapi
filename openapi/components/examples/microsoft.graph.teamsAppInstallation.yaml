@@ -1,0 +1,7 @@
+value:
+  consentedPermissionSet:
+    '@odata.type': microsoft.graph.teamsAppPermissionSet
+  teamsApp:
+    '@odata.type': microsoft.graph.teamsApp
+  teamsAppDefinition:
+    '@odata.type': microsoft.graph.teamsAppDefinition

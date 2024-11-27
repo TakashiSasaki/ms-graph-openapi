@@ -1,0 +1,9 @@
+value:
+  htmlStrings:
+    - '@odata.type': microsoft.graph.metaDataKeyStringPair
+  imageSources:
+    - '@odata.type': microsoft.graph.metaDataKeyStringPair
+  links:
+    - '@odata.type': microsoft.graph.metaDataKeyStringPair
+  searchablePlainTexts:
+    - '@odata.type': microsoft.graph.metaDataKeyStringPair

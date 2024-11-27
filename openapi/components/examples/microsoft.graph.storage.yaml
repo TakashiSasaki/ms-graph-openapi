@@ -1,0 +1,5 @@
+value:
+  fileStorage:
+    '@odata.type': microsoft.graph.fileStorage
+  settings:
+    '@odata.type': microsoft.graph.storageSettings

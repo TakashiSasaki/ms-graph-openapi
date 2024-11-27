@@ -1,0 +1,3 @@
+value:
+  availability:
+    - '@odata.type': microsoft.graph.shiftAvailability

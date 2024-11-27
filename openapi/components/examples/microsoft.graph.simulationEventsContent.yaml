@@ -1,0 +1,4 @@
+value:
+  compromisedRate: '0'
+  events:
+    - '@odata.type': microsoft.graph.simulationEvent

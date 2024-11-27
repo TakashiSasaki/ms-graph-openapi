@@ -1,0 +1,35 @@
+value:
+  articleIndicators:
+    - '@odata.type': microsoft.graph.security.articleIndicator
+  articles:
+    - '@odata.type': microsoft.graph.security.article
+  hostComponents:
+    - '@odata.type': microsoft.graph.security.hostComponent
+  hostCookies:
+    - '@odata.type': microsoft.graph.security.hostCookie
+  hostPairs:
+    - '@odata.type': microsoft.graph.security.hostPair
+  hostPorts:
+    - '@odata.type': microsoft.graph.security.hostPort
+  hosts:
+    - '@odata.type': microsoft.graph.security.host
+  hostSslCertificates:
+    - '@odata.type': microsoft.graph.security.hostSslCertificate
+  hostTrackers:
+    - '@odata.type': microsoft.graph.security.hostTracker
+  intelligenceProfileIndicators:
+    - '@odata.type': microsoft.graph.security.intelligenceProfileIndicator
+  intelProfiles:
+    - '@odata.type': microsoft.graph.security.intelligenceProfile
+  passiveDnsRecords:
+    - '@odata.type': microsoft.graph.security.passiveDnsRecord
+  sslCertificates:
+    - '@odata.type': microsoft.graph.security.sslCertificate
+  subdomains:
+    - '@odata.type': microsoft.graph.security.subdomain
+  vulnerabilities:
+    - '@odata.type': microsoft.graph.security.vulnerability
+  whoisHistoryRecords:
+    - '@odata.type': microsoft.graph.security.whoisHistoryRecord
+  whoisRecords:
+    - '@odata.type': microsoft.graph.security.whoisRecord

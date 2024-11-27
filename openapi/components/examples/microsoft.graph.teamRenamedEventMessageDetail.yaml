@@ -1,0 +1,5 @@
+value:
+  initiator:
+    '@odata.type': microsoft.graph.identitySet
+  teamDisplayName: String
+  teamId: String

@@ -1,0 +1,27 @@
+value:
+  alerts:
+    - '@odata.type': microsoft.graph.alert
+  alerts_v2:
+    - '@odata.type': microsoft.graph.security.alert
+  attackSimulation:
+    '@odata.type': microsoft.graph.attackSimulationRoot
+  cases:
+    '@odata.type': microsoft.graph.security.casesRoot
+  identities:
+    '@odata.type': microsoft.graph.security.identityContainer
+  incidents:
+    - '@odata.type': microsoft.graph.security.incident
+  labels:
+    '@odata.type': microsoft.graph.security.labelsRoot
+  secureScoreControlProfiles:
+    - '@odata.type': microsoft.graph.secureScoreControlProfile
+  secureScores:
+    - '@odata.type': microsoft.graph.secureScore
+  subjectRightsRequests:
+    - '@odata.type': microsoft.graph.subjectRightsRequest
+  threatIntelligence:
+    '@odata.type': microsoft.graph.security.threatIntelligence
+  triggers:
+    '@odata.type': microsoft.graph.security.triggersRoot
+  triggerTypes:
+    '@odata.type': microsoft.graph.security.triggerTypesRoot

@@ -1,0 +1,4 @@
+value:
+  permissionType:
+    '@odata.type': microsoft.graph.teamsAppResourceSpecificPermissionType
+  permissionValue: String

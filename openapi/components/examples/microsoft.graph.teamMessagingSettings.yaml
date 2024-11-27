@@ -1,0 +1,6 @@
+value:
+  allowChannelMentions: 'true'
+  allowOwnerDeleteMessages: 'true'
+  allowTeamMentions: 'true'
+  allowUserDeleteMessages: 'true'
+  allowUserEditMessages: 'true'

@@ -1,0 +1,8 @@
+value:
+  recommendedActions:
+    - '@odata.type': microsoft.graph.recommendedAction
+  resolvedTargetsCount: '0'
+  simulationEventsContent:
+    '@odata.type': microsoft.graph.simulationEventsContent
+  trainingEventsContent:
+    '@odata.type': microsoft.graph.trainingEventsContent

@@ -1,0 +1,15 @@
+value:
+  containerFilter:
+    '@odata.type': microsoft.graph.containerFilter
+  editable: 'true'
+  groupFilter:
+    '@odata.type': microsoft.graph.groupFilter
+  id: String
+  metadata:
+    - '@odata.type': microsoft.graph.stringKeyStringValuePair
+  name: String
+  objectMappings:
+    - '@odata.type': microsoft.graph.objectMapping
+  priority: '0'
+  sourceDirectoryName: String
+  targetDirectoryName: String

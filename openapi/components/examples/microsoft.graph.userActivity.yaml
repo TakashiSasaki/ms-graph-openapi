@@ -1,0 +1,18 @@
+value:
+  activationUrl: String
+  activitySourceHost: String
+  appActivityId: String
+  appDisplayName: String
+  contentInfo: {}
+  contentUrl: String
+  createdDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  expirationDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  fallbackUrl: String
+  historyItems:
+    - '@odata.type': microsoft.graph.activityHistoryItem
+  lastModifiedDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  status:
+    '@odata.type': microsoft.graph.status
+  userTimezone: String
+  visualElements:
+    '@odata.type': microsoft.graph.visualInfo

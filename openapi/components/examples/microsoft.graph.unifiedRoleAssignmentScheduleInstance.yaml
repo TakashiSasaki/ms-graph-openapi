@@ -1,0 +1,9 @@
+value:
+  activatedUsing:
+    '@odata.type': microsoft.graph.unifiedRoleEligibilityScheduleInstance
+  assignmentType: String
+  endDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  memberType: String
+  roleAssignmentOriginId: String
+  roleAssignmentScheduleId: String
+  startDateTime: '0001-01-01T00:00:00.0000000+00:00'

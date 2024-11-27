@@ -1,0 +1,9 @@
+value:
+  fromTerm:
+    '@odata.type': microsoft.graph.termStore.term
+  relationship:
+    '@odata.type': microsoft.graph.termStore.relationType
+  set:
+    '@odata.type': microsoft.graph.termStore.set
+  toTerm:
+    '@odata.type': microsoft.graph.termStore.term

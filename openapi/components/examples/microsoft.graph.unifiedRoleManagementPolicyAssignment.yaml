@@ -1,0 +1,7 @@
+value:
+  policy:
+    '@odata.type': microsoft.graph.unifiedRoleManagementPolicy
+  policyId: String
+  roleDefinitionId: String
+  scopeId: String
+  scopeType: String

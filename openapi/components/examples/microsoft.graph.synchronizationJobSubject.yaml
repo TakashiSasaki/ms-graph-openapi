@@ -1,0 +1,5 @@
+value:
+  links:
+    '@odata.type': microsoft.graph.synchronizationLinkedObjects
+  objectId: String
+  objectTypeName: String

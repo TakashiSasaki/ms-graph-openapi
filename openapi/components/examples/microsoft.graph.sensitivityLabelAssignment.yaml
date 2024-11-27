@@ -1,0 +1,5 @@
+value:
+  assignmentMethod:
+    '@odata.type': microsoft.graph.sensitivityLabelAssignmentMethod
+  sensitivityLabelId: String
+  tenantId: String

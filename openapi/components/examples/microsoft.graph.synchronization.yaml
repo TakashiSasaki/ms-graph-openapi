@@ -1,0 +1,7 @@
+value:
+  jobs:
+    - '@odata.type': microsoft.graph.synchronizationJob
+  secrets:
+    - '@odata.type': microsoft.graph.synchronizationSecretKeyStringValuePair
+  templates:
+    - '@odata.type': microsoft.graph.synchronizationTemplate

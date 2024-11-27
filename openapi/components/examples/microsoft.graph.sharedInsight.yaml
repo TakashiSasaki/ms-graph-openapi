@@ -1,0 +1,13 @@
+value:
+  lastShared:
+    '@odata.type': microsoft.graph.sharingDetail
+  lastSharedMethod:
+    '@odata.type': microsoft.graph.entity
+  resource:
+    '@odata.type': microsoft.graph.entity
+  resourceReference:
+    '@odata.type': microsoft.graph.resourceReference
+  resourceVisualization:
+    '@odata.type': microsoft.graph.resourceVisualization
+  sharingHistory:
+    - '@odata.type': microsoft.graph.sharingDetail

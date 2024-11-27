@@ -1,0 +1,3 @@
+value:
+  completionReason:
+    '@odata.type': microsoft.graph.sendDtmfCompletionReason

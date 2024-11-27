@@ -1,0 +1,8 @@
+value:
+  application:
+    '@odata.type': microsoft.graph.identity
+  preventsDownload: 'true'
+  scope: String
+  type: String
+  webHtml: String
+  webUrl: String

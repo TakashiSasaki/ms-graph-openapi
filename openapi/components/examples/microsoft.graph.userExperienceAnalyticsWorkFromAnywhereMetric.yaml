@@ -1,0 +1,3 @@
+value:
+  metricDevices:
+    - '@odata.type': microsoft.graph.userExperienceAnalyticsWorkFromAnywhereDevice

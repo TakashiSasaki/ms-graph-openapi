@@ -1,0 +1,7 @@
+value:
+  allowAddRemoveApps: 'true'
+  allowCreatePrivateChannels: 'true'
+  allowCreateUpdateChannels: 'true'
+  allowCreateUpdateRemoveConnectors: 'true'
+  allowCreateUpdateRemoveTabs: 'true'
+  allowDeleteChannels: 'true'

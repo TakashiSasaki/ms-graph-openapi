@@ -1,0 +1,10 @@
+value:
+  displayName: String
+  extensions:
+    - '@odata.type': microsoft.graph.extension
+  isOwner: 'true'
+  isShared: 'true'
+  tasks:
+    - '@odata.type': microsoft.graph.todoTask
+  wellknownListName:
+    '@odata.type': microsoft.graph.wellknownListName

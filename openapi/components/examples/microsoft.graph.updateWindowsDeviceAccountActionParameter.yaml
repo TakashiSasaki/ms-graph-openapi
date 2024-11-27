@@ -1,0 +1,8 @@
+value:
+  calendarSyncEnabled: 'true'
+  deviceAccount:
+    '@odata.type': microsoft.graph.windowsDeviceAccount
+  deviceAccountEmail: String
+  exchangeServer: String
+  passwordRotationEnabled: 'true'
+  sessionInitiationProtocalAddress: String

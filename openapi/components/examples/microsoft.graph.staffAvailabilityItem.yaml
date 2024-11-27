@@ -1,0 +1,4 @@
+value:
+  availabilityItems:
+    - '@odata.type': microsoft.graph.availabilityItem
+  staffId: String

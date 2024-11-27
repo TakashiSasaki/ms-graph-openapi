@@ -1,0 +1,7 @@
+value:
+  manager:
+    '@odata.type': microsoft.graph.synchronizationJobSubject
+  members:
+    - '@odata.type': microsoft.graph.synchronizationJobSubject
+  owners:
+    - '@odata.type': microsoft.graph.synchronizationJobSubject

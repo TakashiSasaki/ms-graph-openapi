@@ -1,0 +1,86 @@
+value:
+  accountEnabled: 'true'
+  addIns:
+    - '@odata.type': microsoft.graph.addIn
+  alternativeNames:
+    - String
+  appDescription: String
+  appDisplayName: String
+  appId: String
+  applicationTemplateId: String
+  appManagementPolicies:
+    - '@odata.type': microsoft.graph.appManagementPolicy
+  appOwnerOrganizationId: 00000000-0000-0000-0000-000000000000
+  appRoleAssignedTo:
+    - '@odata.type': microsoft.graph.appRoleAssignment
+  appRoleAssignmentRequired: 'true'
+  appRoleAssignments:
+    - '@odata.type': microsoft.graph.appRoleAssignment
+  appRoles:
+    - '@odata.type': microsoft.graph.appRole
+  claimsMappingPolicies:
+    - '@odata.type': microsoft.graph.claimsMappingPolicy
+  createdObjects:
+    - '@odata.type': microsoft.graph.directoryObject
+  customSecurityAttributes:
+    '@odata.type': microsoft.graph.customSecurityAttributeValue
+  delegatedPermissionClassifications:
+    - '@odata.type': microsoft.graph.delegatedPermissionClassification
+  description: String
+  disabledByMicrosoftStatus: String
+  displayName: String
+  endpoints:
+    - '@odata.type': microsoft.graph.endpoint
+  federatedIdentityCredentials:
+    - '@odata.type': microsoft.graph.federatedIdentityCredential
+  homepage: String
+  homeRealmDiscoveryPolicies:
+    - '@odata.type': microsoft.graph.homeRealmDiscoveryPolicy
+  info:
+    '@odata.type': microsoft.graph.informationalUrl
+  keyCredentials:
+    - '@odata.type': microsoft.graph.keyCredential
+  loginUrl: String
+  logoutUrl: String
+  memberOf:
+    - '@odata.type': microsoft.graph.directoryObject
+  notes: String
+  notificationEmailAddresses:
+    - String
+  oauth2PermissionGrants:
+    - '@odata.type': microsoft.graph.oAuth2PermissionGrant
+  oauth2PermissionScopes:
+    - '@odata.type': microsoft.graph.permissionScope
+  ownedObjects:
+    - '@odata.type': microsoft.graph.directoryObject
+  owners:
+    - '@odata.type': microsoft.graph.directoryObject
+  passwordCredentials:
+    - '@odata.type': microsoft.graph.passwordCredential
+  preferredSingleSignOnMode: String
+  preferredTokenSigningKeyThumbprint: String
+  remoteDesktopSecurityConfiguration:
+    '@odata.type': microsoft.graph.remoteDesktopSecurityConfiguration
+  replyUrls:
+    - String
+  resourceSpecificApplicationPermissions:
+    - '@odata.type': microsoft.graph.resourceSpecificPermission
+  samlSingleSignOnSettings:
+    '@odata.type': microsoft.graph.samlSingleSignOnSettings
+  servicePrincipalNames:
+    - String
+  servicePrincipalType: String
+  signInAudience: String
+  synchronization:
+    '@odata.type': microsoft.graph.synchronization
+  tags:
+    - String
+  tokenEncryptionKeyId: 00000000-0000-0000-0000-000000000000
+  tokenIssuancePolicies:
+    - '@odata.type': microsoft.graph.tokenIssuancePolicy
+  tokenLifetimePolicies:
+    - '@odata.type': microsoft.graph.tokenLifetimePolicy
+  transitiveMemberOf:
+    - '@odata.type': microsoft.graph.directoryObject
+  verifiedPublisher:
+    '@odata.type': microsoft.graph.verifiedPublisher

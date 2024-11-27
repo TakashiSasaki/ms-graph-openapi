@@ -1,0 +1,4 @@
+value:
+  memberType: String
+  scheduleInfo:
+    '@odata.type': microsoft.graph.requestSchedule

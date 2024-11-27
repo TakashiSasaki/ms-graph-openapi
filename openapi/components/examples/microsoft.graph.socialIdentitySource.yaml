@@ -1,0 +1,4 @@
+value:
+  displayName: String
+  socialIdentitySourceType:
+    '@odata.type': microsoft.graph.socialIdentitySourceType
