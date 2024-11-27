@@ -1,0 +1,45 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: accessPackageQuestion
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      isAnswerEditable:
+        type: boolean
+        description: >-
+          Specifies whether the requestor is allowed to edit answers to
+          questions for an assignment by posting an update to
+          accessPackageAssignmentRequest.
+        nullable: true
+      isRequired:
+        type: boolean
+        description: Whether the requestor is required to supply an answer or not.
+        nullable: true
+      localizations:
+        type: array
+        items:
+          $ref: .\microsoft.graph.accessPackageLocalizedText.yaml
+        description: >-
+          The text of the question represented in a format for a specific
+          locale.
+      sequence:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: >-
+          Relative position of this question when displaying a list of questions
+          to the requestor.
+        format: int32
+        nullable: true
+      text:
+        type: string
+        description: The text of the question to show to the requestor.
+        nullable: true
+      '@odata.type':
+        type: string
+    discriminator:
+      propertyName: '@odata.type'
+      mapping:
+        '#microsoft.graph.accessPackageMultipleChoiceQuestion': .\microsoft.graph.accessPackageMultipleChoiceQuestion.yaml
+        '#microsoft.graph.accessPackageTextInputQuestion': .\microsoft.graph.accessPackageTextInputQuestion.yaml

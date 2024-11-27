@@ -1,0 +1,124 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: accessPackageAssignmentPolicy
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      allowedTargetScope:
+        anyOf:
+          - $ref: .\microsoft.graph.allowedTargetScope.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Principals that can be assigned the access package through this
+          policy. The possible values are: notSpecified, specificDirectoryUsers,
+          specificConnectedOrganizationUsers,
+          specificDirectoryServicePrincipals, allMemberUsers, allDirectoryUsers,
+          allDirectoryServicePrincipals,
+          allConfiguredConnectedOrganizationUsers, allExternalUsers,
+          unknownFutureValue.
+      automaticRequestSettings:
+        anyOf:
+          - $ref: .\microsoft.graph.accessPackageAutomaticRequestSettings.yaml
+          - type: object
+            nullable: true
+        description: >-
+          This property is only present for an auto assignment policy; if
+          absent, this is a request-based policy.
+      createdDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: >-
+          The Timestamp type represents date and time information using ISO 8601
+          format and is always in UTC time. For example, midnight UTC on Jan 1,
+          2014 is 2014-01-01T00:00:00Z.
+        format: date-time
+        nullable: true
+      description:
+        type: string
+        description: The description of the policy.
+        nullable: true
+      displayName:
+        type: string
+        description: The display name of the policy.
+        nullable: true
+      expiration:
+        anyOf:
+          - $ref: .\microsoft.graph.expirationPattern.yaml
+          - type: object
+            nullable: true
+        description: The expiration date for assignments created in this policy.
+      modifiedDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: >-
+          The Timestamp type represents date and time information using ISO 8601
+          format and is always in UTC time. For example, midnight UTC on Jan 1,
+          2014 is 2014-01-01T00:00:00Z.
+        format: date-time
+        nullable: true
+      requestApprovalSettings:
+        anyOf:
+          - $ref: .\microsoft.graph.accessPackageAssignmentApprovalSettings.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Specifies the settings for approval of requests for an access package
+          assignment through this policy. For example, if approval is required
+          for new requests.
+      requestorSettings:
+        anyOf:
+          - $ref: .\microsoft.graph.accessPackageAssignmentRequestorSettings.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Provides additional settings to select who can create a request for an
+          access package assignment through this policy, and what they can
+          include in their request.
+      reviewSettings:
+        anyOf:
+          - $ref: .\microsoft.graph.accessPackageAssignmentReviewSettings.yaml
+          - type: object
+            nullable: true
+        description: Settings for access reviews of assignments through this policy.
+      specificAllowedTargets:
+        type: array
+        items:
+          $ref: .\microsoft.graph.subjectSet.yaml
+        description: >-
+          The principals that can be assigned access from an access package
+          through this policy.
+      accessPackage:
+        anyOf:
+          - $ref: .\microsoft.graph.accessPackage.yaml
+          - type: object
+            nullable: true
+        description: Access package containing this policy. Read-only.  Supports $expand.
+        x-ms-navigationProperty: true
+      catalog:
+        anyOf:
+          - $ref: .\microsoft.graph.accessPackageCatalog.yaml
+          - type: object
+            nullable: true
+        description: Catalog of the access package containing this policy. Read-only.
+        x-ms-navigationProperty: true
+      customExtensionStageSettings:
+        type: array
+        items:
+          $ref: .\microsoft.graph.customExtensionStageSetting.yaml
+        description: >-
+          The collection of stages when to execute one or more custom access
+          package workflow extensions. Supports $expand.
+        x-ms-navigationProperty: true
+      questions:
+        type: array
+        items:
+          $ref: .\microsoft.graph.accessPackageQuestion.yaml
+        description: Questions that are posed to the  requestor.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.accessPackageAssignmentPolicy'

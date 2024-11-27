@@ -1,0 +1,87 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: accessReviewHistoryDefinition
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      createdBy:
+        $ref: .\microsoft.graph.userIdentity.yaml
+      createdDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: Timestamp when the access review definition was created.
+        format: date-time
+      decisions:
+        type: array
+        items:
+          anyOf:
+            - $ref: .\microsoft.graph.accessReviewHistoryDecisionFilter.yaml
+            - type: object
+              nullable: true
+        description: >-
+          Determines which review decisions will be included in the fetched
+          review history data if specified. Optional on create. All decisions
+          are included by default if no decisions are provided on create.
+          Possible values are: approve, deny, dontKnow, notReviewed, and
+          notNotified.
+      displayName:
+        type: string
+        description: Name for the access review history data collection. Required.
+      reviewHistoryPeriodEndDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: >-
+          A timestamp. Reviews ending on or before this date will be included in
+          the fetched history data. Only required if scheduleSettings isn't
+          defined.
+        format: date-time
+      reviewHistoryPeriodStartDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: >-
+          A timestamp. Reviews starting on or before this date will be included
+          in the fetched history data. Only required if scheduleSettings isn't
+          defined.
+        format: date-time
+      scheduleSettings:
+        anyOf:
+          - $ref: .\microsoft.graph.accessReviewHistoryScheduleSettings.yaml
+          - type: object
+            nullable: true
+        description: >-
+          The settings for a recurring access review history definition series.
+          Only required if reviewHistoryPeriodStartDateTime or
+          reviewHistoryPeriodEndDateTime aren't defined. Not supported yet.
+      scopes:
+        type: array
+        items:
+          $ref: .\microsoft.graph.accessReviewScope.yaml
+        description: >-
+          Used to scope what reviews are included in the fetched history data.
+          Fetches reviews whose scope matches with this provided scope.
+          Required.
+      status:
+        anyOf:
+          - $ref: .\microsoft.graph.accessReviewHistoryStatus.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Represents the status of the review history data collection. The
+          possible values are: done, inProgress, error, requested,
+          unknownFutureValue.
+      instances:
+        type: array
+        items:
+          $ref: .\microsoft.graph.accessReviewHistoryInstance.yaml
+        description: >-
+          If the accessReviewHistoryDefinition is a recurring definition,
+          instances represent each recurrence. A definition that doesn't recur
+          will have exactly one instance.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.accessReviewHistoryDefinition'

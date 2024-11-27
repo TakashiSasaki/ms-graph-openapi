@@ -1,0 +1,8 @@
+title: alertFeedback
+enum:
+  - unknown
+  - truePositive
+  - falsePositive
+  - benignPositive
+  - unknownFutureValue
+type: string

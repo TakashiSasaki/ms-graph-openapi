@@ -1,0 +1,21 @@
+allOf:
+  - $ref: .\microsoft.graph.accessReviewInstanceDecisionItemResource.yaml
+  - title: accessReviewInstanceDecisionItemAccessPackageAssignmentPolicyResource
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      accessPackageDisplayName:
+        type: string
+        description: Display name of the access package to which access has been granted.
+        nullable: true
+      accessPackageId:
+        type: string
+        description: Identifier of the access package to which access has been granted.
+        nullable: true
+      '@odata.type':
+        type: string
+        default: >-
+          #microsoft.graph.accessReviewInstanceDecisionItemAccessPackageAssignmentPolicyResource
+x-ms-discriminator-value: >-
+  #microsoft.graph.accessReviewInstanceDecisionItemAccessPackageAssignmentPolicyResource

@@ -1,0 +1,10 @@
+title: artifactRestoreStatus
+enum:
+  - added
+  - scheduling
+  - scheduled
+  - inProgress
+  - succeeded
+  - failed
+  - unknownFutureValue
+type: string

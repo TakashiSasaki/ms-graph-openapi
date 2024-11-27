@@ -1,0 +1,7 @@
+title: activityType
+enum:
+  - signin
+  - user
+  - unknownFutureValue
+  - servicePrincipal
+type: string

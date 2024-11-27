@@ -1,0 +1,15 @@
+title: accessReviewScope
+required:
+  - '@odata.type'
+type: object
+properties:
+  '@odata.type':
+    type: string
+discriminator:
+  propertyName: '@odata.type'
+  mapping:
+    '#microsoft.graph.accessReviewQueryScope': .\microsoft.graph.accessReviewQueryScope.yaml
+    '#microsoft.graph.accessReviewInactiveUsersQueryScope': .\microsoft.graph.accessReviewInactiveUsersQueryScope.yaml
+    '#microsoft.graph.principalResourceMembershipsScope': .\microsoft.graph.principalResourceMembershipsScope.yaml
+    microsoft.graph.accessReviewQueryScope: .\microsoft.graph.accessReviewQueryScope.yaml
+    microsoft.graph.principalResourceMembershipsScope: .\microsoft.graph.principalResourceMembershipsScope.yaml

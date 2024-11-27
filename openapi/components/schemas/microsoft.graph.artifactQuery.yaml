@@ -1,0 +1,19 @@
+title: artifactQuery
+required:
+  - '@odata.type'
+type: object
+properties:
+  artifactType:
+    anyOf:
+      - $ref: .\microsoft.graph.restorableArtifact.yaml
+      - type: object
+        nullable: true
+    description: >-
+      The type of artifact to search. The possible values are: message,
+      unknownFutureValue.
+  queryExpression:
+    type: string
+    description: Specifies criteria to retrieve artifacts.
+    nullable: true
+  '@odata.type':
+    type: string

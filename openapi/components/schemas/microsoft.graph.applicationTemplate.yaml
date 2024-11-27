@@ -1,0 +1,58 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: applicationTemplate
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      categories:
+        type: array
+        items:
+          type: string
+          nullable: true
+        description: >-
+          The list of categories for the application. Supported values can be:
+          Collaboration, Business Management, Consumer, Content management, CRM,
+          Data services, Developer services, E-commerce, Education, ERP,
+          Finance, Health, Human resources, IT infrastructure, Mail, Management,
+          Marketing, Media, Productivity, Project management,
+          Telecommunications, Tools, Travel, and Web design & hosting.
+      description:
+        type: string
+        description: A description of the application.
+        nullable: true
+      displayName:
+        type: string
+        description: The name of the application.
+        nullable: true
+      homePageUrl:
+        type: string
+        description: The home page URL of the application.
+        nullable: true
+      logoUrl:
+        type: string
+        description: The URL to get the logo for this application.
+        nullable: true
+      publisher:
+        type: string
+        description: The name of the publisher for this application.
+        nullable: true
+      supportedProvisioningTypes:
+        type: array
+        items:
+          type: string
+          nullable: true
+        description: >-
+          The list of provisioning modes supported by this application. The only
+          valid value is sync.
+      supportedSingleSignOnModes:
+        type: array
+        items:
+          type: string
+          nullable: true
+        description: >-
+          The list of single sign-on modes supported by this application. The
+          supported values are oidc, password, saml, and notSupported.
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.applicationTemplate'

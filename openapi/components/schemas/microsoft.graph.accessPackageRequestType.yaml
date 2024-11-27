@@ -1,0 +1,15 @@
+title: accessPackageRequestType
+enum:
+  - notSpecified
+  - userAdd
+  - userUpdate
+  - userRemove
+  - adminAdd
+  - adminUpdate
+  - adminRemove
+  - systemAdd
+  - systemUpdate
+  - systemRemove
+  - onBehalfAdd
+  - unknownFutureValue
+type: string

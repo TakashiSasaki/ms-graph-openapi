@@ -1,0 +1,6 @@
+title: accessPackageCatalogState
+enum:
+  - unpublished
+  - published
+  - unknownFutureValue
+type: string

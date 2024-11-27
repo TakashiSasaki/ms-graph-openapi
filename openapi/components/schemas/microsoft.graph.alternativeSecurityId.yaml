@@ -1,0 +1,23 @@
+title: alternativeSecurityId
+required:
+  - '@odata.type'
+type: object
+properties:
+  identityProvider:
+    type: string
+    description: For internal use only.
+    nullable: true
+  key:
+    type: string
+    description: For internal use only.
+    format: base64url
+    nullable: true
+  type:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    description: For internal use only.
+    format: int32
+    nullable: true
+  '@odata.type':
+    type: string

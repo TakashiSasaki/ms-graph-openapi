@@ -1,0 +1,199 @@
+allOf:
+  - $ref: .\microsoft.graph.deviceConfiguration.yaml
+  - title: androidWorkProfileGeneralDeviceConfiguration
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      passwordBlockFingerprintUnlock:
+        type: boolean
+        description: Indicates whether or not to block fingerprint unlock.
+      passwordBlockTrustAgents:
+        type: boolean
+        description: Indicates whether or not to block Smart Lock and other trust agents.
+      passwordExpirationDays:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: Number of days before the password expires. Valid values 1 to 365
+        format: int32
+        nullable: true
+      passwordMinimumLength:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: Minimum length of passwords. Valid values 4 to 16
+        format: int32
+        nullable: true
+      passwordMinutesOfInactivityBeforeScreenTimeout:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: Minutes of inactivity before the screen times out.
+        format: int32
+        nullable: true
+      passwordPreviousPasswordBlockCount:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: Number of previous passwords to block. Valid values 0 to 24
+        format: int32
+        nullable: true
+      passwordRequiredType:
+        $ref: .\microsoft.graph.androidWorkProfileRequiredPasswordType.yaml
+      passwordSignInFailureCountBeforeFactoryReset:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: >-
+          Number of sign in failures allowed before factory reset. Valid values
+          1 to 16
+        format: int32
+        nullable: true
+      securityRequireVerifyApps:
+        type: boolean
+        description: Require the Android Verify apps feature is turned on.
+      workProfileBlockAddingAccounts:
+        type: boolean
+        description: Block users from adding/removing accounts in work profile.
+      workProfileBlockCamera:
+        type: boolean
+        description: Block work profile camera.
+      workProfileBlockCrossProfileCallerId:
+        type: boolean
+        description: Block display work profile caller ID in personal profile.
+      workProfileBlockCrossProfileContactsSearch:
+        type: boolean
+        description: Block work profile contacts availability in personal profile.
+      workProfileBlockCrossProfileCopyPaste:
+        type: boolean
+        description: >-
+          Boolean that indicates if the setting disallow cross profile
+          copy/paste is enabled.
+      workProfileBlockNotificationsWhileDeviceLocked:
+        type: boolean
+        description: Indicates whether or not to block notifications while device locked.
+      workProfileBlockScreenCapture:
+        type: boolean
+        description: Block screen capture in work profile.
+      workProfileBluetoothEnableContactSharing:
+        type: boolean
+        description: Allow bluetooth devices to access enterprise contacts.
+      workProfileDataSharingType:
+        $ref: .\microsoft.graph.androidWorkProfileCrossProfileDataSharingType.yaml
+      workProfileDefaultAppPermissionPolicy:
+        $ref: >-
+          .\microsoft.graph.androidWorkProfileDefaultAppPermissionPolicyType.yaml
+      workProfilePasswordBlockFingerprintUnlock:
+        type: boolean
+        description: Indicates whether or not to block fingerprint unlock for work profile.
+      workProfilePasswordBlockTrustAgents:
+        type: boolean
+        description: >-
+          Indicates whether or not to block Smart Lock and other trust agents
+          for work profile.
+      workProfilePasswordExpirationDays:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: >-
+          Number of days before the work profile password expires. Valid values
+          1 to 365
+        format: int32
+        nullable: true
+      workProfilePasswordMinimumLength:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: Minimum length of work profile password. Valid values 4 to 16
+        format: int32
+        nullable: true
+      workProfilePasswordMinLetterCharacters:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: >-
+          Minimum # of letter characters required in work profile password.
+          Valid values 1 to 10
+        format: int32
+        nullable: true
+      workProfilePasswordMinLowerCaseCharacters:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: >-
+          Minimum # of lower-case characters required in work profile password.
+          Valid values 1 to 10
+        format: int32
+        nullable: true
+      workProfilePasswordMinNonLetterCharacters:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: >-
+          Minimum # of non-letter characters required in work profile password.
+          Valid values 1 to 10
+        format: int32
+        nullable: true
+      workProfilePasswordMinNumericCharacters:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: >-
+          Minimum # of numeric characters required in work profile password.
+          Valid values 1 to 10
+        format: int32
+        nullable: true
+      workProfilePasswordMinSymbolCharacters:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: >-
+          Minimum # of symbols required in work profile password. Valid values 1
+          to 10
+        format: int32
+        nullable: true
+      workProfilePasswordMinUpperCaseCharacters:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: >-
+          Minimum # of upper-case characters required in work profile password.
+          Valid values 1 to 10
+        format: int32
+        nullable: true
+      workProfilePasswordMinutesOfInactivityBeforeScreenTimeout:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: Minutes of inactivity before the screen times out.
+        format: int32
+        nullable: true
+      workProfilePasswordPreviousPasswordBlockCount:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: >-
+          Number of previous work profile passwords to block. Valid values 0 to
+          24
+        format: int32
+        nullable: true
+      workProfilePasswordRequiredType:
+        $ref: .\microsoft.graph.androidWorkProfileRequiredPasswordType.yaml
+      workProfilePasswordSignInFailureCountBeforeFactoryReset:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: >-
+          Number of sign in failures allowed before work profile is removed and
+          all corporate data deleted. Valid values 1 to 16
+        format: int32
+        nullable: true
+      workProfileRequirePassword:
+        type: boolean
+        description: Password is required or not for work profile
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.androidWorkProfileGeneralDeviceConfiguration'
+    description: Android Work Profile general device configuration.
+x-ms-discriminator-value: '#microsoft.graph.androidWorkProfileGeneralDeviceConfiguration'

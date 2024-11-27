@@ -1,0 +1,39 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: accessPackageResourceRole
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      description:
+        type: string
+        description: A description for the resource role.
+        nullable: true
+      displayName:
+        type: string
+        description: >-
+          The display name of the resource role such as the role defined by the
+          application.
+        nullable: true
+      originId:
+        type: string
+        description: >-
+          The unique identifier of the resource role in the origin system. For a
+          SharePoint Online site, the originId is the sequence number of the
+          role in the site.
+        nullable: true
+      originSystem:
+        type: string
+        description: >-
+          The type of the resource in the origin system, such as
+          SharePointOnline, AadApplication, or AadGroup.
+        nullable: true
+      resource:
+        anyOf:
+          - $ref: .\microsoft.graph.accessPackageResource.yaml
+          - type: object
+            nullable: true
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.accessPackageResourceRole'

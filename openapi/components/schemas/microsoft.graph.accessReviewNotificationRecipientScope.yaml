@@ -1,0 +1,12 @@
+title: accessReviewNotificationRecipientScope
+required:
+  - '@odata.type'
+type: object
+properties:
+  '@odata.type':
+    type: string
+discriminator:
+  propertyName: '@odata.type'
+  mapping:
+    '#microsoft.graph.accessReviewNotificationRecipientQueryScope': .\microsoft.graph.accessReviewNotificationRecipientQueryScope.yaml
+    microsoft.graph.accessReviewNotificationRecipientQueryScope: .\microsoft.graph.accessReviewNotificationRecipientQueryScope.yaml

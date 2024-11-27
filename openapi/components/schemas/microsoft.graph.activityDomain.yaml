@@ -1,0 +1,7 @@
+title: activityDomain
+enum:
+  - unknown
+  - work
+  - personal
+  - unrestricted
+type: string

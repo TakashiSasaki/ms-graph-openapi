@@ -1,0 +1,29 @@
+allOf:
+  - $ref: .\microsoft.graph.conversationMember.yaml
+  - title: aadUserConversationMember
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      email:
+        type: string
+        description: The email address of the user.
+        nullable: true
+      tenantId:
+        type: string
+        description: TenantId which the Microsoft Entra user belongs to.
+        nullable: true
+      userId:
+        type: string
+        description: The guid of the user.
+        nullable: true
+      user:
+        anyOf:
+          - $ref: .\microsoft.graph.user.yaml
+          - type: object
+            nullable: true
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.aadUserConversationMember'
+x-ms-discriminator-value: '#microsoft.graph.aadUserConversationMember'

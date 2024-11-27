@@ -1,0 +1,7 @@
+title: accessPackageAssignmentRequestFilterByCurrentUserOptions
+enum:
+  - target
+  - createdBy
+  - approver
+  - unknownFutureValue
+type: string

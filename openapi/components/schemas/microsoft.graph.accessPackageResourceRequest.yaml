@@ -1,0 +1,50 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: accessPackageResourceRequest
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      createdDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: >-
+          The Timestamp type represents date and time information using ISO 8601
+          format and is always in UTC time. For example, midnight UTC on Jan 1,
+          2014 is 2014-01-01T00:00:00Z. Read-only.
+        format: date-time
+        nullable: true
+      requestType:
+        anyOf:
+          - $ref: .\microsoft.graph.accessPackageRequestType.yaml
+          - type: object
+            nullable: true
+        description: >-
+          The type of the request. Use adminAdd to add a resource, if the caller
+          is an administrator or resource owner, adminUpdate to update a
+          resource, or adminRemove to remove a resource.
+      state:
+        anyOf:
+          - $ref: .\microsoft.graph.accessPackageRequestState.yaml
+          - type: object
+            nullable: true
+        description: >-
+          The outcome of whether the service was able to add the resource to the
+          catalog. The value is delivered if the resource was added or removed,
+          and deliveryFailed if it couldn't be added or removed. Read-only.
+      catalog:
+        anyOf:
+          - $ref: .\microsoft.graph.accessPackageCatalog.yaml
+          - type: object
+            nullable: true
+        x-ms-navigationProperty: true
+      resource:
+        anyOf:
+          - $ref: .\microsoft.graph.accessPackageResource.yaml
+          - type: object
+            nullable: true
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.accessPackageResourceRequest'

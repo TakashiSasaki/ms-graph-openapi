@@ -1,0 +1,80 @@
+allOf:
+  - $ref: .\microsoft.graph.directoryObject.yaml
+  - title: administrativeUnit
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      description:
+        type: string
+        description: >-
+          An optional description for the administrative unit. Supports $filter
+          (eq, ne, in, startsWith), $search.
+        nullable: true
+      displayName:
+        type: string
+        description: >-
+          Display name for the administrative unit. Supports $filter (eq, ne,
+          not, ge, le, in, startsWith, and eq on null values), $search, and
+          $orderby.
+        nullable: true
+      isMemberManagementRestricted:
+        type: boolean
+        nullable: true
+      membershipRule:
+        type: string
+        description: >-
+          The dynamic membership rule for the administrative unit. For more
+          information about the rules you can use for dynamic administrative
+          units and dynamic groups, see Manage rules for dynamic membership
+          groups in Microsoft Entra ID.
+        nullable: true
+      membershipRuleProcessingState:
+        type: string
+        description: >-
+          Controls whether the dynamic membership rule is actively processed.
+          Set to On to activate the dynamic membership rule, or Paused to stop
+          updating membership dynamically.
+        nullable: true
+      membershipType:
+        type: string
+        description: >-
+          Indicates the membership type for the administrative unit. The
+          possible values are: dynamic, assigned. If not set, the default value
+          is null and the default behavior is assigned.
+        nullable: true
+      visibility:
+        type: string
+        description: >-
+          Controls whether the administrative unit and its members are hidden or
+          public. Can be set to HiddenMembership. If not set, the default value
+          is null and the default behavior is public. When set to
+          HiddenMembership, only members of the administrative unit can list
+          other members of the administrative unit.
+        nullable: true
+      extensions:
+        type: array
+        items:
+          $ref: .\microsoft.graph.extension.yaml
+        description: >-
+          The collection of open extensions defined for this administrative
+          unit. Nullable.
+        x-ms-navigationProperty: true
+      members:
+        type: array
+        items:
+          $ref: .\microsoft.graph.directoryObject.yaml
+        description: >-
+          Users and groups that are members of this administrative unit.
+          Supports $expand.
+        x-ms-navigationProperty: true
+      scopedRoleMembers:
+        type: array
+        items:
+          $ref: .\microsoft.graph.scopedRoleMembership.yaml
+        description: Scoped-role members of this administrative unit.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.administrativeUnit'
+x-ms-discriminator-value: '#microsoft.graph.administrativeUnit'

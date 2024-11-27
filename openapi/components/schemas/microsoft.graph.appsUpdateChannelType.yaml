@@ -1,0 +1,7 @@
+title: appsUpdateChannelType
+enum:
+  - current
+  - monthlyEnterprise
+  - semiAnnual
+  - unknownFutureValue
+type: string

@@ -1,0 +1,7 @@
+title: advancedConfigState
+enum:
+  - default
+  - enabled
+  - disabled
+  - unknownFutureValue
+type: string

@@ -1,0 +1,17 @@
+allOf:
+  - $ref: .\microsoft.graph.accessPackageAnswer.yaml
+  - title: accessPackageAnswerString
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      value:
+        type: string
+        description: >-
+          The value stored on the requestor's user profile, if this answer is
+          configured to be stored as a specific attribute.
+        nullable: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.accessPackageAnswerString'
+x-ms-discriminator-value: '#microsoft.graph.accessPackageAnswerString'

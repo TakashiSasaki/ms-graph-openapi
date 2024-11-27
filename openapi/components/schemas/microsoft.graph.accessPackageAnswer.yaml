@@ -1,0 +1,22 @@
+title: accessPackageAnswer
+required:
+  - '@odata.type'
+type: object
+properties:
+  displayValue:
+    type: string
+    description: The localized display value shown to the requestor and approvers.
+    nullable: true
+  answeredQuestion:
+    anyOf:
+      - $ref: .\microsoft.graph.accessPackageQuestion.yaml
+      - type: object
+        nullable: true
+    x-ms-navigationProperty: true
+  '@odata.type':
+    type: string
+discriminator:
+  propertyName: '@odata.type'
+  mapping:
+    '#microsoft.graph.accessPackageAnswerString': .\microsoft.graph.accessPackageAnswerString.yaml
+    microsoft.graph.accessPackageAnswerString: .\microsoft.graph.accessPackageAnswerString.yaml

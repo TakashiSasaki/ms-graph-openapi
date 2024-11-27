@@ -1,0 +1,27 @@
+title: alterationResponse
+required:
+  - '@odata.type'
+type: object
+properties:
+  originalQueryString:
+    type: string
+    description: Defines the original user query string.
+    nullable: true
+  queryAlteration:
+    anyOf:
+      - $ref: .\microsoft.graph.searchAlteration.yaml
+      - type: object
+        nullable: true
+    description: >-
+      Defines the details of the alteration information for the spelling
+      correction.
+  queryAlterationType:
+    anyOf:
+      - $ref: .\microsoft.graph.searchAlterationType.yaml
+      - type: object
+        nullable: true
+    description: >-
+      Defines the type of the spelling correction. Possible values are:
+      suggestion, modification.
+  '@odata.type':
+    type: string

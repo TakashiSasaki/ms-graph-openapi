@@ -1,0 +1,21 @@
+allOf:
+  - $ref: .\microsoft.graph.accessPackageQuestion.yaml
+  - title: accessPackageTextInputQuestion
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      isSingleLineQuestion:
+        type: boolean
+        description: Indicates whether the answer is in single or multiple line format.
+        nullable: true
+      regexPattern:
+        type: string
+        description: >-
+          The regular expression pattern that any answer to this question must
+          match.
+        nullable: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.accessPackageTextInputQuestion'
+x-ms-discriminator-value: '#microsoft.graph.accessPackageTextInputQuestion'

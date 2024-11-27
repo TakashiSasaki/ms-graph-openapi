@@ -1,0 +1,71 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: accessReviewHistoryInstance
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      downloadUri:
+        type: string
+        description: >-
+          Uri that can be used to retrieve review history data. This URI will be
+          active for 24 hours after being generated. Required.
+        nullable: true
+      expirationDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: >-
+          Timestamp when this instance and associated data expires and the
+          history is deleted. Required.
+        format: date-time
+      fulfilledDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: >-
+          Timestamp when all of the available data for this instance was
+          collected and is set after this instance's status is set to done.
+          Required.
+        format: date-time
+        nullable: true
+      reviewHistoryPeriodEndDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: >-
+          Timestamp reviews ending on or before this date will be included in
+          the fetched history data.
+        format: date-time
+        nullable: true
+      reviewHistoryPeriodStartDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: >-
+          Timestamp reviews starting on or after this date will be included in
+          the fetched history data.
+        format: date-time
+        nullable: true
+      runDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: >-
+          Timestamp when the instance's history data is scheduled to be
+          generated.
+        format: date-time
+      status:
+        anyOf:
+          - $ref: .\microsoft.graph.accessReviewHistoryStatus.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Represents the status of the review history data collection. The
+          possible values are: done, inProgress, error, requested,
+          unknownFutureValue. Once the status has been marked as done, a link
+          can be generated to retrieve the instance's data by calling
+          generateDownloadUri method.
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.accessReviewHistoryInstance'

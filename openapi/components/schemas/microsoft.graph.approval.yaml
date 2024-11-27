@@ -1,0 +1,16 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: approval
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      stages:
+        type: array
+        items:
+          $ref: .\microsoft.graph.approvalStage.yaml
+        description: A collection of stages in the approval decision.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.approval'

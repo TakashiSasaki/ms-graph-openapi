@@ -1,0 +1,69 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: agreement
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      displayName:
+        type: string
+        description: >-
+          Display name of the agreement. The display name is used for internal
+          tracking of the agreement but isn't shown to end users who view the
+          agreement. Supports $filter (eq).
+        nullable: true
+      isPerDeviceAcceptanceRequired:
+        type: boolean
+        description: >-
+          Indicates whether end users are required to accept this agreement on
+          every device that they access it from. The end user is required to
+          register their device in Microsoft Entra ID, if they haven't already
+          done so. Supports $filter (eq).
+        nullable: true
+      isViewingBeforeAcceptanceRequired:
+        type: boolean
+        description: >-
+          Indicates whether the user has to expand the agreement before
+          accepting. Supports $filter (eq).
+        nullable: true
+      termsExpiration:
+        anyOf:
+          - $ref: .\microsoft.graph.termsExpiration.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Expiration schedule and frequency of agreement for all users. Supports
+          $filter (eq).
+      userReacceptRequiredFrequency:
+        pattern: ^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$
+        type: string
+        description: >-
+          The duration after which the user must reaccept the terms of use. The
+          value is represented in ISO 8601 format for durations. Supports
+          $filter (eq).
+        format: duration
+        nullable: true
+      acceptances:
+        type: array
+        items:
+          $ref: .\microsoft.graph.agreementAcceptance.yaml
+        description: Read-only. Information about acceptances of this agreement.
+        x-ms-navigationProperty: true
+      file:
+        anyOf:
+          - $ref: .\microsoft.graph.agreementFile.yaml
+          - type: object
+            nullable: true
+        description: Default PDF linked to this agreement.
+        x-ms-navigationProperty: true
+      files:
+        type: array
+        items:
+          $ref: .\microsoft.graph.agreementFileLocalization.yaml
+        description: >-
+          PDFs linked to this agreement. This property is in the process of
+          being deprecated. Use the  file property instead. Supports $expand.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.agreement'

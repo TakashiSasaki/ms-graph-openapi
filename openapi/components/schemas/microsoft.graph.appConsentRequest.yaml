@@ -1,0 +1,32 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: appConsentRequest
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      appDisplayName:
+        type: string
+        description: >-
+          The display name of the app for which consent is requested. Required.
+          Supports $filter (eq only) and $orderby.
+        nullable: true
+      appId:
+        type: string
+        description: >-
+          The identifier of the application. Required. Supports $filter (eq
+          only) and $orderby.
+      pendingScopes:
+        type: array
+        items:
+          $ref: .\microsoft.graph.appConsentRequestScope.yaml
+        description: A list of pending scopes waiting for approval. Required.
+      userConsentRequests:
+        type: array
+        items:
+          $ref: .\microsoft.graph.userConsentRequest.yaml
+        description: A list of pending user consent requests. Supports $filter (eq).
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.appConsentRequest'

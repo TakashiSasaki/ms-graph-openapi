@@ -1,0 +1,50 @@
+title: admin
+required:
+  - '@odata.type'
+type: object
+properties:
+  edge:
+    anyOf:
+      - $ref: .\microsoft.graph.edge.yaml
+      - type: object
+        nullable: true
+    description: A container for Microsoft Edge resources. Read-only.
+    x-ms-navigationProperty: true
+  microsoft365Apps:
+    anyOf:
+      - $ref: .\microsoft.graph.adminMicrosoft365Apps.yaml
+      - type: object
+        nullable: true
+    description: A container for the Microsoft 365 apps admin functionality.
+    x-ms-navigationProperty: true
+  people:
+    anyOf:
+      - $ref: .\microsoft.graph.peopleAdminSettings.yaml
+      - type: object
+        nullable: true
+    description: >-
+      Represents a setting to control people-related admin settings in the
+      tenant.
+    x-ms-navigationProperty: true
+  reportSettings:
+    anyOf:
+      - $ref: .\microsoft.graph.adminReportSettings.yaml
+      - type: object
+        nullable: true
+    description: A container for administrative resources to manage reports.
+    x-ms-navigationProperty: true
+  serviceAnnouncement:
+    anyOf:
+      - $ref: .\microsoft.graph.serviceAnnouncement.yaml
+      - type: object
+        nullable: true
+    description: A container for service communications resources. Read-only.
+    x-ms-navigationProperty: true
+  sharepoint:
+    anyOf:
+      - $ref: .\microsoft.graph.sharepoint.yaml
+      - type: object
+        nullable: true
+    x-ms-navigationProperty: true
+  '@odata.type':
+    type: string

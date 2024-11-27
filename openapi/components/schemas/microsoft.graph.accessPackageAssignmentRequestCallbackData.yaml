@@ -1,0 +1,37 @@
+allOf:
+  - $ref: .\microsoft.graph.customExtensionData.yaml
+  - title: accessPackageAssignmentRequestCallbackData
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      customExtensionStageInstanceDetail:
+        type: string
+        description: Details for the callback.
+        nullable: true
+      customExtensionStageInstanceId:
+        type: string
+        description: Unique identifier of the callout to the custom extension.
+        nullable: true
+      stage:
+        anyOf:
+          - $ref: .\microsoft.graph.accessPackageCustomExtensionStage.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Indicates the stage at which the custom callout extension is executed.
+          The possible values are: assignmentRequestCreated,
+          assignmentRequestApproved, assignmentRequestGranted,
+          assignmentRequestRemoved, assignmentFourteenDaysBeforeExpiration,
+          assignmentOneDayBeforeExpiration, unknownFutureValue.
+      state:
+        type: string
+        description: >-
+          Allow the extension to be able to deny or cancel the request submitted
+          by the requestor. The supported values are Denied and Canceled. This
+          property can only be set for an assignmentRequestCreated stage.
+        nullable: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.accessPackageAssignmentRequestCallbackData'
+x-ms-discriminator-value: '#microsoft.graph.accessPackageAssignmentRequestCallbackData'

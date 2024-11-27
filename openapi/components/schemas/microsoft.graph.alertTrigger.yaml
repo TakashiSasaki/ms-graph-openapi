@@ -1,0 +1,21 @@
+title: alertTrigger
+required:
+  - '@odata.type'
+type: object
+properties:
+  name:
+    type: string
+    description: Name of the property serving as a detection trigger.
+    nullable: true
+  type:
+    type: string
+    description: >-
+      Type of the property in the key:value pair for interpretation. For
+      example, String, Boolean etc.
+    nullable: true
+  value:
+    type: string
+    description: Value of the property serving as a detection trigger.
+    nullable: true
+  '@odata.type':
+    type: string

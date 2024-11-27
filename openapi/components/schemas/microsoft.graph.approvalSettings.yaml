@@ -1,0 +1,36 @@
+title: approvalSettings
+required:
+  - '@odata.type'
+type: object
+properties:
+  approvalMode:
+    type: string
+    description: >-
+      One of SingleStage, Serial, Parallel, NoApproval (default). NoApproval is
+      used when isApprovalRequired is false.
+    nullable: true
+  approvalStages:
+    type: array
+    items:
+      $ref: .\microsoft.graph.unifiedApprovalStage.yaml
+    description: >-
+      If approval is required, the one or two elements of this collection define
+      each of the stages of approval. An empty array if no approval is required.
+  isApprovalRequired:
+    type: boolean
+    description: Indicates whether approval is required for requests in this policy.
+    nullable: true
+  isApprovalRequiredForExtension:
+    type: boolean
+    description: >-
+      Indicates whether approval is required for a user to extend their
+      assignment.
+    nullable: true
+  isRequestorJustificationRequired:
+    type: boolean
+    description: >-
+      Indicates whether the requestor is required to supply a justification in
+      their request.
+    nullable: true
+  '@odata.type':
+    type: string

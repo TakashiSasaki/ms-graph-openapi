@@ -1,0 +1,7 @@
+title: accountTargetContentType
+enum:
+  - unknown
+  - includeAll
+  - addressBook
+  - unknownFutureValue
+type: string

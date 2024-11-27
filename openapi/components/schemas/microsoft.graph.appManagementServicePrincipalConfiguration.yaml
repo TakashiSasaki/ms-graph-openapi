@@ -1,0 +1,11 @@
+allOf:
+  - $ref: .\microsoft.graph.appManagementConfiguration.yaml
+  - title: appManagementServicePrincipalConfiguration
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.appManagementServicePrincipalConfiguration'
+x-ms-discriminator-value: '#microsoft.graph.appManagementServicePrincipalConfiguration'

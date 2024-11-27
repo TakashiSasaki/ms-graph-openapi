@@ -1,0 +1,29 @@
+allOf:
+  - $ref: .\microsoft.graph.accessReviewNotificationRecipientScope.yaml
+  - title: accessReviewNotificationRecipientQueryScope
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      query:
+        type: string
+        description: >-
+          Represents the query for who the recipients are. For example,
+          /groups/{group id}/members for group members and /users/{user id} for
+          a specific user.
+        nullable: true
+      queryRoot:
+        type: string
+        description: >-
+          In the scenario where reviewers need to be specified dynamically,
+          indicates the relative source of the query. This property is only
+          required if a relative query (that is, ./manager) is specified.
+        nullable: true
+      queryType:
+        type: string
+        description: Indicates the type of query. Allowed value is MicrosoftGraph.
+        nullable: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.accessReviewNotificationRecipientQueryScope'
+x-ms-discriminator-value: '#microsoft.graph.accessReviewNotificationRecipientQueryScope'

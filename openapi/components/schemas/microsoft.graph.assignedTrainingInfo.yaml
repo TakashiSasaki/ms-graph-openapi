@@ -1,0 +1,31 @@
+title: assignedTrainingInfo
+required:
+  - '@odata.type'
+type: object
+properties:
+  assignedUserCount:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    description: >-
+      Number of users who were assigned the training in an attack simulation and
+      training campaign.
+    format: int32
+    nullable: true
+  completedUserCount:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    description: >-
+      Number of users who completed the training in an attack simulation and
+      training campaign.
+    format: int32
+    nullable: true
+  displayName:
+    type: string
+    description: >-
+      Display name of the training in an attack simulation and training
+      campaign.
+    nullable: true
+  '@odata.type':
+    type: string

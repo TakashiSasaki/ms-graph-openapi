@@ -1,0 +1,25 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: appScope
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      displayName:
+        type: string
+        description: >-
+          Provides the display name of the app-specific resource represented by
+          the app scope. Provided for display purposes since appScopeId is often
+          an immutable, non-human-readable id. Read-only.
+        nullable: true
+      type:
+        type: string
+        description: >-
+          Describes the type of app-specific resource represented by the app
+          scope and is provided for display purposes, so a user interface can
+          convey to the user the kind of app specific resource represented by
+          the app scope. Read-only.
+        nullable: true
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.appScope'

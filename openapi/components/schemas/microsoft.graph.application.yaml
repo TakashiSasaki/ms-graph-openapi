@@ -1,0 +1,380 @@
+allOf:
+  - $ref: .\microsoft.graph.directoryObject.yaml
+  - title: application
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      addIns:
+        type: array
+        items:
+          $ref: .\microsoft.graph.addIn.yaml
+        description: >-
+          Defines custom behavior that a consuming service can use to call an
+          app in specific contexts. For example, applications that can render
+          file streams can set the addIns property for its 'FileHandler'
+          functionality. This lets services like Microsoft 365 call the
+          application in the context of a document the user is working on.
+      api:
+        anyOf:
+          - $ref: .\microsoft.graph.apiApplication.yaml
+          - type: object
+            nullable: true
+        description: Specifies settings for an application that implements a web API.
+      appId:
+        type: string
+        description: >-
+          The unique identifier for the application that is assigned to an
+          application by Microsoft Entra ID. Not nullable. Read-only. Alternate
+          key. Supports $filter (eq).
+        nullable: true
+      applicationTemplateId:
+        type: string
+        description: >-
+          Unique identifier of the applicationTemplate. Supports $filter (eq,
+          not, ne). Read-only. null if the app wasn't created from an
+          application template.
+        nullable: true
+      appRoles:
+        type: array
+        items:
+          $ref: .\microsoft.graph.appRole.yaml
+        description: >-
+          The collection of roles defined for the application. With app role
+          assignments, these roles can be assigned to users, groups, or service
+          principals associated with other applications. Not nullable.
+      certification:
+        anyOf:
+          - $ref: .\microsoft.graph.certification.yaml
+          - type: object
+            nullable: true
+        description: Specifies the certification status of the application.
+      createdDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: >-
+          The date and time the application was registered. The DateTimeOffset
+          type represents date and time information using ISO 8601 format and is
+          always in UTC time. For example, midnight UTC on Jan 1, 2014 is
+          2014-01-01T00:00:00Z. Read-only.  Supports $filter (eq, ne, not, ge,
+          le, in, and eq on null values) and $orderby.
+        format: date-time
+        nullable: true
+      defaultRedirectUri:
+        type: string
+        nullable: true
+      description:
+        type: string
+        description: >-
+          Free text field to provide a description of the application object to
+          end users. The maximum allowed size is 1,024 characters. Supports
+          $filter (eq, ne, not, ge, le, startsWith) and $search.
+        nullable: true
+      disabledByMicrosoftStatus:
+        type: string
+        description: >-
+          Specifies whether Microsoft has disabled the registered application.
+          Possible values are: null (default value), NotDisabled, and
+          DisabledDueToViolationOfServicesAgreement (reasons include suspicious,
+          abusive, or malicious activity, or a violation of the Microsoft
+          Services Agreement).  Supports $filter (eq, ne, not).
+        nullable: true
+      displayName:
+        type: string
+        description: >-
+          The display name for the application. Supports $filter (eq, ne, not,
+          ge, le, in, startsWith, and eq on null values), $search, and $orderby.
+        nullable: true
+      groupMembershipClaims:
+        type: string
+        description: >-
+          Configures the groups claim issued in a user or OAuth 2.0 access token
+          that the application expects. To set this attribute, use one of the
+          following valid string values: None, SecurityGroup (for security
+          groups and Microsoft Entra roles), All (this gets all of the security
+          groups, distribution groups, and Microsoft Entra directory roles that
+          the signed-in user is a member of).
+        nullable: true
+      identifierUris:
+        type: array
+        items:
+          type: string
+        description: >-
+          Also known as App ID URI, this value is set when an application is
+          used as a resource app. The identifierUris acts as the prefix for the
+          scopes you reference in your API's code, and it must be globally
+          unique. You can use the default value provided, which is in the form
+          api://<appId>, or specify a more readable URI like
+          https://contoso.com/api. For more information on valid identifierUris
+          patterns and best practices, see Microsoft Entra application
+          registration security best practices. Not nullable. Supports $filter
+          (eq, ne, ge, le, startsWith).
+      info:
+        anyOf:
+          - $ref: .\microsoft.graph.informationalUrl.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Basic profile information of the application such as  app's marketing,
+          support, terms of service and privacy statement URLs. The terms of
+          service and privacy statement are surfaced to users through the user
+          consent experience. For more info, see How to: Add Terms of service
+          and privacy statement for registered Microsoft Entra apps. Supports
+          $filter (eq, ne, not, ge, le, and eq on null values).
+      isDeviceOnlyAuthSupported:
+        type: boolean
+        description: >-
+          Specifies whether this application supports device authentication
+          without a user. The default is false.
+        nullable: true
+      isFallbackPublicClient:
+        type: boolean
+        description: >-
+          Specifies the fallback application type as public client, such as an
+          installed application running on a mobile device. The default value is
+          false, which means the fallback application type is confidential
+          client such as a web app. There are certain scenarios where Microsoft
+          Entra ID can't determine the client application type. For example, the
+          ROPC flow where it's configured without specifying a redirect URI. In
+          those cases, Microsoft Entra ID interprets the application type based
+          on the value of this property.
+        nullable: true
+      keyCredentials:
+        type: array
+        items:
+          $ref: .\microsoft.graph.keyCredential.yaml
+        description: >-
+          The collection of key credentials associated with the application. Not
+          nullable. Supports $filter (eq, not, ge, le).
+      logo:
+        type: string
+        description: The main logo for the application. Not nullable.
+        format: base64url
+      nativeAuthenticationApisEnabled:
+        anyOf:
+          - $ref: .\microsoft.graph.nativeAuthenticationApisEnabled.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Specifies whether the Native Authentication APIs are enabled for the
+          application. The possible values are: none and all. Default is none.
+          For more information, see Native Authentication.
+      notes:
+        type: string
+        description: Notes relevant for the management of the application.
+        nullable: true
+      oauth2RequirePostResponse:
+        type: boolean
+      optionalClaims:
+        anyOf:
+          - $ref: .\microsoft.graph.optionalClaims.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Application developers can configure optional claims in their
+          Microsoft Entra applications to specify the claims that are sent to
+          their application by the Microsoft security token service. For more
+          information, see How to: Provide optional claims to your app.
+      parentalControlSettings:
+        anyOf:
+          - $ref: .\microsoft.graph.parentalControlSettings.yaml
+          - type: object
+            nullable: true
+        description: Specifies parental control settings for an application.
+      passwordCredentials:
+        type: array
+        items:
+          $ref: .\microsoft.graph.passwordCredential.yaml
+        description: >-
+          The collection of password credentials associated with the
+          application. Not nullable.
+      publicClient:
+        anyOf:
+          - $ref: .\microsoft.graph.publicClientApplication.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Specifies settings for installed clients such as desktop or mobile
+          devices.
+      publisherDomain:
+        type: string
+        description: >-
+          The verified publisher domain for the application. Read-only. For more
+          information, see How to: Configure an application's publisher domain.
+          Supports $filter (eq, ne, ge, le, startsWith).
+        nullable: true
+      requestSignatureVerification:
+        anyOf:
+          - $ref: .\microsoft.graph.requestSignatureVerification.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Specifies whether this application requires Microsoft Entra ID to
+          verify the signed authentication requests.
+      requiredResourceAccess:
+        type: array
+        items:
+          $ref: .\microsoft.graph.requiredResourceAccess.yaml
+        description: >-
+          Specifies the resources that the application needs to access. This
+          property also specifies the set of delegated permissions and
+          application roles that it needs for each of those resources. This
+          configuration of access to the required resources drives the consent
+          experience. No more than 50 resource services (APIs) can be
+          configured. Beginning mid-October 2021, the total number of required
+          permissions must not exceed 400. For more information, see Limits on
+          requested permissions per app. Not nullable. Supports $filter (eq,
+          not, ge, le).
+      samlMetadataUrl:
+        type: string
+        description: >-
+          The URL where the service exposes SAML metadata for federation. This
+          property is valid only for single-tenant applications. Nullable.
+        nullable: true
+      serviceManagementReference:
+        type: string
+        description: >-
+          References application or service contact information from a Service
+          or Asset Management database. Nullable.
+        nullable: true
+      servicePrincipalLockConfiguration:
+        anyOf:
+          - $ref: .\microsoft.graph.servicePrincipalLockConfiguration.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Specifies whether sensitive properties of a multitenant application
+          should be locked for editing after the application is provisioned in a
+          tenant. Nullable. null by default.
+      signInAudience:
+        type: string
+        description: >-
+          Specifies the Microsoft accounts that are supported for the current
+          application. The possible values are: AzureADMyOrg (default),
+          AzureADMultipleOrgs, AzureADandPersonalMicrosoftAccount, and
+          PersonalMicrosoftAccount. See more in the table. The value of this
+          object also limits the number of permissions an app can request. For
+          more information, see Limits on requested permissions per app. The
+          value for this property has implications on other app object
+          properties. As a result, if you change this property, you might need
+          to change other properties first. For more information, see Validation
+          differences for signInAudience.Supports $filter (eq, ne, not).
+        nullable: true
+      spa:
+        anyOf:
+          - $ref: .\microsoft.graph.spaApplication.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Specifies settings for a single-page application, including sign out
+          URLs and redirect URIs for authorization codes and access tokens.
+      tags:
+        type: array
+        items:
+          type: string
+        description: >-
+          Custom strings that can be used to categorize and identify the
+          application. Not nullable. Strings added here will also appear in the
+          tags property of any associated service principals.Supports $filter
+          (eq, not, ge, le, startsWith) and $search.
+      tokenEncryptionKeyId:
+        pattern: >-
+          ^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$
+        type: string
+        description: >-
+          Specifies the keyId of a public key from the keyCredentials
+          collection. When configured, Microsoft Entra ID encrypts all the
+          tokens it emits by using the key this property points to. The
+          application code that receives the encrypted token must use the
+          matching private key to decrypt the token before it can be used for
+          the signed-in user.
+        format: uuid
+        nullable: true
+      uniqueName:
+        type: string
+        description: >-
+          The unique identifier that can be assigned to an application and used
+          as an alternate key. Immutable. Read-only.
+        nullable: true
+      verifiedPublisher:
+        anyOf:
+          - $ref: .\microsoft.graph.verifiedPublisher.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Specifies the verified publisher of the application. For more
+          information about how publisher verification helps support application
+          security, trustworthiness, and compliance, see Publisher verification.
+      web:
+        anyOf:
+          - $ref: .\microsoft.graph.webApplication.yaml
+          - type: object
+            nullable: true
+        description: Specifies settings for a web application.
+      appManagementPolicies:
+        type: array
+        items:
+          $ref: .\microsoft.graph.appManagementPolicy.yaml
+        description: The appManagementPolicy applied to this application.
+        x-ms-navigationProperty: true
+      createdOnBehalfOf:
+        anyOf:
+          - $ref: .\microsoft.graph.directoryObject.yaml
+          - type: object
+            nullable: true
+        description: Supports $filter (/$count eq 0, /$count ne 0). Read-only.
+        x-ms-navigationProperty: true
+      extensionProperties:
+        type: array
+        items:
+          $ref: .\microsoft.graph.extensionProperty.yaml
+        description: >-
+          Read-only. Nullable. Supports $expand and $filter (/$count eq 0,
+          /$count ne 0).
+        x-ms-navigationProperty: true
+      federatedIdentityCredentials:
+        type: array
+        items:
+          $ref: .\microsoft.graph.federatedIdentityCredential.yaml
+        description: >-
+          Federated identities for applications. Supports $expand and $filter
+          (startsWith, /$count eq 0, /$count ne 0).
+        x-ms-navigationProperty: true
+      homeRealmDiscoveryPolicies:
+        type: array
+        items:
+          $ref: .\microsoft.graph.homeRealmDiscoveryPolicy.yaml
+        x-ms-navigationProperty: true
+      owners:
+        type: array
+        items:
+          $ref: .\microsoft.graph.directoryObject.yaml
+        description: >-
+          Directory objects that are owners of the application. Read-only.
+          Nullable. Supports $expand, $filter (/$count eq 0, /$count ne 0,
+          /$count eq 1, /$count ne 1), and $select nested in $expand.
+        x-ms-navigationProperty: true
+      synchronization:
+        anyOf:
+          - $ref: .\microsoft.graph.synchronization.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Represents the capability for Microsoft Entra identity synchronization
+          through the Microsoft Graph API.
+        x-ms-navigationProperty: true
+      tokenIssuancePolicies:
+        type: array
+        items:
+          $ref: .\microsoft.graph.tokenIssuancePolicy.yaml
+        x-ms-navigationProperty: true
+      tokenLifetimePolicies:
+        type: array
+        items:
+          $ref: .\microsoft.graph.tokenLifetimePolicy.yaml
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.application'
+x-ms-discriminator-value: '#microsoft.graph.application'

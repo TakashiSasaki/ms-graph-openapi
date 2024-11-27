@@ -1,0 +1,74 @@
+allOf:
+  - $ref: .\microsoft.graph.targetedManagedAppProtection.yaml
+  - title: androidManagedAppProtection
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      customBrowserDisplayName:
+        type: string
+        description: >-
+          Friendly name of the preferred custom browser to open weblink on
+          Android. When this property is configured,
+          ManagedBrowserToOpenLinksRequired should be true.
+        nullable: true
+      customBrowserPackageId:
+        type: string
+        description: >-
+          Unique identifier of the preferred custom browser to open weblink on
+          Android. When this property is configured,
+          ManagedBrowserToOpenLinksRequired should be true.
+        nullable: true
+      deployedAppCount:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: Count of apps to which the current policy is deployed.
+        format: int32
+      disableAppEncryptionIfDeviceEncryptionIsEnabled:
+        type: boolean
+        description: >-
+          When this setting is enabled, app level encryption is disabled if
+          device level encryption is enabled
+      encryptAppData:
+        type: boolean
+        description: >-
+          Indicates whether application data for managed apps should be
+          encrypted
+      minimumRequiredPatchVersion:
+        type: string
+        description: >-
+          Define the oldest required Android security patch level a user can
+          have to gain secure access to the app.
+        nullable: true
+      minimumWarningPatchVersion:
+        type: string
+        description: >-
+          Define the oldest recommended Android security patch level a user can
+          have for secure access to the app.
+        nullable: true
+      screenCaptureBlocked:
+        type: boolean
+        description: >-
+          Indicates whether a managed user can take screen captures of managed
+          apps
+      apps:
+        type: array
+        items:
+          $ref: .\microsoft.graph.managedMobileApp.yaml
+        description: List of apps to which the policy is deployed.
+        x-ms-navigationProperty: true
+      deploymentSummary:
+        anyOf:
+          - $ref: .\microsoft.graph.managedAppPolicyDeploymentSummary.yaml
+          - type: object
+            nullable: true
+        description: Navigation property to deployment summary of the configuration.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.androidManagedAppProtection'
+    description: >-
+      Policy used to configure detailed management settings targeted to specific
+      security groups and for a specified set of apps on an Android device
+x-ms-discriminator-value: '#microsoft.graph.androidManagedAppProtection'

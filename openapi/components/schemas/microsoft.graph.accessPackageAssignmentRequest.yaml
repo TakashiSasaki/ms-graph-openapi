@@ -1,0 +1,112 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: accessPackageAssignmentRequest
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      answers:
+        type: array
+        items:
+          $ref: .\microsoft.graph.accessPackageAnswer.yaml
+        description: >-
+          Answers provided by the requestor to accessPackageQuestions asked of
+          them at the time of request.
+      completedDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: >-
+          The date of the end of processing, either successful or failure, of a
+          request. The Timestamp type represents date and time information using
+          ISO 8601 format and is always in UTC time. For example, midnight UTC
+          on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
+        format: date-time
+        nullable: true
+      createdDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: >-
+          The Timestamp type represents date and time information using ISO 8601
+          format and is always in UTC time. For example, midnight UTC on Jan 1,
+          2014 is 2014-01-01T00:00:00Z. Read-only. Supports $filter.
+        format: date-time
+        nullable: true
+      customExtensionCalloutInstances:
+        type: array
+        items:
+          $ref: .\microsoft.graph.customExtensionCalloutInstance.yaml
+        description: >-
+          Information about all the custom extension calls that were made during
+          the access package assignment workflow.
+      requestType:
+        anyOf:
+          - $ref: .\microsoft.graph.accessPackageRequestType.yaml
+          - type: object
+            nullable: true
+        description: >-
+          The type of the request. The possible values are: notSpecified,
+          userAdd, UserExtend, userUpdate, userRemove, adminAdd, adminUpdate,
+          adminRemove, systemAdd, systemUpdate, systemRemove, onBehalfAdd (not
+          supported), unknownFutureValue. Requests from the user have a
+          requestType of userAdd, userUpdate, or userRemove. This property can't
+          be changed once set.
+      schedule:
+        anyOf:
+          - $ref: .\microsoft.graph.entitlementManagementSchedule.yaml
+          - type: object
+            nullable: true
+        description: >-
+          The range of dates that access is to be assigned to the requestor.
+          This property can't be changed once set, but a new schedule for an
+          assignment can be included in another userUpdate or UserExtend or
+          adminUpdate assignment request.
+      state:
+        anyOf:
+          - $ref: .\microsoft.graph.accessPackageRequestState.yaml
+          - type: object
+            nullable: true
+        description: >-
+          The state of the request. The possible values are: submitted,
+          pendingApproval, delivering, delivered, deliveryFailed, denied,
+          scheduled, canceled, partiallyDelivered, unknownFutureValue.
+          Read-only. Supports $filter (eq).
+      status:
+        type: string
+        description: More information on the request processing status. Read-only.
+        nullable: true
+      accessPackage:
+        anyOf:
+          - $ref: .\microsoft.graph.accessPackage.yaml
+          - type: object
+            nullable: true
+        description: >-
+          The access package associated with the accessPackageAssignmentRequest.
+          An access package defines the collections of resource roles and the
+          policies for how one or more users can get access to those resources.
+          Read-only. Nullable.  Supports $expand.
+        x-ms-navigationProperty: true
+      assignment:
+        anyOf:
+          - $ref: .\microsoft.graph.accessPackageAssignment.yaml
+          - type: object
+            nullable: true
+        description: >-
+          For a requestType of userAdd or adminAdd, this is an access package
+          assignment requested to be created. For a requestType of userRemove,
+          adminRemove or systemRemove, this has the id property of an existing
+          assignment to be removed.   Supports $expand.
+        x-ms-navigationProperty: true
+      requestor:
+        anyOf:
+          - $ref: .\microsoft.graph.accessPackageSubject.yaml
+          - type: object
+            nullable: true
+        description: >-
+          The subject who requested or, if a direct assignment, was assigned.
+          Read-only. Nullable. Supports $expand.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.accessPackageAssignmentRequest'

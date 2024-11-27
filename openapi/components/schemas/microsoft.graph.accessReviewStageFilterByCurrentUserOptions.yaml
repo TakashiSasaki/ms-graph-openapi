@@ -1,0 +1,5 @@
+title: accessReviewStageFilterByCurrentUserOptions
+enum:
+  - reviewer
+  - unknownFutureValue
+type: string

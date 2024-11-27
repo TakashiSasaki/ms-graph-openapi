@@ -1,0 +1,18 @@
+title: accessPackageLocalizedText
+required:
+  - '@odata.type'
+type: object
+properties:
+  languageCode:
+    type: string
+    description: >-
+      The language code that text is in. For example, 'en-us'. The language
+      component follows 2-letter codes as defined in ISO 639-1, and the country
+      component follows 2-letter codes as defined in ISO 3166-1 alpha-2.
+      Required.
+  text:
+    type: string
+    description: The question in the specific language. Required.
+    nullable: true
+  '@odata.type':
+    type: string

@@ -1,0 +1,14 @@
+title: accessReviewApplyAction
+required:
+  - '@odata.type'
+type: object
+properties:
+  '@odata.type':
+    type: string
+discriminator:
+  propertyName: '@odata.type'
+  mapping:
+    '#microsoft.graph.disableAndDeleteUserApplyAction': .\microsoft.graph.disableAndDeleteUserApplyAction.yaml
+    '#microsoft.graph.removeAccessApplyAction': .\microsoft.graph.removeAccessApplyAction.yaml
+    microsoft.graph.disableAndDeleteUserApplyAction: .\microsoft.graph.disableAndDeleteUserApplyAction.yaml
+    microsoft.graph.removeAccessApplyAction: .\microsoft.graph.removeAccessApplyAction.yaml

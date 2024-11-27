@@ -1,0 +1,14 @@
+allOf:
+  - $ref: .\microsoft.graph.actionResultPart.yaml
+  - title: aadUserConversationMemberResult
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      userId:
+        type: string
+        nullable: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.aadUserConversationMemberResult'
+x-ms-discriminator-value: '#microsoft.graph.aadUserConversationMemberResult'

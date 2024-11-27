@@ -1,0 +1,6 @@
+title: agreementAcceptanceState
+enum:
+  - accepted
+  - declined
+  - unknownFutureValue
+type: string

@@ -1,0 +1,19 @@
+allOf:
+  - $ref: .\microsoft.graph.deviceConfiguration.yaml
+  - title: androidCustomConfiguration
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      omaSettings:
+        type: array
+        items:
+          $ref: .\microsoft.graph.omaSetting.yaml
+        description: OMA settings. This collection can contain a maximum of 1000 elements.
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.androidCustomConfiguration'
+    description: >-
+      This topic provides descriptions of the declared methods, properties and
+      relationships exposed by the androidCustomConfiguration resource.
+x-ms-discriminator-value: '#microsoft.graph.androidCustomConfiguration'

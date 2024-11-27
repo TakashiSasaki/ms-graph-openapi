@@ -1,0 +1,24 @@
+title: androidWorkProfileDefaultAppPermissionPolicyType
+enum:
+  - deviceDefault
+  - prompt
+  - autoGrant
+  - autoDeny
+type: string
+description: Android Work Profile default app permission policy type.
+x-ms-enum:
+  name: androidWorkProfileDefaultAppPermissionPolicyType
+  modelAsString: false
+  values:
+    - value: deviceDefault
+      description: Device default value, no intent.
+      name: deviceDefault
+    - value: prompt
+      description: Prompt.
+      name: prompt
+    - value: autoGrant
+      description: Auto grant.
+      name: autoGrant
+    - value: autoDeny
+      description: Auto deny.
+      name: autoDeny

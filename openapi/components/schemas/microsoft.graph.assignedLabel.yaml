@@ -1,0 +1,15 @@
+title: assignedLabel
+required:
+  - '@odata.type'
+type: object
+properties:
+  displayName:
+    type: string
+    description: The display name of the label. Read-only.
+    nullable: true
+  labelId:
+    type: string
+    description: The unique identifier of the label.
+    nullable: true
+  '@odata.type':
+    type: string

@@ -1,0 +1,18 @@
+title: actionResultPart
+required:
+  - '@odata.type'
+type: object
+properties:
+  error:
+    anyOf:
+      - $ref: .\microsoft.graph.publicError.yaml
+      - type: object
+        nullable: true
+    description: The error that occurred, if any, during the course of the bulk operation.
+  '@odata.type':
+    type: string
+discriminator:
+  propertyName: '@odata.type'
+  mapping:
+    '#microsoft.graph.aadUserConversationMemberResult': .\microsoft.graph.aadUserConversationMemberResult.yaml
+    microsoft.graph.aadUserConversationMemberResult: .\microsoft.graph.aadUserConversationMemberResult.yaml

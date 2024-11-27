@@ -1,0 +1,89 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: accessPackageCatalog
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      catalogType:
+        anyOf:
+          - $ref: .\microsoft.graph.accessPackageCatalogType.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Whether the catalog is created by a user or entitlement management.
+          The possible values are: userManaged, serviceDefault, serviceManaged,
+          unknownFutureValue.
+      createdDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: >-
+          The Timestamp type represents date and time information using ISO 8601
+          format and is always in UTC time. For example, midnight UTC on Jan 1,
+          2014 is 2014-01-01T00:00:00Z. Read-only.
+        format: date-time
+        nullable: true
+      description:
+        type: string
+        description: The description of the access package catalog.
+        nullable: true
+      displayName:
+        type: string
+        description: The display name of the access package catalog.
+        nullable: true
+      isExternallyVisible:
+        type: boolean
+        description: >-
+          Whether the access packages in this catalog can be requested by users
+          outside of the tenant.
+        nullable: true
+      modifiedDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: >-
+          The Timestamp type represents date and time information using ISO 8601
+          format and is always in UTC time. For example, midnight UTC on Jan 1,
+          2014 is 2014-01-01T00:00:00Z. Read-only.
+        format: date-time
+        nullable: true
+      state:
+        anyOf:
+          - $ref: .\microsoft.graph.accessPackageCatalogState.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Has the value published if the access packages are available for
+          management. The possible values are: unpublished, published,
+          unknownFutureValue.
+      accessPackages:
+        type: array
+        items:
+          $ref: .\microsoft.graph.accessPackage.yaml
+        description: The access packages in this catalog. Read-only. Nullable.
+        x-ms-navigationProperty: true
+      customWorkflowExtensions:
+        type: array
+        items:
+          $ref: .\microsoft.graph.customCalloutExtension.yaml
+        x-ms-navigationProperty: true
+      resourceRoles:
+        type: array
+        items:
+          $ref: .\microsoft.graph.accessPackageResourceRole.yaml
+        x-ms-navigationProperty: true
+      resources:
+        type: array
+        items:
+          $ref: .\microsoft.graph.accessPackageResource.yaml
+        description: Access package resources in this catalog.
+        x-ms-navigationProperty: true
+      resourceScopes:
+        type: array
+        items:
+          $ref: .\microsoft.graph.accessPackageResourceScope.yaml
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.accessPackageCatalog'

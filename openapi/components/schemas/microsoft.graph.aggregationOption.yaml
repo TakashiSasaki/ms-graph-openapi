@@ -1,0 +1,24 @@
+title: aggregationOption
+required:
+  - '@odata.type'
+type: object
+properties:
+  bucketDefinition:
+    $ref: .\microsoft.graph.bucketAggregationDefinition.yaml
+  field:
+    type: string
+    description: >-
+      Computes aggregation on the field while the field exists in the current
+      entity type. Required.
+  size:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    description: >-
+      The number of searchBucket resources to be returned. This isn't required
+      when the range is provided manually in the search request. The minimum
+      accepted size is 1, and the maximum is 65535. Optional.
+    format: int32
+    nullable: true
+  '@odata.type':
+    type: string

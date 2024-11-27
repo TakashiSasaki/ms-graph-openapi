@@ -1,0 +1,12 @@
+allOf:
+  - $ref: .\microsoft.graph.deviceAndAppManagementAssignmentTarget.yaml
+  - title: allLicensedUsersAssignmentTarget
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.allLicensedUsersAssignmentTarget'
+    description: Represents an assignment to all licensed users in the tenant.
+x-ms-discriminator-value: '#microsoft.graph.allLicensedUsersAssignmentTarget'

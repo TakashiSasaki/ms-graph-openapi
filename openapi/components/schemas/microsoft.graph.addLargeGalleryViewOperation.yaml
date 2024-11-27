@@ -1,0 +1,10 @@
+allOf:
+  - $ref: .\microsoft.graph.commsOperation.yaml
+  - title: addLargeGalleryViewOperation
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.addLargeGalleryViewOperation'

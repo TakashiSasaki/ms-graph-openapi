@@ -1,0 +1,27 @@
+title: appIdentity
+required:
+  - '@odata.type'
+type: object
+properties:
+  appId:
+    type: string
+    description: Refers to the unique ID representing application in Microsoft Entra ID.
+    nullable: true
+  displayName:
+    type: string
+    description: >-
+      Refers to the application name displayed in the Microsoft Entra admin
+      center.
+    nullable: true
+  servicePrincipalId:
+    type: string
+    description: Refers to the unique ID for the service principal in Microsoft Entra ID.
+    nullable: true
+  servicePrincipalName:
+    type: string
+    description: >-
+      Refers to the Service Principal Name is the Application name in the
+      tenant.
+    nullable: true
+  '@odata.type':
+    type: string

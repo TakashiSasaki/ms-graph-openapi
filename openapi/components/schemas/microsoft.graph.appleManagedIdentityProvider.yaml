@@ -1,0 +1,29 @@
+allOf:
+  - $ref: .\microsoft.graph.identityProviderBase.yaml
+  - title: appleManagedIdentityProvider
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      certificateData:
+        type: string
+        description: >-
+          The certificate data, which is a long string of text from the
+          certificate. Can be null.
+        nullable: true
+      developerId:
+        type: string
+        description: The Apple developer identifier. Required.
+        nullable: true
+      keyId:
+        type: string
+        description: The Apple key identifier. Required.
+        nullable: true
+      serviceId:
+        type: string
+        description: The Apple service identifier. Required.
+        nullable: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.appleManagedIdentityProvider'
+x-ms-discriminator-value: '#microsoft.graph.appleManagedIdentityProvider'

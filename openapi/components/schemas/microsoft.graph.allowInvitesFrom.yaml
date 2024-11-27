@@ -1,0 +1,8 @@
+title: allowInvitesFrom
+enum:
+  - none
+  - adminsAndGuestInviters
+  - adminsGuestInvitersAndAllMembers
+  - everyone
+  - unknownFutureValue
+type: string

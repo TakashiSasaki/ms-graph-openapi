@@ -1,0 +1,25 @@
+title: alteredQueryToken
+required:
+  - '@odata.type'
+type: object
+properties:
+  length:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    description: Defines the length of a changed segment.
+    format: int32
+    nullable: true
+  offset:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    description: Defines the offset of a changed segment.
+    format: int32
+    nullable: true
+  suggestion:
+    type: string
+    description: Represents the corrected segment string.
+    nullable: true
+  '@odata.type':
+    type: string

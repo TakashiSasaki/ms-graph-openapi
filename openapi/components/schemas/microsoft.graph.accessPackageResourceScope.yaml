@@ -1,0 +1,40 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: accessPackageResourceScope
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      description:
+        type: string
+        description: The description of the scope.
+        nullable: true
+      displayName:
+        type: string
+        description: The display name of the scope.
+        nullable: true
+      isRootScope:
+        type: boolean
+        description: >-
+          True if the scopes are arranged in a hierarchy and this is the top or
+          root scope of the resource.
+        nullable: true
+      originId:
+        type: string
+        description: >-
+          The unique identifier for the scope in the resource as defined in the
+          origin system.
+        nullable: true
+      originSystem:
+        type: string
+        description: The origin system for the scope.
+        nullable: true
+      resource:
+        anyOf:
+          - $ref: .\microsoft.graph.accessPackageResource.yaml
+          - type: object
+            nullable: true
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.accessPackageResourceScope'

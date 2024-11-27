@@ -1,0 +1,36 @@
+title: actionState
+enum:
+  - none
+  - pending
+  - canceled
+  - active
+  - done
+  - failed
+  - notSupported
+type: string
+description: State of the action on the device
+x-ms-enum:
+  name: actionState
+  modelAsString: false
+  values:
+    - value: none
+      description: Not a valid action state
+      name: none
+    - value: pending
+      description: Action is pending
+      name: pending
+    - value: canceled
+      description: Action has been cancelled.
+      name: canceled
+    - value: active
+      description: Action is active.
+      name: active
+    - value: done
+      description: Action completed without errors.
+      name: done
+    - value: failed
+      description: Action failed
+      name: failed
+    - value: notSupported
+      description: Action is not supported.
+      name: notSupported

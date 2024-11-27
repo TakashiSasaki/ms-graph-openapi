@@ -1,0 +1,7 @@
+title: approvalFilterByCurrentUserOptions
+enum:
+  - target
+  - createdBy
+  - approver
+  - unknownFutureValue
+type: string

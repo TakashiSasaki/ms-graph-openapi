@@ -1,0 +1,12 @@
+title: accessPackageResourceAttributeDestination
+required:
+  - '@odata.type'
+type: object
+properties:
+  '@odata.type':
+    type: string
+discriminator:
+  propertyName: '@odata.type'
+  mapping:
+    '#microsoft.graph.accessPackageUserDirectoryAttributeStore': .\microsoft.graph.accessPackageUserDirectoryAttributeStore.yaml
+    microsoft.graph.accessPackageUserDirectoryAttributeStore: .\microsoft.graph.accessPackageUserDirectoryAttributeStore.yaml

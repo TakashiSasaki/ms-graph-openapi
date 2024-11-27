@@ -1,0 +1,24 @@
+title: appListType
+enum:
+  - none
+  - appsInListCompliant
+  - appsNotInListCompliant
+type: string
+description: Possible values of the compliance app list.
+x-ms-enum:
+  name: appListType
+  modelAsString: false
+  values:
+    - value: none
+      description: Default value, no intent.
+      name: none
+    - value: appsInListCompliant
+      description: >-
+        The list represents the apps that will be considered compliant (only
+        apps on the list are compliant).
+      name: appsInListCompliant
+    - value: appsNotInListCompliant
+      description: >-
+        The list represents the apps that will be considered non compliant (all
+        apps are compliant except apps on the list).
+      name: appsNotInListCompliant

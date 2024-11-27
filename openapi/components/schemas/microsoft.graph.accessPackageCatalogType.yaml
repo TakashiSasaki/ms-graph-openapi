@@ -1,0 +1,7 @@
+title: accessPackageCatalogType
+enum:
+  - userManaged
+  - serviceDefault
+  - serviceManaged
+  - unknownFutureValue
+type: string

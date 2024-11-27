@@ -1,0 +1,18 @@
+allOf:
+  - $ref: .\microsoft.graph.agreementFileProperties.yaml
+  - title: agreementFileLocalization
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      versions:
+        type: array
+        items:
+          $ref: .\microsoft.graph.agreementFileVersion.yaml
+        description: >-
+          Read-only. Customized versions of the terms of use agreement in the
+          Microsoft Entra tenant.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.agreementFileLocalization'

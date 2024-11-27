@@ -1,0 +1,20 @@
+title: accessReviewNotificationRecipientItem
+required:
+  - '@odata.type'
+type: object
+properties:
+  notificationRecipientScope:
+    anyOf:
+      - $ref: .\microsoft.graph.accessReviewNotificationRecipientScope.yaml
+      - type: object
+        nullable: true
+    description: Determines the recipient of the notification email.
+  notificationTemplateType:
+    type: string
+    description: >-
+      Indicates the type of access review email to be sent. Supported template
+      type is CompletedAdditionalRecipients, which sends review completion
+      notifications to the recipients.
+    nullable: true
+  '@odata.type':
+    type: string

@@ -1,0 +1,16 @@
+title: alertDetection
+required:
+  - '@odata.type'
+type: object
+properties:
+  detectionType:
+    type: string
+    nullable: true
+  method:
+    type: string
+    nullable: true
+  name:
+    type: string
+    nullable: true
+  '@odata.type':
+    type: string

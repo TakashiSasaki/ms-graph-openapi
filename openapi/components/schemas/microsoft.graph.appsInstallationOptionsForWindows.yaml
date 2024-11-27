@@ -1,0 +1,27 @@
+title: appsInstallationOptionsForWindows
+required:
+  - '@odata.type'
+type: object
+properties:
+  isMicrosoft365AppsEnabled:
+    type: boolean
+    description: >-
+      Specifies whether users can install Microsoft 365 apps, including Skype
+      for Business, on their Windows devices. The default value is true.
+  isProjectEnabled:
+    type: boolean
+    description: >-
+      Specifies whether users can install Microsoft Project on their Windows
+      devices. The default value is true.
+  isSkypeForBusinessEnabled:
+    type: boolean
+    description: >-
+      Specifies whether users can install Skype for Business (standalone) on
+      their Windows devices. The default value is true.
+  isVisioEnabled:
+    type: boolean
+    description: >-
+      Specifies whether users can install Visio on their Windows devices. The
+      default value is true.
+  '@odata.type':
+    type: string

@@ -1,0 +1,7 @@
+title: accessPackageSubjectType
+enum:
+  - notSpecified
+  - user
+  - servicePrincipal
+  - unknownFutureValue
+type: string

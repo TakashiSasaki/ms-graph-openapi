@@ -1,0 +1,34 @@
+title: accessReviewInstanceDecisionItemResource
+required:
+  - '@odata.type'
+type: object
+properties:
+  displayName:
+    type: string
+    description: Display name of the resource
+    nullable: true
+  id:
+    type: string
+    description: Identifier of the resource
+    nullable: true
+  type:
+    type: string
+    description: >-
+      Type of resource. Types include: Group, ServicePrincipal, DirectoryRole,
+      AzureRole, AccessPackageAssignmentPolicy.
+    nullable: true
+  '@odata.type':
+    type: string
+discriminator:
+  propertyName: '@odata.type'
+  mapping:
+    '#microsoft.graph.accessReviewInstanceDecisionItemAccessPackageAssignmentPolicyResource': >-
+      .\microsoft.graph.accessReviewInstanceDecisionItemAccessPackageAssignmentPolicyResource.yaml
+    '#microsoft.graph.accessReviewInstanceDecisionItemAzureRoleResource': .\microsoft.graph.accessReviewInstanceDecisionItemAzureRoleResource.yaml
+    '#microsoft.graph.accessReviewInstanceDecisionItemServicePrincipalResource': >-
+      .\microsoft.graph.accessReviewInstanceDecisionItemServicePrincipalResource.yaml
+    microsoft.graph.accessReviewInstanceDecisionItemAccessPackageAssignmentPolicyResource: >-
+      .\microsoft.graph.accessReviewInstanceDecisionItemAccessPackageAssignmentPolicyResource.yaml
+    microsoft.graph.accessReviewInstanceDecisionItemAzureRoleResource: .\microsoft.graph.accessReviewInstanceDecisionItemAzureRoleResource.yaml
+    microsoft.graph.accessReviewInstanceDecisionItemServicePrincipalResource: >-
+      .\microsoft.graph.accessReviewInstanceDecisionItemServicePrincipalResource.yaml

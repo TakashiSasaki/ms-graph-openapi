@@ -1,0 +1,28 @@
+title: accessPackageAnswerChoice
+required:
+  - '@odata.type'
+type: object
+properties:
+  actualValue:
+    type: string
+    description: >-
+      The actual value of the selected choice. This is typically a string value
+      which is understandable by applications. Required.
+    nullable: true
+  localizations:
+    type: array
+    items:
+      $ref: .\microsoft.graph.accessPackageLocalizedText.yaml
+    description: >-
+      The text of the answer choice represented in a format for a specific
+      locale.
+  text:
+    type: string
+    description: >-
+      The string to display for this answer; if an Accept-Language header is
+      provided, and there is a matching localization in localizations, this
+      string will be the matching localized string; otherwise, this string
+      remains as the default non-localized string. Required.
+    nullable: true
+  '@odata.type':
+    type: string

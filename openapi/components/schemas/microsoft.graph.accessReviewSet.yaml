@@ -1,0 +1,24 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: accessReviewSet
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      definitions:
+        type: array
+        items:
+          $ref: .\microsoft.graph.accessReviewScheduleDefinition.yaml
+        description: Represents the template and scheduling for an access review.
+        x-ms-navigationProperty: true
+      historyDefinitions:
+        type: array
+        items:
+          $ref: .\microsoft.graph.accessReviewHistoryDefinition.yaml
+        description: >-
+          Represents a collection of access review history data and the scopes
+          used to collect that data.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.accessReviewSet'

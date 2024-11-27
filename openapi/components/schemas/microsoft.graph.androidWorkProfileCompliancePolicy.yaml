@@ -1,0 +1,100 @@
+allOf:
+  - $ref: .\microsoft.graph.deviceCompliancePolicy.yaml
+  - title: androidWorkProfileCompliancePolicy
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      deviceThreatProtectionEnabled:
+        type: boolean
+        description: Require that devices have enabled device threat protection.
+      deviceThreatProtectionRequiredSecurityLevel:
+        $ref: .\microsoft.graph.deviceThreatProtectionLevel.yaml
+      minAndroidSecurityPatchLevel:
+        type: string
+        description: Minimum Android security patch level.
+        nullable: true
+      osMaximumVersion:
+        type: string
+        description: Maximum Android version.
+        nullable: true
+      osMinimumVersion:
+        type: string
+        description: Minimum Android version.
+        nullable: true
+      passwordExpirationDays:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: Number of days before the password expires. Valid values 1 to 365
+        format: int32
+        nullable: true
+      passwordMinimumLength:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: Minimum password length. Valid values 4 to 16
+        format: int32
+        nullable: true
+      passwordMinutesOfInactivityBeforeLock:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: Minutes of inactivity before a password is required.
+        format: int32
+        nullable: true
+      passwordPreviousPasswordBlockCount:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: Number of previous passwords to block. Valid values 1 to 24
+        format: int32
+        nullable: true
+      passwordRequired:
+        type: boolean
+        description: Require a password to unlock device.
+      passwordRequiredType:
+        $ref: .\microsoft.graph.androidRequiredPasswordType.yaml
+      securityBlockJailbrokenDevices:
+        type: boolean
+        description: Devices must not be jailbroken or rooted.
+      securityDisableUsbDebugging:
+        type: boolean
+        description: Disable USB debugging on Android devices.
+      securityPreventInstallAppsFromUnknownSources:
+        type: boolean
+        description: >-
+          Require that devices disallow installation of apps from unknown
+          sources.
+      securityRequireCompanyPortalAppIntegrity:
+        type: boolean
+        description: >-
+          Require the device to pass the Company Portal client app runtime
+          integrity check.
+      securityRequireGooglePlayServices:
+        type: boolean
+        description: >-
+          Require Google Play Services to be installed and enabled on the
+          device.
+      securityRequireSafetyNetAttestationBasicIntegrity:
+        type: boolean
+        description: Require the device to pass the SafetyNet basic integrity check.
+      securityRequireSafetyNetAttestationCertifiedDevice:
+        type: boolean
+        description: Require the device to pass the SafetyNet certified device check.
+      securityRequireUpToDateSecurityProviders:
+        type: boolean
+        description: >-
+          Require the device to have up to date security providers. The device
+          will require Google Play Services to be enabled and up to date.
+      securityRequireVerifyApps:
+        type: boolean
+        description: Require the Android Verify apps feature is turned on.
+      storageRequireEncryption:
+        type: boolean
+        description: Require encryption on Android devices.
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.androidWorkProfileCompliancePolicy'
+    description: This class contains compliance settings for Android Work Profile.
+x-ms-discriminator-value: '#microsoft.graph.androidWorkProfileCompliancePolicy'
