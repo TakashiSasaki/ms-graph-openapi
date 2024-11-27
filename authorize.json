@@ -3,7 +3,11 @@
   "info": {
     "title": "Microsoft Entra ID OAuth 2.0 Authorization Endpoint",
     "description": "This OpenAPI document describes the OAuth 2.0 authorization endpoint for Microsoft Entra ID. The endpoint is used to obtain authorization codes as part of the authorization code grant flow.",
-    "version": "1.0.0"
+    "version": "1.0.0",
+    "license": {
+      "name": "MIT",
+      "url": "https://opensource.org/licenses/MIT"
+    }
   },
   "servers": [
     {
@@ -14,6 +18,28 @@
           "description": "The tenant identifier. Can be 'common', 'organizations', 'consumers', or a specific tenant ID."
         }
       }
+    }
+  ],
+  "components": {
+    "securitySchemes": {
+      "oauth2": {
+        "type": "oauth2",
+        "description": "OAuth 2.0 Authorization Framework",
+        "flows": {
+          "authorizationCode": {
+            "authorizationUrl": "https://login.microsoftonline.com/common/oauth2/v2.0/authorize",
+            "tokenUrl": "https://login.microsoftonline.com/common/oauth2/v2.0/token",
+            "scopes": {
+              "openid": "Sign in and read user profile"
+            }
+          }
+        }
+      }
+    }
+  },
+  "security": [
+    {
+      "oauth2": []
     }
   ],
   "paths": {
@@ -129,6 +155,9 @@
           }
         ],
         "responses": {
+          "200": {
+            "description": "Operation completed successfully."
+          },
           "302": {
             "description": "Redirects the user to the Microsoft Entra ID sign-in page. Upon successful authentication and authorization, the user is redirected to the specified redirect_uri with an authorization code."
           },
