@@ -5,6 +5,9 @@ info:
     This OpenAPI document describes the OAuth 2.0 token endpoint for Microsoft Entra ID.
     The endpoint is used to obtain access tokens as part of the OAuth 2.0 authorization flows.
   version: 1.0.0
+  license:
+    name: MIT
+    url: https://opensource.org/licenses/MIT
 servers:
   - url: https://login.microsoftonline.com/{tenant}/oauth2/v2.0
     variables:
@@ -12,6 +15,19 @@ servers:
         default: common
         description: >
           The tenant identifier. Can be 'common', 'organizations', 'consumers', or a specific tenant ID.
+components:
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      description: OAuth 2.0 Authorization Framework
+      flows:
+        authorizationCode:
+          authorizationUrl: https://login.microsoftonline.com/common/oauth2/v2.0/authorize
+          tokenUrl: https://login.microsoftonline.com/common/oauth2/v2.0/token
+          scopes:
+            openid: Sign in and read user profile
+security:
+  - oauth2: []
 paths:
   /token:
     post:
@@ -113,7 +129,8 @@ paths:
                 required:
                   - error
         '401':
-          description: Unauthorized. The client authentication failed.
+          description: >
+            Unauthorized. The client authentication failed.
           content:
             application/json:
               schema:
