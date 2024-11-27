@@ -1,0 +1,15 @@
+value:
+  info:
+    '@odata.type': microsoft.graph.participantInfo
+  isInLobby: 'true'
+  isMuted: 'true'
+  mediaStreams:
+    - '@odata.type': microsoft.graph.mediaStream
+  metadata: String
+  recordingInfo:
+    '@odata.type': microsoft.graph.recordingInfo
+  removedState:
+    '@odata.type': microsoft.graph.removedState
+  restrictedExperience:
+    '@odata.type': microsoft.graph.onlineMeetingRestricted
+  rosterSequenceNumber: '0'

@@ -1,0 +1,7 @@
+value:
+  city: String
+  countryOrRegion: String
+  officeLocation: String
+  postalCode: String
+  state: String
+  street: String

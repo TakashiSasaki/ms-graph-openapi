@@ -1,0 +1,5 @@
+value:
+  isActive: 'true'
+  notAfter: '0'
+  notBefore: '0'
+  thumbprint: String

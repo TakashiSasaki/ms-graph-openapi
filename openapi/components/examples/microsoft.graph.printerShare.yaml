@@ -1,0 +1,11 @@
+value:
+  allowAllUsers: 'true'
+  allowedGroups:
+    - '@odata.type': microsoft.graph.group
+  allowedUsers:
+    - '@odata.type': microsoft.graph.user
+  createdDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  printer:
+    '@odata.type': microsoft.graph.printer
+  viewPoint:
+    '@odata.type': microsoft.graph.printerShareViewpoint

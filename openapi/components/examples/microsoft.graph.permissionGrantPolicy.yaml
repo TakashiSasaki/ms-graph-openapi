@@ -1,0 +1,5 @@
+value:
+  excludes:
+    - '@odata.type': microsoft.graph.permissionGrantConditionSet
+  includes:
+    - '@odata.type': microsoft.graph.permissionGrantConditionSet

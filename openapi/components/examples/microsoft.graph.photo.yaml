@@ -1,0 +1,10 @@
+value:
+  cameraMake: String
+  cameraModel: String
+  exposureDenominator: '0'
+  exposureNumerator: '0'
+  fNumber: '0'
+  focalLength: '0'
+  iso: '0'
+  orientation: '0'
+  takenDateTime: '0001-01-01T00:00:00.0000000+00:00'

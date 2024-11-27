@@ -1,0 +1,9 @@
+value:
+  countryCode: String
+  endpointType:
+    '@odata.type': microsoft.graph.endpointType
+  identity:
+    '@odata.type': microsoft.graph.identitySet
+  languageId: String
+  participantId: String
+  region: String

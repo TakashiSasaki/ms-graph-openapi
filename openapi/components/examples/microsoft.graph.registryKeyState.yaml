@@ -1,0 +1,14 @@
+value:
+  hive:
+    '@odata.type': microsoft.graph.registryHive
+  key: String
+  oldKey: String
+  oldValueData: String
+  oldValueName: String
+  operation:
+    '@odata.type': microsoft.graph.registryOperation
+  processId: '0'
+  valueData: String
+  valueName: String
+  valueType:
+    '@odata.type': microsoft.graph.registryValueType

@@ -1,0 +1,13 @@
+value:
+  changeKey: String
+  eventEndTime:
+    '@odata.type': microsoft.graph.dateTimeTimeZone
+  eventId: String
+  eventLocation:
+    '@odata.type': microsoft.graph.location
+  eventStartTime:
+    '@odata.type': microsoft.graph.dateTimeTimeZone
+  eventSubject: String
+  eventWebLink: String
+  reminderFireTime:
+    '@odata.type': microsoft.graph.dateTimeTimeZone

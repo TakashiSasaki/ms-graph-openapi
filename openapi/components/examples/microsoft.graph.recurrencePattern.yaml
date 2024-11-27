@@ -1,0 +1,12 @@
+value:
+  dayOfMonth: '0'
+  daysOfWeek:
+    - '@odata.type': microsoft.graph.dayOfWeek
+  firstDayOfWeek:
+    '@odata.type': microsoft.graph.dayOfWeek
+  index:
+    '@odata.type': microsoft.graph.weekIndex
+  interval: '0'
+  month: '0'
+  type:
+    '@odata.type': microsoft.graph.recurrencePatternType

@@ -1,0 +1,6 @@
+value:
+  expiryDateTime:
+    '@odata.type': microsoft.graph.dateTimeTimeZone
+  message:
+    '@odata.type': microsoft.graph.itemBody
+  publishedDateTime: '0001-01-01T00:00:00.0000000+00:00'

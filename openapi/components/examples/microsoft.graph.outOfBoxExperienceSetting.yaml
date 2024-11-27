@@ -1,0 +1,9 @@
+value:
+  deviceUsageType:
+    '@odata.type': microsoft.graph.windowsDeviceUsageType
+  escapeLinkHidden: 'true'
+  eulaHidden: 'true'
+  keyboardSelectionPageSkipped: 'true'
+  privacySettingsHidden: 'true'
+  userType:
+    '@odata.type': microsoft.graph.windowsUserType

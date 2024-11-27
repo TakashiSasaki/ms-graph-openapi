@@ -1,0 +1,4 @@
+value:
+  allowMultipleSelection: 'true'
+  chooseFromType: String
+  displayAs: String

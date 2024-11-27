@@ -1,0 +1,15 @@
+value:
+  capabilities:
+    '@odata.type': microsoft.graph.printerCapabilities
+  defaults:
+    '@odata.type': microsoft.graph.printerDefaults
+  displayName: String
+  isAcceptingJobs: 'true'
+  jobs:
+    - '@odata.type': microsoft.graph.printJob
+  location:
+    '@odata.type': microsoft.graph.printerLocation
+  manufacturer: String
+  model: String
+  status:
+    '@odata.type': microsoft.graph.printerStatus

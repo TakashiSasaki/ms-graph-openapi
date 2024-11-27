@@ -1,0 +1,15 @@
+value:
+  authenticationMethods:
+    '@odata.type': microsoft.graph.authenticationMethodsRoot
+  dailyPrintUsageByPrinter:
+    - '@odata.type': microsoft.graph.printUsageByPrinter
+  dailyPrintUsageByUser:
+    - '@odata.type': microsoft.graph.printUsageByUser
+  monthlyPrintUsageByPrinter:
+    - '@odata.type': microsoft.graph.printUsageByPrinter
+  monthlyPrintUsageByUser:
+    - '@odata.type': microsoft.graph.printUsageByUser
+  partners:
+    '@odata.type': microsoft.graph.partners
+  security:
+    '@odata.type': microsoft.graph.securityReportsRoot

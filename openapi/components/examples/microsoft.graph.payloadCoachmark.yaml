@@ -1,0 +1,8 @@
+value:
+  coachmarkLocation:
+    '@odata.type': microsoft.graph.coachmarkLocation
+  description: String
+  indicator: String
+  isValid: 'true'
+  language: String
+  order: String

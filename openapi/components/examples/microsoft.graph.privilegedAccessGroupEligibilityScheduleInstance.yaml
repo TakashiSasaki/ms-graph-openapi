@@ -1,0 +1,12 @@
+value:
+  accessId:
+    '@odata.type': microsoft.graph.privilegedAccessGroupRelationships
+  eligibilityScheduleId: String
+  group:
+    '@odata.type': microsoft.graph.group
+  groupId: String
+  memberType:
+    '@odata.type': microsoft.graph.privilegedAccessGroupMemberType
+  principal:
+    '@odata.type': microsoft.graph.directoryObject
+  principalId: String

@@ -1,0 +1,30 @@
+value:
+  collate: 'true'
+  colorMode:
+    '@odata.type': microsoft.graph.printColorMode
+  copies: '0'
+  dpi: '0'
+  duplexMode:
+    '@odata.type': microsoft.graph.printDuplexMode
+  feedOrientation:
+    '@odata.type': microsoft.graph.printerFeedOrientation
+  finishings:
+    - '@odata.type': microsoft.graph.printFinishing
+  fitPdfToPage: 'true'
+  inputBin: String
+  margin:
+    '@odata.type': microsoft.graph.printMargin
+  mediaSize: String
+  mediaType: String
+  multipageLayout:
+    '@odata.type': microsoft.graph.printMultipageLayout
+  orientation:
+    '@odata.type': microsoft.graph.printOrientation
+  outputBin: String
+  pageRanges:
+    - '@odata.type': microsoft.graph.integerRange
+  pagesPerSheet: '0'
+  quality:
+    '@odata.type': microsoft.graph.printQuality
+  scaling:
+    '@odata.type': microsoft.graph.printScaling

@@ -1,0 +1,7 @@
+value:
+  accessConsent: 'true'
+  displayName: String
+  emailAddress: String
+  mobilePhone: String
+  relationship:
+    '@odata.type': microsoft.graph.contactRelationship

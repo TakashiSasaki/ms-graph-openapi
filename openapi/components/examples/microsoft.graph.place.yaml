@@ -1,0 +1,7 @@
+value:
+  address:
+    '@odata.type': microsoft.graph.physicalAddress
+  displayName: String
+  geoCoordinates:
+    '@odata.type': microsoft.graph.outlookGeoCoordinates
+  phone: String

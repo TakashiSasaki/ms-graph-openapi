@@ -1,0 +1,8 @@
+value:
+  checklist:
+    '@odata.type': microsoft.graph.plannerChecklistItems
+  description: String
+  previewType:
+    '@odata.type': microsoft.graph.plannerPreviewType
+  references:
+    '@odata.type': microsoft.graph.plannerExternalReferences

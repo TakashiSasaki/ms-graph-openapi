@@ -1,0 +1,20 @@
+value:
+  expirationDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  grantedTo:
+    '@odata.type': microsoft.graph.identitySet
+  grantedToIdentities:
+    - '@odata.type': microsoft.graph.identitySet
+  grantedToIdentitiesV2:
+    - '@odata.type': microsoft.graph.sharePointIdentitySet
+  grantedToV2:
+    '@odata.type': microsoft.graph.sharePointIdentitySet
+  hasPassword: 'true'
+  inheritedFrom:
+    '@odata.type': microsoft.graph.itemReference
+  invitation:
+    '@odata.type': microsoft.graph.sharingInvitation
+  link:
+    '@odata.type': microsoft.graph.sharingLink
+  roles:
+    - String
+  shareId: String

@@ -1,0 +1,3 @@
+value:
+  details:
+    '@odata.type': microsoft.graph.detailsInfo

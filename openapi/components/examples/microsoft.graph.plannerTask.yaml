@@ -1,0 +1,35 @@
+value:
+  activeChecklistItemCount: '0'
+  appliedCategories:
+    '@odata.type': microsoft.graph.plannerAppliedCategories
+  assignedToTaskBoardFormat:
+    '@odata.type': microsoft.graph.plannerAssignedToTaskBoardTaskFormat
+  assigneePriority: String
+  assignments:
+    '@odata.type': microsoft.graph.plannerAssignments
+  bucketId: String
+  bucketTaskBoardFormat:
+    '@odata.type': microsoft.graph.plannerBucketTaskBoardTaskFormat
+  checklistItemCount: '0'
+  completedBy:
+    '@odata.type': microsoft.graph.identitySet
+  completedDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  conversationThreadId: String
+  createdBy:
+    '@odata.type': microsoft.graph.identitySet
+  createdDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  details:
+    '@odata.type': microsoft.graph.plannerTaskDetails
+  dueDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  hasDescription: 'true'
+  orderHint: String
+  percentComplete: '0'
+  planId: String
+  previewType:
+    '@odata.type': microsoft.graph.plannerPreviewType
+  priority: '0'
+  progressTaskBoardFormat:
+    '@odata.type': microsoft.graph.plannerProgressTaskBoardTaskFormat
+  referenceCount: '0'
+  startDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  title: String

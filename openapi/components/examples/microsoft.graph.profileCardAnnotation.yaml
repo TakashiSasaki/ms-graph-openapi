@@ -1,0 +1,4 @@
+value:
+  displayName: String
+  localizations:
+    - '@odata.type': microsoft.graph.displayNameLocalization

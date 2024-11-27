@@ -1,0 +1,21 @@
+value:
+  altitudeInMeters: '0'
+  building: String
+  city: String
+  countryOrRegion: String
+  floor: String
+  floorDescription: String
+  latitude: '0'
+  longitude: '0'
+  organization:
+    - String
+  postalCode: String
+  roomDescription: String
+  roomName: String
+  site: String
+  stateOrProvince: String
+  streetAddress: String
+  subdivision:
+    - String
+  subunit:
+    - String

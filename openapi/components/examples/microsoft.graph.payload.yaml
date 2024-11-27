@@ -1,0 +1,36 @@
+value:
+  brand:
+    '@odata.type': microsoft.graph.payloadBrand
+  complexity:
+    '@odata.type': microsoft.graph.payloadComplexity
+  createdBy:
+    '@odata.type': microsoft.graph.emailIdentity
+  createdDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  description: String
+  detail:
+    '@odata.type': microsoft.graph.payloadDetail
+  displayName: String
+  industry:
+    '@odata.type': microsoft.graph.payloadIndustry
+  isAutomated: 'true'
+  isControversial: 'true'
+  isCurrentEvent: 'true'
+  language: String
+  lastModifiedBy:
+    '@odata.type': microsoft.graph.emailIdentity
+  lastModifiedDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  payloadTags:
+    - String
+  platform:
+    '@odata.type': microsoft.graph.payloadDeliveryPlatform
+  predictedCompromiseRate: '0'
+  simulationAttackType:
+    '@odata.type': microsoft.graph.simulationAttackType
+  source:
+    '@odata.type': microsoft.graph.simulationContentSource
+  status:
+    '@odata.type': microsoft.graph.simulationContentStatus
+  technique:
+    '@odata.type': microsoft.graph.simulationAttackTechnique
+  theme:
+    '@odata.type': microsoft.graph.payloadTheme

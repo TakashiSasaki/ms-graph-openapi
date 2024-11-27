@@ -1,0 +1,3 @@
+value:
+  billed:
+    '@odata.type': microsoft.graph.partners.billing.billedReconciliation

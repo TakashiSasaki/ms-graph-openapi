@@ -1,0 +1,5 @@
+value:
+  checkedOutBy:
+    '@odata.type': microsoft.graph.identitySet
+  level: String
+  versionId: String

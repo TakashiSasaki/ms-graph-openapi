@@ -1,0 +1,9 @@
+value:
+  manifests:
+    - '@odata.type': microsoft.graph.partners.billing.manifest
+  operations:
+    - '@odata.type': microsoft.graph.partners.billing.operation
+  reconciliation:
+    '@odata.type': microsoft.graph.partners.billing.billingReconciliation
+  usage:
+    '@odata.type': microsoft.graph.partners.billing.azureUsage

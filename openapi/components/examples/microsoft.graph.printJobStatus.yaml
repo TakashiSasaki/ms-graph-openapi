@@ -1,0 +1,7 @@
+value:
+  description: String
+  details:
+    - '@odata.type': microsoft.graph.printJobStateDetail
+  isAcquiredByPrinter: 'true'
+  state:
+    '@odata.type': microsoft.graph.printJobProcessingState

@@ -1,0 +1,3 @@
+value:
+  ipAddressOrFQDN: String
+  proxy: String

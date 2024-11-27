@@ -1,0 +1,15 @@
+value:
+  assignmentApprovals:
+    - '@odata.type': microsoft.graph.approval
+  assignmentScheduleInstances:
+    - '@odata.type': microsoft.graph.privilegedAccessGroupAssignmentScheduleInstance
+  assignmentScheduleRequests:
+    - '@odata.type': microsoft.graph.privilegedAccessGroupAssignmentScheduleRequest
+  assignmentSchedules:
+    - '@odata.type': microsoft.graph.privilegedAccessGroupAssignmentSchedule
+  eligibilityScheduleInstances:
+    - '@odata.type': microsoft.graph.privilegedAccessGroupEligibilityScheduleInstance
+  eligibilityScheduleRequests:
+    - '@odata.type': microsoft.graph.privilegedAccessGroupEligibilityScheduleRequest
+  eligibilitySchedules:
+    - '@odata.type': microsoft.graph.privilegedAccessGroupEligibilitySchedule

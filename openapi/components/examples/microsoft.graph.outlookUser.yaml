@@ -1,0 +1,3 @@
+value:
+  masterCategories:
+    - '@odata.type': microsoft.graph.outlookCategory

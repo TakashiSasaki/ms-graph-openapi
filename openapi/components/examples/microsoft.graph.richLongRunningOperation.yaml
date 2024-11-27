@@ -1,0 +1,6 @@
+value:
+  error:
+    '@odata.type': microsoft.graph.publicError
+  percentageComplete: '0'
+  resourceId: String
+  type: String

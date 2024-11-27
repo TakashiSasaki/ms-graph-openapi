@@ -1,0 +1,15 @@
+value:
+  connectors:
+    - '@odata.type': microsoft.graph.printConnector
+  operations:
+    - '@odata.type': microsoft.graph.printOperation
+  printers:
+    - '@odata.type': microsoft.graph.printer
+  services:
+    - '@odata.type': microsoft.graph.printService
+  settings:
+    '@odata.type': microsoft.graph.printSettings
+  shares:
+    - '@odata.type': microsoft.graph.printerShare
+  taskDefinitions:
+    - '@odata.type': microsoft.graph.printTaskDefinition

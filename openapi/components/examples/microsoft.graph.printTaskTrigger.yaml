@@ -1,0 +1,5 @@
+value:
+  definition:
+    '@odata.type': microsoft.graph.printTaskDefinition
+  event:
+    '@odata.type': microsoft.graph.printEvent

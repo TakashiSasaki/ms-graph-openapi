@@ -1,0 +1,4 @@
+value:
+  contentType: String
+  displayName: String
+  size: '0'

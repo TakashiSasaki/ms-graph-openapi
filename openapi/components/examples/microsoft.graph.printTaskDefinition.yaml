@@ -1,0 +1,6 @@
+value:
+  createdBy:
+    '@odata.type': microsoft.graph.appIdentity
+  displayName: String
+  tasks:
+    - '@odata.type': microsoft.graph.printTask

@@ -1,0 +1,4 @@
+value:
+  allowedWeakAlgorithms:
+    '@odata.type': microsoft.graph.weakAlgorithms
+  isSignedRequestRequired: 'true'

@@ -1,0 +1,3 @@
+value:
+  password: String
+  pkcs12Value: String

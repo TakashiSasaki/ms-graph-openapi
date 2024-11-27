@@ -1,0 +1,12 @@
+value:
+  blobCount: '0'
+  blobs:
+    - '@odata.type': microsoft.graph.partners.billing.blob
+  createdDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  dataFormat: String
+  eTag: String
+  partitionType: String
+  partnerTenantId: String
+  rootDirectory: String
+  sasToken: String
+  schemaVersion: String

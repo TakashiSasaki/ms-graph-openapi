@@ -1,0 +1,6 @@
+value:
+  name: String
+  orderHint: String
+  planId: String
+  tasks:
+    - '@odata.type': microsoft.graph.plannerTask

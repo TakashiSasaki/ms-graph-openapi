@@ -1,0 +1,3 @@
+value:
+  deliveryPreference:
+    '@odata.type': microsoft.graph.notificationDeliveryPreference

@@ -1,0 +1,9 @@
+value:
+  containerDisplayName: String
+  containerType: String
+  containerWebUrl: String
+  mediaType: String
+  previewImageUrl: String
+  previewText: String
+  title: String
+  type: String

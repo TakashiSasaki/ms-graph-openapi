@@ -1,0 +1,4 @@
+value:
+  orderHintsByAssignee:
+    '@odata.type': microsoft.graph.plannerOrderHintsByAssignee
+  unassignedOrderHint: String

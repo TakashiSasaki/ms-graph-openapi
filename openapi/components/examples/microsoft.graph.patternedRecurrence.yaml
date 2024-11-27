@@ -1,0 +1,5 @@
+value:
+  pattern:
+    '@odata.type': microsoft.graph.recurrencePattern
+  range:
+    '@odata.type': microsoft.graph.recurrenceRange

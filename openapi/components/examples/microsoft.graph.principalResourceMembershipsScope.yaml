@@ -1,0 +1,5 @@
+value:
+  principalScopes:
+    - '@odata.type': microsoft.graph.accessReviewScope
+  resourceScopes:
+    - '@odata.type': microsoft.graph.accessReviewScope

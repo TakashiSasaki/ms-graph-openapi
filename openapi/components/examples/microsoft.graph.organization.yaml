@@ -1,0 +1,42 @@
+value:
+  assignedPlans:
+    - '@odata.type': microsoft.graph.assignedPlan
+  branding:
+    '@odata.type': microsoft.graph.organizationalBranding
+  businessPhones:
+    - String
+  certificateBasedAuthConfiguration:
+    - '@odata.type': microsoft.graph.certificateBasedAuthConfiguration
+  city: String
+  country: String
+  countryLetterCode: String
+  createdDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  defaultUsageLocation: String
+  displayName: String
+  extensions:
+    - '@odata.type': microsoft.graph.extension
+  marketingNotificationEmails:
+    - String
+  mobileDeviceManagementAuthority:
+    '@odata.type': microsoft.graph.mdmAuthority
+  onPremisesLastSyncDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  onPremisesSyncEnabled: 'true'
+  partnerTenantType:
+    '@odata.type': microsoft.graph.partnerTenantType
+  postalCode: String
+  preferredLanguage: String
+  privacyProfile:
+    '@odata.type': microsoft.graph.privacyProfile
+  provisionedPlans:
+    - '@odata.type': microsoft.graph.provisionedPlan
+  securityComplianceNotificationMails:
+    - String
+  securityComplianceNotificationPhones:
+    - String
+  state: String
+  street: String
+  technicalNotificationMails:
+    - String
+  tenantType: String
+  verifiedDomains:
+    - '@odata.type': microsoft.graph.verifiedDomain

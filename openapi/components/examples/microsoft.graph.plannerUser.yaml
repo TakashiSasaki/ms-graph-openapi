@@ -1,0 +1,5 @@
+value:
+  plans:
+    - '@odata.type': microsoft.graph.plannerPlan
+  tasks:
+    - '@odata.type': microsoft.graph.plannerTask
