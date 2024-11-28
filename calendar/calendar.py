@@ -3,7 +3,7 @@ File: calendar.py
 Author: Takashi Sasaki
 Created: 2024-11-27
 Modified: 2024-11-28
-Version: 1.1.6
+Version: 1.1.9
 
 Description:
 This script extracts specified paths from an OpenAPI document. The extracted
@@ -22,22 +22,21 @@ import sys
 import argparse
 import yaml
 import json
-import time
 import logging
 
 
 # Configure logging
-script_name = os.path.splitext(os.path.basename(__file__))[
-    0
-]  # Get script name without extension
-log_file_name = f"{script_name}.log"
+script_name = os.path.splitext(os.path.basename(__file__))[0]
+log_file_name = os.path.join(os.path.dirname(__file__), f"{script_name}.log")
+
 logging.basicConfig(
     level=logging.DEBUG,
-    format="%(asctime)s - %(levelname)s - %(filename)s - %(funcName)s - %(message)s",
+    format="%(asctime)s - %(levelname)s - %(funcName)s - %(message)s",
     datefmt="%Y-%m-%d %H:%M:%S",
-    filename=log_file_name,  # Use the dynamically generated log file name
-    filemode="w",  # Overwrite the log file each run; use 'a' for appending
+    filename=log_file_name,
+    filemode="w",
 )
+
 
 
 def ensure_correct_directory():
@@ -46,27 +45,25 @@ def ensure_correct_directory():
     current_dir = os.getcwd()
 
     if script_dir != current_dir:
-        print(f"Adjusting current directory to: {script_dir}")
+        logging.info(f"Adjusting current directory to: {script_dir}")
         os.chdir(script_dir)
 
 
 def load_file(file_path):
     """Load a YAML or JSON OpenAPI file."""
-    start_time = time.time()
+    logging.debug(f"Loading file: {file_path}")
     with open(file_path, "r", encoding="utf-8") as file:
         if file_path.endswith(".yaml") or file_path.endswith(".yml"):
-            result = yaml.safe_load(file)
+            return yaml.safe_load(file)
         elif file_path.endswith(".json"):
-            result = json.load(file)
+            return json.load(file)
         else:
             raise ValueError("Unsupported file format. Please use a YAML or JSON file.")
-    elapsed_time = time.time() - start_time
-    print(f"Loaded file '{file_path}' in {elapsed_time:.2f} seconds.", file=sys.stderr)
-    return result
 
 
 def save_file(data, file_path):
     """Save OpenAPI data to a file in YAML or JSON format."""
+    logging.debug(f"Saving file: {file_path}")
     with open(file_path, "w", encoding="utf-8") as file:
         if file_path.endswith(".yaml") or file_path.endswith(".yml"):
             yaml.safe_dump(data, file, allow_unicode=True)
@@ -80,11 +77,10 @@ def save_file(data, file_path):
 
 def load_required_paths(file_path):
     """Load the required paths from a text file."""
+    logging.debug(f"Loading required paths from: {file_path}")
     with open(file_path, "r", encoding="utf-8") as file:
         paths = [line.strip() for line in file if line.strip()]
-    print("Loaded required paths:", file=sys.stderr)
-    for i, path in enumerate(paths, start=1):
-        print(f"{i}: {path}", file=sys.stderr)
+    logging.info(f"Loaded {len(paths)} required paths.")
     return paths
 
 
@@ -95,9 +91,7 @@ def collect_refs(data, used_refs, current_path="root"):
             if key == "$ref" and isinstance(value, str):
                 if value not in used_refs:
                     used_refs.add(value)
-                    print(
-                        f"Found reference at {current_path}: {value}", file=sys.stderr
-                    )
+                    logging.debug(f"Found reference at {current_path}: {value}")
             else:
                 collect_refs(value, used_refs, f"{current_path}/{key}")
     elif isinstance(data, list):
@@ -111,53 +105,46 @@ def resolve_refs_recursive(openapi_spec, used_refs):
     resolved_components = {key: {} for key in components}
 
     total_components = sum(len(items) for items in components.values())
-    print(f"Total components available: {total_components}", file=sys.stderr)
+    logging.info(f"Total components available: {total_components}")
 
     def resolve_component(ref):
         if ref.startswith("#/components/"):
             try:
                 parts = ref.split("/")
                 if len(parts) < 4:
-                    print(f"Malformed $ref: {ref}", file=sys.stderr)
+                    logging.warning(f"Malformed $ref: {ref}")
                     return
                 _, _, comp_type, name = parts
                 if comp_type not in components:
-                    print(
-                        f"Component type '{comp_type}' not found for $ref: {ref}",
-                        file=sys.stderr,
-                    )
+                    logging.warning(f"Component type '{comp_type}' not found for $ref: {ref}")
                     return
                 if name not in components[comp_type]:
-                    print(
-                        f"Component '{name}' not found in type '{comp_type}' for $ref: {ref}",
-                        file=sys.stderr,
-                    )
+                    logging.warning(f"Component '{name}' not found in type '{comp_type}' for $ref: {ref}")
                     return
                 if name not in resolved_components[comp_type]:
                     resolved_components[comp_type][name] = components[comp_type][name]
-                    print(f"Resolved component: {comp_type}/{name}", file=sys.stderr)
+                    logging.debug(f"Resolved component: {comp_type}/{name}")
                     collect_refs(
                         components[comp_type][name],
                         used_refs,
                         f"#/components/{comp_type}/{name}",
                     )
             except ValueError as e:
-                print(f"Error processing $ref '{ref}': {e}", file=sys.stderr)
+                logging.error(f"Error processing $ref '{ref}': {e}")
 
     for ref in list(used_refs):
-        print(f"Processing $ref: {ref}", file=sys.stderr)
+        logging.debug(f"Processing $ref: {ref}")
         resolve_component(ref)
 
     resolved_count = sum(len(items) for items in resolved_components.values())
-    print(f"Resolved components count: {resolved_count}", file=sys.stderr)
+    logging.info(f"Resolved components count: {resolved_count}")
 
     return {k: v for k, v in resolved_components.items() if v}
 
 
 def filter_openapi_spec(openapi_spec, required_paths):
     """Filter the OpenAPI spec to include only the required paths and resolve $refs."""
-    print("Filtering OpenAPI specification...", file=sys.stderr)
-    start_time = time.time()
+    logging.info("Filtering OpenAPI specification...")
     filtered_paths = {
         path: openapi_spec["paths"][path]
         for path in openapi_spec["paths"]
@@ -177,7 +164,7 @@ def filter_openapi_spec(openapi_spec, required_paths):
     used_refs = set()
     collect_refs(filtered_paths, used_refs)
 
-    print(f"Number of $refs collected: {len(used_refs)}", file=sys.stderr)
+    logging.info(f"Number of $refs collected: {len(used_refs)}")
     resolved_components = resolve_refs_recursive(openapi_spec, used_refs)
 
     if resolved_components:
@@ -185,8 +172,7 @@ def filter_openapi_spec(openapi_spec, required_paths):
     else:
         openapi_spec.pop("components", None)
 
-    elapsed_time = time.time() - start_time
-    print(f"Filtering completed in {elapsed_time:.2f} seconds.", file=sys.stderr)
+    logging.info("Filtering completed.")
 
     return openapi_spec
 
@@ -219,14 +205,14 @@ def main():
     openapi_spec = load_file(args.input_file)
     required_paths = load_required_paths(args.required_paths_file)
 
-    print("Starting to filter the OpenAPI specification...", file=sys.stderr)
+    logging.info("Starting to filter the OpenAPI specification...")
     filtered_spec = filter_openapi_spec(openapi_spec, required_paths)
-    print("Finished filtering the OpenAPI specification.", file=sys.stderr)
+    logging.info("Finished filtering the OpenAPI specification.")
 
     save_file(filtered_spec, args.output_json)
-    print(f"Filtered OpenAPI spec saved to {args.output_json}")
+    logging.info(f"Filtered OpenAPI spec saved to {args.output_json}")
     save_file(filtered_spec, args.output_yaml)
-    print(f"Filtered OpenAPI spec saved to {args.output_yaml}")
+    logging.info(f"Filtered OpenAPI spec saved to {args.output_yaml}")
 
 
 if __name__ == "__main__":
