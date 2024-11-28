@@ -3,7 +3,7 @@ File: calendar.py
 Author: Takashi Sasaki
 Created: 2024-11-27
 Modified: 2024-11-28
-Version: 1.1.5
+Version: 1.1.6
 
 Description:
 This script extracts specified paths from an OpenAPI document. The extracted
@@ -16,12 +16,28 @@ Defaults:
     Output JSON file: calendar.json
     Output YAML file: calendar.yaml
 """
+
 import os
 import sys
 import argparse
 import yaml
 import json
 import time
+import logging
+
+
+# Configure logging
+script_name = os.path.splitext(os.path.basename(__file__))[
+    0
+]  # Get script name without extension
+log_file_name = f"{script_name}.log"
+logging.basicConfig(
+    level=logging.DEBUG,
+    format="%(asctime)s - %(levelname)s - %(filename)s - %(funcName)s - %(message)s",
+    datefmt="%Y-%m-%d %H:%M:%S",
+    filename=log_file_name,  # Use the dynamically generated log file name
+    filemode="w",  # Overwrite the log file each run; use 'a' for appending
+)
 
 
 def ensure_correct_directory():
@@ -37,10 +53,10 @@ def ensure_correct_directory():
 def load_file(file_path):
     """Load a YAML or JSON OpenAPI file."""
     start_time = time.time()
-    with open(file_path, 'r', encoding='utf-8') as file:
-        if file_path.endswith('.yaml') or file_path.endswith('.yml'):
+    with open(file_path, "r", encoding="utf-8") as file:
+        if file_path.endswith(".yaml") or file_path.endswith(".yml"):
             result = yaml.safe_load(file)
-        elif file_path.endswith('.json'):
+        elif file_path.endswith(".json"):
             result = json.load(file)
         else:
             raise ValueError("Unsupported file format. Please use a YAML or JSON file.")
@@ -51,18 +67,20 @@ def load_file(file_path):
 
 def save_file(data, file_path):
     """Save OpenAPI data to a file in YAML or JSON format."""
-    with open(file_path, 'w', encoding='utf-8') as file:
-        if file_path.endswith('.yaml') or file_path.endswith('.yml'):
+    with open(file_path, "w", encoding="utf-8") as file:
+        if file_path.endswith(".yaml") or file_path.endswith(".yml"):
             yaml.safe_dump(data, file, allow_unicode=True)
-        elif file_path.endswith('.json'):
+        elif file_path.endswith(".json"):
             json.dump(data, file, indent=2)
         else:
-            raise ValueError("Unsupported output format. Please use a .yaml or .json extension.")
+            raise ValueError(
+                "Unsupported output format. Please use a .yaml or .json extension."
+            )
 
 
 def load_required_paths(file_path):
     """Load the required paths from a text file."""
-    with open(file_path, 'r', encoding='utf-8') as file:
+    with open(file_path, "r", encoding="utf-8") as file:
         paths = [line.strip() for line in file if line.strip()]
     print("Loaded required paths:", file=sys.stderr)
     for i, path in enumerate(paths, start=1):
@@ -77,7 +95,9 @@ def collect_refs(data, used_refs, current_path="root"):
             if key == "$ref" and isinstance(value, str):
                 if value not in used_refs:
                     used_refs.add(value)
-                    print(f"Found reference at {current_path}: {value}", file=sys.stderr)
+                    print(
+                        f"Found reference at {current_path}: {value}", file=sys.stderr
+                    )
             else:
                 collect_refs(value, used_refs, f"{current_path}/{key}")
     elif isinstance(data, list):
@@ -102,15 +122,25 @@ def resolve_refs_recursive(openapi_spec, used_refs):
                     return
                 _, _, comp_type, name = parts
                 if comp_type not in components:
-                    print(f"Component type '{comp_type}' not found for $ref: {ref}", file=sys.stderr)
+                    print(
+                        f"Component type '{comp_type}' not found for $ref: {ref}",
+                        file=sys.stderr,
+                    )
                     return
                 if name not in components[comp_type]:
-                    print(f"Component '{name}' not found in type '{comp_type}' for $ref: {ref}", file=sys.stderr)
+                    print(
+                        f"Component '{name}' not found in type '{comp_type}' for $ref: {ref}",
+                        file=sys.stderr,
+                    )
                     return
                 if name not in resolved_components[comp_type]:
                     resolved_components[comp_type][name] = components[comp_type][name]
                     print(f"Resolved component: {comp_type}/{name}", file=sys.stderr)
-                    collect_refs(components[comp_type][name], used_refs, f"#/components/{comp_type}/{name}")
+                    collect_refs(
+                        components[comp_type][name],
+                        used_refs,
+                        f"#/components/{comp_type}/{name}",
+                    )
             except ValueError as e:
                 print(f"Error processing $ref '{ref}': {e}", file=sys.stderr)
 
@@ -128,14 +158,18 @@ def filter_openapi_spec(openapi_spec, required_paths):
     """Filter the OpenAPI spec to include only the required paths and resolve $refs."""
     print("Filtering OpenAPI specification...", file=sys.stderr)
     start_time = time.time()
-    filtered_paths = {path: openapi_spec['paths'][path] for path in openapi_spec['paths'] if path in required_paths}
+    filtered_paths = {
+        path: openapi_spec["paths"][path]
+        for path in openapi_spec["paths"]
+        if path in required_paths
+    }
 
     for path, methods in filtered_paths.items():
         for method, details in methods.items():
             if isinstance(details, dict) and "tags" in details:
                 del details["tags"]
 
-    openapi_spec['paths'] = filtered_paths
+    openapi_spec["paths"] = filtered_paths
 
     if "tags" in openapi_spec:
         del openapi_spec["tags"]
@@ -147,9 +181,9 @@ def filter_openapi_spec(openapi_spec, required_paths):
     resolved_components = resolve_refs_recursive(openapi_spec, used_refs)
 
     if resolved_components:
-        openapi_spec['components'] = resolved_components
+        openapi_spec["components"] = resolved_components
     else:
-        openapi_spec.pop('components', None)
+        openapi_spec.pop("components", None)
 
     elapsed_time = time.time() - start_time
     print(f"Filtering completed in {elapsed_time:.2f} seconds.", file=sys.stderr)
@@ -160,11 +194,25 @@ def filter_openapi_spec(openapi_spec, required_paths):
 def main():
     ensure_correct_directory()
 
-    parser = argparse.ArgumentParser(description="Extract specified paths from an OpenAPI document.")
-    parser.add_argument("--input_file", help="Path to the input OpenAPI YAML or JSON file.", default="../github/openapi/v1.0/openapi.yaml")
-    parser.add_argument("--output_json", help="Path to the output JSON file.", default="calendar.json")
-    parser.add_argument("--output_yaml", help="Path to the output YAML file.", default="calendar.yaml")
-    parser.add_argument("--required_paths_file", help="Path to the text file containing required paths.", default="calendar.txt")
+    parser = argparse.ArgumentParser(
+        description="Extract specified paths from an OpenAPI document."
+    )
+    parser.add_argument(
+        "--input_file",
+        help="Path to the input OpenAPI YAML or JSON file.",
+        default="../github/openapi/v1.0/openapi.yaml",
+    )
+    parser.add_argument(
+        "--output_json", help="Path to the output JSON file.", default="calendar.json"
+    )
+    parser.add_argument(
+        "--output_yaml", help="Path to the output YAML file.", default="calendar.yaml"
+    )
+    parser.add_argument(
+        "--required_paths_file",
+        help="Path to the text file containing required paths.",
+        default="calendar.txt",
+    )
 
     args = parser.parse_args()
 
