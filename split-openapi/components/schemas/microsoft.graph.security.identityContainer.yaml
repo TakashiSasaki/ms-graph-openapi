@@ -14,6 +14,12 @@ allOf:
           Identity within a customer's Microsoft Defender for Identity
           configuration.
         x-ms-navigationProperty: true
+      sensors:
+        type: array
+        items:
+          $ref: .\microsoft.graph.security.sensor.yaml
+        description: Represents a customer's Microsoft Defender for Identity sensors.
+        x-ms-navigationProperty: true
       '@odata.type':
         type: string
 x-ms-discriminator-value: '#microsoft.graph.security.identityContainer'

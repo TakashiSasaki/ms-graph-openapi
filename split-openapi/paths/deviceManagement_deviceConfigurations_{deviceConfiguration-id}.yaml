@@ -4,12 +4,12 @@ description: >-
 get:
   tags:
     - deviceManagement.deviceConfiguration
-  summary: Get sharedPCConfiguration
-  description: Read properties and relationships of the sharedPCConfiguration object.
+  summary: Get iosCertificateProfile
+  description: Read properties and relationships of the iosCertificateProfile object.
   externalDocs:
     description: Find more info here
     url: >-
-      https://learn.microsoft.com/graph/api/intune-deviceconfig-sharedpcconfiguration-get?view=graph-rest-1.0
+      https://learn.microsoft.com/graph/api/intune-deviceconfig-ioscertificateprofile-get?view=graph-rest-1.0
   operationId: deviceManagement.GetDeviceConfigurations
   parameters:
     - name: $select
@@ -47,12 +47,12 @@ get:
 patch:
   tags:
     - deviceManagement.deviceConfiguration
-  summary: Update macOSGeneralDeviceConfiguration
-  description: Update the properties of a macOSGeneralDeviceConfiguration object.
+  summary: Update windows10SecureAssessmentConfiguration
+  description: Update the properties of a windows10SecureAssessmentConfiguration object.
   externalDocs:
     description: Find more info here
     url: >-
-      https://learn.microsoft.com/graph/api/intune-deviceconfig-macosgeneraldeviceconfiguration-update?view=graph-rest-1.0
+      https://learn.microsoft.com/graph/api/intune-deviceconfig-windows10secureassessmentconfiguration-update?view=graph-rest-1.0
   operationId: deviceManagement.UpdateDeviceConfigurations
   requestBody:
     description: New navigation property values
@@ -76,12 +76,12 @@ patch:
 delete:
   tags:
     - deviceManagement.deviceConfiguration
-  summary: Delete iosUpdateConfiguration
-  description: Deletes a iosUpdateConfiguration.
+  summary: Delete windows10SecureAssessmentConfiguration
+  description: Deletes a windows10SecureAssessmentConfiguration.
   externalDocs:
     description: Find more info here
     url: >-
-      https://learn.microsoft.com/graph/api/intune-deviceconfig-iosupdateconfiguration-delete?view=graph-rest-1.0
+      https://learn.microsoft.com/graph/api/intune-deviceconfig-windows10secureassessmentconfiguration-delete?view=graph-rest-1.0
   operationId: deviceManagement.DeleteDeviceConfigurations
   parameters:
     - name: If-Match

@@ -50,14 +50,14 @@ get:
 patch:
   tags:
     - deviceManagement.deviceEnrollmentConfiguration
-  summary: Update deviceEnrollmentWindowsHelloForBusinessConfiguration
+  summary: Update deviceEnrollmentPlatformRestrictionsConfiguration
   description: >-
-    Update the properties of a
-    deviceEnrollmentWindowsHelloForBusinessConfiguration object.
+    Update the properties of a deviceEnrollmentPlatformRestrictionsConfiguration
+    object.
   externalDocs:
     description: Find more info here
     url: >-
-      https://learn.microsoft.com/graph/api/intune-onboarding-deviceenrollmentwindowshelloforbusinessconfiguration-update?view=graph-rest-1.0
+      https://learn.microsoft.com/graph/api/intune-onboarding-deviceenrollmentplatformrestrictionsconfiguration-update?view=graph-rest-1.0
   operationId: deviceManagement.UpdateDeviceEnrollmentConfigurations
   requestBody:
     description: New navigation property values
@@ -83,12 +83,12 @@ patch:
 delete:
   tags:
     - deviceManagement.deviceEnrollmentConfiguration
-  summary: Delete deviceEnrollmentPlatformRestrictionsConfiguration
-  description: Deletes a deviceEnrollmentPlatformRestrictionsConfiguration.
+  summary: Delete deviceEnrollmentWindowsHelloForBusinessConfiguration
+  description: Deletes a deviceEnrollmentWindowsHelloForBusinessConfiguration.
   externalDocs:
     description: Find more info here
     url: >-
-      https://learn.microsoft.com/graph/api/intune-onboarding-deviceenrollmentplatformrestrictionsconfiguration-delete?view=graph-rest-1.0
+      https://learn.microsoft.com/graph/api/intune-onboarding-deviceenrollmentwindowshelloforbusinessconfiguration-delete?view=graph-rest-1.0
   operationId: deviceManagement.DeleteDeviceEnrollmentConfigurations
   parameters:
     - name: If-Match

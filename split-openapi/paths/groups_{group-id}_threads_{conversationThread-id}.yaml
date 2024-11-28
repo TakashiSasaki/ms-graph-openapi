@@ -74,12 +74,12 @@ patch:
 delete:
   tags:
     - groups.conversationThread
-  summary: Delete conversation thread
+  summary: Delete conversationThread
   description: Delete conversationThread.
   externalDocs:
     description: Find more info here
     url: >-
-      https://learn.microsoft.com/graph/api/group-delete-thread?view=graph-rest-1.0
+      https://learn.microsoft.com/graph/api/conversationthread-delete?view=graph-rest-1.0
   operationId: groups.DeleteThreads
   parameters:
     - name: If-Match

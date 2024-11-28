@@ -6,4 +6,10 @@ enum:
   - blocked
   - notFound
   - unknownFutureValue
+  - active
+  - pendingApproval
+  - declined
+  - unremediated
+  - running
+  - partiallyRemediated
 type: string

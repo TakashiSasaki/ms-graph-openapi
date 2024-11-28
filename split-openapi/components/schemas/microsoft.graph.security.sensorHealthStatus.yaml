@@ -1,0 +1,8 @@
+title: sensorHealthStatus
+enum:
+  - healthy
+  - notHealthyLow
+  - notHealthyMedium
+  - notHealthyHigh
+  - unknownFutureValue
+type: string

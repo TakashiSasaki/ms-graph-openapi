@@ -962,12 +962,14 @@ discriminator:
     '#microsoft.graph.security.intelligenceProfileIndicator': .\microsoft.graph.security.intelligenceProfileIndicator.yaml
     '#microsoft.graph.security.intelligenceProfile': .\microsoft.graph.security.intelligenceProfile.yaml
     '#microsoft.graph.security.labelsRoot': .\microsoft.graph.security.labelsRoot.yaml
+    '#microsoft.graph.security.networkAdapter': .\microsoft.graph.security.networkAdapter.yaml
     '#microsoft.graph.security.retentionEvent': .\microsoft.graph.security.retentionEvent.yaml
     '#microsoft.graph.security.retentionEventType': .\microsoft.graph.security.retentionEventType.yaml
     '#microsoft.graph.security.retentionLabel': .\microsoft.graph.security.retentionLabel.yaml
     '#microsoft.graph.security.search': .\microsoft.graph.security.search.yaml
     '#microsoft.graph.security.ediscoveryReviewSetQuery': .\microsoft.graph.security.ediscoveryReviewSetQuery.yaml
     '#microsoft.graph.security.ediscoverySearch': .\microsoft.graph.security.ediscoverySearch.yaml
+    '#microsoft.graph.security.sensor': .\microsoft.graph.security.sensor.yaml
     '#microsoft.graph.security.subdomain': .\microsoft.graph.security.subdomain.yaml
     '#microsoft.graph.security.tag': .\microsoft.graph.security.tag.yaml
     '#microsoft.graph.security.ediscoveryReviewTag': .\microsoft.graph.security.ediscoveryReviewTag.yaml
@@ -1578,10 +1580,12 @@ discriminator:
     microsoft.graph.security.indicator: .\microsoft.graph.security.indicator.yaml
     microsoft.graph.security.intelligenceProfile: .\microsoft.graph.security.intelligenceProfile.yaml
     microsoft.graph.security.labelsRoot: .\microsoft.graph.security.labelsRoot.yaml
+    microsoft.graph.security.networkAdapter: .\microsoft.graph.security.networkAdapter.yaml
     microsoft.graph.security.retentionEvent: .\microsoft.graph.security.retentionEvent.yaml
     microsoft.graph.security.retentionEventType: .\microsoft.graph.security.retentionEventType.yaml
     microsoft.graph.security.retentionLabel: .\microsoft.graph.security.retentionLabel.yaml
     microsoft.graph.security.search: .\microsoft.graph.security.search.yaml
+    microsoft.graph.security.sensor: .\microsoft.graph.security.sensor.yaml
     microsoft.graph.security.subdomain: .\microsoft.graph.security.subdomain.yaml
     microsoft.graph.security.tag: .\microsoft.graph.security.tag.yaml
     microsoft.graph.security.threatIntelligence: .\microsoft.graph.security.threatIntelligence.yaml

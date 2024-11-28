@@ -1,0 +1,9 @@
+title: conditionalAccessAuthenticationFlows
+required:
+  - '@odata.type'
+type: object
+properties:
+  transferMethods:
+    $ref: .\microsoft.graph.conditionalAccessTransferMethods.yaml
+  '@odata.type':
+    type: string

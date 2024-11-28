@@ -4,12 +4,12 @@ description: >-
 get:
   tags:
     - deviceAppManagement.managedAppRegistration
-  summary: List iosManagedAppRegistrations
-  description: List properties and relationships of the iosManagedAppRegistration objects.
+  summary: List managedAppRegistrations
+  description: List properties and relationships of the managedAppRegistration objects.
   externalDocs:
     description: Find more info here
     url: >-
-      https://learn.microsoft.com/graph/api/intune-mam-iosmanagedappregistration-list?view=graph-rest-1.0
+      https://learn.microsoft.com/graph/api/intune-mam-managedappregistration-list?view=graph-rest-1.0
   operationId: deviceAppManagement.ListManagedAppRegistrations
   parameters:
     - $ref: ..\components\parameters\top.yaml

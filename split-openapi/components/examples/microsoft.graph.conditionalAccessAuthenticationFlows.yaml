@@ -1,0 +1,3 @@
+value:
+  transferMethods:
+    '@odata.type': microsoft.graph.conditionalAccessTransferMethods

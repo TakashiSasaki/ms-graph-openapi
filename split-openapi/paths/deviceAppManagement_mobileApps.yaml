@@ -4,12 +4,12 @@ description: >-
 get:
   tags:
     - deviceAppManagement.mobileApp
-  summary: List iosiPadOSWebClips
-  description: List properties and relationships of the iosiPadOSWebClip objects.
+  summary: List androidStoreApps
+  description: List properties and relationships of the androidStoreApp objects.
   externalDocs:
     description: Find more info here
     url: >-
-      https://learn.microsoft.com/graph/api/intune-apps-iosipadoswebclip-list?view=graph-rest-1.0
+      https://learn.microsoft.com/graph/api/intune-apps-androidstoreapp-list?view=graph-rest-1.0
   operationId: deviceAppManagement.ListMobileApps
   parameters:
     - $ref: ..\components\parameters\top.yaml
@@ -61,12 +61,12 @@ get:
 post:
   tags:
     - deviceAppManagement.mobileApp
-  summary: Create windowsMobileMSI
-  description: Create a new windowsMobileMSI object.
+  summary: Create iosStoreApp
+  description: Create a new iosStoreApp object.
   externalDocs:
     description: Find more info here
     url: >-
-      https://learn.microsoft.com/graph/api/intune-apps-windowsmobilemsi-create?view=graph-rest-1.0
+      https://learn.microsoft.com/graph/api/intune-apps-iosstoreapp-create?view=graph-rest-1.0
   operationId: deviceAppManagement.CreateMobileApps
   requestBody:
     description: New navigation property

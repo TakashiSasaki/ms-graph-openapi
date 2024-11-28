@@ -3,11 +3,15 @@ post:
   tags:
     - drives.driveItem
   summary: Invoke action add
-  description: Use this API to create a new Table.
+  description: >-
+    Create a new table. The range source address determines the worksheet under
+    which the table will be added. If the table can't be added (for example,
+    because the address is invalid, or the table would overlap with another
+    table), an error is generated.
   externalDocs:
     description: Find more info here
     url: >-
-      https://learn.microsoft.com/graph/api/workbook-post-tables?view=graph-rest-1.0
+      https://learn.microsoft.com/graph/api/tablecollection-add?view=graph-rest-1.0
   operationId: >-
     drives.drive.items.driveItem.workbook.worksheets.workbookWorksheet.tables.add
   requestBody:

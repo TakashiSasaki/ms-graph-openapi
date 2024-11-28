@@ -4,16 +4,18 @@ description: >-
 get:
   tags:
     - groups.conversationThread
-  summary: List posts
+  summary: Get post
   description: >-
-    Get the posts of the specified thread. You can specify both the parent
-    conversation and the thread, or,
+    Get the properties and relationships of a post in a specified thread. You
+    can specify both the parent 
 
-    you can specify the thread without referencing the parent conversation.
+    conversation and the thread, or, you can specify the thread without
+    referencing the parent conversation. Since the post resource supports
+    extensions, you can also use the GET operation to get custom properties and
+    extension data in a post instance.
   externalDocs:
     description: Find more info here
-    url: >-
-      https://learn.microsoft.com/graph/api/conversationthread-list-posts?view=graph-rest-1.0
+    url: https://learn.microsoft.com/graph/api/post-get?view=graph-rest-1.0
   operationId: groups.threads.ListPosts
   parameters:
     - $ref: ..\components\parameters\top.yaml

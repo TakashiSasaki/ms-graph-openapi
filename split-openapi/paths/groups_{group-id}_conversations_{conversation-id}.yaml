@@ -5,10 +5,11 @@ get:
   tags:
     - groups.conversation
   summary: Get conversation
-  description: Retrieve the properties and relationships of conversation object.
+  description: The group's conversations.
   externalDocs:
     description: Find more info here
-    url: https://learn.microsoft.com/graph/api/conversation-get?view=graph-rest-1.0
+    url: >-
+      https://learn.microsoft.com/graph/api/group-get-conversation?view=graph-rest-1.0
   operationId: groups.GetConversations
   parameters:
     - name: $select
@@ -51,7 +52,7 @@ delete:
   externalDocs:
     description: Find more info here
     url: >-
-      https://learn.microsoft.com/graph/api/conversation-delete?view=graph-rest-1.0
+      https://learn.microsoft.com/graph/api/group-delete-conversation?view=graph-rest-1.0
   operationId: groups.DeleteConversations
   parameters:
     - name: If-Match

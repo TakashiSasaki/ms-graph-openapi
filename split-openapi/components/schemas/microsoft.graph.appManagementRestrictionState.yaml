@@ -1,0 +1,6 @@
+title: appManagementRestrictionState
+enum:
+  - enabled
+  - disabled
+  - unknownFutureValue
+type: string

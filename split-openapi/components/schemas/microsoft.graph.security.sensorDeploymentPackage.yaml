@@ -1,0 +1,13 @@
+title: sensorDeploymentPackage
+required:
+  - '@odata.type'
+type: object
+properties:
+  downloadUrl:
+    type: string
+    description: URL to download the sensor deployment package.
+  version:
+    type: string
+    description: Version of the sensor.
+  '@odata.type':
+    type: string

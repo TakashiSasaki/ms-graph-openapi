@@ -4,12 +4,14 @@ description: >-
 get:
   tags:
     - deviceAppManagement.managedAppPolicy
-  summary: List managedAppProtections
-  description: List properties and relationships of the managedAppProtection objects.
+  summary: List windowsInformationProtections
+  description: >-
+    List properties and relationships of the windowsInformationProtection
+    objects.
   externalDocs:
     description: Find more info here
     url: >-
-      https://learn.microsoft.com/graph/api/intune-mam-managedappprotection-list?view=graph-rest-1.0
+      https://learn.microsoft.com/graph/api/intune-mam-windowsinformationprotection-list?view=graph-rest-1.0
   operationId: deviceAppManagement.ListManagedAppPolicies
   parameters:
     - $ref: ..\components\parameters\top.yaml

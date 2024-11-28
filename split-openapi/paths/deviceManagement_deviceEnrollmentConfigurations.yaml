@@ -4,14 +4,14 @@ description: >-
 get:
   tags:
     - deviceManagement.deviceEnrollmentConfiguration
-  summary: List deviceEnrollmentConfigurations
+  summary: List deviceEnrollmentWindowsHelloForBusinessConfigurations
   description: >-
-    List properties and relationships of the deviceEnrollmentConfiguration
-    objects.
+    List properties and relationships of the
+    deviceEnrollmentWindowsHelloForBusinessConfiguration objects.
   externalDocs:
     description: Find more info here
     url: >-
-      https://learn.microsoft.com/graph/api/intune-onboarding-deviceenrollmentconfiguration-list?view=graph-rest-1.0
+      https://learn.microsoft.com/graph/api/intune-onboarding-deviceenrollmentwindowshelloforbusinessconfiguration-list?view=graph-rest-1.0
   operationId: deviceManagement.ListDeviceEnrollmentConfigurations
   parameters:
     - $ref: ..\components\parameters\top.yaml
@@ -64,12 +64,12 @@ get:
 post:
   tags:
     - deviceManagement.deviceEnrollmentConfiguration
-  summary: Create deviceEnrollmentWindowsHelloForBusinessConfiguration
-  description: Create a new deviceEnrollmentWindowsHelloForBusinessConfiguration object.
+  summary: Create deviceEnrollmentLimitConfiguration
+  description: Create a new deviceEnrollmentLimitConfiguration object.
   externalDocs:
     description: Find more info here
     url: >-
-      https://learn.microsoft.com/graph/api/intune-onboarding-deviceenrollmentwindowshelloforbusinessconfiguration-create?view=graph-rest-1.0
+      https://learn.microsoft.com/graph/api/intune-onboarding-deviceenrollmentlimitconfiguration-create?view=graph-rest-1.0
   operationId: deviceManagement.CreateDeviceEnrollmentConfigurations
   requestBody:
     description: New navigation property

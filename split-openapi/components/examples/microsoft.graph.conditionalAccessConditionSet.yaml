@@ -1,6 +1,8 @@
 value:
   applications:
     '@odata.type': microsoft.graph.conditionalAccessApplications
+  authenticationFlows:
+    '@odata.type': microsoft.graph.conditionalAccessAuthenticationFlows
   clientApplications:
     '@odata.type': microsoft.graph.conditionalAccessClientApplications
   clientAppTypes:

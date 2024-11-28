@@ -1,0 +1,3 @@
+value:
+  downloadUrl: String
+  version: String

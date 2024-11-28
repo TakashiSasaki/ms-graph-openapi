@@ -4,14 +4,12 @@ description: >-
 get:
   tags:
     - deviceManagement.deviceCompliancePolicy
-  summary: Get windowsPhone81CompliancePolicy
-  description: >-
-    Read properties and relationships of the windowsPhone81CompliancePolicy
-    object.
+  summary: Get windows10CompliancePolicy
+  description: Read properties and relationships of the windows10CompliancePolicy object.
   externalDocs:
     description: Find more info here
     url: >-
-      https://learn.microsoft.com/graph/api/intune-deviceconfig-windowsphone81compliancepolicy-get?view=graph-rest-1.0
+      https://learn.microsoft.com/graph/api/intune-deviceconfig-windows10compliancepolicy-get?view=graph-rest-1.0
   operationId: deviceManagement.GetDeviceCompliancePolicies
   parameters:
     - name: $select
@@ -49,12 +47,12 @@ get:
 patch:
   tags:
     - deviceManagement.deviceCompliancePolicy
-  summary: Update iosCompliancePolicy
-  description: Update the properties of a iosCompliancePolicy object.
+  summary: Update windowsPhone81CompliancePolicy
+  description: Update the properties of a windowsPhone81CompliancePolicy object.
   externalDocs:
     description: Find more info here
     url: >-
-      https://learn.microsoft.com/graph/api/intune-deviceconfig-ioscompliancepolicy-update?view=graph-rest-1.0
+      https://learn.microsoft.com/graph/api/intune-deviceconfig-windowsphone81compliancepolicy-update?view=graph-rest-1.0
   operationId: deviceManagement.UpdateDeviceCompliancePolicies
   requestBody:
     description: New navigation property values
@@ -78,12 +76,12 @@ patch:
 delete:
   tags:
     - deviceManagement.deviceCompliancePolicy
-  summary: Delete windowsPhone81CompliancePolicy
-  description: Deletes a windowsPhone81CompliancePolicy.
+  summary: Delete androidCompliancePolicy
+  description: Deletes a androidCompliancePolicy.
   externalDocs:
     description: Find more info here
     url: >-
-      https://learn.microsoft.com/graph/api/intune-deviceconfig-windowsphone81compliancepolicy-delete?view=graph-rest-1.0
+      https://learn.microsoft.com/graph/api/intune-deviceconfig-androidcompliancepolicy-delete?view=graph-rest-1.0
   operationId: deviceManagement.DeleteDeviceCompliancePolicies
   parameters:
     - name: If-Match

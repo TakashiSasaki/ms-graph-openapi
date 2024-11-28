@@ -4,12 +4,12 @@ description: >-
 get:
   tags:
     - deviceManagement.deviceCompliancePolicy
-  summary: List macOSCompliancePolicies
-  description: List properties and relationships of the macOSCompliancePolicy objects.
+  summary: List windows81CompliancePolicies
+  description: List properties and relationships of the windows81CompliancePolicy objects.
   externalDocs:
     description: Find more info here
     url: >-
-      https://learn.microsoft.com/graph/api/intune-deviceconfig-macoscompliancepolicy-list?view=graph-rest-1.0
+      https://learn.microsoft.com/graph/api/intune-deviceconfig-windows81compliancepolicy-list?view=graph-rest-1.0
   operationId: deviceManagement.ListDeviceCompliancePolicies
   parameters:
     - $ref: ..\components\parameters\top.yaml
@@ -62,12 +62,12 @@ get:
 post:
   tags:
     - deviceManagement.deviceCompliancePolicy
-  summary: Create androidWorkProfileCompliancePolicy
-  description: Create a new androidWorkProfileCompliancePolicy object.
+  summary: Create windows81CompliancePolicy
+  description: Create a new windows81CompliancePolicy object.
   externalDocs:
     description: Find more info here
     url: >-
-      https://learn.microsoft.com/graph/api/intune-deviceconfig-androidworkprofilecompliancepolicy-create?view=graph-rest-1.0
+      https://learn.microsoft.com/graph/api/intune-deviceconfig-windows81compliancepolicy-create?view=graph-rest-1.0
   operationId: deviceManagement.CreateDeviceCompliancePolicies
   requestBody:
     description: New navigation property

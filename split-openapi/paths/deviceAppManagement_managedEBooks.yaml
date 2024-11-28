@@ -4,12 +4,12 @@ description: >-
 get:
   tags:
     - deviceAppManagement.managedEBook
-  summary: List iosVppEBooks
-  description: List properties and relationships of the iosVppEBook objects.
+  summary: List managedEBooks
+  description: List properties and relationships of the managedEBook objects.
   externalDocs:
     description: Find more info here
     url: >-
-      https://learn.microsoft.com/graph/api/intune-books-iosvppebook-list?view=graph-rest-1.0
+      https://learn.microsoft.com/graph/api/intune-books-managedebook-list?view=graph-rest-1.0
   operationId: deviceAppManagement.ListManagedEBooks
   parameters:
     - $ref: ..\components\parameters\top.yaml
