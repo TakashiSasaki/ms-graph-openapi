@@ -1,0 +1,108 @@
+description: >-
+  Provides operations to manage the includeApplications property of the
+  microsoft.graph.authenticationConditionsApplications entity.
+get:
+  tags:
+    - identity.authenticationEventsFlow
+  summary: Get includeApplications from identity
+  operationId: >-
+    identity.authenticationEventsFlows.AsExternalUsersSelfServiceSignUpEventsFlow.GetIncludeApplications
+  parameters:
+    - name: $select
+      in: query
+      description: Select properties to be returned
+      style: form
+      explode: false
+      schema:
+        uniqueItems: true
+        type: array
+        items:
+          type: string
+    - name: $expand
+      in: query
+      description: Expand related entities
+      style: form
+      explode: false
+      schema:
+        uniqueItems: true
+        type: array
+        items:
+          type: string
+  responses:
+    2XX:
+      description: Retrieved navigation property
+      content:
+        application/json:
+          schema:
+            $ref: >-
+              ..\components\schemas\microsoft.graph.authenticationConditionApplication.yaml
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: operation
+patch:
+  tags:
+    - identity.authenticationEventsFlow
+  summary: Update the navigation property includeApplications in identity
+  operationId: >-
+    identity.authenticationEventsFlows.AsExternalUsersSelfServiceSignUpEventsFlow.UpdateIncludeApplications
+  requestBody:
+    description: New navigation property values
+    content:
+      application/json:
+        schema:
+          $ref: >-
+            ..\components\schemas\microsoft.graph.authenticationConditionApplication.yaml
+    required: true
+  responses:
+    2XX:
+      description: Success
+      content:
+        application/json:
+          schema:
+            $ref: >-
+              ..\components\schemas\microsoft.graph.authenticationConditionApplication.yaml
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: operation
+delete:
+  tags:
+    - identity.authenticationEventsFlow
+  summary: Delete navigation property includeApplications for identity
+  operationId: >-
+    identity.authenticationEventsFlows.AsExternalUsersSelfServiceSignUpEventsFlow.DeleteIncludeApplications
+  parameters:
+    - name: If-Match
+      in: header
+      description: ETag
+      schema:
+        type: string
+  responses:
+    '204':
+      description: Success
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: operation
+parameters:
+  - name: authenticationEventsFlow-id
+    in: path
+    description: The unique identifier of authenticationEventsFlow
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: authenticationEventsFlow
+  - name: authenticationConditionApplication-appId
+    in: path
+    description: The unique identifier of authenticationConditionApplication
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: authenticationConditionApplication
+x-ms-docs-grouped-path:
+  - >-
+    /identity/authenticationEventsFlows/{authenticationEventsFlow-id}/conditions/applications/includeApplications/{authenticationConditionApplication-appId}

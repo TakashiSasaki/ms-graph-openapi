@@ -1,0 +1,50 @@
+description: Provides operations to call the checkMemberObjects method.
+post:
+  tags:
+    - groupSettingTemplates.groupSettingTemplate
+  summary: Invoke action checkMemberObjects
+  operationId: groupSettingTemplates.groupSettingTemplate.checkMemberObjects
+  requestBody:
+    description: Action parameters
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            ids:
+              type: array
+              items:
+                type: string
+    required: true
+  responses:
+    2XX:
+      description: Success
+      content:
+        application/json:
+          schema:
+            type: object
+            allOf:
+              - $ref: >-
+                  ..\components\schemas\BaseCollectionPaginationCountResponse.yaml
+              - type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      type: string
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: action
+  x-ms-pageable:
+    nextLinkName: '@odata.nextLink'
+    operationName: listMore
+parameters:
+  - name: groupSettingTemplate-id
+    in: path
+    description: The unique identifier of groupSettingTemplate
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: groupSettingTemplate
