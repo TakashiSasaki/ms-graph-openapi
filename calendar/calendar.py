@@ -3,15 +3,14 @@ File: calendar.py
 Author: Takashi Sasaki
 Created: 2024-11-27
 Modified: 2024-11-28
-Version: 1.3.0
+Version: 1.4.0
 
 Description:
-This script extracts specified paths from an OpenAPI document. The extracted
-subset is saved in both JSON and YAML formats, ensuring necessary components
-are included and resolving all $ref dependencies recursively.
+This script extracts specified paths from a pre-processed OpenAPI document stored as a Pickle file. The extracted
+subset is saved in both JSON and YAML formats, ensuring necessary components are included and resolving all $ref dependencies recursively.
 
 Defaults:
-    Input OpenAPI file: ../github/openapi/v1.0/openapi.yaml
+    Pickle OpenAPI file: openapi_spec.pkl
     Required paths file: calendar.txt
     Output JSON file: calendar.json
     Output YAML file: calendar.yaml
@@ -46,39 +45,26 @@ def ensure_correct_directory():
         logger.info(f"Adjusting current directory to: {script_dir}")
         os.chdir(script_dir)
 
+def load_pickle_file(file_path):
+    """Load a pickle file, and handle potential errors."""
+    if not os.path.exists(file_path):
+        logger.error(f"Error: The file {file_path} does not exist.")
+        return None
 
-def load_file(file_path):
-    """Load a YAML or JSON OpenAPI file."""
     try:
-        with open(file_path, 'r', encoding='utf-8') as file:
-            if file_path.endswith('.yaml') or file_path.endswith('.yml'):
-                result = yaml.safe_load(file)
-            elif file_path.endswith('.json'):
-                result = json.load(file)
-            else:
-                raise ValueError("Unsupported file format. Please use a YAML or JSON file.")
-        logger.info(f"Loaded file '{file_path}'.")
-        return result
-    except Exception as e:
-        logger.error(f"Failed to load file {file_path}: {e}")
-        raise
-
-
-def save_file(data, file_path):
-    """Save OpenAPI data to a file in YAML or JSON format."""
-    try:
-        with open(file_path, 'w', encoding='utf-8') as file:
-            if file_path.endswith('.yaml') or file_path.endswith('.yml'):
-                yaml.safe_dump(data, file, allow_unicode=True)
-            elif file_path.endswith('.json'):
-                json.dump(data, file, indent=2)
-            else:
-                raise ValueError("Unsupported output format. Please use a .yaml or .json extension.")
-        logger.info(f"Saved file '{file_path}'.")
-    except Exception as e:
-        logger.error(f"Failed to save file {file_path}: {e}")
-        raise
-
+        with open(file_path, 'rb') as file:
+            data = pickle.load(file)
+        logger.info(f"Successfully loaded pickle file: {file_path}")
+        return data
+    except pickle.UnpicklingError:
+        logger.error(f"Error: Failed to unpickle the file {file_path}. The file may be corrupted or incompatible.")
+        return None
+    except FileNotFoundError:
+        logger.error(f"Error: File {file_path} not found.")
+        return None
+    except IOError as e:
+        logger.error(f"Error: IOError occurred while reading the file {file_path}: {e}")
+        return None
 
 def load_required_paths(file_path):
     """Load the required paths from a text file."""
@@ -88,7 +74,6 @@ def load_required_paths(file_path):
     except Exception as e:
         logger.error(f"Failed to load required paths from {file_path}: {e}")
         raise
-
 
 def collect_refs(data, used_refs, current_path="root"):
     """Recursively collect all $ref values from the OpenAPI document."""
@@ -103,7 +88,6 @@ def collect_refs(data, used_refs, current_path="root"):
     elif isinstance(data, list):
         for index, item in enumerate(data):
             collect_refs(item, used_refs, f"{current_path}[{index}]")
-
 
 def resolve_refs_recursive(openapi_spec, used_refs):
     """Resolve all $ref dependencies recursively and include necessary components."""
@@ -145,7 +129,6 @@ def resolve_refs_recursive(openapi_spec, used_refs):
     # Return resolved components
     return {k: v for k, v in resolved_components.items() if v}
 
-
 def filter_openapi_spec(openapi_spec, required_paths):
     """Filter the OpenAPI spec to include only the required paths and resolve $refs."""
     # Filter paths
@@ -181,35 +164,26 @@ def filter_openapi_spec(openapi_spec, required_paths):
 
     return openapi_spec
 
-
-def load_pickle_file(file_path):
-    """Load a pickle file, and handle potential errors."""
-    if not os.path.exists(file_path):
-        logger.warning(f"Error: The file {file_path} does not exist.")
-        return None
-
+def save_file(data, file_path):
+    """Save OpenAPI data to a file in YAML or JSON format."""
     try:
-        with open(file_path, 'rb') as file:
-            data = pickle.load(file)
-        logger.info(f"Successfully loaded pickle file: {file_path}")
-        return data
-    except pickle.UnpicklingError:
-        logger.error(f"Error: Failed to unpickle the file {file_path}. The file may be corrupted or incompatible.")
-        return None
-    except FileNotFoundError:
-        logger.error(f"Error: File {file_path} not found.")
-        return None
-    except IOError as e:
-        logger.error(f"Error: IOError occurred while reading the file {file_path}: {e}")
-        return None
-
+        with open(file_path, 'w', encoding='utf-8') as file:
+            if file_path.endswith('.yaml') or file_path.endswith('.yml'):
+                yaml.safe_dump(data, file, allow_unicode=True)
+            elif file_path.endswith('.json'):
+                json.dump(data, file, indent=2)
+            else:
+                raise ValueError("Unsupported output format. Please use a .yaml or .json extension.")
+        logger.info(f"Saved file '{file_path}'.")
+    except Exception as e:
+        logger.error(f"Failed to save file {file_path}: {e}")
+        raise
 
 def main():
     # Ensure the script is run from its directory
     ensure_correct_directory()
 
     parser = argparse.ArgumentParser(description="Extract specified paths from an OpenAPI document.")
-    parser.add_argument("--input_file", help="Path to the input OpenAPI YAML or JSON file.", default="../github/openapi/v1.0/openapi.yaml")
     parser.add_argument("--output_json", help="Path to the output JSON file.", default="calendar.json")
     parser.add_argument("--output_yaml", help="Path to the output YAML file.", default="calendar.yaml")
     parser.add_argument("--required_paths_file", help="Path to the text file containing required paths.", default="calendar.txt")
@@ -217,13 +191,13 @@ def main():
     args = parser.parse_args()
 
     # Check for pickle file
-    pkl_file_path = "calendar.pkl"
+    pkl_file_path = "openapi_spec.pkl"
     openapi_spec = load_pickle_file(pkl_file_path)
 
-    # If pickle file doesn't exist or loading failed, fall back to YAML/JSON
+    # If pickle file doesn't exist or loading failed, stop execution
     if not openapi_spec:
-        logger.info("Loading OpenAPI spec from YAML or JSON file...")
-        openapi_spec = load_file(args.input_file)
+        logger.error("Failed to load OpenAPI spec from the pickle file. Exiting script.")
+        sys.exit(1)
 
     # Load required paths
     required_paths = load_required_paths(args.required_paths_file)
@@ -236,12 +210,6 @@ def main():
     logger.info(f"Filtered OpenAPI spec saved to {args.output_json}")
     save_file(filtered_spec, args.output_yaml)
     logger.info(f"Filtered OpenAPI spec saved to {args.output_yaml}")
-
-    # Save the spec to a pickle file for future use
-    with open(pkl_file_path, 'wb') as file:
-        pickle.dump(filtered_spec, file)
-    logger.info(f"Saved filtered OpenAPI spec to pickle file: {pkl_file_path}")
-
 
 if __name__ == "__main__":
     main()
