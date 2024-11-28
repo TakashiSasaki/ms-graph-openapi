@@ -3,7 +3,7 @@ File: calendar.py
 Author: Takashi Sasaki
 Created: 2024-11-27
 Modified: 2024-11-28
-Version: 1.1.9
+Version: 1.2.0
 
 Description:
 This script extracts specified paths from an OpenAPI document. The extracted
@@ -36,7 +36,6 @@ logging.basicConfig(
     filename=log_file_name,
     filemode="w",
 )
-
 
 
 def ensure_correct_directory():
@@ -139,6 +138,10 @@ def resolve_refs_recursive(openapi_spec, used_refs):
     resolved_count = sum(len(items) for items in resolved_components.values())
     logging.info(f"Resolved components count: {resolved_count}")
 
+    # Log the resolved components
+    for comp_type, items in resolved_components.items():
+        logging.debug(f"Resolved components in {comp_type}: {list(items.keys())}")
+
     return {k: v for k, v in resolved_components.items() if v}
 
 
@@ -165,6 +168,8 @@ def filter_openapi_spec(openapi_spec, required_paths):
     collect_refs(filtered_paths, used_refs)
 
     logging.info(f"Number of $refs collected: {len(used_refs)}")
+    logging.debug(f"Collected $refs: {list(used_refs)}")
+
     resolved_components = resolve_refs_recursive(openapi_spec, used_refs)
 
     if resolved_components:
