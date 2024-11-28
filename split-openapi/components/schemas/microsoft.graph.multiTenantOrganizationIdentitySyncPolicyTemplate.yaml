@@ -1,0 +1,18 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: multiTenantOrganizationIdentitySyncPolicyTemplate
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      templateApplicationLevel:
+        $ref: .\microsoft.graph.templateApplicationLevel.yaml
+      userSyncInbound:
+        anyOf:
+          - $ref: .\microsoft.graph.crossTenantUserSyncInbound.yaml
+          - type: object
+            nullable: true
+        description: Defines whether users can be synchronized from the partner tenant.
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.multiTenantOrganizationIdentitySyncPolicyTemplate'

@@ -1,0 +1,12 @@
+value:
+  categories:
+    - String
+  description: String
+  displayName: String
+  homePageUrl: String
+  logoUrl: String
+  publisher: String
+  supportedProvisioningTypes:
+    - String
+  supportedSingleSignOnModes:
+    - String

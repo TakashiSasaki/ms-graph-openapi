@@ -1,0 +1,27 @@
+title: imageInfo
+required:
+  - '@odata.type'
+type: object
+properties:
+  addImageQuery:
+    type: boolean
+    description: >-
+      Optional; parameter used to indicate the server is able to render image
+      dynamically in response to parameterization. For example – a high contrast
+      image
+    nullable: true
+  alternateText:
+    type: string
+    description: Optional; alt-text accessible content for the image
+    nullable: true
+  alternativeText:
+    type: string
+    nullable: true
+  iconUrl:
+    type: string
+    description: >-
+      Optional; URI that points to an icon which represents the application used
+      to generate the activity
+    nullable: true
+  '@odata.type':
+    type: string

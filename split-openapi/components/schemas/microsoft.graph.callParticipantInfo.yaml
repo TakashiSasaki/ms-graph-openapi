@@ -1,0 +1,13 @@
+title: callParticipantInfo
+required:
+  - '@odata.type'
+type: object
+properties:
+  participant:
+    anyOf:
+      - $ref: .\microsoft.graph.identitySet.yaml
+      - type: object
+        nullable: true
+    description: Identity of the call participant.
+  '@odata.type':
+    type: string

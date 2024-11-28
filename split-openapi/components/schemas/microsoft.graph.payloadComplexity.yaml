@@ -1,0 +1,8 @@
+title: payloadComplexity
+enum:
+  - unknown
+  - low
+  - medium
+  - high
+  - unknownFutureValue
+type: string

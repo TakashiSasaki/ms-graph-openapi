@@ -1,0 +1,12 @@
+allOf:
+  - $ref: .\microsoft.graph.groupAssignmentTarget.yaml
+  - title: exclusionGroupAssignmentTarget
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.exclusionGroupAssignmentTarget'
+    description: Represents a group that should be excluded from an assignment.
+x-ms-discriminator-value: '#microsoft.graph.exclusionGroupAssignmentTarget'

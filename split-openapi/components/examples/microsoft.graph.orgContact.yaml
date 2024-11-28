@@ -1,0 +1,29 @@
+value:
+  addresses:
+    - '@odata.type': microsoft.graph.physicalOfficeAddress
+  companyName: String
+  department: String
+  directReports:
+    - '@odata.type': microsoft.graph.directoryObject
+  displayName: String
+  givenName: String
+  jobTitle: String
+  mail: String
+  mailNickname: String
+  manager:
+    '@odata.type': microsoft.graph.directoryObject
+  memberOf:
+    - '@odata.type': microsoft.graph.directoryObject
+  onPremisesLastSyncDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  onPremisesProvisioningErrors:
+    - '@odata.type': microsoft.graph.onPremisesProvisioningError
+  onPremisesSyncEnabled: 'true'
+  phones:
+    - '@odata.type': microsoft.graph.phone
+  proxyAddresses:
+    - String
+  serviceProvisioningErrors:
+    - '@odata.type': microsoft.graph.serviceProvisioningError
+  surname: String
+  transitiveMemberOf:
+    - '@odata.type': microsoft.graph.directoryObject

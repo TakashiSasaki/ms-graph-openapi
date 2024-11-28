@@ -1,0 +1,90 @@
+description: Provides operations to call the delta method.
+get:
+  tags:
+    - drives.driveItem
+  summary: Invoke function delta
+  description: "Track changes in a driveItem and its children over time. Your app begins by calling delta without any parameters.\nThe service starts enumerating the drive's hierarchy, returning pages of items and either an @odata.nextLink or an @odata.deltaLink, as described below.\nYour app should continue calling with the @odata.nextLink until you no longer see an @odata.nextLink returned, or you see a response with an empty set of changes. After you have finished receiving all the\_changes, you may apply them to your local state.\nTo check for changes in the\_future, call delta again with the @odata.deltaLink from the previous response. Deleted items are returned with the deleted facet.\nItems with this property set should be removed from your local state."
+  externalDocs:
+    description: Find more info here
+    url: https://learn.microsoft.com/graph/api/driveitem-delta?view=graph-rest-1.0
+  operationId: drives.drive.items.driveItem.delta-fa14
+  parameters:
+    - $ref: ..\components\parameters\top.yaml
+    - $ref: ..\components\parameters\skip.yaml
+    - $ref: ..\components\parameters\search.yaml
+    - $ref: ..\components\parameters\filter.yaml
+    - $ref: ..\components\parameters\count.yaml
+    - name: $select
+      in: query
+      description: Select properties to be returned
+      style: form
+      explode: false
+      schema:
+        uniqueItems: true
+        type: array
+        items:
+          type: string
+    - name: $orderby
+      in: query
+      description: Order items by property values
+      style: form
+      explode: false
+      schema:
+        uniqueItems: true
+        type: array
+        items:
+          type: string
+    - name: $expand
+      in: query
+      description: Expand related entities
+      style: form
+      explode: false
+      schema:
+        uniqueItems: true
+        type: array
+        items:
+          type: string
+  responses:
+    2XX:
+      description: Success
+      content:
+        application/json:
+          schema:
+            title: Collection of driveItem
+            type: object
+            allOf:
+              - $ref: ..\components\schemas\BaseDeltaFunctionResponse.yaml
+              - type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: ..\components\schemas\microsoft.graph.driveItem.yaml
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: function
+  x-ms-pageable:
+    nextLinkName: '@odata.nextLink'
+    operationName: listMore
+parameters:
+  - name: drive-id
+    in: path
+    description: The unique identifier of drive
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: drive
+  - name: driveItem-id
+    in: path
+    description: The unique identifier of driveItem
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: driveItem
+x-ms-docs-grouped-path:
+  - /drives/{drive-id}/items/{driveItem-id}/delta(token='{token}')
+  - /drives/{drive-id}/items/{driveItem-id}/workbook/functions/delta
+  - /drives/{drive-id}/list/items/delta()
+  - /drives/{drive-id}/list/items/delta(token='{token}')

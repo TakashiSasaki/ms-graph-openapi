@@ -1,0 +1,5 @@
+title: authenticationMethodState
+enum:
+  - enabled
+  - disabled
+type: string

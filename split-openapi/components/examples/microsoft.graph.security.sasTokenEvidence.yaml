@@ -1,0 +1,15 @@
+value:
+  allowedIpAddresses: String
+  allowedResourceTypes:
+    - String
+  allowedServices:
+    - String
+  expiryDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  permissions:
+    - String
+  protocol: String
+  signatureHash: String
+  signedWith: String
+  startDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  storageResource:
+    '@odata.type': microsoft.graph.security.azureResourceEvidence

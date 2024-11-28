@@ -1,0 +1,16 @@
+allOf:
+  - $ref: .\microsoft.graph.apiAuthenticationConfigurationBase.yaml
+  - title: clientCertificateAuthentication
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      certificateList:
+        type: array
+        items:
+          $ref: .\microsoft.graph.pkcs12CertificateInformation.yaml
+        description: The list of certificates uploaded for this API connector.
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.clientCertificateAuthentication'
+x-ms-discriminator-value: '#microsoft.graph.clientCertificateAuthentication'

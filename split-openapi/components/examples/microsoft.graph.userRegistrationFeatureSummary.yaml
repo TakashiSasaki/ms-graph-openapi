@@ -1,0 +1,8 @@
+value:
+  totalUserCount: '0'
+  userRegistrationFeatureCounts:
+    - '@odata.type': microsoft.graph.userRegistrationFeatureCount
+  userRoles:
+    '@odata.type': microsoft.graph.includedUserRoles
+  userTypes:
+    '@odata.type': microsoft.graph.includedUserTypes

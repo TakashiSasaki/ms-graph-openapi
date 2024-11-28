@@ -1,0 +1,3 @@
+value:
+  versions:
+    - '@odata.type': microsoft.graph.agreementFileVersion

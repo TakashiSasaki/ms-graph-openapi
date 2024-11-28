@@ -1,0 +1,21 @@
+title: mediaStream
+required:
+  - '@odata.type'
+type: object
+properties:
+  direction:
+    $ref: .\microsoft.graph.mediaDirection.yaml
+  label:
+    type: string
+    description: The media stream label.
+    nullable: true
+  mediaType:
+    $ref: .\microsoft.graph.modality.yaml
+  serverMuted:
+    type: boolean
+    description: If the media is muted by the server.
+  sourceId:
+    type: string
+    description: The source ID.
+  '@odata.type':
+    type: string

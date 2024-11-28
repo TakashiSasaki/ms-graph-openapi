@@ -1,0 +1,111 @@
+description: Provides operations to call the merge method.
+post:
+  tags:
+    - drives.driveItem
+  summary: Invoke action merge
+  operationId: >-
+    drives.drive.items.driveItem.workbook.worksheets.workbookWorksheet.tables.workbookTable.columns.workbookTableColumn.totalRowRange.merge
+  requestBody:
+    description: Action parameters
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            across:
+              type: boolean
+              default: false
+    required: true
+  responses:
+    '204':
+      description: Success
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: action
+parameters:
+  - name: drive-id
+    in: path
+    description: The unique identifier of drive
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: drive
+  - name: driveItem-id
+    in: path
+    description: The unique identifier of driveItem
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: driveItem
+  - name: workbookWorksheet-id
+    in: path
+    description: The unique identifier of workbookWorksheet
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: workbookWorksheet
+  - name: workbookTable-id
+    in: path
+    description: The unique identifier of workbookTable
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: workbookTable
+  - name: workbookTableColumn-id
+    in: path
+    description: The unique identifier of workbookTableColumn
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: workbookTableColumn
+x-ms-docs-grouped-path:
+  - >-
+    /drives/{drive-id}/items/{driveItem-id}/workbook/names/{workbookNamedItem-id}/range()/merge
+  - >-
+    /drives/{drive-id}/items/{driveItem-id}/workbook/tables/{workbookTable-id}/columns/{workbookTableColumn-id}/dataBodyRange()/merge
+  - >-
+    /drives/{drive-id}/items/{driveItem-id}/workbook/tables/{workbookTable-id}/columns/{workbookTableColumn-id}/headerRowRange()/merge
+  - >-
+    /drives/{drive-id}/items/{driveItem-id}/workbook/tables/{workbookTable-id}/columns/{workbookTableColumn-id}/range()/merge
+  - >-
+    /drives/{drive-id}/items/{driveItem-id}/workbook/tables/{workbookTable-id}/columns/{workbookTableColumn-id}/totalRowRange()/merge
+  - >-
+    /drives/{drive-id}/items/{driveItem-id}/workbook/tables/{workbookTable-id}/dataBodyRange()/merge
+  - >-
+    /drives/{drive-id}/items/{driveItem-id}/workbook/tables/{workbookTable-id}/headerRowRange()/merge
+  - >-
+    /drives/{drive-id}/items/{driveItem-id}/workbook/tables/{workbookTable-id}/range()/merge
+  - >-
+    /drives/{drive-id}/items/{driveItem-id}/workbook/tables/{workbookTable-id}/totalRowRange()/merge
+  - >-
+    /drives/{drive-id}/items/{driveItem-id}/workbook/tables/{workbookTable-id}/rows/{workbookTableRow-id}/range()/merge
+  - >-
+    /drives/{drive-id}/items/{driveItem-id}/workbook/worksheets/{workbookWorksheet-id}/cell(row={row},column={column})/merge
+  - >-
+    /drives/{drive-id}/items/{driveItem-id}/workbook/worksheets/{workbookWorksheet-id}/range()/merge
+  - >-
+    /drives/{drive-id}/items/{driveItem-id}/workbook/worksheets/{workbookWorksheet-id}/range(address='{address}')/merge
+  - >-
+    /drives/{drive-id}/items/{driveItem-id}/workbook/worksheets/{workbookWorksheet-id}/usedRange()/merge
+  - >-
+    /drives/{drive-id}/items/{driveItem-id}/workbook/worksheets/{workbookWorksheet-id}/usedRange(valuesOnly={valuesOnly})/merge
+  - >-
+    /drives/{drive-id}/items/{driveItem-id}/workbook/worksheets/{workbookWorksheet-id}/names/{workbookNamedItem-id}/range()/merge
+  - >-
+    /drives/{drive-id}/items/{driveItem-id}/workbook/worksheets/{workbookWorksheet-id}/tables/{workbookTable-id}/columns/{workbookTableColumn-id}/dataBodyRange()/merge
+  - >-
+    /drives/{drive-id}/items/{driveItem-id}/workbook/worksheets/{workbookWorksheet-id}/tables/{workbookTable-id}/columns/{workbookTableColumn-id}/headerRowRange()/merge
+  - >-
+    /drives/{drive-id}/items/{driveItem-id}/workbook/worksheets/{workbookWorksheet-id}/tables/{workbookTable-id}/columns/{workbookTableColumn-id}/range()/merge
+  - >-
+    /drives/{drive-id}/items/{driveItem-id}/workbook/worksheets/{workbookWorksheet-id}/tables/{workbookTable-id}/dataBodyRange()/merge
+  - >-
+    /drives/{drive-id}/items/{driveItem-id}/workbook/worksheets/{workbookWorksheet-id}/tables/{workbookTable-id}/headerRowRange()/merge
+  - >-
+    /drives/{drive-id}/items/{driveItem-id}/workbook/worksheets/{workbookWorksheet-id}/tables/{workbookTable-id}/range()/merge
+  - >-
+    /drives/{drive-id}/items/{driveItem-id}/workbook/worksheets/{workbookWorksheet-id}/tables/{workbookTable-id}/totalRowRange()/merge
+  - >-
+    /drives/{drive-id}/items/{driveItem-id}/workbook/worksheets/{workbookWorksheet-id}/tables/{workbookTable-id}/rows/{workbookTableRow-id}/range()/merge

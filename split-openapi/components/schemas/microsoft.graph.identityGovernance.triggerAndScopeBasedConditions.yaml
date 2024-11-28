@@ -1,0 +1,23 @@
+allOf:
+  - $ref: .\microsoft.graph.identityGovernance.workflowExecutionConditions.yaml
+  - title: triggerAndScopeBasedConditions
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      scope:
+        anyOf:
+          - $ref: .\microsoft.graph.subjectSet.yaml
+          - type: object
+            nullable: true
+        description: Defines who the workflow runs for.
+      trigger:
+        anyOf:
+          - $ref: .\microsoft.graph.identityGovernance.workflowExecutionTrigger.yaml
+          - type: object
+            nullable: true
+        description: What triggers a workflow to run.
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.identityGovernance.triggerAndScopeBasedConditions'
+x-ms-discriminator-value: '#microsoft.graph.identityGovernance.triggerAndScopeBasedConditions'

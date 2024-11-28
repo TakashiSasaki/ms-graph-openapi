@@ -1,0 +1,4 @@
+value:
+  activity:
+    '@odata.type': microsoft.graph.riskServicePrincipalActivity
+  initiatedBy: String

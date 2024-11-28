@@ -1,0 +1,5 @@
+value:
+  mailboxInclusionRules:
+    - '@odata.type': microsoft.graph.mailboxProtectionRule
+  mailboxProtectionUnits:
+    - '@odata.type': microsoft.graph.mailboxProtectionUnit

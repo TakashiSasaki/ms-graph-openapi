@@ -1,0 +1,42 @@
+title: notificationTemplateBrandingOptions
+enum:
+  - none
+  - includeCompanyLogo
+  - includeCompanyName
+  - includeContactInformation
+  - includeCompanyPortalLink
+  - includeDeviceDetails
+  - unknownFutureValue
+type: string
+description: >-
+  Branding Options for the Message Template. Branding is defined in the Intune
+  Admin Console.
+x-ms-enum-flags:
+  isFlags: true
+x-ms-enum:
+  name: notificationTemplateBrandingOptions
+  modelAsString: false
+  values:
+    - value: none
+      description: Indicates that no branding options are set in the message template.
+      name: none
+    - value: includeCompanyLogo
+      description: Indicates to include company logo in the message template.
+      name: includeCompanyLogo
+    - value: includeCompanyName
+      description: Indicates to include company name in the message template.
+      name: includeCompanyName
+    - value: includeContactInformation
+      description: Indicates to include contact information in the message template.
+      name: includeContactInformation
+    - value: includeCompanyPortalLink
+      description: >-
+        Indicates to include company portal website link in the message
+        template.
+      name: includeCompanyPortalLink
+    - value: includeDeviceDetails
+      description: Indicates to include device details in the message template.
+      name: includeDeviceDetails
+    - value: unknownFutureValue
+      description: Evolvable enumeration sentinel value. Do not use.
+      name: unknownFutureValue

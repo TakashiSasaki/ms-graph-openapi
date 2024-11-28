@@ -1,0 +1,5 @@
+value:
+  actualValue: String
+  localizations:
+    - '@odata.type': microsoft.graph.accessPackageLocalizedText
+  text: String

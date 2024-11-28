@@ -1,0 +1,30 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: workbookChartTitle
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      overlay:
+        type: boolean
+        description: Indicates whether the chart title will overlay the chart or not.
+        nullable: true
+      text:
+        type: string
+        description: The title text of the chart.
+        nullable: true
+      visible:
+        type: boolean
+        description: Indicates whether the chart title is visible.
+      format:
+        anyOf:
+          - $ref: .\microsoft.graph.workbookChartTitleFormat.yaml
+          - type: object
+            nullable: true
+        description: >-
+          The formatting of a chart title, which includes fill and font
+          formatting. Read-only.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.workbookChartTitle'

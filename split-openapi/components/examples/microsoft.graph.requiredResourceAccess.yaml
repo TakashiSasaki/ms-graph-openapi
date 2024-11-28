@@ -1,0 +1,4 @@
+value:
+  resourceAccess:
+    - '@odata.type': microsoft.graph.resourceAccess
+  resourceAppId: String

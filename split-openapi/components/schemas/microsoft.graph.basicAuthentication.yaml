@@ -1,0 +1,19 @@
+allOf:
+  - $ref: .\microsoft.graph.apiAuthenticationConfigurationBase.yaml
+  - title: basicAuthentication
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      password:
+        type: string
+        description: The password. It isn't returned in the responses.
+        nullable: true
+      username:
+        type: string
+        description: The username.
+        nullable: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.basicAuthentication'
+x-ms-discriminator-value: '#microsoft.graph.basicAuthentication'

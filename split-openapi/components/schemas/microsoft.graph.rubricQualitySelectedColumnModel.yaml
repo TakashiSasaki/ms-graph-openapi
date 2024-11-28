@@ -1,0 +1,15 @@
+title: rubricQualitySelectedColumnModel
+required:
+  - '@odata.type'
+type: object
+properties:
+  columnId:
+    type: string
+    description: ID of the selected level for this quality.
+    nullable: true
+  qualityId:
+    type: string
+    description: ID of the associated quality.
+    nullable: true
+  '@odata.type':
+    type: string

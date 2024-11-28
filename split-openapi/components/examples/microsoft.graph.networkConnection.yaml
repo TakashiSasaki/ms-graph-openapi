@@ -1,0 +1,24 @@
+value:
+  applicationName: String
+  destinationAddress: String
+  destinationDomain: String
+  destinationLocation: String
+  destinationPort: String
+  destinationUrl: String
+  direction:
+    '@odata.type': microsoft.graph.connectionDirection
+  domainRegisteredDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  localDnsName: String
+  natDestinationAddress: String
+  natDestinationPort: String
+  natSourceAddress: String
+  natSourcePort: String
+  protocol:
+    '@odata.type': microsoft.graph.securityNetworkProtocol
+  riskScore: String
+  sourceAddress: String
+  sourceLocation: String
+  sourcePort: String
+  status:
+    '@odata.type': microsoft.graph.connectionStatus
+  urlParameters: String

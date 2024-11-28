@@ -1,0 +1,7 @@
+title: containerPortProtocol
+enum:
+  - udp
+  - tcp
+  - sctp
+  - unknownFutureValue
+type: string

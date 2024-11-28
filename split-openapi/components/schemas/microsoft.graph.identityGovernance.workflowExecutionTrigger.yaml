@@ -1,0 +1,16 @@
+title: workflowExecutionTrigger
+required:
+  - '@odata.type'
+type: object
+properties:
+  '@odata.type':
+    type: string
+discriminator:
+  propertyName: '@odata.type'
+  mapping:
+    '#microsoft.graph.identityGovernance.attributeChangeTrigger': .\microsoft.graph.identityGovernance.attributeChangeTrigger.yaml
+    '#microsoft.graph.identityGovernance.membershipChangeTrigger': .\microsoft.graph.identityGovernance.membershipChangeTrigger.yaml
+    '#microsoft.graph.identityGovernance.timeBasedAttributeTrigger': .\microsoft.graph.identityGovernance.timeBasedAttributeTrigger.yaml
+    microsoft.graph.identityGovernance.attributeChangeTrigger: .\microsoft.graph.identityGovernance.attributeChangeTrigger.yaml
+    microsoft.graph.identityGovernance.membershipChangeTrigger: .\microsoft.graph.identityGovernance.membershipChangeTrigger.yaml
+    microsoft.graph.identityGovernance.timeBasedAttributeTrigger: .\microsoft.graph.identityGovernance.timeBasedAttributeTrigger.yaml

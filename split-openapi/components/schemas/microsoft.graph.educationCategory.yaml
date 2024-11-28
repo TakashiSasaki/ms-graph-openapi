@@ -1,0 +1,14 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: educationCategory
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      displayName:
+        type: string
+        description: Unique identifier for the category.
+        nullable: true
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.educationCategory'

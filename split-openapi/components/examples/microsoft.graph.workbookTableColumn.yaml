@@ -1,0 +1,6 @@
+value:
+  filter:
+    '@odata.type': microsoft.graph.workbookFilter
+  index: '0'
+  name: String
+  values: {}

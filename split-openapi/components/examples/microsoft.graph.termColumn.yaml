@@ -1,0 +1,7 @@
+value:
+  allowMultipleValues: 'true'
+  parentTerm:
+    '@odata.type': microsoft.graph.termStore.term
+  showFullyQualifiedName: 'true'
+  termSet:
+    '@odata.type': microsoft.graph.termStore.set

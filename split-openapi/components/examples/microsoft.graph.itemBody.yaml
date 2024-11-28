@@ -1,0 +1,4 @@
+value:
+  content: String
+  contentType:
+    '@odata.type': microsoft.graph.bodyType

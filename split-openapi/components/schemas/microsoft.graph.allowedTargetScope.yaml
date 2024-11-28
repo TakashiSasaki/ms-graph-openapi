@@ -1,0 +1,13 @@
+title: allowedTargetScope
+enum:
+  - notSpecified
+  - specificDirectoryUsers
+  - specificConnectedOrganizationUsers
+  - specificDirectoryServicePrincipals
+  - allMemberUsers
+  - allDirectoryUsers
+  - allDirectoryServicePrincipals
+  - allConfiguredConnectedOrganizationUsers
+  - allExternalUsers
+  - unknownFutureValue
+type: string

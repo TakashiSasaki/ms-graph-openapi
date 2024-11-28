@@ -1,0 +1,51 @@
+description: Provides operations to call the publish method.
+post:
+  tags:
+    - education.educationClass
+  summary: Invoke action publish
+  description: >-
+    Change the state of an educationModule from its original draft status to the
+    published status. Only teachers in the class can perform this operation.
+    When a module is in draft status, students can't see the module. When you
+    call this API, the module appears in the student's class work list.
+  externalDocs:
+    description: Find more info here
+    url: >-
+      https://learn.microsoft.com/graph/api/educationmodule-publish?view=graph-rest-1.0
+  operationId: education.classes.educationClass.modules.educationModule.publish
+  responses:
+    2XX:
+      description: Success
+      content:
+        application/json:
+          schema:
+            anyOf:
+              - $ref: ..\components\schemas\microsoft.graph.educationModule.yaml
+              - type: object
+                nullable: true
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: action
+parameters:
+  - name: educationClass-id
+    in: path
+    description: The unique identifier of educationClass
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: educationClass
+  - name: educationModule-id
+    in: path
+    description: The unique identifier of educationModule
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: educationModule
+x-ms-docs-grouped-path:
+  - >-
+    /education/classes/{educationClass-id}/assignments/{educationAssignment-id}/publish
+  - /education/me/assignments/{educationAssignment-id}/publish
+  - >-
+    /education/users/{educationUser-id}/assignments/{educationAssignment-id}/publish

@@ -1,0 +1,4 @@
+value:
+  configurationAppliedUserCount: '0'
+  mobileAppIdentifier:
+    '@odata.type': microsoft.graph.mobileAppIdentifier

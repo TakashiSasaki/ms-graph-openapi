@@ -1,0 +1,18 @@
+allOf:
+  - $ref: .\microsoft.graph.security.filePlanDescriptorBase.yaml
+  - title: filePlanAppliedCategory
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      subcategory:
+        anyOf:
+          - $ref: .\microsoft.graph.security.filePlanSubcategory.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Represents the file plan descriptor for a subcategory under a specific
+          category, which has been assigned to a particular retention label.
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.security.filePlanAppliedCategory'

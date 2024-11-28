@@ -1,0 +1,5 @@
+title: callDirection
+enum:
+  - incoming
+  - outgoing
+type: string

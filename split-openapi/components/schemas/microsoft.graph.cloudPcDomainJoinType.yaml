@@ -1,0 +1,6 @@
+title: cloudPcDomainJoinType
+enum:
+  - azureADJoin
+  - hybridAzureADJoin
+  - unknownFutureValue
+type: string

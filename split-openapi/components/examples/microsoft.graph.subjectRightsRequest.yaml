@@ -1,0 +1,46 @@
+value:
+  approvers:
+    - '@odata.type': microsoft.graph.user
+  assignedTo:
+    '@odata.type': microsoft.graph.identity
+  closedDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  collaborators:
+    - '@odata.type': microsoft.graph.user
+  contentQuery: String
+  createdBy:
+    '@odata.type': microsoft.graph.identitySet
+  createdDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  dataSubject:
+    '@odata.type': microsoft.graph.dataSubject
+  dataSubjectType:
+    '@odata.type': microsoft.graph.dataSubjectType
+  description: String
+  displayName: String
+  externalId: String
+  history:
+    - '@odata.type': microsoft.graph.subjectRightsRequestHistory
+  includeAllVersions: 'true'
+  includeAuthoredContent: 'true'
+  insight:
+    '@odata.type': microsoft.graph.subjectRightsRequestDetail
+  internalDueDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  lastModifiedBy:
+    '@odata.type': microsoft.graph.identitySet
+  lastModifiedDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  mailboxLocations:
+    '@odata.type': microsoft.graph.subjectRightsRequestMailboxLocation
+  notes:
+    - '@odata.type': microsoft.graph.authoredNote
+  pauseAfterEstimate: 'true'
+  regulations:
+    - String
+  siteLocations:
+    '@odata.type': microsoft.graph.subjectRightsRequestSiteLocation
+  stages:
+    - '@odata.type': microsoft.graph.subjectRightsRequestStageDetail
+  status:
+    '@odata.type': microsoft.graph.subjectRightsRequestStatus
+  team:
+    '@odata.type': microsoft.graph.team
+  type:
+    '@odata.type': microsoft.graph.subjectRightsRequestType

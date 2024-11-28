@@ -1,0 +1,71 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: vppToken
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      appleId:
+        type: string
+        description: >-
+          The apple Id associated with the given Apple Volume Purchase Program
+          Token.
+        nullable: true
+      automaticallyUpdateApps:
+        type: boolean
+        description: Whether or not apps for the VPP token will be automatically updated.
+      countryOrRegion:
+        type: string
+        description: Whether or not apps for the VPP token will be automatically updated.
+        nullable: true
+      expirationDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: The expiration date time of the Apple Volume Purchase Program Token.
+        format: date-time
+      lastModifiedDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: >-
+          Last modification date time associated with the Apple Volume Purchase
+          Program Token.
+        format: date-time
+      lastSyncDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: >-
+          The last time when an application sync was done with the Apple volume
+          purchase program service using the the Apple Volume Purchase Program
+          Token.
+        format: date-time
+      lastSyncStatus:
+        $ref: .\microsoft.graph.vppTokenSyncStatus.yaml
+      organizationName:
+        type: string
+        description: >-
+          The organization associated with the Apple Volume Purchase Program
+          Token
+        nullable: true
+      state:
+        $ref: .\microsoft.graph.vppTokenState.yaml
+      token:
+        type: string
+        description: >-
+          The Apple Volume Purchase Program Token string downloaded from the
+          Apple Volume Purchase Program.
+        nullable: true
+      vppTokenAccountType:
+        $ref: .\microsoft.graph.vppTokenAccountType.yaml
+      '@odata.type':
+        type: string
+    description: >-
+      You purchase multiple licenses for iOS apps through the Apple Volume
+      Purchase Program for Business or Education. This involves setting up an
+      Apple VPP account from the Apple website and uploading the Apple VPP
+      Business or Education token to Intune. You can then synchronize your
+      volume purchase information with Intune and track your volume-purchased
+      app use. You can upload multiple Apple VPP Business or Education tokens.
+x-ms-discriminator-value: '#microsoft.graph.vppToken'

@@ -1,0 +1,9 @@
+value:
+  classes:
+    - '@odata.type': microsoft.graph.educationClass
+  me:
+    '@odata.type': microsoft.graph.educationUser
+  schools:
+    - '@odata.type': microsoft.graph.educationSchool
+  users:
+    - '@odata.type': microsoft.graph.educationUser

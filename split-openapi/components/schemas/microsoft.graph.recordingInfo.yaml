@@ -1,0 +1,15 @@
+title: recordingInfo
+required:
+  - '@odata.type'
+type: object
+properties:
+  initiator:
+    anyOf:
+      - $ref: .\microsoft.graph.identitySet.yaml
+      - type: object
+        nullable: true
+    description: The identities of the recording initiator.
+  recordingStatus:
+    $ref: .\microsoft.graph.recordingStatus.yaml
+  '@odata.type':
+    type: string

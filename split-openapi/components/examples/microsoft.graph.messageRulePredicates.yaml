@@ -1,0 +1,44 @@
+value:
+  bodyContains:
+    - String
+  bodyOrSubjectContains:
+    - String
+  categories:
+    - String
+  fromAddresses:
+    - '@odata.type': microsoft.graph.recipient
+  hasAttachments: 'true'
+  headerContains:
+    - String
+  importance:
+    '@odata.type': microsoft.graph.importance
+  isApprovalRequest: 'true'
+  isAutomaticForward: 'true'
+  isAutomaticReply: 'true'
+  isEncrypted: 'true'
+  isMeetingRequest: 'true'
+  isMeetingResponse: 'true'
+  isNonDeliveryReport: 'true'
+  isPermissionControlled: 'true'
+  isReadReceipt: 'true'
+  isSigned: 'true'
+  isVoicemail: 'true'
+  messageActionFlag:
+    '@odata.type': microsoft.graph.messageActionFlag
+  notSentToMe: 'true'
+  recipientContains:
+    - String
+  senderContains:
+    - String
+  sensitivity:
+    '@odata.type': microsoft.graph.sensitivity
+  sentCcMe: 'true'
+  sentOnlyToMe: 'true'
+  sentToAddresses:
+    - '@odata.type': microsoft.graph.recipient
+  sentToMe: 'true'
+  sentToOrCcMe: 'true'
+  subjectContains:
+    - String
+  withinSizeRange:
+    '@odata.type': microsoft.graph.sizeRange

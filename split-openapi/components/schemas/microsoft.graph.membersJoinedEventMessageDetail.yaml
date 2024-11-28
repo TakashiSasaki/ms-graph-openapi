@@ -1,0 +1,22 @@
+allOf:
+  - $ref: .\microsoft.graph.eventMessageDetail.yaml
+  - title: membersJoinedEventMessageDetail
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      initiator:
+        anyOf:
+          - $ref: .\microsoft.graph.identitySet.yaml
+          - type: object
+            nullable: true
+        description: Initiator of the event.
+      members:
+        type: array
+        items:
+          $ref: .\microsoft.graph.teamworkUserIdentity.yaml
+        description: List of members who joined the chat.
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.membersJoinedEventMessageDetail'
+x-ms-discriminator-value: '#microsoft.graph.membersJoinedEventMessageDetail'

@@ -1,0 +1,3 @@
+value:
+  allowCreateUpdateChannels: 'true'
+  allowDeleteChannels: 'true'

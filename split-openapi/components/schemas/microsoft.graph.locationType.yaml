@@ -1,0 +1,13 @@
+title: locationType
+enum:
+  - default
+  - conferenceRoom
+  - homeAddress
+  - businessAddress
+  - geoCoordinates
+  - streetAddress
+  - hotel
+  - restaurant
+  - localBusiness
+  - postalAddress
+type: string

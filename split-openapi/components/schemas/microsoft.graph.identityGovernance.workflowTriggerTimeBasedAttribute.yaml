@@ -1,0 +1,7 @@
+title: workflowTriggerTimeBasedAttribute
+enum:
+  - employeeHireDate
+  - employeeLeaveDateTime
+  - unknownFutureValue
+  - createdDateTime
+type: string

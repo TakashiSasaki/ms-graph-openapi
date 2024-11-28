@@ -1,0 +1,15 @@
+title: educationItemBody
+required:
+  - '@odata.type'
+type: object
+properties:
+  content:
+    type: string
+    nullable: true
+  contentType:
+    anyOf:
+      - $ref: .\microsoft.graph.bodyType.yaml
+      - type: object
+        nullable: true
+  '@odata.type':
+    type: string

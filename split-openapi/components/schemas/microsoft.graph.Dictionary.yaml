@@ -1,0 +1,14 @@
+title: Dictionary
+required:
+  - '@odata.type'
+type: object
+properties:
+  '@odata.type':
+    type: string
+discriminator:
+  propertyName: '@odata.type'
+  mapping:
+    '#microsoft.graph.fileStorageContainerCustomPropertyDictionary': .\microsoft.graph.fileStorageContainerCustomPropertyDictionary.yaml
+    '#microsoft.graph.resultTemplateDictionary': .\microsoft.graph.resultTemplateDictionary.yaml
+    microsoft.graph.fileStorageContainerCustomPropertyDictionary: .\microsoft.graph.fileStorageContainerCustomPropertyDictionary.yaml
+    microsoft.graph.resultTemplateDictionary: .\microsoft.graph.resultTemplateDictionary.yaml

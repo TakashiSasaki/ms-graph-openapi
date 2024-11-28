@@ -1,0 +1,9 @@
+value:
+  failedTasks: '0'
+  failedUsers: '0'
+  successfulTasks: '0'
+  successfulUsers: '0'
+  taskDefinitionDisplayName: String
+  taskDefinitionId: String
+  totalTasks: '0'
+  totalUsers: '0'

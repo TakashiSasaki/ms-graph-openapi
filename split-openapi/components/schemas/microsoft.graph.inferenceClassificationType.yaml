@@ -1,0 +1,5 @@
+title: inferenceClassificationType
+enum:
+  - focused
+  - other
+type: string

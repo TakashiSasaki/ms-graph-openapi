@@ -1,0 +1,14 @@
+value:
+  applicableDeviceType:
+    '@odata.type': microsoft.graph.iosDeviceType
+  appStoreUrl: String
+  bundleId: String
+  licensingType:
+    '@odata.type': microsoft.graph.vppLicensingType
+  releaseDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  totalLicenseCount: '0'
+  usedLicenseCount: '0'
+  vppTokenAccountType:
+    '@odata.type': microsoft.graph.vppTokenAccountType
+  vppTokenAppleId: String
+  vppTokenOrganizationName: String

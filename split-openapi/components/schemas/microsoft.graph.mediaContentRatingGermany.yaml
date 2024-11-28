@@ -1,0 +1,11 @@
+title: mediaContentRatingGermany
+required:
+  - '@odata.type'
+type: object
+properties:
+  movieRating:
+    $ref: .\microsoft.graph.ratingGermanyMoviesType.yaml
+  tvRating:
+    $ref: .\microsoft.graph.ratingGermanyTelevisionType.yaml
+  '@odata.type':
+    type: string

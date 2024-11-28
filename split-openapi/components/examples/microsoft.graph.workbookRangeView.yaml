@@ -1,0 +1,14 @@
+value:
+  cellAddresses: {}
+  columnCount: '0'
+  formulas: {}
+  formulasLocal: {}
+  formulasR1C1: {}
+  index: '0'
+  numberFormat: {}
+  rowCount: '0'
+  rows:
+    - '@odata.type': microsoft.graph.workbookRangeView
+  text: {}
+  values: {}
+  valueTypes: {}

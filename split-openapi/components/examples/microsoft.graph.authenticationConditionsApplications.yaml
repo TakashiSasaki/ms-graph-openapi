@@ -1,0 +1,3 @@
+value:
+  includeApplications:
+    - '@odata.type': microsoft.graph.authenticationConditionApplication

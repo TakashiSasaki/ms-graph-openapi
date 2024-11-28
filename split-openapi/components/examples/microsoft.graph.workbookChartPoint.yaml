@@ -1,0 +1,4 @@
+value:
+  format:
+    '@odata.type': microsoft.graph.workbookChartPointFormat
+  value: {}

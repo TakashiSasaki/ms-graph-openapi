@@ -1,0 +1,44 @@
+value:
+  accountEnabled: 'true'
+  alternativeSecurityIds:
+    - '@odata.type': microsoft.graph.alternativeSecurityId
+  approximateLastSignInDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  complianceExpirationDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  deviceCategory: String
+  deviceId: String
+  deviceMetadata: String
+  deviceOwnership: String
+  deviceVersion: '0'
+  displayName: String
+  enrollmentProfileName: String
+  enrollmentType: String
+  extensions:
+    - '@odata.type': microsoft.graph.extension
+  isCompliant: 'true'
+  isManaged: 'true'
+  isManagementRestricted: 'true'
+  isRooted: 'true'
+  managementType: String
+  manufacturer: String
+  mdmAppId: String
+  memberOf:
+    - '@odata.type': microsoft.graph.directoryObject
+  model: String
+  onPremisesLastSyncDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  onPremisesSecurityIdentifier: String
+  onPremisesSyncEnabled: 'true'
+  operatingSystem: String
+  operatingSystemVersion: String
+  physicalIds:
+    - String
+  profileType: String
+  registeredOwners:
+    - '@odata.type': microsoft.graph.directoryObject
+  registeredUsers:
+    - '@odata.type': microsoft.graph.directoryObject
+  registrationDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  systemLabels:
+    - String
+  transitiveMemberOf:
+    - '@odata.type': microsoft.graph.directoryObject
+  trustType: String

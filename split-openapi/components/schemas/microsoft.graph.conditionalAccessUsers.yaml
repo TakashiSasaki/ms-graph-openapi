@@ -1,0 +1,55 @@
+title: conditionalAccessUsers
+required:
+  - '@odata.type'
+type: object
+properties:
+  excludeGroups:
+    type: array
+    items:
+      type: string
+    description: Group IDs excluded from scope of policy.
+  excludeGuestsOrExternalUsers:
+    anyOf:
+      - $ref: .\microsoft.graph.conditionalAccessGuestsOrExternalUsers.yaml
+      - type: object
+        nullable: true
+    description: >-
+      Internal guests or external users excluded from the policy scope.
+      Optionally populated.
+  excludeRoles:
+    type: array
+    items:
+      type: string
+    description: Role IDs excluded from scope of policy.
+  excludeUsers:
+    type: array
+    items:
+      type: string
+    description: User IDs excluded from scope of policy and/or GuestsOrExternalUsers.
+  includeGroups:
+    type: array
+    items:
+      type: string
+    description: Group IDs in scope of policy unless explicitly excluded.
+  includeGuestsOrExternalUsers:
+    anyOf:
+      - $ref: .\microsoft.graph.conditionalAccessGuestsOrExternalUsers.yaml
+      - type: object
+        nullable: true
+    description: >-
+      Internal guests or external users included in the policy scope. Optionally
+      populated.
+  includeRoles:
+    type: array
+    items:
+      type: string
+    description: Role IDs in scope of policy unless explicitly excluded.
+  includeUsers:
+    type: array
+    items:
+      type: string
+    description: >-
+      User IDs in scope of policy unless explicitly excluded, None, All, or
+      GuestsOrExternalUsers.
+  '@odata.type':
+    type: string

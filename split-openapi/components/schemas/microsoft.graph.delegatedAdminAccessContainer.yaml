@@ -1,0 +1,15 @@
+title: delegatedAdminAccessContainer
+required:
+  - '@odata.type'
+type: object
+properties:
+  accessContainerId:
+    type: string
+    description: >-
+      The identifier of the access container (for example, a security group).
+      For 'securityGroup' access containers, this must be a valid ID of a
+      Microsoft Entra security group in the Microsoft partner's tenant.
+  accessContainerType:
+    $ref: .\microsoft.graph.delegatedAdminAccessContainerType.yaml
+  '@odata.type':
+    type: string

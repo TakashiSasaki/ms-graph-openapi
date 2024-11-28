@@ -1,0 +1,15 @@
+value:
+  failedSignInCount: '0'
+  migrationStatus:
+    '@odata.type': microsoft.graph.migrationStatus
+  migrationValidationDetails:
+    - '@odata.type': microsoft.graph.keyValuePair
+  relyingPartyId: String
+  relyingPartyName: String
+  replyUrls:
+    - String
+  serviceId: String
+  signInSuccessRate: '0'
+  successfulSignInCount: '0'
+  totalSignInCount: '0'
+  uniqueUserCount: '0'

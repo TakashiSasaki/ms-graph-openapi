@@ -1,0 +1,5 @@
+value:
+  fields:
+    - '@odata.type': microsoft.graph.workbookSortField
+  matchCase: 'true'
+  method: String

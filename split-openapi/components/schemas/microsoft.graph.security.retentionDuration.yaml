@@ -1,0 +1,14 @@
+title: retentionDuration
+required:
+  - '@odata.type'
+type: object
+properties:
+  '@odata.type':
+    type: string
+discriminator:
+  propertyName: '@odata.type'
+  mapping:
+    '#microsoft.graph.security.retentionDurationForever': .\microsoft.graph.security.retentionDurationForever.yaml
+    '#microsoft.graph.security.retentionDurationInDays': .\microsoft.graph.security.retentionDurationInDays.yaml
+    microsoft.graph.security.retentionDurationForever: .\microsoft.graph.security.retentionDurationForever.yaml
+    microsoft.graph.security.retentionDurationInDays: .\microsoft.graph.security.retentionDurationInDays.yaml

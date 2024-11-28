@@ -1,0 +1,7 @@
+value:
+  includeTargets:
+    - '@odata.type': microsoft.graph.authenticationMethodTarget
+  isAttestationEnforced: 'true'
+  isSelfServiceRegistrationAllowed: 'true'
+  keyRestrictions:
+    '@odata.type': microsoft.graph.fido2KeyRestrictions

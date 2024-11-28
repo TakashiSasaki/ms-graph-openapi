@@ -1,0 +1,6 @@
+title: delegateMeetingMessageDeliveryOptions
+enum:
+  - sendToDelegateAndInformationToPrincipal
+  - sendToDelegateAndPrincipal
+  - sendToDelegateOnly
+type: string

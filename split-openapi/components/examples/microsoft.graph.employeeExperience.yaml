@@ -1,0 +1,9 @@
+value:
+  communities:
+    - '@odata.type': microsoft.graph.community
+  engagementAsyncOperations:
+    - '@odata.type': microsoft.graph.engagementAsyncOperation
+  learningCourseActivities:
+    - '@odata.type': microsoft.graph.learningCourseActivity
+  learningProviders:
+    - '@odata.type': microsoft.graph.learningProvider

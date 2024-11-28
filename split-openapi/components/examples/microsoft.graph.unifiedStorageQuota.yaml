@@ -1,0 +1,9 @@
+value:
+  deleted: '0'
+  manageWebUrl: String
+  remaining: '0'
+  services:
+    - '@odata.type': microsoft.graph.serviceStorageQuotaBreakdown
+  state: String
+  total: '0'
+  used: '0'

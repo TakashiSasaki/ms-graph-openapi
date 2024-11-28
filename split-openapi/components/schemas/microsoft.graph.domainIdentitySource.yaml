@@ -1,0 +1,21 @@
+allOf:
+  - $ref: .\microsoft.graph.identitySource.yaml
+  - title: domainIdentitySource
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      displayName:
+        type: string
+        description: >-
+          The name of the identity source, typically also the domain name. Read
+          only.
+        nullable: true
+      domainName:
+        type: string
+        description: The domain name. Read only.
+        nullable: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.domainIdentitySource'
+x-ms-discriminator-value: '#microsoft.graph.domainIdentitySource'

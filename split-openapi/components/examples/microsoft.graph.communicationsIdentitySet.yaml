@@ -1,0 +1,17 @@
+value:
+  applicationInstance:
+    '@odata.type': microsoft.graph.identity
+  assertedIdentity:
+    '@odata.type': microsoft.graph.identity
+  azureCommunicationServicesUser:
+    '@odata.type': microsoft.graph.identity
+  encrypted:
+    '@odata.type': microsoft.graph.identity
+  endpointType:
+    '@odata.type': microsoft.graph.endpointType
+  guest:
+    '@odata.type': microsoft.graph.identity
+  onPremises:
+    '@odata.type': microsoft.graph.identity
+  phone:
+    '@odata.type': microsoft.graph.identity

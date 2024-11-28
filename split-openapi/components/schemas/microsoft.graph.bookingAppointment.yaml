@@ -1,0 +1,205 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: bookingAppointment
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      additionalInformation:
+        type: string
+        description: >-
+          Additional information that is sent to the customer when an
+          appointment is confirmed.
+        nullable: true
+      anonymousJoinWebUrl:
+        type: string
+        description: The URL of the meeting to join anonymously.
+        nullable: true
+      appointmentLabel:
+        type: string
+        description: The custom label that can be stamped on this appointment by users.
+        nullable: true
+      createdDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: >-
+          The date, time, and time zone when the appointment was created. The
+          timestamp type represents date and time information using ISO 8601
+          format and is always in UTC. For example, midnight UTC on Jan 1, 2014
+          is 2014-01-01T00:00:00Z.
+        format: date-time
+        nullable: true
+      customerEmailAddress:
+        type: string
+        description: The SMTP address of the bookingCustomer who books the appointment.
+        nullable: true
+      customerName:
+        type: string
+        description: The customer's name.
+        nullable: true
+      customerNotes:
+        type: string
+        description: >-
+          Notes from the customer associated with this appointment. You can get
+          the value only when you read this bookingAppointment by its ID. You
+          can set this property only when you initially create an appointment
+          with a new customer.
+        nullable: true
+      customerPhone:
+        type: string
+        description: The customer's phone number.
+        nullable: true
+      customers:
+        type: array
+        items:
+          $ref: .\microsoft.graph.bookingCustomerInformationBase.yaml
+        description: >-
+          A collection of customer properties for an appointment. An appointment
+          contains a list of customer information and each unit will indicate
+          the properties of a customer who is part of that appointment.
+          Optional.
+      customerTimeZone:
+        type: string
+        description: >-
+          The time zone of the customer. For a list of possible values, see
+          dateTimeTimeZone.
+        nullable: true
+      duration:
+        pattern: ^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$
+        type: string
+        description: The length of the appointment, denoted in ISO8601 format.
+        format: duration
+        readOnly: true
+      endDateTime:
+        $ref: .\microsoft.graph.dateTimeTimeZone.yaml
+      filledAttendeesCount:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: The current number of customers in the appointment.
+        format: int32
+        readOnly: true
+      isCustomerAllowedToManageBooking:
+        type: boolean
+        description: >-
+          Indicates that the customer can manage bookings created by the staff.
+          The default value is false.
+        nullable: true
+      isLocationOnline:
+        type: boolean
+        description: >-
+          Indicates that the appointment is held online. The default value is
+          false.
+      joinWebUrl:
+        type: string
+        description: The URL of the online meeting for the appointment.
+        nullable: true
+      lastUpdatedDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: >-
+          The date, time, and time zone when the booking business was last
+          updated. The timestamp type represents date and time information using
+          ISO 8601 format and is always in UTC. For example, midnight UTC on Jan
+          1, 2014 is 2014-01-01T00:00:00Z.
+        format: date-time
+        nullable: true
+      maximumAttendeesCount:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: >-
+          The maximum number of customers allowed in an appointment. If
+          maximumAttendeesCount of the service is greater than 1, pass valid
+          customer IDs while creating or updating an appointment. To create a
+          customer, use the Create bookingCustomer operation.
+        format: int32
+      optOutOfCustomerEmail:
+        type: boolean
+        description: >-
+          If true indicates that the bookingCustomer for this appointment
+          doesn't wish to receive a confirmation for this appointment.
+      postBuffer:
+        pattern: ^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$
+        type: string
+        description: >-
+          The amount of time to reserve after the appointment ends, for cleaning
+          up, as an example. The value is expressed in ISO8601 format.
+        format: duration
+      preBuffer:
+        pattern: ^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$
+        type: string
+        description: >-
+          The amount of time to reserve before the appointment begins, for
+          preparation, as an example. The value is expressed in ISO8601 format.
+        format: duration
+      price:
+        oneOf:
+          - type: number
+            format: double
+            nullable: true
+          - type: string
+            nullable: true
+          - $ref: .\ReferenceNumeric.yaml
+        description: The regular price for an appointment for the specified bookingService.
+      priceType:
+        $ref: .\microsoft.graph.bookingPriceType.yaml
+      reminders:
+        type: array
+        items:
+          $ref: .\microsoft.graph.bookingReminder.yaml
+        description: >-
+          The collection of customer reminders sent for this appointment. The
+          value of this property is available only when reading this
+          bookingAppointment by its ID.
+      selfServiceAppointmentId:
+        type: string
+        description: >-
+          Another tracking ID for the appointment, if the appointment was
+          created directly by the customer on the scheduling page, as opposed to
+          by a staff member on behalf of the customer.
+        nullable: true
+      serviceId:
+        type: string
+        description: The ID of the bookingService associated with this appointment.
+        nullable: true
+      serviceLocation:
+        anyOf:
+          - $ref: .\microsoft.graph.location.yaml
+          - type: object
+            nullable: true
+        description: The location where the service is delivered.
+      serviceName:
+        type: string
+        description: >-
+          The name of the bookingService associated with this appointment.This
+          property is optional when creating a new appointment. If not
+          specified, it's computed from the service associated with the
+          appointment by the serviceId property.
+      serviceNotes:
+        type: string
+        description: >-
+          Notes from a bookingStaffMember. The value of this property is
+          available only when reading this bookingAppointment by its ID.
+        nullable: true
+      smsNotificationsEnabled:
+        type: boolean
+        description: >-
+          If true, indicates SMS notifications will be sent to the customers for
+          the appointment. Default value is false.
+      staffMemberIds:
+        type: array
+        items:
+          type: string
+          nullable: true
+        description: >-
+          The ID of each bookingStaffMember who is scheduled in this
+          appointment.
+      startDateTime:
+        $ref: .\microsoft.graph.dateTimeTimeZone.yaml
+      '@odata.type':
+        type: string
+    description: Represents a booked appointment of a service by a customer in a business.
+x-ms-discriminator-value: '#microsoft.graph.bookingAppointment'

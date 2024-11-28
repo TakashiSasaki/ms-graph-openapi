@@ -1,0 +1,6 @@
+title: fido2RestrictionEnforcementType
+enum:
+  - allow
+  - block
+  - unknownFutureValue
+type: string

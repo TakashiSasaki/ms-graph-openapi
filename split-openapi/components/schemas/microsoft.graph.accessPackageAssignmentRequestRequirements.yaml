@@ -1,0 +1,48 @@
+title: accessPackageAssignmentRequestRequirements
+required:
+  - '@odata.type'
+type: object
+properties:
+  allowCustomAssignmentSchedule:
+    type: boolean
+    description: Indicates whether the requestor is allowed to set a custom schedule.
+    nullable: true
+  isApprovalRequiredForAdd:
+    type: boolean
+    description: Indicates whether a request to add must be approved by an approver.
+    nullable: true
+  isApprovalRequiredForUpdate:
+    type: boolean
+    description: Indicates whether a request to update must be approved by an approver.
+    nullable: true
+  policyDescription:
+    type: string
+    description: >-
+      The description of the policy that the user is trying to request access
+      using.
+    nullable: true
+  policyDisplayName:
+    type: string
+    description: >-
+      The display name of the policy that the user is trying to request access
+      using.
+    nullable: true
+  policyId:
+    type: string
+    description: >-
+      The identifier of the policy that these requirements are associated with.
+      This identifier can be used when creating a new assignment request.
+    nullable: true
+  schedule:
+    anyOf:
+      - $ref: .\microsoft.graph.entitlementManagementSchedule.yaml
+      - type: object
+        nullable: true
+    description: Schedule restrictions enforced, if any.
+  questions:
+    type: array
+    items:
+      $ref: .\microsoft.graph.accessPackageQuestion.yaml
+    x-ms-navigationProperty: true
+  '@odata.type':
+    type: string

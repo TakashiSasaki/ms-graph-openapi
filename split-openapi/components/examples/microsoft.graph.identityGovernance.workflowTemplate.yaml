@@ -1,0 +1,9 @@
+value:
+  category:
+    '@odata.type': microsoft.graph.identityGovernance.lifecycleWorkflowCategory
+  description: String
+  displayName: String
+  executionConditions:
+    '@odata.type': microsoft.graph.identityGovernance.workflowExecutionConditions
+  tasks:
+    - '@odata.type': microsoft.graph.identityGovernance.task

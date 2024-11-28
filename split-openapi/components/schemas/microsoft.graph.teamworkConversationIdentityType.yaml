@@ -1,0 +1,7 @@
+title: teamworkConversationIdentityType
+enum:
+  - team
+  - channel
+  - chat
+  - unknownFutureValue
+type: string

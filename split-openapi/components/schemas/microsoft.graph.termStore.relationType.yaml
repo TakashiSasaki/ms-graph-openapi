@@ -1,0 +1,6 @@
+title: relationType
+enum:
+  - pin
+  - reuse
+  - unknownFutureValue
+type: string

@@ -1,0 +1,21 @@
+title: bookingsAvailability
+required:
+  - '@odata.type'
+type: object
+properties:
+  availabilityType:
+    $ref: .\microsoft.graph.bookingsServiceAvailabilityType.yaml
+  businessHours:
+    type: array
+    items:
+      $ref: .\microsoft.graph.bookingWorkHours.yaml
+    description: >-
+      The hours of operation in a week. The business hours value is set to null
+      if the availability type isn't customWeeklyHours.
+  '@odata.type':
+    type: string
+discriminator:
+  propertyName: '@odata.type'
+  mapping:
+    '#microsoft.graph.bookingsAvailabilityWindow': .\microsoft.graph.bookingsAvailabilityWindow.yaml
+    microsoft.graph.bookingsAvailabilityWindow: .\microsoft.graph.bookingsAvailabilityWindow.yaml

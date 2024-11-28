@@ -1,0 +1,51 @@
+description: Provides operations to call the allowedCalendarSharingRoles method.
+get:
+  tags:
+    - groups.calendar
+  summary: Invoke function allowedCalendarSharingRoles
+  operationId: groups.group.calendar.allowedCalendarSharingRoles
+  parameters:
+    - $ref: ..\components\parameters\top.yaml
+    - $ref: ..\components\parameters\skip.yaml
+    - $ref: ..\components\parameters\search.yaml
+    - $ref: ..\components\parameters\filter.yaml
+    - $ref: ..\components\parameters\count.yaml
+  responses:
+    2XX:
+      description: Success
+      content:
+        application/json:
+          schema:
+            type: object
+            allOf:
+              - $ref: >-
+                  ..\components\schemas\BaseCollectionPaginationCountResponse.yaml
+              - type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: >-
+                        ..\components\schemas\microsoft.graph.calendarRoleType.yaml
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: function
+  x-ms-pageable:
+    nextLinkName: '@odata.nextLink'
+    operationName: listMore
+parameters:
+  - name: group-id
+    in: path
+    description: The unique identifier of group
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: group
+  - name: User
+    in: path
+    description: 'Usage: User=''{User}'''
+    required: true
+    schema:
+      type: string

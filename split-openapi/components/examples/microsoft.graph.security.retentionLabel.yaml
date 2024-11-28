@@ -1,0 +1,28 @@
+value:
+  actionAfterRetentionPeriod:
+    '@odata.type': microsoft.graph.security.actionAfterRetentionPeriod
+  behaviorDuringRetentionPeriod:
+    '@odata.type': microsoft.graph.security.behaviorDuringRetentionPeriod
+  createdBy:
+    '@odata.type': microsoft.graph.identitySet
+  createdDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  defaultRecordBehavior:
+    '@odata.type': microsoft.graph.security.defaultRecordBehavior
+  descriptionForAdmins: String
+  descriptionForUsers: String
+  descriptors:
+    '@odata.type': microsoft.graph.security.filePlanDescriptor
+  displayName: String
+  dispositionReviewStages:
+    - '@odata.type': microsoft.graph.security.dispositionReviewStage
+  isInUse: 'true'
+  labelToBeApplied: String
+  lastModifiedBy:
+    '@odata.type': microsoft.graph.identitySet
+  lastModifiedDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  retentionDuration:
+    '@odata.type': microsoft.graph.security.retentionDuration
+  retentionEventType:
+    '@odata.type': microsoft.graph.security.retentionEventType
+  retentionTrigger:
+    '@odata.type': microsoft.graph.security.retentionTrigger

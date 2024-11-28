@@ -1,0 +1,12 @@
+allOf:
+  - $ref: .\microsoft.graph.appleDeviceFeaturesConfigurationBase.yaml
+  - title: macOSDeviceFeaturesConfiguration
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.macOSDeviceFeaturesConfiguration'
+    description: MacOS device features configuration profile.
+x-ms-discriminator-value: '#microsoft.graph.macOSDeviceFeaturesConfiguration'

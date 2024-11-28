@@ -1,0 +1,8 @@
+title: backupServiceStatus
+enum:
+  - disabled
+  - enabled
+  - protectionChangeLocked
+  - restoreLocked
+  - unknownFutureValue
+type: string

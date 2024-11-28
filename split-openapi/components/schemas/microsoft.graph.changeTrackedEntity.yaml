@@ -1,0 +1,53 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: changeTrackedEntity
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      createdDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: >-
+          The Timestamp type represents date and time information using ISO 8601
+          format and is always in UTC time. For example, midnight UTC on Jan 1,
+          2014 is 2014-01-01T00:00:00Z
+        format: date-time
+        nullable: true
+        readOnly: true
+      lastModifiedBy:
+        anyOf:
+          - $ref: .\microsoft.graph.identitySet.yaml
+          - type: object
+            nullable: true
+        description: Identity of the person who last modified the entity.
+        readOnly: true
+      lastModifiedDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: >-
+          The Timestamp type represents date and time information using ISO 8601
+          format and is always in UTC time. For example, midnight UTC on Jan 1,
+          2014 is 2014-01-01T00:00:00Z
+        format: date-time
+        nullable: true
+        readOnly: true
+      '@odata.type':
+        type: string
+    discriminator:
+      propertyName: '@odata.type'
+      mapping:
+        '#microsoft.graph.openShift': .\microsoft.graph.openShift.yaml
+        '#microsoft.graph.scheduleChangeRequest': .\microsoft.graph.scheduleChangeRequest.yaml
+        '#microsoft.graph.offerShiftRequest': .\microsoft.graph.offerShiftRequest.yaml
+        '#microsoft.graph.swapShiftsChangeRequest': .\microsoft.graph.swapShiftsChangeRequest.yaml
+        '#microsoft.graph.openShiftChangeRequest': .\microsoft.graph.openShiftChangeRequest.yaml
+        '#microsoft.graph.timeOffRequest': .\microsoft.graph.timeOffRequest.yaml
+        '#microsoft.graph.schedulingGroup': .\microsoft.graph.schedulingGroup.yaml
+        '#microsoft.graph.shift': .\microsoft.graph.shift.yaml
+        '#microsoft.graph.shiftPreferences': .\microsoft.graph.shiftPreferences.yaml
+        '#microsoft.graph.timeOff': .\microsoft.graph.timeOff.yaml
+        '#microsoft.graph.timeOffReason': .\microsoft.graph.timeOffReason.yaml
+        '#microsoft.graph.workforceIntegration': .\microsoft.graph.workforceIntegration.yaml

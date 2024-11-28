@@ -1,0 +1,8 @@
+value:
+  description: String
+  displayName: String
+  isRootScope: 'true'
+  originId: String
+  originSystem: String
+  resource:
+    '@odata.type': microsoft.graph.accessPackageResource

@@ -1,0 +1,12 @@
+title: printMultipageLayout
+enum:
+  - clockwiseFromTopLeft
+  - counterclockwiseFromTopLeft
+  - counterclockwiseFromTopRight
+  - clockwiseFromTopRight
+  - counterclockwiseFromBottomLeft
+  - clockwiseFromBottomLeft
+  - counterclockwiseFromBottomRight
+  - clockwiseFromBottomRight
+  - unknownFutureValue
+type: string

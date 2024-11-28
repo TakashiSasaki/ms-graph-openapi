@@ -1,0 +1,123 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: delegatedAdminRelationship
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      accessDetails:
+        $ref: .\microsoft.graph.delegatedAdminAccessDetails.yaml
+      activatedDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: >-
+          The date and time in ISO 8601 format and in UTC time when the
+          relationship became active. Read-only.
+        format: date-time
+        nullable: true
+      autoExtendDuration:
+        pattern: ^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$
+        type: string
+        description: >-
+          The duration by which the validity of the relationship is
+          automatically extended, denoted in ISO 8601 format. Supported values
+          are: P0D, PT0S, P180D. The default value is PT0S. PT0S indicates that
+          the relationship expires when the endDateTime is reached and it isn't
+          automatically extended.
+        format: duration
+        nullable: true
+      createdDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: >-
+          The date and time in ISO 8601 format and in UTC time when the
+          relationship was created. Read-only.
+        format: date-time
+        nullable: true
+      customer:
+        anyOf:
+          - $ref: >-
+              .\microsoft.graph.delegatedAdminRelationshipCustomerParticipant.yaml
+          - type: object
+            nullable: true
+        description: >-
+          The display name and unique identifier of the customer of the
+          relationship. This is configured either by the partner at the time the
+          relationship is created or by the system after the customer approves
+          the relationship. Can't be changed by the customer.
+      displayName:
+        type: string
+        description: >-
+          The display name of the relationship used for ease of identification.
+          Must be unique across all delegated admin relationships of the partner
+          and is set by the partner only when the relationship is in the created
+          status and can't be changed by the customer. Maximum length is 50
+          characters.
+      duration:
+        pattern: ^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$
+        type: string
+        description: >-
+          The duration of the relationship in ISO 8601 format. Must be a value
+          between P1D and P2Y inclusive. This is set by the partner only when
+          the relationship is in the created status and can't be changed by the
+          customer.
+        format: duration
+      endDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: >-
+          The date and time in ISO 8601 format and in UTC time when the status
+          of relationship changes to either terminated or expired. Calculated as
+          endDateTime = activatedDateTime + duration. Read-only.
+        format: date-time
+        nullable: true
+      lastModifiedDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: >-
+          The date and time in ISO 8601 format and in UTC time when the
+          relationship was last modified. Read-only.
+        format: date-time
+        nullable: true
+      status:
+        anyOf:
+          - $ref: .\microsoft.graph.delegatedAdminRelationshipStatus.yaml
+          - type: object
+            nullable: true
+        description: >-
+          The status of the relationship. Read Only. The possible values are:
+          activating, active, approvalPending, approved, created, expired,
+          expiring, terminated, terminating, terminationRequested,
+          unknownFutureValue. Supports $orderby.
+      accessAssignments:
+        type: array
+        items:
+          $ref: .\microsoft.graph.delegatedAdminAccessAssignment.yaml
+        description: >-
+          The access assignments associated with the delegated admin
+          relationship.
+        x-ms-navigationProperty: true
+      operations:
+        type: array
+        items:
+          $ref: .\microsoft.graph.delegatedAdminRelationshipOperation.yaml
+        description: >-
+          The long running operations associated with the delegated admin
+          relationship.
+        x-ms-navigationProperty: true
+      requests:
+        type: array
+        items:
+          $ref: .\microsoft.graph.delegatedAdminRelationshipRequest.yaml
+        description: The requests associated with the delegated admin relationship.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+    discriminator:
+      propertyName: '@odata.type'
+      mapping:
+        '#microsoft.graph.resellerDelegatedAdminRelationship': .\microsoft.graph.resellerDelegatedAdminRelationship.yaml

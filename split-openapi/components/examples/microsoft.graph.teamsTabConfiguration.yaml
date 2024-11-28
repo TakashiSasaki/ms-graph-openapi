@@ -1,0 +1,5 @@
+value:
+  contentUrl: String
+  entityId: String
+  removeUrl: String
+  websiteUrl: String

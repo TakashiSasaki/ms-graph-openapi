@@ -1,0 +1,16 @@
+allOf:
+  - $ref: .\microsoft.graph.teamworkNotificationRecipient.yaml
+  - title: teamMembersNotificationRecipient
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      teamId:
+        type: string
+        description: >-
+          The unique identifier for the team whose members should receive the
+          notification.
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.teamMembersNotificationRecipient'
+x-ms-discriminator-value: '#microsoft.graph.teamMembersNotificationRecipient'

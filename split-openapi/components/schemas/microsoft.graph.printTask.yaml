@@ -1,0 +1,22 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: printTask
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      parentUrl:
+        type: string
+        description: >-
+          The URL for the print entity that triggered this task. For example,
+          https://graph.microsoft.com/v1.0/print/printers/{printerId}/jobs/{jobId}.
+          Read-only.
+      status:
+        $ref: .\microsoft.graph.printTaskStatus.yaml
+      definition:
+        $ref: .\microsoft.graph.printTaskDefinition.yaml
+      trigger:
+        $ref: .\microsoft.graph.printTaskTrigger.yaml
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.printTask'

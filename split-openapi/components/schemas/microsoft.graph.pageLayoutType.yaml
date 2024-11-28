@@ -1,0 +1,7 @@
+title: pageLayoutType
+enum:
+  - microsoftReserved
+  - article
+  - home
+  - unknownFutureValue
+type: string

@@ -1,0 +1,36 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: userFlowLanguageConfiguration
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      displayName:
+        type: string
+        description: The language name to display. This property is read-only.
+        nullable: true
+      isEnabled:
+        type: boolean
+        description: Indicates whether the language is enabled within the user flow.
+      defaultPages:
+        type: array
+        items:
+          $ref: .\microsoft.graph.userFlowLanguagePage.yaml
+        description: >-
+          Collection of pages with the default content to display in a user flow
+          for a specified language. This collection doesn't allow any kind of
+          modification.
+        x-ms-navigationProperty: true
+      overridesPages:
+        type: array
+        items:
+          $ref: .\microsoft.graph.userFlowLanguagePage.yaml
+        description: >-
+          Collection of pages with the overrides messages to display in a user
+          flow for a specified language. This collection only allows you to
+          modify the content of the page, any other modification isn't allowed
+          (creation or deletion of pages).
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.userFlowLanguageConfiguration'

@@ -1,0 +1,5 @@
+value:
+  allowedResourceActions:
+    - String
+  notAllowedResourceActions:
+    - String

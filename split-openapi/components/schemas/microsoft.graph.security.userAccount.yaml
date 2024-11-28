@@ -1,0 +1,31 @@
+title: userAccount
+required:
+  - '@odata.type'
+type: object
+properties:
+  accountName:
+    type: string
+    description: The displayed name of the user account.
+    nullable: true
+  azureAdUserId:
+    type: string
+    description: The user object identifier in Microsoft Entra ID.
+    nullable: true
+  displayName:
+    type: string
+    description: The user display name in Microsoft Entra ID.
+    nullable: true
+  domainName:
+    type: string
+    description: The name of the Active Directory domain of which the user is a member.
+    nullable: true
+  userPrincipalName:
+    type: string
+    description: The user principal name of the account in Microsoft Entra ID.
+    nullable: true
+  userSid:
+    type: string
+    description: The local security identifier of the user account.
+    nullable: true
+  '@odata.type':
+    type: string

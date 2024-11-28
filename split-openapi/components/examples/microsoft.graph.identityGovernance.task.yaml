@@ -1,0 +1,13 @@
+value:
+  arguments:
+    - '@odata.type': microsoft.graph.keyValuePair
+  category:
+    '@odata.type': microsoft.graph.identityGovernance.lifecycleTaskCategory
+  continueOnError: 'true'
+  description: String
+  displayName: String
+  executionSequence: '0'
+  isEnabled: 'true'
+  taskDefinitionId: String
+  taskProcessingResults:
+    - '@odata.type': microsoft.graph.identityGovernance.taskProcessingResult

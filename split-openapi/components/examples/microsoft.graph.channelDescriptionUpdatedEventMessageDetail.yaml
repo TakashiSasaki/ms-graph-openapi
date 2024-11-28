@@ -1,0 +1,5 @@
+value:
+  channelDescription: String
+  channelId: String
+  initiator:
+    '@odata.type': microsoft.graph.identitySet

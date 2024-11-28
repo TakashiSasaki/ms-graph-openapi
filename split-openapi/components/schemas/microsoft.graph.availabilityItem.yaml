@@ -1,0 +1,25 @@
+title: availabilityItem
+required:
+  - '@odata.type'
+type: object
+properties:
+  endDateTime:
+    $ref: .\microsoft.graph.dateTimeTimeZone.yaml
+  serviceId:
+    type: string
+    description: >-
+      Indicates the service ID for 1:n appointments. If the appointment is of
+      type 1:n, this field is present, otherwise, null.
+    nullable: true
+  startDateTime:
+    $ref: .\microsoft.graph.dateTimeTimeZone.yaml
+  status:
+    anyOf:
+      - $ref: .\microsoft.graph.bookingsAvailabilityStatus.yaml
+      - type: object
+        nullable: true
+    description: >-
+      The status of the staff member. Possible values are: available, busy,
+      slotsAvailable, outOfOffice, unknownFutureValue.
+  '@odata.type':
+    type: string

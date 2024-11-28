@@ -1,0 +1,32 @@
+allOf:
+  - $ref: .\microsoft.graph.mobileLobApp.yaml
+  - title: androidLobApp
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      minimumSupportedOperatingSystem:
+        anyOf:
+          - $ref: .\microsoft.graph.androidMinimumOperatingSystem.yaml
+          - type: object
+            nullable: true
+        description: The value for the minimum applicable operating system.
+      packageId:
+        type: string
+        description: The package identifier.
+        nullable: true
+      versionCode:
+        type: string
+        description: The version code of Android Line of Business (LoB) app.
+        nullable: true
+      versionName:
+        type: string
+        description: The version name of Android Line of Business (LoB) app.
+        nullable: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.androidLobApp'
+    description: >-
+      Contains properties and inherited properties for Android Line Of Business
+      apps.
+x-ms-discriminator-value: '#microsoft.graph.androidLobApp'

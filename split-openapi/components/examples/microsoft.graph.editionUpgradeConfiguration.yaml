@@ -1,0 +1,7 @@
+value:
+  license: String
+  licenseType:
+    '@odata.type': microsoft.graph.editionUpgradeLicenseType
+  productKey: String
+  targetEdition:
+    '@odata.type': microsoft.graph.windows10EditionType

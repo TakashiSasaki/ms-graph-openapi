@@ -1,0 +1,36 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: commsOperation
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      clientContext:
+        type: string
+        description: Unique Client Context string. Max limit is 256 chars.
+        nullable: true
+      resultInfo:
+        anyOf:
+          - $ref: .\microsoft.graph.resultInfo.yaml
+          - type: object
+            nullable: true
+        description: The result information. Read-only.
+      status:
+        $ref: .\microsoft.graph.operationStatus.yaml
+      '@odata.type':
+        type: string
+    discriminator:
+      propertyName: '@odata.type'
+      mapping:
+        '#microsoft.graph.addLargeGalleryViewOperation': .\microsoft.graph.addLargeGalleryViewOperation.yaml
+        '#microsoft.graph.cancelMediaProcessingOperation': .\microsoft.graph.cancelMediaProcessingOperation.yaml
+        '#microsoft.graph.inviteParticipantsOperation': .\microsoft.graph.inviteParticipantsOperation.yaml
+        '#microsoft.graph.muteParticipantOperation': .\microsoft.graph.muteParticipantOperation.yaml
+        '#microsoft.graph.playPromptOperation': .\microsoft.graph.playPromptOperation.yaml
+        '#microsoft.graph.recordOperation': .\microsoft.graph.recordOperation.yaml
+        '#microsoft.graph.sendDtmfTonesOperation': .\microsoft.graph.sendDtmfTonesOperation.yaml
+        '#microsoft.graph.startHoldMusicOperation': .\microsoft.graph.startHoldMusicOperation.yaml
+        '#microsoft.graph.stopHoldMusicOperation': .\microsoft.graph.stopHoldMusicOperation.yaml
+        '#microsoft.graph.subscribeToToneOperation': .\microsoft.graph.subscribeToToneOperation.yaml
+        '#microsoft.graph.unmuteParticipantOperation': .\microsoft.graph.unmuteParticipantOperation.yaml
+        '#microsoft.graph.updateRecordingStatusOperation': .\microsoft.graph.updateRecordingStatusOperation.yaml

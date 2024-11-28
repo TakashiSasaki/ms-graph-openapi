@@ -1,0 +1,21 @@
+title: synchronizationLinkedObjects
+required:
+  - '@odata.type'
+type: object
+properties:
+  manager:
+    anyOf:
+      - $ref: .\microsoft.graph.synchronizationJobSubject.yaml
+      - type: object
+        nullable: true
+  members:
+    type: array
+    items:
+      $ref: .\microsoft.graph.synchronizationJobSubject.yaml
+    description: All group members that you would like to provision.
+  owners:
+    type: array
+    items:
+      $ref: .\microsoft.graph.synchronizationJobSubject.yaml
+  '@odata.type':
+    type: string

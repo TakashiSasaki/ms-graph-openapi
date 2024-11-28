@@ -1,0 +1,50 @@
+value:
+  applicationGuardAllowPersistence: 'true'
+  applicationGuardAllowPrintToLocalPrinters: 'true'
+  applicationGuardAllowPrintToNetworkPrinters: 'true'
+  applicationGuardAllowPrintToPDF: 'true'
+  applicationGuardAllowPrintToXPS: 'true'
+  applicationGuardBlockClipboardSharing:
+    '@odata.type': microsoft.graph.applicationGuardBlockClipboardSharingType
+  applicationGuardBlockFileTransfer:
+    '@odata.type': microsoft.graph.applicationGuardBlockFileTransferType
+  applicationGuardBlockNonEnterpriseContent: 'true'
+  applicationGuardEnabled: 'true'
+  applicationGuardForceAuditing: 'true'
+  appLockerApplicationControl:
+    '@odata.type': microsoft.graph.appLockerApplicationControlType
+  bitLockerDisableWarningForOtherDiskEncryption: 'true'
+  bitLockerEnableStorageCardEncryptionOnMobile: 'true'
+  bitLockerEncryptDevice: 'true'
+  bitLockerRemovableDrivePolicy:
+    '@odata.type': microsoft.graph.bitLockerRemovableDrivePolicy
+  defenderAdditionalGuardedFolders:
+    - String
+  defenderAttackSurfaceReductionExcludedPaths:
+    - String
+  defenderExploitProtectionXml: AA==
+  defenderExploitProtectionXmlFileName: String
+  defenderGuardedFoldersAllowedAppPaths:
+    - String
+  defenderSecurityCenterBlockExploitProtectionOverride: 'true'
+  firewallBlockStatefulFTP: 'true'
+  firewallCertificateRevocationListCheckMethod:
+    '@odata.type': microsoft.graph.firewallCertificateRevocationListCheckMethodType
+  firewallIdleTimeoutForSecurityAssociationInSeconds: '0'
+  firewallIPSecExemptionsAllowDHCP: 'true'
+  firewallIPSecExemptionsAllowICMP: 'true'
+  firewallIPSecExemptionsAllowNeighborDiscovery: 'true'
+  firewallIPSecExemptionsAllowRouterDiscovery: 'true'
+  firewallMergeKeyingModuleSettings: 'true'
+  firewallPacketQueueingMethod:
+    '@odata.type': microsoft.graph.firewallPacketQueueingMethodType
+  firewallPreSharedKeyEncodingMethod:
+    '@odata.type': microsoft.graph.firewallPreSharedKeyEncodingMethodType
+  firewallProfileDomain:
+    '@odata.type': microsoft.graph.windowsFirewallNetworkProfile
+  firewallProfilePrivate:
+    '@odata.type': microsoft.graph.windowsFirewallNetworkProfile
+  firewallProfilePublic:
+    '@odata.type': microsoft.graph.windowsFirewallNetworkProfile
+  smartScreenBlockOverrideForFiles: 'true'
+  smartScreenEnableInShell: 'true'

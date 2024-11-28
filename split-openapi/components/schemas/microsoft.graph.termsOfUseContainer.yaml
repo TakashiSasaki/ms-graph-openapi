@@ -1,0 +1,26 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: termsOfUseContainer
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      agreementAcceptances:
+        type: array
+        items:
+          $ref: .\microsoft.graph.agreementAcceptance.yaml
+        description: >-
+          Represents the current status of a user's response to a company's
+          customizable terms of use agreement.
+        x-ms-navigationProperty: true
+      agreements:
+        type: array
+        items:
+          $ref: .\microsoft.graph.agreement.yaml
+        description: >-
+          Represents a tenant's customizable terms of use agreement that's
+          created and managed with Microsoft Entra ID Governance.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.termsOfUseContainer'

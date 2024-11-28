@@ -1,0 +1,15 @@
+title: personType
+required:
+  - '@odata.type'
+type: object
+properties:
+  class:
+    type: string
+    description: The type of data source, such as Person.
+    nullable: true
+  subclass:
+    type: string
+    description: The secondary type of data source, such as OrganizationUser.
+    nullable: true
+  '@odata.type':
+    type: string

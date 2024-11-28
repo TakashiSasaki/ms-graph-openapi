@@ -1,0 +1,5 @@
+value:
+  content: String
+  contentType: String
+  replies:
+    - '@odata.type': microsoft.graph.workbookCommentReply

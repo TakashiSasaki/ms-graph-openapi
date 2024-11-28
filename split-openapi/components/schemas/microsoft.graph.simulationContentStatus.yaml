@@ -1,0 +1,9 @@
+title: simulationContentStatus
+enum:
+  - unknown
+  - draft
+  - ready
+  - archive
+  - delete
+  - unknownFutureValue
+type: string

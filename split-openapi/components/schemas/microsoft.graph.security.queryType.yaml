@@ -1,0 +1,6 @@
+title: queryType
+enum:
+  - files
+  - messages
+  - unknownFutureValue
+type: string

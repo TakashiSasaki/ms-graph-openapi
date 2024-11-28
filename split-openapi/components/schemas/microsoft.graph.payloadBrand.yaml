@@ -1,0 +1,24 @@
+title: payloadBrand
+enum:
+  - unknown
+  - other
+  - americanExpress
+  - capitalOne
+  - dhl
+  - docuSign
+  - dropbox
+  - facebook
+  - firstAmerican
+  - microsoft
+  - netflix
+  - scotiabank
+  - sendGrid
+  - stewartTitle
+  - tesco
+  - wellsFargo
+  - syrinxCloud
+  - adobe
+  - teams
+  - zoom
+  - unknownFutureValue
+type: string

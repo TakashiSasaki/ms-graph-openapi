@@ -1,0 +1,167 @@
+title: deviceHealthAttestationState
+required:
+  - '@odata.type'
+type: object
+properties:
+  attestationIdentityKey:
+    type: string
+    description: >-
+      TWhen an Attestation Identity Key (AIK) is present on a device, it
+      indicates that the device has an endorsement key (EK) certificate.
+    nullable: true
+  bitLockerStatus:
+    type: string
+    description: On or Off of BitLocker Drive Encryption
+    nullable: true
+  bootAppSecurityVersion:
+    type: string
+    description: The security version number of the Boot Application
+    nullable: true
+  bootDebugging:
+    type: string
+    description: >-
+      When bootDebugging is enabled, the device is used in development and
+      testing
+    nullable: true
+  bootManagerSecurityVersion:
+    type: string
+    description: The security version number of the Boot Application
+    nullable: true
+  bootManagerVersion:
+    type: string
+    description: The version of the Boot Manager
+    nullable: true
+  bootRevisionListInfo:
+    type: string
+    description: >-
+      The Boot Revision List that was loaded during initial boot on the attested
+      device
+    nullable: true
+  codeIntegrity:
+    type: string
+    description: >-
+      When code integrity is enabled, code execution is restricted to integrity
+      verified code
+    nullable: true
+  codeIntegrityCheckVersion:
+    type: string
+    description: The version of the Boot Manager
+    nullable: true
+  codeIntegrityPolicy:
+    type: string
+    description: >-
+      The Code Integrity policy that is controlling the security of the boot
+      environment
+    nullable: true
+  contentNamespaceUrl:
+    type: string
+    description: The DHA report version. (Namespace version)
+    nullable: true
+  contentVersion:
+    type: string
+    description: The HealthAttestation state schema version
+    nullable: true
+  dataExcutionPolicy:
+    type: string
+    description: >-
+      DEP Policy defines a set of hardware and software technologies that
+      perform additional checks on memory
+    nullable: true
+  deviceHealthAttestationStatus:
+    type: string
+    description: The DHA report version. (Namespace version)
+    nullable: true
+  earlyLaunchAntiMalwareDriverProtection:
+    type: string
+    description: >-
+      ELAM provides protection for the computers in your network when they start
+      up
+    nullable: true
+  healthAttestationSupportedStatus:
+    type: string
+    description: This attribute indicates if DHA is supported for the device
+    nullable: true
+  healthStatusMismatchInfo:
+    type: string
+    description: This attribute appears if DHA-Service detects an integrity issue
+    nullable: true
+  issuedDateTime:
+    pattern: >-
+      ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+    type: string
+    description: The DateTime when device was evaluated or issued to MDM
+    format: date-time
+  lastUpdateDateTime:
+    type: string
+    description: The Timestamp of the last update.
+    nullable: true
+  operatingSystemKernelDebugging:
+    type: string
+    description: >-
+      When operatingSystemKernelDebugging is enabled, the device is used in
+      development and testing
+    nullable: true
+  operatingSystemRevListInfo:
+    type: string
+    description: >-
+      The Operating System Revision List that was loaded during initial boot on
+      the attested device
+    nullable: true
+  pcr0:
+    type: string
+    description: The measurement that is captured in PCR[0]
+    nullable: true
+  pcrHashAlgorithm:
+    type: string
+    description: >-
+      Informational attribute that identifies the HASH algorithm that was used
+      by TPM
+    nullable: true
+  resetCount:
+    type: number
+    description: The number of times a PC device has hibernated or resumed
+    format: int64
+  restartCount:
+    type: number
+    description: The number of times a PC device has rebooted
+    format: int64
+  safeMode:
+    type: string
+    description: >-
+      Safe mode is a troubleshooting option for Windows that starts your
+      computer in a limited state
+    nullable: true
+  secureBoot:
+    type: string
+    description: >-
+      When Secure Boot is enabled, the core components must have the correct
+      cryptographic signatures
+    nullable: true
+  secureBootConfigurationPolicyFingerPrint:
+    type: string
+    description: Fingerprint of the Custom Secure Boot Configuration Policy
+    nullable: true
+  testSigning:
+    type: string
+    description: >-
+      When test signing is allowed, the device does not enforce signature
+      validation during boot
+    nullable: true
+  tpmVersion:
+    type: string
+    description: The security version number of the Boot Application
+    nullable: true
+  virtualSecureMode:
+    type: string
+    description: >-
+      VSM is a container that protects high value assets from a compromised
+      kernel
+    nullable: true
+  windowsPE:
+    type: string
+    description: >-
+      Operating system running with limited services that is used to prepare a
+      computer for Windows
+    nullable: true
+  '@odata.type':
+    type: string

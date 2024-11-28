@@ -1,0 +1,27 @@
+value:
+  aggregationFilters:
+    - String
+  aggregations:
+    - '@odata.type': microsoft.graph.aggregationOption
+  collapseProperties:
+    - '@odata.type': microsoft.graph.collapseProperty
+  contentSources:
+    - String
+  enableTopResults: 'true'
+  entityTypes:
+    - '@odata.type': microsoft.graph.entityType
+  fields:
+    - String
+  from: '0'
+  query:
+    '@odata.type': microsoft.graph.searchQuery
+  queryAlterationOptions:
+    '@odata.type': microsoft.graph.searchAlterationOptions
+  region: String
+  resultTemplateOptions:
+    '@odata.type': microsoft.graph.resultTemplateOption
+  sharePointOneDriveOptions:
+    '@odata.type': microsoft.graph.sharePointOneDriveOptions
+  size: '0'
+  sortProperties:
+    - '@odata.type': microsoft.graph.sortProperty

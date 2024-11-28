@@ -1,0 +1,38 @@
+title: ratingAustraliaMoviesType
+enum:
+  - allAllowed
+  - allBlocked
+  - general
+  - parentalGuidance
+  - mature
+  - agesAbove15
+  - agesAbove18
+type: string
+description: Movies rating labels in Australia
+x-ms-enum:
+  name: ratingAustraliaMoviesType
+  modelAsString: false
+  values:
+    - value: allAllowed
+      description: Default value, allow all movies content
+      name: allAllowed
+    - value: allBlocked
+      description: Do not allow any movies content
+      name: allBlocked
+    - value: general
+      description: The G classification is suitable for everyone
+      name: general
+    - value: parentalGuidance
+      description: >-
+        The PG recommends viewers under 15 with guidance from parents or
+        guardians
+      name: parentalGuidance
+    - value: mature
+      description: The M classification is not recommended for viewers under 15
+      name: mature
+    - value: agesAbove15
+      description: The MA15+ classification is not suitable for viewers under 15
+      name: agesAbove15
+    - value: agesAbove18
+      description: The R18+ classification is not suitable for viewers under 18
+      name: agesAbove18

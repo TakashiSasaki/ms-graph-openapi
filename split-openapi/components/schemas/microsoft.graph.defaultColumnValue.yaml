@@ -1,0 +1,15 @@
+title: defaultColumnValue
+required:
+  - '@odata.type'
+type: object
+properties:
+  formula:
+    type: string
+    description: The formula used to compute the default value for the column.
+    nullable: true
+  value:
+    type: string
+    description: The direct value to use as the default value for the column.
+    nullable: true
+  '@odata.type':
+    type: string

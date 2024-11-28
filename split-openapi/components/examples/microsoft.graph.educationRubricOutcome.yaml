@@ -1,0 +1,9 @@
+value:
+  publishedRubricQualityFeedback:
+    - '@odata.type': microsoft.graph.rubricQualityFeedbackModel
+  publishedRubricQualitySelectedLevels:
+    - '@odata.type': microsoft.graph.rubricQualitySelectedColumnModel
+  rubricQualityFeedback:
+    - '@odata.type': microsoft.graph.rubricQualityFeedbackModel
+  rubricQualitySelectedLevels:
+    - '@odata.type': microsoft.graph.rubricQualitySelectedColumnModel

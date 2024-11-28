@@ -1,0 +1,29 @@
+title: authenticationMethodFeatureConfiguration
+required:
+  - '@odata.type'
+type: object
+properties:
+  excludeTarget:
+    anyOf:
+      - $ref: .\microsoft.graph.featureTarget.yaml
+      - type: object
+        nullable: true
+    description: A single entity that is excluded from this feature.
+  includeTarget:
+    anyOf:
+      - $ref: .\microsoft.graph.featureTarget.yaml
+      - type: object
+        nullable: true
+    description: A single entity that is included in this feature.
+  state:
+    anyOf:
+      - $ref: .\microsoft.graph.advancedConfigState.yaml
+      - type: object
+        nullable: true
+    description: >-
+      Enable or disable the feature. Possible values are: default, enabled,
+      disabled, unknownFutureValue. The default value is used when the
+      configuration hasn't been explicitly set and uses the default behavior of
+      Microsoft Entra ID for the setting. The default value is disabled.
+  '@odata.type':
+    type: string

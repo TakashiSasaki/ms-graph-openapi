@@ -1,0 +1,50 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: searchAnswer
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      description:
+        type: string
+        description: >-
+          The search answer description that is shown on the search results
+          page.
+        nullable: true
+      displayName:
+        type: string
+        description: The search answer name that is displayed in search results.
+      lastModifiedBy:
+        anyOf:
+          - $ref: .\microsoft.graph.search.identitySet.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Details of the user who created or last modified the search answer.
+          Read-only.
+      lastModifiedDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: >-
+          Date and time when the search answer was created or last edited. The
+          timestamp type represents date and time information using ISO 8601
+          format and is always in UTC. For example, midnight UTC on Jan 1, 2014
+          is 2014-01-01T00:00:00Z. Read-only.
+        format: date-time
+        nullable: true
+      webUrl:
+        type: string
+        description: >-
+          The URL link for the search answer. When users select this search
+          answer from the search results, they are directed to the specified
+          URL.
+        nullable: true
+      '@odata.type':
+        type: string
+    discriminator:
+      propertyName: '@odata.type'
+      mapping:
+        '#microsoft.graph.search.acronym': .\microsoft.graph.search.acronym.yaml
+        '#microsoft.graph.search.bookmark': .\microsoft.graph.search.bookmark.yaml
+        '#microsoft.graph.search.qna': .\microsoft.graph.search.qna.yaml

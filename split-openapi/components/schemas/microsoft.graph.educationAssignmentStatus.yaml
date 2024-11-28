@@ -1,0 +1,8 @@
+title: educationAssignmentStatus
+enum:
+  - draft
+  - published
+  - assigned
+  - unknownFutureValue
+  - inactive
+type: string

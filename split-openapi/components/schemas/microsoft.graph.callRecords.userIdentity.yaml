@@ -1,0 +1,14 @@
+allOf:
+  - $ref: .\microsoft.graph.identity.yaml
+  - title: userIdentity
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      userPrincipalName:
+        type: string
+        nullable: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.callRecords.userIdentity'
+x-ms-discriminator-value: '#microsoft.graph.callRecords.userIdentity'

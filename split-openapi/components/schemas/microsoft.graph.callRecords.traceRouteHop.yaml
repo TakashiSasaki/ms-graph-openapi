@@ -1,0 +1,28 @@
+title: traceRouteHop
+required:
+  - '@odata.type'
+type: object
+properties:
+  hopCount:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    description: The network path count of this hop that was used to compute the RTT.
+    format: int32
+    nullable: true
+  ipAddress:
+    type: string
+    description: IP address used for this hop in the network trace.
+    nullable: true
+  roundTripTime:
+    pattern: ^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$
+    type: string
+    description: >-
+      The time from when the trace route packet was sent from the client to this
+      hop and back to the client, denoted in ISO 8601 format. For example, 1
+      second is denoted as PT1S, where P is the duration designator, T is the
+      time designator, and S is the second designator.
+    format: duration
+    nullable: true
+  '@odata.type':
+    type: string

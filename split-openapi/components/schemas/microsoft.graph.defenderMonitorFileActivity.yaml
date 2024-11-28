@@ -1,0 +1,28 @@
+title: defenderMonitorFileActivity
+enum:
+  - userDefined
+  - disable
+  - monitorAllFiles
+  - monitorIncomingFilesOnly
+  - monitorOutgoingFilesOnly
+type: string
+description: Possible values for monitoring file activity.
+x-ms-enum:
+  name: defenderMonitorFileActivity
+  modelAsString: false
+  values:
+    - value: userDefined
+      description: User Defined, default value, no intent.
+      name: userDefined
+    - value: disable
+      description: Disable monitoring file activity.
+      name: disable
+    - value: monitorAllFiles
+      description: Monitor all files.
+      name: monitorAllFiles
+    - value: monitorIncomingFilesOnly
+      description: ' Monitor incoming files only.'
+      name: monitorIncomingFilesOnly
+    - value: monitorOutgoingFilesOnly
+      description: Monitor outgoing files only.
+      name: monitorOutgoingFilesOnly

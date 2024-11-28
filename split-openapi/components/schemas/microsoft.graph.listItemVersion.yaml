@@ -1,0 +1,23 @@
+allOf:
+  - $ref: .\microsoft.graph.baseItemVersion.yaml
+  - title: listItemVersion
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      fields:
+        anyOf:
+          - $ref: .\microsoft.graph.fieldValueSet.yaml
+          - type: object
+            nullable: true
+        description: >-
+          A collection of the fields and values for this version of the list
+          item.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.listItemVersion'
+    discriminator:
+      propertyName: '@odata.type'
+      mapping:
+        '#microsoft.graph.documentSetVersion': .\microsoft.graph.documentSetVersion.yaml

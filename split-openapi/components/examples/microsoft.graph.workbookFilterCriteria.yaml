@@ -1,0 +1,10 @@
+value:
+  color: String
+  criterion1: String
+  criterion2: String
+  dynamicCriteria: String
+  filterOn: String
+  icon:
+    '@odata.type': microsoft.graph.workbookIcon
+  operator: String
+  values: {}

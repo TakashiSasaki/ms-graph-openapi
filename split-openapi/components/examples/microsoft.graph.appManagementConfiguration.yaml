@@ -1,0 +1,5 @@
+value:
+  keyCredentials:
+    - '@odata.type': microsoft.graph.keyCredentialConfiguration
+  passwordCredentials:
+    - '@odata.type': microsoft.graph.passwordCredentialConfiguration

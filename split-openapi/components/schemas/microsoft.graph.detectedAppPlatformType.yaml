@@ -1,0 +1,70 @@
+title: detectedAppPlatformType
+enum:
+  - unknown
+  - windows
+  - windowsMobile
+  - windowsHolographic
+  - ios
+  - macOS
+  - chromeOS
+  - androidOSP
+  - androidDeviceAdministrator
+  - androidWorkProfile
+  - androidDedicatedAndFullyManaged
+  - unknownFutureValue
+type: string
+description: >-
+  Indicates the operating system / platform of the discovered application.  Some
+  possible values are Windows, iOS, macOS. The default value is unknown (0).
+x-ms-enum:
+  name: detectedAppPlatformType
+  modelAsString: false
+  values:
+    - value: unknown
+      description: Default. Set to unknown when platform cannot be determined.
+      name: unknown
+    - value: windows
+      description: Indicates that the platform of the detected application is Windows.
+      name: windows
+    - value: windowsMobile
+      description: >-
+        Indicates that the platform of the detected application is Windows
+        Mobile.
+      name: windowsMobile
+    - value: windowsHolographic
+      description: >-
+        Indicates that the platform of the detected application is Windows
+        Holographic.
+      name: windowsHolographic
+    - value: ios
+      description: Indicates that the platform of the detected application is iOS.
+      name: ios
+    - value: macOS
+      description: Indicates that the platform of the detected application is macOS.
+      name: macOS
+    - value: chromeOS
+      description: Indicates that the platform of the detected application is ChromeOS.
+      name: chromeOS
+    - value: androidOSP
+      description: >-
+        Indicates that the platform of the detected application is Android open
+        source project.
+      name: androidOSP
+    - value: androidDeviceAdministrator
+      description: >-
+        Indicates that the platform of the detected application is Android
+        device administrator.
+      name: androidDeviceAdministrator
+    - value: androidWorkProfile
+      description: >-
+        Indicates that the platform of the detected application is Android work
+        profile.
+      name: androidWorkProfile
+    - value: androidDedicatedAndFullyManaged
+      description: >-
+        Indicates that the platform of the detected application is Android
+        dedicated and fully managed.
+      name: androidDedicatedAndFullyManaged
+    - value: unknownFutureValue
+      description: Evolvable enumeration sentinel value. Do not use.
+      name: unknownFutureValue

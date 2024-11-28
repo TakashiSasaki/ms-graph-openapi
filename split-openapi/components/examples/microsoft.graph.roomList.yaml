@@ -1,0 +1,4 @@
+value:
+  emailAddress: String
+  rooms:
+    - '@odata.type': microsoft.graph.room

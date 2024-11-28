@@ -1,0 +1,5 @@
+value:
+  description: String
+  displayName: String
+  selfServiceSignUp:
+    '@odata.type': microsoft.graph.selfServiceSignUpAuthenticationFlowConfiguration

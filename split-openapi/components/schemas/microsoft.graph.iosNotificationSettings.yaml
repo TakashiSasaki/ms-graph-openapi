@@ -1,0 +1,41 @@
+title: iosNotificationSettings
+required:
+  - '@odata.type'
+type: object
+properties:
+  alertType:
+    $ref: .\microsoft.graph.iosNotificationAlertType.yaml
+  appName:
+    type: string
+    description: Application name to be associated with the bundleID.
+    nullable: true
+  badgesEnabled:
+    type: boolean
+    description: Indicates whether badges are allowed for this app.
+    nullable: true
+  bundleID:
+    type: string
+    description: Bundle id of app to which to apply these notification settings.
+  enabled:
+    type: boolean
+    description: Indicates whether notifications are allowed for this app.
+    nullable: true
+  publisher:
+    type: string
+    description: Publisher to be associated with the bundleID.
+    nullable: true
+  showInNotificationCenter:
+    type: boolean
+    description: Indicates whether notifications can be shown in notification center.
+    nullable: true
+  showOnLockScreen:
+    type: boolean
+    description: Indicates whether notifications can be shown on the lock screen.
+    nullable: true
+  soundsEnabled:
+    type: boolean
+    description: Indicates whether sounds are allowed for this app.
+    nullable: true
+  '@odata.type':
+    type: string
+description: An item describing notification setting.

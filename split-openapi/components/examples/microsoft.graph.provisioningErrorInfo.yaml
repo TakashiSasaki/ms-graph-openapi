@@ -1,0 +1,7 @@
+value:
+  additionalDetails: String
+  errorCategory:
+    '@odata.type': microsoft.graph.provisioningStatusErrorCategory
+  errorCode: String
+  reason: String
+  recommendedAction: String

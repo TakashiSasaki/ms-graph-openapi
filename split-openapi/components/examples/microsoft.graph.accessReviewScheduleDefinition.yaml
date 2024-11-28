@@ -1,0 +1,25 @@
+value:
+  additionalNotificationRecipients:
+    - '@odata.type': microsoft.graph.accessReviewNotificationRecipientItem
+  createdBy:
+    '@odata.type': microsoft.graph.userIdentity
+  createdDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  descriptionForAdmins: String
+  descriptionForReviewers: String
+  displayName: String
+  fallbackReviewers:
+    - '@odata.type': microsoft.graph.accessReviewReviewerScope
+  instanceEnumerationScope:
+    '@odata.type': microsoft.graph.accessReviewScope
+  instances:
+    - '@odata.type': microsoft.graph.accessReviewInstance
+  lastModifiedDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  reviewers:
+    - '@odata.type': microsoft.graph.accessReviewReviewerScope
+  scope:
+    '@odata.type': microsoft.graph.accessReviewScope
+  settings:
+    '@odata.type': microsoft.graph.accessReviewScheduleSettings
+  stageSettings:
+    - '@odata.type': microsoft.graph.accessReviewStageSettings
+  status: String

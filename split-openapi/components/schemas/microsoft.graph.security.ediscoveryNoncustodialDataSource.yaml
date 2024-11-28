@@ -1,0 +1,29 @@
+allOf:
+  - $ref: .\microsoft.graph.security.dataSourceContainer.yaml
+  - title: ediscoveryNoncustodialDataSource
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      dataSource:
+        anyOf:
+          - $ref: .\microsoft.graph.security.dataSource.yaml
+          - type: object
+            nullable: true
+        description: >-
+          User source or SharePoint site data source as noncustodial data
+          source.
+        x-ms-navigationProperty: true
+      lastIndexOperation:
+        anyOf:
+          - $ref: .\microsoft.graph.security.ediscoveryIndexOperation.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Operation entity that represents the latest indexing for the
+          noncustodial data source.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.security.ediscoveryNoncustodialDataSource'
+x-ms-discriminator-value: '#microsoft.graph.security.ediscoveryNoncustodialDataSource'

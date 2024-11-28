@@ -1,0 +1,10 @@
+title: Collection of microsoft.graph.userTrainingEventInfo
+type: object
+allOf:
+  - $ref: .\BaseCollectionPaginationCountResponse.yaml
+  - type: object
+    properties:
+      value:
+        type: array
+        items:
+          $ref: .\microsoft.graph.userTrainingEventInfo.yaml

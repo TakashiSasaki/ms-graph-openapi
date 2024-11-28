@@ -1,0 +1,35 @@
+title: win32LobAppRestartSettings
+required:
+  - '@odata.type'
+type: object
+properties:
+  countdownDisplayBeforeRestartInMinutes:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    description: >-
+      The number of minutes before the restart time to display the countdown
+      dialog for pending restarts.
+    format: int32
+  gracePeriodInMinutes:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    description: >-
+      The number of minutes to wait before restarting the device after an app
+      installation.
+    format: int32
+  restartNotificationSnoozeDurationInMinutes:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    description: >-
+      The number of minutes to snooze the restart notification dialog when the
+      snooze button is selected.
+    format: int32
+    nullable: true
+  '@odata.type':
+    type: string
+description: >-
+  Contains properties describing restart coordination following an app
+  installation.

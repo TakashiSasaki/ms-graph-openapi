@@ -1,0 +1,34 @@
+allOf:
+  - $ref: .\microsoft.graph.security.tag.yaml
+  - title: ediscoveryReviewTag
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      childSelectability:
+        anyOf:
+          - $ref: .\microsoft.graph.security.childSelectability.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Indicates whether a single or multiple child tags can be associated
+          with a document. Possible values are: One, Many.  This value controls
+          whether the UX presents the tags as checkboxes or a radio button
+          group.
+      childTags:
+        type: array
+        items:
+          $ref: .\microsoft.graph.security.ediscoveryReviewTag.yaml
+        description: Returns the tags that are a child of a tag.
+        x-ms-navigationProperty: true
+      parent:
+        anyOf:
+          - $ref: .\microsoft.graph.security.ediscoveryReviewTag.yaml
+          - type: object
+            nullable: true
+        description: Returns the parent tag of the specified tag.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.security.ediscoveryReviewTag'
+x-ms-discriminator-value: '#microsoft.graph.security.ediscoveryReviewTag'

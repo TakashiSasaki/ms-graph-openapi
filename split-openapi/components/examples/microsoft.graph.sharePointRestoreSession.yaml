@@ -1,0 +1,3 @@
+value:
+  siteRestoreArtifacts:
+    - '@odata.type': microsoft.graph.siteRestoreArtifact

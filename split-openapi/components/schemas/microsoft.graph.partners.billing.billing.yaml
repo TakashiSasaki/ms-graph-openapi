@@ -1,0 +1,26 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: billing
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      manifests:
+        type: array
+        items:
+          $ref: .\microsoft.graph.partners.billing.manifest.yaml
+        description: Represents metadata for the exported data.
+        x-ms-navigationProperty: true
+      operations:
+        type: array
+        items:
+          $ref: .\microsoft.graph.partners.billing.operation.yaml
+        description: Represents an operation to export the billing data of a partner.
+        x-ms-navigationProperty: true
+      reconciliation:
+        $ref: .\microsoft.graph.partners.billing.billingReconciliation.yaml
+      usage:
+        $ref: .\microsoft.graph.partners.billing.azureUsage.yaml
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.partners.billing.billing'

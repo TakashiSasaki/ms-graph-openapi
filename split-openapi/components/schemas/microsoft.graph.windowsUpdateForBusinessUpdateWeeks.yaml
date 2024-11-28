@@ -1,0 +1,38 @@
+title: windowsUpdateForBusinessUpdateWeeks
+enum:
+  - userDefined
+  - firstWeek
+  - secondWeek
+  - thirdWeek
+  - fourthWeek
+  - everyWeek
+  - unknownFutureValue
+type: string
+description: Scheduled the update installation on the weeks of the month
+x-ms-enum-flags:
+  isFlags: true
+x-ms-enum:
+  name: windowsUpdateForBusinessUpdateWeeks
+  modelAsString: false
+  values:
+    - value: userDefined
+      description: Allow the user to set.
+      name: userDefined
+    - value: firstWeek
+      description: Scheduled the update installation on the first week of the month
+      name: firstWeek
+    - value: secondWeek
+      description: Scheduled the update installation on the second week of the month
+      name: secondWeek
+    - value: thirdWeek
+      description: Scheduled the update installation on the third week of the month
+      name: thirdWeek
+    - value: fourthWeek
+      description: Scheduled the update installation on the fourth week of the month
+      name: fourthWeek
+    - value: everyWeek
+      description: Scheduled the update installation on every week of the month
+      name: everyWeek
+    - value: unknownFutureValue
+      description: Evolvable enum member
+      name: unknownFutureValue

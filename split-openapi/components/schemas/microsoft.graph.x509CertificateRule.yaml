@@ -1,0 +1,39 @@
+title: x509CertificateRule
+required:
+  - '@odata.type'
+type: object
+properties:
+  identifier:
+    type: string
+    description: The identifier of the X.509 certificate. Required.
+    nullable: true
+  issuerSubjectIdentifier:
+    type: string
+    nullable: true
+  policyOidIdentifier:
+    type: string
+    nullable: true
+  x509CertificateAuthenticationMode:
+    anyOf:
+      - $ref: .\microsoft.graph.x509CertificateAuthenticationMode.yaml
+      - type: object
+        nullable: true
+    description: >-
+      The type of strong authentication mode. The possible values are:
+      x509CertificateSingleFactor, x509CertificateMultiFactor,
+      unknownFutureValue. Required.
+  x509CertificateRequiredAffinityLevel:
+    anyOf:
+      - $ref: .\microsoft.graph.x509CertificateAffinityLevel.yaml
+      - type: object
+        nullable: true
+  x509CertificateRuleType:
+    anyOf:
+      - $ref: .\microsoft.graph.x509CertificateRuleType.yaml
+      - type: object
+        nullable: true
+    description: >-
+      The type of the X.509 certificate mode configuration rule. The possible
+      values are: issuerSubject, policyOID, unknownFutureValue. Required.
+  '@odata.type':
+    type: string

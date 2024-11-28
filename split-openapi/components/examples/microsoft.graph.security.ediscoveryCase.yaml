@@ -1,0 +1,19 @@
+value:
+  closedBy:
+    '@odata.type': microsoft.graph.identitySet
+  closedDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  custodians:
+    - '@odata.type': microsoft.graph.security.ediscoveryCustodian
+  externalId: String
+  noncustodialDataSources:
+    - '@odata.type': microsoft.graph.security.ediscoveryNoncustodialDataSource
+  operations:
+    - '@odata.type': microsoft.graph.security.caseOperation
+  reviewSets:
+    - '@odata.type': microsoft.graph.security.ediscoveryReviewSet
+  searches:
+    - '@odata.type': microsoft.graph.security.ediscoverySearch
+  settings:
+    '@odata.type': microsoft.graph.security.ediscoveryCaseSettings
+  tags:
+    - '@odata.type': microsoft.graph.security.ediscoveryReviewTag

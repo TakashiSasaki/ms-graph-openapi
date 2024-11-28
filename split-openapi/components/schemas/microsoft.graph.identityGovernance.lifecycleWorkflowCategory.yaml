@@ -1,0 +1,7 @@
+title: lifecycleWorkflowCategory
+enum:
+  - joiner
+  - leaver
+  - unknownFutureValue
+  - mover
+type: string

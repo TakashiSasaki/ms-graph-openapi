@@ -1,0 +1,8 @@
+value:
+  endDateTime:
+    '@odata.type': microsoft.graph.dateTimeTimeZone
+  serviceId: String
+  startDateTime:
+    '@odata.type': microsoft.graph.dateTimeTimeZone
+  status:
+    '@odata.type': microsoft.graph.bookingsAvailabilityStatus

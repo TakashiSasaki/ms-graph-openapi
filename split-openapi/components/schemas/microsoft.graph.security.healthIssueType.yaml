@@ -1,0 +1,6 @@
+title: healthIssueType
+enum:
+  - sensor
+  - global
+  - unknownFutureValue
+type: string

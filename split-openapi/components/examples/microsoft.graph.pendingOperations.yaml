@@ -1,0 +1,3 @@
+value:
+  pendingContentUpdate:
+    '@odata.type': microsoft.graph.pendingContentUpdate

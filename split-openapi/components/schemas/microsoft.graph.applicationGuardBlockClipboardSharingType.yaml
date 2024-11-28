@@ -1,0 +1,32 @@
+title: applicationGuardBlockClipboardSharingType
+enum:
+  - notConfigured
+  - blockBoth
+  - blockHostToContainer
+  - blockContainerToHost
+  - blockNone
+type: string
+description: Possible values for applicationGuardBlockClipboardSharingType
+x-ms-enum:
+  name: applicationGuardBlockClipboardSharingType
+  modelAsString: false
+  values:
+    - value: notConfigured
+      description: Not Configured
+      name: notConfigured
+    - value: blockBoth
+      description: >-
+        Block clipboard to share data both from Host to Container and from
+        Container to Host
+      name: blockBoth
+    - value: blockHostToContainer
+      description: Block clipboard to share data from Host to Container
+      name: blockHostToContainer
+    - value: blockContainerToHost
+      description: Block clipboard to share data from Container to Host
+      name: blockContainerToHost
+    - value: blockNone
+      description: >-
+        Block clipboard to share data neither from Host to Container nor from
+        Container to Host
+      name: blockNone

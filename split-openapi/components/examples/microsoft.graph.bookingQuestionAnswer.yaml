@@ -1,0 +1,11 @@
+value:
+  answer: String
+  answerInputType:
+    '@odata.type': microsoft.graph.answerInputType
+  answerOptions:
+    - String
+  isRequired: 'true'
+  question: String
+  questionId: String
+  selectedOptions:
+    - String

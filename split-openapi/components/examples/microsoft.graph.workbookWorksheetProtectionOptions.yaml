@@ -1,0 +1,12 @@
+value:
+  allowAutoFilter: 'true'
+  allowDeleteColumns: 'true'
+  allowDeleteRows: 'true'
+  allowFormatCells: 'true'
+  allowFormatColumns: 'true'
+  allowFormatRows: 'true'
+  allowInsertColumns: 'true'
+  allowInsertHyperlinks: 'true'
+  allowInsertRows: 'true'
+  allowPivotTables: 'true'
+  allowSort: 'true'

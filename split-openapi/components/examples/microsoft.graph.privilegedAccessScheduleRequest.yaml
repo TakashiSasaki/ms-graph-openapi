@@ -1,0 +1,9 @@
+value:
+  action:
+    '@odata.type': microsoft.graph.scheduleRequestActions
+  isValidationOnly: 'true'
+  justification: String
+  scheduleInfo:
+    '@odata.type': microsoft.graph.requestSchedule
+  ticketInfo:
+    '@odata.type': microsoft.graph.ticketInfo

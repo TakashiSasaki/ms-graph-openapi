@@ -1,0 +1,12 @@
+value:
+  azureADJoin:
+    '@odata.type': microsoft.graph.azureADJoinPolicy
+  azureADRegistration:
+    '@odata.type': microsoft.graph.azureADRegistrationPolicy
+  description: String
+  displayName: String
+  localAdminPassword:
+    '@odata.type': microsoft.graph.localAdminPasswordSettings
+  multiFactorAuthConfiguration:
+    '@odata.type': microsoft.graph.multiFactorAuthConfiguration
+  userDeviceQuota: '0'

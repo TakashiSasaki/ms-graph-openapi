@@ -1,0 +1,6 @@
+title: threatAssessmentRequestSource
+enum:
+  - undefined
+  - user
+  - administrator
+type: string

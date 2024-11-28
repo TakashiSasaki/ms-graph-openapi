@@ -1,0 +1,11 @@
+allOf:
+  - $ref: .\microsoft.graph.accessPackageResourceAttributeDestination.yaml
+  - title: accessPackageUserDirectoryAttributeStore
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.accessPackageUserDirectoryAttributeStore'
+x-ms-discriminator-value: '#microsoft.graph.accessPackageUserDirectoryAttributeStore'

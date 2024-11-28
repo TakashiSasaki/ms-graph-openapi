@@ -1,0 +1,12 @@
+value:
+  blackAndWhitePageCount: '0'
+  colorPageCount: '0'
+  completedBlackAndWhiteJobCount: '0'
+  completedColorJobCount: '0'
+  completedJobCount: '0'
+  doubleSidedSheetCount: '0'
+  incompleteJobCount: '0'
+  mediaSheetCount: '0'
+  pageCount: '0'
+  singleSidedSheetCount: '0'
+  usageDate: '0001-01-01'

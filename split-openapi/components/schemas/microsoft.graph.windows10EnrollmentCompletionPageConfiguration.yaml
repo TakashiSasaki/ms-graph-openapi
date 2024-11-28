@@ -1,0 +1,19 @@
+allOf:
+  - $ref: .\microsoft.graph.deviceEnrollmentConfiguration.yaml
+  - title: windows10EnrollmentCompletionPageConfiguration
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      allowNonBlockingAppInstallation:
+        type: boolean
+        description: >-
+          When TRUE, ESP (Enrollment Status Page) installs all required apps
+          targeted during technician phase and ignores any failures for
+          non-blocking apps. When FALSE, ESP fails on any error during app
+          install. The default is false.
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.windows10EnrollmentCompletionPageConfiguration'
+    description: Windows 10 Enrollment Status Page Configuration
+x-ms-discriminator-value: '#microsoft.graph.windows10EnrollmentCompletionPageConfiguration'

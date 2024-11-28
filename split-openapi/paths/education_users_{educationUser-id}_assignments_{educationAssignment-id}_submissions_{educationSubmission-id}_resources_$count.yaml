@@ -1,0 +1,38 @@
+description: Provides operations to count the resources in the collection.
+get:
+  tags:
+    - education.educationUser
+  summary: Get the number of the resource
+  operationId: education.users.assignments.submissions.resources.GetCount-cb98
+  parameters:
+    - $ref: ..\components\parameters\search.yaml
+    - $ref: ..\components\parameters\filter.yaml
+  responses:
+    2XX:
+      $ref: ..\components\responses\ODataCountResponse.yaml
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+parameters:
+  - name: educationUser-id
+    in: path
+    description: The unique identifier of educationUser
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: educationUser
+  - name: educationAssignment-id
+    in: path
+    description: The unique identifier of educationAssignment
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: educationAssignment
+  - name: educationSubmission-id
+    in: path
+    description: The unique identifier of educationSubmission
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: educationSubmission

@@ -1,0 +1,18 @@
+value:
+  access:
+    '@odata.type': microsoft.graph.itemActionStat
+  activities:
+    - '@odata.type': microsoft.graph.itemActivity
+  create:
+    '@odata.type': microsoft.graph.itemActionStat
+  delete:
+    '@odata.type': microsoft.graph.itemActionStat
+  edit:
+    '@odata.type': microsoft.graph.itemActionStat
+  endDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  incompleteData:
+    '@odata.type': microsoft.graph.incompleteData
+  isTrending: 'true'
+  move:
+    '@odata.type': microsoft.graph.itemActionStat
+  startDateTime: '0001-01-01T00:00:00.0000000+00:00'

@@ -1,0 +1,23 @@
+value:
+  averageBlueScreens: '0'
+  averageRestarts: '0'
+  blueScreenCount: '0'
+  bootScore: '0'
+  coreBootTimeInMs: '0'
+  coreLoginTimeInMs: '0'
+  deviceCount: '0'
+  deviceName: String
+  diskType:
+    '@odata.type': microsoft.graph.diskType
+  groupPolicyBootTimeInMs: '0'
+  groupPolicyLoginTimeInMs: '0'
+  healthStatus:
+    '@odata.type': microsoft.graph.userExperienceAnalyticsHealthState
+  loginScore: '0'
+  manufacturer: String
+  model: String
+  modelStartupPerformanceScore: '0'
+  operatingSystemVersion: String
+  responsiveDesktopTimeInMs: '0'
+  restartCount: '0'
+  startupPerformanceScore: '0'

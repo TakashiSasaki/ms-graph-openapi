@@ -1,0 +1,6 @@
+title: synchronizationTaskExecutionResult
+enum:
+  - Succeeded
+  - Failed
+  - EntryLevelErrors
+type: string

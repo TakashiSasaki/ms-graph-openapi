@@ -1,0 +1,124 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: onlineMeetingBase
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      allowAttendeeToEnableCamera:
+        type: boolean
+        description: Indicates whether attendees can turn on their camera.
+        nullable: true
+      allowAttendeeToEnableMic:
+        type: boolean
+        description: Indicates whether attendees can turn on their microphone.
+        nullable: true
+      allowedPresenters:
+        anyOf:
+          - $ref: .\microsoft.graph.onlineMeetingPresenters.yaml
+          - type: object
+            nullable: true
+        description: Specifies who can be a presenter in a meeting.
+      allowMeetingChat:
+        anyOf:
+          - $ref: .\microsoft.graph.meetingChatMode.yaml
+          - type: object
+            nullable: true
+        description: Specifies the mode of the meeting chat.
+      allowParticipantsToChangeName:
+        type: boolean
+        description: >-
+          Specifies if participants are allowed to rename themselves in an
+          instance of the meeting.
+        nullable: true
+      allowTeamworkReactions:
+        type: boolean
+        description: Indicates if Teams reactions are enabled for the meeting.
+        nullable: true
+      audioConferencing:
+        anyOf:
+          - $ref: .\microsoft.graph.audioConferencing.yaml
+          - type: object
+            nullable: true
+        description: >-
+          The phone access (dial-in) information for an online meeting.
+          Read-only.
+      chatInfo:
+        anyOf:
+          - $ref: .\microsoft.graph.chatInfo.yaml
+          - type: object
+            nullable: true
+        description: The chat information associated with this online meeting.
+      isEntryExitAnnounced:
+        type: boolean
+        description: Indicates whether to announce when callers join or leave.
+        nullable: true
+      joinInformation:
+        anyOf:
+          - $ref: .\microsoft.graph.itemBody.yaml
+          - type: object
+            nullable: true
+        description: >-
+          The join information in the language and locale variant specified in
+          'Accept-Language' request HTTP header. Read-only.
+      joinMeetingIdSettings:
+        anyOf:
+          - $ref: .\microsoft.graph.joinMeetingIdSettings.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Specifies the joinMeetingId, the meeting passcode, and the requirement
+          for the passcode. Once an onlineMeeting is created, the
+          joinMeetingIdSettings can't be modified. To make any changes to this
+          property, you must cancel this meeting and create a new one.
+      joinWebUrl:
+        type: string
+        description: The join URL of the online meeting. Read-only.
+        nullable: true
+      lobbyBypassSettings:
+        anyOf:
+          - $ref: .\microsoft.graph.lobbyBypassSettings.yaml
+          - type: object
+            nullable: true
+        description: Specifies which participants can bypass the meeting lobby.
+      recordAutomatically:
+        type: boolean
+        description: Indicates whether to record the meeting automatically.
+        nullable: true
+      shareMeetingChatHistoryDefault:
+        anyOf:
+          - $ref: .\microsoft.graph.meetingChatHistoryDefaultMode.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Specifies whether meeting chat history is shared with participants. 
+          Possible values are: all, none, unknownFutureValue.
+      subject:
+        type: string
+        description: The subject of the online meeting.
+        nullable: true
+      videoTeleconferenceId:
+        type: string
+        description: The video teleconferencing ID. Read-only.
+        nullable: true
+      watermarkProtection:
+        anyOf:
+          - $ref: .\microsoft.graph.watermarkProtectionValues.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Specifies whether the client application should apply a watermark to a
+          content type.
+      attendanceReports:
+        type: array
+        items:
+          $ref: .\microsoft.graph.meetingAttendanceReport.yaml
+        description: The attendance reports of an online meeting. Read-only.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+    discriminator:
+      propertyName: '@odata.type'
+      mapping:
+        '#microsoft.graph.onlineMeeting': .\microsoft.graph.onlineMeeting.yaml
+        '#microsoft.graph.virtualEventSession': .\microsoft.graph.virtualEventSession.yaml

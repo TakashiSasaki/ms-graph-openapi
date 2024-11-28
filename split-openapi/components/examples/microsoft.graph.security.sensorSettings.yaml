@@ -1,0 +1,7 @@
+value:
+  description: String
+  domainControllerDnsNames:
+    - String
+  isDelayedDeploymentEnabled: 'true'
+  networkAdapters:
+    - '@odata.type': microsoft.graph.security.networkAdapter

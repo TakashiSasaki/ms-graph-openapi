@@ -1,0 +1,122 @@
+description: Provides operations to manage the collection of directoryRole entities.
+get:
+  tags:
+    - directoryRoles.directoryObject
+  summary: List members of a directory role
+  description: >-
+    Retrieve the list of principals that are assigned to the directory role. 
+    You can use both the object ID and template ID of the directoryRole with
+    this API. The template ID of a built-in role is immutable and can be seen in
+    the role description on the Microsoft Entra admin center. For details, see
+    Role template IDs.
+  externalDocs:
+    description: Find more info here
+    url: >-
+      https://learn.microsoft.com/graph/api/directoryrole-list-members?view=graph-rest-1.0
+  operationId: directoryRoles.ListRefMembers
+  parameters:
+    - name: ConsistencyLevel
+      in: header
+      description: >-
+        Indicates the requested consistency level. Documentation URL:
+        https://docs.microsoft.com/graph/aad-advanced-queries
+      schema:
+        type: string
+      examples:
+        example-1:
+          description: >-
+            $search and $count queries require the client to set the
+            ConsistencyLevel HTTP header to 'eventual'.
+          value: eventual
+    - $ref: ..\components\parameters\top.yaml
+    - $ref: ..\components\parameters\skip.yaml
+    - $ref: ..\components\parameters\search.yaml
+    - $ref: ..\components\parameters\filter.yaml
+    - $ref: ..\components\parameters\count.yaml
+    - name: $orderby
+      in: query
+      description: Order items by property values
+      style: form
+      explode: false
+      schema:
+        uniqueItems: true
+        type: array
+        items:
+          type: string
+  responses:
+    2XX:
+      $ref: ..\components\responses\StringCollectionResponse.yaml
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-pageable:
+    nextLinkName: '@odata.nextLink'
+    operationName: listMore
+  x-ms-docs-operation-type: operation
+post:
+  tags:
+    - directoryRoles.directoryObject
+  summary: Add directory role member
+  description: >-
+    Create a new directory role member. You can use both the object ID and
+    template ID of the directoryRole with this API. The template ID of a
+    built-in role is immutable and can be seen in the role description on the
+    Microsoft Entra admin center. For details, see Role template IDs.
+  externalDocs:
+    description: Find more info here
+    url: >-
+      https://learn.microsoft.com/graph/api/directoryrole-post-members?view=graph-rest-1.0
+  operationId: directoryRoles.CreateRefMembers
+  requestBody:
+    $ref: ..\components\requestBodies\refPostBody.yaml
+  responses:
+    '204':
+      description: Success
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: operation
+delete:
+  tags:
+    - directoryRoles.directoryObject
+  summary: Remove directory role member
+  description: >-
+    Remove a member from a directoryRole. You can use both the object ID and
+    template ID of the directoryRole with this API. The template ID of a
+    built-in role is immutable and can be seen in the role description on the
+    Microsoft Entra admin center. For details, see Role template IDs.
+  externalDocs:
+    description: Find more info here
+    url: >-
+      https://learn.microsoft.com/graph/api/directoryrole-delete-member?view=graph-rest-1.0
+  operationId: directoryRoles.DeleteRefMembers
+  parameters:
+    - name: If-Match
+      in: header
+      description: ETag
+      schema:
+        type: string
+    - name: '@id'
+      in: query
+      description: The delete Uri
+      required: true
+      schema:
+        type: string
+  responses:
+    '204':
+      description: Success
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: operation
+parameters:
+  - name: directoryRole-id
+    in: path
+    description: The unique identifier of directoryRole
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: directoryRole

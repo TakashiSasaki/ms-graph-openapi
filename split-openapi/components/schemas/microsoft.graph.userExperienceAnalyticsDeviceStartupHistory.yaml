@@ -1,0 +1,131 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: userExperienceAnalyticsDeviceStartupHistory
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      coreBootTimeInMs:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: >-
+          The device core boot time in milliseconds. Supports: $select,
+          $OrderBy. Read-only.
+        format: int32
+      coreLoginTimeInMs:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: >-
+          The device core login time in milliseconds. Supports: $select,
+          $OrderBy. Read-only.
+        format: int32
+      deviceId:
+        type: string
+        description: >-
+          The Intune device id of the device. Supports: $select, $OrderBy.
+          Read-only.
+        nullable: true
+      featureUpdateBootTimeInMs:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: >-
+          The impact of device feature updates on boot time in milliseconds.
+          Supports: $select, $OrderBy. Read-only.
+        format: int32
+      groupPolicyBootTimeInMs:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: >-
+          The impact of device group policy client on boot time in milliseconds.
+          Supports: $select, $OrderBy. Read-only.
+        format: int32
+      groupPolicyLoginTimeInMs:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: >-
+          The impact of device group policy client on login time in
+          milliseconds. Supports: $select, $OrderBy. Read-only.
+        format: int32
+      isFeatureUpdate:
+        type: boolean
+        description: >-
+          When TRUE, indicates the device boot record is associated with feature
+          updates. When FALSE, indicates the device boot record is not
+          associated with feature updates. Supports: $select, $OrderBy.
+          Read-only.
+      isFirstLogin:
+        type: boolean
+        description: >-
+          When TRUE, indicates the device login is the first login after a
+          reboot. When FALSE, indicates the device login is not the first login
+          after a reboot. Supports: $select, $OrderBy. Read-only.
+      operatingSystemVersion:
+        type: string
+        description: >-
+          The user experience analytics device boot record's operating system
+          version. Supports: $select, $OrderBy. Read-only.
+        nullable: true
+      responsiveDesktopTimeInMs:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: >-
+          The time for desktop to become responsive during login process in
+          milliseconds. Supports: $select, $OrderBy. Read-only.
+        format: int32
+      restartCategory:
+        $ref: >-
+          .\microsoft.graph.userExperienceAnalyticsOperatingSystemRestartCategory.yaml
+      restartFaultBucket:
+        type: string
+        description: >-
+          OS restart fault bucket. The fault bucket is used to find additional
+          information about a system crash. Supports: $select, $OrderBy.
+          Read-only.
+        nullable: true
+      restartStopCode:
+        type: string
+        description: >-
+          OS restart stop code. This shows the bug check code which can be used
+          to look up the blue screen reason. Supports: $select, $OrderBy.
+          Read-only.
+        nullable: true
+      startTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: >-
+          The device boot start time. The value cannot be modified and is
+          automatically populated when the device performs a reboot. The
+          Timestamp type represents date and time information using ISO 8601
+          format and is always in UTC time. For example, midnight UTC on Jan 1,
+          2022 would look like this: '2022-01-01T00:00:00Z'. Returned by
+          default. Read-only.
+        format: date-time
+      totalBootTimeInMs:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: >-
+          The device total boot time in milliseconds. Supports: $select,
+          $OrderBy. Read-only.
+        format: int32
+      totalLoginTimeInMs:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: >-
+          The device total login time in milliseconds. Supports: $select,
+          $OrderBy. Read-only.
+        format: int32
+      '@odata.type':
+        type: string
+    description: >-
+      The user experience analytics device startup history entity contains
+      device boot performance history details.
+x-ms-discriminator-value: '#microsoft.graph.userExperienceAnalyticsDeviceStartupHistory'

@@ -1,0 +1,15 @@
+allOf:
+  - $ref: .\microsoft.graph.mobileAppIdentifier.yaml
+  - title: androidMobileAppIdentifier
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      packageId:
+        type: string
+        description: The identifier for an app, as specified in the play store.
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.androidMobileAppIdentifier'
+    description: The identifier for an Android app.
+x-ms-discriminator-value: '#microsoft.graph.androidMobileAppIdentifier'

@@ -1,0 +1,11 @@
+allOf:
+  - $ref: .\microsoft.graph.attachment.yaml
+  - title: referenceAttachment
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.referenceAttachment'
+x-ms-discriminator-value: '#microsoft.graph.referenceAttachment'

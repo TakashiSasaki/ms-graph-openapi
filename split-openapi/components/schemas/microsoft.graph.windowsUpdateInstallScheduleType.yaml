@@ -1,0 +1,14 @@
+title: windowsUpdateInstallScheduleType
+required:
+  - '@odata.type'
+type: object
+properties:
+  '@odata.type':
+    type: string
+discriminator:
+  propertyName: '@odata.type'
+  mapping:
+    '#microsoft.graph.windowsUpdateActiveHoursInstall': .\microsoft.graph.windowsUpdateActiveHoursInstall.yaml
+    '#microsoft.graph.windowsUpdateScheduledInstall': .\microsoft.graph.windowsUpdateScheduledInstall.yaml
+    microsoft.graph.windowsUpdateActiveHoursInstall: .\microsoft.graph.windowsUpdateActiveHoursInstall.yaml
+    microsoft.graph.windowsUpdateScheduledInstall: .\microsoft.graph.windowsUpdateScheduledInstall.yaml

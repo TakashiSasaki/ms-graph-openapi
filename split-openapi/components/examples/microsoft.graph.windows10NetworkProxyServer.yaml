@@ -1,0 +1,5 @@
+value:
+  address: String
+  exceptions:
+    - String
+  useForLocalAddresses: 'true'

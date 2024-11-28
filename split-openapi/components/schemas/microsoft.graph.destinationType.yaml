@@ -1,0 +1,6 @@
+title: destinationType
+enum:
+  - new
+  - inPlace
+  - unknownFutureValue
+type: string

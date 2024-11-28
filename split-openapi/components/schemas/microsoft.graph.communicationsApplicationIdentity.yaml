@@ -1,0 +1,21 @@
+allOf:
+  - $ref: .\microsoft.graph.identity.yaml
+  - title: communicationsApplicationIdentity
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      applicationType:
+        type: string
+        description: First-party Microsoft application that presents this identity.
+        nullable: true
+      hidden:
+        type: boolean
+        description: >-
+          True if the participant shouldn't be shown in other participants'
+          rosters.
+        nullable: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.communicationsApplicationIdentity'
+x-ms-discriminator-value: '#microsoft.graph.communicationsApplicationIdentity'

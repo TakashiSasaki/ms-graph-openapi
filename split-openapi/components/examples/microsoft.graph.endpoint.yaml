@@ -1,0 +1,6 @@
+value:
+  capability: String
+  providerId: String
+  providerName: String
+  providerResourceId: String
+  uri: String

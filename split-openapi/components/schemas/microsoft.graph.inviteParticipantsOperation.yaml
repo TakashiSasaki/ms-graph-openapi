@@ -1,0 +1,15 @@
+allOf:
+  - $ref: .\microsoft.graph.commsOperation.yaml
+  - title: inviteParticipantsOperation
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      participants:
+        type: array
+        items:
+          $ref: .\microsoft.graph.invitationParticipantInfo.yaml
+        description: The participants to invite.
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.inviteParticipantsOperation'

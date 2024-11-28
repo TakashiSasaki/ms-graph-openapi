@@ -1,0 +1,5 @@
+value:
+  validationTokens:
+    - String
+  value:
+    - '@odata.type': microsoft.graph.changeNotification

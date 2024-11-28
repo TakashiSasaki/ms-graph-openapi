@@ -1,0 +1,11 @@
+allOf:
+  - $ref: .\microsoft.graph.identitySet.yaml
+  - title: chatMessageReactionIdentitySet
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.chatMessageReactionIdentitySet'
+x-ms-discriminator-value: '#microsoft.graph.chatMessageReactionIdentitySet'

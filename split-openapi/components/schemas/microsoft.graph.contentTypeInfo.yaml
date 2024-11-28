@@ -1,0 +1,15 @@
+title: contentTypeInfo
+required:
+  - '@odata.type'
+type: object
+properties:
+  id:
+    type: string
+    description: The ID of the content type.
+    nullable: true
+  name:
+    type: string
+    description: The name of the content type.
+    nullable: true
+  '@odata.type':
+    type: string

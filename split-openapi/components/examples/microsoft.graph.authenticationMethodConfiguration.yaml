@@ -1,0 +1,5 @@
+value:
+  excludeTargets:
+    - '@odata.type': microsoft.graph.excludeTarget
+  state:
+    '@odata.type': microsoft.graph.authenticationMethodState

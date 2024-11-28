@@ -1,0 +1,36 @@
+title: webApplication
+required:
+  - '@odata.type'
+type: object
+properties:
+  homePageUrl:
+    type: string
+    description: Home page or landing page of the application.
+    nullable: true
+  implicitGrantSettings:
+    anyOf:
+      - $ref: .\microsoft.graph.implicitGrantSettings.yaml
+      - type: object
+        nullable: true
+    description: >-
+      Specifies whether this web application can request tokens using the OAuth
+      2.0 implicit flow.
+  logoutUrl:
+    type: string
+    description: >-
+      Specifies the URL that is used by Microsoft's authorization service to log
+      out a user using front-channel, back-channel or SAML logout protocols.
+    nullable: true
+  redirectUris:
+    type: array
+    items:
+      type: string
+    description: >-
+      Specifies the URLs where user tokens are sent for sign-in, or the redirect
+      URIs where OAuth 2.0 authorization codes and access tokens are sent.
+  redirectUriSettings:
+    type: array
+    items:
+      $ref: .\microsoft.graph.redirectUriSettings.yaml
+  '@odata.type':
+    type: string

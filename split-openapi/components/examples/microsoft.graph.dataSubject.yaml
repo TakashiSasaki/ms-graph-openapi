@@ -1,0 +1,5 @@
+value:
+  email: String
+  firstName: String
+  lastName: String
+  residency: String

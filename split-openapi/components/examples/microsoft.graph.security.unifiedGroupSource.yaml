@@ -1,0 +1,5 @@
+value:
+  group:
+    '@odata.type': microsoft.graph.group
+  includedSources:
+    '@odata.type': microsoft.graph.security.sourceType

@@ -1,0 +1,50 @@
+description: Provides operations to call the reauthorize method.
+post:
+  tags:
+    - groups.site
+  summary: Invoke action reauthorize
+  description: >-
+    Reauthorize a subscription when you receive a reauthorizationRequired
+    challenge.
+  externalDocs:
+    description: Find more info here
+    url: >-
+      https://learn.microsoft.com/graph/api/subscription-reauthorize?view=graph-rest-1.0
+  operationId: groups.group.sites.site.lists.list.subscriptions.subscription.reauthorize
+  responses:
+    '204':
+      description: Success
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: action
+parameters:
+  - name: group-id
+    in: path
+    description: The unique identifier of group
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: group
+  - name: site-id
+    in: path
+    description: The unique identifier of site
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: site
+  - name: list-id
+    in: path
+    description: The unique identifier of list
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: list
+  - name: subscription-id
+    in: path
+    description: The unique identifier of subscription
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: subscription

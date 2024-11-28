@@ -1,0 +1,14 @@
+title: clientPlatform
+enum:
+  - unknown
+  - windows
+  - macOS
+  - iOS
+  - android
+  - web
+  - ipPhone
+  - roomSystem
+  - surfaceHub
+  - holoLens
+  - unknownFutureValue
+type: string

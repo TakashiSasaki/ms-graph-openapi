@@ -1,0 +1,22 @@
+title: propertyRule
+required:
+  - '@odata.type'
+type: object
+properties:
+  operation:
+    $ref: .\microsoft.graph.externalConnectors.ruleOperation.yaml
+  property:
+    type: string
+    description: The property from the externalItem schema. Required.
+  values:
+    type: array
+    items:
+      type: string
+    description: >-
+      A collection with one or many strings. One or more specified strings are
+      matched with the specified property using the specified operation.
+      Required.
+  valuesJoinedBy:
+    $ref: .\microsoft.graph.binaryOperator.yaml
+  '@odata.type':
+    type: string

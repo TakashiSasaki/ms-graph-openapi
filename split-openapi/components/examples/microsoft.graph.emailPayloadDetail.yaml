@@ -1,0 +1,5 @@
+value:
+  fromEmail: String
+  fromName: String
+  isExternalSender: 'true'
+  subject: String

@@ -1,0 +1,15 @@
+title: proxiedDomain
+required:
+  - '@odata.type'
+type: object
+properties:
+  ipAddressOrFQDN:
+    type: string
+    description: The IP address or FQDN
+  proxy:
+    type: string
+    description: Proxy IP or FQDN
+    nullable: true
+  '@odata.type':
+    type: string
+description: Proxied Domain

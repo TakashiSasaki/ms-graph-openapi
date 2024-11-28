@@ -1,0 +1,10 @@
+value:
+  allowCustomAssignmentSchedule: 'true'
+  enableOnBehalfRequestorsToAddAccess: 'true'
+  enableOnBehalfRequestorsToRemoveAccess: 'true'
+  enableOnBehalfRequestorsToUpdateAccess: 'true'
+  enableTargetsToSelfAddAccess: 'true'
+  enableTargetsToSelfRemoveAccess: 'true'
+  enableTargetsToSelfUpdateAccess: 'true'
+  onBehalfRequestors:
+    - '@odata.type': microsoft.graph.subjectSet

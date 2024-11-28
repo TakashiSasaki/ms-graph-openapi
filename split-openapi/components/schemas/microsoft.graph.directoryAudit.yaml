@@ -1,0 +1,83 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: directoryAudit
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      activityDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: >-
+          Indicates the date and time the activity was performed. The Timestamp
+          type is always in UTC time. For example, midnight UTC on Jan 1, 2014
+          is 2014-01-01T00:00:00Z. Supports $filter (eq, ge, le) and $orderby.
+        format: date-time
+      activityDisplayName:
+        type: string
+        description: >-
+          Indicates the activity name or the operation name (examples: 'Create
+          User' and 'Add member to group'). For a list of activities logged,
+          refer to Microsoft Entra audit log categories and activities. Supports
+          $filter (eq, startswith).
+      additionalDetails:
+        type: array
+        items:
+          $ref: .\microsoft.graph.keyValue.yaml
+        description: Indicates additional details on the activity.
+      category:
+        type: string
+        description: >-
+          Indicates which resource category that's targeted by the activity. For
+          example: UserManagement, GroupManagement, ApplicationManagement,
+          RoleManagement. For a list of categories for activities logged, refer
+          to Microsoft Entra audit log categories and activities.
+      correlationId:
+        type: string
+        description: >-
+          Indicates a unique ID that helps correlate activities that span across
+          various services. Can be used to trace logs across services. Supports
+          $filter (eq).
+        nullable: true
+      initiatedBy:
+        $ref: .\microsoft.graph.auditActivityInitiator.yaml
+      loggedByService:
+        type: string
+        description: >-
+          Indicates information on which service initiated the activity (For
+          example: Self-service Password Management, Core Directory, B2C,
+          Invited Users, Microsoft Identity Manager, Privileged Identity
+          Management. Supports $filter (eq).
+        nullable: true
+      operationType:
+        type: string
+        description: >-
+          Indicates the type of operation that was performed. The possible
+          values include but are not limited to the following: Add, Assign,
+          Update, Unassign, and Delete.
+        nullable: true
+      result:
+        anyOf:
+          - $ref: .\microsoft.graph.operationResult.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Indicates the result of the activity. Possible values are: success,
+          failure, timeout, unknownFutureValue.
+      resultReason:
+        type: string
+        description: Indicates the reason for failure if the result is failure or timeout.
+        nullable: true
+      targetResources:
+        type: array
+        items:
+          $ref: .\microsoft.graph.targetResource.yaml
+        description: >-
+          Indicates information on which resource was changed due to the
+          activity. Target Resource Type can be User, Device, Directory, App,
+          Role, Group, Policy or Other. Supports $filter (eq) for id and
+          displayName; and $filter (startswith) for displayName.
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.directoryAudit'

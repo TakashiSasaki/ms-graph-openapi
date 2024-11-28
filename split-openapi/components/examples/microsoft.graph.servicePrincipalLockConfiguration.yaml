@@ -1,0 +1,6 @@
+value:
+  allProperties: 'true'
+  credentialsWithUsageSign: 'true'
+  credentialsWithUsageVerify: 'true'
+  isEnabled: 'true'
+  tokenEncryptionKeyId: 'true'

@@ -1,0 +1,19 @@
+title: teamsAppAuthorization
+required:
+  - '@odata.type'
+type: object
+properties:
+  clientAppId:
+    type: string
+    description: >-
+      The registration ID of the Microsoft Entra app ID associated with the
+      teamsApp.
+    nullable: true
+  requiredPermissionSet:
+    anyOf:
+      - $ref: .\microsoft.graph.teamsAppPermissionSet.yaml
+      - type: object
+        nullable: true
+    description: Set of permissions required by the teamsApp.
+  '@odata.type':
+    type: string

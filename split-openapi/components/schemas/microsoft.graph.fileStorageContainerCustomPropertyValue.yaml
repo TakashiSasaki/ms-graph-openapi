@@ -1,0 +1,16 @@
+title: fileStorageContainerCustomPropertyValue
+required:
+  - '@odata.type'
+type: object
+properties:
+  isSearchable:
+    type: boolean
+    description: >-
+      Indicates whether the custom property is searchable. Optional. The default
+      value is false.
+    nullable: true
+  value:
+    type: string
+    description: Value of the custom property. Required.
+  '@odata.type':
+    type: string

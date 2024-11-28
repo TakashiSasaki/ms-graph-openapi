@@ -1,0 +1,19 @@
+allOf:
+  - $ref: .\microsoft.graph.omaSetting.yaml
+  - title: omaSettingBase64
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      fileName:
+        type: string
+        description: File name associated with the Value property (.cer
+        nullable: true
+      value:
+        type: string
+        description: Value. (Base64 encoded string)
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.omaSettingBase64'
+    description: OMA Settings Base64 definition.
+x-ms-discriminator-value: '#microsoft.graph.omaSettingBase64'

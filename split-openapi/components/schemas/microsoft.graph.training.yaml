@@ -1,0 +1,105 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: training
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      availabilityStatus:
+        anyOf:
+          - $ref: .\microsoft.graph.trainingAvailabilityStatus.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Training availability status. Possible values are: unknown,
+          notAvailable, available, archive, delete, unknownFutureValue.
+      createdBy:
+        anyOf:
+          - $ref: .\microsoft.graph.emailIdentity.yaml
+          - type: object
+            nullable: true
+        description: Identity of the user who created the training.
+      createdDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: >-
+          Date and time when the training was created. The timestamp type
+          represents date and time information using ISO 8601 format and is
+          always in UTC. For example, midnight UTC on Jan 1, 2014 is
+          2014-01-01T00:00:00Z.
+        format: date-time
+        nullable: true
+      description:
+        type: string
+        description: The description for the training.
+        nullable: true
+      displayName:
+        type: string
+        description: The display name for the training.
+        nullable: true
+      durationInMinutes:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: Training duration.
+        format: int32
+        nullable: true
+      hasEvaluation:
+        type: boolean
+        description: Indicates whether the training has any evaluation.
+        nullable: true
+      lastModifiedBy:
+        anyOf:
+          - $ref: .\microsoft.graph.emailIdentity.yaml
+          - type: object
+            nullable: true
+        description: Identity of the user who last modified the training.
+      lastModifiedDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: >-
+          Date and time when the training was last modified. The timestamp type
+          represents date and time information using ISO 8601 format and is
+          always in UTC. For example, midnight UTC on Jan 1, 2014 is
+          2014-01-01T00:00:00Z.
+        format: date-time
+        nullable: true
+      source:
+        anyOf:
+          - $ref: .\microsoft.graph.simulationContentSource.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Training content source. Possible values are: unknown, global, tenant,
+          unknownFutureValue.
+      supportedLocales:
+        type: array
+        items:
+          type: string
+          nullable: true
+        description: Supported locales for content for the associated training.
+      tags:
+        type: array
+        items:
+          type: string
+          nullable: true
+        description: Training tags.
+      type:
+        anyOf:
+          - $ref: .\microsoft.graph.trainingType.yaml
+          - type: object
+            nullable: true
+        description: >-
+          The type of training. Possible values are: unknown, phishing,
+          unknownFutureValue.
+      languageDetails:
+        type: array
+        items:
+          $ref: .\microsoft.graph.trainingLanguageDetail.yaml
+        description: Language specific details on a training.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.training'

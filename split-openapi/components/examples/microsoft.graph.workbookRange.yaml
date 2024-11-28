@@ -1,0 +1,24 @@
+value:
+  address: String
+  addressLocal: String
+  cellCount: '0'
+  columnCount: '0'
+  columnHidden: 'true'
+  columnIndex: '0'
+  format:
+    '@odata.type': microsoft.graph.workbookRangeFormat
+  formulas: {}
+  formulasLocal: {}
+  formulasR1C1: {}
+  hidden: 'true'
+  numberFormat: {}
+  rowCount: '0'
+  rowHidden: 'true'
+  rowIndex: '0'
+  sort:
+    '@odata.type': microsoft.graph.workbookRangeSort
+  text: {}
+  values: {}
+  valueTypes: {}
+  worksheet:
+    '@odata.type': microsoft.graph.workbookWorksheet

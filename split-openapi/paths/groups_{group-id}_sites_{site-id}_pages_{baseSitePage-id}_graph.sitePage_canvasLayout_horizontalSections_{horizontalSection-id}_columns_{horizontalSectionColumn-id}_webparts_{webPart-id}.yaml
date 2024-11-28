@@ -1,0 +1,131 @@
+description: >-
+  Provides operations to manage the webparts property of the
+  microsoft.graph.horizontalSectionColumn entity.
+get:
+  tags:
+    - groups.site
+  summary: Get webparts from groups
+  description: The collection of WebParts in this column.
+  operationId: >-
+    groups.sites.pages.AsSitePage.canvasLayout.horizontalSections.columns.GetWebparts
+  parameters:
+    - name: $select
+      in: query
+      description: Select properties to be returned
+      style: form
+      explode: false
+      schema:
+        uniqueItems: true
+        type: array
+        items:
+          type: string
+    - name: $expand
+      in: query
+      description: Expand related entities
+      style: form
+      explode: false
+      schema:
+        uniqueItems: true
+        type: array
+        items:
+          type: string
+  responses:
+    2XX:
+      description: Retrieved navigation property
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\microsoft.graph.webPart.yaml
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: operation
+patch:
+  tags:
+    - groups.site
+  summary: Update the navigation property webparts in groups
+  operationId: >-
+    groups.sites.pages.AsSitePage.canvasLayout.horizontalSections.columns.UpdateWebparts
+  requestBody:
+    description: New navigation property values
+    content:
+      application/json:
+        schema:
+          $ref: ..\components\schemas\microsoft.graph.webPart.yaml
+    required: true
+  responses:
+    2XX:
+      description: Success
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\microsoft.graph.webPart.yaml
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: operation
+delete:
+  tags:
+    - groups.site
+  summary: Delete navigation property webparts for groups
+  operationId: >-
+    groups.sites.pages.AsSitePage.canvasLayout.horizontalSections.columns.DeleteWebparts
+  parameters:
+    - name: If-Match
+      in: header
+      description: ETag
+      schema:
+        type: string
+  responses:
+    '204':
+      description: Success
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: operation
+parameters:
+  - name: group-id
+    in: path
+    description: The unique identifier of group
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: group
+  - name: site-id
+    in: path
+    description: The unique identifier of site
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: site
+  - name: baseSitePage-id
+    in: path
+    description: The unique identifier of baseSitePage
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: baseSitePage
+  - name: horizontalSection-id
+    in: path
+    description: The unique identifier of horizontalSection
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: horizontalSection
+  - name: horizontalSectionColumn-id
+    in: path
+    description: The unique identifier of horizontalSectionColumn
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: horizontalSectionColumn
+  - name: webPart-id
+    in: path
+    description: The unique identifier of webPart
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: webPart

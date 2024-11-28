@@ -1,0 +1,4 @@
+value:
+  isDefault: 'true'
+  languageTag: String
+  name: String

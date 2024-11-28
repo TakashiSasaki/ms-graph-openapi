@@ -1,0 +1,22 @@
+title: simulationEvent
+required:
+  - '@odata.type'
+type: object
+properties:
+  count:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    description: >-
+      Count of the simulation event occurrence in an attack simulation and
+      training campaign.
+    format: int32
+    nullable: true
+  eventName:
+    type: string
+    description: >-
+      Name of the simulation event in an attack simulation and training
+      campaign.
+    nullable: true
+  '@odata.type':
+    type: string

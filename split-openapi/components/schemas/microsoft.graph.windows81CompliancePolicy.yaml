@@ -1,0 +1,70 @@
+allOf:
+  - $ref: .\microsoft.graph.deviceCompliancePolicy.yaml
+  - title: windows81CompliancePolicy
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      osMaximumVersion:
+        type: string
+        description: Maximum Windows 8.1 version.
+        nullable: true
+      osMinimumVersion:
+        type: string
+        description: Minimum Windows 8.1 version.
+        nullable: true
+      passwordBlockSimple:
+        type: boolean
+        description: Indicates whether or not to block simple password.
+      passwordExpirationDays:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: Password expiration in days.
+        format: int32
+        nullable: true
+      passwordMinimumCharacterSetCount:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: The number of character sets required in the password.
+        format: int32
+        nullable: true
+      passwordMinimumLength:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: The minimum password length.
+        format: int32
+        nullable: true
+      passwordMinutesOfInactivityBeforeLock:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: Minutes of inactivity before a password is required.
+        format: int32
+        nullable: true
+      passwordPreviousPasswordBlockCount:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: >-
+          The number of previous passwords to prevent re-use of. Valid values 0
+          to 24
+        format: int32
+        nullable: true
+      passwordRequired:
+        type: boolean
+        description: Require a password to unlock Windows device.
+      passwordRequiredType:
+        $ref: .\microsoft.graph.requiredPasswordType.yaml
+      storageRequireEncryption:
+        type: boolean
+        description: >-
+          Indicates whether or not to require encryption on a windows 8.1
+          device.
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.windows81CompliancePolicy'
+    description: This class contains compliance settings for Windows 8.1.
+x-ms-discriminator-value: '#microsoft.graph.windows81CompliancePolicy'

@@ -1,0 +1,6 @@
+title: subjectRightsRequestStatus
+enum:
+  - active
+  - closed
+  - unknownFutureValue
+type: string

@@ -1,0 +1,5 @@
+value:
+  displayName: String
+  endDate: '0001-01-01'
+  externalId: String
+  startDate: '0001-01-01'

@@ -1,0 +1,18 @@
+allOf:
+  - $ref: .\microsoft.graph.attachment.yaml
+  - title: itemAttachment
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      item:
+        anyOf:
+          - $ref: .\microsoft.graph.outlookItem.yaml
+          - type: object
+            nullable: true
+        description: The attached message or event. Navigation property.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.itemAttachment'
+x-ms-discriminator-value: '#microsoft.graph.itemAttachment'

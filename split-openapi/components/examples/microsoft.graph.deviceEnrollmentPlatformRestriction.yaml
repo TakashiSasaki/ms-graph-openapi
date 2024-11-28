@@ -1,0 +1,5 @@
+value:
+  osMaximumVersion: String
+  osMinimumVersion: String
+  personalDeviceEnrollmentBlocked: 'true'
+  platformBlocked: 'true'

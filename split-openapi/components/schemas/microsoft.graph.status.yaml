@@ -1,0 +1,8 @@
+title: status
+enum:
+  - active
+  - updated
+  - deleted
+  - ignored
+  - unknownFutureValue
+type: string

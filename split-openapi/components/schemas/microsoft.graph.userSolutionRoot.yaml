@@ -1,0 +1,17 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: userSolutionRoot
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      workingTimeSchedule:
+        anyOf:
+          - $ref: .\microsoft.graph.workingTimeSchedule.yaml
+          - type: object
+            nullable: true
+        description: The working time schedule entity associated with the solution.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.userSolutionRoot'

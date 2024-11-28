@@ -1,0 +1,24 @@
+title: payloadDetail
+required:
+  - '@odata.type'
+type: object
+properties:
+  coachmarks:
+    type: array
+    items:
+      $ref: .\microsoft.graph.payloadCoachmark.yaml
+  content:
+    type: string
+    description: Payload content details.
+    nullable: true
+  phishingUrl:
+    type: string
+    description: The phishing URL used to target a user.
+    nullable: true
+  '@odata.type':
+    type: string
+discriminator:
+  propertyName: '@odata.type'
+  mapping:
+    '#microsoft.graph.emailPayloadDetail': .\microsoft.graph.emailPayloadDetail.yaml
+    microsoft.graph.emailPayloadDetail: .\microsoft.graph.emailPayloadDetail.yaml

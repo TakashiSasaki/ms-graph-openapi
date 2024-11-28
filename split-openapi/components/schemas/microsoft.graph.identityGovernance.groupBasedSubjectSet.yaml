@@ -1,0 +1,16 @@
+allOf:
+  - $ref: .\microsoft.graph.subjectSet.yaml
+  - title: groupBasedSubjectSet
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      groups:
+        type: array
+        items:
+          $ref: .\microsoft.graph.group.yaml
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.identityGovernance.groupBasedSubjectSet'
+x-ms-discriminator-value: '#microsoft.graph.identityGovernance.groupBasedSubjectSet'

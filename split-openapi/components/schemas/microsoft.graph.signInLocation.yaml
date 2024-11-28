@@ -1,0 +1,34 @@
+title: signInLocation
+required:
+  - '@odata.type'
+type: object
+properties:
+  city:
+    type: string
+    description: >-
+      Provides the city where the sign-in originated and is determined using
+      latitude/longitude information from the sign-in activity.
+    nullable: true
+  countryOrRegion:
+    type: string
+    description: >-
+      Provides the country code info (two letter code) where the sign-in
+      originated.  This is calculated using latitude/longitude information from
+      the sign-in activity.
+    nullable: true
+  geoCoordinates:
+    anyOf:
+      - $ref: .\microsoft.graph.geoCoordinates.yaml
+      - type: object
+        nullable: true
+    description: >-
+      Provides the latitude, longitude and altitude where the sign-in
+      originated.
+  state:
+    type: string
+    description: >-
+      Provides the State where the sign-in originated. This is calculated using
+      latitude/longitude information from the sign-in activity.
+    nullable: true
+  '@odata.type':
+    type: string

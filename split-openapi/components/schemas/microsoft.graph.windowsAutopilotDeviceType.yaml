@@ -1,0 +1,19 @@
+title: windowsAutopilotDeviceType
+enum:
+  - windowsPc
+  - holoLens
+  - unknownFutureValue
+type: string
+x-ms-enum:
+  name: windowsAutopilotDeviceType
+  modelAsString: false
+  values:
+    - value: windowsPc
+      description: Default. Indicates that the device type  is a Windows PC.
+      name: windowsPc
+    - value: holoLens
+      description: Indicates that the device type is a HoloLens.
+      name: holoLens
+    - value: unknownFutureValue
+      description: Evolvable enumeration sentinel value. Do not use.
+      name: unknownFutureValue

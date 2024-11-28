@@ -1,0 +1,7 @@
+value:
+  allTime:
+    '@odata.type': microsoft.graph.itemActivityStat
+  itemActivityStats:
+    - '@odata.type': microsoft.graph.itemActivityStat
+  lastSevenDays:
+    '@odata.type': microsoft.graph.itemActivityStat

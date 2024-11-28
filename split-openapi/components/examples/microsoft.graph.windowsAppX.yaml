@@ -1,0 +1,10 @@
+value:
+  applicableArchitectures:
+    '@odata.type': microsoft.graph.windowsArchitecture
+  identityName: String
+  identityPublisherHash: String
+  identityResourceIdentifier: String
+  identityVersion: String
+  isBundle: 'true'
+  minimumSupportedOperatingSystem:
+    '@odata.type': microsoft.graph.windowsMinimumOperatingSystem

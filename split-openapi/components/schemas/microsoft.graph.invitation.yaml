@@ -1,0 +1,92 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: invitation
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      invitedUserDisplayName:
+        type: string
+        description: The display name of the user being invited.
+        nullable: true
+      invitedUserEmailAddress:
+        type: string
+        description: >-
+          The email address of the user being invited. Required. The following
+          special characters aren't permitted in the email address:Tilde
+          (~)Exclamation point (!)Number sign (#)Dollar sign ($)Percent
+          (%)Circumflex (^)Ampersand (&)Asterisk (*)Parentheses (( ))Plus sign
+          (+)Equal sign (=)Brackets ([ ])Braces ({ })Backslash (/)Slash mark
+          (/)Pipe (/|)Semicolon (;)Colon (:)Quotation marks (')Angle brackets (<
+          >)Question mark (?)Comma (,)However, the following exceptions apply:A
+          period (.) or a hyphen (-) is permitted anywhere in the user name,
+          except at the beginning or end of the name.An underscore (_) is
+          permitted anywhere in the user name, including at the beginning or end
+          of the name.
+      invitedUserMessageInfo:
+        anyOf:
+          - $ref: .\microsoft.graph.invitedUserMessageInfo.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Contains configuration for the message being sent to the invited user,
+          including customizing message text, language, and cc recipient list.
+      invitedUserType:
+        type: string
+        description: >-
+          The userType of the user being invited. By default, this is Guest. You
+          can invite as Member if you're a company administrator.
+        nullable: true
+      inviteRedeemUrl:
+        type: string
+        description: The URL the user can use to redeem their invitation. Read-only.
+        nullable: true
+      inviteRedirectUrl:
+        type: string
+        description: >-
+          The URL the user should be redirected to after the invitation is
+          redeemed. Required.
+      resetRedemption:
+        type: boolean
+        description: >-
+          Reset the user's redemption status and reinvite a user while retaining
+          their user identifier, group memberships, and app assignments. This
+          property allows you to enable a user to sign-in using a different
+          email address from the one in the previous invitation. When true, the
+          invitedUser/id relationship is required. For more information about
+          using this property, see Reset redemption status for a guest user.
+        nullable: true
+      sendInvitationMessage:
+        type: boolean
+        description: >-
+          Indicates whether an email should be sent to the user being invited.
+          The default is false.
+        nullable: true
+      status:
+        type: string
+        description: >-
+          The status of the invitation. Possible values are: PendingAcceptance,
+          Completed, InProgress, and Error.
+        nullable: true
+      invitedUser:
+        anyOf:
+          - $ref: .\microsoft.graph.user.yaml
+          - type: object
+            nullable: true
+        description: >-
+          The user created as part of the invitation creation. Read-only. The id
+          property is required in the request body to reset a redemption status.
+        x-ms-navigationProperty: true
+      invitedUserSponsors:
+        type: array
+        items:
+          $ref: .\microsoft.graph.directoryObject.yaml
+        description: >-
+          The users or groups who are sponsors of the invited user. Sponsors are
+          users and groups that are responsible for guest users' privileges in
+          the tenant and for keeping the guest users' information and access up
+          to date.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.invitation'

@@ -1,0 +1,4 @@
+value:
+  buildNumber: String
+  bundleId: String
+  versionNumber: String

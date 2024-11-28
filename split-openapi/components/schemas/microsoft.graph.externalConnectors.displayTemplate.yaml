@@ -1,0 +1,32 @@
+title: displayTemplate
+required:
+  - '@odata.type'
+type: object
+properties:
+  id:
+    type: string
+    description: >-
+      The text identifier for the display template; for example, contosoTickets.
+      Maximum 16 characters. Only alphanumeric characters allowed.
+  layout:
+    description: >-
+      The definition of the content's appearance, represented by an Adaptive
+      Card, which is a JSON-serialized card object model.
+  priority:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    description: >-
+      Defines the priority of a display template. A display template with
+      priority 1 is evaluated before a template with priority 4. Gaps in
+      priority values are supported. Must be positive value.
+    format: int32
+  rules:
+    type: array
+    items:
+      $ref: .\microsoft.graph.externalConnectors.propertyRule.yaml
+    description: >-
+      Specifies additional rules for selecting this display template based on
+      the item schema. Optional.
+  '@odata.type':
+    type: string

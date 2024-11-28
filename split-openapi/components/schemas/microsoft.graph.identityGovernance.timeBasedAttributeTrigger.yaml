@@ -1,0 +1,25 @@
+allOf:
+  - $ref: .\microsoft.graph.identityGovernance.workflowExecutionTrigger.yaml
+  - title: timeBasedAttributeTrigger
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      offsetInDays:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: >-
+          How many days before or after the time-based attribute specified the
+          workflow should trigger. For example, if the attribute is
+          employeeHireDate and offsetInDays is -1, then the workflow should
+          trigger one day before the employee hire date. The value can range
+          between -180 and 180 days.
+        format: int32
+      timeBasedAttribute:
+        $ref: >-
+          .\microsoft.graph.identityGovernance.workflowTriggerTimeBasedAttribute.yaml
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.identityGovernance.timeBasedAttributeTrigger'
+x-ms-discriminator-value: '#microsoft.graph.identityGovernance.timeBasedAttributeTrigger'

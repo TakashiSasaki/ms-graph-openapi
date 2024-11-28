@@ -1,0 +1,24 @@
+allOf:
+  - $ref: .\microsoft.graph.directoryObject.yaml
+  - title: endpoint
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      capability:
+        type: string
+      providerId:
+        type: string
+        nullable: true
+      providerName:
+        type: string
+        nullable: true
+      providerResourceId:
+        type: string
+        nullable: true
+      uri:
+        type: string
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.endpoint'
+x-ms-discriminator-value: '#microsoft.graph.endpoint'

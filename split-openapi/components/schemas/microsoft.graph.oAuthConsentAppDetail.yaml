@@ -1,0 +1,24 @@
+title: oAuthConsentAppDetail
+required:
+  - '@odata.type'
+type: object
+properties:
+  appScope:
+    anyOf:
+      - $ref: .\microsoft.graph.oAuthAppScope.yaml
+      - type: object
+        nullable: true
+    description: >-
+      App scope. Possible values are: unknown, readCalendar, readContact,
+      readMail, readAllChat, readAllFile, readAndWriteMail, sendMail,
+      unknownFutureValue.
+  displayLogo:
+    type: string
+    description: App display logo.
+    nullable: true
+  displayName:
+    type: string
+    description: App name.
+    nullable: true
+  '@odata.type':
+    type: string

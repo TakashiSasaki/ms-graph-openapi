@@ -1,0 +1,4 @@
+value:
+  isEnabled: 'true'
+  signOutAfterInSeconds: '0'
+  warnAfterInSeconds: '0'

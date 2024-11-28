@@ -1,0 +1,5 @@
+title: settingSourceType
+enum:
+  - deviceConfiguration
+  - deviceIntent
+type: string

@@ -1,0 +1,9 @@
+title: accessReviewHistoryDecisionFilter
+enum:
+  - approve
+  - deny
+  - notReviewed
+  - dontKnow
+  - notNotified
+  - unknownFutureValue
+type: string

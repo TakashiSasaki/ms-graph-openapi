@@ -1,0 +1,18 @@
+title: userAttributeValuesItem
+required:
+  - '@odata.type'
+type: object
+properties:
+  isDefault:
+    type: boolean
+    description: Determines whether the value is set as the default.
+  name:
+    type: string
+    description: The display name of the property displayed to the user in the user flow.
+    nullable: true
+  value:
+    type: string
+    description: The value that is set when this item is selected.
+    nullable: true
+  '@odata.type':
+    type: string

@@ -1,0 +1,80 @@
+description: Provides operations to manage the collection of agreement entities.
+get:
+  tags:
+    - agreements.agreement
+  summary: Get entity from agreements by key
+  operationId: agreements.agreement.GetAgreement
+  parameters:
+    - name: $select
+      in: query
+      description: Select properties to be returned
+      style: form
+      explode: false
+      schema:
+        uniqueItems: true
+        type: array
+        items:
+          type: string
+  responses:
+    2XX:
+      description: Retrieved entity
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\microsoft.graph.agreement.yaml
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: operation
+patch:
+  tags:
+    - agreements.agreement
+  summary: Update entity in agreements
+  operationId: agreements.agreement.UpdateAgreement
+  requestBody:
+    description: New property values
+    content:
+      application/json:
+        schema:
+          $ref: ..\components\schemas\microsoft.graph.agreement.yaml
+    required: true
+  responses:
+    2XX:
+      description: Success
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\microsoft.graph.agreement.yaml
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: operation
+delete:
+  tags:
+    - agreements.agreement
+  summary: Delete entity from agreements
+  operationId: agreements.agreement.DeleteAgreement
+  parameters:
+    - name: If-Match
+      in: header
+      description: ETag
+      schema:
+        type: string
+  responses:
+    '204':
+      description: Success
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: operation
+parameters:
+  - name: agreement-id
+    in: path
+    description: The unique identifier of agreement
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: agreement

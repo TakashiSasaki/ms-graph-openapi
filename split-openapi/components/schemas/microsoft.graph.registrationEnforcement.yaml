@@ -1,0 +1,13 @@
+title: registrationEnforcement
+required:
+  - '@odata.type'
+type: object
+properties:
+  authenticationMethodsRegistrationCampaign:
+    anyOf:
+      - $ref: .\microsoft.graph.authenticationMethodsRegistrationCampaign.yaml
+      - type: object
+        nullable: true
+    description: Run campaigns to remind users to set up targeted authentication methods.
+  '@odata.type':
+    type: string

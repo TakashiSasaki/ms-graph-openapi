@@ -1,0 +1,38 @@
+description: Provides operations to count the resources in the collection.
+get:
+  tags:
+    - groups.site
+  summary: Get the number of the resource
+  operationId: groups.sites.contentTypes.baseTypes.GetCount-968b
+  parameters:
+    - $ref: ..\components\parameters\search.yaml
+    - $ref: ..\components\parameters\filter.yaml
+  responses:
+    2XX:
+      $ref: ..\components\responses\ODataCountResponse.yaml
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+parameters:
+  - name: group-id
+    in: path
+    description: The unique identifier of group
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: group
+  - name: site-id
+    in: path
+    description: The unique identifier of site
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: site
+  - name: contentType-id
+    in: path
+    description: The unique identifier of contentType
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: contentType

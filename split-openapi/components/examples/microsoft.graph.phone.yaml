@@ -1,0 +1,6 @@
+value:
+  language: String
+  number: String
+  region: String
+  type:
+    '@odata.type': microsoft.graph.phoneType

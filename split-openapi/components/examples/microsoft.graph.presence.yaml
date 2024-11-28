@@ -1,0 +1,5 @@
+value:
+  activity: String
+  availability: String
+  statusMessage:
+    '@odata.type': microsoft.graph.presenceStatusMessage

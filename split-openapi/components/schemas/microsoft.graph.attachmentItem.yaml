@@ -1,0 +1,43 @@
+title: attachmentItem
+required:
+  - '@odata.type'
+type: object
+properties:
+  attachmentType:
+    anyOf:
+      - $ref: .\microsoft.graph.attachmentType.yaml
+      - type: object
+        nullable: true
+    description: >-
+      The type of attachment. Possible values are: file, item, reference.
+      Required.
+  contentId:
+    type: string
+    description: >-
+      The CID or Content-Id of the attachment for referencing for the in-line
+      attachments using the <img src='cid:contentId'> tag in HTML messages.
+      Optional.
+    nullable: true
+  contentType:
+    type: string
+    description: The nature of the data in the attachment. Optional.
+    nullable: true
+  isInline:
+    type: boolean
+    description: >-
+      true if the attachment is an inline attachment; otherwise, false.
+      Optional.
+    nullable: true
+  name:
+    type: string
+    description: >-
+      The display name of the attachment. This can be a descriptive string and
+      doesn't have to be the actual file name. Required.
+    nullable: true
+  size:
+    type: number
+    description: The length of the attachment in bytes. Required.
+    format: int64
+    nullable: true
+  '@odata.type':
+    type: string

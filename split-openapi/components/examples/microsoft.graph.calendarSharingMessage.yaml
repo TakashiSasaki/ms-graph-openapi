@@ -1,0 +1,7 @@
+value:
+  canAccept: 'true'
+  sharingMessageAction:
+    '@odata.type': microsoft.graph.calendarSharingMessageAction
+  sharingMessageActions:
+    - '@odata.type': microsoft.graph.calendarSharingMessageAction
+  suggestedCalendarName: String

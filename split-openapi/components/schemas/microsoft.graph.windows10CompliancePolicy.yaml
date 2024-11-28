@@ -1,0 +1,102 @@
+allOf:
+  - $ref: .\microsoft.graph.deviceCompliancePolicy.yaml
+  - title: windows10CompliancePolicy
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      bitLockerEnabled:
+        type: boolean
+        description: >-
+          Require devices to be reported healthy by Windows Device Health
+          Attestation - bit locker is enabled
+      codeIntegrityEnabled:
+        type: boolean
+        description: >-
+          Require devices to be reported as healthy by Windows Device Health
+          Attestation.
+      earlyLaunchAntiMalwareDriverEnabled:
+        type: boolean
+        description: >-
+          Require devices to be reported as healthy by Windows Device Health
+          Attestation - early launch antimalware driver is enabled.
+      mobileOsMaximumVersion:
+        type: string
+        description: Maximum Windows Phone version.
+        nullable: true
+      mobileOsMinimumVersion:
+        type: string
+        description: Minimum Windows Phone version.
+        nullable: true
+      osMaximumVersion:
+        type: string
+        description: Maximum Windows 10 version.
+        nullable: true
+      osMinimumVersion:
+        type: string
+        description: Minimum Windows 10 version.
+        nullable: true
+      passwordBlockSimple:
+        type: boolean
+        description: Indicates whether or not to block simple password.
+      passwordExpirationDays:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: The password expiration in days.
+        format: int32
+        nullable: true
+      passwordMinimumCharacterSetCount:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: The number of character sets required in the password.
+        format: int32
+        nullable: true
+      passwordMinimumLength:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: The minimum password length.
+        format: int32
+        nullable: true
+      passwordMinutesOfInactivityBeforeLock:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: Minutes of inactivity before a password is required.
+        format: int32
+        nullable: true
+      passwordPreviousPasswordBlockCount:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: The number of previous passwords to prevent re-use of.
+        format: int32
+        nullable: true
+      passwordRequired:
+        type: boolean
+        description: Require a password to unlock Windows device.
+      passwordRequiredToUnlockFromIdle:
+        type: boolean
+        description: Require a password to unlock an idle device.
+      passwordRequiredType:
+        $ref: .\microsoft.graph.requiredPasswordType.yaml
+      requireHealthyDeviceReport:
+        type: boolean
+        description: >-
+          Require devices to be reported as healthy by Windows Device Health
+          Attestation.
+      secureBootEnabled:
+        type: boolean
+        description: >-
+          Require devices to be reported as healthy by Windows Device Health
+          Attestation - secure boot is enabled.
+      storageRequireEncryption:
+        type: boolean
+        description: Require encryption on windows devices.
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.windows10CompliancePolicy'
+    description: This class contains compliance settings for Windows 10.
+x-ms-discriminator-value: '#microsoft.graph.windows10CompliancePolicy'

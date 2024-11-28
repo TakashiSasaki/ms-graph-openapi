@@ -1,0 +1,11 @@
+value:
+  displayName: String
+  endDate: '0001-01-01'
+  expirationDate: '0001-01-01'
+  offerName: String
+  publisherName: String
+  sizeInGB: '0'
+  skuName: String
+  startDate: '0001-01-01'
+  status:
+    '@odata.type': microsoft.graph.cloudPcGalleryImageStatus

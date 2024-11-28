@@ -1,0 +1,6 @@
+title: changeType
+enum:
+  - created
+  - updated
+  - deleted
+type: string

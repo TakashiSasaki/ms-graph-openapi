@@ -1,0 +1,16 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: sharepoint
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      settings:
+        anyOf:
+          - $ref: .\microsoft.graph.sharepointSettings.yaml
+          - type: object
+            nullable: true
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.sharepoint'

@@ -1,0 +1,17 @@
+allOf:
+  - $ref: .\microsoft.graph.shiftItem.yaml
+  - title: openShiftItem
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      openSlotCount:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: Count of the number of slots for the given open shift.
+        format: int32
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.openShiftItem'
+x-ms-discriminator-value: '#microsoft.graph.openShiftItem'

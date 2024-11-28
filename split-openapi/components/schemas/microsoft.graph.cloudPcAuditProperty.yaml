@@ -1,0 +1,17 @@
+title: cloudPcAuditProperty
+required:
+  - '@odata.type'
+type: object
+properties:
+  displayName:
+    type: string
+    description: The display name for this property.
+  newValue:
+    type: string
+    description: The new value for this property.
+  oldValue:
+    type: string
+    description: The old value for this property.
+    nullable: true
+  '@odata.type':
+    type: string

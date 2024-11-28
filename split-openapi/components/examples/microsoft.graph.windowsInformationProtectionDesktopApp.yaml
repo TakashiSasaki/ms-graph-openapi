@@ -1,0 +1,4 @@
+value:
+  binaryName: String
+  binaryVersionHigh: String
+  binaryVersionLow: String

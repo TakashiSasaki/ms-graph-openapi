@@ -1,0 +1,11 @@
+title: mediaContentRatingIreland
+required:
+  - '@odata.type'
+type: object
+properties:
+  movieRating:
+    $ref: .\microsoft.graph.ratingIrelandMoviesType.yaml
+  tvRating:
+    $ref: .\microsoft.graph.ratingIrelandTelevisionType.yaml
+  '@odata.type':
+    type: string

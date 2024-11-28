@@ -1,0 +1,63 @@
+allOf:
+  - $ref: .\microsoft.graph.authenticationMethod.yaml
+  - title: temporaryAccessPassAuthenticationMethod
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      createdDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: The date and time when the Temporary Access Pass was created.
+        format: date-time
+        nullable: true
+      isUsable:
+        type: boolean
+        description: >-
+          The state of the authentication method that indicates whether it's
+          currently usable by the user.
+        nullable: true
+      isUsableOnce:
+        type: boolean
+        description: >-
+          Determines whether the pass is limited to a one-time use. If true, the
+          pass can be used once; if false, the pass can be used multiple times
+          within the Temporary Access Pass lifetime.
+        nullable: true
+      lifetimeInMinutes:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: >-
+          The lifetime of the Temporary Access Pass in minutes starting at
+          startDateTime. Must be between 10 and 43200 inclusive (equivalent to
+          30 days).
+        format: int32
+        nullable: true
+      methodUsabilityReason:
+        type: string
+        description: >-
+          Details about the usability state (isUsable). Reasons can include:
+          EnabledByPolicy, DisabledByPolicy, Expired, NotYetValid, OneTimeUsed.
+        nullable: true
+      startDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: >-
+          The date and time when the Temporary Access Pass becomes available to
+          use and when isUsable is true is enforced.
+        format: date-time
+        nullable: true
+      temporaryAccessPass:
+        type: string
+        description: >-
+          The Temporary Access Pass used to authenticate. Returned only on
+          creation of a new temporaryAccessPassAuthenticationMethod object;
+          Hidden in subsequent read operations and returned as null with GET.
+        nullable: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.temporaryAccessPassAuthenticationMethod'
+x-ms-discriminator-value: '#microsoft.graph.temporaryAccessPassAuthenticationMethod'

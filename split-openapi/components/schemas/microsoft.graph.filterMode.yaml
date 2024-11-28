@@ -1,0 +1,5 @@
+title: filterMode
+enum:
+  - include
+  - exclude
+type: string

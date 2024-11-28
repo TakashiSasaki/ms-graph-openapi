@@ -1,0 +1,9 @@
+title: trainingAvailabilityStatus
+enum:
+  - unknown
+  - notAvailable
+  - available
+  - archive
+  - delete
+  - unknownFutureValue
+type: string

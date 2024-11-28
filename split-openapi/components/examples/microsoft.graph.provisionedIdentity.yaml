@@ -1,0 +1,4 @@
+value:
+  details:
+    '@odata.type': microsoft.graph.detailsInfo
+  identityType: String

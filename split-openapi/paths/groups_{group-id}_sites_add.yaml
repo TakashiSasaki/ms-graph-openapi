@@ -1,0 +1,59 @@
+description: Provides operations to call the add method.
+post:
+  tags:
+    - groups.site
+  summary: Invoke action add
+  description: Follow a user's site or multiple sites.
+  externalDocs:
+    description: Find more info here
+    url: https://learn.microsoft.com/graph/api/site-follow?view=graph-rest-1.0
+  operationId: groups.group.sites.add
+  requestBody:
+    description: Action parameters
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            value:
+              type: array
+              items:
+                $ref: ..\components\schemas\microsoft.graph.site.yaml
+    required: true
+  responses:
+    2XX:
+      description: Success
+      content:
+        application/json:
+          schema:
+            title: Collection of site
+            type: object
+            allOf:
+              - $ref: >-
+                  ..\components\schemas\BaseCollectionPaginationCountResponse.yaml
+              - type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: ..\components\schemas\microsoft.graph.site.yaml
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: action
+  x-ms-pageable:
+    nextLinkName: '@odata.nextLink'
+    operationName: listMore
+parameters:
+  - name: group-id
+    in: path
+    description: The unique identifier of group
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: group
+x-ms-docs-grouped-path:
+  - /groups/{group-id}/team/channels/{channel-id}/members/add
+  - /groups/{group-id}/team/members/add
+  - /groups/{group-id}/team/primaryChannel/members/add

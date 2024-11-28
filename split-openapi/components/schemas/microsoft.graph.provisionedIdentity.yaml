@@ -1,0 +1,23 @@
+allOf:
+  - $ref: .\microsoft.graph.identity.yaml
+  - title: provisionedIdentity
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      details:
+        anyOf:
+          - $ref: .\microsoft.graph.detailsInfo.yaml
+          - type: object
+            nullable: true
+        description: Details of the identity.
+      identityType:
+        type: string
+        description: >-
+          Type of identity that has been provisioned, such as 'user' or 'group'.
+          Supports $filter (eq, contains).
+        nullable: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.provisionedIdentity'
+x-ms-discriminator-value: '#microsoft.graph.provisionedIdentity'

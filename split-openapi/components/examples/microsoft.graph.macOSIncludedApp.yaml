@@ -1,0 +1,3 @@
+value:
+  bundleId: String
+  bundleVersion: String

@@ -1,0 +1,33 @@
+description: Provides operations to call the runHealthChecks method.
+post:
+  tags:
+    - deviceManagement.virtualEndpoint
+  summary: Invoke action runHealthChecks
+  description: >-
+    Run health checks on the cloudPcOnPremisesConnection object. It triggers a
+    new health check for the cloudPcOnPremisesConnection
+    (../resources/cloudpconpremisesconnection.md) object and changes the
+    healthCheckStatus and [healthCheckStatusDetail properties when check
+    finished.
+  externalDocs:
+    description: Find more info here
+    url: >-
+      https://learn.microsoft.com/graph/api/cloudpconpremisesconnection-runhealthcheck?view=graph-rest-1.0
+  operationId: >-
+    deviceManagement.virtualEndpoint.onPremisesConnections.cloudPcOnPremisesConnection.runHealthChecks
+  responses:
+    '204':
+      description: Success
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: action
+parameters:
+  - name: cloudPcOnPremisesConnection-id
+    in: path
+    description: The unique identifier of cloudPcOnPremisesConnection
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: cloudPcOnPremisesConnection

@@ -1,0 +1,4 @@
+value:
+  sequenceId: '0'
+  tone:
+    '@odata.type': microsoft.graph.tone

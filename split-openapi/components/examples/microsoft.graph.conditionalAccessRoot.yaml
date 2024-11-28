@@ -1,0 +1,11 @@
+value:
+  authenticationContextClassReferences:
+    - '@odata.type': microsoft.graph.authenticationContextClassReference
+  authenticationStrength:
+    '@odata.type': microsoft.graph.authenticationStrengthRoot
+  namedLocations:
+    - '@odata.type': microsoft.graph.namedLocation
+  policies:
+    - '@odata.type': microsoft.graph.conditionalAccessPolicy
+  templates:
+    - '@odata.type': microsoft.graph.conditionalAccessTemplate

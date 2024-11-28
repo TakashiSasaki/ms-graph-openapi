@@ -1,0 +1,41 @@
+title: userExperienceAnalyticsSummarizedBy
+enum:
+  - none
+  - model
+  - allRegressions
+  - modelRegression
+  - manufacturerRegression
+  - operatingSystemVersionRegression
+  - unknownFutureValue
+type: string
+description: >-
+  Indicates type of summarization. Possible values are: None, Model,
+  AllRegressions, ModelRegression, ManufacturerRegression,
+  OperatingSystemVersionRegression.
+x-ms-enum:
+  name: userExperienceAnalyticsSummarizedBy
+  modelAsString: false
+  values:
+    - value: none
+      description: Indicates that the summarization is none.
+      name: none
+    - value: model
+      description: Indicates that the summarization is by model.
+      name: model
+    - value: allRegressions
+      description: Indicates that the summarization is by all regressions.
+      name: allRegressions
+    - value: modelRegression
+      description: Indicates that the summarization is by model regression.
+      name: modelRegression
+    - value: manufacturerRegression
+      description: Indicates that the summarization is by manufacturer regression.
+      name: manufacturerRegression
+    - value: operatingSystemVersionRegression
+      description: >-
+        Indicates that the summarization is by operating system version
+        regression.
+      name: operatingSystemVersionRegression
+    - value: unknownFutureValue
+      description: Evolvable enumeration sentinel value. Do not use.
+      name: unknownFutureValue

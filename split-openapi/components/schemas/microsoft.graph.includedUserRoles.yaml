@@ -1,0 +1,8 @@
+title: includedUserRoles
+enum:
+  - all
+  - privilegedAdmin
+  - admin
+  - user
+  - unknownFutureValue
+type: string

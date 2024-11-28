@@ -1,0 +1,15 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: pronounsSettings
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      isEnabledInOrganization:
+        type: boolean
+        description: >-
+          true to enable pronouns in the organization; otherwise, false. The
+          default value is false, and pronouns are disabled.
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.pronounsSettings'

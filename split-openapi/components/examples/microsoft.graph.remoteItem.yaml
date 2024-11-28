@@ -1,0 +1,32 @@
+value:
+  createdBy:
+    '@odata.type': microsoft.graph.identitySet
+  createdDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  file:
+    '@odata.type': microsoft.graph.file
+  fileSystemInfo:
+    '@odata.type': microsoft.graph.fileSystemInfo
+  folder:
+    '@odata.type': microsoft.graph.folder
+  id: String
+  image:
+    '@odata.type': microsoft.graph.image
+  lastModifiedBy:
+    '@odata.type': microsoft.graph.identitySet
+  lastModifiedDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  name: String
+  package:
+    '@odata.type': microsoft.graph.package
+  parentReference:
+    '@odata.type': microsoft.graph.itemReference
+  shared:
+    '@odata.type': microsoft.graph.shared
+  sharepointIds:
+    '@odata.type': microsoft.graph.sharepointIds
+  size: '0'
+  specialFolder:
+    '@odata.type': microsoft.graph.specialFolder
+  video:
+    '@odata.type': microsoft.graph.video
+  webDavUrl: String
+  webUrl: String

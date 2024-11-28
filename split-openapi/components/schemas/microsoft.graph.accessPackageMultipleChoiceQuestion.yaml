@@ -1,0 +1,22 @@
+allOf:
+  - $ref: .\microsoft.graph.accessPackageQuestion.yaml
+  - title: accessPackageMultipleChoiceQuestion
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      choices:
+        type: array
+        items:
+          $ref: .\microsoft.graph.accessPackageAnswerChoice.yaml
+        description: List of answer choices.
+      isMultipleSelectionAllowed:
+        type: boolean
+        description: >-
+          Indicates whether requestor can select multiple choices as their
+          answer.
+        nullable: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.accessPackageMultipleChoiceQuestion'
+x-ms-discriminator-value: '#microsoft.graph.accessPackageMultipleChoiceQuestion'

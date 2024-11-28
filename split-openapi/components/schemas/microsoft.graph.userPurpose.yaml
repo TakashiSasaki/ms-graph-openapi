@@ -1,0 +1,10 @@
+title: userPurpose
+enum:
+  - user
+  - linked
+  - shared
+  - room
+  - equipment
+  - others
+  - unknownFutureValue
+type: string

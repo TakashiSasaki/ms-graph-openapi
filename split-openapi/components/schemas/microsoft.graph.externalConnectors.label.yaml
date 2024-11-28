@@ -1,0 +1,14 @@
+title: label
+enum:
+  - title
+  - url
+  - createdBy
+  - lastModifiedBy
+  - authors
+  - createdDateTime
+  - lastModifiedDateTime
+  - fileName
+  - fileExtension
+  - unknownFutureValue
+  - iconUrl
+type: string

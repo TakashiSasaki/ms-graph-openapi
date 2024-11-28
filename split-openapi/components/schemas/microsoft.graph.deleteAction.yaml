@@ -1,0 +1,15 @@
+title: deleteAction
+required:
+  - '@odata.type'
+type: object
+properties:
+  name:
+    type: string
+    description: The name of the item that was deleted.
+    nullable: true
+  objectType:
+    type: string
+    description: File or Folder, depending on the type of the deleted item.
+    nullable: true
+  '@odata.type':
+    type: string

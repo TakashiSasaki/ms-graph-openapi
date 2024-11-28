@@ -1,0 +1,43 @@
+allOf:
+  - $ref: .\microsoft.graph.security.alertEvidence.yaml
+  - title: googleCloudResourceEvidence
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      fullResourceName:
+        type: string
+        nullable: true
+      location:
+        type: string
+        description: The zone or region where the resource is located.
+        nullable: true
+      locationType:
+        anyOf:
+          - $ref: .\microsoft.graph.security.googleCloudLocationType.yaml
+          - type: object
+            nullable: true
+        description: >-
+          The type of location. Possible values are: unknown, regional, zonal,
+          global, unknownFutureValue.
+      projectId:
+        type: string
+        description: The Google project ID as defined by the user.
+        nullable: true
+      projectNumber:
+        type: number
+        description: The project number assigned by Google.
+        format: int64
+        nullable: true
+      resourceName:
+        type: string
+        description: The name of the resource.
+        nullable: true
+      resourceType:
+        type: string
+        description: The type of the resource.
+        nullable: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.security.googleCloudResourceEvidence'
+x-ms-discriminator-value: '#microsoft.graph.security.googleCloudResourceEvidence'

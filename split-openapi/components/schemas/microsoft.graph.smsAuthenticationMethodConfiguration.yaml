@@ -1,0 +1,19 @@
+allOf:
+  - $ref: .\microsoft.graph.authenticationMethodConfiguration.yaml
+  - title: smsAuthenticationMethodConfiguration
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      includeTargets:
+        type: array
+        items:
+          $ref: .\microsoft.graph.smsAuthenticationMethodTarget.yaml
+        description: >-
+          A collection of groups that are enabled to use the authentication
+          method.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.smsAuthenticationMethodConfiguration'
+x-ms-discriminator-value: '#microsoft.graph.smsAuthenticationMethodConfiguration'

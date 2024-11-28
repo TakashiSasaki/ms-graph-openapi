@@ -1,0 +1,76 @@
+title: deviceProtectionOverview
+required:
+  - '@odata.type'
+type: object
+properties:
+  cleanDeviceCount:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    description: Indicates number of devices reporting as clean
+    format: int32
+  criticalFailuresDeviceCount:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    description: Indicates number of devices with critical failures
+    format: int32
+  inactiveThreatAgentDeviceCount:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    description: Indicates number of devices with inactive threat agent
+    format: int32
+  pendingFullScanDeviceCount:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    description: Indicates number of devices pending full scan
+    format: int32
+  pendingManualStepsDeviceCount:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    description: Indicates number of devices with pending manual steps
+    format: int32
+  pendingOfflineScanDeviceCount:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    description: Indicates number of pending offline scan devices
+    format: int32
+  pendingQuickScanDeviceCount:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    description: >-
+      Indicates the number of devices that have a pending full scan. Valid
+      values -2147483648 to 2147483647
+    format: int32
+  pendingRestartDeviceCount:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    description: Indicates number of devices pending restart
+    format: int32
+  pendingSignatureUpdateDeviceCount:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    description: Indicates number of devices with an old signature
+    format: int32
+  totalReportedDeviceCount:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    description: Total device count.
+    format: int32
+  unknownStateThreatAgentDeviceCount:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    description: Indicates number of devices with threat agent state as unknown
+    format: int32
+  '@odata.type':
+    type: string
+description: Hardware information of a given device.

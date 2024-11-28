@@ -1,0 +1,6 @@
+value:
+  accountDeletionPolicy:
+    '@odata.type': microsoft.graph.sharedPCAccountDeletionPolicyType
+  cacheAccountsAboveDiskFreePercentage: '0'
+  inactiveThresholdDays: '0'
+  removeAccountsBelowDiskFreePercentage: '0'

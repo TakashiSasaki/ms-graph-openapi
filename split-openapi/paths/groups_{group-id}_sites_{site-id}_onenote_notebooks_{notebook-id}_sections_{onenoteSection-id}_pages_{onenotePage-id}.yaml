@@ -1,0 +1,136 @@
+description: >-
+  Provides operations to manage the pages property of the
+  microsoft.graph.onenoteSection entity.
+get:
+  tags:
+    - groups.site
+  summary: Get pages from groups
+  description: The collection of pages in the section.  Read-only. Nullable.
+  operationId: groups.sites.onenote.notebooks.sections.GetPages
+  parameters:
+    - name: $select
+      in: query
+      description: Select properties to be returned
+      style: form
+      explode: false
+      schema:
+        uniqueItems: true
+        type: array
+        items:
+          type: string
+    - name: $expand
+      in: query
+      description: Expand related entities
+      style: form
+      explode: false
+      schema:
+        uniqueItems: true
+        type: array
+        items:
+          type: string
+  responses:
+    2XX:
+      description: Retrieved navigation property
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\microsoft.graph.onenotePage.yaml
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: operation
+patch:
+  tags:
+    - groups.site
+  summary: Update the navigation property pages in groups
+  operationId: groups.sites.onenote.notebooks.sections.UpdatePages
+  requestBody:
+    description: New navigation property values
+    content:
+      application/json:
+        schema:
+          $ref: ..\components\schemas\microsoft.graph.onenotePage.yaml
+    required: true
+  responses:
+    2XX:
+      description: Success
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\microsoft.graph.onenotePage.yaml
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: operation
+delete:
+  tags:
+    - groups.site
+  summary: Delete navigation property pages for groups
+  operationId: groups.sites.onenote.notebooks.sections.DeletePages
+  parameters:
+    - name: If-Match
+      in: header
+      description: ETag
+      schema:
+        type: string
+  responses:
+    '204':
+      description: Success
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: operation
+parameters:
+  - name: group-id
+    in: path
+    description: The unique identifier of group
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: group
+  - name: site-id
+    in: path
+    description: The unique identifier of site
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: site
+  - name: notebook-id
+    in: path
+    description: The unique identifier of notebook
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: notebook
+  - name: onenoteSection-id
+    in: path
+    description: The unique identifier of onenoteSection
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: onenoteSection
+  - name: onenotePage-id
+    in: path
+    description: The unique identifier of onenotePage
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: onenotePage
+x-ms-docs-grouped-path:
+  - >-
+    /groups/{group-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}
+  - >-
+    /groups/{group-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}
+  - >-
+    /groups/{group-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}
+  - >-
+    /groups/{group-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}
+  - >-
+    /groups/{group-id}/sites/{site-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}
+  - >-
+    /groups/{group-id}/sites/{site-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}
+  - >-
+    /groups/{group-id}/sites/{site-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}

@@ -1,0 +1,17 @@
+value:
+  applyActions:
+    - '@odata.type': microsoft.graph.accessReviewApplyAction
+  autoApplyDecisionsEnabled: 'true'
+  decisionHistoriesForReviewersEnabled: 'true'
+  defaultDecision: String
+  defaultDecisionEnabled: 'true'
+  instanceDurationInDays: '0'
+  justificationRequiredOnApproval: 'true'
+  mailNotificationsEnabled: 'true'
+  recommendationInsightSettings:
+    - '@odata.type': microsoft.graph.accessReviewRecommendationInsightSetting
+  recommendationLookBackDuration: Duration
+  recommendationsEnabled: 'true'
+  recurrence:
+    '@odata.type': microsoft.graph.patternedRecurrence
+  reminderNotificationsEnabled: 'true'

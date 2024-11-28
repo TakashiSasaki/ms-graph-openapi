@@ -1,0 +1,13 @@
+value:
+  description: String
+  exportFileMetadata:
+    - '@odata.type': microsoft.graph.security.exportFileMetadata
+  exportOptions:
+    '@odata.type': microsoft.graph.security.exportOptions
+  exportStructure:
+    '@odata.type': microsoft.graph.security.exportFileStructure
+  outputName: String
+  reviewSet:
+    '@odata.type': microsoft.graph.security.ediscoveryReviewSet
+  reviewSetQuery:
+    '@odata.type': microsoft.graph.security.ediscoveryReviewSetQuery

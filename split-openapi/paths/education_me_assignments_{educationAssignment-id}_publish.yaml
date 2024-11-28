@@ -1,0 +1,50 @@
+description: Provides operations to call the publish method.
+post:
+  tags:
+    - education.educationUser
+  summary: Invoke action publish
+  description: >-
+    Publish an education assignment. Change the status of an educationAssignment
+    from its original draft status to the published status.  You can change the
+    status from draft to scheduled if the assignment is scheduled for a future
+    date.  Only a teacher in the class can make this call. When an assignment is
+    in draft status, students will not see the assignment, nor will there be any
+    submission objects. Calling this API creates educationSubmission objects and
+    displays the assignment in each student's list. The status of the assignment
+    goes back to draft if there is any backend failure during publish process.
+    To update the properties of a published assignment, see update an
+    assignment.
+  externalDocs:
+    description: Find more info here
+    url: >-
+      https://learn.microsoft.com/graph/api/educationassignment-publish?view=graph-rest-1.0
+  operationId: education.me.assignments.educationAssignment.publish
+  responses:
+    2XX:
+      description: Success
+      content:
+        application/json:
+          schema:
+            anyOf:
+              - $ref: ..\components\schemas\microsoft.graph.educationAssignment.yaml
+              - type: object
+                nullable: true
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: action
+parameters:
+  - name: educationAssignment-id
+    in: path
+    description: The unique identifier of educationAssignment
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: educationAssignment
+x-ms-docs-grouped-path:
+  - >-
+    /education/classes/{educationClass-id}/assignments/{educationAssignment-id}/publish
+  - /education/classes/{educationClass-id}/modules/{educationModule-id}/publish
+  - >-
+    /education/users/{educationUser-id}/assignments/{educationAssignment-id}/publish

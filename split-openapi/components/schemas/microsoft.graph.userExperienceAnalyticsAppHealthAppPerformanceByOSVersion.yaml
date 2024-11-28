@@ -1,0 +1,79 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: userExperienceAnalyticsAppHealthAppPerformanceByOSVersion
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      activeDeviceCount:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: >-
+          The number of devices where the application has been active. Valid
+          values 0 to 2147483647. Supports: $select, $OrderBy. Read-only. Valid
+          values -2147483648 to 2147483647
+        format: int32
+      appCrashCount:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: >-
+          The number of crashes for the application. Valid values 0 to
+          2147483647. Supports: $select, $OrderBy. Read-only. Valid values
+          -2147483648 to 2147483647
+        format: int32
+      appDisplayName:
+        type: string
+        description: >-
+          The friendly name of the application. Possible values are: Outlook,
+          Excel. Supports: $select, $OrderBy. Read-only.
+        nullable: true
+      appName:
+        type: string
+        description: >-
+          The name of the application. Possible values are: outlook.exe,
+          excel.exe. Supports: $select, $OrderBy. Read-only.
+        nullable: true
+      appPublisher:
+        type: string
+        description: >-
+          The publisher of the application. Supports: $select, $OrderBy.
+          Read-only.
+        nullable: true
+      appUsageDuration:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: >-
+          The total usage time of the application in minutes. Valid values 0 to
+          2147483647. Supports: $select, $OrderBy. Read-only. Valid values
+          -2147483648 to 2147483647
+        format: int32
+      meanTimeToFailureInMinutes:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: >-
+          The mean time to failure for the application in minutes. Valid values
+          0 to 2147483647. Supports: $select, $OrderBy. Read-only. Valid values
+          -2147483648 to 2147483647
+        format: int32
+      osBuildNumber:
+        type: string
+        description: >-
+          The OS build number of the application. Supports: $select, $OrderBy.
+          Read-only.
+        nullable: true
+      osVersion:
+        type: string
+        description: >-
+          The OS version of the application. Supports: $select, $OrderBy.
+          Read-only.
+        nullable: true
+      '@odata.type':
+        type: string
+    description: >-
+      The user experience analytics application performance entity contains app
+      performance details by OS version.
+x-ms-discriminator-value: '#microsoft.graph.userExperienceAnalyticsAppHealthAppPerformanceByOSVersion'

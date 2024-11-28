@@ -1,0 +1,16 @@
+title: delegatedAdminRelationshipCustomerParticipant
+required:
+  - '@odata.type'
+type: object
+properties:
+  displayName:
+    type: string
+    description: >-
+      The display name of the customer tenant as set by Microsoft Entra ID.
+      Read-only
+    nullable: true
+  tenantId:
+    type: string
+    description: The Microsoft Entra ID-assigned tenant ID of the customer tenant.
+  '@odata.type':
+    type: string

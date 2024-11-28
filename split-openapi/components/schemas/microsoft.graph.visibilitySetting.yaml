@@ -1,0 +1,20 @@
+title: visibilitySetting
+enum:
+  - notConfigured
+  - hide
+  - show
+type: string
+description: Generic visibility state.
+x-ms-enum:
+  name: visibilitySetting
+  modelAsString: false
+  values:
+    - value: notConfigured
+      description: Not configured.
+      name: notConfigured
+    - value: hide
+      description: Hide.
+      name: hide
+    - value: show
+      description: Show.
+      name: show

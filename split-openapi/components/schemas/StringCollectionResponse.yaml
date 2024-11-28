@@ -1,0 +1,10 @@
+title: Collection of string
+type: object
+allOf:
+  - $ref: .\BaseCollectionPaginationCountResponse.yaml
+  - type: object
+    properties:
+      value:
+        type: array
+        items:
+          type: string

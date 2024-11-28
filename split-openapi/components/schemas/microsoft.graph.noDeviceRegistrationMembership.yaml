@@ -1,0 +1,11 @@
+allOf:
+  - $ref: .\microsoft.graph.deviceRegistrationMembership.yaml
+  - title: noDeviceRegistrationMembership
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.noDeviceRegistrationMembership'
+x-ms-discriminator-value: '#microsoft.graph.noDeviceRegistrationMembership'

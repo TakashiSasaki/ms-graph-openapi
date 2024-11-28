@@ -1,0 +1,252 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: userExperienceAnalyticsWorkFromAnywhereDevice
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      autoPilotProfileAssigned:
+        type: boolean
+        description: >-
+          When TRUE, indicates the intune device's autopilot profile is
+          assigned. When FALSE, indicates it's not Assigned. Supports: $select,
+          $OrderBy. Read-only.
+        nullable: true
+      autoPilotRegistered:
+        type: boolean
+        description: >-
+          When TRUE, indicates the intune device's autopilot is registered. When
+          FALSE, indicates it's not registered. Supports: $select, $OrderBy.
+          Read-only.
+        nullable: true
+      azureAdDeviceId:
+        type: string
+        description: >-
+          The Azure Active Directory (Azure AD) device Id. Supports: $select,
+          $OrderBy. Read-only.
+        nullable: true
+      azureAdJoinType:
+        type: string
+        description: >-
+          The work from anywhere device's Azure Active Directory (Azure AD) join
+          type. Supports: $select, $OrderBy. Read-only.
+        nullable: true
+      azureAdRegistered:
+        type: boolean
+        description: >-
+          When TRUE, indicates the device's Azure Active Directory (Azure AD) is
+          registered. When False, indicates it's not registered. Supports:
+          $select, $OrderBy. Read-only.
+        nullable: true
+      cloudIdentityScore:
+        oneOf:
+          - type: number
+            format: double
+            nullable: true
+          - type: string
+            nullable: true
+          - $ref: .\ReferenceNumeric.yaml
+        description: >-
+          Indicates per device cloud identity score. Valid values 0 to 100.
+          Value -1 means associated score is unavailable. Supports: $select,
+          $OrderBy. Read-only. Valid values -1.79769313486232E+308 to
+          1.79769313486232E+308
+      cloudManagementScore:
+        oneOf:
+          - type: number
+            format: double
+            nullable: true
+          - type: string
+            nullable: true
+          - $ref: .\ReferenceNumeric.yaml
+        description: >-
+          Indicates per device cloud management score. Valid values 0 to 100.
+          Value -1 means associated score is unavailable. Supports: $select,
+          $OrderBy. Read-only. Valid values -1.79769313486232E+308 to
+          1.79769313486232E+308
+      cloudProvisioningScore:
+        oneOf:
+          - type: number
+            format: double
+            nullable: true
+          - type: string
+            nullable: true
+          - $ref: .\ReferenceNumeric.yaml
+        description: >-
+          Indicates per device cloud provisioning score. Valid values 0 to 100.
+          Value -1 means associated score is unavailable. Supports: $select,
+          $OrderBy. Read-only. Valid values -1.79769313486232E+308 to
+          1.79769313486232E+308
+      compliancePolicySetToIntune:
+        type: boolean
+        description: >-
+          When TRUE, indicates the device's compliance policy is set to intune.
+          When FALSE, indicates it's not set to intune. Supports: $select,
+          $OrderBy. Read-only.
+        nullable: true
+      deviceId:
+        type: string
+        description: >-
+          The Intune device id of the device. Supports: $select, $OrderBy.
+          Read-only.
+        nullable: true
+      deviceName:
+        type: string
+        description: 'The name of the device. Supports: $select, $OrderBy. Read-only.'
+        nullable: true
+      healthStatus:
+        $ref: .\microsoft.graph.userExperienceAnalyticsHealthState.yaml
+      isCloudManagedGatewayEnabled:
+        type: boolean
+        description: >-
+          When TRUE, indicates the device's Cloud Management Gateway for
+          Configuration Manager is enabled. When FALSE, indicates it's not
+          enabled. Supports: $select, $OrderBy. Read-only.
+        nullable: true
+      managedBy:
+        type: string
+        description: >-
+          The management agent of the device. Supports: $select, $OrderBy.
+          Read-only.
+        nullable: true
+      manufacturer:
+        type: string
+        description: >-
+          The manufacturer name of the device. Supports: $select, $OrderBy.
+          Read-only.
+        nullable: true
+      model:
+        type: string
+        description: 'The model name of the device. Supports: $select, $OrderBy. Read-only.'
+        nullable: true
+      osCheckFailed:
+        type: boolean
+        description: >-
+          When TRUE, indicates OS check failed for device to upgrade to the
+          latest version of windows. When FALSE, indicates the check succeeded.
+          Supports: $select, $OrderBy. Read-only.
+        nullable: true
+      osDescription:
+        type: string
+        description: >-
+          The OS description of the device. Supports: $select, $OrderBy.
+          Read-only.
+        nullable: true
+      osVersion:
+        type: string
+        description: 'The OS version of the device. Supports: $select, $OrderBy. Read-only.'
+        nullable: true
+      otherWorkloadsSetToIntune:
+        type: boolean
+        description: >-
+          When TRUE, indicates the device's other workloads is set to intune.
+          When FALSE, indicates it's not set to intune. Supports: $select,
+          $OrderBy. Read-only.
+        nullable: true
+      ownership:
+        type: string
+        description: 'Ownership of the device. Supports: $select, $OrderBy. Read-only.'
+        nullable: true
+      processor64BitCheckFailed:
+        type: boolean
+        description: >-
+          When TRUE, indicates processor hardware 64-bit architecture check
+          failed for device to upgrade to the latest version of windows. When
+          FALSE, indicates the check succeeded. Supports: $select, $OrderBy.
+          Read-only.
+        nullable: true
+      processorCoreCountCheckFailed:
+        type: boolean
+        description: >-
+          When TRUE, indicates processor hardware core count check failed for
+          device to upgrade to the latest version of windows. When FALSE,
+          indicates the check succeeded. Supports: $select, $OrderBy. Read-only.
+        nullable: true
+      processorFamilyCheckFailed:
+        type: boolean
+        description: >-
+          When TRUE, indicates processor hardware family check failed for device
+          to upgrade to the latest version of windows. When FALSE, indicates the
+          check succeeded. Supports: $select, $OrderBy. Read-only.
+        nullable: true
+      processorSpeedCheckFailed:
+        type: boolean
+        description: >-
+          When TRUE, indicates processor hardware speed check failed for device
+          to upgrade to the latest version of windows. When FALSE, indicates the
+          check succeeded. Supports: $select, $OrderBy. Read-only.
+        nullable: true
+      ramCheckFailed:
+        type: boolean
+        description: >-
+          When TRUE, indicates RAM hardware check failed for device to upgrade
+          to the latest version of windows. When FALSE, indicates the check
+          succeeded. Supports: $select, $OrderBy. Read-only.
+        nullable: true
+      secureBootCheckFailed:
+        type: boolean
+        description: >-
+          When TRUE, indicates secure boot hardware check failed for device to
+          upgrade to the latest version of windows. When FALSE, indicates the
+          check succeeded. Supports: $select, $OrderBy. Read-only.
+        nullable: true
+      serialNumber:
+        type: string
+        description: >-
+          The serial number of the device. Supports: $select, $OrderBy.
+          Read-only.
+        nullable: true
+      storageCheckFailed:
+        type: boolean
+        description: >-
+          When TRUE, indicates storage hardware check failed for device to
+          upgrade to the latest version of windows. When FALSE, indicates the
+          check succeeded. Supports: $select, $OrderBy. Read-only.
+        nullable: true
+      tenantAttached:
+        type: boolean
+        description: >-
+          When TRUE, indicates the device is Tenant Attached. When FALSE,
+          indicates it's not Tenant Attached. Supports: $select, $OrderBy.
+          Read-only.
+        nullable: true
+      tpmCheckFailed:
+        type: boolean
+        description: >-
+          When TRUE, indicates Trusted Platform Module (TPM) hardware check
+          failed for device to the latest version of upgrade to windows. When
+          FALSE, indicates the check succeeded. Supports: $select, $OrderBy.
+          Read-only.
+        nullable: true
+      upgradeEligibility:
+        $ref: .\microsoft.graph.operatingSystemUpgradeEligibility.yaml
+      windowsScore:
+        oneOf:
+          - type: number
+            format: double
+            nullable: true
+          - type: string
+            nullable: true
+          - $ref: .\ReferenceNumeric.yaml
+        description: >-
+          Indicates per device windows score. Valid values 0 to 100. Value -1
+          means associated score is unavailable. Supports: $select, $OrderBy.
+          Read-only. Valid values -1.79769313486232E+308 to
+          1.79769313486232E+308
+      workFromAnywhereScore:
+        oneOf:
+          - type: number
+            format: double
+            nullable: true
+          - type: string
+            nullable: true
+          - $ref: .\ReferenceNumeric.yaml
+        description: >-
+          Indicates work from anywhere per device overall score. Valid values 0
+          to 100. Value -1 means associated score is unavailable. Supports:
+          $select, $OrderBy. Read-only. Valid values -1.79769313486232E+308 to
+          1.79769313486232E+308
+      '@odata.type':
+        type: string
+    description: The user experience analytics device for work from anywhere report.
+x-ms-discriminator-value: '#microsoft.graph.userExperienceAnalyticsWorkFromAnywhereDevice'

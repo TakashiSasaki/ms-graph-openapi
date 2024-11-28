@@ -1,0 +1,11 @@
+title: mediaContentRatingFrance
+required:
+  - '@odata.type'
+type: object
+properties:
+  movieRating:
+    $ref: .\microsoft.graph.ratingFranceMoviesType.yaml
+  tvRating:
+    $ref: .\microsoft.graph.ratingFranceTelevisionType.yaml
+  '@odata.type':
+    type: string

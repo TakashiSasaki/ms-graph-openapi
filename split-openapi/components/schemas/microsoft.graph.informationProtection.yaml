@@ -1,0 +1,18 @@
+title: informationProtection
+required:
+  - '@odata.type'
+type: object
+properties:
+  bitlocker:
+    anyOf:
+      - $ref: .\microsoft.graph.bitlocker.yaml
+      - type: object
+        nullable: true
+    x-ms-navigationProperty: true
+  threatAssessmentRequests:
+    type: array
+    items:
+      $ref: .\microsoft.graph.threatAssessmentRequest.yaml
+    x-ms-navigationProperty: true
+  '@odata.type':
+    type: string

@@ -1,0 +1,22 @@
+title: windowsSpotlightEnablementSettings
+enum:
+  - notConfigured
+  - disabled
+  - enabled
+type: string
+description: >-
+  Allows IT admind to set a predefined default search engine for MDM-Controlled
+  devices
+x-ms-enum:
+  name: windowsSpotlightEnablementSettings
+  modelAsString: false
+  values:
+    - value: notConfigured
+      description: Spotlight on lock screen is not configured
+      name: notConfigured
+    - value: disabled
+      description: Disable Windows Spotlight on lock screen
+      name: disabled
+    - value: enabled
+      description: Enable Windows Spotlight on lock screen
+      name: enabled

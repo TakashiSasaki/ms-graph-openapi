@@ -1,0 +1,7 @@
+title: teamVisibilityType
+enum:
+  - private
+  - public
+  - hiddenMembership
+  - unknownFutureValue
+type: string

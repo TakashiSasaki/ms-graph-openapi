@@ -1,0 +1,5 @@
+value:
+  movieRating:
+    '@odata.type': microsoft.graph.ratingFranceMoviesType
+  tvRating:
+    '@odata.type': microsoft.graph.ratingFranceTelevisionType

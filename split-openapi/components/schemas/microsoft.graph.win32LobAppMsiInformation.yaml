@@ -1,0 +1,35 @@
+title: win32LobAppMsiInformation
+required:
+  - '@odata.type'
+type: object
+properties:
+  packageType:
+    $ref: .\microsoft.graph.win32LobAppMsiPackageType.yaml
+  productCode:
+    type: string
+    description: The MSI product code.
+    nullable: true
+  productName:
+    type: string
+    description: The MSI product name.
+    nullable: true
+  productVersion:
+    type: string
+    description: The MSI product version.
+    nullable: true
+  publisher:
+    type: string
+    description: The MSI publisher.
+    nullable: true
+  requiresReboot:
+    type: boolean
+    description: >-
+      Whether the MSI app requires the machine to reboot to complete
+      installation.
+  upgradeCode:
+    type: string
+    description: The MSI upgrade code.
+    nullable: true
+  '@odata.type':
+    type: string
+description: Contains MSI app properties for a Win32 App.

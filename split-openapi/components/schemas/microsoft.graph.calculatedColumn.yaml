@@ -1,0 +1,23 @@
+title: calculatedColumn
+required:
+  - '@odata.type'
+type: object
+properties:
+  format:
+    type: string
+    description: >-
+      For dateTime output types, the format of the value. Possible values are:
+      dateOnly or dateTime.
+    nullable: true
+  formula:
+    type: string
+    description: The formula used to compute the value for this column.
+    nullable: true
+  outputType:
+    type: string
+    description: >-
+      The output type used to format values in this column. Possible values are:
+      boolean, currency, dateTime, number, or text.
+    nullable: true
+  '@odata.type':
+    type: string

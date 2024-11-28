@@ -1,0 +1,5 @@
+value:
+  appStoreUrl: String
+  minimumSupportedOperatingSystem:
+    '@odata.type': microsoft.graph.androidMinimumOperatingSystem
+  packageId: String

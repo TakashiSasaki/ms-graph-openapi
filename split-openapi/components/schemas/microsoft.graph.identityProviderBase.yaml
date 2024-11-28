@@ -1,0 +1,22 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: identityProviderBase
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      displayName:
+        type: string
+        description: The display name of the identity provider.
+        nullable: true
+      '@odata.type':
+        type: string
+    discriminator:
+      propertyName: '@odata.type'
+      mapping:
+        '#microsoft.graph.appleManagedIdentityProvider': .\microsoft.graph.appleManagedIdentityProvider.yaml
+        '#microsoft.graph.builtInIdentityProvider': .\microsoft.graph.builtInIdentityProvider.yaml
+        '#microsoft.graph.samlOrWsFedProvider': .\microsoft.graph.samlOrWsFedProvider.yaml
+        '#microsoft.graph.internalDomainFederation': .\microsoft.graph.internalDomainFederation.yaml
+        '#microsoft.graph.samlOrWsFedExternalDomainFederation': .\microsoft.graph.samlOrWsFedExternalDomainFederation.yaml
+        '#microsoft.graph.socialIdentityProvider': .\microsoft.graph.socialIdentityProvider.yaml

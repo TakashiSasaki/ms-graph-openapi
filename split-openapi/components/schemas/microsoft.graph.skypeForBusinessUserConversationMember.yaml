@@ -1,0 +1,19 @@
+allOf:
+  - $ref: .\microsoft.graph.conversationMember.yaml
+  - title: skypeForBusinessUserConversationMember
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      tenantId:
+        type: string
+        description: ID of the tenant that the user belongs to.
+        nullable: true
+      userId:
+        type: string
+        description: Microsoft Entra ID of the user.
+        nullable: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.skypeForBusinessUserConversationMember'
+x-ms-discriminator-value: '#microsoft.graph.skypeForBusinessUserConversationMember'

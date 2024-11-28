@@ -1,0 +1,38 @@
+description: Provides operations to count the resources in the collection.
+get:
+  tags:
+    - groups.event
+  summary: Get the number of the resource
+  operationId: groups.calendarView.instances.attachments.GetCount-55dd
+  parameters:
+    - $ref: ..\components\parameters\search.yaml
+    - $ref: ..\components\parameters\filter.yaml
+  responses:
+    2XX:
+      $ref: ..\components\responses\ODataCountResponse.yaml
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+parameters:
+  - name: group-id
+    in: path
+    description: The unique identifier of group
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: group
+  - name: event-id
+    in: path
+    description: The unique identifier of event
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: event
+  - name: event-id1
+    in: path
+    description: The unique identifier of event
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: event

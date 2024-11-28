@@ -1,0 +1,22 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: managedEBookAssignment
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      installIntent:
+        $ref: .\microsoft.graph.installIntent.yaml
+      target:
+        anyOf:
+          - $ref: .\microsoft.graph.deviceAndAppManagementAssignmentTarget.yaml
+          - type: object
+            nullable: true
+        description: The assignment target for eBook.
+      '@odata.type':
+        type: string
+    description: Contains properties used to assign a eBook to a group.
+    discriminator:
+      propertyName: '@odata.type'
+      mapping:
+        '#microsoft.graph.iosVppEBookAssignment': .\microsoft.graph.iosVppEBookAssignment.yaml

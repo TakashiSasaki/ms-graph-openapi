@@ -1,0 +1,43 @@
+title: deviceDetail
+required:
+  - '@odata.type'
+type: object
+properties:
+  browser:
+    type: string
+    description: >-
+      Indicates the browser information of the used in the sign-in. Populated
+      for devices registered in Microsoft Entra.
+    nullable: true
+  deviceId:
+    type: string
+    description: >-
+      Refers to the unique ID of the device used in the sign-in. Populated for
+      devices registered in Microsoft Entra.
+    nullable: true
+  displayName:
+    type: string
+    description: >-
+      Refers to the name of the device used in the sign-in. Populated for
+      devices registered in Microsoft Entra.
+    nullable: true
+  isCompliant:
+    type: boolean
+    description: Indicates whether the device is compliant or not.
+    nullable: true
+  isManaged:
+    type: boolean
+    description: Indicates if the device is managed or not.
+    nullable: true
+  operatingSystem:
+    type: string
+    description: Indicates the OS name and version used in the sign-in.
+    nullable: true
+  trustType:
+    type: string
+    description: >-
+      Indicates information on whether the device used in the sign-in is
+      workplace-joined, Microsoft Entra-joined, domain-joined.
+    nullable: true
+  '@odata.type':
+    type: string

@@ -1,0 +1,4 @@
+value:
+  reason: String
+  stage:
+    '@odata.type': microsoft.graph.callRecords.failureStage

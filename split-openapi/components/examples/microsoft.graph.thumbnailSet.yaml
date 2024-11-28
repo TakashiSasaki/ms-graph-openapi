@@ -1,0 +1,9 @@
+value:
+  large:
+    '@odata.type': microsoft.graph.thumbnail
+  medium:
+    '@odata.type': microsoft.graph.thumbnail
+  small:
+    '@odata.type': microsoft.graph.thumbnail
+  source:
+    '@odata.type': microsoft.graph.thumbnail

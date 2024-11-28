@@ -1,0 +1,101 @@
+description: >-
+  Provides operations to manage the federationConfiguration property of the
+  microsoft.graph.domain entity.
+get:
+  tags:
+    - domains.internalDomainFederation
+  summary: List internalDomainFederations
+  description: >-
+    Read the properties of the internalDomainFederation objects for the domain.
+    This API returns only one object in the collection.
+  externalDocs:
+    description: Find more info here
+    url: >-
+      https://learn.microsoft.com/graph/api/domain-list-federationconfiguration?view=graph-rest-1.0
+  operationId: domains.ListFederationConfiguration
+  parameters:
+    - $ref: ..\components\parameters\top.yaml
+    - $ref: ..\components\parameters\skip.yaml
+    - $ref: ..\components\parameters\search.yaml
+    - $ref: ..\components\parameters\filter.yaml
+    - $ref: ..\components\parameters\count.yaml
+    - name: $orderby
+      in: query
+      description: Order items by property values
+      style: form
+      explode: false
+      schema:
+        uniqueItems: true
+        type: array
+        items:
+          type: string
+    - name: $select
+      in: query
+      description: Select properties to be returned
+      style: form
+      explode: false
+      schema:
+        uniqueItems: true
+        type: array
+        items:
+          type: string
+    - name: $expand
+      in: query
+      description: Expand related entities
+      style: form
+      explode: false
+      schema:
+        uniqueItems: true
+        type: array
+        items:
+          type: string
+  responses:
+    2XX:
+      $ref: >-
+        ..\components\responses\microsoft.graph.internalDomainFederationCollectionResponse.yaml
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-pageable:
+    nextLinkName: '@odata.nextLink'
+    operationName: listMore
+  x-ms-docs-operation-type: operation
+post:
+  tags:
+    - domains.internalDomainFederation
+  summary: Create internalDomainFederation
+  description: Create a new internalDomainFederation object.
+  externalDocs:
+    description: Find more info here
+    url: >-
+      https://learn.microsoft.com/graph/api/domain-post-federationconfiguration?view=graph-rest-1.0
+  operationId: domains.CreateFederationConfiguration
+  requestBody:
+    description: New navigation property
+    content:
+      application/json:
+        schema:
+          $ref: ..\components\schemas\microsoft.graph.internalDomainFederation.yaml
+    required: true
+  responses:
+    2XX:
+      description: Created navigation property.
+      content:
+        application/json:
+          schema:
+            $ref: >-
+              ..\components\schemas\microsoft.graph.internalDomainFederation.yaml
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: operation
+parameters:
+  - name: domain-id
+    in: path
+    description: The unique identifier of domain
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: domain

@@ -1,0 +1,3 @@
+value:
+  siteLists:
+    - '@odata.type': microsoft.graph.browserSiteList

@@ -1,0 +1,15 @@
+value:
+  deletedDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  executionScope:
+    - '@odata.type': microsoft.graph.identityGovernance.userProcessingResult
+  id: String (identifier)
+  nextScheduleRunDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  runs:
+    - '@odata.type': microsoft.graph.identityGovernance.run
+  taskReports:
+    - '@odata.type': microsoft.graph.identityGovernance.taskReport
+  userProcessingResults:
+    - '@odata.type': microsoft.graph.identityGovernance.userProcessingResult
+  version: '0'
+  versions:
+    - '@odata.type': microsoft.graph.identityGovernance.workflowVersion

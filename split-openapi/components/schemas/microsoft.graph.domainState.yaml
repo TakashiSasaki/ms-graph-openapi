@@ -1,0 +1,30 @@
+title: domainState
+required:
+  - '@odata.type'
+type: object
+properties:
+  lastActionDateTime:
+    pattern: >-
+      ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+    type: string
+    description: >-
+      Timestamp for when the last activity occurred. The value is updated when
+      an operation is scheduled, the asynchronous task starts, and when the
+      operation completes.
+    format: date-time
+    nullable: true
+  operation:
+    type: string
+    description: >-
+      Type of asynchronous operation. The values can be ForceDelete or
+      Verification.
+    nullable: true
+  status:
+    type: string
+    description: >-
+      Current status of the operation.  Scheduled - Operation is scheduled but
+      hasn't started.  InProgress - Task is in progress.  Failed - The operation
+      failed.
+    nullable: true
+  '@odata.type':
+    type: string

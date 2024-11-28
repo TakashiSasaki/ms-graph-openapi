@@ -1,0 +1,11 @@
+allOf:
+  - $ref: .\microsoft.graph.educationAssignmentRecipient.yaml
+  - title: educationAssignmentClassRecipient
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.educationAssignmentClassRecipient'
+x-ms-discriminator-value: '#microsoft.graph.educationAssignmentClassRecipient'

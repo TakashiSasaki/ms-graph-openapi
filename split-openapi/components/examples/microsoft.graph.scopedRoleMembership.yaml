@@ -1,0 +1,5 @@
+value:
+  administrativeUnitId: String
+  roleId: String
+  roleMemberInfo:
+    '@odata.type': microsoft.graph.identity

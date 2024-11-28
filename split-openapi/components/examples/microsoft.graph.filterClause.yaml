@@ -1,0 +1,5 @@
+value:
+  operatorName: String
+  sourceOperandName: String
+  targetOperand:
+    '@odata.type': microsoft.graph.filterOperand

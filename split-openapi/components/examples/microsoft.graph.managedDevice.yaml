@@ -1,0 +1,78 @@
+value:
+  activationLockBypassCode: String
+  androidSecurityPatchLevel: String
+  azureADDeviceId: String
+  azureADRegistered: 'true'
+  complianceGracePeriodExpirationDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  complianceState:
+    '@odata.type': microsoft.graph.complianceState
+  configurationManagerClientEnabledFeatures:
+    '@odata.type': microsoft.graph.configurationManagerClientEnabledFeatures
+  deviceActionResults:
+    - '@odata.type': microsoft.graph.deviceActionResult
+  deviceCategory:
+    '@odata.type': microsoft.graph.deviceCategory
+  deviceCategoryDisplayName: String
+  deviceCompliancePolicyStates:
+    - '@odata.type': microsoft.graph.deviceCompliancePolicyState
+  deviceConfigurationStates:
+    - '@odata.type': microsoft.graph.deviceConfigurationState
+  deviceEnrollmentType:
+    '@odata.type': microsoft.graph.deviceEnrollmentType
+  deviceHealthAttestationState:
+    '@odata.type': microsoft.graph.deviceHealthAttestationState
+  deviceName: String
+  deviceRegistrationState:
+    '@odata.type': microsoft.graph.deviceRegistrationState
+  easActivated: 'true'
+  easActivationDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  easDeviceId: String
+  emailAddress: String
+  enrolledDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  enrollmentProfileName: String
+  ethernetMacAddress: String
+  exchangeAccessState:
+    '@odata.type': microsoft.graph.deviceManagementExchangeAccessState
+  exchangeAccessStateReason:
+    '@odata.type': microsoft.graph.deviceManagementExchangeAccessStateReason
+  exchangeLastSuccessfulSyncDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  freeStorageSpaceInBytes: '0'
+  iccid: String
+  imei: String
+  isEncrypted: 'true'
+  isSupervised: 'true'
+  jailBroken: String
+  lastSyncDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  logCollectionRequests:
+    - '@odata.type': microsoft.graph.deviceLogCollectionResponse
+  managedDeviceName: String
+  managedDeviceOwnerType:
+    '@odata.type': microsoft.graph.managedDeviceOwnerType
+  managementAgent:
+    '@odata.type': microsoft.graph.managementAgentType
+  managementCertificateExpirationDate: '0001-01-01T00:00:00.0000000+00:00'
+  manufacturer: String
+  meid: String
+  model: String
+  notes: String
+  operatingSystem: String
+  osVersion: String
+  partnerReportedThreatState:
+    '@odata.type': microsoft.graph.managedDevicePartnerReportedHealthState
+  phoneNumber: String
+  physicalMemoryInBytes: '0'
+  remoteAssistanceSessionErrorDetails: String
+  remoteAssistanceSessionUrl: String
+  requireUserEnrollmentApproval: 'true'
+  serialNumber: String
+  subscriberCarrier: String
+  totalStorageSpaceInBytes: '0'
+  udid: String
+  userDisplayName: String
+  userId: String
+  userPrincipalName: String
+  users:
+    - '@odata.type': microsoft.graph.user
+  wiFiMacAddress: String
+  windowsProtectionState:
+    '@odata.type': microsoft.graph.windowsProtectionState

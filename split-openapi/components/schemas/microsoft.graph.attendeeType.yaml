@@ -1,0 +1,6 @@
+title: attendeeType
+enum:
+  - required
+  - optional
+  - resource
+type: string

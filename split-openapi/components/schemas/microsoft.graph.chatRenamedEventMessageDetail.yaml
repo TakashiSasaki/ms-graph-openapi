@@ -1,0 +1,25 @@
+allOf:
+  - $ref: .\microsoft.graph.eventMessageDetail.yaml
+  - title: chatRenamedEventMessageDetail
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      chatDisplayName:
+        type: string
+        description: The updated name of the chat.
+        nullable: true
+      chatId:
+        type: string
+        description: Unique identifier of the chat.
+        nullable: true
+      initiator:
+        anyOf:
+          - $ref: .\microsoft.graph.identitySet.yaml
+          - type: object
+            nullable: true
+        description: Initiator of the event.
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.chatRenamedEventMessageDetail'
+x-ms-discriminator-value: '#microsoft.graph.chatRenamedEventMessageDetail'

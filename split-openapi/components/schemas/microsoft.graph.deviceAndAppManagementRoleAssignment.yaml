@@ -1,0 +1,22 @@
+allOf:
+  - $ref: .\microsoft.graph.roleAssignment.yaml
+  - title: deviceAndAppManagementRoleAssignment
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      members:
+        type: array
+        items:
+          type: string
+          nullable: true
+        description: >-
+          The list of ids of role member security groups. These are IDs from
+          Azure Active Directory.
+      '@odata.type':
+        type: string
+    description: >-
+      The Role Assignment resource. Role assignments tie together a role
+      definition with members and scopes. There can be one or more role
+      assignments per role. This applies to custom and built-in roles.
+x-ms-discriminator-value: '#microsoft.graph.deviceAndAppManagementRoleAssignment'

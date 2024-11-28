@@ -1,0 +1,9 @@
+value:
+  check32BitOn64System: 'true'
+  comparisonValue: String
+  fileOrFolderName: String
+  operationType:
+    '@odata.type': microsoft.graph.win32LobAppFileSystemOperationType
+  operator:
+    '@odata.type': microsoft.graph.win32LobAppRuleOperator
+  path: String

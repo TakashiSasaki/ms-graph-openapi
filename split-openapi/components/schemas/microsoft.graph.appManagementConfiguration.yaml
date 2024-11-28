@@ -1,0 +1,30 @@
+title: appManagementConfiguration
+required:
+  - '@odata.type'
+type: object
+properties:
+  keyCredentials:
+    type: array
+    items:
+      $ref: .\microsoft.graph.keyCredentialConfiguration.yaml
+    description: >-
+      Collection of keyCredential restrictions settings to be applied to an
+      application or service principal.
+  passwordCredentials:
+    type: array
+    items:
+      $ref: .\microsoft.graph.passwordCredentialConfiguration.yaml
+    description: >-
+      Collection of password restrictions settings to be applied to an
+      application or service principal.
+  '@odata.type':
+    type: string
+discriminator:
+  propertyName: '@odata.type'
+  mapping:
+    '#microsoft.graph.appManagementApplicationConfiguration': .\microsoft.graph.appManagementApplicationConfiguration.yaml
+    '#microsoft.graph.appManagementServicePrincipalConfiguration': .\microsoft.graph.appManagementServicePrincipalConfiguration.yaml
+    '#microsoft.graph.customAppManagementConfiguration': .\microsoft.graph.customAppManagementConfiguration.yaml
+    microsoft.graph.appManagementApplicationConfiguration: .\microsoft.graph.appManagementApplicationConfiguration.yaml
+    microsoft.graph.appManagementServicePrincipalConfiguration: .\microsoft.graph.appManagementServicePrincipalConfiguration.yaml
+    microsoft.graph.customAppManagementConfiguration: .\microsoft.graph.customAppManagementConfiguration.yaml

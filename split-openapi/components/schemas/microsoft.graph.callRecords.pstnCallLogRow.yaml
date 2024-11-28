@@ -1,0 +1,132 @@
+title: pstnCallLogRow
+required:
+  - '@odata.type'
+type: object
+properties:
+  callDurationSource:
+    anyOf:
+      - $ref: .\microsoft.graph.callRecords.pstnCallDurationSource.yaml
+      - type: object
+        nullable: true
+    description: >-
+      The source of the call duration data. If the call uses a third-party
+      telecommunications operator via the Operator Connect Program, the operator
+      can provide their own call duration data. In this case, the property value
+      is operator. Otherwise, the value is microsoft.
+  calleeNumber:
+    type: string
+    description: Number dialed in E.164 format.
+    nullable: true
+  callerNumber:
+    type: string
+    description: >-
+      Number that received the call for inbound calls or the number dialed for
+      outbound calls. E.164 format.
+    nullable: true
+  callId:
+    type: string
+    description: Call identifier. Not guaranteed to be unique.
+    nullable: true
+  callType:
+    type: string
+    description: >-
+      Indicates whether the call was a PSTN outbound or inbound call and the
+      type of call, such as a call placed by a user or an audio conference.
+    nullable: true
+  charge:
+    type: number
+    description: Amount of money or cost of the call that is charged to your account.
+    format: decimal
+    nullable: true
+  conferenceId:
+    type: string
+    description: ID of the audio conference.
+    nullable: true
+  connectionCharge:
+    type: number
+    description: Connection fee price.
+    format: decimal
+    nullable: true
+  currency:
+    type: string
+    description: >-
+      Type of currency used to calculate the cost of the call. For details, see
+      (ISO 4217.
+    nullable: true
+  destinationContext:
+    type: string
+    description: >-
+      Whether the call was domestic (within a country or region) or
+      international (outside a country or region), based on the user's location.
+    nullable: true
+  destinationName:
+    type: string
+    description: Country or region dialed.
+    nullable: true
+  duration:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    description: How long the call was connected, in seconds.
+    format: int32
+    nullable: true
+  endDateTime:
+    pattern: >-
+      ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+    type: string
+    description: Call end time.
+    format: date-time
+    nullable: true
+  id:
+    type: string
+    description: Unique call identifier. GUID.
+    nullable: true
+  inventoryType:
+    type: string
+    description: User's phone number type, such as a service of toll-free number.
+    nullable: true
+  licenseCapability:
+    type: string
+    description: The license used for the call.
+    nullable: true
+  operator:
+    type: string
+    description: >-
+      The telecommunications operator which provided PSTN services for this
+      call. This might be Microsoft, or it might be a third-party operator via
+      the Operator Connect Program.
+    nullable: true
+  startDateTime:
+    pattern: >-
+      ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+    type: string
+    description: Call start time.
+    format: date-time
+    nullable: true
+  tenantCountryCode:
+    type: string
+    description: Country code of the tenant. For details, see ISO 3166-1 alpha-2.
+    nullable: true
+  usageCountryCode:
+    type: string
+    description: Country code of the user. For details, see ISO 3166-1 alpha-2.
+    nullable: true
+  userDisplayName:
+    type: string
+    description: Display name of the user.
+    nullable: true
+  userId:
+    type: string
+    description: >-
+      Calling user's ID in Microsoft Graph. GUID. This and other user info will
+      be null/empty for bot call types (ucapin, ucapout).
+    nullable: true
+  userPrincipalName:
+    type: string
+    description: >-
+      The user principal name (sign-in name) in Microsoft Entra ID. This is
+      usually the same as the user's SIP address, and can be the same as the
+      user's email address.
+    nullable: true
+  '@odata.type':
+    type: string

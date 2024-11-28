@@ -1,0 +1,9 @@
+title: sensorType
+enum:
+  - adConnectIntegrated
+  - adcsIntegrated
+  - adfsIntegrated
+  - domainControllerIntegrated
+  - domainControllerStandalone
+  - unknownFutureValue
+type: string

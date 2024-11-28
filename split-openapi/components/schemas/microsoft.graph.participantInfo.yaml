@@ -1,0 +1,38 @@
+title: participantInfo
+required:
+  - '@odata.type'
+type: object
+properties:
+  countryCode:
+    type: string
+    description: >-
+      The ISO 3166-1 Alpha-2 country code of the participant's best estimated
+      physical location at the start of the call. Read-only.
+    nullable: true
+  endpointType:
+    anyOf:
+      - $ref: .\microsoft.graph.endpointType.yaml
+      - type: object
+        nullable: true
+    description: >-
+      The type of endpoint the participant is using. Possible values are:
+      default, skypeForBusiness, or skypeForBusinessVoipPhone. Read-only.
+  identity:
+    $ref: .\microsoft.graph.identitySet.yaml
+  languageId:
+    type: string
+    description: The language culture string. Read-only.
+    nullable: true
+  participantId:
+    type: string
+    description: The participant ID of the participant. Read-only.
+    nullable: true
+  region:
+    type: string
+    description: >-
+      The home region of the participant. This can be a country, a continent, or
+      a larger geographic region. This doesn't change based on the participant's
+      current physical location. Read-only.
+    nullable: true
+  '@odata.type':
+    type: string

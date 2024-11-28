@@ -1,0 +1,9 @@
+title: networkConnectionType
+enum:
+  - unknown
+  - wired
+  - wifi
+  - mobile
+  - tunnel
+  - unknownFutureValue
+type: string

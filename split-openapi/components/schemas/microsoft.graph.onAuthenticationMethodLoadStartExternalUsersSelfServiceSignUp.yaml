@@ -1,0 +1,17 @@
+allOf:
+  - $ref: .\microsoft.graph.onAuthenticationMethodLoadStartHandler.yaml
+  - title: onAuthenticationMethodLoadStartExternalUsersSelfServiceSignUp
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      identityProviders:
+        type: array
+        items:
+          $ref: .\microsoft.graph.identityProviderBase.yaml
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+        default: >-
+          #microsoft.graph.onAuthenticationMethodLoadStartExternalUsersSelfServiceSignUp
+x-ms-discriminator-value: '#microsoft.graph.onAuthenticationMethodLoadStartExternalUsersSelfServiceSignUp'

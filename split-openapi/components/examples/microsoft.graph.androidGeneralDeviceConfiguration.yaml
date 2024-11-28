@@ -1,0 +1,57 @@
+value:
+  appsBlockClipboardSharing: 'true'
+  appsBlockCopyPaste: 'true'
+  appsBlockYouTube: 'true'
+  appsHideList:
+    - '@odata.type': microsoft.graph.appListItem
+  appsInstallAllowList:
+    - '@odata.type': microsoft.graph.appListItem
+  appsLaunchBlockList:
+    - '@odata.type': microsoft.graph.appListItem
+  bluetoothBlocked: 'true'
+  cameraBlocked: 'true'
+  cellularBlockDataRoaming: 'true'
+  cellularBlockMessaging: 'true'
+  cellularBlockVoiceRoaming: 'true'
+  cellularBlockWiFiTethering: 'true'
+  compliantAppListType:
+    '@odata.type': microsoft.graph.appListType
+  compliantAppsList:
+    - '@odata.type': microsoft.graph.appListItem
+  deviceSharingAllowed: 'true'
+  diagnosticDataBlockSubmission: 'true'
+  factoryResetBlocked: 'true'
+  googleAccountBlockAutoSync: 'true'
+  googlePlayStoreBlocked: 'true'
+  kioskModeApps:
+    - '@odata.type': microsoft.graph.appListItem
+  kioskModeBlockSleepButton: 'true'
+  kioskModeBlockVolumeButtons: 'true'
+  locationServicesBlocked: 'true'
+  nfcBlocked: 'true'
+  passwordBlockFingerprintUnlock: 'true'
+  passwordBlockTrustAgents: 'true'
+  passwordExpirationDays: '0'
+  passwordMinimumLength: '0'
+  passwordMinutesOfInactivityBeforeScreenTimeout: '0'
+  passwordPreviousPasswordBlockCount: '0'
+  passwordRequired: 'true'
+  passwordRequiredType:
+    '@odata.type': microsoft.graph.androidRequiredPasswordType
+  passwordSignInFailureCountBeforeFactoryReset: '0'
+  powerOffBlocked: 'true'
+  screenCaptureBlocked: 'true'
+  securityRequireVerifyApps: 'true'
+  storageBlockGoogleBackup: 'true'
+  storageBlockRemovableStorage: 'true'
+  storageRequireDeviceEncryption: 'true'
+  storageRequireRemovableStorageEncryption: 'true'
+  voiceAssistantBlocked: 'true'
+  voiceDialingBlocked: 'true'
+  webBrowserBlockAutofill: 'true'
+  webBrowserBlocked: 'true'
+  webBrowserBlockJavaScript: 'true'
+  webBrowserBlockPopups: 'true'
+  webBrowserCookieSettings:
+    '@odata.type': microsoft.graph.webBrowserCookieSettings
+  wiFiBlocked: 'true'

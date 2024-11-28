@@ -1,0 +1,8 @@
+value:
+  listId: String
+  listItemId: String
+  listItemUniqueId: String
+  siteId: String
+  siteUrl: String
+  tenantId: String
+  webId: String

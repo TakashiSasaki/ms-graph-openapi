@@ -1,0 +1,27 @@
+title: convertIdResult
+required:
+  - '@odata.type'
+type: object
+properties:
+  errorDetails:
+    anyOf:
+      - $ref: .\microsoft.graph.genericError.yaml
+      - type: object
+        nullable: true
+    description: >-
+      An error object indicating the reason for the conversion failure. This
+      value isn't present if the conversion succeeded.
+  sourceId:
+    type: string
+    description: >-
+      The identifier that was converted. This value is the original,
+      un-converted identifier.
+    nullable: true
+  targetId:
+    type: string
+    description: >-
+      The converted identifier. This value isn't present if the conversion
+      failed.
+    nullable: true
+  '@odata.type':
+    type: string

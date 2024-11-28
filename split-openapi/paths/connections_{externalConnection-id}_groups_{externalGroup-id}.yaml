@@ -1,0 +1,102 @@
+description: >-
+  Provides operations to manage the groups property of the
+  microsoft.graph.externalConnectors.externalConnection entity.
+get:
+  tags:
+    - connections.externalGroup
+  summary: Get groups from connections
+  operationId: connections.GetGroups
+  parameters:
+    - name: $select
+      in: query
+      description: Select properties to be returned
+      style: form
+      explode: false
+      schema:
+        uniqueItems: true
+        type: array
+        items:
+          type: string
+    - name: $expand
+      in: query
+      description: Expand related entities
+      style: form
+      explode: false
+      schema:
+        uniqueItems: true
+        type: array
+        items:
+          type: string
+  responses:
+    2XX:
+      description: Retrieved navigation property
+      content:
+        application/json:
+          schema:
+            $ref: >-
+              ..\components\schemas\microsoft.graph.externalConnectors.externalGroup.yaml
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: operation
+patch:
+  tags:
+    - connections.externalGroup
+  summary: Update the navigation property groups in connections
+  operationId: connections.UpdateGroups
+  requestBody:
+    description: New navigation property values
+    content:
+      application/json:
+        schema:
+          $ref: >-
+            ..\components\schemas\microsoft.graph.externalConnectors.externalGroup.yaml
+    required: true
+  responses:
+    2XX:
+      description: Success
+      content:
+        application/json:
+          schema:
+            $ref: >-
+              ..\components\schemas\microsoft.graph.externalConnectors.externalGroup.yaml
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: operation
+delete:
+  tags:
+    - connections.externalGroup
+  summary: Delete navigation property groups for connections
+  operationId: connections.DeleteGroups
+  parameters:
+    - name: If-Match
+      in: header
+      description: ETag
+      schema:
+        type: string
+  responses:
+    '204':
+      description: Success
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: operation
+parameters:
+  - name: externalConnection-id
+    in: path
+    description: The unique identifier of externalConnection
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: externalConnection
+  - name: externalGroup-id
+    in: path
+    description: The unique identifier of externalGroup
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: externalGroup

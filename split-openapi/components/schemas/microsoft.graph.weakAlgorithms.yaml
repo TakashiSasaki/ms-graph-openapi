@@ -1,0 +1,7 @@
+title: weakAlgorithms
+enum:
+  - rsaSha1
+  - unknownFutureValue
+type: string
+x-ms-enum-flags:
+  isFlags: true

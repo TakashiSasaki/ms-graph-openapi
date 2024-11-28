@@ -1,0 +1,28 @@
+title: applicationGuardBlockFileTransferType
+enum:
+  - notConfigured
+  - blockImageAndTextFile
+  - blockImageFile
+  - blockNone
+  - blockTextFile
+type: string
+description: Possible values for applicationGuardBlockFileTransfer
+x-ms-enum:
+  name: applicationGuardBlockFileTransferType
+  modelAsString: false
+  values:
+    - value: notConfigured
+      description: Not Configured
+      name: notConfigured
+    - value: blockImageAndTextFile
+      description: Block clipboard to transfer Image and Text file
+      name: blockImageAndTextFile
+    - value: blockImageFile
+      description: Block clipboard to transfer Image file
+      name: blockImageFile
+    - value: blockNone
+      description: Neither of text file or image file is blocked from transferring
+      name: blockNone
+    - value: blockTextFile
+      description: Block clipboard to transfer Text file
+      name: blockTextFile

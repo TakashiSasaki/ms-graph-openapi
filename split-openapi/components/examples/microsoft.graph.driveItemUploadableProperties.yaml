@@ -1,0 +1,10 @@
+value:
+  description: String
+  driveItemSource:
+    '@odata.type': microsoft.graph.driveItemSource
+  fileSize: '0'
+  fileSystemInfo:
+    '@odata.type': microsoft.graph.fileSystemInfo
+  mediaSource:
+    '@odata.type': microsoft.graph.mediaSource
+  name: String

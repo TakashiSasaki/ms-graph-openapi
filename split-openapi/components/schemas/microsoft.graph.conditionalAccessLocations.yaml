@@ -1,0 +1,19 @@
+title: conditionalAccessLocations
+required:
+  - '@odata.type'
+type: object
+properties:
+  excludeLocations:
+    type: array
+    items:
+      type: string
+    description: Location IDs excluded from scope of policy.
+  includeLocations:
+    type: array
+    items:
+      type: string
+    description: >-
+      Location IDs in scope of policy unless explicitly excluded, All, or
+      AllTrusted.
+  '@odata.type':
+    type: string

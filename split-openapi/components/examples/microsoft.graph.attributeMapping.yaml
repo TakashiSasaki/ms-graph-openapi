@@ -1,0 +1,11 @@
+value:
+  defaultValue: String
+  exportMissingReferences: 'true'
+  flowBehavior:
+    '@odata.type': microsoft.graph.attributeFlowBehavior
+  flowType:
+    '@odata.type': microsoft.graph.attributeFlowType
+  matchingPriority: '0'
+  source:
+    '@odata.type': microsoft.graph.attributeMappingSource
+  targetAttributeName: String

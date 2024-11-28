@@ -1,0 +1,21 @@
+title: riskDetail
+enum:
+  - none
+  - adminGeneratedTemporaryPassword
+  - userPerformedSecuredPasswordChange
+  - userPerformedSecuredPasswordReset
+  - adminConfirmedSigninSafe
+  - aiConfirmedSigninSafe
+  - userPassedMFADrivenByRiskBasedPolicy
+  - adminDismissedAllRiskForUser
+  - adminConfirmedSigninCompromised
+  - hidden
+  - adminConfirmedUserCompromised
+  - unknownFutureValue
+  - m365DAdminDismissedDetection
+  - adminConfirmedServicePrincipalCompromised
+  - adminDismissedAllRiskForServicePrincipal
+  - userChangedPasswordOnPremises
+  - adminDismissedRiskForSignIn
+  - adminConfirmedAccountSafe
+type: string

@@ -1,0 +1,7 @@
+title: teamworkCallEventType
+enum:
+  - call
+  - meeting
+  - screenShare
+  - unknownFutureValue
+type: string

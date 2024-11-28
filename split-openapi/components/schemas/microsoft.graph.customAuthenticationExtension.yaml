@@ -1,0 +1,14 @@
+allOf:
+  - $ref: .\microsoft.graph.customCalloutExtension.yaml
+  - title: customAuthenticationExtension
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.customAuthenticationExtension'
+    discriminator:
+      propertyName: '@odata.type'
+      mapping:
+        '#microsoft.graph.onTokenIssuanceStartCustomExtension': .\microsoft.graph.onTokenIssuanceStartCustomExtension.yaml

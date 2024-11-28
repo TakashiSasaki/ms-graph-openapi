@@ -1,0 +1,20 @@
+allOf:
+  - $ref: .\microsoft.graph.onenoteEntityBaseModel.yaml
+  - title: onenoteResource
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      content:
+        type: string
+        description: The content stream
+        format: base64url
+        nullable: true
+      contentUrl:
+        type: string
+        description: The URL for downloading the content
+        nullable: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.onenoteResource'
+x-ms-discriminator-value: '#microsoft.graph.onenoteResource'

@@ -1,0 +1,8 @@
+value:
+  blobContainer:
+    '@odata.type': microsoft.graph.security.blobContainerEvidence
+  etag: String
+  fileHashes:
+    - '@odata.type': microsoft.graph.security.fileHash
+  name: String
+  url: String

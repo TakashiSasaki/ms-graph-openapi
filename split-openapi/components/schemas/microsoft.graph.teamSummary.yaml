@@ -1,0 +1,28 @@
+title: teamSummary
+required:
+  - '@odata.type'
+type: object
+properties:
+  guestsCount:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    description: Count of guests in a team.
+    format: int32
+    nullable: true
+  membersCount:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    description: Count of members in a team.
+    format: int32
+    nullable: true
+  ownersCount:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    description: Count of owners in a team.
+    format: int32
+    nullable: true
+  '@odata.type':
+    type: string

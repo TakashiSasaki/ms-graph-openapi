@@ -1,0 +1,151 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: bookingBusiness
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      address:
+        anyOf:
+          - $ref: .\microsoft.graph.physicalAddress.yaml
+          - type: object
+            nullable: true
+        description: >-
+          The street address of the business. The address property, together
+          with phone and webSiteUrl, appear in the footer of a business
+          scheduling page. The attribute type of physicalAddress is not
+          supported in v1.0. Internally we map the addresses to the type others.
+      bookingPageSettings:
+        anyOf:
+          - $ref: .\microsoft.graph.bookingPageSettings.yaml
+          - type: object
+            nullable: true
+        description: Settings for the published booking page.
+      businessHours:
+        type: array
+        items:
+          $ref: .\microsoft.graph.bookingWorkHours.yaml
+        description: The hours of operation for the business.
+      businessType:
+        type: string
+        description: The type of business.
+        nullable: true
+      createdDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: >-
+          The date, time, and time zone when the booking business was created.
+          The timestamp type represents date and time information using ISO 8601
+          format and is always in UTC. For example, midnight UTC on Jan 1, 2014
+          is 2014-01-01T00:00:00Z.
+        format: date-time
+        nullable: true
+      defaultCurrencyIso:
+        type: string
+        description: >-
+          The code for the currency that the business operates in on Microsoft
+          Bookings.
+        nullable: true
+      displayName:
+        type: string
+        description: >-
+          The name of the business, which interfaces with customers. This name
+          appears at the top of the business scheduling page.
+      email:
+        type: string
+        description: The email address for the business.
+        nullable: true
+      isPublished:
+        type: boolean
+        description: >-
+          The scheduling page has been made available to external customers. Use
+          the publish and unpublish actions to set this property. Read-only.
+        nullable: true
+        readOnly: true
+      languageTag:
+        type: string
+        description: The language of the self-service booking page.
+        nullable: true
+      lastUpdatedDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: >-
+          The date, time, and time zone when the booking business was last
+          updated. The timestamp type represents date and time information using
+          ISO 8601 format and is always in UTC. For example, midnight UTC on Jan
+          1, 2014 is 2014-01-01T00:00:00Z.
+        format: date-time
+        nullable: true
+      phone:
+        type: string
+        description: >-
+          The telephone number for the business. The phone property, together
+          with address and webSiteUrl, appear in the footer of a business
+          scheduling page.
+        nullable: true
+      publicUrl:
+        type: string
+        description: >-
+          The URL for the scheduling page, which is set after you publish or
+          unpublish the page. Read-only.
+        nullable: true
+        readOnly: true
+      schedulingPolicy:
+        anyOf:
+          - $ref: .\microsoft.graph.bookingSchedulingPolicy.yaml
+          - type: object
+            nullable: true
+        description: Specifies how bookings can be created for this business.
+      webSiteUrl:
+        type: string
+        description: >-
+          The URL of the business web site. The webSiteUrl property, together
+          with address, phone, appear in the footer of a business scheduling
+          page.
+        nullable: true
+      appointments:
+        type: array
+        items:
+          $ref: .\microsoft.graph.bookingAppointment.yaml
+        description: All the appointments of this business. Read-only. Nullable.
+        x-ms-navigationProperty: true
+      calendarView:
+        type: array
+        items:
+          $ref: .\microsoft.graph.bookingAppointment.yaml
+        description: >-
+          The set of appointments of this business in a specified date range.
+          Read-only. Nullable.
+        x-ms-navigationProperty: true
+      customers:
+        type: array
+        items:
+          $ref: .\microsoft.graph.bookingCustomerBase.yaml
+        description: All the customers of this business. Read-only. Nullable.
+        x-ms-navigationProperty: true
+      customQuestions:
+        type: array
+        items:
+          $ref: .\microsoft.graph.bookingCustomQuestion.yaml
+        description: All the custom questions of this business. Read-only. Nullable.
+        x-ms-navigationProperty: true
+      services:
+        type: array
+        items:
+          $ref: .\microsoft.graph.bookingService.yaml
+        description: All the services offered by this business. Read-only. Nullable.
+        x-ms-navigationProperty: true
+      staffMembers:
+        type: array
+        items:
+          $ref: .\microsoft.graph.bookingStaffMemberBase.yaml
+        description: >-
+          All the staff members that provide services in this business.
+          Read-only. Nullable.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+    description: Represents a Microsoft Bookings Business.
+x-ms-discriminator-value: '#microsoft.graph.bookingBusiness'

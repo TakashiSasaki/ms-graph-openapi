@@ -1,0 +1,25 @@
+title: documentSetContent
+required:
+  - '@odata.type'
+type: object
+properties:
+  contentType:
+    anyOf:
+      - $ref: .\microsoft.graph.contentTypeInfo.yaml
+      - type: object
+        nullable: true
+    description: Content type information of the file.
+  fileName:
+    type: string
+    description: >-
+      Name of the file in resource folder that should be added as a default
+      content or a template in the document set.
+    nullable: true
+  folderName:
+    type: string
+    description: >-
+      Folder name in which the file will be placed when a new document set is
+      created in the library.
+    nullable: true
+  '@odata.type':
+    type: string

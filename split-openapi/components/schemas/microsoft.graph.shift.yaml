@@ -1,0 +1,38 @@
+allOf:
+  - $ref: .\microsoft.graph.changeTrackedEntity.yaml
+  - title: shift
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      draftShift:
+        anyOf:
+          - $ref: .\microsoft.graph.shiftItem.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Draft changes in the shift. Draft changes are only visible to
+          managers. The changes are visible to employees when they are shared,
+          which copies the changes from the draftShift to the sharedShift
+          property.
+      schedulingGroupId:
+        type: string
+        description: ID of the scheduling group the shift is part of. Required.
+        nullable: true
+      sharedShift:
+        anyOf:
+          - $ref: .\microsoft.graph.shiftItem.yaml
+          - type: object
+            nullable: true
+        description: >-
+          The shared version of this shift that is viewable by both employees
+          and managers. Updates to the sharedShift property send notifications
+          to users in the Teams client.
+      userId:
+        type: string
+        description: ID of the user assigned to the shift. Required.
+        nullable: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.shift'
+x-ms-discriminator-value: '#microsoft.graph.shift'

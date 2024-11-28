@@ -1,0 +1,8 @@
+title: sourceType
+enum:
+  - mailbox
+  - site
+  - unknownFutureValue
+type: string
+x-ms-enum-flags:
+  isFlags: true

@@ -1,0 +1,85 @@
+description: >-
+  Provides operations to manage the microsoft365Apps property of the
+  microsoft.graph.admin entity.
+get:
+  tags:
+    - admin.adminMicrosoft365Apps
+  summary: Get microsoft365Apps from admin
+  description: A container for the Microsoft 365 apps admin functionality.
+  operationId: admin.GetMicrosoft365Apps
+  parameters:
+    - name: $select
+      in: query
+      description: Select properties to be returned
+      style: form
+      explode: false
+      schema:
+        uniqueItems: true
+        type: array
+        items:
+          type: string
+    - name: $expand
+      in: query
+      description: Expand related entities
+      style: form
+      explode: false
+      schema:
+        uniqueItems: true
+        type: array
+        items:
+          type: string
+  responses:
+    2XX:
+      description: Retrieved navigation property
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\microsoft.graph.adminMicrosoft365Apps.yaml
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: operation
+patch:
+  tags:
+    - admin.adminMicrosoft365Apps
+  summary: Update the navigation property microsoft365Apps in admin
+  operationId: admin.UpdateMicrosoft365Apps
+  requestBody:
+    description: New navigation property values
+    content:
+      application/json:
+        schema:
+          $ref: ..\components\schemas\microsoft.graph.adminMicrosoft365Apps.yaml
+    required: true
+  responses:
+    2XX:
+      description: Success
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\microsoft.graph.adminMicrosoft365Apps.yaml
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: operation
+delete:
+  tags:
+    - admin.adminMicrosoft365Apps
+  summary: Delete navigation property microsoft365Apps for admin
+  operationId: admin.DeleteMicrosoft365Apps
+  parameters:
+    - name: If-Match
+      in: header
+      description: ETag
+      schema:
+        type: string
+  responses:
+    '204':
+      description: Success
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: operation

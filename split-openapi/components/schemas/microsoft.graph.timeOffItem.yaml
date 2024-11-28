@@ -1,0 +1,14 @@
+allOf:
+  - $ref: .\microsoft.graph.scheduleEntity.yaml
+  - title: timeOffItem
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      timeOffReasonId:
+        type: string
+        description: ID of the timeOffReason for this timeOffItem. Required.
+        nullable: true
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.timeOffItem'

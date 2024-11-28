@@ -1,0 +1,25 @@
+allOf:
+  - $ref: .\microsoft.graph.deviceConfiguration.yaml
+  - title: macOSCustomConfiguration
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      payload:
+        type: string
+        description: Payload. (UTF8 encoded byte array)
+        format: base64url
+      payloadFileName:
+        type: string
+        description: Payload file name (.mobileconfig
+        nullable: true
+      payloadName:
+        type: string
+        description: Name that is displayed to the user.
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.macOSCustomConfiguration'
+    description: >-
+      This topic provides descriptions of the declared methods, properties and
+      relationships exposed by the macOSCustomConfiguration resource.
+x-ms-discriminator-value: '#microsoft.graph.macOSCustomConfiguration'

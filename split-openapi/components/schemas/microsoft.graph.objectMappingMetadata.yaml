@@ -1,0 +1,10 @@
+title: objectMappingMetadata
+enum:
+  - EscrowBehavior
+  - DisableMonitoringForChanges
+  - OriginalJoiningProperty
+  - Disposition
+  - IsCustomerDefined
+  - ExcludeFromReporting
+  - Unsynchronized
+type: string

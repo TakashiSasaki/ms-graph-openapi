@@ -1,0 +1,19 @@
+title: applicationServicePrincipal
+required:
+  - '@odata.type'
+type: object
+properties:
+  application:
+    anyOf:
+      - $ref: .\microsoft.graph.application.yaml
+      - type: object
+        nullable: true
+    x-ms-navigationProperty: true
+  servicePrincipal:
+    anyOf:
+      - $ref: .\microsoft.graph.servicePrincipal.yaml
+      - type: object
+        nullable: true
+    x-ms-navigationProperty: true
+  '@odata.type':
+    type: string

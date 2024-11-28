@@ -1,0 +1,78 @@
+description: Provides operations to manage the media for the cloudCommunications entity.
+get:
+  tags:
+    - communications.onlineMeeting
+  summary: Get content for the navigation property recordings from communications
+  description: The content of the recording. Read-only.
+  operationId: communications.onlineMeetings.GetRecordingsContent
+  responses:
+    2XX:
+      description: Retrieved media content
+      content:
+        application/octet-stream:
+          schema:
+            type: string
+            format: binary
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+put:
+  tags:
+    - communications.onlineMeeting
+  summary: Update content for the navigation property recordings in communications
+  description: The content of the recording. Read-only.
+  operationId: communications.onlineMeetings.UpdateRecordingsContent
+  requestBody:
+    description: New media content.
+    content:
+      application/octet-stream:
+        schema:
+          type: string
+          format: binary
+    required: true
+  responses:
+    2XX:
+      description: Success
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\microsoft.graph.callRecording.yaml
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+delete:
+  tags:
+    - communications.onlineMeeting
+  summary: Delete content for the navigation property recordings in communications
+  description: The content of the recording. Read-only.
+  operationId: communications.onlineMeetings.DeleteRecordingsContent
+  parameters:
+    - name: If-Match
+      in: header
+      description: ETag
+      schema:
+        type: string
+  responses:
+    '204':
+      description: Success
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+parameters:
+  - name: onlineMeeting-id
+    in: path
+    description: The unique identifier of onlineMeeting
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: onlineMeeting
+  - name: callRecording-id
+    in: path
+    description: The unique identifier of callRecording
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: callRecording

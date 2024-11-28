@@ -1,0 +1,6 @@
+title: membershipChangeType
+enum:
+  - add
+  - remove
+  - unknownFutureValue
+type: string

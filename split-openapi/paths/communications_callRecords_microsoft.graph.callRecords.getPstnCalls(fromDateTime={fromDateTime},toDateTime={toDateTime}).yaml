@@ -1,0 +1,59 @@
+description: Provides operations to call the getPstnCalls method.
+get:
+  tags:
+    - communications.callRecord
+  summary: Invoke function getPstnCalls
+  description: Get a log of PSTN calls as a collection of pstnCallLogRow entries.
+  operationId: communications.callRecords.getPstnCalls
+  parameters:
+    - $ref: ..\components\parameters\top.yaml
+    - $ref: ..\components\parameters\skip.yaml
+    - $ref: ..\components\parameters\search.yaml
+    - $ref: ..\components\parameters\filter.yaml
+    - $ref: ..\components\parameters\count.yaml
+  responses:
+    2XX:
+      description: Success
+      content:
+        application/json:
+          schema:
+            type: object
+            allOf:
+              - $ref: >-
+                  ..\components\schemas\BaseCollectionPaginationCountResponse.yaml
+              - type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: >-
+                        ..\components\schemas\microsoft.graph.callRecords.pstnCallLogRow.yaml
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: function
+  x-ms-pageable:
+    nextLinkName: '@odata.nextLink'
+    operationName: listMore
+parameters:
+  - name: fromDateTime
+    in: path
+    description: 'Usage: fromDateTime={fromDateTime}'
+    required: true
+    schema:
+      pattern: >-
+        ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+      type: string
+      format: date-time
+      nullable: true
+  - name: toDateTime
+    in: path
+    description: 'Usage: toDateTime={toDateTime}'
+    required: true
+    schema:
+      pattern: >-
+        ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+      type: string
+      format: date-time
+      nullable: true

@@ -1,0 +1,30 @@
+allOf:
+  - $ref: .\microsoft.graph.accessReviewScope.yaml
+  - title: accessReviewQueryScope
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      query:
+        type: string
+        description: The query representing what will be reviewed in an access review.
+        nullable: true
+      queryRoot:
+        type: string
+        description: >-
+          In the scenario where reviewers need to be specified dynamically, this
+          property is used to indicate the relative source of the query. This
+          property is only required if a relative query is specified. For
+          example, ./manager.
+        nullable: true
+      queryType:
+        type: string
+        description: Indicates the type of query. Types include MicrosoftGraph and ARM.
+        nullable: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.accessReviewQueryScope'
+    discriminator:
+      propertyName: '@odata.type'
+      mapping:
+        '#microsoft.graph.accessReviewInactiveUsersQueryScope': .\microsoft.graph.accessReviewInactiveUsersQueryScope.yaml

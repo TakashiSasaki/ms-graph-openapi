@@ -1,0 +1,16 @@
+allOf:
+  - $ref: .\microsoft.graph.security.alertEvidence.yaml
+  - title: fileHashEvidence
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      algorithm:
+        $ref: .\microsoft.graph.security.fileHashAlgorithm.yaml
+      value:
+        type: string
+        nullable: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.security.fileHashEvidence'
+x-ms-discriminator-value: '#microsoft.graph.security.fileHashEvidence'

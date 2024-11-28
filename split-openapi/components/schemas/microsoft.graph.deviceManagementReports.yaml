@@ -1,0 +1,17 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: deviceManagementReports
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      exportJobs:
+        type: array
+        items:
+          $ref: .\microsoft.graph.deviceManagementExportJob.yaml
+        description: Entity representing a job to export a report
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+    description: Singleton entity that acts as a container for all reports functionality.
+x-ms-discriminator-value: '#microsoft.graph.deviceManagementReports'

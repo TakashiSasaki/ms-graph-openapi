@@ -1,0 +1,12 @@
+value:
+  failedRuns: '0'
+  failedUsers: '0'
+  successfulRuns: '0'
+  successfulUsers: '0'
+  totalRuns: '0'
+  totalUsers: '0'
+  workflowCategory:
+    '@odata.type': microsoft.graph.identityGovernance.lifecycleWorkflowCategory
+  workflowDisplayName: String
+  workflowId: String
+  workflowVersion: '0'

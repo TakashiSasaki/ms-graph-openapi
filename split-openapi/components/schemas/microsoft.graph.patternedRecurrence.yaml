@@ -1,0 +1,23 @@
+title: patternedRecurrence
+required:
+  - '@odata.type'
+type: object
+properties:
+  pattern:
+    anyOf:
+      - $ref: .\microsoft.graph.recurrencePattern.yaml
+      - type: object
+        nullable: true
+    description: >-
+      The frequency of an event.  For access reviews: Do not specify this
+      property for a one-time access review.  Only interval, dayOfMonth, and
+      type (weekly, absoluteMonthly) properties of recurrencePattern are
+      supported.
+  range:
+    anyOf:
+      - $ref: .\microsoft.graph.recurrenceRange.yaml
+      - type: object
+        nullable: true
+    description: The duration of an event.
+  '@odata.type':
+    type: string

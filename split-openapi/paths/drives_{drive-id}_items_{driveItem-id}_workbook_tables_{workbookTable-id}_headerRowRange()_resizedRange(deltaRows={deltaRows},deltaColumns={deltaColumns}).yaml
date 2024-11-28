@@ -1,0 +1,111 @@
+description: Provides operations to call the resizedRange method.
+get:
+  tags:
+    - drives.driveItem
+  summary: Invoke function resizedRange
+  operationId: >-
+    drives.drive.items.driveItem.workbook.tables.workbookTable.headerRowRange.resizedRange
+  responses:
+    2XX:
+      description: Success
+      content:
+        application/json:
+          schema:
+            anyOf:
+              - $ref: ..\components\schemas\microsoft.graph.workbookRange.yaml
+              - type: object
+                nullable: true
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: function
+parameters:
+  - name: drive-id
+    in: path
+    description: The unique identifier of drive
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: drive
+  - name: driveItem-id
+    in: path
+    description: The unique identifier of driveItem
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: driveItem
+  - name: workbookTable-id
+    in: path
+    description: The unique identifier of workbookTable
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: workbookTable
+  - name: deltaRows
+    in: path
+    description: 'Usage: deltaRows={deltaRows}'
+    required: true
+    schema:
+      maximum: 2147483647
+      minimum: -2147483648
+      type: number
+      format: int32
+  - name: deltaColumns
+    in: path
+    description: 'Usage: deltaColumns={deltaColumns}'
+    required: true
+    schema:
+      maximum: 2147483647
+      minimum: -2147483648
+      type: number
+      format: int32
+x-ms-docs-grouped-path:
+  - >-
+    /drives/{drive-id}/items/{driveItem-id}/workbook/names/{workbookNamedItem-id}/range()/resizedRange(deltaRows={deltaRows},deltaColumns={deltaColumns})
+  - >-
+    /drives/{drive-id}/items/{driveItem-id}/workbook/tables/{workbookTable-id}/columns/{workbookTableColumn-id}/dataBodyRange()/resizedRange(deltaRows={deltaRows},deltaColumns={deltaColumns})
+  - >-
+    /drives/{drive-id}/items/{driveItem-id}/workbook/tables/{workbookTable-id}/columns/{workbookTableColumn-id}/headerRowRange()/resizedRange(deltaRows={deltaRows},deltaColumns={deltaColumns})
+  - >-
+    /drives/{drive-id}/items/{driveItem-id}/workbook/tables/{workbookTable-id}/columns/{workbookTableColumn-id}/range()/resizedRange(deltaRows={deltaRows},deltaColumns={deltaColumns})
+  - >-
+    /drives/{drive-id}/items/{driveItem-id}/workbook/tables/{workbookTable-id}/columns/{workbookTableColumn-id}/totalRowRange()/resizedRange(deltaRows={deltaRows},deltaColumns={deltaColumns})
+  - >-
+    /drives/{drive-id}/items/{driveItem-id}/workbook/tables/{workbookTable-id}/dataBodyRange()/resizedRange(deltaRows={deltaRows},deltaColumns={deltaColumns})
+  - >-
+    /drives/{drive-id}/items/{driveItem-id}/workbook/tables/{workbookTable-id}/range()/resizedRange(deltaRows={deltaRows},deltaColumns={deltaColumns})
+  - >-
+    /drives/{drive-id}/items/{driveItem-id}/workbook/tables/{workbookTable-id}/totalRowRange()/resizedRange(deltaRows={deltaRows},deltaColumns={deltaColumns})
+  - >-
+    /drives/{drive-id}/items/{driveItem-id}/workbook/tables/{workbookTable-id}/rows/{workbookTableRow-id}/range()/resizedRange(deltaRows={deltaRows},deltaColumns={deltaColumns})
+  - >-
+    /drives/{drive-id}/items/{driveItem-id}/workbook/worksheets/{workbookWorksheet-id}/cell(row={row},column={column})/resizedRange(deltaRows={deltaRows},deltaColumns={deltaColumns})
+  - >-
+    /drives/{drive-id}/items/{driveItem-id}/workbook/worksheets/{workbookWorksheet-id}/range()/resizedRange(deltaRows={deltaRows},deltaColumns={deltaColumns})
+  - >-
+    /drives/{drive-id}/items/{driveItem-id}/workbook/worksheets/{workbookWorksheet-id}/range(address='{address}')/resizedRange(deltaRows={deltaRows},deltaColumns={deltaColumns})
+  - >-
+    /drives/{drive-id}/items/{driveItem-id}/workbook/worksheets/{workbookWorksheet-id}/usedRange()/resizedRange(deltaRows={deltaRows},deltaColumns={deltaColumns})
+  - >-
+    /drives/{drive-id}/items/{driveItem-id}/workbook/worksheets/{workbookWorksheet-id}/usedRange(valuesOnly={valuesOnly})/resizedRange(deltaRows={deltaRows},deltaColumns={deltaColumns})
+  - >-
+    /drives/{drive-id}/items/{driveItem-id}/workbook/worksheets/{workbookWorksheet-id}/names/{workbookNamedItem-id}/range()/resizedRange(deltaRows={deltaRows},deltaColumns={deltaColumns})
+  - >-
+    /drives/{drive-id}/items/{driveItem-id}/workbook/worksheets/{workbookWorksheet-id}/tables/{workbookTable-id}/columns/{workbookTableColumn-id}/dataBodyRange()/resizedRange(deltaRows={deltaRows},deltaColumns={deltaColumns})
+  - >-
+    /drives/{drive-id}/items/{driveItem-id}/workbook/worksheets/{workbookWorksheet-id}/tables/{workbookTable-id}/columns/{workbookTableColumn-id}/headerRowRange()/resizedRange(deltaRows={deltaRows},deltaColumns={deltaColumns})
+  - >-
+    /drives/{drive-id}/items/{driveItem-id}/workbook/worksheets/{workbookWorksheet-id}/tables/{workbookTable-id}/columns/{workbookTableColumn-id}/range()/resizedRange(deltaRows={deltaRows},deltaColumns={deltaColumns})
+  - >-
+    /drives/{drive-id}/items/{driveItem-id}/workbook/worksheets/{workbookWorksheet-id}/tables/{workbookTable-id}/columns/{workbookTableColumn-id}/totalRowRange()/resizedRange(deltaRows={deltaRows},deltaColumns={deltaColumns})
+  - >-
+    /drives/{drive-id}/items/{driveItem-id}/workbook/worksheets/{workbookWorksheet-id}/tables/{workbookTable-id}/dataBodyRange()/resizedRange(deltaRows={deltaRows},deltaColumns={deltaColumns})
+  - >-
+    /drives/{drive-id}/items/{driveItem-id}/workbook/worksheets/{workbookWorksheet-id}/tables/{workbookTable-id}/headerRowRange()/resizedRange(deltaRows={deltaRows},deltaColumns={deltaColumns})
+  - >-
+    /drives/{drive-id}/items/{driveItem-id}/workbook/worksheets/{workbookWorksheet-id}/tables/{workbookTable-id}/range()/resizedRange(deltaRows={deltaRows},deltaColumns={deltaColumns})
+  - >-
+    /drives/{drive-id}/items/{driveItem-id}/workbook/worksheets/{workbookWorksheet-id}/tables/{workbookTable-id}/totalRowRange()/resizedRange(deltaRows={deltaRows},deltaColumns={deltaColumns})
+  - >-
+    /drives/{drive-id}/items/{driveItem-id}/workbook/worksheets/{workbookWorksheet-id}/tables/{workbookTable-id}/rows/{workbookTableRow-id}/range()/resizedRange(deltaRows={deltaRows},deltaColumns={deltaColumns})

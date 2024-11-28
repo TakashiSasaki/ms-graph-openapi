@@ -1,0 +1,19 @@
+value:
+  allowRedirect: 'true'
+  comment: String
+  compatibilityMode:
+    '@odata.type': microsoft.graph.browserSiteCompatibilityMode
+  createdDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  deletedDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  history:
+    - '@odata.type': microsoft.graph.browserSiteHistory
+  lastModifiedBy:
+    '@odata.type': microsoft.graph.identitySet
+  lastModifiedDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  mergeType:
+    '@odata.type': microsoft.graph.browserSiteMergeType
+  status:
+    '@odata.type': microsoft.graph.browserSiteStatus
+  targetEnvironment:
+    '@odata.type': microsoft.graph.browserSiteTargetEnvironment
+  webUrl: String

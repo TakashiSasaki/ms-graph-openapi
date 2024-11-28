@@ -1,0 +1,24 @@
+title: defenderScanType
+enum:
+  - userDefined
+  - disabled
+  - quick
+  - full
+type: string
+description: Possible values for system scan type.
+x-ms-enum:
+  name: defenderScanType
+  modelAsString: false
+  values:
+    - value: userDefined
+      description: User Defined, default value, no intent.
+      name: userDefined
+    - value: disabled
+      description: System scan disabled.
+      name: disabled
+    - value: quick
+      description: Quick system scan.
+      name: quick
+    - value: full
+      description: Full system scan.
+      name: full

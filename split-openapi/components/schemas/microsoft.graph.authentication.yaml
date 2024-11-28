@@ -1,0 +1,85 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: authentication
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      emailMethods:
+        type: array
+        items:
+          $ref: .\microsoft.graph.emailAuthenticationMethod.yaml
+        description: The email address registered to a user for authentication.
+        x-ms-navigationProperty: true
+      fido2Methods:
+        type: array
+        items:
+          $ref: .\microsoft.graph.fido2AuthenticationMethod.yaml
+        description: >-
+          Represents the FIDO2 security keys registered to a user for
+          authentication.
+        x-ms-navigationProperty: true
+      methods:
+        type: array
+        items:
+          $ref: .\microsoft.graph.authenticationMethod.yaml
+        description: Represents all authentication methods registered to a user.
+        x-ms-navigationProperty: true
+      microsoftAuthenticatorMethods:
+        type: array
+        items:
+          $ref: .\microsoft.graph.microsoftAuthenticatorAuthenticationMethod.yaml
+        description: >-
+          The details of the Microsoft Authenticator app registered to a user
+          for authentication.
+        x-ms-navigationProperty: true
+      operations:
+        type: array
+        items:
+          $ref: .\microsoft.graph.longRunningOperation.yaml
+        description: >-
+          Represents the status of a long-running operation, such as a password
+          reset operation.
+        x-ms-navigationProperty: true
+      passwordMethods:
+        type: array
+        items:
+          $ref: .\microsoft.graph.passwordAuthenticationMethod.yaml
+        description: >-
+          Represents the password registered to a user for authentication. For
+          security, the password itself is never returned in the object, but
+          action can be taken to reset a password.
+        x-ms-navigationProperty: true
+      phoneMethods:
+        type: array
+        items:
+          $ref: .\microsoft.graph.phoneAuthenticationMethod.yaml
+        description: The phone numbers registered to a user for authentication.
+        x-ms-navigationProperty: true
+      softwareOathMethods:
+        type: array
+        items:
+          $ref: .\microsoft.graph.softwareOathAuthenticationMethod.yaml
+        description: >-
+          The software OATH time-based one-time password (TOTP) applications
+          registered to a user for authentication.
+        x-ms-navigationProperty: true
+      temporaryAccessPassMethods:
+        type: array
+        items:
+          $ref: .\microsoft.graph.temporaryAccessPassAuthenticationMethod.yaml
+        description: >-
+          Represents a Temporary Access Pass registered to a user for
+          authentication through time-limited passcodes.
+        x-ms-navigationProperty: true
+      windowsHelloForBusinessMethods:
+        type: array
+        items:
+          $ref: .\microsoft.graph.windowsHelloForBusinessAuthenticationMethod.yaml
+        description: >-
+          Represents the Windows Hello for Business authentication method
+          registered to a user for authentication.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.authentication'

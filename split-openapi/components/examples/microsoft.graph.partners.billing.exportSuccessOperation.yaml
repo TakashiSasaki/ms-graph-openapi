@@ -1,0 +1,3 @@
+value:
+  resourceLocation:
+    '@odata.type': microsoft.graph.partners.billing.manifest

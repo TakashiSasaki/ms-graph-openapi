@@ -1,0 +1,47 @@
+description: Provides operations to call the incidentReport method.
+get:
+  tags:
+    - admin.serviceAnnouncement
+  summary: Invoke function incidentReport
+  description: >-
+    Provide the Post-Incident Review (PIR) document of a specified service issue
+    for tenant.  An issue only with status of PostIncidentReviewPublished
+    indicates that the PIR document exists for the issue. The operation returns
+    an error if the specified issue doesn't exist for the tenant or if PIR
+    document does not exist for the issue.
+  operationId: >-
+    admin.serviceAnnouncement.healthOverviews.serviceHealth.issues.serviceHealthIssue.incidentReport
+  responses:
+    2XX:
+      description: Success
+      content:
+        application/octet-stream:
+          schema:
+            type: object
+            properties:
+              value:
+                type: string
+                format: base64url
+                nullable: true
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: function
+parameters:
+  - name: serviceHealth-id
+    in: path
+    description: The unique identifier of serviceHealth
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: serviceHealth
+  - name: serviceHealthIssue-id
+    in: path
+    description: The unique identifier of serviceHealthIssue
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: serviceHealthIssue
+x-ms-docs-grouped-path:
+  - /admin/serviceAnnouncement/issues/{serviceHealthIssue-id}/incidentReport()

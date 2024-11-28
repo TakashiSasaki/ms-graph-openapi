@@ -1,0 +1,33 @@
+value:
+  androidManagedAppProtections:
+    - '@odata.type': microsoft.graph.androidManagedAppProtection
+  defaultManagedAppProtections:
+    - '@odata.type': microsoft.graph.defaultManagedAppProtection
+  iosManagedAppProtections:
+    - '@odata.type': microsoft.graph.iosManagedAppProtection
+  isEnabledForMicrosoftStoreForBusiness: 'true'
+  managedAppPolicies:
+    - '@odata.type': microsoft.graph.managedAppPolicy
+  managedAppRegistrations:
+    - '@odata.type': microsoft.graph.managedAppRegistration
+  managedAppStatuses:
+    - '@odata.type': microsoft.graph.managedAppStatus
+  managedEBooks:
+    - '@odata.type': microsoft.graph.managedEBook
+  mdmWindowsInformationProtectionPolicies:
+    - '@odata.type': microsoft.graph.mdmWindowsInformationProtectionPolicy
+  microsoftStoreForBusinessLanguage: String
+  microsoftStoreForBusinessLastCompletedApplicationSyncTime: '0001-01-01T00:00:00.0000000+00:00'
+  microsoftStoreForBusinessLastSuccessfulSyncDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  mobileAppCategories:
+    - '@odata.type': microsoft.graph.mobileAppCategory
+  mobileAppConfigurations:
+    - '@odata.type': microsoft.graph.managedDeviceMobileAppConfiguration
+  mobileApps:
+    - '@odata.type': microsoft.graph.mobileApp
+  targetedManagedAppConfigurations:
+    - '@odata.type': microsoft.graph.targetedManagedAppConfiguration
+  vppTokens:
+    - '@odata.type': microsoft.graph.vppToken
+  windowsInformationProtectionPolicies:
+    - '@odata.type': microsoft.graph.windowsInformationProtectionPolicy

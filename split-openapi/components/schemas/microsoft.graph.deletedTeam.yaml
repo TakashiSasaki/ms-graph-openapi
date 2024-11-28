@@ -1,0 +1,18 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: deletedTeam
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      channels:
+        type: array
+        items:
+          $ref: .\microsoft.graph.channel.yaml
+        description: >-
+          The channels that are either shared with this deleted team or created
+          in this deleted team.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.deletedTeam'

@@ -1,0 +1,8 @@
+title: printTaskProcessingState
+enum:
+  - pending
+  - processing
+  - completed
+  - aborted
+  - unknownFutureValue
+type: string

@@ -1,0 +1,23 @@
+title: appListItem
+required:
+  - '@odata.type'
+type: object
+properties:
+  appId:
+    type: string
+    description: The application or bundle identifier of the application
+    nullable: true
+  appStoreUrl:
+    type: string
+    description: The Store URL of the application
+    nullable: true
+  name:
+    type: string
+    description: The application name
+  publisher:
+    type: string
+    description: The publisher of the application
+    nullable: true
+  '@odata.type':
+    type: string
+description: Represents an app in the list of managed applications

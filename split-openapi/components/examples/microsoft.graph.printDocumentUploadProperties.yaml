@@ -1,0 +1,4 @@
+value:
+  contentType: String
+  documentName: String
+  size: '0'

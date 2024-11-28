@@ -1,0 +1,12 @@
+value:
+  comparisonValue: String
+  displayName: String
+  enforceSignatureCheck: 'true'
+  operationType:
+    '@odata.type': microsoft.graph.win32LobAppPowerShellScriptRuleOperationType
+  operator:
+    '@odata.type': microsoft.graph.win32LobAppRuleOperator
+  runAs32Bit: 'true'
+  runAsAccount:
+    '@odata.type': microsoft.graph.runAsAccountType
+  scriptContent: String

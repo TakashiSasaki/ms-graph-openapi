@@ -1,0 +1,5 @@
+value:
+  feedbackResource:
+    '@odata.type': microsoft.graph.educationResource
+  resourceStatus:
+    '@odata.type': microsoft.graph.educationFeedbackResourceOutcomeStatus

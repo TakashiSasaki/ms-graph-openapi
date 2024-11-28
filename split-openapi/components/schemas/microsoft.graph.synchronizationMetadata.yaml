@@ -1,0 +1,12 @@
+title: synchronizationMetadata
+enum:
+  - GalleryApplicationIdentifier
+  - GalleryApplicationKey
+  - IsOAuthEnabled
+  - IsSynchronizationAgentAssignmentRequired
+  - IsSynchronizationAgentRequired
+  - IsSynchronizationInPreview
+  - OAuthSettings
+  - SynchronizationLearnMoreIbizaFwLink
+  - ConfigurationFields
+type: string

@@ -1,0 +1,27 @@
+title: userExperienceAnalyticsHealthState
+enum:
+  - unknown
+  - insufficientData
+  - needsAttention
+  - meetingGoals
+  - unknownFutureValue
+type: string
+x-ms-enum:
+  name: userExperienceAnalyticsHealthState
+  modelAsString: false
+  values:
+    - value: unknown
+      description: Indicates that the health state is unknown.
+      name: unknown
+    - value: insufficientData
+      description: Indicates that the health state is insufficient data.
+      name: insufficientData
+    - value: needsAttention
+      description: Indicates that the health state needs attention.
+      name: needsAttention
+    - value: meetingGoals
+      description: Indicates that the health state is meeting goals.
+      name: meetingGoals
+    - value: unknownFutureValue
+      description: Evolvable enumeration sentinel value. Do not use.
+      name: unknownFutureValue

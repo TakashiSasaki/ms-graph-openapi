@@ -1,0 +1,13 @@
+value:
+  format:
+    '@odata.type': microsoft.graph.workbookChartAxisFormat
+  majorGridlines:
+    '@odata.type': microsoft.graph.workbookChartGridlines
+  majorUnit: {}
+  maximum: {}
+  minimum: {}
+  minorGridlines:
+    '@odata.type': microsoft.graph.workbookChartGridlines
+  minorUnit: {}
+  title:
+    '@odata.type': microsoft.graph.workbookChartAxisTitle

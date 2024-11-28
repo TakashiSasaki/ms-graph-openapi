@@ -1,0 +1,15 @@
+title: blob
+required:
+  - '@odata.type'
+type: object
+properties:
+  name:
+    type: string
+    description: The blob name.
+  partitionValue:
+    type: string
+    description: >-
+      The partition that contains the file. A large partition is split into
+      multiple files, each with the same partitionValue.
+  '@odata.type':
+    type: string

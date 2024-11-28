@@ -1,0 +1,23 @@
+title: vmMetadata
+required:
+  - '@odata.type'
+type: object
+properties:
+  cloudProvider:
+    $ref: .\microsoft.graph.security.vmCloudProvider.yaml
+  resourceId:
+    type: string
+    description: Unique identifier of the Azure resource.
+    nullable: true
+  subscriptionId:
+    type: string
+    description: >-
+      Unique identifier of the Azure subscription the customer tenant belongs
+      to.
+    nullable: true
+  vmId:
+    type: string
+    description: Unique identifier of the virtual machine instance.
+    nullable: true
+  '@odata.type':
+    type: string

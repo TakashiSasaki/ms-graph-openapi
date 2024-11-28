@@ -1,0 +1,19 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: workbookWorksheetProtection
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      options:
+        anyOf:
+          - $ref: .\microsoft.graph.workbookWorksheetProtectionOptions.yaml
+          - type: object
+            nullable: true
+        description: Worksheet protection options. Read-only.
+      protected:
+        type: boolean
+        description: Indicates whether the worksheet is protected.  Read-only.
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.workbookWorksheetProtection'

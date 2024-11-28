@@ -1,0 +1,34 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: todoTaskList
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      displayName:
+        type: string
+        description: The name of the task list.
+        nullable: true
+      isOwner:
+        type: boolean
+        description: True if the user is owner of the given task list.
+      isShared:
+        type: boolean
+        description: True if the task list is shared with other users
+      wellknownListName:
+        $ref: .\microsoft.graph.wellknownListName.yaml
+      extensions:
+        type: array
+        items:
+          $ref: .\microsoft.graph.extension.yaml
+        description: The collection of open extensions defined for the task list. Nullable.
+        x-ms-navigationProperty: true
+      tasks:
+        type: array
+        items:
+          $ref: .\microsoft.graph.todoTask.yaml
+        description: The tasks in this task list. Read-only. Nullable.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.todoTaskList'

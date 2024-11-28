@@ -1,0 +1,19 @@
+value:
+  resourceNamespaces:
+    - '@odata.type': microsoft.graph.unifiedRbacResourceNamespace
+  roleAssignments:
+    - '@odata.type': microsoft.graph.unifiedRoleAssignment
+  roleAssignmentScheduleInstances:
+    - '@odata.type': microsoft.graph.unifiedRoleAssignmentScheduleInstance
+  roleAssignmentScheduleRequests:
+    - '@odata.type': microsoft.graph.unifiedRoleAssignmentScheduleRequest
+  roleAssignmentSchedules:
+    - '@odata.type': microsoft.graph.unifiedRoleAssignmentSchedule
+  roleDefinitions:
+    - '@odata.type': microsoft.graph.unifiedRoleDefinition
+  roleEligibilityScheduleInstances:
+    - '@odata.type': microsoft.graph.unifiedRoleEligibilityScheduleInstance
+  roleEligibilityScheduleRequests:
+    - '@odata.type': microsoft.graph.unifiedRoleEligibilityScheduleRequest
+  roleEligibilitySchedules:
+    - '@odata.type': microsoft.graph.unifiedRoleEligibilitySchedule

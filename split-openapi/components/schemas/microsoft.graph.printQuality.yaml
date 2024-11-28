@@ -1,0 +1,7 @@
+title: printQuality
+enum:
+  - low
+  - medium
+  - high
+  - unknownFutureValue
+type: string

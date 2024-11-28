@@ -1,0 +1,21 @@
+allOf:
+  - $ref: .\microsoft.graph.userExperienceAnalyticsInsightValue.yaml
+  - title: insightValueDouble
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      value:
+        oneOf:
+          - type: number
+            format: double
+            nullable: true
+          - type: string
+            nullable: true
+          - $ref: .\ReferenceNumeric.yaml
+        description: The double value of the user experience analytics insight.
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.insightValueDouble'
+    description: The value in an user experience analytics insight.
+x-ms-discriminator-value: '#microsoft.graph.insightValueDouble'

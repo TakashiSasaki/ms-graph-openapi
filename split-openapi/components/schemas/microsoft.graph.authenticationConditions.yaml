@@ -1,0 +1,13 @@
+title: authenticationConditions
+required:
+  - '@odata.type'
+type: object
+properties:
+  applications:
+    anyOf:
+      - $ref: .\microsoft.graph.authenticationConditionsApplications.yaml
+      - type: object
+        nullable: true
+    description: Applications which trigger a custom authentication extension.
+  '@odata.type':
+    type: string

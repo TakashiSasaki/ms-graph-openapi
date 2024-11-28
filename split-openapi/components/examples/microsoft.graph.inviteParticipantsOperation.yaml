@@ -1,0 +1,3 @@
+value:
+  participants:
+    - '@odata.type': microsoft.graph.invitationParticipantInfo

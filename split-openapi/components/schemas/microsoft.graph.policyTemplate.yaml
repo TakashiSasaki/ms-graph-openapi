@@ -1,0 +1,31 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: policyTemplate
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      multiTenantOrganizationIdentitySynchronization:
+        anyOf:
+          - $ref: >-
+              .\microsoft.graph.multiTenantOrganizationIdentitySyncPolicyTemplate.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Defines an optional cross-tenant access policy template with user
+          synchronization settings for a multitenant organization.
+        x-ms-navigationProperty: true
+      multiTenantOrganizationPartnerConfiguration:
+        anyOf:
+          - $ref: >-
+              .\microsoft.graph.multiTenantOrganizationPartnerConfigurationTemplate.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Defines an optional cross-tenant access policy template with inbound
+          and outbound partner configuration settings for a multitenant
+          organization.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.policyTemplate'

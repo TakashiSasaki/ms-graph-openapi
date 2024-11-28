@@ -1,0 +1,14 @@
+value:
+  androidEnrollmentAssignments:
+    - '@odata.type': microsoft.graph.complianceManagementPartnerAssignment
+  androidOnboarded: 'true'
+  displayName: String
+  iosEnrollmentAssignments:
+    - '@odata.type': microsoft.graph.complianceManagementPartnerAssignment
+  iosOnboarded: 'true'
+  lastHeartbeatDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  macOsEnrollmentAssignments:
+    - '@odata.type': microsoft.graph.complianceManagementPartnerAssignment
+  macOsOnboarded: 'true'
+  partnerState:
+    '@odata.type': microsoft.graph.deviceManagementPartnerTenantState

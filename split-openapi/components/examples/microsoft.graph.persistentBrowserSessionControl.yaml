@@ -1,0 +1,3 @@
+value:
+  mode:
+    '@odata.type': microsoft.graph.persistentBrowserSessionMode

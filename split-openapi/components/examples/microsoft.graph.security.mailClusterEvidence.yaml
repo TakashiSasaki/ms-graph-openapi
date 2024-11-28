@@ -1,0 +1,8 @@
+value:
+  clusterBy: String
+  clusterByValue: String
+  emailCount: '0'
+  networkMessageIds:
+    - String
+  query: String
+  urn: String

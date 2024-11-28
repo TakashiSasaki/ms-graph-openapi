@@ -1,0 +1,11 @@
+title: removedState
+required:
+  - '@odata.type'
+type: object
+properties:
+  reason:
+    type: string
+    description: The removal reason for the participant resource.
+    nullable: true
+  '@odata.type':
+    type: string

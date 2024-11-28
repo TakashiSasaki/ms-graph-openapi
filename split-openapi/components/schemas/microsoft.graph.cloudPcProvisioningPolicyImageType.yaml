@@ -1,0 +1,6 @@
+title: cloudPcProvisioningPolicyImageType
+enum:
+  - gallery
+  - custom
+  - unknownFutureValue
+type: string

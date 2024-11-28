@@ -1,0 +1,120 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: cloudPC
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      aadDeviceId:
+        type: string
+        description: >-
+          The Microsoft Entra device ID for the Cloud PC, also known as the
+          Azure Active Directory (Azure AD) device ID, that consists of 32
+          characters in a GUID format. Generated on a VM joined to Microsoft
+          Entra ID. Read-only.
+        nullable: true
+      displayName:
+        type: string
+        description: >-
+          The display name for the Cloud PC. Maximum length is 64 characters.
+          Read-only. You can use the cloudPC: rename API to modify the Cloud PC
+          name.
+        nullable: true
+      gracePeriodEndDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: >-
+          The date and time when the grace period ends and reprovisioning or
+          deprovisioning happen. Required only if the status is inGracePeriod.
+          The timestamp is shown in ISO 8601 format and Coordinated Universal
+          Time (UTC). For example, midnight UTC on Jan 1, 2014 is
+          2014-01-01T00:00:00Z.
+        format: date-time
+        nullable: true
+      imageDisplayName:
+        type: string
+        description: >-
+          The name of the operating system image used for the Cloud PC. Maximum
+          length is 50 characters. Only letters (A-Z, a-z), numbers (0-9), and
+          special characters (-,,.) are allowed for this property. The property
+          value can't begin or end with an underscore. Read-only.
+        nullable: true
+      lastModifiedDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: >-
+          The last modified date and time of the Cloud PC. The timestamp type
+          represents date and time information using ISO 8601 format and is
+          always in UTC. For example, midnight UTC on Jan 1, 2014 is
+          2014-01-01T00:00:00Z.
+        format: date-time
+      managedDeviceId:
+        type: string
+        description: >-
+          The Intune enrolled device ID for the Cloud PC that consists of 32
+          characters in a GUID format. The managedDeviceId property of Windows
+          365 Business Cloud PCs is always null as Windows 365 Business Cloud
+          PCs aren't Intune-enrolled automatically by Windows 365. Read-only.
+        nullable: true
+      managedDeviceName:
+        type: string
+        description: >-
+          The Intune enrolled device name for the Cloud PC. The
+          managedDeviceName property of Windows 365 Business Cloud PCs is always
+          null as Windows 365 Business Cloud PCs aren't Intune-enrolled
+          automatically by Windows 365. Read-only.
+        nullable: true
+      onPremisesConnectionName:
+        type: string
+        description: >-
+          The on-premises connection that applied during the provisioning of
+          Cloud PCs. Read-only.
+        nullable: true
+      provisioningPolicyId:
+        type: string
+        description: >-
+          The provisioning policy ID for the Cloud PC that consists of 32
+          characters in a GUID format. A policy defines the type of Cloud PC the
+          user wants to create. Read-only.
+        nullable: true
+      provisioningPolicyName:
+        type: string
+        description: >-
+          The provisioning policy that applied during the provisioning of Cloud
+          PCs. Maximum length is 120 characters. Read-only.
+        nullable: true
+      provisioningType:
+        anyOf:
+          - $ref: .\microsoft.graph.cloudPcProvisioningType.yaml
+          - type: object
+            nullable: true
+        description: >-
+          The type of licenses to be used when provisioning Cloud PCs using this
+          policy. Possible values are: dedicated, shared, unknownFutureValue.
+          The default value is dedicated.
+      servicePlanId:
+        type: string
+        description: >-
+          The service plan ID for the Cloud PC that consists of 32 characters in
+          a GUID format. For more information about service plans, see Product
+          names and service plan identifiers for licensing. Read-only.
+        nullable: true
+      servicePlanName:
+        type: string
+        description: >-
+          The service plan name for the customer-facing Cloud PC entity.
+          Read-only.
+        nullable: true
+      userPrincipalName:
+        type: string
+        description: >-
+          The user principal name (UPN) of the user assigned to the Cloud PC.
+          Maximum length is 113 characters. For more information on username
+          policies, see Password policies and account restrictions in Microsoft
+          Entra ID. Read-only.
+        nullable: true
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.cloudPC'

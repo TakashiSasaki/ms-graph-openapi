@@ -1,0 +1,16 @@
+allOf:
+  - $ref: .\microsoft.graph.virtualEventRegistrationConfiguration.yaml
+  - title: virtualEventWebinarRegistrationConfiguration
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      isManualApprovalEnabled:
+        type: boolean
+        nullable: true
+      isWaitlistEnabled:
+        type: boolean
+        nullable: true
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.virtualEventWebinarRegistrationConfiguration'

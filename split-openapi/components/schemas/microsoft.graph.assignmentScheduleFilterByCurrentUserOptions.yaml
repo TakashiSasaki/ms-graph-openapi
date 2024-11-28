@@ -1,0 +1,5 @@
+title: assignmentScheduleFilterByCurrentUserOptions
+enum:
+  - principal
+  - unknownFutureValue
+type: string

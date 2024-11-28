@@ -1,0 +1,48 @@
+description: Casts the previous resource to managedMobileLobApp.
+get:
+  tags:
+    - deviceAppManagement.mobileApp
+  summary: >-
+    Get the item of type microsoft.graph.mobileApp as
+    microsoft.graph.managedMobileLobApp
+  operationId: deviceAppManagement.GetMobileApps.AsManagedMobileLobApp
+  parameters:
+    - name: $select
+      in: query
+      description: Select properties to be returned
+      style: form
+      explode: false
+      schema:
+        uniqueItems: true
+        type: array
+        items:
+          type: string
+    - name: $expand
+      in: query
+      description: Expand related entities
+      style: form
+      explode: false
+      schema:
+        uniqueItems: true
+        type: array
+        items:
+          type: string
+  responses:
+    2XX:
+      description: Entity result.
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\microsoft.graph.managedMobileLobApp.yaml
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+parameters:
+  - name: mobileApp-id
+    in: path
+    description: The unique identifier of mobileApp
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: mobileApp

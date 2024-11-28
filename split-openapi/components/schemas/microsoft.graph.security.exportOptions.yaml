@@ -1,0 +1,10 @@
+title: exportOptions
+enum:
+  - originalFiles
+  - text
+  - pdfReplacement
+  - tags
+  - unknownFutureValue
+type: string
+x-ms-enum-flags:
+  isFlags: true

@@ -1,0 +1,65 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: rbacApplication
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      resourceNamespaces:
+        type: array
+        items:
+          $ref: .\microsoft.graph.unifiedRbacResourceNamespace.yaml
+        x-ms-navigationProperty: true
+      roleAssignments:
+        type: array
+        items:
+          $ref: .\microsoft.graph.unifiedRoleAssignment.yaml
+        description: Resource to grant access to users or groups.
+        x-ms-navigationProperty: true
+      roleAssignmentScheduleInstances:
+        type: array
+        items:
+          $ref: .\microsoft.graph.unifiedRoleAssignmentScheduleInstance.yaml
+        description: Instances for active role assignments.
+        x-ms-navigationProperty: true
+      roleAssignmentScheduleRequests:
+        type: array
+        items:
+          $ref: .\microsoft.graph.unifiedRoleAssignmentScheduleRequest.yaml
+        description: Requests for active role assignments to principals through PIM.
+        x-ms-navigationProperty: true
+      roleAssignmentSchedules:
+        type: array
+        items:
+          $ref: .\microsoft.graph.unifiedRoleAssignmentSchedule.yaml
+        description: Schedules for active role assignment operations.
+        x-ms-navigationProperty: true
+      roleDefinitions:
+        type: array
+        items:
+          $ref: .\microsoft.graph.unifiedRoleDefinition.yaml
+        description: >-
+          Resource representing the roles allowed by RBAC providers and the
+          permissions assigned to the roles.
+        x-ms-navigationProperty: true
+      roleEligibilityScheduleInstances:
+        type: array
+        items:
+          $ref: .\microsoft.graph.unifiedRoleEligibilityScheduleInstance.yaml
+        description: Instances for role eligibility requests.
+        x-ms-navigationProperty: true
+      roleEligibilityScheduleRequests:
+        type: array
+        items:
+          $ref: .\microsoft.graph.unifiedRoleEligibilityScheduleRequest.yaml
+        description: Requests for role eligibilities for principals through PIM.
+        x-ms-navigationProperty: true
+      roleEligibilitySchedules:
+        type: array
+        items:
+          $ref: .\microsoft.graph.unifiedRoleEligibilitySchedule.yaml
+        description: Schedules for role eligibility operations.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.rbacApplication'

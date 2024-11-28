@@ -1,0 +1,11 @@
+title: educationOnPremisesInfo
+required:
+  - '@odata.type'
+type: object
+properties:
+  immutableId:
+    type: string
+    description: Unique identifier for the user object in Active Directory.
+    nullable: true
+  '@odata.type':
+    type: string

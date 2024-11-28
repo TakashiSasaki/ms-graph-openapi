@@ -1,0 +1,19 @@
+allOf:
+  - $ref: .\microsoft.graph.baseEndUserNotification.yaml
+  - title: positiveReinforcementNotification
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      deliveryPreference:
+        anyOf:
+          - $ref: .\microsoft.graph.notificationDeliveryPreference.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Delivery preference. Possible values are: unknown, deliverImmedietly,
+          deliverAfterCampaignEnd, unknownFutureValue.
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.positiveReinforcementNotification'
+x-ms-discriminator-value: '#microsoft.graph.positiveReinforcementNotification'

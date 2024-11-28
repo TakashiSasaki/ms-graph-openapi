@@ -1,0 +1,14 @@
+value:
+  charts:
+    - '@odata.type': microsoft.graph.workbookChart
+  name: String
+  names:
+    - '@odata.type': microsoft.graph.workbookNamedItem
+  pivotTables:
+    - '@odata.type': microsoft.graph.workbookPivotTable
+  position: '0'
+  protection:
+    '@odata.type': microsoft.graph.workbookWorksheetProtection
+  tables:
+    - '@odata.type': microsoft.graph.workbookTable
+  visibility: String

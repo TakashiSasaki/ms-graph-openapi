@@ -1,0 +1,19 @@
+value:
+  completedDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  failedTasksCount: '0'
+  failedUsersCount: '0'
+  lastUpdatedDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  processingStatus:
+    '@odata.type': microsoft.graph.identityGovernance.lifecycleWorkflowProcessingStatus
+  scheduledDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  startedDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  successfulUsersCount: '0'
+  taskProcessingResults:
+    - '@odata.type': microsoft.graph.identityGovernance.taskProcessingResult
+  totalTasksCount: '0'
+  totalUnprocessedTasksCount: '0'
+  totalUsersCount: '0'
+  userProcessingResults:
+    - '@odata.type': microsoft.graph.identityGovernance.userProcessingResult
+  workflowExecutionType:
+    '@odata.type': microsoft.graph.identityGovernance.workflowExecutionType

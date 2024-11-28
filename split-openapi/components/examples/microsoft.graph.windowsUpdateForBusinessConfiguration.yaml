@@ -1,0 +1,47 @@
+value:
+  allowWindows11Upgrade: 'true'
+  automaticUpdateMode:
+    '@odata.type': microsoft.graph.automaticUpdateMode
+  autoRestartNotificationDismissal:
+    '@odata.type': microsoft.graph.autoRestartNotificationDismissalMethod
+  businessReadyUpdatesOnly:
+    '@odata.type': microsoft.graph.windowsUpdateType
+  deadlineForFeatureUpdatesInDays: '0'
+  deadlineForQualityUpdatesInDays: '0'
+  deadlineGracePeriodInDays: '0'
+  deliveryOptimizationMode:
+    '@odata.type': microsoft.graph.windowsDeliveryOptimizationMode
+  driversExcluded: 'true'
+  engagedRestartDeadlineInDays: '0'
+  engagedRestartSnoozeScheduleInDays: '0'
+  engagedRestartTransitionScheduleInDays: '0'
+  featureUpdatesDeferralPeriodInDays: '0'
+  featureUpdatesPaused: 'true'
+  featureUpdatesPauseExpiryDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  featureUpdatesPauseStartDate: '0001-01-01'
+  featureUpdatesRollbackStartDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  featureUpdatesRollbackWindowInDays: '0'
+  featureUpdatesWillBeRolledBack: 'true'
+  installationSchedule:
+    '@odata.type': microsoft.graph.windowsUpdateInstallScheduleType
+  microsoftUpdateServiceAllowed: 'true'
+  postponeRebootUntilAfterDeadline: 'true'
+  prereleaseFeatures:
+    '@odata.type': microsoft.graph.prereleaseFeatures
+  qualityUpdatesDeferralPeriodInDays: '0'
+  qualityUpdatesPaused: 'true'
+  qualityUpdatesPauseExpiryDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  qualityUpdatesPauseStartDate: '0001-01-01'
+  qualityUpdatesRollbackStartDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  qualityUpdatesWillBeRolledBack: 'true'
+  scheduleImminentRestartWarningInMinutes: '0'
+  scheduleRestartWarningInHours: '0'
+  skipChecksBeforeRestart: 'true'
+  updateNotificationLevel:
+    '@odata.type': microsoft.graph.windowsUpdateNotificationDisplayOption
+  updateWeeks:
+    '@odata.type': microsoft.graph.windowsUpdateForBusinessUpdateWeeks
+  userPauseAccess:
+    '@odata.type': microsoft.graph.enablement
+  userWindowsUpdateScanAccess:
+    '@odata.type': microsoft.graph.enablement

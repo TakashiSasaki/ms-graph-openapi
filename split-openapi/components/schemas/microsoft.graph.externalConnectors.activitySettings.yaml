@@ -1,0 +1,14 @@
+title: activitySettings
+required:
+  - '@odata.type'
+type: object
+properties:
+  urlToItemResolvers:
+    type: array
+    items:
+      $ref: .\microsoft.graph.externalConnectors.urlToItemResolverBase.yaml
+    description: >-
+      Specifies configurations to identify an externalItem based on a shared
+      URL.
+  '@odata.type':
+    type: string

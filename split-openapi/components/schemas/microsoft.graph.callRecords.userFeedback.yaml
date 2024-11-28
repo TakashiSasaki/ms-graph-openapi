@@ -1,0 +1,23 @@
+title: userFeedback
+required:
+  - '@odata.type'
+type: object
+properties:
+  rating:
+    $ref: .\microsoft.graph.callRecords.userFeedbackRating.yaml
+  text:
+    type: string
+    description: The feedback text provided by the user of this endpoint for the session.
+    nullable: true
+  tokens:
+    anyOf:
+      - $ref: .\microsoft.graph.callRecords.feedbackTokenSet.yaml
+      - type: object
+        nullable: true
+    description: >-
+      The set of feedback tokens provided by the user of this endpoint for the
+      session. This is a set of Boolean properties. The property names should
+      not be relied upon since they may change depending on what tokens are
+      offered to the user.
+  '@odata.type':
+    type: string

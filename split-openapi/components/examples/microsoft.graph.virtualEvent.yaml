@@ -1,0 +1,18 @@
+value:
+  createdBy:
+    '@odata.type': microsoft.graph.communicationsIdentitySet
+  description:
+    '@odata.type': microsoft.graph.itemBody
+  displayName: String
+  endDateTime:
+    '@odata.type': microsoft.graph.dateTimeTimeZone
+  presenters:
+    - '@odata.type': microsoft.graph.virtualEventPresenter
+  sessions:
+    - '@odata.type': microsoft.graph.virtualEventSession
+  settings:
+    '@odata.type': microsoft.graph.virtualEventSettings
+  startDateTime:
+    '@odata.type': microsoft.graph.dateTimeTimeZone
+  status:
+    '@odata.type': microsoft.graph.virtualEventStatus

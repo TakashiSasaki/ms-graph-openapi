@@ -1,0 +1,15 @@
+title: appLogDecryptionAlgorithm
+enum:
+  - aes256
+  - unknownFutureValue
+type: string
+x-ms-enum:
+  name: appLogDecryptionAlgorithm
+  modelAsString: false
+  values:
+    - value: aes256
+      description: decrypting using Aes256.
+      name: aes256
+    - value: unknownFutureValue
+      description: Evolvable enumeration sentinel value. Do not use.
+      name: unknownFutureValue

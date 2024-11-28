@@ -1,0 +1,5 @@
+value:
+  displayName: String
+  iconType:
+    '@odata.type': microsoft.graph.timeOffReasonIconType
+  isActive: 'true'

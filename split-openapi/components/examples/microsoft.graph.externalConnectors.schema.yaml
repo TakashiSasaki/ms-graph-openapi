@@ -1,0 +1,4 @@
+value:
+  baseType: String
+  properties:
+    - '@odata.type': microsoft.graph.externalConnectors.property

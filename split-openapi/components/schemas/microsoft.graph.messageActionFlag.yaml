@@ -1,0 +1,14 @@
+title: messageActionFlag
+enum:
+  - any
+  - call
+  - doNotForward
+  - followUp
+  - fyi
+  - forward
+  - noResponseNecessary
+  - read
+  - reply
+  - replyToAll
+  - review
+type: string

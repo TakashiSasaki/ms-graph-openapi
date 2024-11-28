@@ -1,0 +1,18 @@
+allOf:
+  - $ref: .\microsoft.graph.teamsAppInstallation.yaml
+  - title: userScopeTeamsAppInstallation
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      chat:
+        anyOf:
+          - $ref: .\microsoft.graph.chat.yaml
+          - type: object
+            nullable: true
+        description: The chat between the user and Teams app.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.userScopeTeamsAppInstallation'
+x-ms-discriminator-value: '#microsoft.graph.userScopeTeamsAppInstallation'

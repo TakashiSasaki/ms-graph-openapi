@@ -1,0 +1,22 @@
+description: Provides operations to call the retryServiceProvisioning method.
+post:
+  tags:
+    - contacts.orgContact
+  summary: Invoke action retryServiceProvisioning
+  operationId: contacts.orgContact.retryServiceProvisioning
+  responses:
+    '204':
+      description: Success
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: action
+parameters:
+  - name: orgContact-id
+    in: path
+    description: The unique identifier of orgContact
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: orgContact

@@ -1,0 +1,26 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: workbookChartSeriesFormat
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      fill:
+        anyOf:
+          - $ref: .\microsoft.graph.workbookChartFill.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Represents the fill format of a chart series, which includes
+          background formatting information. Read-only.
+        x-ms-navigationProperty: true
+      line:
+        anyOf:
+          - $ref: .\microsoft.graph.workbookChartLineFormat.yaml
+          - type: object
+            nullable: true
+        description: Represents line formatting. Read-only.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.workbookChartSeriesFormat'

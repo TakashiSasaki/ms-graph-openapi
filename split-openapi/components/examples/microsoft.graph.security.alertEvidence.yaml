@@ -1,0 +1,13 @@
+value:
+  createdDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  detailedRoles:
+    - String
+  remediationStatus:
+    '@odata.type': microsoft.graph.security.evidenceRemediationStatus
+  remediationStatusDetails: String
+  roles:
+    - '@odata.type': microsoft.graph.security.evidenceRole
+  tags:
+    - String
+  verdict:
+    '@odata.type': microsoft.graph.security.evidenceVerdict

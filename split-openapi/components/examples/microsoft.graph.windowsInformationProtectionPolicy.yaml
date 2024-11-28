@@ -1,0 +1,16 @@
+value:
+  daysWithoutContactBeforeUnenroll: '0'
+  mdmEnrollmentUrl: String
+  minutesOfInactivityBeforeDeviceLock: '0'
+  numberOfPastPinsRemembered: '0'
+  passwordMaximumAttemptCount: '0'
+  pinExpirationDays: '0'
+  pinLowercaseLetters:
+    '@odata.type': microsoft.graph.windowsInformationProtectionPinCharacterRequirements
+  pinMinimumLength: '0'
+  pinSpecialCharacters:
+    '@odata.type': microsoft.graph.windowsInformationProtectionPinCharacterRequirements
+  pinUppercaseLetters:
+    '@odata.type': microsoft.graph.windowsInformationProtectionPinCharacterRequirements
+  revokeOnMdmHandoffDisabled: 'true'
+  windowsHelloForBusinessBlocked: 'true'

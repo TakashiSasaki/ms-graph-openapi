@@ -1,0 +1,34 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: searchEntity
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      acronyms:
+        type: array
+        items:
+          $ref: .\microsoft.graph.search.acronym.yaml
+        description: >-
+          Administrative answer in Microsoft Search results to define common
+          acronyms in an organization.
+        x-ms-navigationProperty: true
+      bookmarks:
+        type: array
+        items:
+          $ref: .\microsoft.graph.search.bookmark.yaml
+        description: >-
+          Administrative answer in Microsoft Search results for common search
+          queries in an organization.
+        x-ms-navigationProperty: true
+      qnas:
+        type: array
+        items:
+          $ref: .\microsoft.graph.search.qna.yaml
+        description: >-
+          Administrative answer in Microsoft Search results that provide answers
+          for specific search keywords in an organization.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.searchEntity'

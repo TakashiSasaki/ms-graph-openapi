@@ -1,0 +1,12 @@
+value:
+  allowedContentTypes:
+    - '@odata.type': microsoft.graph.contentTypeInfo
+  defaultContents:
+    - '@odata.type': microsoft.graph.documentSetContent
+  propagateWelcomePageChanges: 'true'
+  sharedColumns:
+    - '@odata.type': microsoft.graph.columnDefinition
+  shouldPrefixNameToFile: 'true'
+  welcomePageColumns:
+    - '@odata.type': microsoft.graph.columnDefinition
+  welcomePageUrl: String

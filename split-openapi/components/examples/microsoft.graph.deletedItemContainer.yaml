@@ -1,0 +1,3 @@
+value:
+  workflows:
+    - '@odata.type': microsoft.graph.identityGovernance.workflow

@@ -1,0 +1,3 @@
+value:
+  subcategories:
+    - '@odata.type': microsoft.graph.security.subcategoryTemplate

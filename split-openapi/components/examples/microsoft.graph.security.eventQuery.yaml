@@ -1,0 +1,4 @@
+value:
+  query: String
+  queryType:
+    '@odata.type': microsoft.graph.security.queryType

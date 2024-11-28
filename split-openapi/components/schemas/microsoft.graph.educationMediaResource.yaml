@@ -1,0 +1,15 @@
+allOf:
+  - $ref: .\microsoft.graph.educationResource.yaml
+  - title: educationMediaResource
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      fileUrl:
+        type: string
+        description: Location of the file on shared point folder. Required
+        nullable: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.educationMediaResource'
+x-ms-discriminator-value: '#microsoft.graph.educationMediaResource'

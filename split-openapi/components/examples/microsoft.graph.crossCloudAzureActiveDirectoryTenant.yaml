@@ -1,0 +1,4 @@
+value:
+  cloudInstance: String
+  displayName: String
+  tenantId: String

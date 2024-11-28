@@ -1,0 +1,109 @@
+description: Provides operations to manage the collection of groupLifecyclePolicy entities.
+get:
+  tags:
+    - groupLifecyclePolicies.groupLifecyclePolicy
+  summary: Get groupLifecyclePolicy
+  description: >-
+    Retrieve the properties and relationships of a groupLifecyclePolicies
+    object.
+  externalDocs:
+    description: Find more info here
+    url: >-
+      https://learn.microsoft.com/graph/api/grouplifecyclepolicy-get?view=graph-rest-1.0
+  operationId: groupLifecyclePolicies.groupLifecyclePolicy.GetGroupLifecyclePolicy
+  parameters:
+    - name: $select
+      in: query
+      description: Select properties to be returned
+      style: form
+      explode: false
+      schema:
+        uniqueItems: true
+        type: array
+        items:
+          type: string
+    - name: $expand
+      in: query
+      description: Expand related entities
+      style: form
+      explode: false
+      schema:
+        uniqueItems: true
+        type: array
+        items:
+          type: string
+  responses:
+    2XX:
+      description: Retrieved entity
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\microsoft.graph.groupLifecyclePolicy.yaml
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: operation
+patch:
+  tags:
+    - groupLifecyclePolicies.groupLifecyclePolicy
+  summary: Update groupLifecyclePolicy
+  description: >-
+    Update the properties of a groupLifecyclePolicygroupLifecyclePolicy resource
+    type object.
+  externalDocs:
+    description: Find more info here
+    url: >-
+      https://learn.microsoft.com/graph/api/grouplifecyclepolicy-update?view=graph-rest-1.0
+  operationId: groupLifecyclePolicies.groupLifecyclePolicy.UpdateGroupLifecyclePolicy
+  requestBody:
+    description: New property values
+    content:
+      application/json:
+        schema:
+          $ref: ..\components\schemas\microsoft.graph.groupLifecyclePolicy.yaml
+    required: true
+  responses:
+    2XX:
+      description: Success
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\microsoft.graph.groupLifecyclePolicy.yaml
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: operation
+delete:
+  tags:
+    - groupLifecyclePolicies.groupLifecyclePolicy
+  summary: Delete groupLifecyclePolicy
+  description: Delete a groupLifecyclePolicy.
+  externalDocs:
+    description: Find more info here
+    url: >-
+      https://learn.microsoft.com/graph/api/grouplifecyclepolicy-delete?view=graph-rest-1.0
+  operationId: groupLifecyclePolicies.groupLifecyclePolicy.DeleteGroupLifecyclePolicy
+  parameters:
+    - name: If-Match
+      in: header
+      description: ETag
+      schema:
+        type: string
+  responses:
+    '204':
+      description: Success
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: operation
+parameters:
+  - name: groupLifecyclePolicy-id
+    in: path
+    description: The unique identifier of groupLifecyclePolicy
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: groupLifecyclePolicy

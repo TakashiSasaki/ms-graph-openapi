@@ -1,0 +1,21 @@
+title: browserSiteMergeType
+enum:
+  - noMerge
+  - default
+  - unknownFutureValue
+type: string
+x-ms-enum:
+  name: browserSiteMergeType
+  modelAsString: false
+  values:
+    - value: noMerge
+      description: No merge type
+      name: noMerge
+    - value: default
+      description: Default merge type
+      name: default
+    - value: unknownFutureValue
+      description: >-
+        Placeholder for evolvable enum, but this enum is never returned to the
+        caller, so it shouldn't be necessary.
+      name: unknownFutureValue

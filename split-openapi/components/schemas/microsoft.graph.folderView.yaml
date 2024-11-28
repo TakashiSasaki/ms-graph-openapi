@@ -1,0 +1,21 @@
+title: folderView
+required:
+  - '@odata.type'
+type: object
+properties:
+  sortBy:
+    type: string
+    description: The method by which the folder should be sorted.
+    nullable: true
+  sortOrder:
+    type: string
+    description: >-
+      If true, indicates that items should be sorted in descending order.
+      Otherwise, items should be sorted ascending.
+    nullable: true
+  viewType:
+    type: string
+    description: The type of view that should be used to represent the folder.
+    nullable: true
+  '@odata.type':
+    type: string

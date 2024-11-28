@@ -1,0 +1,3 @@
+value:
+  learningCourseActivities:
+    - '@odata.type': microsoft.graph.learningCourseActivity

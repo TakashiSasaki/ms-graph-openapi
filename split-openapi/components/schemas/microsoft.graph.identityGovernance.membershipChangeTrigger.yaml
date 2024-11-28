@@ -1,0 +1,13 @@
+allOf:
+  - $ref: .\microsoft.graph.identityGovernance.workflowExecutionTrigger.yaml
+  - title: membershipChangeTrigger
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      changeType:
+        $ref: .\microsoft.graph.identityGovernance.membershipChangeType.yaml
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.identityGovernance.membershipChangeTrigger'
+x-ms-discriminator-value: '#microsoft.graph.identityGovernance.membershipChangeTrigger'

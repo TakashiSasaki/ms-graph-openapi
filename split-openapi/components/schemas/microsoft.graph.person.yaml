@@ -1,0 +1,98 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: person
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      birthday:
+        type: string
+        description: The person's birthday.
+        nullable: true
+      companyName:
+        type: string
+        description: The name of the person's company.
+        nullable: true
+      department:
+        type: string
+        description: The person's department.
+        nullable: true
+      displayName:
+        type: string
+        description: The person's display name.
+        nullable: true
+      givenName:
+        type: string
+        description: The person's given name.
+        nullable: true
+      imAddress:
+        type: string
+        description: >-
+          The instant message voice over IP (VOIP) session initiation protocol
+          (SIP) address for the user. Read-only.
+        nullable: true
+      isFavorite:
+        type: boolean
+        description: True if the user has flagged this person as a favorite.
+        nullable: true
+      jobTitle:
+        type: string
+        description: The person's job title.
+        nullable: true
+      officeLocation:
+        type: string
+        description: The location of the person's office.
+        nullable: true
+      personNotes:
+        type: string
+        description: Free-form notes that the user has taken about this person.
+        nullable: true
+      personType:
+        anyOf:
+          - $ref: .\microsoft.graph.personType.yaml
+          - type: object
+            nullable: true
+        description: The type of person.
+      phones:
+        type: array
+        items:
+          $ref: .\microsoft.graph.phone.yaml
+        description: The person's phone numbers.
+      postalAddresses:
+        type: array
+        items:
+          $ref: .\microsoft.graph.location.yaml
+        description: The person's addresses.
+      profession:
+        type: string
+        description: The person's profession.
+        nullable: true
+      scoredEmailAddresses:
+        type: array
+        items:
+          $ref: .\microsoft.graph.scoredEmailAddress.yaml
+        description: The person's email addresses.
+      surname:
+        type: string
+        description: The person's surname.
+        nullable: true
+      userPrincipalName:
+        type: string
+        description: >-
+          The user principal name (UPN) of the person. The UPN is an
+          Internet-style login name for the person based on the Internet
+          standard RFC 822. By convention, this should map to the person's email
+          name. The general format is alias@domain.
+        nullable: true
+      websites:
+        type: array
+        items:
+          $ref: .\microsoft.graph.website.yaml
+        description: The person's websites.
+      yomiCompany:
+        type: string
+        description: The phonetic Japanese name of the person's company.
+        nullable: true
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.person'

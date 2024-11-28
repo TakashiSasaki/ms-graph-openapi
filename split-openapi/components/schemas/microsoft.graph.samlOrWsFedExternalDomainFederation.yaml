@@ -1,0 +1,19 @@
+allOf:
+  - $ref: .\microsoft.graph.samlOrWsFedProvider.yaml
+  - title: samlOrWsFedExternalDomainFederation
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      domains:
+        type: array
+        items:
+          $ref: .\microsoft.graph.externalDomainName.yaml
+        description: >-
+          Collection of domain names of the external organizations that the
+          tenant is federating with. Supports $filter (eq).
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.samlOrWsFedExternalDomainFederation'
+x-ms-discriminator-value: '#microsoft.graph.samlOrWsFedExternalDomainFederation'

@@ -1,0 +1,9 @@
+value:
+  error:
+    '@odata.type': microsoft.graph.publicError
+  evaluationResult:
+    - String
+  evaluationSucceeded: 'true'
+  parsedExpression:
+    '@odata.type': microsoft.graph.attributeMappingSource
+  parsingSucceeded: 'true'

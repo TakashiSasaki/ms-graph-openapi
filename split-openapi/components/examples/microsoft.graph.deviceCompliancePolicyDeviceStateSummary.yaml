@@ -1,0 +1,10 @@
+value:
+  compliantDeviceCount: '0'
+  configManagerCount: '0'
+  conflictDeviceCount: '0'
+  errorDeviceCount: '0'
+  inGracePeriodCount: '0'
+  nonCompliantDeviceCount: '0'
+  notApplicableDeviceCount: '0'
+  remediatedDeviceCount: '0'
+  unknownDeviceCount: '0'

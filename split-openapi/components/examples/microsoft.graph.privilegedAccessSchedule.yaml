@@ -1,0 +1,7 @@
+value:
+  createdDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  createdUsing: String
+  modifiedDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  scheduleInfo:
+    '@odata.type': microsoft.graph.requestSchedule
+  status: String

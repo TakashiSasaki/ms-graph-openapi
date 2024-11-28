@@ -1,0 +1,5 @@
+value:
+  hashes:
+    '@odata.type': microsoft.graph.hashes
+  mimeType: String
+  processingMetadata: 'true'

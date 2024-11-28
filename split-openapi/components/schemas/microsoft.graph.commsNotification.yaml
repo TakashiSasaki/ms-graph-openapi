@@ -1,0 +1,12 @@
+title: commsNotification
+required:
+  - '@odata.type'
+type: object
+properties:
+  changeType:
+    $ref: .\microsoft.graph.changeType.yaml
+  resourceUrl:
+    type: string
+    description: URI of the resource that was changed.
+  '@odata.type':
+    type: string

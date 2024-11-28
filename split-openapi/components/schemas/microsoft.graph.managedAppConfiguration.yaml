@@ -1,0 +1,24 @@
+allOf:
+  - $ref: .\microsoft.graph.managedAppPolicy.yaml
+  - title: managedAppConfiguration
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      customSettings:
+        type: array
+        items:
+          $ref: .\microsoft.graph.keyValuePair.yaml
+        description: >-
+          A set of string key and string value pairs to be sent to apps for
+          users to whom the configuration is scoped, unalterned by this service
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.managedAppConfiguration'
+    description: >-
+      Configuration used to deliver a set of custom settings as-is to apps for
+      users to whom the configuration is scoped
+    discriminator:
+      propertyName: '@odata.type'
+      mapping:
+        '#microsoft.graph.targetedManagedAppConfiguration': .\microsoft.graph.targetedManagedAppConfiguration.yaml

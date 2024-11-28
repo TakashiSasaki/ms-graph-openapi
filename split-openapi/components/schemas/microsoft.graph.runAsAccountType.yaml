@@ -1,0 +1,16 @@
+title: runAsAccountType
+enum:
+  - system
+  - user
+type: string
+description: Indicates the type of execution context the app runs in.
+x-ms-enum:
+  name: runAsAccountType
+  modelAsString: false
+  values:
+    - value: system
+      description: System context
+      name: system
+    - value: user
+      description: User context
+      name: user

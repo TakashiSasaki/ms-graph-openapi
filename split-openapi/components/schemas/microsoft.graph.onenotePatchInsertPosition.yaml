@@ -1,0 +1,5 @@
+title: onenotePatchInsertPosition
+enum:
+  - After
+  - Before
+type: string

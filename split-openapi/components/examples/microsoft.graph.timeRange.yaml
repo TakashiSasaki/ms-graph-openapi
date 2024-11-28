@@ -1,0 +1,3 @@
+value:
+  endTime: TimeOfDay (timestamp)
+  startTime: TimeOfDay (timestamp)

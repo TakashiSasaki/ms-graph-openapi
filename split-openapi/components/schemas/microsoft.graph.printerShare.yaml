@@ -1,0 +1,48 @@
+allOf:
+  - $ref: .\microsoft.graph.printerBase.yaml
+  - title: printerShare
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      allowAllUsers:
+        type: boolean
+        description: >-
+          If true, all users and groups will be granted access to this printer
+          share. This supersedes the allow lists defined by the allowedUsers and
+          allowedGroups navigation properties.
+      createdDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: The DateTimeOffset when the printer share was created. Read-only.
+        format: date-time
+      viewPoint:
+        anyOf:
+          - $ref: .\microsoft.graph.printerShareViewpoint.yaml
+          - type: object
+            nullable: true
+        description: Additional data for a printer share as viewed by the signed-in user.
+      allowedGroups:
+        type: array
+        items:
+          $ref: .\microsoft.graph.group.yaml
+        description: The groups whose users have access to print using the printer.
+        x-ms-navigationProperty: true
+      allowedUsers:
+        type: array
+        items:
+          $ref: .\microsoft.graph.user.yaml
+        description: The users who have access to print using the printer.
+        x-ms-navigationProperty: true
+      printer:
+        anyOf:
+          - $ref: .\microsoft.graph.printer.yaml
+          - type: object
+            nullable: true
+        description: The printer that this printer share is related to.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.printerShare'
+x-ms-discriminator-value: '#microsoft.graph.printerShare'

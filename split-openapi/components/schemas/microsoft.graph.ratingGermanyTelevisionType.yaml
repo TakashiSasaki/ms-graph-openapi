@@ -1,0 +1,36 @@
+title: ratingGermanyTelevisionType
+enum:
+  - allAllowed
+  - allBlocked
+  - general
+  - agesAbove6
+  - agesAbove12
+  - agesAbove16
+  - adults
+type: string
+description: TV content rating labels in Germany
+x-ms-enum:
+  name: ratingGermanyTelevisionType
+  modelAsString: false
+  values:
+    - value: allAllowed
+      description: Default value, allow all TV shows content
+      name: allAllowed
+    - value: allBlocked
+      description: Do not allow any TV shows content
+      name: allBlocked
+    - value: general
+      description: Ab 0 Jahren, no age restrictions
+      name: general
+    - value: agesAbove6
+      description: Ab 6 Jahren, ages 6 and older
+      name: agesAbove6
+    - value: agesAbove12
+      description: Ab 12 Jahren, ages 12 and older
+      name: agesAbove12
+    - value: agesAbove16
+      description: Ab 16 Jahren, ages 16 and older
+      name: agesAbove16
+    - value: adults
+      description: Ab 18 Jahren, adults only
+      name: adults

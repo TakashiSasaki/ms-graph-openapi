@@ -1,0 +1,6 @@
+title: userSignInRecommendationScope
+enum:
+  - tenant
+  - application
+  - unknownFutureValue
+type: string

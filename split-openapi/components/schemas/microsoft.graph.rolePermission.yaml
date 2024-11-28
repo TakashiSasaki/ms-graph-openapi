@@ -1,0 +1,17 @@
+title: rolePermission
+required:
+  - '@odata.type'
+type: object
+properties:
+  resourceActions:
+    type: array
+    items:
+      $ref: .\microsoft.graph.resourceAction.yaml
+    description: >-
+      Resource Actions each containing a set of allowed and not allowed
+      permissions.
+  '@odata.type':
+    type: string
+description: >-
+  Contains the set of ResourceActions determining the allowed and not allowed
+  permissions for each role.

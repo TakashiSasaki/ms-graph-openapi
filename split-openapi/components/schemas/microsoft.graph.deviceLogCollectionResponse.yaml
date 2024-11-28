@@ -1,0 +1,59 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: deviceLogCollectionResponse
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      enrolledByUser:
+        type: string
+        description: The User Principal Name (UPN) of the user that enrolled the device.
+        nullable: true
+      expirationDateTimeUTC:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: The DateTime of the expiration of the logs.
+        format: date-time
+        nullable: true
+      initiatedByUserPrincipalName:
+        type: string
+        description: The UPN for who initiated the request.
+        nullable: true
+      managedDeviceId:
+        pattern: >-
+          ^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$
+        type: string
+        description: Indicates Intune device unique identifier.
+        format: uuid
+      receivedDateTimeUTC:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: The DateTime the request was received.
+        format: date-time
+        nullable: true
+      requestedDateTimeUTC:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: The DateTime of the request.
+        format: date-time
+        nullable: true
+      sizeInKB:
+        oneOf:
+          - type: number
+            format: double
+            nullable: true
+          - type: string
+            nullable: true
+          - $ref: .\ReferenceNumeric.yaml
+        description: >-
+          The size of the logs in KB. Valid values -1.79769313486232E+308 to
+          1.79769313486232E+308
+      status:
+        $ref: .\microsoft.graph.appLogUploadState.yaml
+      '@odata.type':
+        type: string
+    description: Windows Log Collection request entity.
+x-ms-discriminator-value: '#microsoft.graph.deviceLogCollectionResponse'

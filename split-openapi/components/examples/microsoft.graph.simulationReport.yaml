@@ -1,0 +1,5 @@
+value:
+  overview:
+    '@odata.type': microsoft.graph.simulationReportOverview
+  simulationUsers:
+    - '@odata.type': microsoft.graph.userSimulationDetails

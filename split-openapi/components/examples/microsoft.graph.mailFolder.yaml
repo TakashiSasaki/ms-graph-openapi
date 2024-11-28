@@ -1,0 +1,17 @@
+value:
+  childFolderCount: '0'
+  childFolders:
+    - '@odata.type': microsoft.graph.mailFolder
+  displayName: String
+  isHidden: 'true'
+  messageRules:
+    - '@odata.type': microsoft.graph.messageRule
+  messages:
+    - '@odata.type': microsoft.graph.message
+  multiValueExtendedProperties:
+    - '@odata.type': microsoft.graph.multiValueLegacyExtendedProperty
+  parentFolderId: String
+  singleValueExtendedProperties:
+    - '@odata.type': microsoft.graph.singleValueLegacyExtendedProperty
+  totalItemCount: '0'
+  unreadItemCount: '0'

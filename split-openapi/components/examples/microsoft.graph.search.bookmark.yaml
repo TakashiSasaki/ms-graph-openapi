@@ -1,0 +1,20 @@
+value:
+  availabilityEndDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  availabilityStartDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  categories:
+    - String
+  groupIds:
+    - String
+  isSuggested: 'true'
+  keywords:
+    '@odata.type': microsoft.graph.search.answerKeyword
+  languageTags:
+    - String
+  platforms:
+    - '@odata.type': microsoft.graph.devicePlatformType
+  powerAppIds:
+    - String
+  state:
+    '@odata.type': microsoft.graph.search.answerState
+  targetedVariations:
+    - '@odata.type': microsoft.graph.search.answerVariant

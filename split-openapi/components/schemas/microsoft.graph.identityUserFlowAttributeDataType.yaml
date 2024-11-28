@@ -1,0 +1,9 @@
+title: identityUserFlowAttributeDataType
+enum:
+  - string
+  - boolean
+  - int64
+  - stringCollection
+  - dateTime
+  - unknownFutureValue
+type: string

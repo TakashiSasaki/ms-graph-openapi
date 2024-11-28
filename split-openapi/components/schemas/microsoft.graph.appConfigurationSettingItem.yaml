@@ -1,0 +1,16 @@
+title: appConfigurationSettingItem
+required:
+  - '@odata.type'
+type: object
+properties:
+  appConfigKey:
+    type: string
+    description: app configuration key.
+  appConfigKeyType:
+    $ref: .\microsoft.graph.mdmAppConfigKeyType.yaml
+  appConfigKeyValue:
+    type: string
+    description: app configuration key value.
+  '@odata.type':
+    type: string
+description: Contains properties for App configuration setting item.

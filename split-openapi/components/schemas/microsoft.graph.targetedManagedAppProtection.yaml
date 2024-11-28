@@ -1,0 +1,29 @@
+allOf:
+  - $ref: .\microsoft.graph.managedAppProtection.yaml
+  - title: targetedManagedAppProtection
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      isAssigned:
+        type: boolean
+        description: Indicates if the policy is deployed to any inclusion groups or not.
+      assignments:
+        type: array
+        items:
+          $ref: .\microsoft.graph.targetedManagedAppPolicyAssignment.yaml
+        description: >-
+          Navigation property to list of inclusion and exclusion groups to which
+          the policy is deployed.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.targetedManagedAppProtection'
+    description: >-
+      Policy used to configure detailed management settings targeted to specific
+      security groups
+    discriminator:
+      propertyName: '@odata.type'
+      mapping:
+        '#microsoft.graph.androidManagedAppProtection': .\microsoft.graph.androidManagedAppProtection.yaml
+        '#microsoft.graph.iosManagedAppProtection': .\microsoft.graph.iosManagedAppProtection.yaml

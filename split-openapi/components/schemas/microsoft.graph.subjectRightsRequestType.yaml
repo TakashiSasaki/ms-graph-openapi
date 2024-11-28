@@ -1,0 +1,8 @@
+title: subjectRightsRequestType
+enum:
+  - export
+  - delete
+  - access
+  - tagForAction
+  - unknownFutureValue
+type: string

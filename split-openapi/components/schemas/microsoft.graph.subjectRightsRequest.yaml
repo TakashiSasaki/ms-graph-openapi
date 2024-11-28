@@ -1,0 +1,222 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: subjectRightsRequest
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      assignedTo:
+        anyOf:
+          - $ref: .\microsoft.graph.identity.yaml
+          - type: object
+            nullable: true
+        description: Identity that the request is assigned to.
+      closedDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: >-
+          The date and time when the request was closed. The timestamp type
+          represents date and time information using ISO 8601 format and is
+          always in UTC. For example, midnight UTC on Jan 1, 2014 is
+          2014-01-01T00:00:00Z.
+        format: date-time
+        nullable: true
+      contentQuery:
+        type: string
+        description: >-
+          KQL based content query that should be used for search. This property
+          is defined only for APIs accessed using the /security query path and
+          not the /privacy query path.
+        nullable: true
+      createdBy:
+        anyOf:
+          - $ref: .\microsoft.graph.identitySet.yaml
+          - type: object
+            nullable: true
+        description: Identity information for the entity that created the request.
+      createdDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: >-
+          The date and time when the request was created. The timestamp type
+          represents date and time information using ISO 8601 format and is
+          always in UTC. For example, midnight UTC on Jan 1, 2014 is
+          2014-01-01T00:00:00Z.
+        format: date-time
+        nullable: true
+      dataSubject:
+        anyOf:
+          - $ref: .\microsoft.graph.dataSubject.yaml
+          - type: object
+            nullable: true
+        description: Information about the data subject.
+      dataSubjectType:
+        anyOf:
+          - $ref: .\microsoft.graph.dataSubjectType.yaml
+          - type: object
+            nullable: true
+        description: >-
+          The type of the data subject. Possible values are: customer,
+          currentEmployee, formerEmployee, prospectiveEmployee, student,
+          teacher, faculty, other, unknownFutureValue.
+      description:
+        type: string
+        description: Description for the request.
+        nullable: true
+      displayName:
+        type: string
+        description: The name of the request.
+        nullable: true
+      externalId:
+        type: string
+        description: >-
+          The external ID for the request that is immutable after creation and
+          is used for tracking the request for the external system. This
+          property is defined only for APIs accessed using the /security query
+          path and not the /privacy query path.
+        nullable: true
+      history:
+        type: array
+        items:
+          $ref: .\microsoft.graph.subjectRightsRequestHistory.yaml
+        description: Collection of history change events.
+      includeAllVersions:
+        type: boolean
+        description: >-
+          Include all versions of the documents. By default, the current copies
+          of the documents are returned. If SharePoint sites have versioning
+          enabled, including all versions includes the historical copies of the
+          documents. This property is defined only for APIs accessed using the
+          /security query path and not the /privacy query path.
+        nullable: true
+      includeAuthoredContent:
+        type: boolean
+        description: >-
+          Include content authored by the data subject. This property is defined
+          only for APIs accessed using the /security query path and not the
+          /privacy query path.
+        nullable: true
+      insight:
+        anyOf:
+          - $ref: .\microsoft.graph.subjectRightsRequestDetail.yaml
+          - type: object
+            nullable: true
+        description: Insight about the request.
+      internalDueDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: >-
+          The date and time when the request is internally due. The timestamp
+          type represents date and time information using ISO 8601 format and is
+          always in UTC. For example, midnight UTC on Jan 1, 2014 is
+          2014-01-01T00:00:00Z.
+        format: date-time
+        nullable: true
+      lastModifiedBy:
+        anyOf:
+          - $ref: .\microsoft.graph.identitySet.yaml
+          - type: object
+            nullable: true
+        description: Identity information for the entity that last modified the request.
+      lastModifiedDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: >-
+          The date and time when the request was last modified. The timestamp
+          type represents date and time information using ISO 8601 format and is
+          always in UTC. For example, midnight UTC on Jan 1, 2014 is
+          2014-01-01T00:00:00Z.
+        format: date-time
+        nullable: true
+      mailboxLocations:
+        anyOf:
+          - $ref: .\microsoft.graph.subjectRightsRequestMailboxLocation.yaml
+          - type: object
+            nullable: true
+        description: >-
+          The mailbox locations that should be searched. This property is
+          defined only for APIs accessed using the /security query path and not
+          the /privacy query path.
+      pauseAfterEstimate:
+        type: boolean
+        description: >-
+          Pause the request after estimate has finished. By default, the data
+          estimate runs and then pauses, allowing you to preview results and
+          then select the option to retrieve data in the UI. You can set this
+          property to false if you want it to perform the estimate and then
+          automatically begin with the retrieval of the content. This property
+          is defined only for APIs accessed using the /security query path and
+          not the /privacy query path.
+        nullable: true
+      regulations:
+        type: array
+        items:
+          type: string
+          nullable: true
+        description: List of regulations that this request fulfill.
+      siteLocations:
+        anyOf:
+          - $ref: .\microsoft.graph.subjectRightsRequestSiteLocation.yaml
+          - type: object
+            nullable: true
+        description: >-
+          The SharePoint and OneDrive site locations that should be searched.
+          This property is defined only for APIs accessed using the /security
+          query path and not the /privacy query path.
+      stages:
+        type: array
+        items:
+          $ref: .\microsoft.graph.subjectRightsRequestStageDetail.yaml
+        description: Information about the different stages for the request.
+      status:
+        anyOf:
+          - $ref: .\microsoft.graph.subjectRightsRequestStatus.yaml
+          - type: object
+            nullable: true
+        description: >-
+          The status of the request. Possible values are: active, closed,
+          unknownFutureValue.
+      type:
+        anyOf:
+          - $ref: .\microsoft.graph.subjectRightsRequestType.yaml
+          - type: object
+            nullable: true
+        description: >-
+          The type of the request. Possible values are: export, delete, access,
+          tagForAction, unknownFutureValue.
+      approvers:
+        type: array
+        items:
+          $ref: .\microsoft.graph.user.yaml
+        description: >-
+          Collection of users who can approve the request. Currently only
+          supported for requests of type delete.
+        x-ms-navigationProperty: true
+      collaborators:
+        type: array
+        items:
+          $ref: .\microsoft.graph.user.yaml
+        description: Collection of users who can collaborate on the request.
+        x-ms-navigationProperty: true
+      notes:
+        type: array
+        items:
+          $ref: .\microsoft.graph.authoredNote.yaml
+        description: List of notes associated with the request.
+        x-ms-navigationProperty: true
+      team:
+        anyOf:
+          - $ref: .\microsoft.graph.team.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Information about the Microsoft Teams team that was created for the
+          request.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.subjectRightsRequest'

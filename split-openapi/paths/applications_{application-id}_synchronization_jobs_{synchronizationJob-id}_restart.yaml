@@ -1,0 +1,51 @@
+description: Provides operations to call the restart method.
+post:
+  tags:
+    - applications.synchronization
+  summary: Invoke action restart
+  description: >-
+    Restart a stopped synchronization job, forcing it to reprocess all the
+    objects in the directory. Optionally clears existing the synchronization
+    state and previous errors.
+  externalDocs:
+    description: Find more info here
+    url: >-
+      https://learn.microsoft.com/graph/api/synchronization-synchronizationjob-restart?view=graph-rest-1.0
+  operationId: applications.application.synchronization.jobs.synchronizationJob.restart
+  requestBody:
+    description: Action parameters
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            criteria:
+              anyOf:
+                - $ref: >-
+                    ..\components\schemas\microsoft.graph.synchronizationJobRestartCriteria.yaml
+                - type: object
+                  nullable: true
+    required: true
+  responses:
+    '204':
+      description: Success
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: action
+parameters:
+  - name: application-id
+    in: path
+    description: The unique identifier of application
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: application
+  - name: synchronizationJob-id
+    in: path
+    description: The unique identifier of synchronizationJob
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: synchronizationJob

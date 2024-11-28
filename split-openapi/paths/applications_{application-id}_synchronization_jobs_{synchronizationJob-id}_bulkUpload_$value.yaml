@@ -1,0 +1,74 @@
+description: Provides operations to manage the media for the application entity.
+get:
+  tags:
+    - applications.synchronization
+  summary: Get media content for the navigation property bulkUpload from applications
+  description: The bulk upload operation for the job.
+  operationId: applications.synchronization.jobs.GetBulkUploadContent
+  responses:
+    2XX:
+      description: Retrieved media content
+      content:
+        application/octet-stream:
+          schema:
+            type: string
+            format: binary
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+put:
+  tags:
+    - applications.synchronization
+  summary: Update media content for the navigation property bulkUpload in applications
+  description: The bulk upload operation for the job.
+  operationId: applications.synchronization.jobs.UpdateBulkUploadContent
+  requestBody:
+    description: New media content.
+    content:
+      application/octet-stream:
+        schema:
+          type: string
+          format: binary
+    required: true
+  responses:
+    2XX:
+      description: Success
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+delete:
+  tags:
+    - applications.synchronization
+  summary: Delete media content for the navigation property bulkUpload in applications
+  description: The bulk upload operation for the job.
+  operationId: applications.synchronization.jobs.DeleteBulkUploadContent
+  parameters:
+    - name: If-Match
+      in: header
+      description: ETag
+      schema:
+        type: string
+  responses:
+    '204':
+      description: Success
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+parameters:
+  - name: application-id
+    in: path
+    description: The unique identifier of application
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: application
+  - name: synchronizationJob-id
+    in: path
+    description: The unique identifier of synchronizationJob
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: synchronizationJob

@@ -1,0 +1,33 @@
+title: payloadCoachmark
+required:
+  - '@odata.type'
+type: object
+properties:
+  coachmarkLocation:
+    anyOf:
+      - $ref: .\microsoft.graph.coachmarkLocation.yaml
+      - type: object
+        nullable: true
+    description: The coachmark location.
+  description:
+    type: string
+    description: The description about the coachmark.
+    nullable: true
+  indicator:
+    type: string
+    description: The coachmark indicator.
+    nullable: true
+  isValid:
+    type: boolean
+    description: Indicates whether the coachmark is valid or not.
+    nullable: true
+  language:
+    type: string
+    description: The coachmark language.
+    nullable: true
+  order:
+    type: string
+    description: The coachmark order.
+    nullable: true
+  '@odata.type':
+    type: string

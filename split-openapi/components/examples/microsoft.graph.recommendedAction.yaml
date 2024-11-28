@@ -1,0 +1,4 @@
+value:
+  actionWebUrl: String
+  potentialScoreImpact: '0'
+  title: String

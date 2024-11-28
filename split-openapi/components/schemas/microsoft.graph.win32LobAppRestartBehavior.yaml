@@ -1,0 +1,31 @@
+title: win32LobAppRestartBehavior
+enum:
+  - basedOnReturnCode
+  - allow
+  - suppress
+  - force
+type: string
+description: Indicates the type of restart action.
+x-ms-enum:
+  name: win32LobAppRestartBehavior
+  modelAsString: false
+  values:
+    - value: basedOnReturnCode
+      description: >-
+        Intune will restart the device after running the app installation if the
+        operation returns a reboot code.
+      name: basedOnReturnCode
+    - value: allow
+      description: >-
+        Intune will not take any specific action on reboot codes resulting from
+        app installations. Intune will not attempt to suppress restarts for MSI
+        apps.
+      name: allow
+    - value: suppress
+      description: Intune will attempt to suppress restarts for MSI apps.
+      name: suppress
+    - value: force
+      description: >-
+        Intune will force the device to restart immediately after the app
+        installation operation.
+      name: force

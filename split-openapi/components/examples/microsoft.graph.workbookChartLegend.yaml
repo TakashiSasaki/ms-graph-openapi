@@ -1,0 +1,6 @@
+value:
+  format:
+    '@odata.type': microsoft.graph.workbookChartLegendFormat
+  overlay: 'true'
+  position: String
+  visible: 'true'

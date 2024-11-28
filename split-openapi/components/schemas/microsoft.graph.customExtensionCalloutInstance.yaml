@@ -1,0 +1,36 @@
+title: customExtensionCalloutInstance
+required:
+  - '@odata.type'
+type: object
+properties:
+  customExtensionId:
+    type: string
+    description: >-
+      Identification of the custom extension that was triggered at this
+      instance.
+    nullable: true
+  detail:
+    type: string
+    description: >-
+      Details provided by the logic app during the callback of the request
+      instance.
+    nullable: true
+  externalCorrelationId:
+    type: string
+    description: The unique run identifier for the logic app.
+    nullable: true
+  id:
+    type: string
+    description: Unique identifier for the callout instance. Read-only.
+    nullable: true
+  status:
+    anyOf:
+      - $ref: .\microsoft.graph.customExtensionCalloutInstanceStatus.yaml
+      - type: object
+        nullable: true
+    description: >-
+      The status of the request to the custom extension. The possible values
+      are: calloutSent, callbackReceived, calloutFailed, callbackTimedOut,
+      waitingForCallback, unknownFutureValue.
+  '@odata.type':
+    type: string

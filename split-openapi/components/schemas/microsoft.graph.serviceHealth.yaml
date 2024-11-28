@@ -1,0 +1,25 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: serviceHealth
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      service:
+        type: string
+        description: >-
+          The service name. Use the list healthOverviews operation to get exact
+          string names for services subscribed by the tenant.
+      status:
+        $ref: .\microsoft.graph.serviceHealthStatus.yaml
+      issues:
+        type: array
+        items:
+          $ref: .\microsoft.graph.serviceHealthIssue.yaml
+        description: >-
+          A collection of issues that happened on the service, with detailed
+          information for each issue.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.serviceHealth'

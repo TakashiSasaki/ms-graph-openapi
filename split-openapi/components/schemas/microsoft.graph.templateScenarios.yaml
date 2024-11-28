@@ -1,0 +1,12 @@
+title: templateScenarios
+enum:
+  - new
+  - secureFoundation
+  - zeroTrust
+  - remoteWork
+  - protectAdmins
+  - emergingThreats
+  - unknownFutureValue
+type: string
+x-ms-enum-flags:
+  isFlags: true

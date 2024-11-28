@@ -1,0 +1,14 @@
+title: userRegistrationMethodCount
+required:
+  - '@odata.type'
+type: object
+properties:
+  authenticationMethod:
+    type: string
+    description: Name of the authentication method.
+  userCount:
+    type: number
+    description: Number of users registered.
+    format: int64
+  '@odata.type':
+    type: string

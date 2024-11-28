@@ -1,0 +1,32 @@
+description: >-
+  Casts the previous resource to
+  onAuthenticationMethodLoadStartExternalUsersSelfServiceSignUp.
+get:
+  tags:
+    - identity.authenticationEventsFlow
+  summary: >-
+    Get the item of type microsoft.graph.onAuthenticationMethodLoadStartHandler
+    as
+    microsoft.graph.onAuthenticationMethodLoadStartExternalUsersSelfServiceSignUp
+  operationId: >-
+    identity.authenticationEventsFlows.GetOnAuthenticationMethodLoadStart.AsOnAuthenticationMethodLoadStartExternalUsersSelfServiceSignUp
+  responses:
+    2XX:
+      description: Entity result.
+      content:
+        application/json:
+          schema:
+            $ref: >-
+              ..\components\schemas\microsoft.graph.onAuthenticationMethodLoadStartExternalUsersSelfServiceSignUp.yaml
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+parameters:
+  - name: authenticationEventsFlow-id
+    in: path
+    description: The unique identifier of authenticationEventsFlow
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: authenticationEventsFlow

@@ -1,0 +1,11 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: deviceManagementCachedReportConfiguration
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      '@odata.type':
+        type: string
+    description: Entity representing the configuration of a cached report.
+x-ms-discriminator-value: '#microsoft.graph.deviceManagementCachedReportConfiguration'

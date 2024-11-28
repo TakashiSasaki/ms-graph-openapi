@@ -1,0 +1,40 @@
+title: webPartPosition
+required:
+  - '@odata.type'
+type: object
+properties:
+  columnId:
+    oneOf:
+      - type: number
+        format: double
+        nullable: true
+      - type: string
+        nullable: true
+      - $ref: .\ReferenceNumeric.yaml
+    description: Indicates the identifier of the column where the web part is located.
+  horizontalSectionId:
+    oneOf:
+      - type: number
+        format: double
+        nullable: true
+      - type: string
+        nullable: true
+      - $ref: .\ReferenceNumeric.yaml
+    description: Indicates the horizontal section where the web part is located.
+  isInVerticalSection:
+    type: boolean
+    description: Indicates whether the web part is located in the vertical section.
+    nullable: true
+  webPartIndex:
+    oneOf:
+      - type: number
+        format: double
+        nullable: true
+      - type: string
+        nullable: true
+      - $ref: .\ReferenceNumeric.yaml
+    description: >-
+      Index of the current web part. Represents the order of the web part in
+      this column or section.
+  '@odata.type':
+    type: string

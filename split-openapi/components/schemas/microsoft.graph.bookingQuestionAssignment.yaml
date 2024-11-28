@@ -1,0 +1,13 @@
+title: bookingQuestionAssignment
+required:
+  - '@odata.type'
+type: object
+properties:
+  isRequired:
+    type: boolean
+    description: Indicates whether it's mandatory to answer the custom question.
+  questionId:
+    type: string
+    description: The ID of the custom question.
+  '@odata.type':
+    type: string

@@ -1,0 +1,12 @@
+title: selfServiceSignUpAuthenticationFlowConfiguration
+required:
+  - '@odata.type'
+type: object
+properties:
+  isEnabled:
+    type: boolean
+    description: >-
+      Indicates whether self-service sign-up flow is enabled or disabled. The
+      default value is false. This property isn't a key. Required.
+  '@odata.type':
+    type: string

@@ -1,0 +1,4 @@
+value:
+  downloadUrl: String
+  fileName: String
+  size: '0'

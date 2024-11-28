@@ -1,0 +1,21 @@
+value:
+  authority:
+    '@odata.type': microsoft.graph.security.filePlanAuthority
+  authorityTemplate:
+    '@odata.type': microsoft.graph.security.authorityTemplate
+  category:
+    '@odata.type': microsoft.graph.security.filePlanAppliedCategory
+  categoryTemplate:
+    '@odata.type': microsoft.graph.security.categoryTemplate
+  citation:
+    '@odata.type': microsoft.graph.security.filePlanCitation
+  citationTemplate:
+    '@odata.type': microsoft.graph.security.citationTemplate
+  department:
+    '@odata.type': microsoft.graph.security.filePlanDepartment
+  departmentTemplate:
+    '@odata.type': microsoft.graph.security.departmentTemplate
+  filePlanReference:
+    '@odata.type': microsoft.graph.security.filePlanReference
+  filePlanReferenceTemplate:
+    '@odata.type': microsoft.graph.security.filePlanReferenceTemplate

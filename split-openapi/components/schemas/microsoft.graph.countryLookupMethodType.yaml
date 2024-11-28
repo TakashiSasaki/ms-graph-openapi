@@ -1,0 +1,6 @@
+title: countryLookupMethodType
+enum:
+  - clientIpAddress
+  - authenticatorAppGps
+  - unknownFutureValue
+type: string

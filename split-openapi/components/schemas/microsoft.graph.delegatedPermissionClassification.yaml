@@ -1,0 +1,32 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: delegatedPermissionClassification
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      classification:
+        anyOf:
+          - $ref: .\microsoft.graph.permissionClassificationType.yaml
+          - type: object
+            nullable: true
+        description: >-
+          The classification value. Possible values: low, medium (preview), high
+          (preview). Doesn't support $filter.
+      permissionId:
+        type: string
+        description: >-
+          The unique identifier (id) for the delegated permission listed in the
+          oauth2PermissionScopes collection of the servicePrincipal. Required on
+          create. Doesn't support $filter.
+        nullable: true
+      permissionName:
+        type: string
+        description: >-
+          The claim value (value) for the delegated permission listed in the
+          oauth2PermissionScopes collection of the servicePrincipal. Doesn't
+          support $filter.
+        nullable: true
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.delegatedPermissionClassification'

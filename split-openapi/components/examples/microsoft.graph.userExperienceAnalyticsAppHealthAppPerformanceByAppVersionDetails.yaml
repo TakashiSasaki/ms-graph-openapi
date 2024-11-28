@@ -1,0 +1,9 @@
+value:
+  appCrashCount: '0'
+  appDisplayName: String
+  appName: String
+  appPublisher: String
+  appVersion: String
+  deviceCountWithCrashes: '0'
+  isLatestUsedVersion: 'true'
+  isMostUsedVersion: 'true'

@@ -1,0 +1,18 @@
+allOf:
+  - $ref: .\microsoft.graph.changeTrackedEntity.yaml
+  - title: shiftPreferences
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      availability:
+        type: array
+        items:
+          $ref: .\microsoft.graph.shiftAvailability.yaml
+        description: >-
+          Availability of the user to be scheduled for work and its recurrence
+          pattern.
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.shiftPreferences'
+x-ms-discriminator-value: '#microsoft.graph.shiftPreferences'

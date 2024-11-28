@@ -1,0 +1,18 @@
+title: vppTokenAccountType
+enum:
+  - business
+  - education
+type: string
+description: Possible types of an Apple Volume Purchase Program token.
+x-ms-enum:
+  name: vppTokenAccountType
+  modelAsString: false
+  values:
+    - value: business
+      description: Apple Volume Purchase Program token associated with an business program.
+      name: business
+    - value: education
+      description: >-
+        Apple Volume Purchase Program token associated with an education
+        program.
+      name: education

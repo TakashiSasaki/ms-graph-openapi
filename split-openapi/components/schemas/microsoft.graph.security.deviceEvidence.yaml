@@ -1,0 +1,133 @@
+allOf:
+  - $ref: .\microsoft.graph.security.alertEvidence.yaml
+  - title: deviceEvidence
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      azureAdDeviceId:
+        type: string
+        description: >-
+          A unique identifier assigned to a device by Microsoft Entra ID when
+          device is Microsoft Entra joined.
+        nullable: true
+      defenderAvStatus:
+        anyOf:
+          - $ref: .\microsoft.graph.security.defenderAvStatus.yaml
+          - type: object
+            nullable: true
+        description: >-
+          State of the Defender AntiMalware engine. The possible values are:
+          notReporting, disabled, notUpdated, updated, unknown, notSupported,
+          unknownFutureValue.
+      deviceDnsName:
+        type: string
+        description: The fully qualified domain name (FQDN) for the device.
+        nullable: true
+      dnsDomain:
+        type: string
+        description: >-
+          The DNS domain that this computer belongs to. A sequence of labels
+          separated by dots.
+        nullable: true
+      firstSeenDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: The date and time when the device was first seen.
+        format: date-time
+        nullable: true
+      healthStatus:
+        anyOf:
+          - $ref: .\microsoft.graph.security.deviceHealthStatus.yaml
+          - type: object
+            nullable: true
+        description: >-
+          The health state of the device. The possible values are: active,
+          inactive, impairedCommunication, noSensorData,
+          noSensorDataImpairedCommunication, unknown, unknownFutureValue.
+      hostName:
+        type: string
+        description: The hostname without the domain suffix.
+        nullable: true
+      ipInterfaces:
+        type: array
+        items:
+          type: string
+          nullable: true
+        description: Ip interfaces of the device during the time of the alert.
+      lastExternalIpAddress:
+        type: string
+        nullable: true
+      lastIpAddress:
+        type: string
+        nullable: true
+      loggedOnUsers:
+        type: array
+        items:
+          $ref: .\microsoft.graph.security.loggedOnUser.yaml
+        description: Users that were logged on the machine during the time of the alert.
+      mdeDeviceId:
+        type: string
+        description: >-
+          A unique identifier assigned to a device by Microsoft Defender for
+          Endpoint.
+        nullable: true
+      ntDomain:
+        type: string
+        description: A logical grouping of computers within a Microsoft Windows network.
+        nullable: true
+      onboardingStatus:
+        anyOf:
+          - $ref: .\microsoft.graph.security.onboardingStatus.yaml
+          - type: object
+            nullable: true
+        description: >-
+          The status of the machine onboarding to Microsoft Defender for
+          Endpoint. The possible values are: insufficientInfo, onboarded,
+          canBeOnboarded, unsupported, unknownFutureValue.
+      osBuild:
+        type: number
+        description: The build version for the operating system the device is running.
+        format: int64
+        nullable: true
+      osPlatform:
+        type: string
+        description: The operating system platform the device is running.
+        nullable: true
+      rbacGroupId:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: The ID of the role-based access control (RBAC) device group.
+        format: int32
+        nullable: true
+      rbacGroupName:
+        type: string
+        description: The name of the RBAC device group.
+        nullable: true
+      riskScore:
+        anyOf:
+          - $ref: .\microsoft.graph.security.deviceRiskScore.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Risk score as evaluated by Microsoft Defender for Endpoint. The
+          possible values are: none, informational, low, medium, high,
+          unknownFutureValue.
+      version:
+        type: string
+        description: The version of the operating system platform.
+        nullable: true
+      vmMetadata:
+        anyOf:
+          - $ref: .\microsoft.graph.security.vmMetadata.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Metadata of the virtual machine (VM) on which Microsoft Defender for
+          Endpoint is running.
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.security.deviceEvidence'
+x-ms-discriminator-value: '#microsoft.graph.security.deviceEvidence'

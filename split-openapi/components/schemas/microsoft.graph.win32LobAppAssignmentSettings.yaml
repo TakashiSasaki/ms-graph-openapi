@@ -1,0 +1,34 @@
+allOf:
+  - $ref: .\microsoft.graph.mobileAppAssignmentSettings.yaml
+  - title: win32LobAppAssignmentSettings
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      autoUpdateSettings:
+        anyOf:
+          - $ref: .\microsoft.graph.win32LobAppAutoUpdateSettings.yaml
+          - type: object
+            nullable: true
+        description: The auto-update settings to apply for this app assignment.
+      deliveryOptimizationPriority:
+        $ref: .\microsoft.graph.win32LobAppDeliveryOptimizationPriority.yaml
+      installTimeSettings:
+        anyOf:
+          - $ref: .\microsoft.graph.mobileAppInstallTimeSettings.yaml
+          - type: object
+            nullable: true
+        description: The install time settings to apply for this app assignment.
+      notifications:
+        $ref: .\microsoft.graph.win32LobAppNotification.yaml
+      restartSettings:
+        anyOf:
+          - $ref: .\microsoft.graph.win32LobAppRestartSettings.yaml
+          - type: object
+            nullable: true
+        description: The reboot settings to apply for this app assignment.
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.win32LobAppAssignmentSettings'
+    description: Contains properties used to assign an Win32 LOB mobile app to a group.
+x-ms-discriminator-value: '#microsoft.graph.win32LobAppAssignmentSettings'

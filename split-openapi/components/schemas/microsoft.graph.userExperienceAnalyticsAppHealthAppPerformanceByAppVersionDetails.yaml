@@ -1,0 +1,62 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      appCrashCount:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: >-
+          The number of crashes for the app. Valid values -2147483648 to
+          2147483647
+        format: int32
+      appDisplayName:
+        type: string
+        description: The friendly name of the application.
+        nullable: true
+      appName:
+        type: string
+        description: The name of the application.
+        nullable: true
+      appPublisher:
+        type: string
+        description: The publisher of the application.
+        nullable: true
+      appVersion:
+        type: string
+        description: The version of the application.
+        nullable: true
+      deviceCountWithCrashes:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: >-
+          The total number of devices that have reported one or more application
+          crashes for this application and version. Valid values 0 to
+          2147483647. Supports: $select, $OrderBy. Read-only. Valid values
+          -2147483648 to 2147483647
+        format: int32
+      isLatestUsedVersion:
+        type: boolean
+        description: >-
+          When TRUE, indicates the version of application is the latest version
+          for that application that is in use. When FALSE, indicates the version
+          is not the latest version. FALSE by default. Supports: $select,
+          $OrderBy.
+      isMostUsedVersion:
+        type: boolean
+        description: >-
+          When TRUE, indicates the version of application is the most used
+          version for that application. When FALSE, indicates the version is not
+          the most used version. FALSE by default. Supports: $select, $OrderBy.
+          Read-only.
+      '@odata.type':
+        type: string
+    description: >-
+      The user experience analytics application performance entity contains
+      application performance by application version details.
+x-ms-discriminator-value: >-
+  #microsoft.graph.userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails

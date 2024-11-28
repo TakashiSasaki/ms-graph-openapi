@@ -1,0 +1,9 @@
+value:
+  conferenceId: String
+  dialinUrl: String
+  tollFreeNumber: String
+  tollFreeNumbers:
+    - String
+  tollNumber: String
+  tollNumbers:
+    - String

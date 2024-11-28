@@ -1,0 +1,19 @@
+title: recentNotebookLinks
+required:
+  - '@odata.type'
+type: object
+properties:
+  oneNoteClientUrl:
+    anyOf:
+      - $ref: .\microsoft.graph.externalLink.yaml
+      - type: object
+        nullable: true
+    description: Opens the notebook in the OneNote native client if it's installed.
+  oneNoteWebUrl:
+    anyOf:
+      - $ref: .\microsoft.graph.externalLink.yaml
+      - type: object
+        nullable: true
+    description: Opens the notebook in OneNote on the web.
+  '@odata.type':
+    type: string

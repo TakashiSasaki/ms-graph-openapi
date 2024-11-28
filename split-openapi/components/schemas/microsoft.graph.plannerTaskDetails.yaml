@@ -1,0 +1,36 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: plannerTaskDetails
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      checklist:
+        anyOf:
+          - $ref: .\microsoft.graph.plannerChecklistItems.yaml
+          - type: object
+            nullable: true
+        description: The collection of checklist items on the task.
+      description:
+        type: string
+        description: Description of the task.
+        nullable: true
+      previewType:
+        anyOf:
+          - $ref: .\microsoft.graph.plannerPreviewType.yaml
+          - type: object
+            nullable: true
+        description: >-
+          This sets the type of preview that shows up on the task. The possible
+          values are: automatic, noPreview, checklist, description, reference.
+          When set to automatic the displayed preview is chosen by the app
+          viewing the task.
+      references:
+        anyOf:
+          - $ref: .\microsoft.graph.plannerExternalReferences.yaml
+          - type: object
+            nullable: true
+        description: The collection of references on the task.
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.plannerTaskDetails'

@@ -1,0 +1,4 @@
+value:
+  displayName: String
+  domainName: String
+  issuerUri: String

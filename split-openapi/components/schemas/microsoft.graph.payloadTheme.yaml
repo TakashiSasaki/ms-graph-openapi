@@ -1,0 +1,35 @@
+title: payloadTheme
+enum:
+  - unknown
+  - other
+  - accountActivation
+  - accountVerification
+  - billing
+  - cleanUpMail
+  - controversial
+  - documentReceived
+  - expense
+  - fax
+  - financeReport
+  - incomingMessages
+  - invoice
+  - itemReceived
+  - loginAlert
+  - mailReceived
+  - password
+  - payment
+  - payroll
+  - personalizedOffer
+  - quarantine
+  - remoteWork
+  - reviewMessage
+  - securityUpdate
+  - serviceSuspended
+  - signatureRequired
+  - upgradeMailboxStorage
+  - verifyMailbox
+  - voicemail
+  - advertisement
+  - employeeEngagement
+  - unknownFutureValue
+type: string

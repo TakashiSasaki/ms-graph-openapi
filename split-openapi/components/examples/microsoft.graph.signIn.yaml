@@ -1,0 +1,35 @@
+value:
+  appDisplayName: String
+  appId: String
+  appliedConditionalAccessPolicies:
+    - '@odata.type': microsoft.graph.appliedConditionalAccessPolicy
+  clientAppUsed: String
+  conditionalAccessStatus:
+    '@odata.type': microsoft.graph.conditionalAccessStatus
+  correlationId: String
+  createdDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  deviceDetail:
+    '@odata.type': microsoft.graph.deviceDetail
+  ipAddress: String
+  isInteractive: 'true'
+  location:
+    '@odata.type': microsoft.graph.signInLocation
+  resourceDisplayName: String
+  resourceId: String
+  riskDetail:
+    '@odata.type': microsoft.graph.riskDetail
+  riskEventTypes:
+    - '@odata.type': microsoft.graph.riskEventType
+  riskEventTypes_v2:
+    - String
+  riskLevelAggregated:
+    '@odata.type': microsoft.graph.riskLevel
+  riskLevelDuringSignIn:
+    '@odata.type': microsoft.graph.riskLevel
+  riskState:
+    '@odata.type': microsoft.graph.riskState
+  status:
+    '@odata.type': microsoft.graph.signInStatus
+  userDisplayName: String
+  userId: String
+  userPrincipalName: String

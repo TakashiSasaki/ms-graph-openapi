@@ -1,0 +1,27 @@
+allOf:
+  - $ref: .\microsoft.graph.mobileApp.yaml
+  - title: androidStoreApp
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      appStoreUrl:
+        type: string
+        description: The Android app store URL.
+        nullable: true
+      minimumSupportedOperatingSystem:
+        anyOf:
+          - $ref: .\microsoft.graph.androidMinimumOperatingSystem.yaml
+          - type: object
+            nullable: true
+        description: The value for the minimum applicable operating system.
+      packageId:
+        type: string
+        description: The package identifier.
+        nullable: true
+        readOnly: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.androidStoreApp'
+    description: Contains properties and inherited properties for Android store apps.
+x-ms-discriminator-value: '#microsoft.graph.androidStoreApp'

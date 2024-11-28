@@ -1,0 +1,89 @@
+description: Provides operations to call the recordResponse method.
+post:
+  tags:
+    - communications.call
+  summary: Invoke action recordResponse
+  description: >-
+    Records a short audio response from the caller.
+
+    A bot can utilize this to capture a voice response from a caller after they
+    are prompted for a response. For further information on how to handle
+    operations, please review commsOperation This action is not intended to
+    record the entire call. The maximum length of recording is 2 minutes. The
+    recording is not saved permanently by the Cloud Communications Platform and
+    is discarded shortly after the call ends. The bot must download the
+    recording promptly after the recording operation finishes by using the
+    recordingLocation value that's given in the completed notification.
+  externalDocs:
+    description: Find more info here
+    url: https://learn.microsoft.com/graph/api/call-record?view=graph-rest-1.0
+  operationId: communications.calls.call.recordResponse
+  requestBody:
+    description: Action parameters
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            prompts:
+              type: array
+              items:
+                $ref: ..\components\schemas\microsoft.graph.prompt.yaml
+            bargeInAllowed:
+              type: boolean
+              default: false
+              nullable: true
+            initialSilenceTimeoutInSeconds:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: number
+              format: int32
+              nullable: true
+            maxSilenceTimeoutInSeconds:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: number
+              format: int32
+              nullable: true
+            maxRecordDurationInSeconds:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: number
+              format: int32
+              nullable: true
+            playBeep:
+              type: boolean
+              default: false
+              nullable: true
+            stopTones:
+              type: array
+              items:
+                type: string
+                nullable: true
+            clientContext:
+              type: string
+              nullable: true
+    required: true
+  responses:
+    2XX:
+      description: Success
+      content:
+        application/json:
+          schema:
+            anyOf:
+              - $ref: ..\components\schemas\microsoft.graph.recordOperation.yaml
+              - type: object
+                nullable: true
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: action
+parameters:
+  - name: call-id
+    in: path
+    description: The unique identifier of call
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: call

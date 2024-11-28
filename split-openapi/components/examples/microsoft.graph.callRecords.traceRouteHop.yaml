@@ -1,0 +1,4 @@
+value:
+  hopCount: '0'
+  ipAddress: String
+  roundTripTime: Duration

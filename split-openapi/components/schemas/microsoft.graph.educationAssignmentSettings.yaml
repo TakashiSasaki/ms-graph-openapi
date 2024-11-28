@@ -1,0 +1,24 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: educationAssignmentSettings
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      submissionAnimationDisabled:
+        type: boolean
+        description: >-
+          Indicates whether to show the turn-in celebration animation. If true,
+          indicates to skip the animation. The default value is false.
+        nullable: true
+      gradingCategories:
+        type: array
+        items:
+          $ref: .\microsoft.graph.educationGradingCategory.yaml
+        description: >-
+          When set, enables users to weight assignments differently when
+          computing a class average grade.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.educationAssignmentSettings'

@@ -1,0 +1,8 @@
+value:
+  attributes:
+    - '@odata.type': microsoft.graph.attributeDefinition
+  metadata:
+    - '@odata.type': microsoft.graph.objectDefinitionMetadataEntry
+  name: String
+  supportedApis:
+    - String

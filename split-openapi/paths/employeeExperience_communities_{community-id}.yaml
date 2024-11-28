@@ -1,0 +1,108 @@
+description: >-
+  Provides operations to manage the communities property of the
+  microsoft.graph.employeeExperience entity.
+get:
+  tags:
+    - employeeExperience.community
+  summary: Get community
+  description: Read the properties and relationships of a community object.
+  externalDocs:
+    description: Find more info here
+    url: https://learn.microsoft.com/graph/api/community-get?view=graph-rest-1.0
+  operationId: employeeExperience.GetCommunities
+  parameters:
+    - name: $select
+      in: query
+      description: Select properties to be returned
+      style: form
+      explode: false
+      schema:
+        uniqueItems: true
+        type: array
+        items:
+          type: string
+    - name: $expand
+      in: query
+      description: Expand related entities
+      style: form
+      explode: false
+      schema:
+        uniqueItems: true
+        type: array
+        items:
+          type: string
+  responses:
+    2XX:
+      description: Retrieved navigation property
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\microsoft.graph.community.yaml
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: operation
+patch:
+  tags:
+    - employeeExperience.community
+  summary: Update community
+  description: Update the properties of an existing Viva Engage community.
+  externalDocs:
+    description: Find more info here
+    url: https://learn.microsoft.com/graph/api/community-update?view=graph-rest-1.0
+  operationId: employeeExperience.UpdateCommunities
+  requestBody:
+    description: New navigation property values
+    content:
+      application/json:
+        schema:
+          $ref: ..\components\schemas\microsoft.graph.community.yaml
+    required: true
+  responses:
+    2XX:
+      description: Success
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\microsoft.graph.community.yaml
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: operation
+delete:
+  tags:
+    - employeeExperience.community
+  summary: Delete community
+  description: >-
+    Delete a Viva Engage community along with all associated Microsoft 365
+    content, including the connected Microsoft 365 group, OneNote notebook, and
+    Planner plans. For more information, see What happens if I delete a Viva
+    Engage community connected to Microsoft 365 groups.
+  externalDocs:
+    description: Find more info here
+    url: https://learn.microsoft.com/graph/api/community-delete?view=graph-rest-1.0
+  operationId: employeeExperience.DeleteCommunities
+  parameters:
+    - name: If-Match
+      in: header
+      description: ETag
+      schema:
+        type: string
+  responses:
+    '204':
+      description: Success
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: operation
+parameters:
+  - name: community-id
+    in: path
+    description: The unique identifier of community
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: community

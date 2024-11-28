@@ -1,0 +1,57 @@
+description: Provides operations to call the getNotebookFromWebUrl method.
+post:
+  tags:
+    - groups.site
+  summary: Invoke action getNotebookFromWebUrl
+  description: >-
+    Retrieve the properties and relationships of a notebook object by using its
+    URL path. The location can be user notebooks on Microsoft 365, group
+    notebooks, or SharePoint site-hosted team notebooks on Microsoft 365.
+  externalDocs:
+    description: Find more info here
+    url: >-
+      https://learn.microsoft.com/graph/api/notebook-getnotebookfromweburl?view=graph-rest-1.0
+  operationId: groups.group.sites.site.onenote.notebooks.getNotebookFromWebUrl
+  requestBody:
+    description: Action parameters
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            webUrl:
+              type: string
+              nullable: true
+    required: true
+  responses:
+    2XX:
+      description: Success
+      content:
+        application/json:
+          schema:
+            anyOf:
+              - $ref: ..\components\schemas\microsoft.graph.CopyNotebookModel.yaml
+              - type: object
+                nullable: true
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: action
+parameters:
+  - name: group-id
+    in: path
+    description: The unique identifier of group
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: group
+  - name: site-id
+    in: path
+    description: The unique identifier of site
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: site
+x-ms-docs-grouped-path:
+  - /groups/{group-id}/onenote/notebooks/getNotebookFromWebUrl

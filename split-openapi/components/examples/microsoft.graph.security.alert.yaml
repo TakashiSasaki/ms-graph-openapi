@@ -1,0 +1,44 @@
+value:
+  actorDisplayName: String
+  additionalData:
+    '@odata.type': microsoft.graph.security.dictionary
+  alertPolicyId: String
+  alertWebUrl: String
+  assignedTo: String
+  category: String
+  classification:
+    '@odata.type': microsoft.graph.security.alertClassification
+  comments:
+    - '@odata.type': microsoft.graph.security.alertComment
+  createdDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  description: String
+  detectionSource:
+    '@odata.type': microsoft.graph.security.detectionSource
+  detectorId: String
+  determination:
+    '@odata.type': microsoft.graph.security.alertDetermination
+  evidence:
+    - '@odata.type': microsoft.graph.security.alertEvidence
+  firstActivityDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  incidentId: String
+  incidentWebUrl: String
+  lastActivityDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  lastUpdateDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  mitreTechniques:
+    - String
+  productName: String
+  providerAlertId: String
+  recommendedActions: String
+  resolvedDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  serviceSource:
+    '@odata.type': microsoft.graph.security.serviceSource
+  severity:
+    '@odata.type': microsoft.graph.security.alertSeverity
+  status:
+    '@odata.type': microsoft.graph.security.alertStatus
+  systemTags:
+    - String
+  tenantId: String
+  threatDisplayName: String
+  threatFamilyName: String
+  title: String

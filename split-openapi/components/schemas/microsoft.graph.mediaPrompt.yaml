@@ -1,0 +1,13 @@
+allOf:
+  - $ref: .\microsoft.graph.prompt.yaml
+  - title: mediaPrompt
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      mediaInfo:
+        $ref: .\microsoft.graph.mediaInfo.yaml
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.mediaPrompt'
+x-ms-discriminator-value: '#microsoft.graph.mediaPrompt'

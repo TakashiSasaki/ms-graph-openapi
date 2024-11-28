@@ -1,0 +1,23 @@
+allOf:
+  - $ref: .\microsoft.graph.recipient.yaml
+  - title: attendeeBase
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      type:
+        anyOf:
+          - $ref: .\microsoft.graph.attendeeType.yaml
+          - type: object
+            nullable: true
+        description: >-
+          The type of attendee. The possible values are: required, optional,
+          resource. Currently if the attendee is a person, findMeetingTimes
+          always considers the person is of the Required type.
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.attendeeBase'
+    discriminator:
+      propertyName: '@odata.type'
+      mapping:
+        '#microsoft.graph.attendee': .\microsoft.graph.attendee.yaml

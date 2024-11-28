@@ -1,0 +1,4 @@
+value:
+  artifactHitCount: '0'
+  restorePoint:
+    '@odata.type': microsoft.graph.restorePoint

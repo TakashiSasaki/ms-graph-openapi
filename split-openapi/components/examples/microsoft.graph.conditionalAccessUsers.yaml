@@ -1,0 +1,17 @@
+value:
+  excludeGroups:
+    - String
+  excludeGuestsOrExternalUsers:
+    '@odata.type': microsoft.graph.conditionalAccessGuestsOrExternalUsers
+  excludeRoles:
+    - String
+  excludeUsers:
+    - String
+  includeGroups:
+    - String
+  includeGuestsOrExternalUsers:
+    '@odata.type': microsoft.graph.conditionalAccessGuestsOrExternalUsers
+  includeRoles:
+    - String
+  includeUsers:
+    - String

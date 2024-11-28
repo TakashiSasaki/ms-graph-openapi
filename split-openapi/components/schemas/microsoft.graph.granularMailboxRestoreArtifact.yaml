@@ -1,0 +1,20 @@
+allOf:
+  - $ref: .\microsoft.graph.mailboxRestoreArtifact.yaml
+  - title: granularMailboxRestoreArtifact
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      artifactCount:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: .
+        format: int32
+        nullable: true
+      searchResponseId:
+        type: string
+        description: .
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.granularMailboxRestoreArtifact'

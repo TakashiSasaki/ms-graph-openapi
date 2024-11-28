@@ -1,0 +1,9 @@
+title: Base delta function response
+type: object
+properties:
+  '@odata.nextLink':
+    type: string
+    nullable: true
+  '@odata.deltaLink':
+    type: string
+    nullable: true

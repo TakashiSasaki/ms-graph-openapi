@@ -1,0 +1,7 @@
+title: exportFileStructure
+enum:
+  - none
+  - directory
+  - pst
+  - unknownFutureValue
+type: string

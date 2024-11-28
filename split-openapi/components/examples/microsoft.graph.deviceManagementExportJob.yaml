@@ -1,0 +1,15 @@
+value:
+  expirationDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  filter: String
+  format:
+    '@odata.type': microsoft.graph.deviceManagementReportFileFormat
+  localizationType:
+    '@odata.type': microsoft.graph.deviceManagementExportJobLocalizationType
+  reportName: String
+  requestDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  select:
+    - String
+  snapshotId: String
+  status:
+    '@odata.type': microsoft.graph.deviceManagementReportStatus
+  url: String

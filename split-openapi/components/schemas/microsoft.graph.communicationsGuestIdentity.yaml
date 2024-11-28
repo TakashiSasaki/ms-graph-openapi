@@ -1,0 +1,11 @@
+allOf:
+  - $ref: .\microsoft.graph.identity.yaml
+  - title: communicationsGuestIdentity
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.communicationsGuestIdentity'
+x-ms-discriminator-value: '#microsoft.graph.communicationsGuestIdentity'

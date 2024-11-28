@@ -1,0 +1,47 @@
+description: Provides operations to call the setPresence method.
+post:
+  tags:
+    - communications.presence
+  summary: Invoke action setPresence
+  description: Set the state of a user's presence session as an application.
+  externalDocs:
+    description: Find more info here
+    url: >-
+      https://learn.microsoft.com/graph/api/presence-setpresence?view=graph-rest-1.0
+  operationId: communications.presences.presence.setPresence
+  requestBody:
+    description: Action parameters
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            sessionId:
+              type: string
+              nullable: true
+            availability:
+              type: string
+            activity:
+              type: string
+            expirationDuration:
+              pattern: ^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$
+              type: string
+              format: duration
+              nullable: true
+    required: true
+  responses:
+    '204':
+      description: Success
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: action
+parameters:
+  - name: presence-id
+    in: path
+    description: The unique identifier of presence
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: presence

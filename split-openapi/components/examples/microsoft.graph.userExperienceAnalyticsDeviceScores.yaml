@@ -1,0 +1,11 @@
+value:
+  appReliabilityScore: '0'
+  batteryHealthScore: '0'
+  deviceName: String
+  endpointAnalyticsScore: '0'
+  healthStatus:
+    '@odata.type': microsoft.graph.userExperienceAnalyticsHealthState
+  manufacturer: String
+  model: String
+  startupPerformanceScore: '0'
+  workFromAnywhereScore: '0'

@@ -1,0 +1,22 @@
+title: calendarSharingMessageAction
+required:
+  - '@odata.type'
+type: object
+properties:
+  action:
+    anyOf:
+      - $ref: .\microsoft.graph.calendarSharingAction.yaml
+      - type: object
+        nullable: true
+  actionType:
+    anyOf:
+      - $ref: .\microsoft.graph.calendarSharingActionType.yaml
+      - type: object
+        nullable: true
+  importance:
+    anyOf:
+      - $ref: .\microsoft.graph.calendarSharingActionImportance.yaml
+      - type: object
+        nullable: true
+  '@odata.type':
+    type: string

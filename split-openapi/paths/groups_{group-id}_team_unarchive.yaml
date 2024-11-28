@@ -1,0 +1,34 @@
+description: Provides operations to call the unarchive method.
+post:
+  tags:
+    - groups.team
+  summary: Invoke action unarchive
+  description: >-
+    Restore an archived team. This API restores users' ability to send messages
+    and edit the team, abiding by tenant and team settings. A Team is archived
+    using the archive API. Unarchiving is an async operation. A team is
+    unarchived once the async operation completes successfully, which might
+    occur subsequent to a response from this API.
+  externalDocs:
+    description: Find more info here
+    url: https://learn.microsoft.com/graph/api/team-unarchive?view=graph-rest-1.0
+  operationId: groups.group.team.unarchive
+  responses:
+    '204':
+      description: Success
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: action
+parameters:
+  - name: group-id
+    in: path
+    description: The unique identifier of group
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: group
+x-ms-docs-grouped-path:
+  - /groups/{group-id}/team/channels/{channel-id}/unarchive
+  - /groups/{group-id}/team/primaryChannel/unarchive

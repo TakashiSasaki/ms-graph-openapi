@@ -1,0 +1,55 @@
+allOf:
+  - $ref: .\microsoft.graph.security.caseOperation.yaml
+  - title: ediscoveryEstimateOperation
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      indexedItemCount:
+        type: number
+        description: >-
+          The estimated count of items for the search that matched the content
+          query.
+        format: int64
+        nullable: true
+      indexedItemsSize:
+        type: number
+        description: >-
+          The estimated size of items for the search that matched the content
+          query.
+        format: int64
+        nullable: true
+      mailboxCount:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: The number of mailboxes that had search hits.
+        format: int32
+        nullable: true
+      siteCount:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: The number of mailboxes that had search hits.
+        format: int32
+        nullable: true
+      unindexedItemCount:
+        type: number
+        description: The estimated count of unindexed items for the collection.
+        format: int64
+        nullable: true
+      unindexedItemsSize:
+        type: number
+        description: The estimated size of unindexed items for the collection.
+        format: int64
+        nullable: true
+      search:
+        anyOf:
+          - $ref: .\microsoft.graph.security.ediscoverySearch.yaml
+          - type: object
+            nullable: true
+        description: eDiscovery search.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.security.ediscoveryEstimateOperation'

@@ -1,0 +1,11 @@
+allOf:
+  - $ref: .\microsoft.graph.identity.yaml
+  - title: communicationsEncryptedIdentity
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.communicationsEncryptedIdentity'
+x-ms-discriminator-value: '#microsoft.graph.communicationsEncryptedIdentity'

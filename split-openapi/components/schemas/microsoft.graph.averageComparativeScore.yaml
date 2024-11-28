@@ -1,0 +1,22 @@
+title: averageComparativeScore
+required:
+  - '@odata.type'
+type: object
+properties:
+  averageScore:
+    oneOf:
+      - type: number
+        format: double
+        nullable: true
+      - type: string
+        nullable: true
+      - $ref: .\ReferenceNumeric.yaml
+    description: Average score within specified basis.
+  basis:
+    type: string
+    description: >-
+      Scope type. The possible values are: AllTenants, TotalSeats,
+      IndustryTypes.
+    nullable: true
+  '@odata.type':
+    type: string

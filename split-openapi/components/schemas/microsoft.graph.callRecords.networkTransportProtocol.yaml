@@ -1,0 +1,7 @@
+title: networkTransportProtocol
+enum:
+  - unknown
+  - udp
+  - tcp
+  - unknownFutureValue
+type: string

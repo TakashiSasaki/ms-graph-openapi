@@ -1,0 +1,16 @@
+title: conditionalAccessDevices
+required:
+  - '@odata.type'
+type: object
+properties:
+  deviceFilter:
+    anyOf:
+      - $ref: .\microsoft.graph.conditionalAccessFilter.yaml
+      - type: object
+        nullable: true
+    description: >-
+      Filter that defines the dynamic-device-syntax rule to include/exclude
+      devices. A filter can use device properties (such as extension attributes)
+      to include/exclude them.
+  '@odata.type':
+    type: string

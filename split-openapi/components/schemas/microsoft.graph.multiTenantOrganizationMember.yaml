@@ -1,0 +1,81 @@
+allOf:
+  - $ref: .\microsoft.graph.directoryObject.yaml
+  - title: multiTenantOrganizationMember
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      addedByTenantId:
+        pattern: >-
+          ^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$
+        type: string
+        description: >-
+          Tenant ID of the tenant that added the tenant to the multitenant
+          organization. Read-only.
+        format: uuid
+        nullable: true
+      addedDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: >-
+          Date and time when the tenant was added to the multitenant
+          organization. Read-only.
+        format: date-time
+        nullable: true
+      displayName:
+        type: string
+        description: Display name of the tenant added to the multitenant organization.
+        nullable: true
+      joinedDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: >-
+          Date and time when the tenant joined the multitenant organization.
+          Read-only.
+        format: date-time
+        nullable: true
+      role:
+        anyOf:
+          - $ref: .\microsoft.graph.multiTenantOrganizationMemberRole.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Role of the tenant in the multitenant organization. The possible
+          values are: owner, member (default), unknownFutureValue. Tenants with
+          the owner role can manage the multitenant organization but tenants
+          with the member role can only participate in a multitenant
+          organization. There can be multiple tenants with the owner role in a
+          multitenant organization.
+      state:
+        anyOf:
+          - $ref: .\microsoft.graph.multiTenantOrganizationMemberState.yaml
+          - type: object
+            nullable: true
+        description: >-
+          State of the tenant in the multitenant organization. The possible
+          values are: pending, active, removed, unknownFutureValue. Tenants in
+          the pending state must join the multitenant organization to
+          participate in the multitenant organization. Tenants in the active
+          state can participate in the multitenant organization. Tenants in the
+          removed state are in the process of being removed from the multitenant
+          organization. Read-only.
+      tenantId:
+        type: string
+        description: >-
+          Tenant ID of the Microsoft Entra tenant added to the multitenant
+          organization. Set at the time tenant is added.Supports $filter. Key.
+      transitionDetails:
+        anyOf:
+          - $ref: >-
+              .\microsoft.graph.multiTenantOrganizationMemberTransitionDetails.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Details of the processing status for a tenant in a multitenant
+          organization. Read-only. Nullable.
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.multiTenantOrganizationMember'
+x-ms-discriminator-value: '#microsoft.graph.multiTenantOrganizationMember'

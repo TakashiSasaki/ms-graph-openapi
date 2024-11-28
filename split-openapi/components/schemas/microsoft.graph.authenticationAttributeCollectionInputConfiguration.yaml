@@ -1,0 +1,56 @@
+title: authenticationAttributeCollectionInputConfiguration
+required:
+  - '@odata.type'
+type: object
+properties:
+  attribute:
+    type: string
+    description: The built-in or custom attribute for which a value is being collected.
+  defaultValue:
+    type: string
+    description: >-
+      The default value of the attribute displayed to the end user. The
+      capability to set the default value isn't available through the Microsoft
+      Entra admin center.
+    nullable: true
+  editable:
+    type: boolean
+    description: Defines whether the attribute is editable by the end user.
+    nullable: true
+  hidden:
+    type: boolean
+    description: >-
+      Defines whether the attribute is displayed to the end user. The capability
+      to hide isn't available through the Microsoft Entra admin center.
+    nullable: true
+  inputType:
+    $ref: .\microsoft.graph.authenticationAttributeCollectionInputType.yaml
+  label:
+    type: string
+    description: >-
+      The label of the attribute field that's displayed to end user, unless
+      overridden.
+  options:
+    type: array
+    items:
+      $ref: >-
+        .\microsoft.graph.authenticationAttributeCollectionOptionConfiguration.yaml
+    description: The option values for certain multiple-option input types.
+  required:
+    type: boolean
+    description: Defines whether the field is required.
+    nullable: true
+  validationRegEx:
+    type: string
+    description: >-
+      The regex for the value of the field. For more information about the
+      supported regexes, see validationRegEx values for inputType objects. To
+      understand how to specify regexes, see the Regular expressions cheat
+      sheet.
+    nullable: true
+  writeToDirectory:
+    type: boolean
+    description: Defines whether Microsoft Entra ID stores the value that it collects.
+    nullable: true
+  '@odata.type':
+    type: string

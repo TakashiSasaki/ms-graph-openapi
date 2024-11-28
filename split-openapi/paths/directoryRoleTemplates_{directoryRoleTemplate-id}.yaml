@@ -1,0 +1,97 @@
+description: >-
+  Provides operations to manage the collection of directoryRoleTemplate
+  entities.
+get:
+  tags:
+    - directoryRoleTemplates.directoryRoleTemplate
+  summary: Get directoryRoleTemplate
+  description: Retrieve the properties and relationships of a directoryroletemplate object.
+  externalDocs:
+    description: Find more info here
+    url: >-
+      https://learn.microsoft.com/graph/api/directoryroletemplate-get?view=graph-rest-1.0
+  operationId: directoryRoleTemplates.directoryRoleTemplate.GetDirectoryRoleTemplate
+  parameters:
+    - name: $select
+      in: query
+      description: Select properties to be returned
+      style: form
+      explode: false
+      schema:
+        uniqueItems: true
+        type: array
+        items:
+          type: string
+    - name: $expand
+      in: query
+      description: Expand related entities
+      style: form
+      explode: false
+      schema:
+        uniqueItems: true
+        type: array
+        items:
+          type: string
+  responses:
+    2XX:
+      description: Retrieved entity
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\microsoft.graph.directoryRoleTemplate.yaml
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: operation
+patch:
+  tags:
+    - directoryRoleTemplates.directoryRoleTemplate
+  summary: Update entity in directoryRoleTemplates
+  operationId: directoryRoleTemplates.directoryRoleTemplate.UpdateDirectoryRoleTemplate
+  requestBody:
+    description: New property values
+    content:
+      application/json:
+        schema:
+          $ref: ..\components\schemas\microsoft.graph.directoryRoleTemplate.yaml
+    required: true
+  responses:
+    2XX:
+      description: Success
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\microsoft.graph.directoryRoleTemplate.yaml
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: operation
+delete:
+  tags:
+    - directoryRoleTemplates.directoryRoleTemplate
+  summary: Delete entity from directoryRoleTemplates
+  operationId: directoryRoleTemplates.directoryRoleTemplate.DeleteDirectoryRoleTemplate
+  parameters:
+    - name: If-Match
+      in: header
+      description: ETag
+      schema:
+        type: string
+  responses:
+    '204':
+      description: Success
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: operation
+parameters:
+  - name: directoryRoleTemplate-id
+    in: path
+    description: The unique identifier of directoryRoleTemplate
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: directoryRoleTemplate

@@ -1,0 +1,14 @@
+value:
+  displayName: String
+  errorCode:
+    '@odata.type': microsoft.graph.cloudPcDeviceImageErrorCode
+  expirationDate: '0001-01-01'
+  lastModifiedDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  operatingSystem: String
+  osBuildNumber: String
+  osStatus:
+    '@odata.type': microsoft.graph.cloudPcDeviceImageOsStatus
+  sourceImageResourceId: String
+  status:
+    '@odata.type': microsoft.graph.cloudPcDeviceImageStatus
+  version: String

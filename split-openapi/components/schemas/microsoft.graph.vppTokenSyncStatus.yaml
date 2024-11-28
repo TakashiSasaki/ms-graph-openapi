@@ -1,0 +1,24 @@
+title: vppTokenSyncStatus
+enum:
+  - none
+  - inProgress
+  - completed
+  - failed
+type: string
+description: Possible sync statuses associated with an Apple Volume Purchase Program token.
+x-ms-enum:
+  name: vppTokenSyncStatus
+  modelAsString: false
+  values:
+    - value: none
+      description: Default status.
+      name: none
+    - value: inProgress
+      description: Last Sync in progress.
+      name: inProgress
+    - value: completed
+      description: Last Sync completed successfully.
+      name: completed
+    - value: failed
+      description: Last Sync failed.
+      name: failed

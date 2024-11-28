@@ -1,0 +1,58 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: userExperienceAnalyticsAppHealthDevicePerformanceDetails
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      appDisplayName:
+        type: string
+        description: >-
+          The friendly name of the application for which the event occurred.
+          Possible values are: outlook.exe, excel.exe. Supports: $select,
+          $OrderBy. Read-only.
+        nullable: true
+      appPublisher:
+        type: string
+        description: >-
+          The publisher of the application. Supports: $select, $OrderBy.
+          Read-only.
+        nullable: true
+      appVersion:
+        type: string
+        description: >-
+          The version of the application. Possible values are: 1.0.0.1,
+          75.65.23.9. Supports: $select, $OrderBy. Read-only.
+        nullable: true
+      deviceDisplayName:
+        type: string
+        description: 'The name of the device. Supports: $select, $OrderBy. Read-only.'
+        nullable: true
+      deviceId:
+        type: string
+        description: >-
+          The Intune device id of the device. Supports: $select, $OrderBy.
+          Read-only.
+        nullable: true
+      eventDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: >-
+          The time the event occurred. The value cannot be modified and is
+          automatically populated when the statistics are computed. The
+          Timestamp type represents date and time information using ISO 8601
+          format and is always in UTC time. For example, midnight UTC on Jan 1,
+          2022 would look like this: '2022-01-01T00:00:00Z'. Returned by
+          default. Read-only.
+        format: date-time
+      eventType:
+        type: string
+        description: 'The type of the event. Supports: $select, $OrderBy. Read-only.'
+        nullable: true
+      '@odata.type':
+        type: string
+    description: >-
+      The user experience analytics device performance entity contains device
+      performance details.
+x-ms-discriminator-value: '#microsoft.graph.userExperienceAnalyticsAppHealthDevicePerformanceDetails'

@@ -1,0 +1,44 @@
+title: kubernetesServicePort
+required:
+  - '@odata.type'
+type: object
+properties:
+  appProtocol:
+    type: string
+    description: The application protocol for this port.
+    nullable: true
+  name:
+    type: string
+    description: The name of this port within the service.
+    nullable: true
+  nodePort:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    description: >-
+      The port on each node on which this service is exposed when the type is
+      either NodePort or LoadBalancer.
+    format: int32
+  port:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    description: The port that this service exposes.
+    format: int32
+  protocol:
+    anyOf:
+      - $ref: .\microsoft.graph.security.containerPortProtocol.yaml
+      - type: object
+        nullable: true
+    description: >-
+      The protocol name. Possible values are: udp, tcp, sctp,
+      unknownFutureValue.
+  targetPort:
+    type: string
+    description: >-
+      The name or number of the port to access on the pods targeted by the
+      service. The port number must be in the range 1 to 65535. The name must be
+      an IANASVCNAME.
+    nullable: true
+  '@odata.type':
+    type: string

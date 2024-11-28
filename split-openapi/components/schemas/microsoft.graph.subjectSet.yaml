@@ -1,0 +1,36 @@
+title: subjectSet
+required:
+  - '@odata.type'
+type: object
+properties:
+  '@odata.type':
+    type: string
+discriminator:
+  propertyName: '@odata.type'
+  mapping:
+    '#microsoft.graph.attributeRuleMembers': .\microsoft.graph.attributeRuleMembers.yaml
+    '#microsoft.graph.connectedOrganizationMembers': .\microsoft.graph.connectedOrganizationMembers.yaml
+    '#microsoft.graph.externalSponsors': .\microsoft.graph.externalSponsors.yaml
+    '#microsoft.graph.groupMembers': .\microsoft.graph.groupMembers.yaml
+    '#microsoft.graph.internalSponsors': .\microsoft.graph.internalSponsors.yaml
+    '#microsoft.graph.requestorManager': .\microsoft.graph.requestorManager.yaml
+    '#microsoft.graph.singleServicePrincipal': .\microsoft.graph.singleServicePrincipal.yaml
+    '#microsoft.graph.singleUser': .\microsoft.graph.singleUser.yaml
+    '#microsoft.graph.targetApplicationOwners': .\microsoft.graph.targetApplicationOwners.yaml
+    '#microsoft.graph.targetManager': .\microsoft.graph.targetManager.yaml
+    '#microsoft.graph.targetUserSponsors': .\microsoft.graph.targetUserSponsors.yaml
+    '#microsoft.graph.identityGovernance.groupBasedSubjectSet': .\microsoft.graph.identityGovernance.groupBasedSubjectSet.yaml
+    '#microsoft.graph.identityGovernance.ruleBasedSubjectSet': .\microsoft.graph.identityGovernance.ruleBasedSubjectSet.yaml
+    microsoft.graph.attributeRuleMembers: .\microsoft.graph.attributeRuleMembers.yaml
+    microsoft.graph.connectedOrganizationMembers: .\microsoft.graph.connectedOrganizationMembers.yaml
+    microsoft.graph.externalSponsors: .\microsoft.graph.externalSponsors.yaml
+    microsoft.graph.groupMembers: .\microsoft.graph.groupMembers.yaml
+    microsoft.graph.internalSponsors: .\microsoft.graph.internalSponsors.yaml
+    microsoft.graph.requestorManager: .\microsoft.graph.requestorManager.yaml
+    microsoft.graph.singleServicePrincipal: .\microsoft.graph.singleServicePrincipal.yaml
+    microsoft.graph.singleUser: .\microsoft.graph.singleUser.yaml
+    microsoft.graph.targetApplicationOwners: .\microsoft.graph.targetApplicationOwners.yaml
+    microsoft.graph.targetManager: .\microsoft.graph.targetManager.yaml
+    microsoft.graph.targetUserSponsors: .\microsoft.graph.targetUserSponsors.yaml
+    microsoft.graph.identityGovernance.groupBasedSubjectSet: .\microsoft.graph.identityGovernance.groupBasedSubjectSet.yaml
+    microsoft.graph.identityGovernance.ruleBasedSubjectSet: .\microsoft.graph.identityGovernance.ruleBasedSubjectSet.yaml

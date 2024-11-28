@@ -1,0 +1,7 @@
+title: failureStage
+enum:
+  - unknown
+  - callSetup
+  - midcall
+  - unknownFutureValue
+type: string

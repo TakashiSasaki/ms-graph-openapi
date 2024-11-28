@@ -1,0 +1,15 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: appCatalogs
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      teamsApps:
+        type: array
+        items:
+          $ref: .\microsoft.graph.teamsApp.yaml
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.appCatalogs'

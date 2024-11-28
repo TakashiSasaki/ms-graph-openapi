@@ -1,0 +1,171 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: windowsProtectionState
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      antiMalwareVersion:
+        type: string
+        description: Current anti malware version
+        nullable: true
+      deviceState:
+        anyOf:
+          - $ref: .\microsoft.graph.windowsDeviceHealthState.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Indicates device's health state. Possible values are: clean,
+          fullScanPending, rebootPending, manualStepsPending,
+          offlineScanPending, critical. Possible values are: clean,
+          fullScanPending, rebootPending, manualStepsPending,
+          offlineScanPending, critical.
+      engineVersion:
+        type: string
+        description: Current endpoint protection engine's version
+        nullable: true
+      fullScanOverdue:
+        type: boolean
+        description: >-
+          When TRUE indicates full scan is overdue, when FALSE indicates full
+          scan is not overdue. Defaults to setting on client device.
+        nullable: true
+      fullScanRequired:
+        type: boolean
+        description: >-
+          When TRUE indicates full scan is required, when FALSE indicates full
+          scan is not required. Defaults to setting on client device.
+        nullable: true
+      isVirtualMachine:
+        type: boolean
+        description: >-
+          When TRUE indicates the device is a virtual machine, when FALSE
+          indicates the device is not a virtual machine. Defaults to setting on
+          client device.
+        nullable: true
+      lastFullScanDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: Last quick scan datetime
+        format: date-time
+        nullable: true
+      lastFullScanSignatureVersion:
+        type: string
+        description: Last full scan signature version
+        nullable: true
+      lastQuickScanDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: Last quick scan datetime
+        format: date-time
+        nullable: true
+      lastQuickScanSignatureVersion:
+        type: string
+        description: Last quick scan signature version
+        nullable: true
+      lastReportedDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: Last device health status reported time
+        format: date-time
+        nullable: true
+      malwareProtectionEnabled:
+        type: boolean
+        description: >-
+          When TRUE indicates anti malware is enabled when FALSE indicates anti
+          malware is not enabled.
+        nullable: true
+      networkInspectionSystemEnabled:
+        type: boolean
+        description: >-
+          When TRUE indicates network inspection system enabled, when FALSE
+          indicates network inspection system is not enabled. Defaults to
+          setting on client device.
+        nullable: true
+      productStatus:
+        anyOf:
+          - $ref: .\microsoft.graph.windowsDefenderProductStatus.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Product Status of Windows Defender Antivirus. Possible values are:
+          noStatus, serviceNotRunning, serviceStartedWithoutMalwareProtection,
+          pendingFullScanDueToThreatAction, pendingRebootDueToThreatAction,
+          pendingManualStepsDueToThreatAction, avSignaturesOutOfDate,
+          asSignaturesOutOfDate, noQuickScanHappenedForSpecifiedPeriod,
+          noFullScanHappenedForSpecifiedPeriod, systemInitiatedScanInProgress,
+          systemInitiatedCleanInProgress, samplesPendingSubmission,
+          productRunningInEvaluationMode, productRunningInNonGenuineMode,
+          productExpired, offlineScanRequired,
+          serviceShutdownAsPartOfSystemShutdown,
+          threatRemediationFailedCritically,
+          threatRemediationFailedNonCritically, noStatusFlagsSet,
+          platformOutOfDate, platformUpdateInProgress,
+          platformAboutToBeOutdated,
+          signatureOrPlatformEndOfLifeIsPastOrIsImpending,
+          windowsSModeSignaturesInUseOnNonWin10SInstall. Possible values are:
+          noStatus, serviceNotRunning, serviceStartedWithoutMalwareProtection,
+          pendingFullScanDueToThreatAction, pendingRebootDueToThreatAction,
+          pendingManualStepsDueToThreatAction, avSignaturesOutOfDate,
+          asSignaturesOutOfDate, noQuickScanHappenedForSpecifiedPeriod,
+          noFullScanHappenedForSpecifiedPeriod, systemInitiatedScanInProgress,
+          systemInitiatedCleanInProgress, samplesPendingSubmission,
+          productRunningInEvaluationMode, productRunningInNonGenuineMode,
+          productExpired, offlineScanRequired,
+          serviceShutdownAsPartOfSystemShutdown,
+          threatRemediationFailedCritically,
+          threatRemediationFailedNonCritically, noStatusFlagsSet,
+          platformOutOfDate, platformUpdateInProgress,
+          platformAboutToBeOutdated,
+          signatureOrPlatformEndOfLifeIsPastOrIsImpending,
+          windowsSModeSignaturesInUseOnNonWin10SInstall.
+      quickScanOverdue:
+        type: boolean
+        description: >-
+          When TRUE indicates quick scan is overdue, when FALSE indicates quick
+          scan is not overdue. Defaults to setting on client device.
+        nullable: true
+      realTimeProtectionEnabled:
+        type: boolean
+        description: >-
+          When TRUE indicates real time protection is enabled, when FALSE
+          indicates real time protection is not enabled. Defaults to setting on
+          client device.
+        nullable: true
+      rebootRequired:
+        type: boolean
+        description: >-
+          When TRUE indicates reboot is required, when FALSE indicates when TRUE
+          indicates reboot is not required. Defaults to setting on client
+          device.
+        nullable: true
+      signatureUpdateOverdue:
+        type: boolean
+        description: >-
+          When TRUE indicates signature is out of date, when FALSE indicates
+          signature is not out of date. Defaults to setting on client device.
+        nullable: true
+      signatureVersion:
+        type: string
+        description: Current malware definitions version
+        nullable: true
+      tamperProtectionEnabled:
+        type: boolean
+        description: >-
+          When TRUE indicates the Windows Defender tamper protection feature is
+          enabled, when FALSE indicates the Windows Defender tamper protection
+          feature is not enabled. Defaults to setting on client device.
+        nullable: true
+      detectedMalwareState:
+        type: array
+        items:
+          $ref: .\microsoft.graph.windowsDeviceMalwareState.yaml
+        description: Device malware list
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+    description: Device protection status entity.
+x-ms-discriminator-value: '#microsoft.graph.windowsProtectionState'

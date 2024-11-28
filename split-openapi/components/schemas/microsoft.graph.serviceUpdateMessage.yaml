@@ -1,0 +1,70 @@
+allOf:
+  - $ref: .\microsoft.graph.serviceAnnouncementBase.yaml
+  - title: serviceUpdateMessage
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      actionRequiredByDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: The expected deadline of the action for the message.
+        format: date-time
+        nullable: true
+      attachmentsArchive:
+        type: string
+        description: The zip file that contains all attachments for a message.
+        format: base64url
+        nullable: true
+      body:
+        $ref: .\microsoft.graph.itemBody.yaml
+      category:
+        $ref: .\microsoft.graph.serviceUpdateCategory.yaml
+      hasAttachments:
+        type: boolean
+        description: Indicates whether the message has any attachment.
+      isMajorChange:
+        type: boolean
+        description: >-
+          Indicates whether the message describes a major update for the
+          service.
+        nullable: true
+      services:
+        type: array
+        items:
+          type: string
+          nullable: true
+        description: The affected services by the service message.
+      severity:
+        $ref: .\microsoft.graph.serviceUpdateSeverity.yaml
+      tags:
+        type: array
+        items:
+          type: string
+          nullable: true
+        description: >-
+          A collection of tags for the service message. Tags are provided by the
+          service team/support team who post the message to tell whether this
+          message contains privacy data, or whether this message is for a
+          service new feature update, and so on.
+      viewPoint:
+        anyOf:
+          - $ref: .\microsoft.graph.serviceUpdateMessageViewpoint.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Represents user viewpoints data of the service message. This data
+          includes message status such as whether the user has archived, read,
+          or marked the message as favorite. This property is null when accessed
+          with application permissions.
+      attachments:
+        type: array
+        items:
+          $ref: .\microsoft.graph.serviceAnnouncementAttachment.yaml
+        description: A collection of serviceAnnouncementAttachments.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.serviceUpdateMessage'
+x-ms-discriminator-value: '#microsoft.graph.serviceUpdateMessage'

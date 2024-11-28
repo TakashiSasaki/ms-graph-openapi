@@ -1,0 +1,3 @@
+value:
+  operationStatus:
+    '@odata.type': microsoft.graph.identityGovernance.customTaskExtensionOperationStatus

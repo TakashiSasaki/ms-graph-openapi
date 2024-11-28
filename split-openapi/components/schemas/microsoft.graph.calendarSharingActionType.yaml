@@ -1,0 +1,4 @@
+title: calendarSharingActionType
+enum:
+  - accept
+type: string

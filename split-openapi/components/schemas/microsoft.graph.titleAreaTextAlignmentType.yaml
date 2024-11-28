@@ -1,0 +1,6 @@
+title: titleAreaTextAlignmentType
+enum:
+  - left
+  - center
+  - unknownFutureValue
+type: string

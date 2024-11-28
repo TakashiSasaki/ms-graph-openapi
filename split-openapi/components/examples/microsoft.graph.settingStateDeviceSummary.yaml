@@ -1,0 +1,10 @@
+value:
+  compliantDeviceCount: '0'
+  conflictDeviceCount: '0'
+  errorDeviceCount: '0'
+  instancePath: String
+  nonCompliantDeviceCount: '0'
+  notApplicableDeviceCount: '0'
+  remediatedDeviceCount: '0'
+  settingName: String
+  unknownDeviceCount: '0'

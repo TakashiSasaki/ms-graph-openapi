@@ -1,0 +1,36 @@
+allOf:
+  - $ref: .\microsoft.graph.mobileApp.yaml
+  - title: microsoftStoreForBusinessApp
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      licenseType:
+        $ref: .\microsoft.graph.microsoftStoreForBusinessLicenseType.yaml
+      packageIdentityName:
+        type: string
+        description: The app package identifier
+        nullable: true
+      productKey:
+        type: string
+        description: The app product key
+        nullable: true
+      totalLicenseCount:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: The total number of Microsoft Store for Business licenses.
+        format: int32
+      usedLicenseCount:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: The number of Microsoft Store for Business licenses in use.
+        format: int32
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.microsoftStoreForBusinessApp'
+    description: >-
+      Microsoft Store for Business Apps. This class does not support Create,
+      Delete, or Update.
+x-ms-discriminator-value: '#microsoft.graph.microsoftStoreForBusinessApp'

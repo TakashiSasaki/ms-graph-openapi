@@ -1,0 +1,7 @@
+title: bookingStaffMembershipStatus
+enum:
+  - active
+  - pendingAcceptance
+  - rejectedByStaff
+  - unknownFutureValue
+type: string

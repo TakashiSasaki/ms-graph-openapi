@@ -1,0 +1,7 @@
+value:
+  appDisplayName: String
+  appId: String
+  pendingScopes:
+    - '@odata.type': microsoft.graph.appConsentRequestScope
+  userConsentRequests:
+    - '@odata.type': microsoft.graph.userConsentRequest

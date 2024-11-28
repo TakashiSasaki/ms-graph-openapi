@@ -1,0 +1,4 @@
+value:
+  certificate: String
+  printer:
+    '@odata.type': microsoft.graph.printer

@@ -1,0 +1,7 @@
+title: scheduleChangeState
+enum:
+  - pending
+  - approved
+  - declined
+  - unknownFutureValue
+type: string

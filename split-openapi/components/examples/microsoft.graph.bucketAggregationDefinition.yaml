@@ -1,0 +1,8 @@
+value:
+  isDescending: 'true'
+  minimumCount: '0'
+  prefixFilter: String
+  ranges:
+    - '@odata.type': microsoft.graph.bucketAggregationRange
+  sortBy:
+    '@odata.type': microsoft.graph.bucketAggregationSortProperty

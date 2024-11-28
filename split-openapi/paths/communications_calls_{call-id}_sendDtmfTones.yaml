@@ -1,0 +1,51 @@
+description: Provides operations to call the sendDtmfTones method.
+post:
+  tags:
+    - communications.call
+  summary: Invoke action sendDtmfTones
+  operationId: communications.calls.call.sendDtmfTones
+  requestBody:
+    description: Action parameters
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            tones:
+              type: array
+              items:
+                $ref: ..\components\schemas\microsoft.graph.tone.yaml
+            delayBetweenTonesMs:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: number
+              format: int32
+              nullable: true
+            clientContext:
+              type: string
+              nullable: true
+    required: true
+  responses:
+    2XX:
+      description: Success
+      content:
+        application/json:
+          schema:
+            anyOf:
+              - $ref: >-
+                  ..\components\schemas\microsoft.graph.sendDtmfTonesOperation.yaml
+              - type: object
+                nullable: true
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: action
+parameters:
+  - name: call-id
+    in: path
+    description: The unique identifier of call
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: call

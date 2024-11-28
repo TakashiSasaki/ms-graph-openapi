@@ -1,0 +1,16 @@
+title: participantJoiningResponse
+required:
+  - '@odata.type'
+type: object
+properties:
+  '@odata.type':
+    type: string
+discriminator:
+  propertyName: '@odata.type'
+  mapping:
+    '#microsoft.graph.acceptJoinResponse': .\microsoft.graph.acceptJoinResponse.yaml
+    '#microsoft.graph.inviteNewBotResponse': .\microsoft.graph.inviteNewBotResponse.yaml
+    '#microsoft.graph.rejectJoinResponse': .\microsoft.graph.rejectJoinResponse.yaml
+    microsoft.graph.acceptJoinResponse: .\microsoft.graph.acceptJoinResponse.yaml
+    microsoft.graph.inviteNewBotResponse: .\microsoft.graph.inviteNewBotResponse.yaml
+    microsoft.graph.rejectJoinResponse: .\microsoft.graph.rejectJoinResponse.yaml

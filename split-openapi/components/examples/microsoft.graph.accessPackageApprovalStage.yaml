@@ -1,0 +1,13 @@
+value:
+  durationBeforeAutomaticDenial: Duration
+  durationBeforeEscalation: Duration
+  escalationApprovers:
+    - '@odata.type': microsoft.graph.subjectSet
+  fallbackEscalationApprovers:
+    - '@odata.type': microsoft.graph.subjectSet
+  fallbackPrimaryApprovers:
+    - '@odata.type': microsoft.graph.subjectSet
+  isApproverJustificationRequired: 'true'
+  isEscalationEnabled: 'true'
+  primaryApprovers:
+    - '@odata.type': microsoft.graph.subjectSet

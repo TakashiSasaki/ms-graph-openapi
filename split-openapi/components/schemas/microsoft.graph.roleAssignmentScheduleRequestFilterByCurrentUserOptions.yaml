@@ -1,0 +1,7 @@
+title: roleAssignmentScheduleRequestFilterByCurrentUserOptions
+enum:
+  - principal
+  - createdBy
+  - approver
+  - unknownFutureValue
+type: string

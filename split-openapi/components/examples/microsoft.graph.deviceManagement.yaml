@@ -1,0 +1,134 @@
+value:
+  applePushNotificationCertificate:
+    '@odata.type': microsoft.graph.applePushNotificationCertificate
+  auditEvents:
+    - '@odata.type': microsoft.graph.auditEvent
+  complianceManagementPartners:
+    - '@odata.type': microsoft.graph.complianceManagementPartner
+  conditionalAccessSettings:
+    '@odata.type': microsoft.graph.onPremisesConditionalAccessSettings
+  detectedApps:
+    - '@odata.type': microsoft.graph.detectedApp
+  deviceCategories:
+    - '@odata.type': microsoft.graph.deviceCategory
+  deviceCompliancePolicies:
+    - '@odata.type': microsoft.graph.deviceCompliancePolicy
+  deviceCompliancePolicyDeviceStateSummary:
+    '@odata.type': microsoft.graph.deviceCompliancePolicyDeviceStateSummary
+  deviceCompliancePolicySettingStateSummaries:
+    - '@odata.type': microsoft.graph.deviceCompliancePolicySettingStateSummary
+  deviceConfigurationDeviceStateSummaries:
+    '@odata.type': microsoft.graph.deviceConfigurationDeviceStateSummary
+  deviceConfigurations:
+    - '@odata.type': microsoft.graph.deviceConfiguration
+  deviceEnrollmentConfigurations:
+    - '@odata.type': microsoft.graph.deviceEnrollmentConfiguration
+  deviceManagementPartners:
+    - '@odata.type': microsoft.graph.deviceManagementPartner
+  deviceProtectionOverview:
+    '@odata.type': microsoft.graph.deviceProtectionOverview
+  exchangeConnectors:
+    - '@odata.type': microsoft.graph.deviceManagementExchangeConnector
+  importedWindowsAutopilotDeviceIdentities:
+    - '@odata.type': microsoft.graph.importedWindowsAutopilotDeviceIdentity
+  intuneAccountId: 00000000-0000-0000-0000-000000000000
+  intuneBrand:
+    '@odata.type': microsoft.graph.intuneBrand
+  iosUpdateStatuses:
+    - '@odata.type': microsoft.graph.iosUpdateDeviceStatus
+  managedDeviceOverview:
+    '@odata.type': microsoft.graph.managedDeviceOverview
+  managedDevices:
+    - '@odata.type': microsoft.graph.managedDevice
+  mobileAppTroubleshootingEvents:
+    - '@odata.type': microsoft.graph.mobileAppTroubleshootingEvent
+  mobileThreatDefenseConnectors:
+    - '@odata.type': microsoft.graph.mobileThreatDefenseConnector
+  notificationMessageTemplates:
+    - '@odata.type': microsoft.graph.notificationMessageTemplate
+  remoteAssistancePartners:
+    - '@odata.type': microsoft.graph.remoteAssistancePartner
+  reports:
+    '@odata.type': microsoft.graph.deviceManagementReports
+  resourceOperations:
+    - '@odata.type': microsoft.graph.resourceOperation
+  roleAssignments:
+    - '@odata.type': microsoft.graph.deviceAndAppManagementRoleAssignment
+  roleDefinitions:
+    - '@odata.type': microsoft.graph.roleDefinition
+  settings:
+    '@odata.type': microsoft.graph.deviceManagementSettings
+  softwareUpdateStatusSummary:
+    '@odata.type': microsoft.graph.softwareUpdateStatusSummary
+  subscriptionState:
+    '@odata.type': microsoft.graph.deviceManagementSubscriptionState
+  telecomExpenseManagementPartners:
+    - '@odata.type': microsoft.graph.telecomExpenseManagementPartner
+  termsAndConditions:
+    - '@odata.type': microsoft.graph.termsAndConditions
+  troubleshootingEvents:
+    - '@odata.type': microsoft.graph.deviceManagementTroubleshootingEvent
+  userExperienceAnalyticsAppHealthApplicationPerformance:
+    - '@odata.type': microsoft.graph.userExperienceAnalyticsAppHealthApplicationPerformance
+  userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDetails:
+    - '@odata.type': >-
+        microsoft.graph.userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails
+  userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDeviceId:
+    - '@odata.type': >-
+        microsoft.graph.userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId
+  userExperienceAnalyticsAppHealthApplicationPerformanceByOSVersion:
+    - '@odata.type': >-
+        microsoft.graph.userExperienceAnalyticsAppHealthAppPerformanceByOSVersion
+  userExperienceAnalyticsAppHealthDeviceModelPerformance:
+    - '@odata.type': microsoft.graph.userExperienceAnalyticsAppHealthDeviceModelPerformance
+  userExperienceAnalyticsAppHealthDevicePerformance:
+    - '@odata.type': microsoft.graph.userExperienceAnalyticsAppHealthDevicePerformance
+  userExperienceAnalyticsAppHealthDevicePerformanceDetails:
+    - '@odata.type': microsoft.graph.userExperienceAnalyticsAppHealthDevicePerformanceDetails
+  userExperienceAnalyticsAppHealthOSVersionPerformance:
+    - '@odata.type': microsoft.graph.userExperienceAnalyticsAppHealthOSVersionPerformance
+  userExperienceAnalyticsAppHealthOverview:
+    '@odata.type': microsoft.graph.userExperienceAnalyticsCategory
+  userExperienceAnalyticsBaselines:
+    - '@odata.type': microsoft.graph.userExperienceAnalyticsBaseline
+  userExperienceAnalyticsCategories:
+    - '@odata.type': microsoft.graph.userExperienceAnalyticsCategory
+  userExperienceAnalyticsDevicePerformance:
+    - '@odata.type': microsoft.graph.userExperienceAnalyticsDevicePerformance
+  userExperienceAnalyticsDeviceScores:
+    - '@odata.type': microsoft.graph.userExperienceAnalyticsDeviceScores
+  userExperienceAnalyticsDeviceStartupHistory:
+    - '@odata.type': microsoft.graph.userExperienceAnalyticsDeviceStartupHistory
+  userExperienceAnalyticsDeviceStartupProcesses:
+    - '@odata.type': microsoft.graph.userExperienceAnalyticsDeviceStartupProcess
+  userExperienceAnalyticsDeviceStartupProcessPerformance:
+    - '@odata.type': microsoft.graph.userExperienceAnalyticsDeviceStartupProcessPerformance
+  userExperienceAnalyticsMetricHistory:
+    - '@odata.type': microsoft.graph.userExperienceAnalyticsMetricHistory
+  userExperienceAnalyticsModelScores:
+    - '@odata.type': microsoft.graph.userExperienceAnalyticsModelScores
+  userExperienceAnalyticsOverview:
+    '@odata.type': microsoft.graph.userExperienceAnalyticsOverview
+  userExperienceAnalyticsScoreHistory:
+    - '@odata.type': microsoft.graph.userExperienceAnalyticsScoreHistory
+  userExperienceAnalyticsSettings:
+    '@odata.type': microsoft.graph.userExperienceAnalyticsSettings
+  userExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric:
+    '@odata.type': >-
+      microsoft.graph.userExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric
+  userExperienceAnalyticsWorkFromAnywhereMetrics:
+    - '@odata.type': microsoft.graph.userExperienceAnalyticsWorkFromAnywhereMetric
+  userExperienceAnalyticsWorkFromAnywhereModelPerformance:
+    - '@odata.type': microsoft.graph.userExperienceAnalyticsWorkFromAnywhereModelPerformance
+  virtualEndpoint:
+    '@odata.type': microsoft.graph.virtualEndpoint
+  windowsAutopilotDeviceIdentities:
+    - '@odata.type': microsoft.graph.windowsAutopilotDeviceIdentity
+  windowsInformationProtectionAppLearningSummaries:
+    - '@odata.type': microsoft.graph.windowsInformationProtectionAppLearningSummary
+  windowsInformationProtectionNetworkLearningSummaries:
+    - '@odata.type': microsoft.graph.windowsInformationProtectionNetworkLearningSummary
+  windowsMalwareInformation:
+    - '@odata.type': microsoft.graph.windowsMalwareInformation
+  windowsMalwareOverview:
+    '@odata.type': microsoft.graph.windowsMalwareOverview

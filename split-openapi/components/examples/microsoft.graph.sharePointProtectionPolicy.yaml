@@ -1,0 +1,5 @@
+value:
+  siteInclusionRules:
+    - '@odata.type': microsoft.graph.siteProtectionRule
+  siteProtectionUnits:
+    - '@odata.type': microsoft.graph.siteProtectionUnit

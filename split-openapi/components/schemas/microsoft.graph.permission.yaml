@@ -1,0 +1,95 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: permission
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      expirationDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: >-
+          A format of yyyy-MM-ddTHH:mm:ssZ of DateTimeOffset indicates the
+          expiration time of the permission. DateTime.MinValue indicates there's
+          no expiration set for this permission. Optional.
+        format: date-time
+        nullable: true
+      grantedTo:
+        anyOf:
+          - $ref: .\microsoft.graph.identitySet.yaml
+          - type: object
+            nullable: true
+        description: >-
+          For user type permissions, the details of the users and applications
+          for this permission. Read-only.
+      grantedToIdentities:
+        type: array
+        items:
+          $ref: .\microsoft.graph.identitySet.yaml
+        description: >-
+          For type permissions, the details of the users to whom permission was
+          granted. Read-only.
+      grantedToIdentitiesV2:
+        type: array
+        items:
+          $ref: .\microsoft.graph.sharePointIdentitySet.yaml
+        description: >-
+          For link type permissions, the details of the users to whom permission
+          was granted. Read-only.
+      grantedToV2:
+        anyOf:
+          - $ref: .\microsoft.graph.sharePointIdentitySet.yaml
+          - type: object
+            nullable: true
+        description: >-
+          For user type permissions, the details of the users and applications
+          for this permission. Read-only.
+      hasPassword:
+        type: boolean
+        description: >-
+          Indicates whether the password is set for this permission. This
+          property only appears in the response. Optional. Read-only. For
+          OneDrive Personal only..
+        nullable: true
+      inheritedFrom:
+        anyOf:
+          - $ref: .\microsoft.graph.itemReference.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Provides a reference to the ancestor of the current permission, if
+          it's inherited from an ancestor. Read-only.
+      invitation:
+        anyOf:
+          - $ref: .\microsoft.graph.sharingInvitation.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Details of any associated sharing invitation for this permission.
+          Read-only.
+      link:
+        anyOf:
+          - $ref: .\microsoft.graph.sharingLink.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Provides the link details of the current permission, if it's a link
+          type permission. Read-only.
+      roles:
+        type: array
+        items:
+          type: string
+          nullable: true
+        description: >-
+          The type of permission, for example, read. See below for the full list
+          of roles. Read-only.
+      shareId:
+        type: string
+        description: >-
+          A unique token that can be used to access this shared item via the
+          shares API. Read-only.
+        nullable: true
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.permission'

@@ -1,0 +1,25 @@
+allOf:
+  - $ref: .\microsoft.graph.eventMessageDetail.yaml
+  - title: teamsAppRemovedEventMessageDetail
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      initiator:
+        anyOf:
+          - $ref: .\microsoft.graph.identitySet.yaml
+          - type: object
+            nullable: true
+        description: Initiator of the event.
+      teamsAppDisplayName:
+        type: string
+        description: Display name of the teamsApp.
+        nullable: true
+      teamsAppId:
+        type: string
+        description: Unique identifier of the teamsApp.
+        nullable: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.teamsAppRemovedEventMessageDetail'
+x-ms-discriminator-value: '#microsoft.graph.teamsAppRemovedEventMessageDetail'

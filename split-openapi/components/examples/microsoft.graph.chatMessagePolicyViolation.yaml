@@ -1,0 +1,10 @@
+value:
+  dlpAction:
+    '@odata.type': microsoft.graph.chatMessagePolicyViolationDlpActionTypes
+  justificationText: String
+  policyTip:
+    '@odata.type': microsoft.graph.chatMessagePolicyViolationPolicyTip
+  userAction:
+    '@odata.type': microsoft.graph.chatMessagePolicyViolationUserActionTypes
+  verdictDetails:
+    '@odata.type': microsoft.graph.chatMessagePolicyViolationVerdictDetailsTypes

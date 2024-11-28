@@ -1,0 +1,36 @@
+title: deviceManagementSubscriptionState
+enum:
+  - pending
+  - active
+  - warning
+  - disabled
+  - deleted
+  - blocked
+  - lockedOut
+type: string
+description: Tenant mobile device management subscription state.
+x-ms-enum:
+  name: deviceManagementSubscriptionState
+  modelAsString: false
+  values:
+    - value: pending
+      description: Pending
+      name: pending
+    - value: active
+      description: Active
+      name: active
+    - value: warning
+      description: Warning
+      name: warning
+    - value: disabled
+      description: Disabled
+      name: disabled
+    - value: deleted
+      description: Deleted
+      name: deleted
+    - value: blocked
+      description: Blocked
+      name: blocked
+    - value: lockedOut
+      description: LockedOut
+      name: lockedOut

@@ -1,0 +1,21 @@
+title: iosUpdatesInstallStatus
+enum:
+  - deviceOsHigherThanDesiredOsVersion
+  - sharedDeviceUserLoggedInError
+  - notSupportedOperation
+  - installFailed
+  - installPhoneCallInProgress
+  - installInsufficientPower
+  - installInsufficientSpace
+  - installing
+  - downloadInsufficientNetwork
+  - downloadInsufficientPower
+  - downloadInsufficientSpace
+  - downloadRequiresComputer
+  - downloadFailed
+  - downloading
+  - success
+  - available
+  - idle
+  - unknown
+type: string

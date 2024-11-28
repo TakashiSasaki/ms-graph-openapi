@@ -1,0 +1,62 @@
+title: deviceEnrollmentType
+enum:
+  - unknown
+  - userEnrollment
+  - deviceEnrollmentManager
+  - appleBulkWithUser
+  - appleBulkWithoutUser
+  - windowsAzureADJoin
+  - windowsBulkUserless
+  - windowsAutoEnrollment
+  - windowsBulkAzureDomainJoin
+  - windowsCoManagement
+  - windowsAzureADJoinUsingDeviceAuth
+  - appleUserEnrollment
+  - appleUserEnrollmentWithServiceAccount
+type: string
+description: Possible ways of adding a mobile device to management.
+x-ms-enum:
+  name: deviceEnrollmentType
+  modelAsString: false
+  values:
+    - value: unknown
+      description: Default value, enrollment type was not collected.
+      name: unknown
+    - value: userEnrollment
+      description: User driven enrollment through BYOD channel.
+      name: userEnrollment
+    - value: deviceEnrollmentManager
+      description: User enrollment with a device enrollment manager account.
+      name: deviceEnrollmentManager
+    - value: appleBulkWithUser
+      description: Apple bulk enrollment with user challenge. (DEP, Apple Configurator)
+      name: appleBulkWithUser
+    - value: appleBulkWithoutUser
+      description: >-
+        Apple bulk enrollment without user challenge. (DEP, Apple Configurator,
+        Mobile Config)
+      name: appleBulkWithoutUser
+    - value: windowsAzureADJoin
+      description: Windows 10 Azure AD Join.
+      name: windowsAzureADJoin
+    - value: windowsBulkUserless
+      description: Windows 10 Bulk enrollment through ICD with certificate.
+      name: windowsBulkUserless
+    - value: windowsAutoEnrollment
+      description: Windows 10 automatic enrollment. (Add work account)
+      name: windowsAutoEnrollment
+    - value: windowsBulkAzureDomainJoin
+      description: Windows 10 bulk Azure AD Join.
+      name: windowsBulkAzureDomainJoin
+    - value: windowsCoManagement
+      description: Windows 10 Co-Management triggered by AutoPilot or Group Policy.
+      name: windowsCoManagement
+    - value: windowsAzureADJoinUsingDeviceAuth
+      description: Windows 10 Azure AD Join using Device Auth.
+      name: windowsAzureADJoinUsingDeviceAuth
+    - value: appleUserEnrollment
+      description: Device managed by Apple user enrollment
+      name: appleUserEnrollment
+    - value: appleUserEnrollmentWithServiceAccount
+      description: Device managed by Apple user enrollment with service account
+      name: appleUserEnrollmentWithServiceAccount

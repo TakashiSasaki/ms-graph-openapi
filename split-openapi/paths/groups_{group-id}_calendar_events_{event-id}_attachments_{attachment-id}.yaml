@@ -1,0 +1,98 @@
+description: >-
+  Provides operations to manage the attachments property of the
+  microsoft.graph.event entity.
+get:
+  tags:
+    - groups.calendar
+  summary: Get attachments from groups
+  description: >-
+    The collection of FileAttachment, ItemAttachment, and referenceAttachment
+    attachments for the event. Navigation property. Read-only. Nullable.
+  operationId: groups.calendar.events.GetAttachments
+  parameters:
+    - name: $select
+      in: query
+      description: Select properties to be returned
+      style: form
+      explode: false
+      schema:
+        uniqueItems: true
+        type: array
+        items:
+          type: string
+    - name: $expand
+      in: query
+      description: Expand related entities
+      style: form
+      explode: false
+      schema:
+        uniqueItems: true
+        type: array
+        items:
+          type: string
+  responses:
+    2XX:
+      description: Retrieved navigation property
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\microsoft.graph.attachment.yaml
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: operation
+delete:
+  tags:
+    - groups.calendar
+  summary: Delete navigation property attachments for groups
+  operationId: groups.calendar.events.DeleteAttachments
+  parameters:
+    - name: If-Match
+      in: header
+      description: ETag
+      schema:
+        type: string
+  responses:
+    '204':
+      description: Success
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: operation
+parameters:
+  - name: group-id
+    in: path
+    description: The unique identifier of group
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: group
+  - name: event-id
+    in: path
+    description: The unique identifier of event
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: event
+  - name: attachment-id
+    in: path
+    description: The unique identifier of attachment
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: attachment
+x-ms-docs-grouped-path:
+  - >-
+    /groups/{group-id}/calendar/calendarView/{event-id}/attachments/{attachment-id}
+  - >-
+    /groups/{group-id}/calendar/calendarView/{event-id}/instances/{event-id1}/attachments/{attachment-id}
+  - >-
+    /groups/{group-id}/calendar/events/{event-id}/instances/{event-id1}/attachments/{attachment-id}
+  - /groups/{group-id}/calendarView/{event-id}/attachments/{attachment-id}
+  - >-
+    /groups/{group-id}/calendarView/{event-id}/instances/{event-id1}/attachments/{attachment-id}
+  - /groups/{group-id}/events/{event-id}/attachments/{attachment-id}
+  - >-
+    /groups/{group-id}/events/{event-id}/instances/{event-id1}/attachments/{attachment-id}

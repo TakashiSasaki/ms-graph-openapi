@@ -1,0 +1,26 @@
+title: signInStatus
+required:
+  - '@odata.type'
+type: object
+properties:
+  additionalDetails:
+    type: string
+    description: Provides additional details on the sign-in activity
+    nullable: true
+  errorCode:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    description: >-
+      Provides the 5-6 digit error code that's generated during a sign-in
+      failure. Check out the list of error codes and messages.
+    format: int32
+    nullable: true
+  failureReason:
+    type: string
+    description: >-
+      Provides the error message or the reason for failure for the corresponding
+      sign-in activity. Check out the list of error codes and messages.
+    nullable: true
+  '@odata.type':
+    type: string

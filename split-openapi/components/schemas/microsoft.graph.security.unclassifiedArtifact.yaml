@@ -1,0 +1,19 @@
+allOf:
+  - $ref: .\microsoft.graph.security.artifact.yaml
+  - title: unclassifiedArtifact
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      kind:
+        type: string
+        description: >-
+          The kind for this unclassifiedArtifact resource, describing what this
+          value means.
+      value:
+        type: string
+        description: The value for this unclassifiedArtifact.
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.security.unclassifiedArtifact'
+x-ms-discriminator-value: '#microsoft.graph.security.unclassifiedArtifact'

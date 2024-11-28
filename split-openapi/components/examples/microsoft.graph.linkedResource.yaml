@@ -1,0 +1,5 @@
+value:
+  applicationName: String
+  displayName: String
+  externalId: String
+  webUrl: String

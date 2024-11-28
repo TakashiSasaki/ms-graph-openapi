@@ -1,0 +1,16 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: userInsightsSettings
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      isEnabled:
+        type: boolean
+        description: >-
+          True if the user's itemInsights and meeting hours insights are
+          enabled; false if the user's itemInsights and meeting hours insights
+          are disabled. The default value is true. Optional.
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.userInsightsSettings'

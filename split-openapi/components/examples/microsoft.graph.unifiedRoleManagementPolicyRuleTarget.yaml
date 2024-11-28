@@ -1,0 +1,11 @@
+value:
+  caller: String
+  enforcedSettings:
+    - String
+  inheritableSettings:
+    - String
+  level: String
+  operations:
+    - '@odata.type': microsoft.graph.unifiedRoleManagementPolicyRuleTargetOperations
+  targetObjects:
+    - '@odata.type': microsoft.graph.directoryObject

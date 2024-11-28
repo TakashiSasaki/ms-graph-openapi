@@ -1,0 +1,8 @@
+title: accessReviewHistoryStatus
+enum:
+  - done
+  - inprogress
+  - error
+  - requested
+  - unknownFutureValue
+type: string

@@ -1,0 +1,9 @@
+title: authenticationMethodFeature
+enum:
+  - ssprRegistered
+  - ssprEnabled
+  - ssprCapable
+  - passwordlessCapable
+  - mfaCapable
+  - unknownFutureValue
+type: string

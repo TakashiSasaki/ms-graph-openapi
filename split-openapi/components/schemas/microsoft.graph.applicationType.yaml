@@ -1,0 +1,16 @@
+title: applicationType
+enum:
+  - universal
+  - desktop
+type: string
+description: Possible types of Application
+x-ms-enum:
+  name: applicationType
+  modelAsString: false
+  values:
+    - value: universal
+      description: The windows universal application
+      name: universal
+    - value: desktop
+      description: The windows desktop application
+      name: desktop

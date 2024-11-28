@@ -1,0 +1,23 @@
+title: conditionalAccessExternalTenants
+required:
+  - '@odata.type'
+type: object
+properties:
+  membershipKind:
+    anyOf:
+      - $ref: .\microsoft.graph.conditionalAccessExternalTenantsMembershipKind.yaml
+      - type: object
+        nullable: true
+    description: >-
+      The membership kind. Possible values are: all, enumerated,
+      unknownFutureValue. The enumerated member references an
+      conditionalAccessEnumeratedExternalTenants object.
+  '@odata.type':
+    type: string
+discriminator:
+  propertyName: '@odata.type'
+  mapping:
+    '#microsoft.graph.conditionalAccessAllExternalTenants': .\microsoft.graph.conditionalAccessAllExternalTenants.yaml
+    '#microsoft.graph.conditionalAccessEnumeratedExternalTenants': .\microsoft.graph.conditionalAccessEnumeratedExternalTenants.yaml
+    microsoft.graph.conditionalAccessAllExternalTenants: .\microsoft.graph.conditionalAccessAllExternalTenants.yaml
+    microsoft.graph.conditionalAccessEnumeratedExternalTenants: .\microsoft.graph.conditionalAccessEnumeratedExternalTenants.yaml

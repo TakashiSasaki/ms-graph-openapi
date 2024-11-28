@@ -1,0 +1,25 @@
+allOf:
+  - $ref: .\microsoft.graph.mobileApp.yaml
+  - title: iosiPadOSWebClip
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      appUrl:
+        type: string
+        description: >-
+          Indicates iOS/iPadOS web clip app URL. Example:
+          'https://www.contoso.com'
+        nullable: true
+      useManagedBrowser:
+        type: boolean
+        description: >-
+          Whether or not to use managed browser. When TRUE, the app will be
+          required to be opened in Microsoft Edge. When FALSE, the app will not
+          be required to be opened in Microsoft Edge. By default, this property
+          is set to FALSE.
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.iosiPadOSWebClip'
+    description: Contains properties and inherited properties for iOS web apps.
+x-ms-discriminator-value: '#microsoft.graph.iosiPadOSWebClip'

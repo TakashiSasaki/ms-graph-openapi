@@ -1,0 +1,7 @@
+title: accessPackageExternalUserLifecycleAction
+enum:
+  - none
+  - blockSignIn
+  - blockSignInAndDelete
+  - unknownFutureValue
+type: string

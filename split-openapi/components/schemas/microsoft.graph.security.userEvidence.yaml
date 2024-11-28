@@ -1,0 +1,22 @@
+allOf:
+  - $ref: .\microsoft.graph.security.alertEvidence.yaml
+  - title: userEvidence
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      stream:
+        anyOf:
+          - $ref: .\microsoft.graph.security.stream.yaml
+          - type: object
+            nullable: true
+      userAccount:
+        anyOf:
+          - $ref: .\microsoft.graph.security.userAccount.yaml
+          - type: object
+            nullable: true
+        description: The user account details.
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.security.userEvidence'
+x-ms-discriminator-value: '#microsoft.graph.security.userEvidence'

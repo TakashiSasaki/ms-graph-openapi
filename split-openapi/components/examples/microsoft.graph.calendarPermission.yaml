@@ -1,0 +1,9 @@
+value:
+  allowedRoles:
+    - '@odata.type': microsoft.graph.calendarRoleType
+  emailAddress:
+    '@odata.type': microsoft.graph.emailAddress
+  isInsideOrganization: 'true'
+  isRemovable: 'true'
+  role:
+    '@odata.type': microsoft.graph.calendarRoleType

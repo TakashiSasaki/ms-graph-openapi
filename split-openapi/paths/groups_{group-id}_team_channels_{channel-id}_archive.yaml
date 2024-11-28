@@ -1,0 +1,59 @@
+description: Provides operations to call the archive method.
+post:
+  tags:
+    - groups.team
+  summary: Invoke action archive
+  description: >-
+    Archive a channel in a team. When a channel is archived, users can't send
+    new messages or react to existing messages in the channel, edit the channel
+    settings, or make other changes to the channel. You can delete an archived
+    channel or add and remove members from it. If you archive a team, its
+    channels are also archived. Archiving is an asynchronous operation; a
+    channel is archived after the asynchronous archiving operation completes
+    successfully, which might occur after the response returns. A channel
+    without an owner or that belongs to a group that has no owner, can't be
+    archived. To restore a channel from its archived state, use the channel:
+    unarchive method. A channel can’t be archived or unarchived if its team is
+    archived.
+  externalDocs:
+    description: Find more info here
+    url: https://learn.microsoft.com/graph/api/channel-archive?view=graph-rest-1.0
+  operationId: groups.group.team.channels.channel.archive
+  requestBody:
+    description: Action parameters
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            shouldSetSpoSiteReadOnlyForMembers:
+              type: boolean
+              default: false
+              nullable: true
+    required: true
+  responses:
+    '204':
+      description: Success
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: action
+parameters:
+  - name: group-id
+    in: path
+    description: The unique identifier of group
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: group
+  - name: channel-id
+    in: path
+    description: The unique identifier of channel
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: channel
+x-ms-docs-grouped-path:
+  - /groups/{group-id}/team/archive
+  - /groups/{group-id}/team/primaryChannel/archive

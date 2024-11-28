@@ -1,0 +1,27 @@
+allOf:
+  - $ref: .\microsoft.graph.educationOutcome.yaml
+  - title: educationPointsOutcome
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      points:
+        anyOf:
+          - $ref: .\microsoft.graph.educationAssignmentPointsGrade.yaml
+          - type: object
+            nullable: true
+        description: >-
+          The numeric grade the teacher has given the student for this
+          assignment.
+      publishedPoints:
+        anyOf:
+          - $ref: .\microsoft.graph.educationAssignmentPointsGrade.yaml
+          - type: object
+            nullable: true
+        description: >-
+          A copy of the points property that is made when the grade is released
+          to the student.
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.educationPointsOutcome'
+x-ms-discriminator-value: '#microsoft.graph.educationPointsOutcome'

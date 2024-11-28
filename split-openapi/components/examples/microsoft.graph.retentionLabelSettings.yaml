@@ -1,0 +1,8 @@
+value:
+  behaviorDuringRetentionPeriod:
+    '@odata.type': microsoft.graph.security.behaviorDuringRetentionPeriod
+  isContentUpdateAllowed: 'true'
+  isDeleteAllowed: 'true'
+  isLabelUpdateAllowed: 'true'
+  isMetadataUpdateAllowed: 'true'
+  isRecordLocked: 'true'

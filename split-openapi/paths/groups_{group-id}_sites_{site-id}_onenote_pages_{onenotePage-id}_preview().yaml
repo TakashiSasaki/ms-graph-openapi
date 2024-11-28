@@ -1,0 +1,61 @@
+description: Provides operations to call the preview method.
+get:
+  tags:
+    - groups.site
+  summary: Invoke function preview
+  operationId: groups.group.sites.site.onenote.pages.onenotePage.preview
+  responses:
+    2XX:
+      description: Success
+      content:
+        application/json:
+          schema:
+            anyOf:
+              - $ref: ..\components\schemas\microsoft.graph.onenotePagePreview.yaml
+              - type: object
+                nullable: true
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: function
+parameters:
+  - name: group-id
+    in: path
+    description: The unique identifier of group
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: group
+  - name: site-id
+    in: path
+    description: The unique identifier of site
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: site
+  - name: onenotePage-id
+    in: path
+    description: The unique identifier of onenotePage
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: onenotePage
+x-ms-docs-grouped-path:
+  - >-
+    /groups/{group-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/preview()
+  - >-
+    /groups/{group-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/preview()
+  - /groups/{group-id}/onenote/pages/{onenotePage-id}/preview()
+  - >-
+    /groups/{group-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/preview()
+  - >-
+    /groups/{group-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/preview()
+  - >-
+    /groups/{group-id}/sites/{site-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/preview()
+  - >-
+    /groups/{group-id}/sites/{site-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/preview()
+  - >-
+    /groups/{group-id}/sites/{site-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/preview()
+  - >-
+    /groups/{group-id}/sites/{site-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/preview()

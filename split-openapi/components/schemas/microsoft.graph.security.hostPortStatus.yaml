@@ -1,0 +1,7 @@
+title: hostPortStatus
+enum:
+  - open
+  - filtered
+  - closed
+  - unknownFutureValue
+type: string

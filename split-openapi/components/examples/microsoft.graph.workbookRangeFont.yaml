@@ -1,0 +1,7 @@
+value:
+  bold: 'true'
+  color: String
+  italic: 'true'
+  name: String
+  size: '0'
+  underline: String

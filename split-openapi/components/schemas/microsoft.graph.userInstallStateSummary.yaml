@@ -1,0 +1,39 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: userInstallStateSummary
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      failedDeviceCount:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: Failed Device Count.
+        format: int32
+      installedDeviceCount:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: Installed Device Count.
+        format: int32
+      notInstalledDeviceCount:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: Not installed device count.
+        format: int32
+      userName:
+        type: string
+        description: User name.
+        nullable: true
+      deviceStates:
+        type: array
+        items:
+          $ref: .\microsoft.graph.deviceInstallState.yaml
+        description: The install state of the eBook.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+    description: Contains properties for the installation state summary for a user.
+x-ms-discriminator-value: '#microsoft.graph.userInstallStateSummary'

@@ -1,0 +1,18 @@
+value:
+  appHealthMetrics:
+    '@odata.type': microsoft.graph.userExperienceAnalyticsCategory
+  batteryHealthMetrics:
+    '@odata.type': microsoft.graph.userExperienceAnalyticsCategory
+  bestPracticesMetrics:
+    '@odata.type': microsoft.graph.userExperienceAnalyticsCategory
+  createdDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  deviceBootPerformanceMetrics:
+    '@odata.type': microsoft.graph.userExperienceAnalyticsCategory
+  displayName: String
+  isBuiltIn: 'true'
+  rebootAnalyticsMetrics:
+    '@odata.type': microsoft.graph.userExperienceAnalyticsCategory
+  resourcePerformanceMetrics:
+    '@odata.type': microsoft.graph.userExperienceAnalyticsCategory
+  workFromAnywhereMetrics:
+    '@odata.type': microsoft.graph.userExperienceAnalyticsCategory

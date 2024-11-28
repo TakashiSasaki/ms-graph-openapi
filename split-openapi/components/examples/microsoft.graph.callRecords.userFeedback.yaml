@@ -1,0 +1,6 @@
+value:
+  rating:
+    '@odata.type': microsoft.graph.callRecords.userFeedbackRating
+  text: String
+  tokens:
+    '@odata.type': microsoft.graph.callRecords.feedbackTokenSet

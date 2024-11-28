@@ -1,0 +1,95 @@
+description: >-
+  Provides operations to manage the assignments property of the
+  microsoft.graph.cloudPcProvisioningPolicy entity.
+get:
+  tags:
+    - deviceManagement.virtualEndpoint
+  summary: Get assignments from deviceManagement
+  description: >-
+    A defined collection of provisioning policy assignments. Represents the set
+    of Microsoft 365 groups and security groups in Microsoft Entra ID that have
+    provisioning policy assigned. Returned only on $expand. For an example about
+    how to get the assignments relationship, see Get cloudPcProvisioningPolicy.
+  operationId: deviceManagement.virtualEndpoint.provisioningPolicies.ListAssignments
+  parameters:
+    - $ref: ..\components\parameters\top.yaml
+    - $ref: ..\components\parameters\skip.yaml
+    - $ref: ..\components\parameters\search.yaml
+    - $ref: ..\components\parameters\filter.yaml
+    - $ref: ..\components\parameters\count.yaml
+    - name: $orderby
+      in: query
+      description: Order items by property values
+      style: form
+      explode: false
+      schema:
+        uniqueItems: true
+        type: array
+        items:
+          type: string
+    - name: $select
+      in: query
+      description: Select properties to be returned
+      style: form
+      explode: false
+      schema:
+        uniqueItems: true
+        type: array
+        items:
+          type: string
+    - name: $expand
+      in: query
+      description: Expand related entities
+      style: form
+      explode: false
+      schema:
+        uniqueItems: true
+        type: array
+        items:
+          type: string
+  responses:
+    2XX:
+      $ref: >-
+        ..\components\responses\microsoft.graph.cloudPcProvisioningPolicyAssignmentCollectionResponse.yaml
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-pageable:
+    nextLinkName: '@odata.nextLink'
+    operationName: listMore
+  x-ms-docs-operation-type: operation
+post:
+  tags:
+    - deviceManagement.virtualEndpoint
+  summary: Create new navigation property to assignments for deviceManagement
+  operationId: deviceManagement.virtualEndpoint.provisioningPolicies.CreateAssignments
+  requestBody:
+    description: New navigation property
+    content:
+      application/json:
+        schema:
+          $ref: >-
+            ..\components\schemas\microsoft.graph.cloudPcProvisioningPolicyAssignment.yaml
+    required: true
+  responses:
+    2XX:
+      description: Created navigation property.
+      content:
+        application/json:
+          schema:
+            $ref: >-
+              ..\components\schemas\microsoft.graph.cloudPcProvisioningPolicyAssignment.yaml
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: operation
+parameters:
+  - name: cloudPcProvisioningPolicy-id
+    in: path
+    description: The unique identifier of cloudPcProvisioningPolicy
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: cloudPcProvisioningPolicy

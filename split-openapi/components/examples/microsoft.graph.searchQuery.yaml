@@ -1,0 +1,3 @@
+value:
+  queryString: String
+  queryTemplate: String

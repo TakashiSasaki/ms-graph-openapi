@@ -1,0 +1,18 @@
+allOf:
+  - $ref: .\microsoft.graph.userExperienceAnalyticsInsightValue.yaml
+  - title: insightValueInt
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      value:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: The int value of the user experience analytics insight.
+        format: int32
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.insightValueInt'
+    description: The value in an user experience analytics insight.
+x-ms-discriminator-value: '#microsoft.graph.insightValueInt'

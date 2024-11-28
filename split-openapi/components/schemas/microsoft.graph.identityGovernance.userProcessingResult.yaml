@@ -1,0 +1,75 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: userProcessingResult
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      completedDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: >-
+          The date time that the workflow execution for a user completed. Value
+          is null if the workflow hasn't completed.Supports $filter(lt, le, gt,
+          ge, eq, ne) and $orderby.
+        format: date-time
+        nullable: true
+      failedTasksCount:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: The number of tasks that failed in the workflow execution.
+        format: int32
+      processingStatus:
+        $ref: >-
+          .\microsoft.graph.identityGovernance.lifecycleWorkflowProcessingStatus.yaml
+      scheduledDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: >-
+          The date time that the workflow is scheduled to be executed for a
+          user.Supports $filter(lt, le, gt, ge, eq, ne) and $orderby.
+        format: date-time
+      startedDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: >-
+          The date time that the workflow execution started. Value is null if
+          the workflow execution has not started.Supports $filter(lt, le, gt,
+          ge, eq, ne) and $orderby.
+        format: date-time
+        nullable: true
+      totalTasksCount:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: The total number of tasks that in the workflow execution.
+        format: int32
+      totalUnprocessedTasksCount:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: The total number of unprocessed tasks for the workflow.
+        format: int32
+      workflowExecutionType:
+        $ref: .\microsoft.graph.identityGovernance.workflowExecutionType.yaml
+      workflowVersion:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: The version of the workflow that was executed.
+        format: int32
+      subject:
+        $ref: .\microsoft.graph.user.yaml
+      taskProcessingResults:
+        type: array
+        items:
+          $ref: .\microsoft.graph.identityGovernance.taskProcessingResult.yaml
+        description: The associated individual task execution.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.identityGovernance.userProcessingResult'

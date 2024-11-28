@@ -1,0 +1,12 @@
+value:
+  attendeeAvailability:
+    - '@odata.type': microsoft.graph.attendeeAvailability
+  confidence: '0'
+  locations:
+    - '@odata.type': microsoft.graph.location
+  meetingTimeSlot:
+    '@odata.type': microsoft.graph.timeSlot
+  order: '0'
+  organizerAvailability:
+    '@odata.type': microsoft.graph.freeBusyStatus
+  suggestionReason: String

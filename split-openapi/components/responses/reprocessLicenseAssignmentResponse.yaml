@@ -1,0 +1,8 @@
+description: Success
+content:
+  application/json:
+    schema:
+      anyOf:
+        - $ref: ..\schemas\microsoft.graph.user.yaml
+        - type: object
+          nullable: true

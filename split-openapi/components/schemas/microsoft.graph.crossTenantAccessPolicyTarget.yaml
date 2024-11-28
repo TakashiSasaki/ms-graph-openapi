@@ -1,0 +1,24 @@
+title: crossTenantAccessPolicyTarget
+required:
+  - '@odata.type'
+type: object
+properties:
+  target:
+    type: string
+    description: >-
+      Defines the target for cross-tenant access policy settings and can have
+      one of the following values:  The unique identifier of the user, group, or
+      application  AllUsers  AllApplications - Refers to any Microsoft cloud
+      application.  Office365 - Includes the applications mentioned as part of
+      the Office 365 suite.
+    nullable: true
+  targetType:
+    anyOf:
+      - $ref: .\microsoft.graph.crossTenantAccessPolicyTargetType.yaml
+      - type: object
+        nullable: true
+    description: >-
+      The type of resource that you want to target. The possible values are:
+      user, group, application, unknownFutureValue.
+  '@odata.type':
+    type: string

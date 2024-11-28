@@ -1,0 +1,14 @@
+value:
+  classification:
+    '@odata.type': microsoft.graph.serviceHealthClassificationType
+  feature: String
+  featureGroup: String
+  impactDescription: String
+  isResolved: 'true'
+  origin:
+    '@odata.type': microsoft.graph.serviceHealthOrigin
+  posts:
+    - '@odata.type': microsoft.graph.serviceHealthIssuePost
+  service: String
+  status:
+    '@odata.type': microsoft.graph.serviceHealthStatus

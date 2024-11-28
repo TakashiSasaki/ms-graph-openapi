@@ -1,0 +1,35 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: deviceCompliancePolicyState
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      displayName:
+        type: string
+        description: The name of the policy for this policyBase
+        nullable: true
+      platformType:
+        $ref: .\microsoft.graph.policyPlatformType.yaml
+      settingCount:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: Count of how many setting a policy holds
+        format: int32
+      settingStates:
+        type: array
+        items:
+          $ref: .\microsoft.graph.deviceCompliancePolicySettingState.yaml
+      state:
+        $ref: .\microsoft.graph.complianceStatus.yaml
+      version:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: The version of the policy
+        format: int32
+      '@odata.type':
+        type: string
+    description: Device Compliance Policy State for a given device.
+x-ms-discriminator-value: '#microsoft.graph.deviceCompliancePolicyState'

@@ -1,0 +1,9 @@
+value:
+  displayName: String
+  enforcedGrantControls:
+    - String
+  enforcedSessionControls:
+    - String
+  id: String
+  result:
+    '@odata.type': microsoft.graph.appliedConditionalAccessPolicyResult

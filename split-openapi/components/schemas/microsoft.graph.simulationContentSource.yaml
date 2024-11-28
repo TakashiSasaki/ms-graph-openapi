@@ -1,0 +1,7 @@
+title: simulationContentSource
+enum:
+  - unknown
+  - global
+  - tenant
+  - unknownFutureValue
+type: string

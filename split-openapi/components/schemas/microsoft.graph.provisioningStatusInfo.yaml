@@ -1,0 +1,23 @@
+title: provisioningStatusInfo
+required:
+  - '@odata.type'
+type: object
+properties:
+  errorInformation:
+    anyOf:
+      - $ref: .\microsoft.graph.provisioningErrorInfo.yaml
+      - type: object
+        nullable: true
+    description: >-
+      If status isn't success/ skipped details for the error are contained in
+      this.
+  status:
+    anyOf:
+      - $ref: .\microsoft.graph.provisioningResult.yaml
+      - type: object
+        nullable: true
+    description: >-
+      Possible values are: success, warning, failure, skipped,
+      unknownFutureValue.
+  '@odata.type':
+    type: string

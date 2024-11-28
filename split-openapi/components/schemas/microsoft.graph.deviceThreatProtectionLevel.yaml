@@ -1,0 +1,44 @@
+title: deviceThreatProtectionLevel
+enum:
+  - unavailable
+  - secured
+  - low
+  - medium
+  - high
+  - notSet
+type: string
+description: Device threat protection levels for the Device Threat Protection API.
+x-ms-enum:
+  name: deviceThreatProtectionLevel
+  modelAsString: false
+  values:
+    - value: unavailable
+      description: Default Value. Do not use.
+      name: unavailable
+    - value: secured
+      description: >-
+        Device Threat Level requirement: Secured. This is the most secure level,
+        and represents that no threats were found on the device.
+      name: secured
+    - value: low
+      description: >-
+        Device Threat Protection level requirement: Low. Low represents a
+        severity of threat that poses minimal risk to the device or device data.
+      name: low
+    - value: medium
+      description: >-
+        Device Threat Protection level requirement: Medium. Medium represents a
+        severity of threat that poses moderate risk to the device or device
+        data.
+      name: medium
+    - value: high
+      description: >-
+        Device Threat Protection level requirement: High. High represents a
+        severity of threat that poses severe risk to the device or device data.
+      name: high
+    - value: notSet
+      description: >-
+        Device Threat Protection level requirement: Not Set. Not set represents
+        that there is no requirement for the device to meet a Threat Protection
+        level.
+      name: notSet

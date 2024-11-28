@@ -1,0 +1,33 @@
+title: authenticationMethodsRegistrationCampaign
+required:
+  - '@odata.type'
+type: object
+properties:
+  excludeTargets:
+    type: array
+    items:
+      $ref: .\microsoft.graph.excludeTarget.yaml
+    description: >-
+      Users and groups of users that are excluded from being prompted to set up
+      the authentication method.
+  includeTargets:
+    type: array
+    items:
+      $ref: >-
+        .\microsoft.graph.authenticationMethodsRegistrationCampaignIncludeTarget.yaml
+    description: >-
+      Users and groups of users that are prompted to set up the authentication
+      method.
+  snoozeDurationInDays:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    description: >-
+      Specifies the number of days that the user sees a prompt again if they
+      select 'Not now' and snoozes the prompt. Minimum: 0 days. Maximum: 14
+      days. If the value is '0', the user is prompted during every MFA attempt.
+    format: int32
+  state:
+    $ref: .\microsoft.graph.advancedConfigState.yaml
+  '@odata.type':
+    type: string

@@ -1,0 +1,7 @@
+value:
+  final:
+    '@odata.type': microsoft.graph.identitySet
+  original:
+    '@odata.type': microsoft.graph.identitySet
+  routingType:
+    '@odata.type': microsoft.graph.routingType

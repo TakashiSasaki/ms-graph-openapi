@@ -1,0 +1,3 @@
+value:
+  appliesToCombinations:
+    - '@odata.type': microsoft.graph.authenticationMethodModes

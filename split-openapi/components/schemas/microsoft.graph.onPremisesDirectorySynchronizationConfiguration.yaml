@@ -1,0 +1,13 @@
+title: onPremisesDirectorySynchronizationConfiguration
+required:
+  - '@odata.type'
+type: object
+properties:
+  accidentalDeletionPrevention:
+    anyOf:
+      - $ref: .\microsoft.graph.onPremisesAccidentalDeletionPrevention.yaml
+      - type: object
+        nullable: true
+    description: Contains the accidental deletion prevention configuration for a tenant.
+  '@odata.type':
+    type: string

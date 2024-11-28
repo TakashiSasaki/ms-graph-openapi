@@ -1,0 +1,6 @@
+title: recurrenceRangeType
+enum:
+  - endDate
+  - noEnd
+  - numbered
+type: string

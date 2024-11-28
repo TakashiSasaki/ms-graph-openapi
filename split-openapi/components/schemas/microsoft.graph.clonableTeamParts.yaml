@@ -1,0 +1,10 @@
+title: clonableTeamParts
+enum:
+  - apps
+  - tabs
+  - settings
+  - channels
+  - members
+type: string
+x-ms-enum-flags:
+  isFlags: true

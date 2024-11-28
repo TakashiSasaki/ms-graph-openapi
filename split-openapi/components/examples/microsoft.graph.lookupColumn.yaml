@@ -1,0 +1,6 @@
+value:
+  allowMultipleValues: 'true'
+  allowUnlimitedLength: 'true'
+  columnName: String
+  listId: String
+  primaryLookupColumnId: String

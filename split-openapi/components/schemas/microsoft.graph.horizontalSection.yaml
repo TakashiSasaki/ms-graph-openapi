@@ -1,0 +1,34 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: horizontalSection
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      emphasis:
+        anyOf:
+          - $ref: .\microsoft.graph.sectionEmphasisType.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Enumeration value that indicates the emphasis of the section
+          background. The possible values are: none, netural, soft, strong,
+          unknownFutureValue.
+      layout:
+        anyOf:
+          - $ref: .\microsoft.graph.horizontalSectionLayoutType.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Layout type of the section. The possible values are: none, oneColumn,
+          twoColumns, threeColumns, oneThirdLeftColumn, oneThirdRightColumn,
+          fullWidth, unknownFutureValue.
+      columns:
+        type: array
+        items:
+          $ref: .\microsoft.graph.horizontalSectionColumn.yaml
+        description: The set of vertical columns in this section.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.horizontalSection'

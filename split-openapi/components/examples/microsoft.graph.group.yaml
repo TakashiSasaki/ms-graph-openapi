@@ -1,0 +1,103 @@
+value:
+  acceptedSenders:
+    - '@odata.type': microsoft.graph.directoryObject
+  allowExternalSenders: 'true'
+  appRoleAssignments:
+    - '@odata.type': microsoft.graph.appRoleAssignment
+  assignedLabels:
+    - '@odata.type': microsoft.graph.assignedLabel
+  assignedLicenses:
+    - '@odata.type': microsoft.graph.assignedLicense
+  autoSubscribeNewMembers: 'true'
+  calendar:
+    '@odata.type': microsoft.graph.calendar
+  calendarView:
+    - '@odata.type': microsoft.graph.event
+  classification: String
+  conversations:
+    - '@odata.type': microsoft.graph.conversation
+  createdDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  createdOnBehalfOf:
+    '@odata.type': microsoft.graph.directoryObject
+  description: String
+  displayName: String
+  drive:
+    '@odata.type': microsoft.graph.drive
+  drives:
+    - '@odata.type': microsoft.graph.drive
+  events:
+    - '@odata.type': microsoft.graph.event
+  expirationDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  extensions:
+    - '@odata.type': microsoft.graph.extension
+  groupLifecyclePolicies:
+    - '@odata.type': microsoft.graph.groupLifecyclePolicy
+  groupTypes:
+    - String
+  hasMembersWithLicenseErrors: 'true'
+  hideFromAddressLists: 'true'
+  hideFromOutlookClients: 'true'
+  isArchived: 'true'
+  isAssignableToRole: 'true'
+  isManagementRestricted: 'true'
+  isSubscribedByMail: 'true'
+  licenseProcessingState:
+    '@odata.type': microsoft.graph.licenseProcessingState
+  mail: String
+  mailEnabled: 'true'
+  mailNickname: String
+  memberOf:
+    - '@odata.type': microsoft.graph.directoryObject
+  members:
+    - '@odata.type': microsoft.graph.directoryObject
+  membershipRule: String
+  membershipRuleProcessingState: String
+  membersWithLicenseErrors:
+    - '@odata.type': microsoft.graph.directoryObject
+  onenote:
+    '@odata.type': microsoft.graph.onenote
+  onPremisesDomainName: String
+  onPremisesLastSyncDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  onPremisesNetBiosName: String
+  onPremisesProvisioningErrors:
+    - '@odata.type': microsoft.graph.onPremisesProvisioningError
+  onPremisesSamAccountName: String
+  onPremisesSecurityIdentifier: String
+  onPremisesSyncEnabled: 'true'
+  owners:
+    - '@odata.type': microsoft.graph.directoryObject
+  permissionGrants:
+    - '@odata.type': microsoft.graph.resourceSpecificPermissionGrant
+  photo:
+    '@odata.type': microsoft.graph.profilePhoto
+  photos:
+    - '@odata.type': microsoft.graph.profilePhoto
+  planner:
+    '@odata.type': microsoft.graph.plannerGroup
+  preferredDataLocation: String
+  preferredLanguage: String
+  proxyAddresses:
+    - String
+  rejectedSenders:
+    - '@odata.type': microsoft.graph.directoryObject
+  renewedDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  securityEnabled: 'true'
+  securityIdentifier: String
+  serviceProvisioningErrors:
+    - '@odata.type': microsoft.graph.serviceProvisioningError
+  settings:
+    - '@odata.type': microsoft.graph.groupSetting
+  sites:
+    - '@odata.type': microsoft.graph.site
+  team:
+    '@odata.type': microsoft.graph.team
+  theme: String
+  threads:
+    - '@odata.type': microsoft.graph.conversationThread
+  transitiveMemberOf:
+    - '@odata.type': microsoft.graph.directoryObject
+  transitiveMembers:
+    - '@odata.type': microsoft.graph.directoryObject
+  uniqueName: String
+  unseenCount: '0'
+  visibility: String

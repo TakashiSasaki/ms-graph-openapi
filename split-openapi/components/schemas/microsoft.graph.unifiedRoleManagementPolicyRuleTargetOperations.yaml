@@ -1,0 +1,12 @@
+title: unifiedRoleManagementPolicyRuleTargetOperations
+enum:
+  - all
+  - activate
+  - deactivate
+  - assign
+  - update
+  - remove
+  - extend
+  - renew
+  - unknownFutureValue
+type: string

@@ -1,0 +1,20 @@
+title: extensionSchemaProperty
+required:
+  - '@odata.type'
+type: object
+properties:
+  name:
+    type: string
+    description: >-
+      The name of the strongly typed property defined as part of a schema
+      extension.
+    nullable: true
+  type:
+    type: string
+    description: >-
+      The type of the property that is defined as part of a schema extension. 
+      Allowed values are Binary, Boolean, DateTime, Integer, or String. For more
+      information, see Supported property data types.
+    nullable: true
+  '@odata.type':
+    type: string

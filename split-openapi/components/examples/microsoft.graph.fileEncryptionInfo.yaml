@@ -1,0 +1,8 @@
+value:
+  encryptionKey: AA==
+  fileDigest: AA==
+  fileDigestAlgorithm: String
+  initializationVector: AA==
+  mac: AA==
+  macKey: AA==
+  profileIdentifier: String

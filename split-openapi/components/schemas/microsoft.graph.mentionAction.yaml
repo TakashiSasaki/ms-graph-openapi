@@ -1,0 +1,12 @@
+title: mentionAction
+required:
+  - '@odata.type'
+type: object
+properties:
+  mentionees:
+    type: array
+    items:
+      $ref: .\microsoft.graph.identitySet.yaml
+    description: The identities of the users mentioned in this action.
+  '@odata.type':
+    type: string

@@ -1,0 +1,48 @@
+description: Provides operations to call the publish method.
+post:
+  tags:
+    - admin.edge
+  summary: Invoke action publish
+  description: Publish the specified browserSiteList for devices to download.
+  operationId: admin.edge.internetExplorerMode.siteLists.browserSiteList.publish
+  requestBody:
+    description: Action parameters
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            revision:
+              type: string
+            sites:
+              type: array
+              items:
+                $ref: ..\components\schemas\microsoft.graph.browserSite.yaml
+            sharedCookies:
+              type: array
+              items:
+                $ref: ..\components\schemas\microsoft.graph.browserSharedCookie.yaml
+    required: true
+  responses:
+    2XX:
+      description: Success
+      content:
+        application/json:
+          schema:
+            anyOf:
+              - $ref: ..\components\schemas\microsoft.graph.browserSiteList.yaml
+              - type: object
+                nullable: true
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: action
+parameters:
+  - name: browserSiteList-id
+    in: path
+    description: The unique identifier of browserSiteList
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: browserSiteList

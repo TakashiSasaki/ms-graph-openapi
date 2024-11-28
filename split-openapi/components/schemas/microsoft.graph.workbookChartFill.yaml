@@ -1,0 +1,10 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: workbookChartFill
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.workbookChartFill'

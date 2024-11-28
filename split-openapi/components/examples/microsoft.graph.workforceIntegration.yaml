@@ -1,0 +1,9 @@
+value:
+  apiVersion: '0'
+  displayName: String
+  encryption:
+    '@odata.type': microsoft.graph.workforceIntegrationEncryption
+  isActive: 'true'
+  supportedEntities:
+    '@odata.type': microsoft.graph.workforceIntegrationSupportedEntities
+  url: String

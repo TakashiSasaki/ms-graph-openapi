@@ -1,0 +1,24 @@
+allOf:
+  - $ref: .\microsoft.graph.win32LobAppRule.yaml
+  - title: win32LobAppProductCodeRule
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      productCode:
+        type: string
+        description: The product code of the app.
+        nullable: true
+      productVersion:
+        type: string
+        description: The product version comparison value.
+        nullable: true
+      productVersionOperator:
+        $ref: .\microsoft.graph.win32LobAppRuleOperator.yaml
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.win32LobAppProductCodeRule'
+    description: >-
+      A complex type to store the product code and version rule data for a Win32
+      LOB app. This rule is not supported as a requirement rule.
+x-ms-discriminator-value: '#microsoft.graph.win32LobAppProductCodeRule'

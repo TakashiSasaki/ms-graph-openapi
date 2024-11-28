@@ -1,0 +1,15 @@
+title: watermarkProtectionValues
+required:
+  - '@odata.type'
+type: object
+properties:
+  isEnabledForContentSharing:
+    type: boolean
+    description: Indicates whether to apply a watermark to any shared content.
+    nullable: true
+  isEnabledForVideo:
+    type: boolean
+    description: Indicates whether to apply a watermark to everyone's video feed.
+    nullable: true
+  '@odata.type':
+    type: string

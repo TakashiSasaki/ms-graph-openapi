@@ -1,0 +1,5 @@
+value:
+  errors:
+    - '@odata.type': microsoft.graph.genericError
+  warnings:
+    - '@odata.type': microsoft.graph.genericError

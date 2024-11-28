@@ -1,0 +1,8 @@
+title: connectionOperationStatus
+enum:
+  - unspecified
+  - inprogress
+  - completed
+  - failed
+  - unknownFutureValue
+type: string

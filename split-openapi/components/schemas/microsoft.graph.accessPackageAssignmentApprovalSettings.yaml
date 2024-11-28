@@ -1,0 +1,25 @@
+title: accessPackageAssignmentApprovalSettings
+required:
+  - '@odata.type'
+type: object
+properties:
+  isApprovalRequiredForAdd:
+    type: boolean
+    description: If false, then approval isn't required for new requests in this policy.
+    nullable: true
+  isApprovalRequiredForUpdate:
+    type: boolean
+    description: >-
+      If false, then approval isn't required for updates to requests in this
+      policy.
+    nullable: true
+  stages:
+    type: array
+    items:
+      $ref: .\microsoft.graph.accessPackageApprovalStage.yaml
+    description: >-
+      If approval is required, the one, two or three elements of this collection
+      define each of the stages of approval. An empty array is present if no
+      approval is required.
+  '@odata.type':
+    type: string

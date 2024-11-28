@@ -1,0 +1,19 @@
+value:
+  columns:
+    - '@odata.type': microsoft.graph.workbookTableColumn
+  highlightFirstColumn: 'true'
+  highlightLastColumn: 'true'
+  legacyId: String
+  name: String
+  rows:
+    - '@odata.type': microsoft.graph.workbookTableRow
+  showBandedColumns: 'true'
+  showBandedRows: 'true'
+  showFilterButton: 'true'
+  showHeaders: 'true'
+  showTotals: 'true'
+  sort:
+    '@odata.type': microsoft.graph.workbookTableSort
+  style: String
+  worksheet:
+    '@odata.type': microsoft.graph.workbookWorksheet

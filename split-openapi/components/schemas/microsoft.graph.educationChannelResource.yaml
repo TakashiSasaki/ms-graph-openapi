@@ -1,0 +1,15 @@
+allOf:
+  - $ref: .\microsoft.graph.educationResource.yaml
+  - title: educationChannelResource
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      url:
+        type: string
+        description: URL of the channel resource.
+        nullable: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.educationChannelResource'
+x-ms-discriminator-value: '#microsoft.graph.educationChannelResource'

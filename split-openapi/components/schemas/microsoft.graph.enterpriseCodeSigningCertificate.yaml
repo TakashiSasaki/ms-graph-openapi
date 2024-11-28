@@ -1,0 +1,81 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: enterpriseCodeSigningCertificate
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      content:
+        type: string
+        description: >-
+          The Windows Enterprise Code-Signing Certificate in the raw data
+          format. Set to null once certificate has been uploaded and other
+          properties have been populated.
+        format: base64url
+        nullable: true
+      expirationDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: >-
+          The cert expiration date and time (using ISO 8601 format, in UTC
+          time). Uploading a valid cert file through the Intune admin console
+          will automatically populate this value in the HTTP response. Supports:
+          $filter, $select, $top, $OrderBy, $skip. $Search is not supported.
+        format: date-time
+      issuer:
+        type: string
+        description: >-
+          The issuer value for the cert. This might contain information such as
+          country (C), state or province (S), locality (L), common name of the
+          cert (CN), organization (O), and organizational unit (OU). Uploading a
+          valid cert file through the Intune admin console will automatically
+          populate this value in the HTTP response. Supports: $filter, $select,
+          $top, $OrderBy, $skip. $Search is not supported.
+        nullable: true
+      issuerName:
+        type: string
+        description: >-
+          The issuer name for the cert. This might contain information such as
+          country (C), state or province (S), locality (L), common name of the
+          cert (CN), organization (O), and organizational unit (OU). Uploading a
+          valid cert file through the Intune admin console will automatically
+          populate this value in the HTTP response. Supports: $filter, $select,
+          $top, $OrderBy, $skip. $Search is not supported.
+        nullable: true
+      status:
+        $ref: .\microsoft.graph.certificateStatus.yaml
+      subject:
+        type: string
+        description: >-
+          The subject value for the cert. This might contain information such as
+          country (C), state or province (S), locality (L), common name of the
+          cert (CN), organization (O), and organizational unit (OU). Uploading a
+          valid cert file through the Intune admin console will automatically
+          populate this value in the HTTP response. Supports: $filter, $select,
+          $top, $OrderBy, $skip. $Search is not supported.
+        nullable: true
+      subjectName:
+        type: string
+        description: >-
+          The subject name for the cert. This might contain information such as
+          country (C), state or province (S), locality (L), common name of the
+          cert (CN), organization (O), and organizational unit (OU). Uploading a
+          valid cert file through the Intune admin console will automatically
+          populate this value in the HTTP response. Supports: $filter, $select,
+          $top, $OrderBy, $skip. $Search is not supported.
+        nullable: true
+      uploadDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: >-
+          The date time of CodeSigning Cert when it is uploaded (using ISO 8601
+          format, in UTC time). Uploading a valid cert file through the Intune
+          admin console will automatically populate this value in the HTTP
+          response. Supports: $filter, $select, $top, $OrderBy, $skip. $Search
+          is not supported.
+        format: date-time
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.enterpriseCodeSigningCertificate'

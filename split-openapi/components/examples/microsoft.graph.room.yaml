@@ -1,0 +1,16 @@
+value:
+  audioDeviceName: String
+  bookingType:
+    '@odata.type': microsoft.graph.bookingType
+  building: String
+  capacity: '0'
+  displayDeviceName: String
+  emailAddress: String
+  floorLabel: String
+  floorNumber: '0'
+  isWheelChairAccessible: 'true'
+  label: String
+  nickname: String
+  tags:
+    - String
+  videoDeviceName: String

@@ -1,0 +1,16 @@
+allOf:
+  - $ref: .\microsoft.graph.edgeSearchEngineBase.yaml
+  - title: edgeSearchEngine
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      edgeSearchEngineType:
+        $ref: .\microsoft.graph.edgeSearchEngineType.yaml
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.edgeSearchEngine'
+    description: >-
+      Allows IT admins to set a predefined default search engine for
+      MDM-Controlled devices.
+x-ms-discriminator-value: '#microsoft.graph.edgeSearchEngine'

@@ -1,0 +1,94 @@
+description: >-
+  Provides operations to manage the contentVersions property of the
+  microsoft.graph.managedMobileLobApp entity.
+get:
+  tags:
+    - deviceAppManagement.mobileApp
+  summary: Get contentVersions from deviceAppManagement
+  description: The list of content versions for this app.
+  operationId: deviceAppManagement.mobileApps.AsManagedIOSLobApp.ListContentVersions
+  parameters:
+    - $ref: ..\components\parameters\top.yaml
+    - $ref: ..\components\parameters\skip.yaml
+    - $ref: ..\components\parameters\search.yaml
+    - $ref: ..\components\parameters\filter.yaml
+    - $ref: ..\components\parameters\count.yaml
+    - name: $orderby
+      in: query
+      description: Order items by property values
+      style: form
+      explode: false
+      schema:
+        uniqueItems: true
+        type: array
+        items:
+          type: string
+    - name: $select
+      in: query
+      description: Select properties to be returned
+      style: form
+      explode: false
+      schema:
+        uniqueItems: true
+        type: array
+        items:
+          type: string
+    - name: $expand
+      in: query
+      description: Expand related entities
+      style: form
+      explode: false
+      schema:
+        uniqueItems: true
+        type: array
+        items:
+          type: string
+  responses:
+    2XX:
+      $ref: >-
+        ..\components\responses\microsoft.graph.mobileAppContentCollectionResponse.yaml
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-pageable:
+    nextLinkName: '@odata.nextLink'
+    operationName: listMore
+  x-ms-docs-operation-type: operation
+post:
+  tags:
+    - deviceAppManagement.mobileApp
+  summary: Create new navigation property to contentVersions for deviceAppManagement
+  operationId: deviceAppManagement.mobileApps.AsManagedIOSLobApp.CreateContentVersions
+  requestBody:
+    description: New navigation property
+    content:
+      application/json:
+        schema:
+          $ref: ..\components\schemas\microsoft.graph.mobileAppContent.yaml
+    required: true
+  responses:
+    2XX:
+      description: Created navigation property.
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\microsoft.graph.mobileAppContent.yaml
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: operation
+parameters:
+  - name: mobileApp-id
+    in: path
+    description: The unique identifier of mobileApp
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: mobileApp
+x-ms-docs-grouped-path:
+  - >-
+    /deviceAppManagement/mobileApps/{mobileApp-id}/graph.managedAndroidLobApp/contentVersions
+  - >-
+    /deviceAppManagement/mobileApps/{mobileApp-id}/graph.managedMobileLobApp/contentVersions

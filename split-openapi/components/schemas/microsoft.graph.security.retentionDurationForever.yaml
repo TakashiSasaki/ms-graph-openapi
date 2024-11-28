@@ -1,0 +1,11 @@
+allOf:
+  - $ref: .\microsoft.graph.security.retentionDuration.yaml
+  - title: retentionDurationForever
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.security.retentionDurationForever'
+x-ms-discriminator-value: '#microsoft.graph.security.retentionDurationForever'

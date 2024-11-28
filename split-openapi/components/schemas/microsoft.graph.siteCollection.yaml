@@ -1,0 +1,34 @@
+title: siteCollection
+required:
+  - '@odata.type'
+type: object
+properties:
+  archivalDetails:
+    anyOf:
+      - $ref: .\microsoft.graph.siteArchivalDetails.yaml
+      - type: object
+        nullable: true
+    description: >-
+      Represents whether the site collection is recently archived, fully
+      archived, or reactivating. Possible values are: recentlyArchived,
+      fullyArchived, reactivating, unknownFutureValue.
+  dataLocationCode:
+    type: string
+    description: >-
+      The geographic region code for where this site collection resides. Only
+      present for multi-geo tenants. Read-only.
+    nullable: true
+  hostname:
+    type: string
+    description: The hostname for the site collection. Read-only.
+    nullable: true
+  root:
+    anyOf:
+      - $ref: .\microsoft.graph.root.yaml
+      - type: object
+        nullable: true
+    description: >-
+      If present, indicates that this is a root site collection in SharePoint.
+      Read-only.
+  '@odata.type':
+    type: string

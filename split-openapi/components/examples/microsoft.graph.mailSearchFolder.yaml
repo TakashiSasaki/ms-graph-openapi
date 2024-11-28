@@ -1,0 +1,6 @@
+value:
+  filterQuery: String
+  includeNestedFolders: 'true'
+  isSupported: 'true'
+  sourceFolderIds:
+    - String

@@ -1,0 +1,4 @@
+value:
+  allowedToRegister:
+    '@odata.type': microsoft.graph.deviceRegistrationMembership
+  isAdminConfigurable: 'true'

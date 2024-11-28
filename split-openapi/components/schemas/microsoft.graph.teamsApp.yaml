@@ -1,0 +1,34 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: teamsApp
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      displayName:
+        type: string
+        description: >-
+          The name of the catalog app provided by the app developer in the
+          Microsoft Teams zip app package.
+        nullable: true
+      distributionMethod:
+        anyOf:
+          - $ref: .\microsoft.graph.teamsAppDistributionMethod.yaml
+          - type: object
+            nullable: true
+        description: The method of distribution for the app. Read-only.
+      externalId:
+        type: string
+        description: >-
+          The ID of the catalog provided by the app developer in the Microsoft
+          Teams zip app package.
+        nullable: true
+      appDefinitions:
+        type: array
+        items:
+          $ref: .\microsoft.graph.teamsAppDefinition.yaml
+        description: The details for each version of the app.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.teamsApp'

@@ -1,0 +1,5 @@
+title: calendarSharingActionImportance
+enum:
+  - primary
+  - secondary
+type: string

@@ -1,0 +1,22 @@
+title: deviceEnrollmentPlatformRestriction
+required:
+  - '@odata.type'
+type: object
+properties:
+  osMaximumVersion:
+    type: string
+    description: Max OS version supported
+    nullable: true
+  osMinimumVersion:
+    type: string
+    description: Min OS version supported
+    nullable: true
+  personalDeviceEnrollmentBlocked:
+    type: boolean
+    description: Block personally owned devices from enrolling
+  platformBlocked:
+    type: boolean
+    description: Block the platform from enrolling
+  '@odata.type':
+    type: string
+description: Platform specific enrollment restrictions

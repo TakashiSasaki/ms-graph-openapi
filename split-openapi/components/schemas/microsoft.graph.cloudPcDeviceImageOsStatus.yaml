@@ -1,0 +1,7 @@
+title: cloudPcDeviceImageOsStatus
+enum:
+  - supported
+  - supportedWithWarning
+  - unknown
+  - unknownFutureValue
+type: string

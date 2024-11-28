@@ -1,0 +1,9 @@
+value:
+  hitsContainers:
+    - '@odata.type': microsoft.graph.searchHitsContainer
+  queryAlterationResponse:
+    '@odata.type': microsoft.graph.alterationResponse
+  resultTemplates:
+    '@odata.type': microsoft.graph.resultTemplateDictionary
+  searchTerms:
+    - String

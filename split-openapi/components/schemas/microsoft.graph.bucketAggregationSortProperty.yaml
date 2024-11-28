@@ -1,0 +1,7 @@
+title: bucketAggregationSortProperty
+enum:
+  - count
+  - keyAsString
+  - keyAsNumber
+  - unknownFutureValue
+type: string

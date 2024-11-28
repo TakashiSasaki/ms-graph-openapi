@@ -1,0 +1,53 @@
+description: Provides operations to call the targetApps method.
+post:
+  tags:
+    - deviceAppManagement.managedAppRegistration
+  summary: Invoke action targetApps
+  description: Not yet documented
+  externalDocs:
+    description: Find more info here
+    url: >-
+      https://learn.microsoft.com/graph/api/intune-mam-targetedmanagedappprotection-targetapps?view=graph-rest-1.0
+  operationId: >-
+    deviceAppManagement.managedAppRegistrations.managedAppRegistration.appliedPolicies.managedAppPolicy.targetApps
+  requestBody:
+    description: Action parameters
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            apps:
+              type: array
+              items:
+                $ref: ..\components\schemas\microsoft.graph.managedMobileApp.yaml
+    required: true
+  responses:
+    '204':
+      description: Success
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: action
+parameters:
+  - name: managedAppRegistration-id
+    in: path
+    description: The unique identifier of managedAppRegistration
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: managedAppRegistration
+  - name: managedAppPolicy-id
+    in: path
+    description: The unique identifier of managedAppPolicy
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: managedAppPolicy
+x-ms-docs-grouped-path:
+  - /deviceAppManagement/managedAppPolicies/{managedAppPolicy-id}/targetApps
+  - >-
+    /deviceAppManagement/managedAppRegistrations/{managedAppRegistration-id}/intendedPolicies/{managedAppPolicy-id}/targetApps
+  - >-
+    /deviceAppManagement/targetedManagedAppConfigurations/{targetedManagedAppConfiguration-id}/targetApps

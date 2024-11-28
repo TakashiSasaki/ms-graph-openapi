@@ -1,0 +1,6 @@
+value:
+  additionalProperties:
+    - String
+  essential: 'true'
+  name: String
+  source: String

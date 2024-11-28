@@ -1,0 +1,5 @@
+value:
+  results:
+    - '@odata.type': microsoft.graph.security.huntingRowResult
+  schema:
+    - '@odata.type': microsoft.graph.security.singlePropertySchema

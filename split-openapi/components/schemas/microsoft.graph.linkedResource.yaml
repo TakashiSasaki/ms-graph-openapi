@@ -1,0 +1,28 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: linkedResource
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      applicationName:
+        type: string
+        description: The app name of the source that sends the linkedResource.
+        nullable: true
+      displayName:
+        type: string
+        description: The title of the linkedResource.
+        nullable: true
+      externalId:
+        type: string
+        description: >-
+          ID of the object that is associated with this task on the
+          third-party/partner system.
+        nullable: true
+      webUrl:
+        type: string
+        description: Deep link to the linkedResource.
+        nullable: true
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.linkedResource'

@@ -1,0 +1,12 @@
+title: accessPackageResourceAttributeSource
+required:
+  - '@odata.type'
+type: object
+properties:
+  '@odata.type':
+    type: string
+discriminator:
+  propertyName: '@odata.type'
+  mapping:
+    '#microsoft.graph.accessPackageResourceAttributeQuestion': .\microsoft.graph.accessPackageResourceAttributeQuestion.yaml
+    microsoft.graph.accessPackageResourceAttributeQuestion: .\microsoft.graph.accessPackageResourceAttributeQuestion.yaml

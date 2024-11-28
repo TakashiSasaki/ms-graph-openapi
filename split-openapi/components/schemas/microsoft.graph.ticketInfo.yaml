@@ -1,0 +1,15 @@
+title: ticketInfo
+required:
+  - '@odata.type'
+type: object
+properties:
+  ticketNumber:
+    type: string
+    description: The ticket number.
+    nullable: true
+  ticketSystem:
+    type: string
+    description: The description of the ticket system.
+    nullable: true
+  '@odata.type':
+    type: string

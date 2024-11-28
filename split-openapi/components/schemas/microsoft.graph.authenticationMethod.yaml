@@ -1,0 +1,20 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: authenticationMethod
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      '@odata.type':
+        type: string
+    discriminator:
+      propertyName: '@odata.type'
+      mapping:
+        '#microsoft.graph.emailAuthenticationMethod': .\microsoft.graph.emailAuthenticationMethod.yaml
+        '#microsoft.graph.fido2AuthenticationMethod': .\microsoft.graph.fido2AuthenticationMethod.yaml
+        '#microsoft.graph.microsoftAuthenticatorAuthenticationMethod': .\microsoft.graph.microsoftAuthenticatorAuthenticationMethod.yaml
+        '#microsoft.graph.passwordAuthenticationMethod': .\microsoft.graph.passwordAuthenticationMethod.yaml
+        '#microsoft.graph.phoneAuthenticationMethod': .\microsoft.graph.phoneAuthenticationMethod.yaml
+        '#microsoft.graph.softwareOathAuthenticationMethod': .\microsoft.graph.softwareOathAuthenticationMethod.yaml
+        '#microsoft.graph.temporaryAccessPassAuthenticationMethod': .\microsoft.graph.temporaryAccessPassAuthenticationMethod.yaml
+        '#microsoft.graph.windowsHelloForBusinessAuthenticationMethod': .\microsoft.graph.windowsHelloForBusinessAuthenticationMethod.yaml

@@ -1,0 +1,10 @@
+title: objectDefinitionMetadata
+enum:
+  - PropertyNameAccountEnabled
+  - PropertyNameSoftDeleted
+  - IsSoftDeletionSupported
+  - IsSynchronizeAllSupported
+  - ConnectorDataStorageRequired
+  - Extensions
+  - BaseObjectName
+type: string

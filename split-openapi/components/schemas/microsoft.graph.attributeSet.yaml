@@ -1,0 +1,27 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: attributeSet
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      description:
+        type: string
+        description: >-
+          Description of the attribute set. Can be up to 128 characters long and
+          include Unicode characters. Can be changed later.
+        nullable: true
+      maxAttributesPerSet:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: >-
+          Maximum number of custom security attributes that can be defined in
+          this attribute set. Default value is null. If not specified, the
+          administrator can add up to the maximum of 500 active attributes per
+          tenant. Can be changed later.
+        format: int32
+        nullable: true
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.attributeSet'

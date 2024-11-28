@@ -1,0 +1,4 @@
+value:
+  key:
+    '@odata.type': microsoft.graph.synchronizationMetadata
+  value: String

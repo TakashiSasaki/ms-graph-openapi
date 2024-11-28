@@ -1,0 +1,10 @@
+value:
+  adminConsentDescription: String
+  adminConsentDisplayName: String
+  id: 00000000-0000-0000-0000-000000000000
+  isEnabled: 'true'
+  origin: String
+  type: String
+  userConsentDescription: String
+  userConsentDisplayName: String
+  value: String

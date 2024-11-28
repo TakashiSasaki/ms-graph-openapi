@@ -1,0 +1,5 @@
+title: persistentBrowserSessionMode
+enum:
+  - always
+  - never
+type: string

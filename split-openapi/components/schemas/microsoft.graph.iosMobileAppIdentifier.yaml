@@ -1,0 +1,15 @@
+allOf:
+  - $ref: .\microsoft.graph.mobileAppIdentifier.yaml
+  - title: iosMobileAppIdentifier
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      bundleId:
+        type: string
+        description: The identifier for an app, as specified in the app store.
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.iosMobileAppIdentifier'
+    description: The identifier for an iOS app.
+x-ms-discriminator-value: '#microsoft.graph.iosMobileAppIdentifier'

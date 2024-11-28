@@ -1,0 +1,80 @@
+description: Provides operations to manage the collection of agreementAcceptance entities.
+get:
+  tags:
+    - agreementAcceptances.agreementAcceptance
+  summary: Get entity from agreementAcceptances by key
+  operationId: agreementAcceptances.agreementAcceptance.GetAgreementAcceptance
+  parameters:
+    - name: $select
+      in: query
+      description: Select properties to be returned
+      style: form
+      explode: false
+      schema:
+        uniqueItems: true
+        type: array
+        items:
+          type: string
+  responses:
+    2XX:
+      description: Retrieved entity
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\microsoft.graph.agreementAcceptance.yaml
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: operation
+patch:
+  tags:
+    - agreementAcceptances.agreementAcceptance
+  summary: Update entity in agreementAcceptances
+  operationId: agreementAcceptances.agreementAcceptance.UpdateAgreementAcceptance
+  requestBody:
+    description: New property values
+    content:
+      application/json:
+        schema:
+          $ref: ..\components\schemas\microsoft.graph.agreementAcceptance.yaml
+    required: true
+  responses:
+    2XX:
+      description: Success
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\microsoft.graph.agreementAcceptance.yaml
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: operation
+delete:
+  tags:
+    - agreementAcceptances.agreementAcceptance
+  summary: Delete entity from agreementAcceptances
+  operationId: agreementAcceptances.agreementAcceptance.DeleteAgreementAcceptance
+  parameters:
+    - name: If-Match
+      in: header
+      description: ETag
+      schema:
+        type: string
+  responses:
+    '204':
+      description: Success
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: operation
+parameters:
+  - name: agreementAcceptance-id
+    in: path
+    description: The unique identifier of agreementAcceptance
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: agreementAcceptance

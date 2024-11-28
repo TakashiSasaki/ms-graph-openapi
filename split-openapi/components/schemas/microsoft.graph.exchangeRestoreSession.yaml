@@ -1,0 +1,24 @@
+allOf:
+  - $ref: .\microsoft.graph.restoreSessionBase.yaml
+  - title: exchangeRestoreSession
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      granularMailboxRestoreArtifacts:
+        type: array
+        items:
+          $ref: .\microsoft.graph.granularMailboxRestoreArtifact.yaml
+        x-ms-navigationProperty: true
+      mailboxRestoreArtifacts:
+        type: array
+        items:
+          $ref: .\microsoft.graph.mailboxRestoreArtifact.yaml
+        description: >-
+          A collection of restore points and destination details that can be
+          used to restore Exchange mailboxes.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.exchangeRestoreSession'
+x-ms-discriminator-value: '#microsoft.graph.exchangeRestoreSession'

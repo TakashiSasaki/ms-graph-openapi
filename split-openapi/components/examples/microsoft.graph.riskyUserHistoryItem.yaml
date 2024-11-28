@@ -1,0 +1,5 @@
+value:
+  activity:
+    '@odata.type': microsoft.graph.riskUserActivity
+  initiatedBy: String
+  userId: String

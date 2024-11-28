@@ -1,0 +1,11 @@
+title: directoryDefinitionDiscoverabilities
+enum:
+  - None
+  - AttributeNames
+  - AttributeDataTypes
+  - AttributeReadOnly
+  - ReferenceAttributes
+  - UnknownFutureValue
+type: string
+x-ms-enum-flags:
+  isFlags: true

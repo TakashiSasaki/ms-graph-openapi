@@ -1,0 +1,15 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: workbookApplication
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      calculationMode:
+        type: string
+        description: >-
+          Returns the calculation mode used in the workbook. Possible values
+          are: Automatic, AutomaticExceptTables, Manual.
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.workbookApplication'

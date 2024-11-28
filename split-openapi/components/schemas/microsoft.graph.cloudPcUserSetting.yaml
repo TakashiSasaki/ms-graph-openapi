@@ -1,0 +1,70 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: cloudPcUserSetting
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      createdDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: >-
+          The date and time when the setting was created. The timestamp type
+          represents the date and time information using ISO 8601 format and is
+          always in UTC. For example, midnight UTC on Jan 1, 2014 is
+          2014-01-01T00:00:00Z.
+        format: date-time
+        nullable: true
+      displayName:
+        type: string
+        description: The setting name displayed in the user interface.
+        nullable: true
+      lastModifiedDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: >-
+          The date and time when the setting was last modified. The timestamp
+          type represents the date and time information using ISO 8601 format
+          and is always in UTC. For example, midnight UTC on Jan 1, 2014 is
+          2014-01-01T00:00:00Z.
+        format: date-time
+        nullable: true
+      localAdminEnabled:
+        type: boolean
+        description: >-
+          Indicates whether the local admin option is enabled. The default value
+          is false. To enable the local admin option, change the setting to
+          true. If the local admin option is enabled, the end user can be an
+          admin of the Cloud PC device.
+        nullable: true
+      resetEnabled:
+        type: boolean
+        description: >-
+          Indicates whether an end user is allowed to reset their Cloud PC. When
+          true, the user is allowed to reset their Cloud PC. When false,
+          end-user initiated reset is not allowed. The default value is false.
+        nullable: true
+      restorePointSetting:
+        anyOf:
+          - $ref: .\microsoft.graph.cloudPcRestorePointSetting.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Defines how frequently a restore point is created that is, a snapshot
+          is taken) for users' provisioned Cloud PCs (default is 12 hours), and
+          whether the user is allowed to restore their own Cloud PCs to a backup
+          made at a specific point in time.
+      assignments:
+        type: array
+        items:
+          $ref: .\microsoft.graph.cloudPcUserSettingAssignment.yaml
+        description: >-
+          Represents the set of Microsoft 365 groups and security groups in
+          Microsoft Entra ID that have cloudPCUserSetting assigned. Returned
+          only on $expand. For an example, see Get cloudPcUserSetting.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.cloudPcUserSetting'

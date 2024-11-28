@@ -1,0 +1,4 @@
+value:
+  appAvailability:
+    '@odata.type': microsoft.graph.managedAppAvailability
+  version: String

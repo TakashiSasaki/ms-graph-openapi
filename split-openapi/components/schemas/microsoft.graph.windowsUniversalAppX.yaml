@@ -1,0 +1,46 @@
+allOf:
+  - $ref: .\microsoft.graph.mobileLobApp.yaml
+  - title: windowsUniversalAppX
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      applicableArchitectures:
+        $ref: .\microsoft.graph.windowsArchitecture.yaml
+      applicableDeviceTypes:
+        $ref: .\microsoft.graph.windowsDeviceType.yaml
+      identityName:
+        type: string
+        description: The Identity Name.
+        nullable: true
+      identityPublisherHash:
+        type: string
+        description: The Identity Publisher Hash.
+      identityResourceIdentifier:
+        type: string
+        description: The Identity Resource Identifier.
+        nullable: true
+      identityVersion:
+        type: string
+        description: The identity version.
+        nullable: true
+      isBundle:
+        type: boolean
+        description: Whether or not the app is a bundle.
+      minimumSupportedOperatingSystem:
+        $ref: .\microsoft.graph.windowsMinimumOperatingSystem.yaml
+      committedContainedApps:
+        type: array
+        items:
+          $ref: .\microsoft.graph.mobileContainedApp.yaml
+        description: >-
+          The collection of contained apps in the committed mobileAppContent of
+          a windowsUniversalAppX app.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.windowsUniversalAppX'
+    description: >-
+      Contains properties and inherited properties for Windows Universal AppX
+      Line Of Business apps. Inherits from `mobileLobApp`.
+x-ms-discriminator-value: '#microsoft.graph.windowsUniversalAppX'

@@ -1,0 +1,60 @@
+description: >-
+  Provides operations to manage the roleDefinition property of the
+  microsoft.graph.roleAssignment entity.
+get:
+  tags:
+    - deviceManagement.roleDefinition
+  summary: Get roleDefinition from deviceManagement
+  description: Role definition this assignment is part of.
+  operationId: deviceManagement.roleDefinitions.roleAssignments.GetRoleDefinition
+  parameters:
+    - name: $select
+      in: query
+      description: Select properties to be returned
+      style: form
+      explode: false
+      schema:
+        uniqueItems: true
+        type: array
+        items:
+          type: string
+    - name: $expand
+      in: query
+      description: Expand related entities
+      style: form
+      explode: false
+      schema:
+        uniqueItems: true
+        type: array
+        items:
+          type: string
+  responses:
+    2XX:
+      description: Retrieved navigation property
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\microsoft.graph.roleDefinition.yaml
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: operation
+parameters:
+  - name: roleDefinition-id
+    in: path
+    description: The unique identifier of roleDefinition
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: roleDefinition
+  - name: roleAssignment-id
+    in: path
+    description: The unique identifier of roleAssignment
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: roleAssignment
+x-ms-docs-grouped-path:
+  - >-
+    /deviceManagement/roleAssignments/{deviceAndAppManagementRoleAssignment-id}/roleDefinition

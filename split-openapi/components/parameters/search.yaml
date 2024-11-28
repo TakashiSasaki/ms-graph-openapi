@@ -1,0 +1,7 @@
+name: $search
+in: query
+description: Search items by search phrases
+style: form
+explode: false
+schema:
+  type: string

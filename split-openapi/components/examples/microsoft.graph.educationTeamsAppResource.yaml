@@ -1,0 +1,5 @@
+value:
+  appIconWebUrl: String
+  appId: String
+  teamsEmbeddedContentUrl: String
+  webUrl: String

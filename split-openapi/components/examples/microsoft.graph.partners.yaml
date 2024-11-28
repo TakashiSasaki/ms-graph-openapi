@@ -1,0 +1,3 @@
+value:
+  billing:
+    '@odata.type': microsoft.graph.partners.billing.billing

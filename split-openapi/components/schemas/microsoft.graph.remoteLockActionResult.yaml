@@ -1,0 +1,15 @@
+allOf:
+  - $ref: .\microsoft.graph.deviceActionResult.yaml
+  - title: remoteLockActionResult
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      unlockPin:
+        type: string
+        description: Pin to unlock the client
+        nullable: true
+      '@odata.type':
+        type: string
+    description: Lock action result with a pin to unlock
+x-ms-discriminator-value: '#microsoft.graph.remoteLockActionResult'

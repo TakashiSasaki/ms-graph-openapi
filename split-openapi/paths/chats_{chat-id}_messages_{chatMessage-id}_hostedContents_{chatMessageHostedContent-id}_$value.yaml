@@ -1,0 +1,88 @@
+description: Provides operations to manage the media for the chat entity.
+get:
+  tags:
+    - chats.chatMessage
+  summary: List hostedContents
+  description: >-
+    Retrieve the list of chatMessageHostedContent objects from a message. This
+    API only lists the hosted content objects. To get the content bytes, see get
+    chatmessage hosted content.
+  externalDocs:
+    description: Find more info here
+    url: >-
+      https://learn.microsoft.com/graph/api/chatmessage-list-hostedcontents?view=graph-rest-1.0
+  operationId: chats.messages.GetHostedContentsContent
+  responses:
+    2XX:
+      description: Retrieved media content
+      content:
+        application/octet-stream:
+          schema:
+            type: string
+            format: binary
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+put:
+  tags:
+    - chats.chatMessage
+  summary: Update media content for the navigation property hostedContents in chats
+  description: The unique identifier for an entity. Read-only.
+  operationId: chats.messages.UpdateHostedContentsContent
+  requestBody:
+    description: New media content.
+    content:
+      application/octet-stream:
+        schema:
+          type: string
+          format: binary
+    required: true
+  responses:
+    2XX:
+      description: Success
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+delete:
+  tags:
+    - chats.chatMessage
+  summary: Delete media content for the navigation property hostedContents in chats
+  description: The unique identifier for an entity. Read-only.
+  operationId: chats.messages.DeleteHostedContentsContent
+  parameters:
+    - name: If-Match
+      in: header
+      description: ETag
+      schema:
+        type: string
+  responses:
+    '204':
+      description: Success
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+parameters:
+  - name: chat-id
+    in: path
+    description: The unique identifier of chat
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: chat
+  - name: chatMessage-id
+    in: path
+    description: The unique identifier of chatMessage
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: chatMessage
+  - name: chatMessageHostedContent-id
+    in: path
+    description: The unique identifier of chatMessageHostedContent
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: chatMessageHostedContent

@@ -1,0 +1,13 @@
+value:
+  isDefault: 'true'
+  isShared: 'true'
+  links:
+    '@odata.type': microsoft.graph.notebookLinks
+  sectionGroups:
+    - '@odata.type': microsoft.graph.sectionGroup
+  sectionGroupsUrl: String
+  sections:
+    - '@odata.type': microsoft.graph.onenoteSection
+  sectionsUrl: String
+  userRole:
+    '@odata.type': microsoft.graph.onenoteUserRole

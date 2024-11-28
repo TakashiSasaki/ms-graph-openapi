@@ -1,0 +1,3 @@
+value:
+  chat:
+    '@odata.type': microsoft.graph.chat

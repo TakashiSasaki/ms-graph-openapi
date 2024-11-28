@@ -1,0 +1,99 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: entitlementManagement
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      accessPackageAssignmentApprovals:
+        type: array
+        items:
+          $ref: .\microsoft.graph.approval.yaml
+        description: >-
+          Approval stages for decisions associated with access package
+          assignment requests.
+        x-ms-navigationProperty: true
+      accessPackages:
+        type: array
+        items:
+          $ref: .\microsoft.graph.accessPackage.yaml
+        description: >-
+          Access packages define the collection of resource roles and the
+          policies for which subjects can request or be assigned access to those
+          resources.
+        x-ms-navigationProperty: true
+      assignmentPolicies:
+        type: array
+        items:
+          $ref: .\microsoft.graph.accessPackageAssignmentPolicy.yaml
+        description: >-
+          Access package assignment policies govern which subjects can request
+          or be assigned an access package via an access package assignment.
+        x-ms-navigationProperty: true
+      assignmentRequests:
+        type: array
+        items:
+          $ref: .\microsoft.graph.accessPackageAssignmentRequest.yaml
+        description: >-
+          Access package assignment requests created by or on behalf of a
+          subject.
+        x-ms-navigationProperty: true
+      assignments:
+        type: array
+        items:
+          $ref: .\microsoft.graph.accessPackageAssignment.yaml
+        description: The assignment of an access package to a subject for a period of time.
+        x-ms-navigationProperty: true
+      catalogs:
+        type: array
+        items:
+          $ref: .\microsoft.graph.accessPackageCatalog.yaml
+        description: A container for access packages.
+        x-ms-navigationProperty: true
+      connectedOrganizations:
+        type: array
+        items:
+          $ref: .\microsoft.graph.connectedOrganization.yaml
+        description: >-
+          References to a directory or domain of another organization whose
+          users can request access.
+        x-ms-navigationProperty: true
+      resourceEnvironments:
+        type: array
+        items:
+          $ref: .\microsoft.graph.accessPackageResourceEnvironment.yaml
+        description: >-
+          A reference to the geolocation environments in which a resource is
+          located.
+        x-ms-navigationProperty: true
+      resourceRequests:
+        type: array
+        items:
+          $ref: .\microsoft.graph.accessPackageResourceRequest.yaml
+        description: >-
+          Represents a request to add or remove a resource to or from a catalog
+          respectively.
+        x-ms-navigationProperty: true
+      resourceRoleScopes:
+        type: array
+        items:
+          $ref: .\microsoft.graph.accessPackageResourceRoleScope.yaml
+        x-ms-navigationProperty: true
+      resources:
+        type: array
+        items:
+          $ref: .\microsoft.graph.accessPackageResource.yaml
+        description: The resources associated with the catalogs.
+        x-ms-navigationProperty: true
+      settings:
+        anyOf:
+          - $ref: .\microsoft.graph.entitlementManagementSettings.yaml
+          - type: object
+            nullable: true
+        description: >-
+          The settings that control the behavior of Microsoft Entra entitlement
+          management.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.entitlementManagement'

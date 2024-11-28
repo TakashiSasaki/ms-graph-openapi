@@ -1,0 +1,45 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: detectedApp
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      deviceCount:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: The number of devices that have installed this application
+        format: int32
+      displayName:
+        type: string
+        description: Name of the discovered application. Read-only
+        nullable: true
+      platform:
+        $ref: .\microsoft.graph.detectedAppPlatformType.yaml
+      publisher:
+        type: string
+        description: >-
+          Indicates the publisher of the discovered application. For example:
+          'Microsoft'.  The default value is an empty string.
+        nullable: true
+      sizeInByte:
+        type: number
+        description: Discovered application size in bytes. Read-only
+        format: int64
+      version:
+        type: string
+        description: Version of the discovered application. Read-only
+        nullable: true
+      managedDevices:
+        type: array
+        items:
+          $ref: .\microsoft.graph.managedDevice.yaml
+        description: The devices that have the discovered application installed
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+    description: >-
+      A managed or unmanaged app that is installed on a managed device.
+      Unmanaged apps will only appear for devices marked as corporate owned.
+x-ms-discriminator-value: '#microsoft.graph.detectedApp'

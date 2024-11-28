@@ -1,0 +1,49 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: accessPackageSubject
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      displayName:
+        type: string
+        description: The display name of the subject.
+        nullable: true
+      email:
+        type: string
+        description: The email address of the subject.
+        nullable: true
+      objectId:
+        type: string
+        description: >-
+          The object identifier of the subject. null if the subject isn't yet a
+          user in the tenant.
+        nullable: true
+      onPremisesSecurityIdentifier:
+        type: string
+        description: >-
+          A string representation of the principal's security identifier, if
+          known, or null if the subject doesn't have a security identifier.
+        nullable: true
+      principalName:
+        type: string
+        description: The principal name, if known, of the subject.
+        nullable: true
+      subjectType:
+        anyOf:
+          - $ref: .\microsoft.graph.accessPackageSubjectType.yaml
+          - type: object
+            nullable: true
+        description: >-
+          The resource type of the subject. The possible values are:
+          notSpecified, user, servicePrincipal, unknownFutureValue.
+      connectedOrganization:
+        anyOf:
+          - $ref: .\microsoft.graph.connectedOrganization.yaml
+          - type: object
+            nullable: true
+        description: The connected organization of the subject. Read-only. Nullable.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.accessPackageSubject'

@@ -1,0 +1,9 @@
+value:
+  backupRestore:
+    '@odata.type': microsoft.graph.backupRestoreRoot
+  bookingBusinesses:
+    - '@odata.type': microsoft.graph.bookingBusiness
+  bookingCurrencies:
+    - '@odata.type': microsoft.graph.bookingCurrency
+  virtualEvents:
+    '@odata.type': microsoft.graph.virtualEventsRoot

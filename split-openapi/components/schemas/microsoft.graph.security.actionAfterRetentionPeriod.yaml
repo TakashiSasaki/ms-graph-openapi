@@ -1,0 +1,8 @@
+title: actionAfterRetentionPeriod
+enum:
+  - none
+  - delete
+  - startDispositionReview
+  - relabel
+  - unknownFutureValue
+type: string

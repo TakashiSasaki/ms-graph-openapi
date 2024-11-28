@@ -1,0 +1,152 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: call
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      callbackUri:
+        type: string
+        description: >-
+          The callback URL on which callbacks are delivered. Must be an HTTPS
+          URL.
+      callChainId:
+        type: string
+        description: >-
+          A unique identifier for all the participant calls in a conference or a
+          unique identifier for two participant calls in a P2P call.  This
+          identifier must be copied over from Microsoft.Graph.Call.CallChainId.
+        nullable: true
+      callOptions:
+        anyOf:
+          - $ref: .\microsoft.graph.callOptions.yaml
+          - type: object
+            nullable: true
+        description: Contains the optional features for the call.
+      callRoutes:
+        type: array
+        items:
+          $ref: .\microsoft.graph.callRoute.yaml
+        description: The routing information on how the call was retargeted. Read-only.
+      chatInfo:
+        anyOf:
+          - $ref: .\microsoft.graph.chatInfo.yaml
+          - type: object
+            nullable: true
+        description: The chat information. Required information for joining a meeting.
+      direction:
+        anyOf:
+          - $ref: .\microsoft.graph.callDirection.yaml
+          - type: object
+            nullable: true
+        description: >-
+          The direction of the call. The possible values are incoming or
+          outgoing. Read-only.
+      incomingContext:
+        anyOf:
+          - $ref: .\microsoft.graph.incomingContext.yaml
+          - type: object
+            nullable: true
+        description: Call context associated with an incoming call.
+      mediaConfig:
+        anyOf:
+          - $ref: .\microsoft.graph.mediaConfig.yaml
+          - type: object
+            nullable: true
+        description: The media configuration. Required.
+      mediaState:
+        anyOf:
+          - $ref: .\microsoft.graph.callMediaState.yaml
+          - type: object
+            nullable: true
+        description: Read-only. The call media state.
+      meetingInfo:
+        anyOf:
+          - $ref: .\microsoft.graph.meetingInfo.yaml
+          - type: object
+            nullable: true
+        description: The meeting information. Required information for meeting scenarios.
+      myParticipantId:
+        type: string
+        nullable: true
+      requestedModalities:
+        type: array
+        items:
+          anyOf:
+            - $ref: .\microsoft.graph.modality.yaml
+            - type: object
+              nullable: true
+        description: >-
+          The list of requested modalities. Possible values are: unknown, audio,
+          video, videoBasedScreenSharing, data.
+      resultInfo:
+        anyOf:
+          - $ref: .\microsoft.graph.resultInfo.yaml
+          - type: object
+            nullable: true
+        description: >-
+          The result information. For example, the result can hold termination
+          reason. Read-only.
+      source:
+        anyOf:
+          - $ref: .\microsoft.graph.participantInfo.yaml
+          - type: object
+            nullable: true
+        description: The originator of the call.
+      state:
+        anyOf:
+          - $ref: .\microsoft.graph.callState.yaml
+          - type: object
+            nullable: true
+        description: >-
+          The call state. Possible values are: incoming, establishing, ringing,
+          established, hold, transferring, transferAccepted, redirecting,
+          terminating, terminated. Read-only.
+      subject:
+        type: string
+        description: The subject of the conversation.
+        nullable: true
+      targets:
+        type: array
+        items:
+          $ref: .\microsoft.graph.invitationParticipantInfo.yaml
+        description: >-
+          The targets of the call. Required information for creating peer to
+          peer call.
+      tenantId:
+        type: string
+        nullable: true
+      toneInfo:
+        anyOf:
+          - $ref: .\microsoft.graph.toneInfo.yaml
+          - type: object
+            nullable: true
+      transcription:
+        anyOf:
+          - $ref: .\microsoft.graph.callTranscriptionInfo.yaml
+          - type: object
+            nullable: true
+        description: The transcription information for the call. Read-only.
+      audioRoutingGroups:
+        type: array
+        items:
+          $ref: .\microsoft.graph.audioRoutingGroup.yaml
+        x-ms-navigationProperty: true
+      contentSharingSessions:
+        type: array
+        items:
+          $ref: .\microsoft.graph.contentSharingSession.yaml
+        x-ms-navigationProperty: true
+      operations:
+        type: array
+        items:
+          $ref: .\microsoft.graph.commsOperation.yaml
+        x-ms-navigationProperty: true
+      participants:
+        type: array
+        items:
+          $ref: .\microsoft.graph.participant.yaml
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.call'

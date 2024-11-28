@@ -1,0 +1,11 @@
+title: album
+required:
+  - '@odata.type'
+type: object
+properties:
+  coverImageItemId:
+    type: string
+    description: Unique identifier of the driveItem that is the cover of the album.
+    nullable: true
+  '@odata.type':
+    type: string

@@ -1,0 +1,8 @@
+title: externalActivityType
+enum:
+  - viewed
+  - modified
+  - created
+  - commented
+  - unknownFutureValue
+type: string

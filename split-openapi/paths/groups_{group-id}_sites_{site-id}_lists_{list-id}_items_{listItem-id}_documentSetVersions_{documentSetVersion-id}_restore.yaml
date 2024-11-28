@@ -1,0 +1,58 @@
+description: Provides operations to call the restore method.
+post:
+  tags:
+    - groups.site
+  summary: Invoke action restore
+  description: Restore a document set version.
+  externalDocs:
+    description: Find more info here
+    url: >-
+      https://learn.microsoft.com/graph/api/documentsetversion-restore?view=graph-rest-1.0
+  operationId: >-
+    groups.group.sites.site.lists.list.items.listItem.documentSetVersions.documentSetVersion.restore
+  responses:
+    '204':
+      description: Success
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: action
+parameters:
+  - name: group-id
+    in: path
+    description: The unique identifier of group
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: group
+  - name: site-id
+    in: path
+    description: The unique identifier of site
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: site
+  - name: list-id
+    in: path
+    description: The unique identifier of list
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: list
+  - name: listItem-id
+    in: path
+    description: The unique identifier of listItem
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: listItem
+  - name: documentSetVersion-id
+    in: path
+    description: The unique identifier of documentSetVersion
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: documentSetVersion
+x-ms-docs-grouped-path:
+  - /groups/{group-id}/restore

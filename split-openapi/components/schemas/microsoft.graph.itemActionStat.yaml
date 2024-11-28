@@ -1,0 +1,21 @@
+title: itemActionStat
+required:
+  - '@odata.type'
+type: object
+properties:
+  actionCount:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    description: The number of times the action took place. Read-only.
+    format: int32
+    nullable: true
+  actorCount:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    description: The number of distinct actors that performed the action. Read-only.
+    format: int32
+    nullable: true
+  '@odata.type':
+    type: string

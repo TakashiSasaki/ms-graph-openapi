@@ -1,0 +1,26 @@
+value:
+  chatType:
+    '@odata.type': microsoft.graph.chatType
+  createdDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  installedApps:
+    - '@odata.type': microsoft.graph.teamsAppInstallation
+  lastMessagePreview:
+    '@odata.type': microsoft.graph.chatMessageInfo
+  lastUpdatedDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  members:
+    - '@odata.type': microsoft.graph.conversationMember
+  messages:
+    - '@odata.type': microsoft.graph.chatMessage
+  onlineMeetingInfo:
+    '@odata.type': microsoft.graph.teamworkOnlineMeetingInfo
+  permissionGrants:
+    - '@odata.type': microsoft.graph.resourceSpecificPermissionGrant
+  pinnedMessages:
+    - '@odata.type': microsoft.graph.pinnedChatMessageInfo
+  tabs:
+    - '@odata.type': microsoft.graph.teamsTab
+  tenantId: String
+  topic: String
+  viewpoint:
+    '@odata.type': microsoft.graph.chatViewpoint
+  webUrl: String

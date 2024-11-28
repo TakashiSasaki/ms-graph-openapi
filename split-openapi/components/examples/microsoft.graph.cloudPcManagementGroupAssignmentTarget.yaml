@@ -1,0 +1,3 @@
+value:
+  groupId: String
+  servicePlanId: String

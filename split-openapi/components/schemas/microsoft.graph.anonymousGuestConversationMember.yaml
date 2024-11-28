@@ -1,0 +1,17 @@
+allOf:
+  - $ref: .\microsoft.graph.conversationMember.yaml
+  - title: anonymousGuestConversationMember
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      anonymousGuestId:
+        type: string
+        description: >-
+          Unique ID that represents the user. Note: This ID can change if the
+          user leaves and rejoins the meeting, or joins from a different device.
+        nullable: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.anonymousGuestConversationMember'
+x-ms-discriminator-value: '#microsoft.graph.anonymousGuestConversationMember'

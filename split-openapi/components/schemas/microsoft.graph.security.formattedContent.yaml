@@ -1,0 +1,19 @@
+title: formattedContent
+required:
+  - '@odata.type'
+type: object
+properties:
+  content:
+    type: string
+    description: The content of this formattedContent.
+    nullable: true
+  format:
+    anyOf:
+      - $ref: .\microsoft.graph.security.contentFormat.yaml
+      - type: object
+        nullable: true
+    description: >-
+      The format of the content. The possible values are: text, html, markdown,
+      unknownFutureValue.
+  '@odata.type':
+    type: string

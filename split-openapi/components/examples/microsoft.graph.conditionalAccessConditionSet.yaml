@@ -1,0 +1,25 @@
+value:
+  applications:
+    '@odata.type': microsoft.graph.conditionalAccessApplications
+  authenticationFlows:
+    '@odata.type': microsoft.graph.conditionalAccessAuthenticationFlows
+  clientApplications:
+    '@odata.type': microsoft.graph.conditionalAccessClientApplications
+  clientAppTypes:
+    - '@odata.type': microsoft.graph.conditionalAccessClientApp
+  devices:
+    '@odata.type': microsoft.graph.conditionalAccessDevices
+  insiderRiskLevels:
+    '@odata.type': microsoft.graph.conditionalAccessInsiderRiskLevels
+  locations:
+    '@odata.type': microsoft.graph.conditionalAccessLocations
+  platforms:
+    '@odata.type': microsoft.graph.conditionalAccessPlatforms
+  servicePrincipalRiskLevels:
+    - '@odata.type': microsoft.graph.riskLevel
+  signInRiskLevels:
+    - '@odata.type': microsoft.graph.riskLevel
+  userRiskLevels:
+    - '@odata.type': microsoft.graph.riskLevel
+  users:
+    '@odata.type': microsoft.graph.conditionalAccessUsers

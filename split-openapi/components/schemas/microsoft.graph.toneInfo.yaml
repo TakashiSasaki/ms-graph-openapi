@@ -1,0 +1,13 @@
+title: toneInfo
+required:
+  - '@odata.type'
+type: object
+properties:
+  sequenceId:
+    type: number
+    description: An incremental identifier used for ordering DTMF events.
+    format: int64
+  tone:
+    $ref: .\microsoft.graph.tone.yaml
+  '@odata.type':
+    type: string

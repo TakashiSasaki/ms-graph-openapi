@@ -1,0 +1,5 @@
+value:
+  contentData: String
+  destinationRoutingReason:
+    '@odata.type': microsoft.graph.mailDestinationRoutingReason
+  recipientEmail: String

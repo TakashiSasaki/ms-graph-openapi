@@ -1,0 +1,27 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: unifiedRoleManagementPolicyRule
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      target:
+        anyOf:
+          - $ref: .\microsoft.graph.unifiedRoleManagementPolicyRuleTarget.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Defines details of scope that's targeted by role management policy
+          rule. The details can include the principal type, the role assignment
+          type, and actions affecting a role. Supports $filter (eq, ne).
+      '@odata.type':
+        type: string
+    discriminator:
+      propertyName: '@odata.type'
+      mapping:
+        '#microsoft.graph.unifiedRoleManagementPolicyApprovalRule': .\microsoft.graph.unifiedRoleManagementPolicyApprovalRule.yaml
+        '#microsoft.graph.unifiedRoleManagementPolicyAuthenticationContextRule': >-
+          .\microsoft.graph.unifiedRoleManagementPolicyAuthenticationContextRule.yaml
+        '#microsoft.graph.unifiedRoleManagementPolicyEnablementRule': .\microsoft.graph.unifiedRoleManagementPolicyEnablementRule.yaml
+        '#microsoft.graph.unifiedRoleManagementPolicyExpirationRule': .\microsoft.graph.unifiedRoleManagementPolicyExpirationRule.yaml
+        '#microsoft.graph.unifiedRoleManagementPolicyNotificationRule': .\microsoft.graph.unifiedRoleManagementPolicyNotificationRule.yaml

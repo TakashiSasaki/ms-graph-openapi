@@ -1,0 +1,15 @@
+allOf:
+  - $ref: .\microsoft.graph.identity.yaml
+  - title: azureCommunicationServicesUserIdentity
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      azureCommunicationServicesResourceId:
+        type: string
+        description: The Azure Communication Services resource ID associated with the user.
+        nullable: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.azureCommunicationServicesUserIdentity'
+x-ms-discriminator-value: '#microsoft.graph.azureCommunicationServicesUserIdentity'

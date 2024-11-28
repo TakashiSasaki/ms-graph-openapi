@@ -1,0 +1,3 @@
+value:
+  criteria:
+    '@odata.type': microsoft.graph.workbookFilterCriteria

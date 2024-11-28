@@ -1,0 +1,4 @@
+value:
+  isPasscodeRequired: 'true'
+  joinMeetingId: String
+  passcode: String

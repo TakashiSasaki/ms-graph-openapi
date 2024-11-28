@@ -1,0 +1,22 @@
+title: autonomousSystem
+required:
+  - '@odata.type'
+type: object
+properties:
+  name:
+    type: string
+    description: The name of the autonomous system.
+  number:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    description: The autonomous system number, assigned by IANA.
+    format: int32
+  organization:
+    type: string
+    description: The name of the autonomous system organization.
+  value:
+    type: string
+    description: A displayable value for these autonomous system details.
+  '@odata.type':
+    type: string

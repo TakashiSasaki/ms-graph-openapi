@@ -1,0 +1,29 @@
+value:
+  activity:
+    '@odata.type': microsoft.graph.activityType
+  activityDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  additionalInfo: String
+  appId: String
+  correlationId: String
+  detectedDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  detectionTimingType:
+    '@odata.type': microsoft.graph.riskDetectionTimingType
+  ipAddress: String
+  keyIds:
+    - String
+  lastUpdatedDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  location:
+    '@odata.type': microsoft.graph.signInLocation
+  requestId: String
+  riskDetail:
+    '@odata.type': microsoft.graph.riskDetail
+  riskEventType: String
+  riskLevel:
+    '@odata.type': microsoft.graph.riskLevel
+  riskState:
+    '@odata.type': microsoft.graph.riskState
+  servicePrincipalDisplayName: String
+  servicePrincipalId: String
+  source: String
+  tokenIssuerType:
+    '@odata.type': microsoft.graph.tokenIssuerType

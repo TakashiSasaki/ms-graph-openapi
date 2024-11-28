@@ -1,0 +1,4 @@
+value:
+  accessContainerId: String
+  accessContainerType:
+    '@odata.type': microsoft.graph.delegatedAdminAccessContainerType

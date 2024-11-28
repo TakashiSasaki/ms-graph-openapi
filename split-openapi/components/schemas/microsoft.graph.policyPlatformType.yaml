@@ -1,0 +1,40 @@
+title: policyPlatformType
+enum:
+  - android
+  - androidForWork
+  - iOS
+  - macOS
+  - windowsPhone81
+  - windows81AndLater
+  - windows10AndLater
+  - all
+type: string
+description: Supported platform types for policies.
+x-ms-enum:
+  name: policyPlatformType
+  modelAsString: false
+  values:
+    - value: android
+      description: Android.
+      name: android
+    - value: androidForWork
+      description: AndroidForWork.
+      name: androidForWork
+    - value: iOS
+      description: iOS.
+      name: iOS
+    - value: macOS
+      description: MacOS.
+      name: macOS
+    - value: windowsPhone81
+      description: WindowsPhone 8.1.
+      name: windowsPhone81
+    - value: windows81AndLater
+      description: Windows 8.1 and later
+      name: windows81AndLater
+    - value: windows10AndLater
+      description: Windows 10 and later.
+      name: windows10AndLater
+    - value: all
+      description: All platforms.
+      name: all

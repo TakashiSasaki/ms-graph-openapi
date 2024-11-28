@@ -1,0 +1,16 @@
+title: win32LobAppRuleType
+enum:
+  - detection
+  - requirement
+type: string
+description: Contains rule types for Win32 LOB apps.
+x-ms-enum:
+  name: win32LobAppRuleType
+  modelAsString: false
+  values:
+    - value: detection
+      description: Detection rule.
+      name: detection
+    - value: requirement
+      description: Requirement rule.
+      name: requirement

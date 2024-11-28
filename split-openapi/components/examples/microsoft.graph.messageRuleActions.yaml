@@ -1,0 +1,17 @@
+value:
+  assignCategories:
+    - String
+  copyToFolder: String
+  delete: 'true'
+  forwardAsAttachmentTo:
+    - '@odata.type': microsoft.graph.recipient
+  forwardTo:
+    - '@odata.type': microsoft.graph.recipient
+  markAsRead: 'true'
+  markImportance:
+    '@odata.type': microsoft.graph.importance
+  moveToFolder: String
+  permanentDelete: 'true'
+  redirectTo:
+    - '@odata.type': microsoft.graph.recipient
+  stopProcessingRules: 'true'

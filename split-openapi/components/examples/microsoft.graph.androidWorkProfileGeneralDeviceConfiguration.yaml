@@ -1,0 +1,39 @@
+value:
+  passwordBlockFingerprintUnlock: 'true'
+  passwordBlockTrustAgents: 'true'
+  passwordExpirationDays: '0'
+  passwordMinimumLength: '0'
+  passwordMinutesOfInactivityBeforeScreenTimeout: '0'
+  passwordPreviousPasswordBlockCount: '0'
+  passwordRequiredType:
+    '@odata.type': microsoft.graph.androidWorkProfileRequiredPasswordType
+  passwordSignInFailureCountBeforeFactoryReset: '0'
+  securityRequireVerifyApps: 'true'
+  workProfileBlockAddingAccounts: 'true'
+  workProfileBlockCamera: 'true'
+  workProfileBlockCrossProfileCallerId: 'true'
+  workProfileBlockCrossProfileContactsSearch: 'true'
+  workProfileBlockCrossProfileCopyPaste: 'true'
+  workProfileBlockNotificationsWhileDeviceLocked: 'true'
+  workProfileBlockScreenCapture: 'true'
+  workProfileBluetoothEnableContactSharing: 'true'
+  workProfileDataSharingType:
+    '@odata.type': microsoft.graph.androidWorkProfileCrossProfileDataSharingType
+  workProfileDefaultAppPermissionPolicy:
+    '@odata.type': microsoft.graph.androidWorkProfileDefaultAppPermissionPolicyType
+  workProfilePasswordBlockFingerprintUnlock: 'true'
+  workProfilePasswordBlockTrustAgents: 'true'
+  workProfilePasswordExpirationDays: '0'
+  workProfilePasswordMinimumLength: '0'
+  workProfilePasswordMinLetterCharacters: '0'
+  workProfilePasswordMinLowerCaseCharacters: '0'
+  workProfilePasswordMinNonLetterCharacters: '0'
+  workProfilePasswordMinNumericCharacters: '0'
+  workProfilePasswordMinSymbolCharacters: '0'
+  workProfilePasswordMinUpperCaseCharacters: '0'
+  workProfilePasswordMinutesOfInactivityBeforeScreenTimeout: '0'
+  workProfilePasswordPreviousPasswordBlockCount: '0'
+  workProfilePasswordRequiredType:
+    '@odata.type': microsoft.graph.androidWorkProfileRequiredPasswordType
+  workProfilePasswordSignInFailureCountBeforeFactoryReset: '0'
+  workProfileRequirePassword: 'true'

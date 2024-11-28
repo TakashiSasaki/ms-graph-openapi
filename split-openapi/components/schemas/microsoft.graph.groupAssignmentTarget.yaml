@@ -1,0 +1,19 @@
+allOf:
+  - $ref: .\microsoft.graph.deviceAndAppManagementAssignmentTarget.yaml
+  - title: groupAssignmentTarget
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      groupId:
+        type: string
+        description: The group Id that is the target of the assignment.
+        nullable: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.groupAssignmentTarget'
+    description: Represents an assignment to a group.
+    discriminator:
+      propertyName: '@odata.type'
+      mapping:
+        '#microsoft.graph.exclusionGroupAssignmentTarget': .\microsoft.graph.exclusionGroupAssignmentTarget.yaml

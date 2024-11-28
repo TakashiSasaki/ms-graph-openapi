@@ -1,0 +1,4 @@
+value:
+  call:
+    '@odata.type': microsoft.graph.call
+  participantId: String

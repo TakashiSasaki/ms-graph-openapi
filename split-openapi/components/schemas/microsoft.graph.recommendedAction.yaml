@@ -1,0 +1,26 @@
+title: recommendedAction
+required:
+  - '@odata.type'
+type: object
+properties:
+  actionWebUrl:
+    type: string
+    description: Web URL to the recommended action.
+    nullable: true
+  potentialScoreImpact:
+    oneOf:
+      - type: number
+        format: double
+        nullable: true
+      - type: string
+        nullable: true
+      - $ref: .\ReferenceNumeric.yaml
+    description: >-
+      Potential improvement in the tenant security score from the recommended
+      action.
+  title:
+    type: string
+    description: Title of the recommended action.
+    nullable: true
+  '@odata.type':
+    type: string

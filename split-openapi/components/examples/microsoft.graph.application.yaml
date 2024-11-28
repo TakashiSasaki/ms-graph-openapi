@@ -1,0 +1,76 @@
+value:
+  addIns:
+    - '@odata.type': microsoft.graph.addIn
+  api:
+    '@odata.type': microsoft.graph.apiApplication
+  appId: String
+  applicationTemplateId: String
+  appManagementPolicies:
+    - '@odata.type': microsoft.graph.appManagementPolicy
+  appRoles:
+    - '@odata.type': microsoft.graph.appRole
+  certification:
+    '@odata.type': microsoft.graph.certification
+  createdDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  createdOnBehalfOf:
+    '@odata.type': microsoft.graph.directoryObject
+  defaultRedirectUri: String
+  description: String
+  disabledByMicrosoftStatus: String
+  displayName: String
+  extensionProperties:
+    - '@odata.type': microsoft.graph.extensionProperty
+  federatedIdentityCredentials:
+    - '@odata.type': microsoft.graph.federatedIdentityCredential
+  groupMembershipClaims: String
+  homeRealmDiscoveryPolicies:
+    - '@odata.type': microsoft.graph.homeRealmDiscoveryPolicy
+  identifierUris:
+    - String
+  info:
+    '@odata.type': microsoft.graph.informationalUrl
+  isDeviceOnlyAuthSupported: 'true'
+  isFallbackPublicClient: 'true'
+  keyCredentials:
+    - '@odata.type': microsoft.graph.keyCredential
+  logo: Stream
+  nativeAuthenticationApisEnabled:
+    '@odata.type': microsoft.graph.nativeAuthenticationApisEnabled
+  notes: String
+  oauth2RequirePostResponse: 'true'
+  optionalClaims:
+    '@odata.type': microsoft.graph.optionalClaims
+  owners:
+    - '@odata.type': microsoft.graph.directoryObject
+  parentalControlSettings:
+    '@odata.type': microsoft.graph.parentalControlSettings
+  passwordCredentials:
+    - '@odata.type': microsoft.graph.passwordCredential
+  publicClient:
+    '@odata.type': microsoft.graph.publicClientApplication
+  publisherDomain: String
+  requestSignatureVerification:
+    '@odata.type': microsoft.graph.requestSignatureVerification
+  requiredResourceAccess:
+    - '@odata.type': microsoft.graph.requiredResourceAccess
+  samlMetadataUrl: String
+  serviceManagementReference: String
+  servicePrincipalLockConfiguration:
+    '@odata.type': microsoft.graph.servicePrincipalLockConfiguration
+  signInAudience: String
+  spa:
+    '@odata.type': microsoft.graph.spaApplication
+  synchronization:
+    '@odata.type': microsoft.graph.synchronization
+  tags:
+    - String
+  tokenEncryptionKeyId: 00000000-0000-0000-0000-000000000000
+  tokenIssuancePolicies:
+    - '@odata.type': microsoft.graph.tokenIssuancePolicy
+  tokenLifetimePolicies:
+    - '@odata.type': microsoft.graph.tokenLifetimePolicy
+  uniqueName: String
+  verifiedPublisher:
+    '@odata.type': microsoft.graph.verifiedPublisher
+  web:
+    '@odata.type': microsoft.graph.webApplication

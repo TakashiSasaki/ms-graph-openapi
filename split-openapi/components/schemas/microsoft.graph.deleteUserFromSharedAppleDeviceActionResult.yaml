@@ -1,0 +1,15 @@
+allOf:
+  - $ref: .\microsoft.graph.deviceActionResult.yaml
+  - title: deleteUserFromSharedAppleDeviceActionResult
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      userPrincipalName:
+        type: string
+        description: User principal name of the user to be deleted
+        nullable: true
+      '@odata.type':
+        type: string
+    description: Delete user from shared apple device action result
+x-ms-discriminator-value: '#microsoft.graph.deleteUserFromSharedAppleDeviceActionResult'

@@ -1,0 +1,15 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: attributeMappingFunctionSchema
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      parameters:
+        type: array
+        items:
+          $ref: .\microsoft.graph.attributeMappingParameterSchema.yaml
+        description: Collection of function parameters.
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.attributeMappingFunctionSchema'

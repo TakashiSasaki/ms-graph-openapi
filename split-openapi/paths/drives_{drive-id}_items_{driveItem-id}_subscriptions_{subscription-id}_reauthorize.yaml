@@ -1,0 +1,45 @@
+description: Provides operations to call the reauthorize method.
+post:
+  tags:
+    - drives.driveItem
+  summary: Invoke action reauthorize
+  description: >-
+    Reauthorize a subscription when you receive a reauthorizationRequired
+    challenge.
+  externalDocs:
+    description: Find more info here
+    url: >-
+      https://learn.microsoft.com/graph/api/subscription-reauthorize?view=graph-rest-1.0
+  operationId: drives.drive.items.driveItem.subscriptions.subscription.reauthorize
+  responses:
+    '204':
+      description: Success
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: action
+parameters:
+  - name: drive-id
+    in: path
+    description: The unique identifier of drive
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: drive
+  - name: driveItem-id
+    in: path
+    description: The unique identifier of driveItem
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: driveItem
+  - name: subscription-id
+    in: path
+    description: The unique identifier of subscription
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: subscription
+x-ms-docs-grouped-path:
+  - /drives/{drive-id}/list/subscriptions/{subscription-id}/reauthorize

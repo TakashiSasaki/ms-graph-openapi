@@ -1,0 +1,5 @@
+value:
+  isEnabled: 'true'
+  maxWords: '0'
+  minWords: '0'
+  similarityThreshold: '0'

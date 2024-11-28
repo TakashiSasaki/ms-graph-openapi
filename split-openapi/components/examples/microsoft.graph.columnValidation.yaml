@@ -1,0 +1,5 @@
+value:
+  defaultLanguage: String
+  descriptions:
+    - '@odata.type': microsoft.graph.displayNameLocalization
+  formula: String

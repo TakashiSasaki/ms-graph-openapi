@@ -1,0 +1,5 @@
+value:
+  applicationName: String
+  applicationType:
+    '@odata.type': microsoft.graph.applicationType
+  deviceCount: '0'

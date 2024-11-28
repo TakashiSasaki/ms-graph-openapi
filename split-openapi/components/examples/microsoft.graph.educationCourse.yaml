@@ -1,0 +1,6 @@
+value:
+  courseNumber: String
+  description: String
+  displayName: String
+  externalId: String
+  subject: String

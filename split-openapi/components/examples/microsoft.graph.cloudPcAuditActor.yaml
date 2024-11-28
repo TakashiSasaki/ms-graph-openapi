@@ -1,0 +1,13 @@
+value:
+  applicationDisplayName: String
+  applicationId: String
+  ipAddress: String
+  remoteTenantId: String
+  remoteUserId: String
+  servicePrincipalName: String
+  userId: String
+  userPermissions:
+    - String
+  userPrincipalName: String
+  userRoleScopeTags:
+    - '@odata.type': microsoft.graph.cloudPcUserRoleScopeTagInfo

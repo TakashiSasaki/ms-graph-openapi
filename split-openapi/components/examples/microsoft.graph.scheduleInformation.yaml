@@ -1,0 +1,9 @@
+value:
+  availabilityView: String
+  error:
+    '@odata.type': microsoft.graph.freeBusyError
+  scheduleId: String
+  scheduleItems:
+    - '@odata.type': microsoft.graph.scheduleItem
+  workingHours:
+    '@odata.type': microsoft.graph.workingHours

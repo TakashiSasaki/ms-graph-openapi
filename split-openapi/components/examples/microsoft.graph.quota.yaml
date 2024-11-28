@@ -1,0 +1,8 @@
+value:
+  deleted: '0'
+  remaining: '0'
+  state: String
+  storagePlanInformation:
+    '@odata.type': microsoft.graph.storagePlanInformation
+  total: '0'
+  used: '0'

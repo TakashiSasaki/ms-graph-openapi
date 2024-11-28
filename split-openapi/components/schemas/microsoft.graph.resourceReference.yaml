@@ -1,0 +1,21 @@
+title: resourceReference
+required:
+  - '@odata.type'
+type: object
+properties:
+  id:
+    type: string
+    description: The item's unique identifier.
+    nullable: true
+  type:
+    type: string
+    description: >-
+      A string value that can be used to classify the item, such as
+      'microsoft.graph.driveItem'
+    nullable: true
+  webUrl:
+    type: string
+    description: A URL leading to the referenced item.
+    nullable: true
+  '@odata.type':
+    type: string

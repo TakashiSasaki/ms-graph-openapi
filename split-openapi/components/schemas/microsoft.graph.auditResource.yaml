@@ -1,0 +1,25 @@
+title: auditResource
+required:
+  - '@odata.type'
+type: object
+properties:
+  auditResourceType:
+    type: string
+    description: Audit resource's type.
+    nullable: true
+  displayName:
+    type: string
+    description: Display name.
+    nullable: true
+  modifiedProperties:
+    type: array
+    items:
+      $ref: .\microsoft.graph.auditProperty.yaml
+    description: List of modified properties.
+  resourceId:
+    type: string
+    description: Audit resource's Id.
+    nullable: true
+  '@odata.type':
+    type: string
+description: A class containing the properties for Audit Resource.

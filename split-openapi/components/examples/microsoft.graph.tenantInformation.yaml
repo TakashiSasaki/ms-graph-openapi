@@ -1,0 +1,5 @@
+value:
+  defaultDomainName: String
+  displayName: String
+  federationBrandName: String
+  tenantId: String

@@ -1,0 +1,8 @@
+title: userAccountSecurityType
+enum:
+  - unknown
+  - standard
+  - power
+  - administrator
+  - unknownFutureValue
+type: string

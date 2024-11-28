@@ -1,0 +1,14 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: teamsLicensingDetails
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      hasTeamsLicense:
+        type: boolean
+        description: Indicates whether the user has a valid license to use Microsoft Teams.
+        nullable: true
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.teamsLicensingDetails'

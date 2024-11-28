@@ -1,0 +1,30 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: virtualEventRegistrationConfiguration
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      capacity:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: Total capacity of the virtual event.
+        format: int32
+        nullable: true
+      registrationWebUrl:
+        type: string
+        description: Registration URL of the virtual event.
+        nullable: true
+      questions:
+        type: array
+        items:
+          $ref: .\microsoft.graph.virtualEventRegistrationQuestionBase.yaml
+        description: Registration questions.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+    discriminator:
+      propertyName: '@odata.type'
+      mapping:
+        '#microsoft.graph.virtualEventWebinarRegistrationConfiguration': .\microsoft.graph.virtualEventWebinarRegistrationConfiguration.yaml

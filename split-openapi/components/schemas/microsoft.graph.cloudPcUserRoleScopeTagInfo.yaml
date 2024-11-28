@@ -1,0 +1,13 @@
+title: cloudPcUserRoleScopeTagInfo
+required:
+  - '@odata.type'
+type: object
+properties:
+  displayName:
+    type: string
+    description: Scope tag display name.
+  roleScopeTagId:
+    type: string
+    description: Scope tag identity.
+  '@odata.type':
+    type: string

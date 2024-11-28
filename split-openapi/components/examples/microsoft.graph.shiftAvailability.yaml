@@ -1,0 +1,6 @@
+value:
+  recurrence:
+    '@odata.type': microsoft.graph.patternedRecurrence
+  timeSlots:
+    - '@odata.type': microsoft.graph.timeRange
+  timeZone: String

@@ -1,0 +1,43 @@
+description: Provides operations to call the getByPath method.
+get:
+  tags:
+    - groups.site
+  summary: Invoke function getByPath
+  operationId: groups.group.sites.site.getByPath
+  responses:
+    2XX:
+      description: Success
+      content:
+        application/json:
+          schema:
+            anyOf:
+              - $ref: ..\components\schemas\microsoft.graph.site.yaml
+              - type: object
+                nullable: true
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: function
+parameters:
+  - name: group-id
+    in: path
+    description: The unique identifier of group
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: group
+  - name: site-id
+    in: path
+    description: The unique identifier of site
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: site
+  - name: path
+    in: path
+    description: 'Usage: path=''{path}'''
+    required: true
+    schema:
+      type: string
+      nullable: true

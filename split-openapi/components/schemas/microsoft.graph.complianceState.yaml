@@ -1,0 +1,36 @@
+title: complianceState
+enum:
+  - unknown
+  - compliant
+  - noncompliant
+  - conflict
+  - error
+  - inGracePeriod
+  - configManager
+type: string
+description: Compliance state.
+x-ms-enum:
+  name: complianceState
+  modelAsString: false
+  values:
+    - value: unknown
+      description: Unknown.
+      name: unknown
+    - value: compliant
+      description: Compliant.
+      name: compliant
+    - value: noncompliant
+      description: Device is non-compliant and is blocked from corporate resources.
+      name: noncompliant
+    - value: conflict
+      description: Conflict with other rules.
+      name: conflict
+    - value: error
+      description: Error.
+      name: error
+    - value: inGracePeriod
+      description: Device is non-compliant but still has access to corporate resources
+      name: inGracePeriod
+    - value: configManager
+      description: Managed by Config Manager
+      name: configManager

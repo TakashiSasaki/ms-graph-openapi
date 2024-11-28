@@ -1,0 +1,32 @@
+title: ratingAppsType
+enum:
+  - allAllowed
+  - allBlocked
+  - agesAbove4
+  - agesAbove9
+  - agesAbove12
+  - agesAbove17
+type: string
+description: Apps rating as in media content
+x-ms-enum:
+  name: ratingAppsType
+  modelAsString: false
+  values:
+    - value: allAllowed
+      description: Default value, allow all apps content
+      name: allAllowed
+    - value: allBlocked
+      description: Do not allow any apps content
+      name: allBlocked
+    - value: agesAbove4
+      description: 4+, age 4 and above
+      name: agesAbove4
+    - value: agesAbove9
+      description: 9+, age 9 and above
+      name: agesAbove9
+    - value: agesAbove12
+      description: '12+, age 12 and above '
+      name: agesAbove12
+    - value: agesAbove17
+      description: 17+, age 17 and above
+      name: agesAbove17

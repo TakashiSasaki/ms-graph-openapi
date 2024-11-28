@@ -1,0 +1,9 @@
+title: chatMessagePolicyViolationDlpActionTypes
+enum:
+  - none
+  - notifySender
+  - blockAccess
+  - blockAccessExternal
+type: string
+x-ms-enum-flags:
+  isFlags: true

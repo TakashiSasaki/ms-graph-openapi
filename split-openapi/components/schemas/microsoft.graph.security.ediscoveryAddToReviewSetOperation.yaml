@@ -1,0 +1,26 @@
+allOf:
+  - $ref: .\microsoft.graph.security.caseOperation.yaml
+  - title: ediscoveryAddToReviewSetOperation
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      reviewSet:
+        anyOf:
+          - $ref: .\microsoft.graph.security.ediscoveryReviewSet.yaml
+          - type: object
+            nullable: true
+        description: >-
+          eDiscovery review set to which items matching source collection query
+          gets added.
+        x-ms-navigationProperty: true
+      search:
+        anyOf:
+          - $ref: .\microsoft.graph.security.ediscoverySearch.yaml
+          - type: object
+            nullable: true
+        description: eDiscovery search that gets added to review set.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.security.ediscoveryAddToReviewSetOperation'

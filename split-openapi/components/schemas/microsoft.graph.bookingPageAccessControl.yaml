@@ -1,0 +1,6 @@
+title: bookingPageAccessControl
+enum:
+  - unrestricted
+  - restrictedToOrganization
+  - unknownFutureValue
+type: string

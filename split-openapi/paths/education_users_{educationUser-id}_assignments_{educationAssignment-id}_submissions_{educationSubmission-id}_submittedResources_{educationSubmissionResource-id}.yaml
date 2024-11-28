@@ -1,0 +1,121 @@
+description: >-
+  Provides operations to manage the submittedResources property of the
+  microsoft.graph.educationSubmission entity.
+get:
+  tags:
+    - education.educationUser
+  summary: Get submittedResources from education
+  operationId: education.users.assignments.submissions.GetSubmittedResources
+  parameters:
+    - name: $select
+      in: query
+      description: Select properties to be returned
+      style: form
+      explode: false
+      schema:
+        uniqueItems: true
+        type: array
+        items:
+          type: string
+    - name: $expand
+      in: query
+      description: Expand related entities
+      style: form
+      explode: false
+      schema:
+        uniqueItems: true
+        type: array
+        items:
+          type: string
+  responses:
+    2XX:
+      description: Retrieved navigation property
+      content:
+        application/json:
+          schema:
+            $ref: >-
+              ..\components\schemas\microsoft.graph.educationSubmissionResource.yaml
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: operation
+patch:
+  tags:
+    - education.educationUser
+  summary: Update the navigation property submittedResources in education
+  operationId: education.users.assignments.submissions.UpdateSubmittedResources
+  requestBody:
+    description: New navigation property values
+    content:
+      application/json:
+        schema:
+          $ref: >-
+            ..\components\schemas\microsoft.graph.educationSubmissionResource.yaml
+    required: true
+  responses:
+    2XX:
+      description: Success
+      content:
+        application/json:
+          schema:
+            $ref: >-
+              ..\components\schemas\microsoft.graph.educationSubmissionResource.yaml
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: operation
+delete:
+  tags:
+    - education.educationUser
+  summary: Delete navigation property submittedResources for education
+  operationId: education.users.assignments.submissions.DeleteSubmittedResources
+  parameters:
+    - name: If-Match
+      in: header
+      description: ETag
+      schema:
+        type: string
+  responses:
+    '204':
+      description: Success
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: operation
+parameters:
+  - name: educationUser-id
+    in: path
+    description: The unique identifier of educationUser
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: educationUser
+  - name: educationAssignment-id
+    in: path
+    description: The unique identifier of educationAssignment
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: educationAssignment
+  - name: educationSubmission-id
+    in: path
+    description: The unique identifier of educationSubmission
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: educationSubmission
+  - name: educationSubmissionResource-id
+    in: path
+    description: The unique identifier of educationSubmissionResource
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: educationSubmissionResource
+x-ms-docs-grouped-path:
+  - >-
+    /education/classes/{educationClass-id}/assignments/{educationAssignment-id}/submissions/{educationSubmission-id}/submittedResources/{educationSubmissionResource-id}
+  - >-
+    /education/me/assignments/{educationAssignment-id}/submissions/{educationSubmission-id}/submittedResources/{educationSubmissionResource-id}

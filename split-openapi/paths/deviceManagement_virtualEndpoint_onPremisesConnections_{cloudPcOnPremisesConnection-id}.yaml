@@ -1,0 +1,116 @@
+description: >-
+  Provides operations to manage the onPremisesConnections property of the
+  microsoft.graph.virtualEndpoint entity.
+get:
+  tags:
+    - deviceManagement.virtualEndpoint
+  summary: Get cloudPcOnPremisesConnection
+  description: >-
+    Read the properties and relationships of the cloudPcOnPremisesConnection
+    object.
+  externalDocs:
+    description: Find more info here
+    url: >-
+      https://learn.microsoft.com/graph/api/cloudpconpremisesconnection-get?view=graph-rest-1.0
+  operationId: deviceManagement.virtualEndpoint.GetOnPremisesConnections
+  parameters:
+    - name: $select
+      in: query
+      description: Select properties to be returned
+      style: form
+      explode: false
+      schema:
+        uniqueItems: true
+        type: array
+        items:
+          type: string
+    - name: $expand
+      in: query
+      description: Expand related entities
+      style: form
+      explode: false
+      schema:
+        uniqueItems: true
+        type: array
+        items:
+          type: string
+  responses:
+    2XX:
+      description: Retrieved navigation property
+      content:
+        application/json:
+          schema:
+            $ref: >-
+              ..\components\schemas\microsoft.graph.cloudPcOnPremisesConnection.yaml
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: operation
+patch:
+  tags:
+    - deviceManagement.virtualEndpoint
+  summary: Update cloudPcOnPremisesConnection
+  description: Update the properties of a cloudPcOnPremisesConnection object.
+  externalDocs:
+    description: Find more info here
+    url: >-
+      https://learn.microsoft.com/graph/api/cloudpconpremisesconnection-update?view=graph-rest-1.0
+  operationId: deviceManagement.virtualEndpoint.UpdateOnPremisesConnections
+  requestBody:
+    description: New navigation property values
+    content:
+      application/json:
+        schema:
+          $ref: >-
+            ..\components\schemas\microsoft.graph.cloudPcOnPremisesConnection.yaml
+    required: true
+  responses:
+    2XX:
+      description: Success
+      content:
+        application/json:
+          schema:
+            $ref: >-
+              ..\components\schemas\microsoft.graph.cloudPcOnPremisesConnection.yaml
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: operation
+delete:
+  tags:
+    - deviceManagement.virtualEndpoint
+  summary: Delete cloudPcOnPremisesConnection
+  description: >-
+    Delete a specific cloudPcOnPremisesConnection object. When you delete an
+    Azure network connection, permissions to the service are removed from the
+    specified Azure resources. You cannot delete an Azure network connection
+    when it's in use, as indicated by the inUse property.
+  externalDocs:
+    description: Find more info here
+    url: >-
+      https://learn.microsoft.com/graph/api/cloudpconpremisesconnection-delete?view=graph-rest-1.0
+  operationId: deviceManagement.virtualEndpoint.DeleteOnPremisesConnections
+  parameters:
+    - name: If-Match
+      in: header
+      description: ETag
+      schema:
+        type: string
+  responses:
+    '204':
+      description: Success
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: operation
+parameters:
+  - name: cloudPcOnPremisesConnection-id
+    in: path
+    description: The unique identifier of cloudPcOnPremisesConnection
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: cloudPcOnPremisesConnection

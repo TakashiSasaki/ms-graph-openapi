@@ -1,0 +1,6 @@
+title: externalItemContentType
+enum:
+  - text
+  - html
+  - unknownFutureValue
+type: string

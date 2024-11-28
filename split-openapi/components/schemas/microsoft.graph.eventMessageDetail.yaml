@@ -1,0 +1,70 @@
+title: eventMessageDetail
+required:
+  - '@odata.type'
+type: object
+properties:
+  '@odata.type':
+    type: string
+discriminator:
+  propertyName: '@odata.type'
+  mapping:
+    '#microsoft.graph.callEndedEventMessageDetail': .\microsoft.graph.callEndedEventMessageDetail.yaml
+    '#microsoft.graph.callRecordingEventMessageDetail': .\microsoft.graph.callRecordingEventMessageDetail.yaml
+    '#microsoft.graph.callStartedEventMessageDetail': .\microsoft.graph.callStartedEventMessageDetail.yaml
+    '#microsoft.graph.callTranscriptEventMessageDetail': .\microsoft.graph.callTranscriptEventMessageDetail.yaml
+    '#microsoft.graph.channelAddedEventMessageDetail': .\microsoft.graph.channelAddedEventMessageDetail.yaml
+    '#microsoft.graph.channelDeletedEventMessageDetail': .\microsoft.graph.channelDeletedEventMessageDetail.yaml
+    '#microsoft.graph.channelDescriptionUpdatedEventMessageDetail': .\microsoft.graph.channelDescriptionUpdatedEventMessageDetail.yaml
+    '#microsoft.graph.channelRenamedEventMessageDetail': .\microsoft.graph.channelRenamedEventMessageDetail.yaml
+    '#microsoft.graph.channelSetAsFavoriteByDefaultEventMessageDetail': .\microsoft.graph.channelSetAsFavoriteByDefaultEventMessageDetail.yaml
+    '#microsoft.graph.channelUnsetAsFavoriteByDefaultEventMessageDetail': .\microsoft.graph.channelUnsetAsFavoriteByDefaultEventMessageDetail.yaml
+    '#microsoft.graph.chatRenamedEventMessageDetail': .\microsoft.graph.chatRenamedEventMessageDetail.yaml
+    '#microsoft.graph.conversationMemberRoleUpdatedEventMessageDetail': .\microsoft.graph.conversationMemberRoleUpdatedEventMessageDetail.yaml
+    '#microsoft.graph.meetingPolicyUpdatedEventMessageDetail': .\microsoft.graph.meetingPolicyUpdatedEventMessageDetail.yaml
+    '#microsoft.graph.membersAddedEventMessageDetail': .\microsoft.graph.membersAddedEventMessageDetail.yaml
+    '#microsoft.graph.membersDeletedEventMessageDetail': .\microsoft.graph.membersDeletedEventMessageDetail.yaml
+    '#microsoft.graph.membersJoinedEventMessageDetail': .\microsoft.graph.membersJoinedEventMessageDetail.yaml
+    '#microsoft.graph.membersLeftEventMessageDetail': .\microsoft.graph.membersLeftEventMessageDetail.yaml
+    '#microsoft.graph.messagePinnedEventMessageDetail': .\microsoft.graph.messagePinnedEventMessageDetail.yaml
+    '#microsoft.graph.messageUnpinnedEventMessageDetail': .\microsoft.graph.messageUnpinnedEventMessageDetail.yaml
+    '#microsoft.graph.tabUpdatedEventMessageDetail': .\microsoft.graph.tabUpdatedEventMessageDetail.yaml
+    '#microsoft.graph.teamArchivedEventMessageDetail': .\microsoft.graph.teamArchivedEventMessageDetail.yaml
+    '#microsoft.graph.teamCreatedEventMessageDetail': .\microsoft.graph.teamCreatedEventMessageDetail.yaml
+    '#microsoft.graph.teamDescriptionUpdatedEventMessageDetail': .\microsoft.graph.teamDescriptionUpdatedEventMessageDetail.yaml
+    '#microsoft.graph.teamJoiningDisabledEventMessageDetail': .\microsoft.graph.teamJoiningDisabledEventMessageDetail.yaml
+    '#microsoft.graph.teamJoiningEnabledEventMessageDetail': .\microsoft.graph.teamJoiningEnabledEventMessageDetail.yaml
+    '#microsoft.graph.teamRenamedEventMessageDetail': .\microsoft.graph.teamRenamedEventMessageDetail.yaml
+    '#microsoft.graph.teamsAppInstalledEventMessageDetail': .\microsoft.graph.teamsAppInstalledEventMessageDetail.yaml
+    '#microsoft.graph.teamsAppRemovedEventMessageDetail': .\microsoft.graph.teamsAppRemovedEventMessageDetail.yaml
+    '#microsoft.graph.teamsAppUpgradedEventMessageDetail': .\microsoft.graph.teamsAppUpgradedEventMessageDetail.yaml
+    '#microsoft.graph.teamUnarchivedEventMessageDetail': .\microsoft.graph.teamUnarchivedEventMessageDetail.yaml
+    microsoft.graph.callEndedEventMessageDetail: .\microsoft.graph.callEndedEventMessageDetail.yaml
+    microsoft.graph.callRecordingEventMessageDetail: .\microsoft.graph.callRecordingEventMessageDetail.yaml
+    microsoft.graph.callStartedEventMessageDetail: .\microsoft.graph.callStartedEventMessageDetail.yaml
+    microsoft.graph.callTranscriptEventMessageDetail: .\microsoft.graph.callTranscriptEventMessageDetail.yaml
+    microsoft.graph.channelAddedEventMessageDetail: .\microsoft.graph.channelAddedEventMessageDetail.yaml
+    microsoft.graph.channelDeletedEventMessageDetail: .\microsoft.graph.channelDeletedEventMessageDetail.yaml
+    microsoft.graph.channelDescriptionUpdatedEventMessageDetail: .\microsoft.graph.channelDescriptionUpdatedEventMessageDetail.yaml
+    microsoft.graph.channelRenamedEventMessageDetail: .\microsoft.graph.channelRenamedEventMessageDetail.yaml
+    microsoft.graph.channelSetAsFavoriteByDefaultEventMessageDetail: .\microsoft.graph.channelSetAsFavoriteByDefaultEventMessageDetail.yaml
+    microsoft.graph.channelUnsetAsFavoriteByDefaultEventMessageDetail: .\microsoft.graph.channelUnsetAsFavoriteByDefaultEventMessageDetail.yaml
+    microsoft.graph.chatRenamedEventMessageDetail: .\microsoft.graph.chatRenamedEventMessageDetail.yaml
+    microsoft.graph.conversationMemberRoleUpdatedEventMessageDetail: .\microsoft.graph.conversationMemberRoleUpdatedEventMessageDetail.yaml
+    microsoft.graph.meetingPolicyUpdatedEventMessageDetail: .\microsoft.graph.meetingPolicyUpdatedEventMessageDetail.yaml
+    microsoft.graph.membersAddedEventMessageDetail: .\microsoft.graph.membersAddedEventMessageDetail.yaml
+    microsoft.graph.membersDeletedEventMessageDetail: .\microsoft.graph.membersDeletedEventMessageDetail.yaml
+    microsoft.graph.membersJoinedEventMessageDetail: .\microsoft.graph.membersJoinedEventMessageDetail.yaml
+    microsoft.graph.membersLeftEventMessageDetail: .\microsoft.graph.membersLeftEventMessageDetail.yaml
+    microsoft.graph.messagePinnedEventMessageDetail: .\microsoft.graph.messagePinnedEventMessageDetail.yaml
+    microsoft.graph.messageUnpinnedEventMessageDetail: .\microsoft.graph.messageUnpinnedEventMessageDetail.yaml
+    microsoft.graph.tabUpdatedEventMessageDetail: .\microsoft.graph.tabUpdatedEventMessageDetail.yaml
+    microsoft.graph.teamArchivedEventMessageDetail: .\microsoft.graph.teamArchivedEventMessageDetail.yaml
+    microsoft.graph.teamCreatedEventMessageDetail: .\microsoft.graph.teamCreatedEventMessageDetail.yaml
+    microsoft.graph.teamDescriptionUpdatedEventMessageDetail: .\microsoft.graph.teamDescriptionUpdatedEventMessageDetail.yaml
+    microsoft.graph.teamJoiningDisabledEventMessageDetail: .\microsoft.graph.teamJoiningDisabledEventMessageDetail.yaml
+    microsoft.graph.teamJoiningEnabledEventMessageDetail: .\microsoft.graph.teamJoiningEnabledEventMessageDetail.yaml
+    microsoft.graph.teamRenamedEventMessageDetail: .\microsoft.graph.teamRenamedEventMessageDetail.yaml
+    microsoft.graph.teamsAppInstalledEventMessageDetail: .\microsoft.graph.teamsAppInstalledEventMessageDetail.yaml
+    microsoft.graph.teamsAppRemovedEventMessageDetail: .\microsoft.graph.teamsAppRemovedEventMessageDetail.yaml
+    microsoft.graph.teamsAppUpgradedEventMessageDetail: .\microsoft.graph.teamsAppUpgradedEventMessageDetail.yaml
+    microsoft.graph.teamUnarchivedEventMessageDetail: .\microsoft.graph.teamUnarchivedEventMessageDetail.yaml

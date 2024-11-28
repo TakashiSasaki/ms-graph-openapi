@@ -1,0 +1,11 @@
+value:
+  allowedToSignUpEmailBasedSubscriptions: 'true'
+  allowedToUseSSPR: 'true'
+  allowEmailVerifiedUsersToJoinOrganization: 'true'
+  allowInvitesFrom:
+    '@odata.type': microsoft.graph.allowInvitesFrom
+  allowUserConsentForRiskyApps: 'true'
+  blockMsolPowerShell: 'true'
+  defaultUserRolePermissions:
+    '@odata.type': microsoft.graph.defaultUserRolePermissions
+  guestUserRoleId: 00000000-0000-0000-0000-000000000000

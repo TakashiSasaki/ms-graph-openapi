@@ -1,0 +1,8 @@
+value:
+  ignoreVersionDetection: 'true'
+  includedApps:
+    - '@odata.type': microsoft.graph.macOSIncludedApp
+  minimumSupportedOperatingSystem:
+    '@odata.type': microsoft.graph.macOSMinimumOperatingSystem
+  primaryBundleId: String
+  primaryBundleVersion: String

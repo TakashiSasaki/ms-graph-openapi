@@ -1,0 +1,92 @@
+title: mailTips
+required:
+  - '@odata.type'
+type: object
+properties:
+  automaticReplies:
+    anyOf:
+      - $ref: .\microsoft.graph.automaticRepliesMailTips.yaml
+      - type: object
+        nullable: true
+    description: Mail tips for automatic reply if it has been set up by the recipient.
+  customMailTip:
+    type: string
+    description: A custom mail tip that can be set on the recipient's mailbox.
+    nullable: true
+  deliveryRestricted:
+    type: boolean
+    description: >-
+      Whether the recipient's mailbox is restricted, for example, accepting
+      messages from only a predefined list of senders, rejecting messages from a
+      predefined list of senders, or accepting messages from only authenticated
+      senders.
+    nullable: true
+  emailAddress:
+    anyOf:
+      - $ref: .\microsoft.graph.emailAddress.yaml
+      - type: object
+        nullable: true
+    description: The email address of the recipient to get mailtips for.
+  error:
+    anyOf:
+      - $ref: .\microsoft.graph.mailTipsError.yaml
+      - type: object
+        nullable: true
+    description: Errors that occur during the getMailTips action.
+  externalMemberCount:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    description: The number of external members if the recipient is a distribution list.
+    format: int32
+    nullable: true
+  isModerated:
+    type: boolean
+    description: >-
+      Whether sending messages to the recipient requires approval. For example,
+      if the recipient is a large distribution list and a moderator has been set
+      up to approve messages sent to that distribution list, or if sending
+      messages to a recipient requires approval of the recipient's manager.
+    nullable: true
+  mailboxFull:
+    type: boolean
+    description: The mailbox full status of the recipient.
+    nullable: true
+  maxMessageSize:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    description: >-
+      The maximum message size that has been configured for the recipient's
+      organization or mailbox.
+    format: int32
+    nullable: true
+  recipientScope:
+    anyOf:
+      - $ref: .\microsoft.graph.recipientScopeType.yaml
+      - type: object
+        nullable: true
+    description: >-
+      The scope of the recipient. Possible values are: none, internal, external,
+      externalPartner, externalNonParther. For example, an administrator can set
+      another organization to be its 'partner'. The scope is useful if an
+      administrator wants certain mailtips to be accessible to certain scopes.
+      It's also useful to senders to inform them that their message may leave
+      the organization, helping them make the correct decisions about wording,
+      tone and content.
+  recipientSuggestions:
+    type: array
+    items:
+      $ref: .\microsoft.graph.recipient.yaml
+    description: >-
+      Recipients suggested based on previous contexts where they appear in the
+      same message.
+  totalMemberCount:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    description: The number of members if the recipient is a distribution list.
+    format: int32
+    nullable: true
+  '@odata.type':
+    type: string

@@ -1,0 +1,22 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: teamworkTagMember
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      displayName:
+        type: string
+        description: The member's display name.
+        nullable: true
+      tenantId:
+        type: string
+        description: The ID of the tenant that the tag member is a part of.
+        nullable: true
+      userId:
+        type: string
+        description: The user ID of the member.
+        nullable: true
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.teamworkTagMember'

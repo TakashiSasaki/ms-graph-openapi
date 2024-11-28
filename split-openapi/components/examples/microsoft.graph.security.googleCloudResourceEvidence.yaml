@@ -1,0 +1,9 @@
+value:
+  fullResourceName: String
+  location: String
+  locationType:
+    '@odata.type': microsoft.graph.security.googleCloudLocationType
+  projectId: String
+  projectNumber: '0'
+  resourceName: String
+  resourceType: String

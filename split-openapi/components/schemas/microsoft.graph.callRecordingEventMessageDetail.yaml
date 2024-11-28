@@ -1,0 +1,49 @@
+allOf:
+  - $ref: .\microsoft.graph.eventMessageDetail.yaml
+  - title: callRecordingEventMessageDetail
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      callId:
+        type: string
+        description: Unique identifier of the call.
+        nullable: true
+      callRecordingDisplayName:
+        type: string
+        description: Display name for the call recording.
+        nullable: true
+      callRecordingDuration:
+        pattern: ^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$
+        type: string
+        description: Duration of the call recording.
+        format: duration
+        nullable: true
+      callRecordingStatus:
+        anyOf:
+          - $ref: .\microsoft.graph.callRecordingStatus.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Status of the call recording. Possible values are: success, failure,
+          initial, chunkFinished, unknownFutureValue.
+      callRecordingUrl:
+        type: string
+        description: Call recording URL.
+        nullable: true
+      initiator:
+        anyOf:
+          - $ref: .\microsoft.graph.identitySet.yaml
+          - type: object
+            nullable: true
+        description: Initiator of the event.
+      meetingOrganizer:
+        anyOf:
+          - $ref: .\microsoft.graph.identitySet.yaml
+          - type: object
+            nullable: true
+        description: Organizer of the meeting.
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.callRecordingEventMessageDetail'
+x-ms-discriminator-value: '#microsoft.graph.callRecordingEventMessageDetail'

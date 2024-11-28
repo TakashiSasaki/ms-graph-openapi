@@ -1,0 +1,7 @@
+value:
+  actionType:
+    '@odata.type': microsoft.graph.deviceComplianceActionType
+  gracePeriodHours: '0'
+  notificationMessageCCList:
+    - String
+  notificationTemplateId: String

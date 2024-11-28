@@ -1,0 +1,28 @@
+allOf:
+  - $ref: .\microsoft.graph.mobileApp.yaml
+  - title: iosStoreApp
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      applicableDeviceType:
+        $ref: .\microsoft.graph.iosDeviceType.yaml
+      appStoreUrl:
+        type: string
+        description: The Apple App Store URL
+        nullable: true
+      bundleId:
+        type: string
+        description: The Identity Name.
+        nullable: true
+      minimumSupportedOperatingSystem:
+        anyOf:
+          - $ref: .\microsoft.graph.iosMinimumOperatingSystem.yaml
+          - type: object
+            nullable: true
+        description: The value for the minimum applicable operating system.
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.iosStoreApp'
+    description: Contains properties and inherited properties for iOS store apps.
+x-ms-discriminator-value: '#microsoft.graph.iosStoreApp'

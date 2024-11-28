@@ -1,0 +1,19 @@
+title: storage
+required:
+  - '@odata.type'
+type: object
+properties:
+  fileStorage:
+    anyOf:
+      - $ref: .\microsoft.graph.fileStorage.yaml
+      - type: object
+        nullable: true
+    x-ms-navigationProperty: true
+  settings:
+    anyOf:
+      - $ref: .\microsoft.graph.storageSettings.yaml
+      - type: object
+        nullable: true
+    x-ms-navigationProperty: true
+  '@odata.type':
+    type: string

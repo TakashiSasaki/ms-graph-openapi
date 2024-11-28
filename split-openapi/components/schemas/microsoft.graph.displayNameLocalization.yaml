@@ -1,0 +1,19 @@
+title: displayNameLocalization
+required:
+  - '@odata.type'
+type: object
+properties:
+  displayName:
+    type: string
+    description: >-
+      If present, the value of this field contains the displayName string that
+      has been set for the language present in the languageTag field.
+    nullable: true
+  languageTag:
+    type: string
+    description: >-
+      Provides the language culture-code and friendly name of the language that
+      the displayName field has been provided in.
+    nullable: true
+  '@odata.type':
+    type: string

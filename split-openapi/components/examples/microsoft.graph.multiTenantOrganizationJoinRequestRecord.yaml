@@ -1,0 +1,8 @@
+value:
+  addedByTenantId: String
+  memberState:
+    '@odata.type': microsoft.graph.multiTenantOrganizationMemberState
+  role:
+    '@odata.type': microsoft.graph.multiTenantOrganizationMemberRole
+  transitionDetails:
+    '@odata.type': microsoft.graph.multiTenantOrganizationJoinRequestTransitionDetails

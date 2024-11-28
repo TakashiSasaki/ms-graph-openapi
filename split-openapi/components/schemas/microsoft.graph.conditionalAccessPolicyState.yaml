@@ -1,0 +1,6 @@
+title: conditionalAccessPolicyState
+enum:
+  - enabled
+  - disabled
+  - enabledForReportingButNotEnforced
+type: string

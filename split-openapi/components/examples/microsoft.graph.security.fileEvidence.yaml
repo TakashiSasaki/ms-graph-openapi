@@ -1,0 +1,6 @@
+value:
+  detectionStatus:
+    '@odata.type': microsoft.graph.security.detectionStatus
+  fileDetails:
+    '@odata.type': microsoft.graph.security.fileDetails
+  mdeDeviceId: String

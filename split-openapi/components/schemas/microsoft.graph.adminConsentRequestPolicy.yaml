@@ -1,0 +1,42 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: adminConsentRequestPolicy
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      isEnabled:
+        type: boolean
+        description: >-
+          Specifies whether the admin consent request feature is enabled or
+          disabled. Required.
+      notifyReviewers:
+        type: boolean
+        description: Specifies whether reviewers will receive notifications. Required.
+      remindersEnabled:
+        type: boolean
+        description: Specifies whether reviewers will receive reminder emails. Required.
+      requestDurationInDays:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: >-
+          Specifies the duration the request is active before it automatically
+          expires if no decision is applied.
+        format: int32
+      reviewers:
+        type: array
+        items:
+          $ref: .\microsoft.graph.accessReviewReviewerScope.yaml
+        description: The list of reviewers for the admin consent. Required.
+      version:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: >-
+          Specifies the version of this policy. When the policy is updated, this
+          version is updated. Read-only.
+        format: int32
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.adminConsentRequestPolicy'

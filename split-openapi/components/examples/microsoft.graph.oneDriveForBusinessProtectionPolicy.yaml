@@ -1,0 +1,5 @@
+value:
+  driveInclusionRules:
+    - '@odata.type': microsoft.graph.driveProtectionRule
+  driveProtectionUnits:
+    - '@odata.type': microsoft.graph.driveProtectionUnit

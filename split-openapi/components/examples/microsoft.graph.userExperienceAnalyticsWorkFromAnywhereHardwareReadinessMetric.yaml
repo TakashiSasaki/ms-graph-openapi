@@ -1,0 +1,12 @@
+value:
+  osCheckFailedPercentage: '0'
+  processor64BitCheckFailedPercentage: '0'
+  processorCoreCountCheckFailedPercentage: '0'
+  processorFamilyCheckFailedPercentage: '0'
+  processorSpeedCheckFailedPercentage: '0'
+  ramCheckFailedPercentage: '0'
+  secureBootCheckFailedPercentage: '0'
+  storageCheckFailedPercentage: '0'
+  totalDeviceCount: '0'
+  tpmCheckFailedPercentage: '0'
+  upgradeEligibleDeviceCount: '0'

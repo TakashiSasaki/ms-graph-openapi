@@ -1,0 +1,16 @@
+title: managedAppPinCharacterSet
+enum:
+  - numeric
+  - alphanumericAndSymbol
+type: string
+description: Character set which is to be used for a user's app PIN
+x-ms-enum:
+  name: managedAppPinCharacterSet
+  modelAsString: false
+  values:
+    - value: numeric
+      description: Numeric characters
+      name: numeric
+    - value: alphanumericAndSymbol
+      description: Alphanumeric and symbolic characters
+      name: alphanumericAndSymbol

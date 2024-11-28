@@ -1,0 +1,15 @@
+value:
+  cancelationDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  email: String
+  firstName: String
+  lastName: String
+  preferredLanguage: String
+  preferredTimezone: String
+  registrationDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  registrationQuestionAnswers:
+    - '@odata.type': microsoft.graph.virtualEventRegistrationQuestionAnswer
+  sessions:
+    - '@odata.type': microsoft.graph.virtualEventSession
+  status:
+    '@odata.type': microsoft.graph.virtualEventAttendeeRegistrationStatus
+  userId: String

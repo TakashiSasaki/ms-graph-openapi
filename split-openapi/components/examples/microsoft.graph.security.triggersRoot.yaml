@@ -1,0 +1,3 @@
+value:
+  retentionEvents:
+    - '@odata.type': microsoft.graph.security.retentionEvent

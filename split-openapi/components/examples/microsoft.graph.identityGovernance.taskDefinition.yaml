@@ -1,0 +1,9 @@
+value:
+  category:
+    '@odata.type': microsoft.graph.identityGovernance.lifecycleTaskCategory
+  continueOnError: 'true'
+  description: String
+  displayName: String
+  parameters:
+    - '@odata.type': microsoft.graph.identityGovernance.parameter
+  version: '0'

@@ -1,0 +1,24 @@
+description: >-
+  Provides operations to call the
+  userExperienceAnalyticsSummarizeWorkFromAnywhereDevices method.
+get:
+  tags:
+    - deviceManagement.deviceManagement
+  summary: Invoke function userExperienceAnalyticsSummarizeWorkFromAnywhereDevices
+  operationId: deviceManagement.userExperienceAnalyticsSummarizeWorkFromAnywhereDevices
+  responses:
+    2XX:
+      description: Success
+      content:
+        application/json:
+          schema:
+            anyOf:
+              - $ref: >-
+                  ..\components\schemas\microsoft.graph.userExperienceAnalyticsWorkFromAnywhereDevicesSummary.yaml
+              - type: object
+                nullable: true
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: function

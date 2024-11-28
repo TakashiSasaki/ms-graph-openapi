@@ -1,0 +1,12 @@
+value:
+  args:
+    - String
+  command:
+    - String
+  containerId: String
+  image:
+    '@odata.type': microsoft.graph.security.containerImageEvidence
+  isPrivileged: 'true'
+  name: String
+  pod:
+    '@odata.type': microsoft.graph.security.kubernetesPodEvidence

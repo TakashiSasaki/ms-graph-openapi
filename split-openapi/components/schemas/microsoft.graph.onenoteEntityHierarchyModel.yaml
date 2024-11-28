@@ -1,0 +1,47 @@
+allOf:
+  - $ref: .\microsoft.graph.onenoteEntitySchemaObjectModel.yaml
+  - title: onenoteEntityHierarchyModel
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      createdBy:
+        anyOf:
+          - $ref: .\microsoft.graph.identitySet.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Identity of the user, device, and application that created the item.
+          Read-only.
+      displayName:
+        type: string
+        description: The name of the notebook.
+        nullable: true
+      lastModifiedBy:
+        anyOf:
+          - $ref: .\microsoft.graph.identitySet.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Identity of the user, device, and application that created the item.
+          Read-only.
+      lastModifiedDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: >-
+          The date and time when the notebook was last modified. The timestamp
+          represents date and time information using ISO 8601 format and is
+          always in UTC time. For example, midnight UTC on Jan 1, 2014 is
+          2014-01-01T00:00:00Z. Read-only.
+        format: date-time
+        nullable: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.onenoteEntityHierarchyModel'
+    discriminator:
+      propertyName: '@odata.type'
+      mapping:
+        '#microsoft.graph.notebook': .\microsoft.graph.notebook.yaml
+        '#microsoft.graph.onenoteSection': .\microsoft.graph.onenoteSection.yaml
+        '#microsoft.graph.sectionGroup': .\microsoft.graph.sectionGroup.yaml

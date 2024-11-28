@@ -1,0 +1,5 @@
+value:
+  description: String
+  inputs:
+    - '@odata.type': microsoft.graph.authenticationAttributeCollectionInputConfiguration
+  title: String

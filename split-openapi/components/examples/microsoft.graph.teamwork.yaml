@@ -1,0 +1,11 @@
+value:
+  deletedChats:
+    - '@odata.type': microsoft.graph.deletedChat
+  deletedTeams:
+    - '@odata.type': microsoft.graph.deletedTeam
+  isTeamsEnabled: 'true'
+  region: String
+  teamsAppSettings:
+    '@odata.type': microsoft.graph.teamsAppSettings
+  workforceIntegrations:
+    - '@odata.type': microsoft.graph.workforceIntegration

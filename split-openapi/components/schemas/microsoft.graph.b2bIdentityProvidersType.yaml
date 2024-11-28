@@ -1,0 +1,10 @@
+title: b2bIdentityProvidersType
+enum:
+  - azureActiveDirectory
+  - externalFederation
+  - socialIdentityProviders
+  - emailOneTimePasscode
+  - microsoftAccount
+  - defaultConfiguredIdp
+  - unknownFutureValue
+type: string

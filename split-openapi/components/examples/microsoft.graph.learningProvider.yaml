@@ -1,0 +1,12 @@
+value:
+  displayName: String
+  isCourseActivitySyncEnabled: 'true'
+  learningContents:
+    - '@odata.type': microsoft.graph.learningContent
+  learningCourseActivities:
+    - '@odata.type': microsoft.graph.learningCourseActivity
+  loginWebUrl: String
+  longLogoWebUrlForDarkTheme: String
+  longLogoWebUrlForLightTheme: String
+  squareLogoWebUrlForDarkTheme: String
+  squareLogoWebUrlForLightTheme: String

@@ -1,0 +1,10 @@
+title: recipientScopeType
+enum:
+  - none
+  - internal
+  - external
+  - externalPartner
+  - externalNonPartner
+type: string
+x-ms-enum-flags:
+  isFlags: true

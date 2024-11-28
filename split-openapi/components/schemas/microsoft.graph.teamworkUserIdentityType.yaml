@@ -1,0 +1,12 @@
+title: teamworkUserIdentityType
+enum:
+  - aadUser
+  - onPremiseAadUser
+  - anonymousGuest
+  - federatedUser
+  - personalMicrosoftAccountUser
+  - skypeUser
+  - phoneUser
+  - unknownFutureValue
+  - emailUser
+type: string

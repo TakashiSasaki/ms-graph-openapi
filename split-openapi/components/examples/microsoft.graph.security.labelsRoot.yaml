@@ -1,0 +1,13 @@
+value:
+  authorities:
+    - '@odata.type': microsoft.graph.security.authorityTemplate
+  categories:
+    - '@odata.type': microsoft.graph.security.categoryTemplate
+  citations:
+    - '@odata.type': microsoft.graph.security.citationTemplate
+  departments:
+    - '@odata.type': microsoft.graph.security.departmentTemplate
+  filePlanReferences:
+    - '@odata.type': microsoft.graph.security.filePlanReferenceTemplate
+  retentionLabels:
+    - '@odata.type': microsoft.graph.security.retentionLabel

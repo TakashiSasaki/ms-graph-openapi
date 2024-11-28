@@ -1,0 +1,5 @@
+value:
+  assignedTo:
+    - '@odata.type': microsoft.graph.trainingAssignedTo
+  training:
+    '@odata.type': microsoft.graph.training

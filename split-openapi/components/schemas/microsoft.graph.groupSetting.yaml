@@ -1,0 +1,31 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: groupSetting
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      displayName:
+        type: string
+        description: >-
+          Display name of this group of settings, which comes from the
+          associated template.
+        nullable: true
+      templateId:
+        type: string
+        description: >-
+          Unique identifier for the tenant-level groupSettingTemplates object
+          that's been customized for this group-level settings object.
+          Read-only.
+        nullable: true
+      values:
+        type: array
+        items:
+          $ref: .\microsoft.graph.settingValue.yaml
+        description: >-
+          Collection of name-value pairs corresponding to the name and
+          defaultValue properties in the referenced groupSettingTemplates
+          object.
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.groupSetting'

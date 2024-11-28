@@ -1,0 +1,37 @@
+title: provisioningStep
+required:
+  - '@odata.type'
+type: object
+properties:
+  description:
+    type: string
+    description: Summary of what occurred during the step.
+    nullable: true
+  details:
+    anyOf:
+      - $ref: .\microsoft.graph.detailsInfo.yaml
+      - type: object
+        nullable: true
+    description: Details of what occurred during the step.
+  name:
+    type: string
+    description: Name of the step.
+    nullable: true
+  provisioningStepType:
+    anyOf:
+      - $ref: .\microsoft.graph.provisioningStepType.yaml
+      - type: object
+        nullable: true
+    description: >-
+      Type of step. Possible values are: import, scoping, matching, processing,
+      referenceResolution, export, unknownFutureValue.
+  status:
+    anyOf:
+      - $ref: .\microsoft.graph.provisioningResult.yaml
+      - type: object
+        nullable: true
+    description: >-
+      Status of the step. Possible values are: success, warning,  failure,
+      skipped, unknownFutureValue.
+  '@odata.type':
+    type: string

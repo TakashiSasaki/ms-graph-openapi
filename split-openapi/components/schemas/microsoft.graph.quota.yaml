@@ -1,0 +1,43 @@
+title: quota
+required:
+  - '@odata.type'
+type: object
+properties:
+  deleted:
+    type: number
+    description: Total space consumed by files in the recycle bin, in bytes. Read-only.
+    format: int64
+    nullable: true
+  remaining:
+    type: number
+    description: >-
+      Total space remaining before reaching the quota limit, in bytes.
+      Read-only.
+    format: int64
+    nullable: true
+  state:
+    type: string
+    description: >-
+      Enumeration value that indicates the state of the storage space.
+      Read-only.
+    nullable: true
+  storagePlanInformation:
+    anyOf:
+      - $ref: .\microsoft.graph.storagePlanInformation.yaml
+      - type: object
+        nullable: true
+    description: >-
+      Information about the drive's storage quota plans. Only in Personal
+      OneDrive.
+  total:
+    type: number
+    description: Total allowed storage space, in bytes. Read-only.
+    format: int64
+    nullable: true
+  used:
+    type: number
+    description: Total space used, in bytes. Read-only.
+    format: int64
+    nullable: true
+  '@odata.type':
+    type: string

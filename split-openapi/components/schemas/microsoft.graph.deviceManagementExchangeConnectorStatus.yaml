@@ -1,0 +1,28 @@
+title: deviceManagementExchangeConnectorStatus
+enum:
+  - none
+  - connectionPending
+  - connected
+  - disconnected
+  - unknownFutureValue
+type: string
+description: The current status of the Exchange Connector.
+x-ms-enum:
+  name: deviceManagementExchangeConnectorStatus
+  modelAsString: false
+  values:
+    - value: none
+      description: No Connector exists.
+      name: none
+    - value: connectionPending
+      description: Pending Connection to the Exchange Environment.
+      name: connectionPending
+    - value: connected
+      description: Connected to the Exchange Environment
+      name: connected
+    - value: disconnected
+      description: Disconnected from the Exchange Environment
+      name: disconnected
+    - value: unknownFutureValue
+      description: Evolvable enumeration sentinel value. Do not use.
+      name: unknownFutureValue

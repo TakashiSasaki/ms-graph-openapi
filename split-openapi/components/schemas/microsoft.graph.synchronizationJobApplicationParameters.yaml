@@ -1,0 +1,20 @@
+title: synchronizationJobApplicationParameters
+required:
+  - '@odata.type'
+type: object
+properties:
+  ruleId:
+    type: string
+    description: >-
+      The identifier of the synchronizationRule to be applied. This rule ID is
+      defined in the schema for a given synchronization job or template.
+    nullable: true
+  subjects:
+    type: array
+    items:
+      $ref: .\microsoft.graph.synchronizationJobSubject.yaml
+    description: >-
+      The identifiers of one or more objects to which a synchronizationJob is to
+      be applied.
+  '@odata.type':
+    type: string

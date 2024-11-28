@@ -1,0 +1,28 @@
+title: win32LobAppReturnCodeType
+enum:
+  - failed
+  - success
+  - softReboot
+  - hardReboot
+  - retry
+type: string
+description: Indicates the type of return code.
+x-ms-enum:
+  name: win32LobAppReturnCodeType
+  modelAsString: false
+  values:
+    - value: failed
+      description: Failed.
+      name: failed
+    - value: success
+      description: Success.
+      name: success
+    - value: softReboot
+      description: Soft-reboot is required.
+      name: softReboot
+    - value: hardReboot
+      description: Hard-reboot is required.
+      name: hardReboot
+    - value: retry
+      description: Retry.
+      name: retry

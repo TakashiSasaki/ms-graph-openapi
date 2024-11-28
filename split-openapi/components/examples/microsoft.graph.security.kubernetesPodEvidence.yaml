@@ -1,0 +1,18 @@
+value:
+  containers:
+    - '@odata.type': microsoft.graph.security.containerEvidence
+  controller:
+    '@odata.type': microsoft.graph.security.kubernetesControllerEvidence
+  ephemeralContainers:
+    - '@odata.type': microsoft.graph.security.containerEvidence
+  initContainers:
+    - '@odata.type': microsoft.graph.security.containerEvidence
+  labels:
+    '@odata.type': microsoft.graph.security.dictionary
+  name: String
+  namespace:
+    '@odata.type': microsoft.graph.security.kubernetesNamespaceEvidence
+  podIp:
+    '@odata.type': microsoft.graph.security.ipEvidence
+  serviceAccount:
+    '@odata.type': microsoft.graph.security.kubernetesServiceAccountEvidence

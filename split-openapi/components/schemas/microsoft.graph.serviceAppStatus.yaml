@@ -1,0 +1,8 @@
+title: serviceAppStatus
+enum:
+  - inactive
+  - active
+  - pendingActive
+  - pendingInactive
+  - unknownFutureValue
+type: string

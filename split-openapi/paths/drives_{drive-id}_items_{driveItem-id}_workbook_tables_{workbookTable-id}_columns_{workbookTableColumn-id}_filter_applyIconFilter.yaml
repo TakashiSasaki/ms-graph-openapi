@@ -1,0 +1,60 @@
+description: Provides operations to call the applyIconFilter method.
+post:
+  tags:
+    - drives.driveItem
+  summary: Invoke action applyIconFilter
+  operationId: >-
+    drives.drive.items.driveItem.workbook.tables.workbookTable.columns.workbookTableColumn.filter.applyIconFilter
+  requestBody:
+    description: Action parameters
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            icon:
+              anyOf:
+                - $ref: ..\components\schemas\microsoft.graph.workbookIcon.yaml
+                - type: object
+                  nullable: true
+    required: true
+  responses:
+    '204':
+      description: Success
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: action
+parameters:
+  - name: drive-id
+    in: path
+    description: The unique identifier of drive
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: drive
+  - name: driveItem-id
+    in: path
+    description: The unique identifier of driveItem
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: driveItem
+  - name: workbookTable-id
+    in: path
+    description: The unique identifier of workbookTable
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: workbookTable
+  - name: workbookTableColumn-id
+    in: path
+    description: The unique identifier of workbookTableColumn
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: workbookTableColumn
+x-ms-docs-grouped-path:
+  - >-
+    /drives/{drive-id}/items/{driveItem-id}/workbook/worksheets/{workbookWorksheet-id}/tables/{workbookTable-id}/columns/{workbookTableColumn-id}/filter/applyIconFilter

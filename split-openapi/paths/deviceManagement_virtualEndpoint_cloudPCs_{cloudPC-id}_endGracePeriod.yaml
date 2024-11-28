@@ -1,0 +1,32 @@
+description: Provides operations to call the endGracePeriod method.
+post:
+  tags:
+    - deviceManagement.virtualEndpoint
+  summary: Invoke action endGracePeriod
+  description: >-
+    End the grace period for a specific cloudPC object. The grace period is
+    triggered when the Cloud PC license is removed or the provisioning policy is
+    unassigned. It allows users to access Cloud PCs for up to seven days before
+    deprovisioning occurs. Ending the grace period immediately deprovisions the
+    Cloud PC without waiting the seven days.
+  externalDocs:
+    description: Find more info here
+    url: >-
+      https://learn.microsoft.com/graph/api/cloudpc-endgraceperiod?view=graph-rest-1.0
+  operationId: deviceManagement.virtualEndpoint.cloudPCs.cloudPC.endGracePeriod
+  responses:
+    '204':
+      description: Success
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: action
+parameters:
+  - name: cloudPC-id
+    in: path
+    description: The unique identifier of cloudPC
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: cloudPC

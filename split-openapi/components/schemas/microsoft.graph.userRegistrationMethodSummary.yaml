@@ -1,0 +1,30 @@
+title: userRegistrationMethodSummary
+required:
+  - '@odata.type'
+type: object
+properties:
+  totalUserCount:
+    type: number
+    description: Total number of users in the tenant.
+    format: int64
+  userRegistrationMethodCounts:
+    type: array
+    items:
+      $ref: .\microsoft.graph.userRegistrationMethodCount.yaml
+    description: Number of users registered for each authentication method.
+  userRoles:
+    anyOf:
+      - $ref: .\microsoft.graph.includedUserRoles.yaml
+      - type: object
+        nullable: true
+    description: >-
+      The role type of the user. Possible values are: all, privilegedAdmin,
+      admin, user, unknownFutureValue.
+  userTypes:
+    anyOf:
+      - $ref: .\microsoft.graph.includedUserTypes.yaml
+      - type: object
+        nullable: true
+    description: 'User type. Possible values are: all, member, guest, unknownFutureValue.'
+  '@odata.type':
+    type: string

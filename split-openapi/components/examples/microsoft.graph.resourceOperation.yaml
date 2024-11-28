@@ -1,0 +1,4 @@
+value:
+  actionName: String
+  description: String
+  resourceName: String

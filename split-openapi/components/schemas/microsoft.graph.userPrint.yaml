@@ -1,0 +1,12 @@
+title: userPrint
+required:
+  - '@odata.type'
+type: object
+properties:
+  recentPrinterShares:
+    type: array
+    items:
+      $ref: .\microsoft.graph.printerShare.yaml
+    x-ms-navigationProperty: true
+  '@odata.type':
+    type: string

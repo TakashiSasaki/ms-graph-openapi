@@ -1,0 +1,20 @@
+title: sharedPCAccountDeletionPolicyType
+enum:
+  - immediate
+  - diskSpaceThreshold
+  - diskSpaceThresholdOrInactiveThreshold
+type: string
+description: Possible values for when accounts are deleted on a shared PC.
+x-ms-enum:
+  name: sharedPCAccountDeletionPolicyType
+  modelAsString: false
+  values:
+    - value: immediate
+      description: Delete immediately.
+      name: immediate
+    - value: diskSpaceThreshold
+      description: Delete at disk space threshold.
+      name: diskSpaceThreshold
+    - value: diskSpaceThresholdOrInactiveThreshold
+      description: Delete at disk space threshold or inactive threshold.
+      name: diskSpaceThresholdOrInactiveThreshold

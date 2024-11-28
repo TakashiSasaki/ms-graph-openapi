@@ -1,0 +1,29 @@
+title: rubricLevel
+required:
+  - '@odata.type'
+type: object
+properties:
+  description:
+    anyOf:
+      - $ref: .\microsoft.graph.educationItemBody.yaml
+      - type: object
+        nullable: true
+    description: The description of this rubric level.
+  displayName:
+    type: string
+    description: The name of this rubric level.
+    nullable: true
+  grading:
+    anyOf:
+      - $ref: .\microsoft.graph.educationAssignmentGradeType.yaml
+      - type: object
+        nullable: true
+    description: >-
+      Null if this is a no-points rubric; educationAssignmentPointsGradeType if
+      it's a points rubric.
+  levelId:
+    type: string
+    description: The ID of this resource.
+    nullable: true
+  '@odata.type':
+    type: string

@@ -1,0 +1,8 @@
+value:
+  emailContent: String
+  isDefaultLangauge: 'true'
+  language: String
+  locale: String
+  sentFrom:
+    '@odata.type': microsoft.graph.emailIdentity
+  subject: String

@@ -1,0 +1,27 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: virtualEventsRoot
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      events:
+        type: array
+        items:
+          $ref: .\microsoft.graph.virtualEvent.yaml
+        x-ms-navigationProperty: true
+      townhalls:
+        type: array
+        items:
+          $ref: .\microsoft.graph.virtualEventTownhall.yaml
+        description: A collection of town halls. Nullable.
+        x-ms-navigationProperty: true
+      webinars:
+        type: array
+        items:
+          $ref: .\microsoft.graph.virtualEventWebinar.yaml
+        description: A collection of webinars. Nullable.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.virtualEventsRoot'

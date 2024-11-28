@@ -1,0 +1,5 @@
+value:
+  capacity: '0'
+  questions:
+    - '@odata.type': microsoft.graph.virtualEventRegistrationQuestionBase
+  registrationWebUrl: String

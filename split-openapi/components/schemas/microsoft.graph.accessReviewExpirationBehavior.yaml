@@ -1,0 +1,7 @@
+title: accessReviewExpirationBehavior
+enum:
+  - keepAccess
+  - removeAccess
+  - acceptAccessRecommendation
+  - unknownFutureValue
+type: string

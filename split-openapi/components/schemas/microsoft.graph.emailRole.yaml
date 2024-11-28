@@ -1,0 +1,7 @@
+title: emailRole
+enum:
+  - unknown
+  - sender
+  - recipient
+  - unknownFutureValue
+type: string

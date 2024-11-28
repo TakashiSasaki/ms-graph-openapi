@@ -1,0 +1,20 @@
+value:
+  isAdmin: 'true'
+  isMfaCapable: 'true'
+  isMfaRegistered: 'true'
+  isPasswordlessCapable: 'true'
+  isSsprCapable: 'true'
+  isSsprEnabled: 'true'
+  isSsprRegistered: 'true'
+  isSystemPreferredAuthenticationMethodEnabled: 'true'
+  lastUpdatedDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  methodsRegistered:
+    - String
+  systemPreferredAuthenticationMethods:
+    - String
+  userDisplayName: String
+  userPreferredMethodForSecondaryAuthentication:
+    '@odata.type': microsoft.graph.userDefaultAuthenticationMethod
+  userPrincipalName: String
+  userType:
+    '@odata.type': microsoft.graph.signInUserType

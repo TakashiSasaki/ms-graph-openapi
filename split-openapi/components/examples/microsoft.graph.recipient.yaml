@@ -1,0 +1,3 @@
+value:
+  emailAddress:
+    '@odata.type': microsoft.graph.emailAddress

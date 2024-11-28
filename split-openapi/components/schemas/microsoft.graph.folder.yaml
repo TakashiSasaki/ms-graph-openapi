@@ -1,0 +1,20 @@
+title: folder
+required:
+  - '@odata.type'
+type: object
+properties:
+  childCount:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    description: Number of children contained immediately within this container.
+    format: int32
+    nullable: true
+  view:
+    anyOf:
+      - $ref: .\microsoft.graph.folderView.yaml
+      - type: object
+        nullable: true
+    description: A collection of properties defining the recommended view for the folder.
+  '@odata.type':
+    type: string

@@ -1,0 +1,7 @@
+title: x509CertificateRuleType
+enum:
+  - issuerSubject
+  - policyOID
+  - unknownFutureValue
+  - issuerSubjectAndPolicyOID
+type: string

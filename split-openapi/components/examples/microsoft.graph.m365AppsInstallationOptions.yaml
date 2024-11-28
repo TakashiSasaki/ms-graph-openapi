@@ -1,0 +1,7 @@
+value:
+  appsForMac:
+    '@odata.type': microsoft.graph.appsInstallationOptionsForMac
+  appsForWindows:
+    '@odata.type': microsoft.graph.appsInstallationOptionsForWindows
+  updateChannel:
+    '@odata.type': microsoft.graph.appsUpdateChannelType

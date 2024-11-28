@@ -1,0 +1,20 @@
+allOf:
+  - $ref: .\microsoft.graph.authenticationEventListener.yaml
+  - title: onUserCreateStartListener
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      handler:
+        anyOf:
+          - $ref: .\microsoft.graph.onUserCreateStartHandler.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Required. Configuration for what to invoke if the event resolves to
+          this listener. This lets us define potential handler configurations
+          per-event.
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.onUserCreateStartListener'
+x-ms-discriminator-value: '#microsoft.graph.onUserCreateStartListener'

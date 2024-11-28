@@ -1,0 +1,10 @@
+value:
+  deviceCount: '0'
+  displayName: String
+  managedDevices:
+    - '@odata.type': microsoft.graph.managedDevice
+  platform:
+    '@odata.type': microsoft.graph.detectedAppPlatformType
+  publisher: String
+  sizeInByte: '0'
+  version: String

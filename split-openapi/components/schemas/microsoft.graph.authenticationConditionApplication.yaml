@@ -1,0 +1,12 @@
+title: authenticationConditionApplication
+required:
+  - '@odata.type'
+type: object
+properties:
+  appId:
+    type: string
+    description: >-
+      The identifier for an application corresponding to a condition which will
+      trigger an authenticationEventListener.
+  '@odata.type':
+    type: string

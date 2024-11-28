@@ -1,0 +1,6 @@
+value:
+  description: String
+  displayName: String
+  externalSource:
+    '@odata.type': microsoft.graph.educationExternalSource
+  externalSourceDetail: String

@@ -1,0 +1,6 @@
+title: plannerContainerType
+enum:
+  - group
+  - unknownFutureValue
+  - roster
+type: string

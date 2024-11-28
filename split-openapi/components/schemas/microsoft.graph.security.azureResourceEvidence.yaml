@@ -1,0 +1,23 @@
+allOf:
+  - $ref: .\microsoft.graph.security.alertEvidence.yaml
+  - title: azureResourceEvidence
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      resourceId:
+        type: string
+        description: The unique identifier for the Azure resource.
+        nullable: true
+      resourceName:
+        type: string
+        description: The name of the resource.
+        nullable: true
+      resourceType:
+        type: string
+        description: The type of the resource.
+        nullable: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.security.azureResourceEvidence'
+x-ms-discriminator-value: '#microsoft.graph.security.azureResourceEvidence'

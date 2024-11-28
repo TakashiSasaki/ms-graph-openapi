@@ -1,0 +1,52 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: deviceConfigurationUserOverview
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      configurationVersion:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: Version of the policy for that overview
+        format: int32
+      errorCount:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: Number of error Users
+        format: int32
+      failedCount:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: Number of failed Users
+        format: int32
+      lastUpdateDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: Last update time
+        format: date-time
+      notApplicableCount:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: Number of not applicable users
+        format: int32
+      pendingCount:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: Number of pending Users
+        format: int32
+      successCount:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: Number of succeeded Users
+        format: int32
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.deviceConfigurationUserOverview'

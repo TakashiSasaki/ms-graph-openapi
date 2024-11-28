@@ -1,0 +1,53 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: deviceManagementPartner
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      displayName:
+        type: string
+        description: Partner display name
+        nullable: true
+      groupsRequiringPartnerEnrollment:
+        type: array
+        items:
+          $ref: .\microsoft.graph.deviceManagementPartnerAssignment.yaml
+        description: User groups that specifies whether enrollment is through partner.
+      isConfigured:
+        type: boolean
+        description: Whether device management partner is configured or not
+      lastHeartbeatDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: >-
+          Timestamp of last heartbeat after admin enabled option Connect to
+          Device management Partner
+        format: date-time
+      partnerAppType:
+        $ref: .\microsoft.graph.deviceManagementPartnerAppType.yaml
+      partnerState:
+        $ref: .\microsoft.graph.deviceManagementPartnerTenantState.yaml
+      singleTenantAppId:
+        type: string
+        description: Partner Single tenant App id
+        nullable: true
+      whenPartnerDevicesWillBeMarkedAsNonCompliantDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: DateTime in UTC when PartnerDevices will be marked as NonCompliant
+        format: date-time
+        nullable: true
+      whenPartnerDevicesWillBeRemovedDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: DateTime in UTC when PartnerDevices will be removed
+        format: date-time
+        nullable: true
+      '@odata.type':
+        type: string
+    description: Entity which represents a connection to device management partner.
+x-ms-discriminator-value: '#microsoft.graph.deviceManagementPartner'

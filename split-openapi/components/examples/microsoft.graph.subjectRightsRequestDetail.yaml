@@ -1,0 +1,10 @@
+value:
+  excludedItemCount: '0'
+  insightCounts:
+    - '@odata.type': microsoft.graph.keyValuePair
+  itemCount: '0'
+  itemNeedReview: '0'
+  productItemCounts:
+    - '@odata.type': microsoft.graph.keyValuePair
+  signedOffItemCount: '0'
+  totalItemSize: '0'

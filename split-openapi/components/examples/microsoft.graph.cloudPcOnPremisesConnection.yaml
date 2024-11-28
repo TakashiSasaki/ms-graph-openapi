@@ -1,0 +1,20 @@
+value:
+  adDomainName: String
+  adDomainPassword: String
+  adDomainUsername: String
+  alternateResourceUrl: String
+  connectionType:
+    '@odata.type': microsoft.graph.cloudPcOnPremisesConnectionType
+  displayName: String
+  healthCheckStatus:
+    '@odata.type': microsoft.graph.cloudPcOnPremisesConnectionStatus
+  healthCheckStatusDetail:
+    '@odata.type': microsoft.graph.cloudPcOnPremisesConnectionStatusDetail
+  inUse: 'true'
+  organizationalUnit: String
+  resourceGroupId: String
+  subnetId: String
+  subscriptionId: String
+  subscriptionName: String
+  virtualNetworkId: String
+  virtualNetworkLocation: String

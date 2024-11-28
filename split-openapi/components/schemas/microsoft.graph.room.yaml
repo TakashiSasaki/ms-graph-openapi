@@ -1,0 +1,76 @@
+allOf:
+  - $ref: .\microsoft.graph.place.yaml
+  - title: room
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      audioDeviceName:
+        type: string
+        description: Specifies the name of the audio device in the room.
+        nullable: true
+      bookingType:
+        anyOf:
+          - $ref: .\microsoft.graph.bookingType.yaml
+          - type: object
+            nullable: true
+        description: Type of room. Possible values are standard, and reserved.
+      building:
+        type: string
+        description: Specifies the building name or building number that the room is in.
+        nullable: true
+      capacity:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: Specifies the capacity of the room.
+        format: int32
+        nullable: true
+      displayDeviceName:
+        type: string
+        description: Specifies the name of the display device in the room.
+        nullable: true
+      emailAddress:
+        type: string
+        description: Email address of the room.
+        nullable: true
+      floorLabel:
+        type: string
+        description: Specifies a descriptive label for the floor, for example, P.
+        nullable: true
+      floorNumber:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: Specifies the floor number that the room is on.
+        format: int32
+        nullable: true
+      isWheelChairAccessible:
+        type: boolean
+        description: Specifies whether the room is wheelchair accessible.
+        nullable: true
+      label:
+        type: string
+        description: >-
+          Specifies a descriptive label for the room, for example, a number or
+          name.
+        nullable: true
+      nickname:
+        type: string
+        description: Specifies a nickname for the room, for example, 'conf room'.
+      tags:
+        type: array
+        items:
+          type: string
+          nullable: true
+        description: >-
+          Specifies other features of the room, for example, details like the
+          type of view or furniture type.
+      videoDeviceName:
+        type: string
+        description: Specifies the name of the video device in the room.
+        nullable: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.room'
+x-ms-discriminator-value: '#microsoft.graph.room'

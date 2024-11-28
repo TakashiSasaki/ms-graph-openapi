@@ -1,0 +1,31 @@
+title: contentCustomization
+required:
+  - '@odata.type'
+type: object
+properties:
+  attributeCollection:
+    type: array
+    items:
+      $ref: .\microsoft.graph.keyValue.yaml
+    description: >-
+      Represents the content options of External Identities to be customized
+      throughout the authentication flow for a tenant.
+  attributeCollectionRelativeUrl:
+    type: string
+    description: >-
+      A relative URL for the content options of External Identities to be
+      customized throughout the authentication flow for a tenant.
+    nullable: true
+  registrationCampaign:
+    type: array
+    items:
+      $ref: .\microsoft.graph.keyValue.yaml
+    description: Represents content options to customize during MFA proofup interruptions.
+  registrationCampaignRelativeUrl:
+    type: string
+    description: >-
+      The relative URL of the content options to customize during MFA proofup
+      interruptions.
+    nullable: true
+  '@odata.type':
+    type: string

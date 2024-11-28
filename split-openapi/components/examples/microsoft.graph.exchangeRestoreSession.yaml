@@ -1,0 +1,5 @@
+value:
+  granularMailboxRestoreArtifacts:
+    - '@odata.type': microsoft.graph.granularMailboxRestoreArtifact
+  mailboxRestoreArtifacts:
+    - '@odata.type': microsoft.graph.mailboxRestoreArtifact

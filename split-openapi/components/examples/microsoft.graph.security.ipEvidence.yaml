@@ -1,0 +1,7 @@
+value:
+  countryLetterCode: String
+  ipAddress: String
+  location:
+    '@odata.type': microsoft.graph.security.geoLocation
+  stream:
+    '@odata.type': microsoft.graph.security.stream

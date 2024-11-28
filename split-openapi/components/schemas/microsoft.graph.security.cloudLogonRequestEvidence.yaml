@@ -1,0 +1,15 @@
+allOf:
+  - $ref: .\microsoft.graph.security.alertEvidence.yaml
+  - title: cloudLogonRequestEvidence
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      requestId:
+        type: string
+        description: The unique identifier for the sign-in request.
+        nullable: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.security.cloudLogonRequestEvidence'
+x-ms-discriminator-value: '#microsoft.graph.security.cloudLogonRequestEvidence'

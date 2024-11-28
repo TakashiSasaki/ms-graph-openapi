@@ -1,0 +1,13 @@
+value:
+  appCrashCount: '0'
+  appHangCount: '0'
+  crashedAppCount: '0'
+  deviceAppHealthScore: '0'
+  deviceDisplayName: String
+  deviceId: String
+  deviceManufacturer: String
+  deviceModel: String
+  healthStatus:
+    '@odata.type': microsoft.graph.userExperienceAnalyticsHealthState
+  meanTimeToFailureInMinutes: '0'
+  processedDateTime: '0001-01-01T00:00:00.0000000+00:00'

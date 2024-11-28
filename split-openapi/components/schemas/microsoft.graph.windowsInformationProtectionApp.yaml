@@ -1,0 +1,33 @@
+title: windowsInformationProtectionApp
+required:
+  - '@odata.type'
+type: object
+properties:
+  denied:
+    type: boolean
+    description: If true, app is denied protection or exemption.
+  description:
+    type: string
+    description: The app's description.
+    nullable: true
+  displayName:
+    type: string
+    description: App display name.
+  productName:
+    type: string
+    description: The product name.
+    nullable: true
+  publisherName:
+    type: string
+    description: The publisher name
+    nullable: true
+  '@odata.type':
+    type: string
+description: App for Windows information protection
+discriminator:
+  propertyName: '@odata.type'
+  mapping:
+    '#microsoft.graph.windowsInformationProtectionDesktopApp': .\microsoft.graph.windowsInformationProtectionDesktopApp.yaml
+    '#microsoft.graph.windowsInformationProtectionStoreApp': .\microsoft.graph.windowsInformationProtectionStoreApp.yaml
+    microsoft.graph.windowsInformationProtectionDesktopApp: .\microsoft.graph.windowsInformationProtectionDesktopApp.yaml
+    microsoft.graph.windowsInformationProtectionStoreApp: .\microsoft.graph.windowsInformationProtectionStoreApp.yaml

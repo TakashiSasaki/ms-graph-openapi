@@ -1,0 +1,15 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: authenticationMethodModeDetail
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      authenticationMethod:
+        $ref: .\microsoft.graph.baseAuthenticationMethod.yaml
+      displayName:
+        type: string
+        description: The display name of this mode
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.authenticationMethodModeDetail'

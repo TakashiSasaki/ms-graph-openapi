@@ -1,0 +1,8 @@
+title: exchangeIdFormat
+enum:
+  - entryId
+  - ewsId
+  - immutableEntryId
+  - restId
+  - restImmutableEntryId
+type: string

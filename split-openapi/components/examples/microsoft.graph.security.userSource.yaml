@@ -1,0 +1,5 @@
+value:
+  email: String
+  includedSources:
+    '@odata.type': microsoft.graph.security.sourceType
+  siteWebUrl: String

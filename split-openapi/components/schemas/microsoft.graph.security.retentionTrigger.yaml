@@ -1,0 +1,8 @@
+title: retentionTrigger
+enum:
+  - dateLabeled
+  - dateCreated
+  - dateModified
+  - dateOfEvent
+  - unknownFutureValue
+type: string

@@ -1,0 +1,28 @@
+value:
+  excusedBy:
+    '@odata.type': microsoft.graph.identitySet
+  excusedDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  outcomes:
+    - '@odata.type': microsoft.graph.educationOutcome
+  reassignedBy:
+    '@odata.type': microsoft.graph.identitySet
+  reassignedDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  recipient:
+    '@odata.type': microsoft.graph.educationSubmissionRecipient
+  resources:
+    - '@odata.type': microsoft.graph.educationSubmissionResource
+  resourcesFolderUrl: String
+  returnedBy:
+    '@odata.type': microsoft.graph.identitySet
+  returnedDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  status:
+    '@odata.type': microsoft.graph.educationSubmissionStatus
+  submittedBy:
+    '@odata.type': microsoft.graph.identitySet
+  submittedDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  submittedResources:
+    - '@odata.type': microsoft.graph.educationSubmissionResource
+  unsubmittedBy:
+    '@odata.type': microsoft.graph.identitySet
+  unsubmittedDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  webUrl: String

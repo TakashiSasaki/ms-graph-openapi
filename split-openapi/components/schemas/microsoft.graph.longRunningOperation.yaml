@@ -1,0 +1,53 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: longRunningOperation
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      createdDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: >-
+          The start time of the operation. The timestamp type represents date
+          and time information using ISO 8601 format and is always in UTC. For
+          example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+        format: date-time
+        nullable: true
+      lastActionDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: >-
+          The time of the last action in the operation. The timestamp type
+          represents date and time information using ISO 8601 format and is
+          always in UTC. For example, midnight UTC on Jan 1, 2014 is
+          2014-01-01T00:00:00Z.
+        format: date-time
+        nullable: true
+      resourceLocation:
+        type: string
+        description: URI of the resource that the operation is performed on.
+        nullable: true
+      status:
+        anyOf:
+          - $ref: .\microsoft.graph.longRunningOperationStatus.yaml
+          - type: object
+            nullable: true
+        description: >-
+          The status of the operation. The possible values are: notStarted,
+          running, succeeded, failed, unknownFutureValue.
+      statusDetail:
+        type: string
+        description: Details about the status of the operation.
+        nullable: true
+      '@odata.type':
+        type: string
+    description: The status of a long-running operation.
+    discriminator:
+      propertyName: '@odata.type'
+      mapping:
+        '#microsoft.graph.attackSimulationOperation': .\microsoft.graph.attackSimulationOperation.yaml
+        '#microsoft.graph.engagementAsyncOperation': .\microsoft.graph.engagementAsyncOperation.yaml
+        '#microsoft.graph.richLongRunningOperation': .\microsoft.graph.richLongRunningOperation.yaml

@@ -1,0 +1,11 @@
+title: mediaContentRatingNewZealand
+required:
+  - '@odata.type'
+type: object
+properties:
+  movieRating:
+    $ref: .\microsoft.graph.ratingNewZealandMoviesType.yaml
+  tvRating:
+    $ref: .\microsoft.graph.ratingNewZealandTelevisionType.yaml
+  '@odata.type':
+    type: string

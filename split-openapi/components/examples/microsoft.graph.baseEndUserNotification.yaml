@@ -1,0 +1,4 @@
+value:
+  defaultLanguage: String
+  endUserNotification:
+    '@odata.type': microsoft.graph.endUserNotification

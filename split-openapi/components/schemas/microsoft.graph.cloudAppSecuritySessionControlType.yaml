@@ -1,0 +1,7 @@
+title: cloudAppSecuritySessionControlType
+enum:
+  - mcasConfigured
+  - monitorOnly
+  - blockDownloads
+  - unknownFutureValue
+type: string

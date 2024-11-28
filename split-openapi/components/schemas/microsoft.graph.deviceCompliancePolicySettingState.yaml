@@ -1,0 +1,55 @@
+title: deviceCompliancePolicySettingState
+required:
+  - '@odata.type'
+type: object
+properties:
+  currentValue:
+    type: string
+    description: Current value of setting on device
+    nullable: true
+  errorCode:
+    type: number
+    description: Error code for the setting
+    format: int64
+  errorDescription:
+    type: string
+    description: Error description
+    nullable: true
+  instanceDisplayName:
+    type: string
+    description: Name of setting instance that is being reported.
+    nullable: true
+  setting:
+    type: string
+    description: The setting that is being reported
+    nullable: true
+  settingName:
+    type: string
+    description: Localized/user friendly setting name that is being reported
+    nullable: true
+  sources:
+    type: array
+    items:
+      $ref: .\microsoft.graph.settingSource.yaml
+    description: Contributing policies
+  state:
+    $ref: .\microsoft.graph.complianceStatus.yaml
+  userEmail:
+    type: string
+    description: UserEmail
+    nullable: true
+  userId:
+    type: string
+    description: UserId
+    nullable: true
+  userName:
+    type: string
+    description: UserName
+    nullable: true
+  userPrincipalName:
+    type: string
+    description: UserPrincipalName.
+    nullable: true
+  '@odata.type':
+    type: string
+description: Device Compilance Policy Setting State for a given device.

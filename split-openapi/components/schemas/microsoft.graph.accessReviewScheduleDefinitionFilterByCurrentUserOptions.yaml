@@ -1,0 +1,5 @@
+title: accessReviewScheduleDefinitionFilterByCurrentUserOptions
+enum:
+  - reviewer
+  - unknownFutureValue
+type: string

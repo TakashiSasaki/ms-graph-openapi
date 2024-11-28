@@ -1,0 +1,14 @@
+title: accessReviewRecommendationInsightSetting
+required:
+  - '@odata.type'
+type: object
+properties:
+  '@odata.type':
+    type: string
+discriminator:
+  propertyName: '@odata.type'
+  mapping:
+    '#microsoft.graph.groupPeerOutlierRecommendationInsightSettings': .\microsoft.graph.groupPeerOutlierRecommendationInsightSettings.yaml
+    '#microsoft.graph.userLastSignInRecommendationInsightSetting': .\microsoft.graph.userLastSignInRecommendationInsightSetting.yaml
+    microsoft.graph.groupPeerOutlierRecommendationInsightSettings: .\microsoft.graph.groupPeerOutlierRecommendationInsightSettings.yaml
+    microsoft.graph.userLastSignInRecommendationInsightSetting: .\microsoft.graph.userLastSignInRecommendationInsightSetting.yaml

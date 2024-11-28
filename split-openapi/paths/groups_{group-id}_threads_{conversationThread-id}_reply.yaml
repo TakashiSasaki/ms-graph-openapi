@@ -1,0 +1,59 @@
+description: Provides operations to call the reply method.
+post:
+  tags:
+    - groups.conversationThread
+  summary: Invoke action reply
+  description: >-
+    Create an open extension (openTypeExtension object) and add custom
+    properties in a new or existing instance of a resource. You can create an
+    open extension in a resource instance and store custom data to it all in the
+    same operation, except for specific resources. The table in the Permissions
+    section lists the resources that support open extensions.
+  externalDocs:
+    description: Find more info here
+    url: >-
+      https://learn.microsoft.com/graph/api/opentypeextension-post-opentypeextension?view=graph-rest-1.0
+  operationId: groups.group.threads.conversationThread.reply
+  requestBody:
+    description: Action parameters
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            Post:
+              $ref: ..\components\schemas\microsoft.graph.post.yaml
+    required: true
+  responses:
+    '204':
+      description: Success
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: action
+parameters:
+  - name: group-id
+    in: path
+    description: The unique identifier of group
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: group
+  - name: conversationThread-id
+    in: path
+    description: The unique identifier of conversationThread
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: conversationThread
+x-ms-docs-grouped-path:
+  - >-
+    /groups/{group-id}/conversations/{conversation-id}/threads/{conversationThread-id}/reply
+  - >-
+    /groups/{group-id}/conversations/{conversation-id}/threads/{conversationThread-id}/posts/{post-id}/inReplyTo/reply
+  - >-
+    /groups/{group-id}/conversations/{conversation-id}/threads/{conversationThread-id}/posts/{post-id}/reply
+  - >-
+    /groups/{group-id}/threads/{conversationThread-id}/posts/{post-id}/inReplyTo/reply
+  - /groups/{group-id}/threads/{conversationThread-id}/posts/{post-id}/reply

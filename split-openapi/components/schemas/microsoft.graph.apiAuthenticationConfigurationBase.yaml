@@ -1,0 +1,16 @@
+title: apiAuthenticationConfigurationBase
+required:
+  - '@odata.type'
+type: object
+properties:
+  '@odata.type':
+    type: string
+discriminator:
+  propertyName: '@odata.type'
+  mapping:
+    '#microsoft.graph.basicAuthentication': .\microsoft.graph.basicAuthentication.yaml
+    '#microsoft.graph.clientCertificateAuthentication': .\microsoft.graph.clientCertificateAuthentication.yaml
+    '#microsoft.graph.pkcs12Certificate': .\microsoft.graph.pkcs12Certificate.yaml
+    microsoft.graph.basicAuthentication: .\microsoft.graph.basicAuthentication.yaml
+    microsoft.graph.clientCertificateAuthentication: .\microsoft.graph.clientCertificateAuthentication.yaml
+    microsoft.graph.pkcs12Certificate: .\microsoft.graph.pkcs12Certificate.yaml

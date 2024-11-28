@@ -1,0 +1,9 @@
+title: attributeType
+enum:
+  - String
+  - Integer
+  - Reference
+  - Binary
+  - Boolean
+  - DateTime
+type: string

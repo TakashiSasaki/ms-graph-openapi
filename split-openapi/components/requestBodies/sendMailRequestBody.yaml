@@ -1,0 +1,13 @@
+description: Action parameters
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        Message:
+          $ref: ..\schemas\microsoft.graph.message.yaml
+        SaveToSentItems:
+          type: boolean
+          default: false
+          nullable: true
+required: true

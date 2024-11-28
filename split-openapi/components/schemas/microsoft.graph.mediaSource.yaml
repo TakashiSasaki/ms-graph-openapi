@@ -1,0 +1,13 @@
+title: mediaSource
+required:
+  - '@odata.type'
+type: object
+properties:
+  contentCategory:
+    anyOf:
+      - $ref: .\microsoft.graph.mediaSourceContentCategory.yaml
+      - type: object
+        nullable: true
+    description: Enumeration value that indicates the media content category.
+  '@odata.type':
+    type: string

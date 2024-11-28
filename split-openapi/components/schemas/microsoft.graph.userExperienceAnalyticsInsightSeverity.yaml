@@ -1,0 +1,30 @@
+title: userExperienceAnalyticsInsightSeverity
+enum:
+  - none
+  - informational
+  - warning
+  - error
+  - unknownFutureValue
+type: string
+description: >-
+  Indicates severity of insights. Possible values are: None, Informational,
+  Warning, Error.
+x-ms-enum:
+  name: userExperienceAnalyticsInsightSeverity
+  modelAsString: false
+  values:
+    - value: none
+      description: Indicates that the insight severity is none.
+      name: none
+    - value: informational
+      description: Indicates that the insight severity is informational.
+      name: informational
+    - value: warning
+      description: Indicates that the insight severity is warning.
+      name: warning
+    - value: error
+      description: Indicates that the insight severity is error.
+      name: error
+    - value: unknownFutureValue
+      description: Evolvable enumeration sentinel value. Do not use.
+      name: unknownFutureValue

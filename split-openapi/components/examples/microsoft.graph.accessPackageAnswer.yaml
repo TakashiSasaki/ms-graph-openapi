@@ -1,0 +1,4 @@
+value:
+  answeredQuestion:
+    '@odata.type': microsoft.graph.accessPackageQuestion
+  displayValue: String

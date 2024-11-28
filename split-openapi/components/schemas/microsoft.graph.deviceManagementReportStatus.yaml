@@ -1,0 +1,28 @@
+title: deviceManagementReportStatus
+enum:
+  - unknown
+  - notStarted
+  - inProgress
+  - completed
+  - failed
+type: string
+description: Possible statuses associated with a generated report.
+x-ms-enum:
+  name: deviceManagementReportStatus
+  modelAsString: false
+  values:
+    - value: unknown
+      description: Report generation status is unknown.
+      name: unknown
+    - value: notStarted
+      description: Report generation has not started.
+      name: notStarted
+    - value: inProgress
+      description: Report generation is in progress.
+      name: inProgress
+    - value: completed
+      description: Report generation is completed.
+      name: completed
+    - value: failed
+      description: Report generation has failed.
+      name: failed

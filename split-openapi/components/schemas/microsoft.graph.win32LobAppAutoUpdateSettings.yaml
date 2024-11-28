@@ -1,0 +1,10 @@
+title: win32LobAppAutoUpdateSettings
+required:
+  - '@odata.type'
+type: object
+properties:
+  autoUpdateSupersededAppsState:
+    $ref: .\microsoft.graph.win32LobAutoUpdateSupersededAppsState.yaml
+  '@odata.type':
+    type: string
+description: Contains properties used to perform the auto-update of an application.

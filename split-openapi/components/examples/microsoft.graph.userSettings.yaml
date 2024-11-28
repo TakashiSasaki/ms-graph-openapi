@@ -1,0 +1,11 @@
+value:
+  contributionToContentDiscoveryAsOrganizationDisabled: 'true'
+  contributionToContentDiscoveryDisabled: 'true'
+  itemInsights:
+    '@odata.type': microsoft.graph.userInsightsSettings
+  shiftPreferences:
+    '@odata.type': microsoft.graph.shiftPreferences
+  storage:
+    '@odata.type': microsoft.graph.userStorage
+  windows:
+    - '@odata.type': microsoft.graph.windowsSetting

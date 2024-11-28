@@ -1,0 +1,47 @@
+allOf:
+  - $ref: .\microsoft.graph.mobileLobApp.yaml
+  - title: macOSDmgApp
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      ignoreVersionDetection:
+        type: boolean
+        description: >-
+          When TRUE, indicates that the app's version will NOT be used to detect
+          if the app is installed on a device. When FALSE, indicates that the
+          app's version will be used to detect if the app is installed on a
+          device. Set this to true for apps that use a self update feature. The
+          default value is FALSE.
+      includedApps:
+        type: array
+        items:
+          $ref: .\microsoft.graph.macOSIncludedApp.yaml
+        description: >-
+          The list of .apps expected to be installed by the DMG (Apple Disk
+          Image). This collection can contain a maximum of 500 elements.
+      minimumSupportedOperatingSystem:
+        anyOf:
+          - $ref: .\microsoft.graph.macOSMinimumOperatingSystem.yaml
+          - type: object
+            nullable: true
+        description: >-
+          ComplexType macOSMinimumOperatingSystem that indicates the minimum
+          operating system applicable for the application.
+      primaryBundleId:
+        type: string
+        description: >-
+          The bundleId of the primary .app in the DMG (Apple Disk Image). This
+          maps to the CFBundleIdentifier in the app's bundle configuration.
+      primaryBundleVersion:
+        type: string
+        description: >-
+          The version of the primary .app in the DMG (Apple Disk Image). This
+          maps to the CFBundleShortVersion in the app's bundle configuration.
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.macOSDmgApp'
+    description: >-
+      Contains properties and inherited properties for the MacOS DMG (Apple Disk
+      Image) App.
+x-ms-discriminator-value: '#microsoft.graph.macOSDmgApp'

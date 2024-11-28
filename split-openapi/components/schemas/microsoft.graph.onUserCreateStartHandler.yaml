@@ -1,0 +1,12 @@
+title: onUserCreateStartHandler
+required:
+  - '@odata.type'
+type: object
+properties:
+  '@odata.type':
+    type: string
+discriminator:
+  propertyName: '@odata.type'
+  mapping:
+    '#microsoft.graph.onUserCreateStartExternalUsersSelfServiceSignUp': .\microsoft.graph.onUserCreateStartExternalUsersSelfServiceSignUp.yaml
+    microsoft.graph.onUserCreateStartExternalUsersSelfServiceSignUp: .\microsoft.graph.onUserCreateStartExternalUsersSelfServiceSignUp.yaml

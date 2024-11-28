@@ -1,0 +1,17 @@
+title: teamsAppResourceSpecificPermission
+required:
+  - '@odata.type'
+type: object
+properties:
+  permissionType:
+    anyOf:
+      - $ref: .\microsoft.graph.teamsAppResourceSpecificPermissionType.yaml
+      - type: object
+        nullable: true
+    description: The type of resource-specific permission.
+  permissionValue:
+    type: string
+    description: The name of the resource-specific permission.
+    nullable: true
+  '@odata.type':
+    type: string

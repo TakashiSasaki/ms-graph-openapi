@@ -1,0 +1,18 @@
+allOf:
+  - $ref: .\microsoft.graph.externalConnectors.externalActivity.yaml
+  - title: externalActivityResult
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      error:
+        anyOf:
+          - $ref: .\microsoft.graph.publicError.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Error information that explains the failure to process an external
+          activity.
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.externalConnectors.externalActivityResult'

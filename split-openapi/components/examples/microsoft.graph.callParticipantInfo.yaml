@@ -1,0 +1,3 @@
+value:
+  participant:
+    '@odata.type': microsoft.graph.identitySet

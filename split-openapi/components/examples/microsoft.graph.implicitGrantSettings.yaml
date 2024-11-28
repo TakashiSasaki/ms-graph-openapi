@@ -1,0 +1,3 @@
+value:
+  enableAccessTokenIssuance: 'true'
+  enableIdTokenIssuance: 'true'

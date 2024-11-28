@@ -1,0 +1,7 @@
+value:
+  configuration:
+    '@odata.type': microsoft.graph.teamsTabConfiguration
+  displayName: String
+  teamsApp:
+    '@odata.type': microsoft.graph.teamsApp
+  webUrl: String

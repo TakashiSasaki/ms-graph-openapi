@@ -1,0 +1,56 @@
+description: Provides operations to call the protect method.
+post:
+  tags:
+    - drives.driveItem
+  summary: Invoke action protect
+  description: Protect a worksheet. It throws if the worksheet has been protected.
+  externalDocs:
+    description: Find more info here
+    url: >-
+      https://learn.microsoft.com/graph/api/worksheetprotection-protect?view=graph-rest-1.0
+  operationId: >-
+    drives.drive.items.driveItem.workbook.worksheets.workbookWorksheet.protection.protect
+  requestBody:
+    description: Action parameters
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            options:
+              anyOf:
+                - $ref: >-
+                    ..\components\schemas\microsoft.graph.workbookWorksheetProtectionOptions.yaml
+                - type: object
+                  nullable: true
+    required: true
+  responses:
+    '204':
+      description: Success
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: action
+parameters:
+  - name: drive-id
+    in: path
+    description: The unique identifier of drive
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: drive
+  - name: driveItem-id
+    in: path
+    description: The unique identifier of driveItem
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: driveItem
+  - name: workbookWorksheet-id
+    in: path
+    description: The unique identifier of workbookWorksheet
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: workbookWorksheet

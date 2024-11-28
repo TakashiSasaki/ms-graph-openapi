@@ -1,0 +1,8 @@
+title: protectionRuleStatus
+enum:
+  - draft
+  - active
+  - completed
+  - completedWithErrors
+  - unknownFutureValue
+type: string

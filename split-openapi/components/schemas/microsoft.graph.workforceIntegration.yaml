@@ -1,0 +1,50 @@
+allOf:
+  - $ref: .\microsoft.graph.changeTrackedEntity.yaml
+  - title: workforceIntegration
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      apiVersion:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: API version for the call back URL. Start with 1.
+        format: int32
+        nullable: true
+      displayName:
+        type: string
+        description: Name of the workforce integration.
+        nullable: true
+      encryption:
+        anyOf:
+          - $ref: .\microsoft.graph.workforceIntegrationEncryption.yaml
+          - type: object
+            nullable: true
+        description: The workforce integration encryption resource.
+      isActive:
+        type: boolean
+        description: >-
+          Indicates whether this workforce integration is currently active and
+          available.
+        nullable: true
+      supportedEntities:
+        anyOf:
+          - $ref: .\microsoft.graph.workforceIntegrationSupportedEntities.yaml
+          - type: object
+            nullable: true
+        description: >-
+          The Shifts entities supported for synchronous change notifications.
+          Shifts will make a call back to the url provided on client changes on
+          those entities added here. By default, no entities are supported for
+          change notifications. Possible values are: none, shift, swapRequest,
+          userShiftPreferences, openshift, openShiftRequest, offerShiftRequest,
+          unknownFutureValue.
+      url:
+        type: string
+        description: Workforce Integration URL for callbacks from the Shifts service.
+        nullable: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.workforceIntegration'
+x-ms-discriminator-value: '#microsoft.graph.workforceIntegration'

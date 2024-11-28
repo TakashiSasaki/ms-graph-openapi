@@ -1,0 +1,7 @@
+value:
+  attribution:
+    '@odata.type': microsoft.graph.imageInfo
+  backgroundColor: String
+  content: {}
+  description: String
+  displayText: String

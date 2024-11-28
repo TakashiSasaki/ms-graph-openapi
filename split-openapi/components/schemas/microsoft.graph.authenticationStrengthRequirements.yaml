@@ -1,0 +1,8 @@
+title: authenticationStrengthRequirements
+enum:
+  - none
+  - mfa
+  - unknownFutureValue
+type: string
+x-ms-enum-flags:
+  isFlags: true

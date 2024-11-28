@@ -1,0 +1,7 @@
+value:
+  description: String
+  displayName: String
+  languageTag: String
+  platform:
+    '@odata.type': microsoft.graph.devicePlatformType
+  webUrl: String

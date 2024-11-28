@@ -1,0 +1,19 @@
+allOf:
+  - $ref: .\microsoft.graph.onUserCreateStartHandler.yaml
+  - title: onUserCreateStartExternalUsersSelfServiceSignUp
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      userTypeToCreate:
+        anyOf:
+          - $ref: .\microsoft.graph.userType.yaml
+          - type: object
+            nullable: true
+        description: >-
+          The type of user to create. Maps to userType property of user object.
+          The possible values are: member, guest, unknownFutureValue.
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.onUserCreateStartExternalUsersSelfServiceSignUp'
+x-ms-discriminator-value: '#microsoft.graph.onUserCreateStartExternalUsersSelfServiceSignUp'

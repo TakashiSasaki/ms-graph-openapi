@@ -1,0 +1,7 @@
+title: crossTenantAccessPolicyTargetType
+enum:
+  - user
+  - group
+  - application
+  - unknownFutureValue
+type: string

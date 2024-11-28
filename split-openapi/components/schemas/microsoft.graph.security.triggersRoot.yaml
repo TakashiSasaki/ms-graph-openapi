@@ -1,0 +1,15 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: triggersRoot
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      retentionEvents:
+        type: array
+        items:
+          $ref: .\microsoft.graph.security.retentionEvent.yaml
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.security.triggersRoot'

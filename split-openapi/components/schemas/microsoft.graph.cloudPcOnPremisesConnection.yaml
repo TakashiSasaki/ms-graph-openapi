@@ -1,0 +1,124 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: cloudPcOnPremisesConnection
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      adDomainName:
+        type: string
+        description: >-
+          The fully qualified domain name (FQDN) of the Active Directory domain
+          you want to join. Maximum length is 255. Optional.
+        nullable: true
+      adDomainPassword:
+        type: string
+        description: >-
+          The password associated with the username of an Active Directory
+          account (adDomainUsername).
+        nullable: true
+      adDomainUsername:
+        type: string
+        description: >-
+          The username of an Active Directory account (user or service account)
+          that has permission to create computer objects in Active Directory.
+          Required format: admin@contoso.com. Optional.
+        nullable: true
+      alternateResourceUrl:
+        type: string
+        description: >-
+          The interface URL of the partner service's resource that links to this
+          Azure network connection. Returned only on $select.
+        nullable: true
+      connectionType:
+        anyOf:
+          - $ref: .\microsoft.graph.cloudPcOnPremisesConnectionType.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Specifies how the provisioned Cloud PC joins to Microsoft Entra. It
+          includes different types, one is Microsoft Entra ID join, which means
+          there's no on-premises Active Directory (AD) in the current tenant,
+          and the Cloud PC device is joined by Microsoft Entra. Another one is
+          hybridAzureADJoin, which means there's also an on-premises Active
+          Directory (AD) in the current tenant and the Cloud PC device joins to
+          on-premises Active Directory (AD) and Microsoft Entra. The type also
+          determines which types of users can be assigned and can sign into a
+          Cloud PC. The azureADJoin type indicates that cloud-only and hybrid
+          users can be assigned and signed into the Cloud PC. hybridAzureADJoin
+          indicates only hybrid users can be assigned and signed into the Cloud
+          PC. The default value is hybridAzureADJoin.
+      displayName:
+        type: string
+        description: The display name for the Azure network connection.
+      healthCheckStatus:
+        $ref: .\microsoft.graph.cloudPcOnPremisesConnectionStatus.yaml
+      healthCheckStatusDetail:
+        anyOf:
+          - $ref: .\microsoft.graph.cloudPcOnPremisesConnectionStatusDetail.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Indicates the results of health checks performed on the on-premises
+          connection. Read-only. Returned only on $select. For an example that
+          shows how to get the inUse property, see Example 2: Get the selected
+          properties of an Azure network connection, including
+          healthCheckStatusDetail. Read-only.
+      inUse:
+        type: boolean
+        description: >-
+          When true, the Azure network connection is in use. When false, the
+          connection isn't in use. You can't delete a connection that’s in use.
+          Returned only on $select. For an example that shows how to get the
+          inUse property, see Example 2: Get the selected properties of an Azure
+          network connection, including healthCheckStatusDetail. Read-only.
+        nullable: true
+      organizationalUnit:
+        type: string
+        description: >-
+          The organizational unit (OU) in which the computer account is created.
+          If left null, the OU configured as the default (a well-known computer
+          object container) in the tenant's Active Directory domain (OU) is
+          used. Optional.
+        nullable: true
+      resourceGroupId:
+        type: string
+        description: >-
+          The unique identifier of the target resource group used associated
+          with the on-premises network connectivity for Cloud PCs. Required
+          format:
+          '/subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}'
+      subnetId:
+        type: string
+        description: >-
+          The unique identifier of the target subnet used associated with the
+          on-premises network connectivity for Cloud PCs. Required format:
+          '/subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{virtualNetworkId}/subnets/{subnetName}'
+      subscriptionId:
+        type: string
+        description: >-
+          The unique identifier of the Azure subscription associated with the
+          tenant.
+      subscriptionName:
+        type: string
+        description: >-
+          The name of the Azure subscription is used to create an Azure network
+          connection. Read-only.
+        nullable: true
+      virtualNetworkId:
+        type: string
+        description: >-
+          The unique identifier of the target virtual network used associated
+          with the on-premises network connectivity for Cloud PCs. Required
+          format:
+          '/subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{virtualNetworkName}'
+      virtualNetworkLocation:
+        type: string
+        description: >-
+          Indicates the resource location of the target virtual network. For
+          example, the location can be eastus2, westeurope, etc. Read-only
+          (computed value).
+        nullable: true
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.cloudPcOnPremisesConnection'

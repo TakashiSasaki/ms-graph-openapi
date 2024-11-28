@@ -1,0 +1,21 @@
+allOf:
+  - $ref: .\microsoft.graph.identity.yaml
+  - title: communicationsApplicationInstanceIdentity
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      hidden:
+        type: boolean
+        description: >-
+          True if the participant shouldn't be shown in other participants'
+          rosters.
+        nullable: true
+      tenantId:
+        type: string
+        description: The tenant ID of the application.
+        nullable: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.communicationsApplicationInstanceIdentity'
+x-ms-discriminator-value: '#microsoft.graph.communicationsApplicationInstanceIdentity'

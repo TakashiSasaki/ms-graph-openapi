@@ -1,0 +1,13 @@
+allOf:
+  - $ref: .\microsoft.graph.security.dataSource.yaml
+  - title: siteSource
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      site:
+        $ref: .\microsoft.graph.site.yaml
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.security.siteSource'
+x-ms-discriminator-value: '#microsoft.graph.security.siteSource'

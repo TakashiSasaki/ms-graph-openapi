@@ -1,0 +1,17 @@
+title: freeBusyError
+required:
+  - '@odata.type'
+type: object
+properties:
+  message:
+    type: string
+    description: Describes the error.
+    nullable: true
+  responseCode:
+    type: string
+    description: >-
+      The response code from querying for the availability of the user,
+      distribution list, or resource.
+    nullable: true
+  '@odata.type':
+    type: string

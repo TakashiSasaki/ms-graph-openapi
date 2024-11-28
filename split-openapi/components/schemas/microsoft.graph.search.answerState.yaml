@@ -1,0 +1,7 @@
+title: answerState
+enum:
+  - published
+  - draft
+  - excluded
+  - unknownFutureValue
+type: string

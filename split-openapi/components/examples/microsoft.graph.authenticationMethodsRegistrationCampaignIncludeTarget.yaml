@@ -1,0 +1,5 @@
+value:
+  id: String
+  targetedAuthenticationMethod: String
+  targetType:
+    '@odata.type': microsoft.graph.authenticationMethodTargetType

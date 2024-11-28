@@ -1,0 +1,16 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: mobileContainedApp
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      '@odata.type':
+        type: string
+    description: >-
+      An abstract class that represents a contained app in a mobileApp acting as
+      a package.
+    discriminator:
+      propertyName: '@odata.type'
+      mapping:
+        '#microsoft.graph.windowsUniversalAppXContainedApp': .\microsoft.graph.windowsUniversalAppXContainedApp.yaml

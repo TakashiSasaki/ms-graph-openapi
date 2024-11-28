@@ -1,0 +1,33 @@
+title: diagnosticDataSubmissionMode
+enum:
+  - userDefined
+  - none
+  - basic
+  - enhanced
+  - full
+type: string
+description: Allow the device to send diagnostic and usage telemetry data, such as Watson.
+x-ms-enum:
+  name: diagnosticDataSubmissionMode
+  modelAsString: false
+  values:
+    - value: userDefined
+      description: Allow the user to set.
+      name: userDefined
+    - value: none
+      description: >-
+        No telemetry data is sent from OS components. Note: This value is only
+        applicable to enterprise and server devices. Using this setting on other
+        devices is equivalent to setting the value of 1.
+      name: none
+    - value: basic
+      description: Sends basic telemetry data.
+      name: basic
+    - value: enhanced
+      description: Sends enhanced telemetry data including usage and insights data.
+      name: enhanced
+    - value: full
+      description: >-
+        Sends full telemetry data including diagnostic data, such as system
+        state.
+      name: full

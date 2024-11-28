@@ -1,0 +1,4 @@
+value:
+  description: String
+  displayName: String
+  omaUri: String

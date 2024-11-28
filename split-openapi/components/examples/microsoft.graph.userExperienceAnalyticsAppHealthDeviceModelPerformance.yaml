@@ -1,0 +1,8 @@
+value:
+  activeDeviceCount: '0'
+  deviceManufacturer: String
+  deviceModel: String
+  healthStatus:
+    '@odata.type': microsoft.graph.userExperienceAnalyticsHealthState
+  meanTimeToFailureInMinutes: '0'
+  modelAppHealthScore: '0'

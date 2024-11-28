@@ -1,0 +1,5 @@
+title: binaryOperator
+enum:
+  - or
+  - and
+type: string

@@ -1,0 +1,15 @@
+value:
+  content: String
+  createdBy:
+    '@odata.type': microsoft.graph.emailIdentity
+  createdDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  description: String
+  displayName: String
+  language: String
+  lastModifiedBy:
+    '@odata.type': microsoft.graph.emailIdentity
+  lastModifiedDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  source:
+    '@odata.type': microsoft.graph.simulationContentSource
+  status:
+    '@odata.type': microsoft.graph.simulationContentStatus

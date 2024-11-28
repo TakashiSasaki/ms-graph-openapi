@@ -1,0 +1,67 @@
+allOf:
+  - $ref: .\microsoft.graph.mobileApp.yaml
+  - title: iosVppApp
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      applicableDeviceType:
+        anyOf:
+          - $ref: .\microsoft.graph.iosDeviceType.yaml
+          - type: object
+            nullable: true
+        description: The applicable iOS Device Type.
+      appStoreUrl:
+        type: string
+        description: The store URL.
+        nullable: true
+      bundleId:
+        type: string
+        description: The Identity Name.
+        nullable: true
+      licensingType:
+        anyOf:
+          - $ref: .\microsoft.graph.vppLicensingType.yaml
+          - type: object
+            nullable: true
+        description: The supported License Type.
+      releaseDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: The VPP application release date and time.
+        format: date-time
+        nullable: true
+      totalLicenseCount:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: The total number of VPP licenses.
+        format: int32
+      usedLicenseCount:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: The number of VPP licenses in use.
+        format: int32
+      vppTokenAccountType:
+        $ref: .\microsoft.graph.vppTokenAccountType.yaml
+      vppTokenAppleId:
+        type: string
+        description: >-
+          The Apple Id associated with the given Apple Volume Purchase Program
+          Token.
+        nullable: true
+      vppTokenOrganizationName:
+        type: string
+        description: >-
+          The organization associated with the Apple Volume Purchase Program
+          Token
+        nullable: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.iosVppApp'
+    description: >-
+      Contains properties and inherited properties for iOS Volume-Purchased
+      Program (VPP) Apps.
+x-ms-discriminator-value: '#microsoft.graph.iosVppApp'

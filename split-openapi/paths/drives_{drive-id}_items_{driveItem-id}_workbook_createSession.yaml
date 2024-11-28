@@ -1,0 +1,59 @@
+description: Provides operations to call the createSession method.
+post:
+  tags:
+    - drives.driveItem
+  summary: Invoke action createSession
+  description: >-
+    Create a new workbook session.  Excel APIs can be called in one of two
+    modes:  To represent the session in the API, use the workbook-session-id:
+    {session-id} header.  In some cases, creating a new session requires an
+    indeterminate time to complete. Microsoft Graph also provides a long running
+    operations pattern. This pattern provides a way to poll for creation status
+    updates, without waiting for the creation to complete. The following are the
+    steps:
+  externalDocs:
+    description: Find more info here
+    url: >-
+      https://learn.microsoft.com/graph/api/workbook-createsession?view=graph-rest-1.0
+  operationId: drives.drive.items.driveItem.workbook.createSession
+  requestBody:
+    description: Action parameters
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            persistChanges:
+              type: boolean
+              default: false
+    required: true
+  responses:
+    2XX:
+      description: Success
+      content:
+        application/json:
+          schema:
+            anyOf:
+              - $ref: ..\components\schemas\microsoft.graph.workbookSessionInfo.yaml
+              - type: object
+                nullable: true
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: action
+parameters:
+  - name: drive-id
+    in: path
+    description: The unique identifier of drive
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: drive
+  - name: driveItem-id
+    in: path
+    description: The unique identifier of driveItem
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: driveItem

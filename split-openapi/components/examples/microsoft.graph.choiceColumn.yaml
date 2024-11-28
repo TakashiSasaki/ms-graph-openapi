@@ -1,0 +1,5 @@
+value:
+  allowTextEntry: 'true'
+  choices:
+    - String
+  displayAs: String

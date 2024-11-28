@@ -1,0 +1,11 @@
+value:
+  parentNotebook:
+    '@odata.type': microsoft.graph.notebook
+  parentSectionGroup:
+    '@odata.type': microsoft.graph.sectionGroup
+  sectionGroups:
+    - '@odata.type': microsoft.graph.sectionGroup
+  sectionGroupsUrl: String
+  sections:
+    - '@odata.type': microsoft.graph.onenoteSection
+  sectionsUrl: String

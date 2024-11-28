@@ -1,0 +1,37 @@
+title: rubricQuality
+required:
+  - '@odata.type'
+type: object
+properties:
+  criteria:
+    type: array
+    items:
+      $ref: .\microsoft.graph.rubricCriterion.yaml
+    description: The collection of criteria for this rubric quality.
+  description:
+    anyOf:
+      - $ref: .\microsoft.graph.educationItemBody.yaml
+      - type: object
+        nullable: true
+    description: The description of this rubric quality.
+  displayName:
+    type: string
+    description: The name of this rubric quality.
+    nullable: true
+  qualityId:
+    type: string
+    description: The ID of this resource.
+    nullable: true
+  weight:
+    oneOf:
+      - type: number
+        format: float
+        nullable: true
+      - type: string
+        nullable: true
+      - $ref: .\ReferenceNumeric.yaml
+    description: >-
+      If present, a numerical weight for this quality.  Weights must add up to
+      100.
+  '@odata.type':
+    type: string

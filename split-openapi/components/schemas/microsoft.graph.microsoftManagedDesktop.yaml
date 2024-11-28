@@ -1,0 +1,23 @@
+title: microsoftManagedDesktop
+required:
+  - '@odata.type'
+type: object
+properties:
+  managedType:
+    anyOf:
+      - $ref: .\microsoft.graph.microsoftManagedDesktopType.yaml
+      - type: object
+        nullable: true
+    description: >-
+      Indicates the provisioning policy associated with Microsoft Managed
+      Desktop settings. Possible values are: notManaged, premiumManaged,
+      standardManaged, starterManaged, unknownFutureValue. The default is
+      notManaged.
+  profile:
+    type: string
+    description: >-
+      The name of the Microsoft Managed Desktop profile that the Windows 365
+      Cloud PC is associated with.
+    nullable: true
+  '@odata.type':
+    type: string

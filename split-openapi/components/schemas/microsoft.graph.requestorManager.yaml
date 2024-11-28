@@ -1,0 +1,23 @@
+allOf:
+  - $ref: .\microsoft.graph.subjectSet.yaml
+  - title: requestorManager
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      managerLevel:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: >-
+          The hierarchical level of the manager with respect to the requestor.
+          For example, the direct manager of a requestor would have a
+          managerLevel of 1, while the manager of the requestor's manager would
+          have a managerLevel of 2. Default value for managerLevel is 1.
+          Possible values for this property range from 1 to 2.
+        format: int32
+        nullable: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.requestorManager'
+x-ms-discriminator-value: '#microsoft.graph.requestorManager'

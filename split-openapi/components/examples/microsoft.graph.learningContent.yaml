@@ -1,0 +1,24 @@
+value:
+  additionalTags:
+    - String
+  contentWebUrl: String
+  contributors:
+    - String
+  createdDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  description: String
+  duration: Duration
+  externalId: String
+  format: String
+  isActive: 'true'
+  isPremium: 'true'
+  isSearchable: 'true'
+  languageTag: String
+  lastModifiedDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  level:
+    '@odata.type': microsoft.graph.level
+  numberOfPages: '0'
+  skillTags:
+    - String
+  sourceName: String
+  thumbnailWebUrl: String
+  title: String

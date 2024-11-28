@@ -1,0 +1,90 @@
+allOf:
+  - $ref: .\microsoft.graph.privilegedAccessScheduleInstance.yaml
+  - title: privilegedAccessGroupAssignmentScheduleInstance
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      accessId:
+        anyOf:
+          - $ref: .\microsoft.graph.privilegedAccessGroupRelationships.yaml
+          - type: object
+            nullable: true
+        description: >-
+          The identifier of the membership or ownership assignment relationship
+          to the group. Required. The possible values are: owner, member, 
+          unknownFutureValue. Supports $filter (eq).
+      assignmentScheduleId:
+        type: string
+        description: >-
+          The identifier of the privilegedAccessGroupAssignmentSchedule from
+          which this instance was created. Required. Supports $filter (eq, ne).
+        nullable: true
+      assignmentType:
+        anyOf:
+          - $ref: .\microsoft.graph.privilegedAccessGroupAssignmentType.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Indicates whether the membership or ownership assignment is granted
+          through activation of an eligibility or through direct assignment.
+          Required. The possible values are: assigned, activated,
+          unknownFutureValue. Supports $filter (eq).
+      groupId:
+        type: string
+        description: >-
+          The identifier of the group representing the scope of the membership
+          or ownership assignment through PIM for groups. Optional. Supports
+          $filter (eq).
+        nullable: true
+      memberType:
+        anyOf:
+          - $ref: .\microsoft.graph.privilegedAccessGroupMemberType.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Indicates whether the assignment is derived from a group assignment.
+          It can further imply whether the caller can manage the assignment
+          schedule. Required. The possible values are: direct, group,
+          unknownFutureValue. Supports $filter (eq).
+      principalId:
+        type: string
+        description: >-
+          The identifier of the principal whose membership or ownership
+          assignment to the group is managed through PIM for groups. Required.
+          Supports $filter (eq).
+        nullable: true
+      activatedUsing:
+        anyOf:
+          - $ref: >-
+              .\microsoft.graph.privilegedAccessGroupEligibilityScheduleInstance.yaml
+          - type: object
+            nullable: true
+        description: >-
+          When the request activates a membership or ownership in PIM for
+          groups, this object represents the eligibility request for the group.
+          Otherwise, it is null.
+        x-ms-navigationProperty: true
+      group:
+        anyOf:
+          - $ref: .\microsoft.graph.group.yaml
+          - type: object
+            nullable: true
+        description: >-
+          References the group that is the scope of the membership or ownership
+          assignment through PIM for groups. Supports $expand.
+        x-ms-navigationProperty: true
+      principal:
+        anyOf:
+          - $ref: .\microsoft.graph.directoryObject.yaml
+          - type: object
+            nullable: true
+        description: >-
+          References the principal that's in the scope of the membership or
+          ownership assignment request through the group that's governed by PIM.
+          Supports $expand.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.privilegedAccessGroupAssignmentScheduleInstance'
+x-ms-discriminator-value: '#microsoft.graph.privilegedAccessGroupAssignmentScheduleInstance'

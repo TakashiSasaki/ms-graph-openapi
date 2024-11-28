@@ -1,0 +1,7 @@
+title: initiatorType
+enum:
+  - user
+  - application
+  - system
+  - unknownFutureValue
+type: string

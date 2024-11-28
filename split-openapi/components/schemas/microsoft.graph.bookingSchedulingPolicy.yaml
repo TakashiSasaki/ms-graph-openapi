@@ -1,0 +1,55 @@
+title: bookingSchedulingPolicy
+required:
+  - '@odata.type'
+type: object
+properties:
+  allowStaffSelection:
+    type: boolean
+    description: True to allow customers to choose a specific person for the booking.
+  customAvailabilities:
+    type: array
+    items:
+      $ref: .\microsoft.graph.bookingsAvailabilityWindow.yaml
+    description: Custom availability of the service in a given time frame.
+  generalAvailability:
+    anyOf:
+      - $ref: .\microsoft.graph.bookingsAvailability.yaml
+      - type: object
+        nullable: true
+    description: General availability of the service defined by the scheduling policy.
+  isMeetingInviteToCustomersEnabled:
+    type: boolean
+    description: >-
+      Indicates whether the meeting invite is sent to the customers. The default
+      value is false.
+    nullable: true
+  maximumAdvance:
+    pattern: ^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$
+    type: string
+    description: >-
+      Maximum number of days in advance that a booking can be made. It follows
+      the ISO 8601 format.
+    format: duration
+  minimumLeadTime:
+    pattern: ^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$
+    type: string
+    description: >-
+      The minimum amount of time before which bookings and cancellations must be
+      made. It follows the ISO 8601 format.
+    format: duration
+  sendConfirmationsToOwner:
+    type: boolean
+    description: >-
+      True to notify the business via email when a booking is created or
+      changed. Use the email address specified in the email property of the
+      bookingBusiness entity for the business.
+  timeSlotInterval:
+    pattern: ^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$
+    type: string
+    description: Duration of each time slot, denoted in ISO 8601 format.
+    format: duration
+  '@odata.type':
+    type: string
+description: >-
+  This type represents the set of policies that dictate how bookings can be
+  created in a Booking Calendar.

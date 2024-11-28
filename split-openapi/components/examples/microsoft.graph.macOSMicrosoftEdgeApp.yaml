@@ -1,0 +1,3 @@
+value:
+  channel:
+    '@odata.type': microsoft.graph.microsoftEdgeChannel

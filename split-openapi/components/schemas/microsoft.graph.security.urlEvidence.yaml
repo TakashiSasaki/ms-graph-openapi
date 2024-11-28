@@ -1,0 +1,15 @@
+allOf:
+  - $ref: .\microsoft.graph.security.alertEvidence.yaml
+  - title: urlEvidence
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      url:
+        type: string
+        description: The Unique Resource Locator (URL).
+        nullable: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.security.urlEvidence'
+x-ms-discriminator-value: '#microsoft.graph.security.urlEvidence'

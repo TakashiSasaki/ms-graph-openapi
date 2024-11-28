@@ -1,0 +1,13 @@
+value:
+  accessReviews:
+    '@odata.type': microsoft.graph.accessReviewSet
+  appConsent:
+    '@odata.type': microsoft.graph.appConsentApprovalRoute
+  entitlementManagement:
+    '@odata.type': microsoft.graph.entitlementManagement
+  lifecycleWorkflows:
+    '@odata.type': microsoft.graph.identityGovernance.lifecycleWorkflowsContainer
+  privilegedAccess:
+    '@odata.type': microsoft.graph.privilegedAccessRoot
+  termsOfUse:
+    '@odata.type': microsoft.graph.termsOfUseContainer

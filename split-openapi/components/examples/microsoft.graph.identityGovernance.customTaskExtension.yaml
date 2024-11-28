@@ -1,0 +1,9 @@
+value:
+  callbackConfiguration:
+    '@odata.type': microsoft.graph.customExtensionCallbackConfiguration
+  createdBy:
+    '@odata.type': microsoft.graph.user
+  createdDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  lastModifiedBy:
+    '@odata.type': microsoft.graph.user
+  lastModifiedDateTime: '0001-01-01T00:00:00.0000000+00:00'

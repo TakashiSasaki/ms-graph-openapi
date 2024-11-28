@@ -1,0 +1,6 @@
+value:
+  allowMultipleLines: 'true'
+  appendChangesToExistingText: 'true'
+  linesForEditing: '0'
+  maxLength: '0'
+  textType: String

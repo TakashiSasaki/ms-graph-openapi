@@ -1,0 +1,7 @@
+title: volumeType
+enum:
+  - operatingSystemVolume
+  - fixedDataVolume
+  - removableDataVolume
+  - unknownFutureValue
+type: string

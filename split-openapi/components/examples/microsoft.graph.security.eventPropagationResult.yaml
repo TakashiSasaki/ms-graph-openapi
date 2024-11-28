@@ -1,0 +1,6 @@
+value:
+  location: String
+  serviceName: String
+  status:
+    '@odata.type': microsoft.graph.security.eventPropagationStatus
+  statusInformation: String

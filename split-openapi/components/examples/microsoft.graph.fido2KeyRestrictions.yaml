@@ -1,0 +1,6 @@
+value:
+  aaGuids:
+    - String
+  enforcementType:
+    '@odata.type': microsoft.graph.fido2RestrictionEnforcementType
+  isEnforced: 'true'

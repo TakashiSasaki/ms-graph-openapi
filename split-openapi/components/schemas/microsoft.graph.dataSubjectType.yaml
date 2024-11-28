@@ -1,0 +1,12 @@
+title: dataSubjectType
+enum:
+  - customer
+  - currentEmployee
+  - formerEmployee
+  - prospectiveEmployee
+  - student
+  - teacher
+  - faculty
+  - other
+  - unknownFutureValue
+type: string

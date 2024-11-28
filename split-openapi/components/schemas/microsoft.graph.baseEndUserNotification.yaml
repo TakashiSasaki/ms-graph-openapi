@@ -1,0 +1,26 @@
+title: baseEndUserNotification
+required:
+  - '@odata.type'
+type: object
+properties:
+  defaultLanguage:
+    type: string
+    description: The default language for the end user notification.
+    nullable: true
+  endUserNotification:
+    anyOf:
+      - $ref: .\microsoft.graph.endUserNotification.yaml
+      - type: object
+        nullable: true
+    x-ms-navigationProperty: true
+  '@odata.type':
+    type: string
+discriminator:
+  propertyName: '@odata.type'
+  mapping:
+    '#microsoft.graph.positiveReinforcementNotification': .\microsoft.graph.positiveReinforcementNotification.yaml
+    '#microsoft.graph.simulationNotification': .\microsoft.graph.simulationNotification.yaml
+    '#microsoft.graph.trainingReminderNotification': .\microsoft.graph.trainingReminderNotification.yaml
+    microsoft.graph.positiveReinforcementNotification: .\microsoft.graph.positiveReinforcementNotification.yaml
+    microsoft.graph.simulationNotification: .\microsoft.graph.simulationNotification.yaml
+    microsoft.graph.trainingReminderNotification: .\microsoft.graph.trainingReminderNotification.yaml

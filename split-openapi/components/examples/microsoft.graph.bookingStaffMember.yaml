@@ -1,0 +1,15 @@
+value:
+  availabilityIsAffectedByPersonalCalendar: 'true'
+  createdDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  displayName: String
+  emailAddress: String
+  isEmailNotificationEnabled: 'true'
+  lastUpdatedDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  membershipStatus:
+    '@odata.type': microsoft.graph.bookingStaffMembershipStatus
+  role:
+    '@odata.type': microsoft.graph.bookingStaffRole
+  timeZone: String
+  useBusinessHours: 'true'
+  workingHours:
+    - '@odata.type': microsoft.graph.bookingWorkHours

@@ -1,0 +1,40 @@
+title: ratingCanadaTelevisionType
+enum:
+  - allAllowed
+  - allBlocked
+  - children
+  - childrenAbove8
+  - general
+  - parentalGuidance
+  - agesAbove14
+  - agesAbove18
+type: string
+description: TV content rating labels in Canada
+x-ms-enum:
+  name: ratingCanadaTelevisionType
+  modelAsString: false
+  values:
+    - value: allAllowed
+      description: Default value, allow all TV shows content
+      name: allAllowed
+    - value: allBlocked
+      description: Do not allow any TV shows content
+      name: allBlocked
+    - value: children
+      description: The C classification is suitable for children ages of 2 to 7 years
+      name: children
+    - value: childrenAbove8
+      description: The C8 classification is suitable for children ages 8+
+      name: childrenAbove8
+    - value: general
+      description: The G classification is suitable for general audience
+      name: general
+    - value: parentalGuidance
+      description: PG, Parental Guidance
+      name: parentalGuidance
+    - value: agesAbove14
+      description: The 14+ classification is intended for viewers ages 14 and older
+      name: agesAbove14
+    - value: agesAbove18
+      description: The 18+ classification is intended for viewers ages 18 and older
+      name: agesAbove18

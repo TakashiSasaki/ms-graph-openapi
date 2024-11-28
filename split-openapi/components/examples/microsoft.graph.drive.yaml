@@ -1,0 +1,22 @@
+value:
+  bundles:
+    - '@odata.type': microsoft.graph.driveItem
+  driveType: String
+  following:
+    - '@odata.type': microsoft.graph.driveItem
+  items:
+    - '@odata.type': microsoft.graph.driveItem
+  list:
+    '@odata.type': microsoft.graph.list
+  owner:
+    '@odata.type': microsoft.graph.identitySet
+  quota:
+    '@odata.type': microsoft.graph.quota
+  root:
+    '@odata.type': microsoft.graph.driveItem
+  sharePointIds:
+    '@odata.type': microsoft.graph.sharepointIds
+  special:
+    - '@odata.type': microsoft.graph.driveItem
+  system:
+    '@odata.type': microsoft.graph.systemFacet

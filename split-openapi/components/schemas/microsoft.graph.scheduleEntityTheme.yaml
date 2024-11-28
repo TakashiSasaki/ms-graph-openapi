@@ -1,0 +1,16 @@
+title: scheduleEntityTheme
+enum:
+  - white
+  - blue
+  - green
+  - purple
+  - pink
+  - yellow
+  - gray
+  - darkBlue
+  - darkGreen
+  - darkPurple
+  - darkPink
+  - darkYellow
+  - unknownFutureValue
+type: string

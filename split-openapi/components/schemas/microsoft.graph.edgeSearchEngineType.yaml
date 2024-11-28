@@ -1,0 +1,20 @@
+title: edgeSearchEngineType
+enum:
+  - default
+  - bing
+type: string
+description: >-
+  Allows IT admind to set a predefined default search engine for MDM-Controlled
+  devices
+x-ms-enum:
+  name: edgeSearchEngineType
+  modelAsString: false
+  values:
+    - value: default
+      description: >-
+        Uses factory settings of Edge to assign the default search engine as per
+        the user market
+      name: default
+    - value: bing
+      description: Sets Bing as the default search engine
+      name: bing

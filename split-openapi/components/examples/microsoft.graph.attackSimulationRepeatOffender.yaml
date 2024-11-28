@@ -1,0 +1,4 @@
+value:
+  attackSimulationUser:
+    '@odata.type': microsoft.graph.attackSimulationUser
+  repeatOffenceCount: '0'

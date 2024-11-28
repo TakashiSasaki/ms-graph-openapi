@@ -1,0 +1,9 @@
+value:
+  lastUsed:
+    '@odata.type': microsoft.graph.usageDetails
+  resource:
+    '@odata.type': microsoft.graph.entity
+  resourceReference:
+    '@odata.type': microsoft.graph.resourceReference
+  resourceVisualization:
+    '@odata.type': microsoft.graph.resourceVisualization

@@ -1,0 +1,3 @@
+value:
+  settings:
+    '@odata.type': microsoft.graph.sharepointSettings

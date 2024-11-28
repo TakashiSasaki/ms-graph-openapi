@@ -1,0 +1,3 @@
+value:
+  driveRestoreArtifacts:
+    - '@odata.type': microsoft.graph.driveRestoreArtifact

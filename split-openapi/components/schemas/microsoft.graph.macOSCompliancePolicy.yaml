@@ -1,0 +1,83 @@
+allOf:
+  - $ref: .\microsoft.graph.deviceCompliancePolicy.yaml
+  - title: macOSCompliancePolicy
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      deviceThreatProtectionEnabled:
+        type: boolean
+        description: Require that devices have enabled device threat protection.
+      deviceThreatProtectionRequiredSecurityLevel:
+        $ref: .\microsoft.graph.deviceThreatProtectionLevel.yaml
+      firewallBlockAllIncoming:
+        type: boolean
+        description: Corresponds to the 'Block all incoming connections' option.
+      firewallEnabled:
+        type: boolean
+        description: Whether the firewall should be enabled or not.
+      firewallEnableStealthMode:
+        type: boolean
+        description: Corresponds to 'Enable stealth mode.'
+      osMaximumVersion:
+        type: string
+        description: Maximum MacOS version.
+        nullable: true
+      osMinimumVersion:
+        type: string
+        description: Minimum MacOS version.
+        nullable: true
+      passwordBlockSimple:
+        type: boolean
+        description: Indicates whether or not to block simple passwords.
+      passwordExpirationDays:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: Number of days before the password expires. Valid values 1 to 65535
+        format: int32
+        nullable: true
+      passwordMinimumCharacterSetCount:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: The number of character sets required in the password.
+        format: int32
+        nullable: true
+      passwordMinimumLength:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: Minimum length of password. Valid values 4 to 14
+        format: int32
+        nullable: true
+      passwordMinutesOfInactivityBeforeLock:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: Minutes of inactivity before a password is required.
+        format: int32
+        nullable: true
+      passwordPreviousPasswordBlockCount:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: Number of previous passwords to block. Valid values 1 to 24
+        format: int32
+        nullable: true
+      passwordRequired:
+        type: boolean
+        description: Whether or not to require a password.
+      passwordRequiredType:
+        $ref: .\microsoft.graph.requiredPasswordType.yaml
+      storageRequireEncryption:
+        type: boolean
+        description: Require encryption on Mac OS devices.
+      systemIntegrityProtectionEnabled:
+        type: boolean
+        description: Require that devices have enabled system integrity protection.
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.macOSCompliancePolicy'
+    description: This class contains compliance settings for Mac OS.
+x-ms-discriminator-value: '#microsoft.graph.macOSCompliancePolicy'

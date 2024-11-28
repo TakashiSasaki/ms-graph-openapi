@@ -1,0 +1,62 @@
+description: Provides operations to call the unsubmit method.
+post:
+  tags:
+    - education.educationUser
+  summary: Invoke action unsubmit
+  description: >-
+    Indicate that a student wants to work on the submission of the assignment
+    after it was turned in. Only teachers, students, and applications with
+    application permissions can perform this operation. This method changes the
+    status of the submission from submitted to working. During the submit
+    process, all the resources are copied from submittedResources to 
+    workingResources. The teacher will be looking at the working resources list
+    for grading. A teacher can also unsubmit a student's assignment on their
+    behalf.
+  externalDocs:
+    description: Find more info here
+    url: >-
+      https://learn.microsoft.com/graph/api/educationsubmission-unsubmit?view=graph-rest-1.0
+  operationId: >-
+    education.users.educationUser.assignments.educationAssignment.submissions.educationSubmission.unsubmit
+  responses:
+    2XX:
+      description: Success
+      content:
+        application/json:
+          schema:
+            anyOf:
+              - $ref: ..\components\schemas\microsoft.graph.educationSubmission.yaml
+              - type: object
+                nullable: true
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: action
+parameters:
+  - name: educationUser-id
+    in: path
+    description: The unique identifier of educationUser
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: educationUser
+  - name: educationAssignment-id
+    in: path
+    description: The unique identifier of educationAssignment
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: educationAssignment
+  - name: educationSubmission-id
+    in: path
+    description: The unique identifier of educationSubmission
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: educationSubmission
+x-ms-docs-grouped-path:
+  - >-
+    /education/classes/{educationClass-id}/assignments/{educationAssignment-id}/submissions/{educationSubmission-id}/unsubmit
+  - >-
+    /education/me/assignments/{educationAssignment-id}/submissions/{educationSubmission-id}/unsubmit

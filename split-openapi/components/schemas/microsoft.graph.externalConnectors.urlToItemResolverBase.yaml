@@ -1,0 +1,21 @@
+title: urlToItemResolverBase
+required:
+  - '@odata.type'
+type: object
+properties:
+  priority:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    description: >-
+      The priority which defines the sequence in which the urlToItemResolverBase
+      instances are evaluated.
+    format: int32
+    nullable: true
+  '@odata.type':
+    type: string
+discriminator:
+  propertyName: '@odata.type'
+  mapping:
+    '#microsoft.graph.externalConnectors.itemIdResolver': .\microsoft.graph.externalConnectors.itemIdResolver.yaml
+    microsoft.graph.externalConnectors.itemIdResolver: .\microsoft.graph.externalConnectors.itemIdResolver.yaml

@@ -1,0 +1,27 @@
+allOf:
+  - $ref: .\microsoft.graph.mobileApp.yaml
+  - title: managedApp
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      appAvailability:
+        $ref: .\microsoft.graph.managedAppAvailability.yaml
+      version:
+        type: string
+        description: The Application's version.
+        nullable: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.managedApp'
+    description: >-
+      Abstract class that contains properties and inherited properties for apps
+      that you can manage with an Intune app protection policy.
+    discriminator:
+      propertyName: '@odata.type'
+      mapping:
+        '#microsoft.graph.managedAndroidStoreApp': .\microsoft.graph.managedAndroidStoreApp.yaml
+        '#microsoft.graph.managedIOSStoreApp': .\microsoft.graph.managedIOSStoreApp.yaml
+        '#microsoft.graph.managedMobileLobApp': .\microsoft.graph.managedMobileLobApp.yaml
+        '#microsoft.graph.managedAndroidLobApp': .\microsoft.graph.managedAndroidLobApp.yaml
+        '#microsoft.graph.managedIOSLobApp': .\microsoft.graph.managedIOSLobApp.yaml

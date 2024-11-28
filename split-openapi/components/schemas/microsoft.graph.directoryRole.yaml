@@ -1,0 +1,47 @@
+allOf:
+  - $ref: .\microsoft.graph.directoryObject.yaml
+  - title: directoryRole
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      description:
+        type: string
+        description: >-
+          The description for the directory role. Read-only. Supports $filter
+          (eq), $search, $select.
+        nullable: true
+      displayName:
+        type: string
+        description: >-
+          The display name for the directory role. Read-only. Supports $filter
+          (eq), $search, $select.
+        nullable: true
+      roleTemplateId:
+        type: string
+        description: >-
+          The id of the directoryRoleTemplate that this role is based on. The
+          property must be specified when activating a directory role in a
+          tenant with a POST operation. After the directory role has been
+          activated, the property is read only. Supports $filter (eq), $select.
+        nullable: true
+      members:
+        type: array
+        items:
+          $ref: .\microsoft.graph.directoryObject.yaml
+        description: >-
+          Users that are members of this directory role. HTTP Methods: GET,
+          POST, DELETE. Read-only. Nullable. Supports $expand.
+        x-ms-navigationProperty: true
+      scopedMembers:
+        type: array
+        items:
+          $ref: .\microsoft.graph.scopedRoleMembership.yaml
+        description: >-
+          Members of this directory role that are scoped to administrative
+          units. Read-only. Nullable.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.directoryRole'
+x-ms-discriminator-value: '#microsoft.graph.directoryRole'

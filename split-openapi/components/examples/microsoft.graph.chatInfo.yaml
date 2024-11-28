@@ -1,0 +1,4 @@
+value:
+  messageId: String
+  replyChainMessageId: String
+  threadId: String

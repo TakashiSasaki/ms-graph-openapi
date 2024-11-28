@@ -1,0 +1,20 @@
+allOf:
+  - $ref: .\microsoft.graph.security.retentionDuration.yaml
+  - title: retentionDurationInDays
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      days:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: >-
+          Specifies the time period in days for which an item with the applied
+          retention label will be retained for.
+        format: int32
+        nullable: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.security.retentionDurationInDays'
+x-ms-discriminator-value: '#microsoft.graph.security.retentionDurationInDays'

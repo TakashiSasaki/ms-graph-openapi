@@ -1,0 +1,9 @@
+value:
+  callDuration: Duration
+  callEventType:
+    '@odata.type': microsoft.graph.teamworkCallEventType
+  callId: String
+  callParticipants:
+    - '@odata.type': microsoft.graph.callParticipantInfo
+  initiator:
+    '@odata.type': microsoft.graph.identitySet

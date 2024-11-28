@@ -1,0 +1,3 @@
+value:
+  domains:
+    - '@odata.type': microsoft.graph.externalDomainName

@@ -1,0 +1,54 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: sharedInsight
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      lastShared:
+        anyOf:
+          - $ref: .\microsoft.graph.sharingDetail.yaml
+          - type: object
+            nullable: true
+        description: Details about the shared item. Read only.
+      resourceReference:
+        anyOf:
+          - $ref: .\microsoft.graph.resourceReference.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Reference properties of the shared document, such as the url and type
+          of the document. Read-only
+        readOnly: true
+      resourceVisualization:
+        anyOf:
+          - $ref: .\microsoft.graph.resourceVisualization.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Properties that you can use to visualize the document in your
+          experience. Read-only
+        readOnly: true
+      sharingHistory:
+        type: array
+        items:
+          $ref: .\microsoft.graph.sharingDetail.yaml
+      lastSharedMethod:
+        anyOf:
+          - $ref: .\microsoft.graph.entity.yaml
+          - type: object
+            nullable: true
+        x-ms-navigationProperty: true
+      resource:
+        anyOf:
+          - $ref: .\microsoft.graph.entity.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Used for navigating to the item that was shared. For file attachments,
+          the type is fileAttachment. For linked attachments, the type is
+          driveItem.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.sharedInsight'

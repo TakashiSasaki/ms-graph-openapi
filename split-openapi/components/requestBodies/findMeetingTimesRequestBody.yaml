@@ -1,0 +1,48 @@
+description: Action parameters
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        attendees:
+          type: array
+          items:
+            $ref: ..\schemas\microsoft.graph.attendeeBase.yaml
+        locationConstraint:
+          anyOf:
+            - $ref: ..\schemas\microsoft.graph.locationConstraint.yaml
+            - type: object
+              nullable: true
+        timeConstraint:
+          anyOf:
+            - $ref: ..\schemas\microsoft.graph.timeConstraint.yaml
+            - type: object
+              nullable: true
+        meetingDuration:
+          pattern: ^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$
+          type: string
+          format: duration
+          nullable: true
+        maxCandidates:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: number
+          format: int32
+          nullable: true
+        isOrganizerOptional:
+          type: boolean
+          default: false
+          nullable: true
+        returnSuggestionReasons:
+          type: boolean
+          default: false
+          nullable: true
+        minimumAttendeePercentage:
+          oneOf:
+            - type: number
+              format: double
+              nullable: true
+            - type: string
+              nullable: true
+            - $ref: ..\schemas\ReferenceNumeric.yaml
+required: true

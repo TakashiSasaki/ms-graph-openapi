@@ -1,0 +1,5 @@
+value:
+  ccRecipients:
+    - '@odata.type': microsoft.graph.recipient
+  customizedMessageBody: String
+  messageLanguage: String

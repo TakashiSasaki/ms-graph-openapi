@@ -1,0 +1,10 @@
+value:
+  displayName: String
+  isOptional: 'true'
+  requiresVerification: 'true'
+  userAttribute:
+    '@odata.type': microsoft.graph.identityUserFlowAttribute
+  userAttributeValues:
+    - '@odata.type': microsoft.graph.userAttributeValuesItem
+  userInputType:
+    '@odata.type': microsoft.graph.identityUserFlowAttributeInputType

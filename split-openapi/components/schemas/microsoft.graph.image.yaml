@@ -1,0 +1,21 @@
+title: image
+required:
+  - '@odata.type'
+type: object
+properties:
+  height:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    description: Optional. Height of the image, in pixels. Read-only.
+    format: int32
+    nullable: true
+  width:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    description: Optional. Width of the image, in pixels. Read-only.
+    format: int32
+    nullable: true
+  '@odata.type':
+    type: string

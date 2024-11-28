@@ -1,0 +1,11 @@
+title: dataSourceScopes
+enum:
+  - none
+  - allTenantMailboxes
+  - allTenantSites
+  - allCaseCustodians
+  - allCaseNoncustodialDataSources
+  - unknownFutureValue
+type: string
+x-ms-enum-flags:
+  isFlags: true

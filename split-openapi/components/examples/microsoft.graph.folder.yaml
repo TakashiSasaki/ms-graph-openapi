@@ -1,0 +1,4 @@
+value:
+  childCount: '0'
+  view:
+    '@odata.type': microsoft.graph.folderView

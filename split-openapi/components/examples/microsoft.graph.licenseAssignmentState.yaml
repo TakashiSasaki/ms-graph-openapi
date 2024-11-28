@@ -1,0 +1,8 @@
+value:
+  assignedByGroup: String
+  disabledPlans:
+    - 00000000-0000-0000-0000-000000000000
+  error: String
+  lastUpdatedDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  skuId: 00000000-0000-0000-0000-000000000000
+  state: String

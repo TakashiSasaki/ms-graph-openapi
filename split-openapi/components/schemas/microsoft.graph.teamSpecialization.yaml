@@ -1,0 +1,11 @@
+title: teamSpecialization
+enum:
+  - none
+  - educationStandard
+  - educationClass
+  - educationProfessionalLearningCommunity
+  - educationStaff
+  - healthcareStandard
+  - healthcareCareCoordination
+  - unknownFutureValue
+type: string

@@ -1,0 +1,3 @@
+value:
+  subjectRightsRequests:
+    - '@odata.type': microsoft.graph.subjectRightsRequest

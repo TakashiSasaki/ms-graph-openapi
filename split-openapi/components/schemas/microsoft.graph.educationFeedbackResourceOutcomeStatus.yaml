@@ -1,0 +1,8 @@
+title: educationFeedbackResourceOutcomeStatus
+enum:
+  - notPublished
+  - pendingPublish
+  - published
+  - failedPublish
+  - unknownFutureValue
+type: string

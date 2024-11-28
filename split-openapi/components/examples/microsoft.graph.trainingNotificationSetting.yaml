@@ -1,0 +1,5 @@
+value:
+  trainingAssignment:
+    '@odata.type': microsoft.graph.baseEndUserNotification
+  trainingReminder:
+    '@odata.type': microsoft.graph.trainingReminderNotification

@@ -1,0 +1,3 @@
+value:
+  accidentalDeletionPrevention:
+    '@odata.type': microsoft.graph.onPremisesAccidentalDeletionPrevention

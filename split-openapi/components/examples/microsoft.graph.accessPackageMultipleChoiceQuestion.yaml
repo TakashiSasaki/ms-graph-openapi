@@ -1,0 +1,4 @@
+value:
+  choices:
+    - '@odata.type': microsoft.graph.accessPackageAnswerChoice
+  isMultipleSelectionAllowed: 'true'

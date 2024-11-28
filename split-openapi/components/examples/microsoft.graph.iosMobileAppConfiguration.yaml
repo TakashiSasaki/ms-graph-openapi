@@ -1,0 +1,4 @@
+value:
+  encodedSettingXml: AA==
+  settings:
+    - '@odata.type': microsoft.graph.appConfigurationSettingItem

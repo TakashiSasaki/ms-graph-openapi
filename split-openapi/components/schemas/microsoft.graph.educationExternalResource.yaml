@@ -1,0 +1,15 @@
+allOf:
+  - $ref: .\microsoft.graph.educationResource.yaml
+  - title: educationExternalResource
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      webUrl:
+        type: string
+        description: Location of the resource. Required.
+        nullable: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.educationExternalResource'
+x-ms-discriminator-value: '#microsoft.graph.educationExternalResource'

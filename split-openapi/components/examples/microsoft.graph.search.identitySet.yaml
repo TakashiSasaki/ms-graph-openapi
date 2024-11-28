@@ -1,0 +1,7 @@
+value:
+  application:
+    '@odata.type': microsoft.graph.search.identity
+  device:
+    '@odata.type': microsoft.graph.search.identity
+  user:
+    '@odata.type': microsoft.graph.search.identity

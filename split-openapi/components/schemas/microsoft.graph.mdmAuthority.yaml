@@ -1,0 +1,24 @@
+title: mdmAuthority
+enum:
+  - unknown
+  - intune
+  - sccm
+  - office365
+type: string
+description: Mobile device management authority.
+x-ms-enum:
+  name: mdmAuthority
+  modelAsString: false
+  values:
+    - value: unknown
+      description: Unknown
+      name: unknown
+    - value: intune
+      description: Intune
+      name: intune
+    - value: sccm
+      description: SCCM
+      name: sccm
+    - value: office365
+      description: Office365
+      name: office365

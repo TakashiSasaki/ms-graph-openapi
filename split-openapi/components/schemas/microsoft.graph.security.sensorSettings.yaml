@@ -1,0 +1,25 @@
+title: sensorSettings
+required:
+  - '@odata.type'
+type: object
+properties:
+  description:
+    type: string
+    description: Description of the sensor.
+  domainControllerDnsNames:
+    type: array
+    items:
+      type: string
+      nullable: true
+    description: DNS names for the domain controller
+  isDelayedDeploymentEnabled:
+    type: boolean
+    description: Indicates whether to delay updates for the sensor.
+    nullable: true
+  networkAdapters:
+    type: array
+    items:
+      $ref: .\microsoft.graph.security.networkAdapter.yaml
+    x-ms-navigationProperty: true
+  '@odata.type':
+    type: string

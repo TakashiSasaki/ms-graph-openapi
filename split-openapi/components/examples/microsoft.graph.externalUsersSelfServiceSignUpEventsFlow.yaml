@@ -1,0 +1,9 @@
+value:
+  onAttributeCollection:
+    '@odata.type': microsoft.graph.onAttributeCollectionHandler
+  onAuthenticationMethodLoadStart:
+    '@odata.type': microsoft.graph.onAuthenticationMethodLoadStartHandler
+  onInteractiveAuthFlowStart:
+    '@odata.type': microsoft.graph.onInteractiveAuthFlowStartHandler
+  onUserCreateStart:
+    '@odata.type': microsoft.graph.onUserCreateStartHandler

@@ -1,0 +1,128 @@
+description: >-
+  Provides operations to manage the extensions property of the
+  microsoft.graph.event entity.
+get:
+  tags:
+    - groups.event
+  summary: Get open extension
+  description: >-
+    Get an open extension (openTypeExtension object) identified by name or fully
+    qualified name. The table in the Permissions section lists the resources
+    that support open extensions. The following table lists the three scenarios
+    where you can get an open extension from a supported resource instance.
+  externalDocs:
+    description: Find more info here
+    url: >-
+      https://learn.microsoft.com/graph/api/opentypeextension-get?view=graph-rest-1.0
+  operationId: groups.events.GetExtensions
+  parameters:
+    - name: $select
+      in: query
+      description: Select properties to be returned
+      style: form
+      explode: false
+      schema:
+        uniqueItems: true
+        type: array
+        items:
+          type: string
+    - name: $expand
+      in: query
+      description: Expand related entities
+      style: form
+      explode: false
+      schema:
+        uniqueItems: true
+        type: array
+        items:
+          type: string
+  responses:
+    2XX:
+      description: Retrieved navigation property
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\microsoft.graph.extension.yaml
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: operation
+patch:
+  tags:
+    - groups.event
+  summary: Update the navigation property extensions in groups
+  operationId: groups.events.UpdateExtensions
+  requestBody:
+    description: New navigation property values
+    content:
+      application/json:
+        schema:
+          $ref: ..\components\schemas\microsoft.graph.extension.yaml
+    required: true
+  responses:
+    2XX:
+      description: Success
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\microsoft.graph.extension.yaml
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: operation
+delete:
+  tags:
+    - groups.event
+  summary: Delete navigation property extensions for groups
+  operationId: groups.events.DeleteExtensions
+  parameters:
+    - name: If-Match
+      in: header
+      description: ETag
+      schema:
+        type: string
+  responses:
+    '204':
+      description: Success
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: operation
+parameters:
+  - name: group-id
+    in: path
+    description: The unique identifier of group
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: group
+  - name: event-id
+    in: path
+    description: The unique identifier of event
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: event
+  - name: extension-id
+    in: path
+    description: The unique identifier of extension
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: extension
+x-ms-docs-grouped-path:
+  - >-
+    /groups/{group-id}/calendar/calendarView/{event-id}/extensions/{extension-id}
+  - >-
+    /groups/{group-id}/calendar/calendarView/{event-id}/instances/{event-id1}/extensions/{extension-id}
+  - /groups/{group-id}/calendar/events/{event-id}/extensions/{extension-id}
+  - >-
+    /groups/{group-id}/calendar/events/{event-id}/instances/{event-id1}/extensions/{extension-id}
+  - /groups/{group-id}/calendarView/{event-id}/extensions/{extension-id}
+  - >-
+    /groups/{group-id}/calendarView/{event-id}/instances/{event-id1}/extensions/{extension-id}
+  - >-
+    /groups/{group-id}/events/{event-id}/instances/{event-id1}/extensions/{extension-id}

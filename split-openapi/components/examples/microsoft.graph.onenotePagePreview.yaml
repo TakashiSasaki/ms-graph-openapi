@@ -1,0 +1,4 @@
+value:
+  links:
+    '@odata.type': microsoft.graph.onenotePagePreviewLinks
+  previewText: String

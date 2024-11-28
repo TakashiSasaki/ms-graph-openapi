@@ -1,0 +1,13 @@
+value:
+  container:
+    '@odata.type': microsoft.graph.directoryObject
+  containerId: String
+  lastModifiedBy:
+    '@odata.type': microsoft.graph.user
+  member:
+    '@odata.type': microsoft.graph.directoryObject
+  memberId: String
+  outlierContainerType:
+    '@odata.type': microsoft.graph.outlierContainerType
+  outlierMemberType:
+    '@odata.type': microsoft.graph.outlierMemberType

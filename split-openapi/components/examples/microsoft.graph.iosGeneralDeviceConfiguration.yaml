@@ -1,0 +1,153 @@
+value:
+  accountBlockModification: 'true'
+  activationLockAllowWhenSupervised: 'true'
+  airDropBlocked: 'true'
+  airDropForceUnmanagedDropTarget: 'true'
+  airPlayForcePairingPasswordForOutgoingRequests: 'true'
+  appleNewsBlocked: 'true'
+  appleWatchBlockPairing: 'true'
+  appleWatchForceWristDetection: 'true'
+  appsSingleAppModeList:
+    - '@odata.type': microsoft.graph.appListItem
+  appStoreBlockAutomaticDownloads: 'true'
+  appStoreBlocked: 'true'
+  appStoreBlockInAppPurchases: 'true'
+  appStoreBlockUIAppInstallation: 'true'
+  appStoreRequirePassword: 'true'
+  appsVisibilityList:
+    - '@odata.type': microsoft.graph.appListItem
+  appsVisibilityListType:
+    '@odata.type': microsoft.graph.appListType
+  bluetoothBlockModification: 'true'
+  cameraBlocked: 'true'
+  cellularBlockDataRoaming: 'true'
+  cellularBlockGlobalBackgroundFetchWhileRoaming: 'true'
+  cellularBlockPerAppDataModification: 'true'
+  cellularBlockPersonalHotspot: 'true'
+  cellularBlockVoiceRoaming: 'true'
+  certificatesBlockUntrustedTlsCertificates: 'true'
+  classroomAppBlockRemoteScreenObservation: 'true'
+  classroomAppForceUnpromptedScreenObservation: 'true'
+  compliantAppListType:
+    '@odata.type': microsoft.graph.appListType
+  compliantAppsList:
+    - '@odata.type': microsoft.graph.appListItem
+  configurationProfileBlockChanges: 'true'
+  definitionLookupBlocked: 'true'
+  deviceBlockEnableRestrictions: 'true'
+  deviceBlockEraseContentAndSettings: 'true'
+  deviceBlockNameModification: 'true'
+  diagnosticDataBlockSubmission: 'true'
+  diagnosticDataBlockSubmissionModification: 'true'
+  documentsBlockManagedDocumentsInUnmanagedApps: 'true'
+  documentsBlockUnmanagedDocumentsInManagedApps: 'true'
+  emailInDomainSuffixes:
+    - String
+  enterpriseAppBlockTrust: 'true'
+  enterpriseAppBlockTrustModification: 'true'
+  faceTimeBlocked: 'true'
+  findMyFriendsBlocked: 'true'
+  gameCenterBlocked: 'true'
+  gamingBlockGameCenterFriends: 'true'
+  gamingBlockMultiplayer: 'true'
+  hostPairingBlocked: 'true'
+  iBooksStoreBlocked: 'true'
+  iBooksStoreBlockErotica: 'true'
+  iCloudBlockActivityContinuation: 'true'
+  iCloudBlockBackup: 'true'
+  iCloudBlockDocumentSync: 'true'
+  iCloudBlockManagedAppsSync: 'true'
+  iCloudBlockPhotoLibrary: 'true'
+  iCloudBlockPhotoStreamSync: 'true'
+  iCloudBlockSharedPhotoStream: 'true'
+  iCloudRequireEncryptedBackup: 'true'
+  iTunesBlockExplicitContent: 'true'
+  iTunesBlockMusicService: 'true'
+  iTunesBlockRadio: 'true'
+  keyboardBlockAutoCorrect: 'true'
+  keyboardBlockDictation: 'true'
+  keyboardBlockPredictive: 'true'
+  keyboardBlockShortcuts: 'true'
+  keyboardBlockSpellCheck: 'true'
+  kioskModeAllowAssistiveSpeak: 'true'
+  kioskModeAllowAssistiveTouchSettings: 'true'
+  kioskModeAllowAutoLock: 'true'
+  kioskModeAllowColorInversionSettings: 'true'
+  kioskModeAllowRingerSwitch: 'true'
+  kioskModeAllowScreenRotation: 'true'
+  kioskModeAllowSleepButton: 'true'
+  kioskModeAllowTouchscreen: 'true'
+  kioskModeAllowVoiceOverSettings: 'true'
+  kioskModeAllowVolumeButtons: 'true'
+  kioskModeAllowZoomSettings: 'true'
+  kioskModeAppStoreUrl: String
+  kioskModeBuiltInAppId: String
+  kioskModeManagedAppId: String
+  kioskModeRequireAssistiveTouch: 'true'
+  kioskModeRequireColorInversion: 'true'
+  kioskModeRequireMonoAudio: 'true'
+  kioskModeRequireVoiceOver: 'true'
+  kioskModeRequireZoom: 'true'
+  lockScreenBlockControlCenter: 'true'
+  lockScreenBlockNotificationView: 'true'
+  lockScreenBlockPassbook: 'true'
+  lockScreenBlockTodayView: 'true'
+  mediaContentRatingApps:
+    '@odata.type': microsoft.graph.ratingAppsType
+  mediaContentRatingAustralia:
+    '@odata.type': microsoft.graph.mediaContentRatingAustralia
+  mediaContentRatingCanada:
+    '@odata.type': microsoft.graph.mediaContentRatingCanada
+  mediaContentRatingFrance:
+    '@odata.type': microsoft.graph.mediaContentRatingFrance
+  mediaContentRatingGermany:
+    '@odata.type': microsoft.graph.mediaContentRatingGermany
+  mediaContentRatingIreland:
+    '@odata.type': microsoft.graph.mediaContentRatingIreland
+  mediaContentRatingJapan:
+    '@odata.type': microsoft.graph.mediaContentRatingJapan
+  mediaContentRatingNewZealand:
+    '@odata.type': microsoft.graph.mediaContentRatingNewZealand
+  mediaContentRatingUnitedKingdom:
+    '@odata.type': microsoft.graph.mediaContentRatingUnitedKingdom
+  mediaContentRatingUnitedStates:
+    '@odata.type': microsoft.graph.mediaContentRatingUnitedStates
+  messagesBlocked: 'true'
+  networkUsageRules:
+    - '@odata.type': microsoft.graph.iosNetworkUsageRule
+  notificationsBlockSettingsModification: 'true'
+  passcodeBlockFingerprintModification: 'true'
+  passcodeBlockFingerprintUnlock: 'true'
+  passcodeBlockModification: 'true'
+  passcodeBlockSimple: 'true'
+  passcodeExpirationDays: '0'
+  passcodeMinimumCharacterSetCount: '0'
+  passcodeMinimumLength: '0'
+  passcodeMinutesOfInactivityBeforeLock: '0'
+  passcodeMinutesOfInactivityBeforeScreenTimeout: '0'
+  passcodePreviousPasscodeBlockCount: '0'
+  passcodeRequired: 'true'
+  passcodeRequiredType:
+    '@odata.type': microsoft.graph.requiredPasswordType
+  passcodeSignInFailureCountBeforeWipe: '0'
+  podcastsBlocked: 'true'
+  safariBlockAutofill: 'true'
+  safariBlocked: 'true'
+  safariBlockJavaScript: 'true'
+  safariBlockPopups: 'true'
+  safariCookieSettings:
+    '@odata.type': microsoft.graph.webBrowserCookieSettings
+  safariManagedDomains:
+    - String
+  safariPasswordAutoFillDomains:
+    - String
+  safariRequireFraudWarning: 'true'
+  screenCaptureBlocked: 'true'
+  siriBlocked: 'true'
+  siriBlockedWhenLocked: 'true'
+  siriBlockUserGeneratedContent: 'true'
+  siriRequireProfanityFilter: 'true'
+  spotlightBlockInternetResults: 'true'
+  voiceDialingBlocked: 'true'
+  wallpaperBlockModification: 'true'
+  wiFiConnectOnlyToConfiguredNetworks: 'true'

@@ -1,0 +1,7 @@
+title: federatedIdpMfaBehavior
+enum:
+  - acceptIfMfaDoneByFederatedIdp
+  - enforceMfaByFederatedIdp
+  - rejectMfaByFederatedIdp
+  - unknownFutureValue
+type: string

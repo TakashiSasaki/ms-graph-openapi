@@ -1,0 +1,48 @@
+description: Provides operations to call the activate method.
+post:
+  tags:
+    - education.educationClass
+  summary: Invoke action activate
+  description: >-
+    Activate an inactive educationAssignment to signal that the assignment has
+    further action items for teachers or students. This action can only be
+    performed by a teacher on currently inactive assignments.
+  externalDocs:
+    description: Find more info here
+    url: >-
+      https://learn.microsoft.com/graph/api/educationassignment-activate?view=graph-rest-1.0
+  operationId: education.classes.educationClass.assignments.educationAssignment.activate
+  responses:
+    2XX:
+      description: Success
+      content:
+        application/json:
+          schema:
+            anyOf:
+              - $ref: ..\components\schemas\microsoft.graph.educationAssignment.yaml
+              - type: object
+                nullable: true
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: action
+parameters:
+  - name: educationClass-id
+    in: path
+    description: The unique identifier of educationClass
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: educationClass
+  - name: educationAssignment-id
+    in: path
+    description: The unique identifier of educationAssignment
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: educationAssignment
+x-ms-docs-grouped-path:
+  - /education/me/assignments/{educationAssignment-id}/activate
+  - >-
+    /education/users/{educationUser-id}/assignments/{educationAssignment-id}/activate

@@ -1,0 +1,7 @@
+value:
+  excludeTarget:
+    '@odata.type': microsoft.graph.featureTarget
+  includeTarget:
+    '@odata.type': microsoft.graph.featureTarget
+  state:
+    '@odata.type': microsoft.graph.advancedConfigState

@@ -1,0 +1,19 @@
+allOf:
+  - $ref: .\microsoft.graph.accountTargetContent.yaml
+  - title: addressBookAccountTargetContent
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      accountTargetEmails:
+        type: array
+        items:
+          type: string
+          nullable: true
+        description: >-
+          List of user emails targeted for an attack simulation training
+          campaign.
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.addressBookAccountTargetContent'
+x-ms-discriminator-value: '#microsoft.graph.addressBookAccountTargetContent'

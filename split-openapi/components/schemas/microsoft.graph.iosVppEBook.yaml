@@ -1,0 +1,52 @@
+allOf:
+  - $ref: .\microsoft.graph.managedEBook.yaml
+  - title: iosVppEBook
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      appleId:
+        type: string
+        description: The Apple ID associated with Vpp token.
+        nullable: true
+      genres:
+        type: array
+        items:
+          type: string
+          nullable: true
+        description: Genres.
+      language:
+        type: string
+        description: Language.
+        nullable: true
+      seller:
+        type: string
+        description: Seller.
+        nullable: true
+      totalLicenseCount:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: Total license count.
+        format: int32
+      usedLicenseCount:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: Used license count.
+        format: int32
+      vppOrganizationName:
+        type: string
+        description: The Vpp token's organization name.
+        nullable: true
+      vppTokenId:
+        pattern: >-
+          ^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$
+        type: string
+        description: The Vpp token ID.
+        format: uuid
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.iosVppEBook'
+    description: A class containing the properties for iOS Vpp eBook.
+x-ms-discriminator-value: '#microsoft.graph.iosVppEBook'

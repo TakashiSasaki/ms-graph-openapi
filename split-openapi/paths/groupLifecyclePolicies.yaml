@@ -1,0 +1,88 @@
+description: Provides operations to manage the collection of groupLifecyclePolicy entities.
+get:
+  tags:
+    - groupLifecyclePolicies.groupLifecyclePolicy
+  summary: List groupLifecyclePolicies
+  description: List all the groupLifecyclePolicies.
+  externalDocs:
+    description: Find more info here
+    url: >-
+      https://learn.microsoft.com/graph/api/grouplifecyclepolicy-list?view=graph-rest-1.0
+  operationId: groupLifecyclePolicies.groupLifecyclePolicy.ListGroupLifecyclePolicy
+  parameters:
+    - $ref: ..\components\parameters\top.yaml
+    - $ref: ..\components\parameters\skip.yaml
+    - $ref: ..\components\parameters\search.yaml
+    - $ref: ..\components\parameters\filter.yaml
+    - $ref: ..\components\parameters\count.yaml
+    - name: $orderby
+      in: query
+      description: Order items by property values
+      style: form
+      explode: false
+      schema:
+        uniqueItems: true
+        type: array
+        items:
+          type: string
+    - name: $select
+      in: query
+      description: Select properties to be returned
+      style: form
+      explode: false
+      schema:
+        uniqueItems: true
+        type: array
+        items:
+          type: string
+    - name: $expand
+      in: query
+      description: Expand related entities
+      style: form
+      explode: false
+      schema:
+        uniqueItems: true
+        type: array
+        items:
+          type: string
+  responses:
+    2XX:
+      $ref: >-
+        ..\components\responses\microsoft.graph.groupLifecyclePolicyCollectionResponse.yaml
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-pageable:
+    nextLinkName: '@odata.nextLink'
+    operationName: listMore
+  x-ms-docs-operation-type: operation
+post:
+  tags:
+    - groupLifecyclePolicies.groupLifecyclePolicy
+  summary: Create groupLifecyclePolicy
+  description: Creates a new groupLifecyclePolicy.
+  externalDocs:
+    description: Find more info here
+    url: >-
+      https://learn.microsoft.com/graph/api/grouplifecyclepolicy-post-grouplifecyclepolicies?view=graph-rest-1.0
+  operationId: groupLifecyclePolicies.groupLifecyclePolicy.CreateGroupLifecyclePolicy
+  requestBody:
+    description: New entity
+    content:
+      application/json:
+        schema:
+          $ref: ..\components\schemas\microsoft.graph.groupLifecyclePolicy.yaml
+    required: true
+  responses:
+    2XX:
+      description: Created entity
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\microsoft.graph.groupLifecyclePolicy.yaml
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: operation

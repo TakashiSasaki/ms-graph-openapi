@@ -1,0 +1,45 @@
+title: hostPortBanner
+required:
+  - '@odata.type'
+type: object
+properties:
+  banner:
+    type: string
+    description: The text response received from a web component when scanning a hostPort.
+  firstSeenDateTime:
+    pattern: >-
+      ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+    type: string
+    description: >-
+      The first date and time when Microsoft Defender Threat Intelligence
+      observed the hostPortBanner. The timestamp type represents date and time
+      information using ISO 8601 format and is always in UTC. For example,
+      midnight UTC on Jan 1, 2014, is 2014-01-01T00:00:00Z.
+    format: date-time
+    nullable: true
+  lastSeenDateTime:
+    pattern: >-
+      ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+    type: string
+    description: >-
+      The last date and time when Microsoft Defender Threat Intelligence
+      observed the hostPortBanner. The timestamp type represents date and time
+      information using ISO 8601 format and is always in UTC. For example,
+      midnight UTC on Jan 1, 2014, is 2014-01-01T00:00:00Z.
+    format: date-time
+    nullable: true
+  scanProtocol:
+    type: string
+    description: The specific protocol used to scan the hostPort.
+    nullable: true
+  timesObserved:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    description: >-
+      The total amount of times that Microsoft Defender Threat Intelligence has
+      observed the hostPortBanner in all its scans.
+    format: int32
+    nullable: true
+  '@odata.type':
+    type: string

@@ -1,0 +1,35 @@
+title: textColumn
+required:
+  - '@odata.type'
+type: object
+properties:
+  allowMultipleLines:
+    type: boolean
+    description: Whether to allow multiple lines of text.
+    nullable: true
+  appendChangesToExistingText:
+    type: boolean
+    description: >-
+      Whether updates to this column should replace existing text, or append to
+      it.
+    nullable: true
+  linesForEditing:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    description: The size of the text box.
+    format: int32
+    nullable: true
+  maxLength:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    description: The maximum number of characters for the value.
+    format: int32
+    nullable: true
+  textType:
+    type: string
+    description: The type of text being stored. Must be one of plain or richText
+    nullable: true
+  '@odata.type':
+    type: string

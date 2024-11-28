@@ -1,0 +1,79 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: simulationAutomation
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      createdBy:
+        anyOf:
+          - $ref: .\microsoft.graph.emailIdentity.yaml
+          - type: object
+            nullable: true
+        description: Identity of the user who created the attack simulation automation.
+      createdDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: Date and time when the attack simulation automation was created.
+        format: date-time
+        nullable: true
+      description:
+        type: string
+        description: Description of the attack simulation automation.
+        nullable: true
+      displayName:
+        type: string
+        description: >-
+          Display name of the attack simulation automation. Supports $filter and
+          $orderby.
+        nullable: true
+      lastModifiedBy:
+        anyOf:
+          - $ref: .\microsoft.graph.emailIdentity.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Identity of the user who most recently modified the attack simulation
+          automation.
+      lastModifiedDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: >-
+          Date and time when the attack simulation automation was most recently
+          modified.
+        format: date-time
+        nullable: true
+      lastRunDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: Date and time of the latest run of the attack simulation automation.
+        format: date-time
+        nullable: true
+      nextRunDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: Date and time of the upcoming run of the attack simulation automation.
+        format: date-time
+        nullable: true
+      status:
+        anyOf:
+          - $ref: .\microsoft.graph.simulationAutomationStatus.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Status of the attack simulation automation. Supports $filter and
+          $orderby. The possible values are: unknown, draft, notRunning,
+          running, completed, unknownFutureValue.
+      runs:
+        type: array
+        items:
+          $ref: .\microsoft.graph.simulationAutomationRun.yaml
+        description: A collection of simulation automation runs.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.simulationAutomation'

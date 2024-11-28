@@ -1,0 +1,66 @@
+value:
+  activityGroupName: String
+  alertDetections:
+    - '@odata.type': microsoft.graph.alertDetection
+  assignedTo: String
+  azureSubscriptionId: String
+  azureTenantId: String
+  category: String
+  closedDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  cloudAppStates:
+    - '@odata.type': microsoft.graph.cloudAppSecurityState
+  comments:
+    - String
+  confidence: '0'
+  createdDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  description: String
+  detectionIds:
+    - String
+  eventDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  feedback:
+    '@odata.type': microsoft.graph.alertFeedback
+  fileStates:
+    - '@odata.type': microsoft.graph.fileSecurityState
+  historyStates:
+    - '@odata.type': microsoft.graph.alertHistoryState
+  hostStates:
+    - '@odata.type': microsoft.graph.hostSecurityState
+  incidentIds:
+    - String
+  investigationSecurityStates:
+    - '@odata.type': microsoft.graph.investigationSecurityState
+  lastEventDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  lastModifiedDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  malwareStates:
+    - '@odata.type': microsoft.graph.malwareState
+  messageSecurityStates:
+    - '@odata.type': microsoft.graph.messageSecurityState
+  networkConnections:
+    - '@odata.type': microsoft.graph.networkConnection
+  processes:
+    - '@odata.type': microsoft.graph.process
+  recommendedActions:
+    - String
+  registryKeyStates:
+    - '@odata.type': microsoft.graph.registryKeyState
+  securityResources:
+    - '@odata.type': microsoft.graph.securityResource
+  severity:
+    '@odata.type': microsoft.graph.alertSeverity
+  sourceMaterials:
+    - String
+  status:
+    '@odata.type': microsoft.graph.alertStatus
+  tags:
+    - String
+  title: String
+  triggers:
+    - '@odata.type': microsoft.graph.alertTrigger
+  uriClickSecurityStates:
+    - '@odata.type': microsoft.graph.uriClickSecurityState
+  userStates:
+    - '@odata.type': microsoft.graph.userSecurityState
+  vendorInformation:
+    '@odata.type': microsoft.graph.securityVendorInformation
+  vulnerabilityStates:
+    - '@odata.type': microsoft.graph.vulnerabilityState

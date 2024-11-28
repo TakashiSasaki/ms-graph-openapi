@@ -1,0 +1,13 @@
+title: conditionalAccessGuestOrExternalUserTypes
+enum:
+  - none
+  - internalGuest
+  - b2bCollaborationGuest
+  - b2bCollaborationMember
+  - b2bDirectConnectUser
+  - otherExternalUser
+  - serviceProvider
+  - unknownFutureValue
+type: string
+x-ms-enum-flags:
+  isFlags: true

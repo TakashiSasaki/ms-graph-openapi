@@ -1,0 +1,40 @@
+title: ratingIrelandMoviesType
+enum:
+  - allAllowed
+  - allBlocked
+  - general
+  - parentalGuidance
+  - agesAbove12
+  - agesAbove15
+  - agesAbove16
+  - adults
+type: string
+description: Movies rating labels in Ireland
+x-ms-enum:
+  name: ratingIrelandMoviesType
+  modelAsString: false
+  values:
+    - value: allAllowed
+      description: Default value, allow all movies content
+      name: allAllowed
+    - value: allBlocked
+      description: Do not allow any movies content
+      name: allBlocked
+    - value: general
+      description: Suitable for children of school going age
+      name: general
+    - value: parentalGuidance
+      description: The PG classification advises parental guidance
+      name: parentalGuidance
+    - value: agesAbove12
+      description: The 12A classification is suitable for viewers of 12 or older
+      name: agesAbove12
+    - value: agesAbove15
+      description: The 15A classification is suitable for viewers of 15 or older
+      name: agesAbove15
+    - value: agesAbove16
+      description: The 16 classification is suitable for viewers of 16 or older
+      name: agesAbove16
+    - value: adults
+      description: The 18 classification, suitable only for adults
+      name: adults

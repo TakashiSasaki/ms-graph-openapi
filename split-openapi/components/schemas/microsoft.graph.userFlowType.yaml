@@ -1,0 +1,10 @@
+title: userFlowType
+enum:
+  - signUp
+  - signIn
+  - signUpOrSignIn
+  - passwordReset
+  - profileUpdate
+  - resourceOwner
+  - unknownFutureValue
+type: string

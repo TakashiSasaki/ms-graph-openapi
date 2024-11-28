@@ -1,0 +1,17 @@
+title: itemBody
+required:
+  - '@odata.type'
+type: object
+properties:
+  content:
+    type: string
+    description: The content of the item.
+    nullable: true
+  contentType:
+    anyOf:
+      - $ref: .\microsoft.graph.bodyType.yaml
+      - type: object
+        nullable: true
+    description: The type of the content. Possible values are text and html.
+  '@odata.type':
+    type: string

@@ -1,0 +1,48 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: contactFolder
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      displayName:
+        type: string
+        description: The folder's display name.
+        nullable: true
+      parentFolderId:
+        type: string
+        description: The ID of the folder's parent folder.
+        nullable: true
+      childFolders:
+        type: array
+        items:
+          $ref: .\microsoft.graph.contactFolder.yaml
+        description: >-
+          The collection of child folders in the folder. Navigation property.
+          Read-only. Nullable.
+        x-ms-navigationProperty: true
+      contacts:
+        type: array
+        items:
+          $ref: .\microsoft.graph.contact.yaml
+        description: The contacts in the folder. Navigation property. Read-only. Nullable.
+        x-ms-navigationProperty: true
+      multiValueExtendedProperties:
+        type: array
+        items:
+          $ref: .\microsoft.graph.multiValueLegacyExtendedProperty.yaml
+        description: >-
+          The collection of multi-value extended properties defined for the
+          contactFolder. Read-only. Nullable.
+        x-ms-navigationProperty: true
+      singleValueExtendedProperties:
+        type: array
+        items:
+          $ref: .\microsoft.graph.singleValueLegacyExtendedProperty.yaml
+        description: >-
+          The collection of single-value extended properties defined for the
+          contactFolder. Read-only. Nullable.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.contactFolder'

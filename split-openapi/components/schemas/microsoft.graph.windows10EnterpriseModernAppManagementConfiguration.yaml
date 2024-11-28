@@ -1,0 +1,17 @@
+allOf:
+  - $ref: .\microsoft.graph.deviceConfiguration.yaml
+  - title: windows10EnterpriseModernAppManagementConfiguration
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      uninstallBuiltInApps:
+        type: boolean
+        description: >-
+          Indicates whether or not to uninstall a fixed list of built-in Windows
+          apps.
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.windows10EnterpriseModernAppManagementConfiguration'
+    description: Windows10 Enterprise Modern App Management Configuration.
+x-ms-discriminator-value: '#microsoft.graph.windows10EnterpriseModernAppManagementConfiguration'

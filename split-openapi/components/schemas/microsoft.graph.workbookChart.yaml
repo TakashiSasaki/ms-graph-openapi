@@ -1,0 +1,107 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: workbookChart
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      height:
+        oneOf:
+          - type: number
+            format: double
+            nullable: true
+          - type: string
+            nullable: true
+          - $ref: .\ReferenceNumeric.yaml
+        description: Represents the height, in points, of the chart object.
+      left:
+        oneOf:
+          - type: number
+            format: double
+            nullable: true
+          - type: string
+            nullable: true
+          - $ref: .\ReferenceNumeric.yaml
+        description: >-
+          The distance, in points, from the left side of the chart to the
+          worksheet origin.
+      name:
+        type: string
+        description: Represents the name of a chart object.
+        nullable: true
+      top:
+        oneOf:
+          - type: number
+            format: double
+            nullable: true
+          - type: string
+            nullable: true
+          - $ref: .\ReferenceNumeric.yaml
+        description: >-
+          Represents the distance, in points, from the top edge of the object to
+          the top of row 1 (on a worksheet) or the top of the chart area (on a
+          chart).
+      width:
+        oneOf:
+          - type: number
+            format: double
+            nullable: true
+          - type: string
+            nullable: true
+          - $ref: .\ReferenceNumeric.yaml
+        description: Represents the width, in points, of the chart object.
+      axes:
+        anyOf:
+          - $ref: .\microsoft.graph.workbookChartAxes.yaml
+          - type: object
+            nullable: true
+        description: Represents chart axes. Read-only.
+        x-ms-navigationProperty: true
+      dataLabels:
+        anyOf:
+          - $ref: .\microsoft.graph.workbookChartDataLabels.yaml
+          - type: object
+            nullable: true
+        description: Represents the data labels on the chart. Read-only.
+        x-ms-navigationProperty: true
+      format:
+        anyOf:
+          - $ref: .\microsoft.graph.workbookChartAreaFormat.yaml
+          - type: object
+            nullable: true
+        description: Encapsulates the format properties for the chart area. Read-only.
+        x-ms-navigationProperty: true
+      legend:
+        anyOf:
+          - $ref: .\microsoft.graph.workbookChartLegend.yaml
+          - type: object
+            nullable: true
+        description: Represents the legend for the chart. Read-only.
+        x-ms-navigationProperty: true
+      series:
+        type: array
+        items:
+          $ref: .\microsoft.graph.workbookChartSeries.yaml
+        description: >-
+          Represents either a single series or collection of series in the
+          chart. Read-only.
+        x-ms-navigationProperty: true
+      title:
+        anyOf:
+          - $ref: .\microsoft.graph.workbookChartTitle.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Represents the title of the specified chart, including the text,
+          visibility, position and formatting of the title. Read-only.
+        x-ms-navigationProperty: true
+      worksheet:
+        anyOf:
+          - $ref: .\microsoft.graph.workbookWorksheet.yaml
+          - type: object
+            nullable: true
+        description: The worksheet containing the current chart. Read-only.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.workbookChart'

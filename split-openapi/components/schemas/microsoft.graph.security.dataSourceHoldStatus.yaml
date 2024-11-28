@@ -1,0 +1,9 @@
+title: dataSourceHoldStatus
+enum:
+  - notApplied
+  - applied
+  - applying
+  - removing
+  - partial
+  - unknownFutureValue
+type: string

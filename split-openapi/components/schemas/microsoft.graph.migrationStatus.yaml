@@ -1,0 +1,7 @@
+title: migrationStatus
+enum:
+  - ready
+  - needsReview
+  - additionalStepsRequired
+  - unknownFutureValue
+type: string

@@ -1,0 +1,44 @@
+description: Provides operations to call the addCopy method.
+post:
+  tags:
+    - drives.list
+  summary: Invoke action addCopy
+  description: Add a copy of a content type from a site to a list.
+  externalDocs:
+    description: Find more info here
+    url: >-
+      https://learn.microsoft.com/graph/api/contenttype-addcopy?view=graph-rest-1.0
+  operationId: drives.drive.list.contentTypes.addCopy
+  requestBody:
+    description: Action parameters
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            contentType:
+              type: string
+    required: true
+  responses:
+    2XX:
+      description: Success
+      content:
+        application/json:
+          schema:
+            anyOf:
+              - $ref: ..\components\schemas\microsoft.graph.contentType.yaml
+              - type: object
+                nullable: true
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: action
+parameters:
+  - name: drive-id
+    in: path
+    description: The unique identifier of drive
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: drive

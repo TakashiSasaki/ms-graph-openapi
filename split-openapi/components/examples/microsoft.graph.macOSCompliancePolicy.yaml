@@ -1,0 +1,20 @@
+value:
+  deviceThreatProtectionEnabled: 'true'
+  deviceThreatProtectionRequiredSecurityLevel:
+    '@odata.type': microsoft.graph.deviceThreatProtectionLevel
+  firewallBlockAllIncoming: 'true'
+  firewallEnabled: 'true'
+  firewallEnableStealthMode: 'true'
+  osMaximumVersion: String
+  osMinimumVersion: String
+  passwordBlockSimple: 'true'
+  passwordExpirationDays: '0'
+  passwordMinimumCharacterSetCount: '0'
+  passwordMinimumLength: '0'
+  passwordMinutesOfInactivityBeforeLock: '0'
+  passwordPreviousPasswordBlockCount: '0'
+  passwordRequired: 'true'
+  passwordRequiredType:
+    '@odata.type': microsoft.graph.requiredPasswordType
+  storageRequireEncryption: 'true'
+  systemIntegrityProtectionEnabled: 'true'

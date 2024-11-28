@@ -1,0 +1,7 @@
+title: bookingReminderRecipients
+enum:
+  - allAttendees
+  - staff
+  - customer
+  - unknownFutureValue
+type: string

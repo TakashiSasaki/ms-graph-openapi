@@ -1,0 +1,7 @@
+title: imageTaggingChoice
+enum:
+  - disabled
+  - basic
+  - enhanced
+  - unknownFutureValue
+type: string

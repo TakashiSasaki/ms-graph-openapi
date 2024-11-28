@@ -1,0 +1,5 @@
+value:
+  isMicrosoft365AppsEnabled: 'true'
+  isProjectEnabled: 'true'
+  isSkypeForBusinessEnabled: 'true'
+  isVisioEnabled: 'true'

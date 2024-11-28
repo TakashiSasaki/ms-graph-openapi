@@ -1,0 +1,87 @@
+description: >-
+  Provides operations to manage the members property of the
+  microsoft.graph.directoryRole entity.
+get:
+  tags:
+    - directoryRoles.directoryObject
+  summary: List members of a directory role
+  description: >-
+    Retrieve the list of principals that are assigned to the directory role. 
+    You can use both the object ID and template ID of the directoryRole with
+    this API. The template ID of a built-in role is immutable and can be seen in
+    the role description on the Microsoft Entra admin center. For details, see
+    Role template IDs.
+  externalDocs:
+    description: Find more info here
+    url: >-
+      https://learn.microsoft.com/graph/api/directoryrole-list-members?view=graph-rest-1.0
+  operationId: directoryRoles.ListMembers
+  parameters:
+    - name: ConsistencyLevel
+      in: header
+      description: >-
+        Indicates the requested consistency level. Documentation URL:
+        https://docs.microsoft.com/graph/aad-advanced-queries
+      schema:
+        type: string
+      examples:
+        example-1:
+          description: >-
+            $search and $count queries require the client to set the
+            ConsistencyLevel HTTP header to 'eventual'.
+          value: eventual
+    - $ref: ..\components\parameters\top.yaml
+    - $ref: ..\components\parameters\skip.yaml
+    - $ref: ..\components\parameters\search.yaml
+    - $ref: ..\components\parameters\filter.yaml
+    - $ref: ..\components\parameters\count.yaml
+    - name: $orderby
+      in: query
+      description: Order items by property values
+      style: form
+      explode: false
+      schema:
+        uniqueItems: true
+        type: array
+        items:
+          type: string
+    - name: $select
+      in: query
+      description: Select properties to be returned
+      style: form
+      explode: false
+      schema:
+        uniqueItems: true
+        type: array
+        items:
+          type: string
+    - name: $expand
+      in: query
+      description: Expand related entities
+      style: form
+      explode: false
+      schema:
+        uniqueItems: true
+        type: array
+        items:
+          type: string
+  responses:
+    2XX:
+      $ref: >-
+        ..\components\responses\microsoft.graph.directoryObjectCollectionResponse.yaml
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-pageable:
+    nextLinkName: '@odata.nextLink'
+    operationName: listMore
+  x-ms-docs-operation-type: operation
+parameters:
+  - name: directoryRole-id
+    in: path
+    description: The unique identifier of directoryRole
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: directoryRole

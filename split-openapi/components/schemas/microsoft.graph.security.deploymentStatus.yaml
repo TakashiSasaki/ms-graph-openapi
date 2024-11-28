@@ -1,0 +1,13 @@
+title: deploymentStatus
+enum:
+  - upToDate
+  - outdated
+  - updating
+  - updateFailed
+  - notConfigured
+  - unreachable
+  - disconnected
+  - startFailure
+  - syncing
+  - unknownFutureValue
+type: string

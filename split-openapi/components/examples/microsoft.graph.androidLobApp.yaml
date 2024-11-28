@@ -1,0 +1,6 @@
+value:
+  minimumSupportedOperatingSystem:
+    '@odata.type': microsoft.graph.androidMinimumOperatingSystem
+  packageId: String
+  versionCode: String
+  versionName: String

@@ -1,0 +1,9 @@
+value:
+  description: String
+  displayName: String
+  memberCount: '0'
+  members:
+    - '@odata.type': microsoft.graph.teamworkTagMember
+  tagType:
+    '@odata.type': microsoft.graph.teamworkTagType
+  teamId: String

@@ -1,0 +1,20 @@
+allOf:
+  - $ref: .\microsoft.graph.omaSetting.yaml
+  - title: omaSettingStringXml
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      fileName:
+        type: string
+        description: File name associated with the Value property (.xml).
+        nullable: true
+      value:
+        type: string
+        description: Value. (UTF8 encoded byte array)
+        format: base64url
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.omaSettingStringXml'
+    description: OMA Settings StringXML definition.
+x-ms-discriminator-value: '#microsoft.graph.omaSettingStringXml'

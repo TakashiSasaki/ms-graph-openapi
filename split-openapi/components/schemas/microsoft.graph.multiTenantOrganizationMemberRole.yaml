@@ -1,0 +1,6 @@
+title: multiTenantOrganizationMemberRole
+enum:
+  - owner
+  - member
+  - unknownFutureValue
+type: string

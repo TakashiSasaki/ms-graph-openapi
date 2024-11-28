@@ -1,0 +1,6 @@
+title: trainingType
+enum:
+  - unknown
+  - phishing
+  - unknownFutureValue
+type: string

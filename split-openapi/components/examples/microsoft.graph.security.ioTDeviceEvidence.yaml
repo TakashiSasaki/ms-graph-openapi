@@ -1,0 +1,34 @@
+value:
+  deviceId: String
+  deviceName: String
+  devicePageLink: String
+  deviceSubType: String
+  deviceType: String
+  importance:
+    '@odata.type': microsoft.graph.security.ioTDeviceImportanceType
+  ioTHub:
+    '@odata.type': microsoft.graph.security.azureResourceEvidence
+  ioTSecurityAgentId: String
+  ipAddress:
+    '@odata.type': microsoft.graph.security.ipEvidence
+  isAuthorized: 'true'
+  isProgramming: 'true'
+  isScanner: 'true'
+  macAddress: String
+  manufacturer: String
+  model: String
+  nics:
+    - '@odata.type': microsoft.graph.security.nicEvidence
+  operatingSystem: String
+  owners:
+    - String
+  protocols:
+    - String
+  purdueLayer: String
+  sensor: String
+  serialNumber: String
+  site: String
+  source: String
+  sourceRef:
+    '@odata.type': microsoft.graph.security.urlEvidence
+  zone: String

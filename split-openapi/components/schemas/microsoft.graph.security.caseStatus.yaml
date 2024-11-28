@@ -1,0 +1,10 @@
+title: caseStatus
+enum:
+  - unknown
+  - active
+  - pendingDelete
+  - closing
+  - closed
+  - closedWithError
+  - unknownFutureValue
+type: string

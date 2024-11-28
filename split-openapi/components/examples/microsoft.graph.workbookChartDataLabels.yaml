@@ -1,0 +1,11 @@
+value:
+  format:
+    '@odata.type': microsoft.graph.workbookChartDataLabelFormat
+  position: String
+  separator: String
+  showBubbleSize: 'true'
+  showCategoryName: 'true'
+  showLegendKey: 'true'
+  showPercentage: 'true'
+  showSeriesName: 'true'
+  showValue: 'true'

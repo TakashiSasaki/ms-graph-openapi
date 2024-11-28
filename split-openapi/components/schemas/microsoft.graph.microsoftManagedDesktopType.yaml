@@ -1,0 +1,8 @@
+title: microsoftManagedDesktopType
+enum:
+  - notManaged
+  - premiumManaged
+  - standardManaged
+  - starterManaged
+  - unknownFutureValue
+type: string

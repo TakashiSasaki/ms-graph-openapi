@@ -1,0 +1,55 @@
+title: fileEncryptionInfo
+required:
+  - '@odata.type'
+type: object
+properties:
+  encryptionKey:
+    type: string
+    description: The key used to encrypt the file content.
+    format: base64url
+    nullable: true
+  fileDigest:
+    type: string
+    description: >-
+      The file digest prior to encryption. ProfileVersion1 requires a non-null
+      FileDigest.
+    format: base64url
+    nullable: true
+  fileDigestAlgorithm:
+    type: string
+    description: >-
+      The file digest algorithm. ProfileVersion1 currently only supports SHA256
+      for the FileDigestAlgorithm.
+    nullable: true
+  initializationVector:
+    type: string
+    description: >-
+      The initialization vector (IV) used for the encryption algorithm. Must be
+      16 bytes.
+    format: base64url
+    nullable: true
+  mac:
+    type: string
+    description: >-
+      The hash of the concatenation of the IV and encrypted file content. Must
+      be 32 bytes.
+    format: base64url
+    nullable: true
+  macKey:
+    type: string
+    description: >-
+      The key used to compute the message authentication code of the
+      concatenation of the IV and encrypted file content. Must be 32 bytes.
+    format: base64url
+    nullable: true
+  profileIdentifier:
+    type: string
+    description: >-
+      The profile identifier. Maps to the strategy used to encrypt the file.
+      Currently, only ProfileVersion1 is supported.
+    nullable: true
+  '@odata.type':
+    type: string
+description: >-
+  Contains properties for file encryption information for the content version of
+  a line of business app.

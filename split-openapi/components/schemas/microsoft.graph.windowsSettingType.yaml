@@ -1,0 +1,6 @@
+title: windowsSettingType
+enum:
+  - roaming
+  - backup
+  - unknownFutureValue
+type: string

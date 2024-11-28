@@ -1,0 +1,9 @@
+value:
+  acl:
+    - '@odata.type': microsoft.graph.externalConnectors.acl
+  activities:
+    - '@odata.type': microsoft.graph.externalConnectors.externalActivity
+  content:
+    '@odata.type': microsoft.graph.externalConnectors.externalItemContent
+  properties:
+    '@odata.type': microsoft.graph.externalConnectors.properties

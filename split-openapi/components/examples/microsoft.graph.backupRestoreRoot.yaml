@@ -1,0 +1,37 @@
+value:
+  driveInclusionRules:
+    - '@odata.type': microsoft.graph.driveProtectionRule
+  driveProtectionUnits:
+    - '@odata.type': microsoft.graph.driveProtectionUnit
+  exchangeProtectionPolicies:
+    - '@odata.type': microsoft.graph.exchangeProtectionPolicy
+  exchangeRestoreSessions:
+    - '@odata.type': microsoft.graph.exchangeRestoreSession
+  mailboxInclusionRules:
+    - '@odata.type': microsoft.graph.mailboxProtectionRule
+  mailboxProtectionUnits:
+    - '@odata.type': microsoft.graph.mailboxProtectionUnit
+  oneDriveForBusinessProtectionPolicies:
+    - '@odata.type': microsoft.graph.oneDriveForBusinessProtectionPolicy
+  oneDriveForBusinessRestoreSessions:
+    - '@odata.type': microsoft.graph.oneDriveForBusinessRestoreSession
+  protectionPolicies:
+    - '@odata.type': microsoft.graph.protectionPolicyBase
+  protectionUnits:
+    - '@odata.type': microsoft.graph.protectionUnitBase
+  restorePoints:
+    - '@odata.type': microsoft.graph.restorePoint
+  restoreSessions:
+    - '@odata.type': microsoft.graph.restoreSessionBase
+  serviceApps:
+    - '@odata.type': microsoft.graph.serviceApp
+  serviceStatus:
+    '@odata.type': microsoft.graph.serviceStatus
+  sharePointProtectionPolicies:
+    - '@odata.type': microsoft.graph.sharePointProtectionPolicy
+  sharePointRestoreSessions:
+    - '@odata.type': microsoft.graph.sharePointRestoreSession
+  siteInclusionRules:
+    - '@odata.type': microsoft.graph.siteProtectionRule
+  siteProtectionUnits:
+    - '@odata.type': microsoft.graph.siteProtectionUnit

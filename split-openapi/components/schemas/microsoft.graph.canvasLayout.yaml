@@ -1,0 +1,23 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: canvasLayout
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      horizontalSections:
+        type: array
+        items:
+          $ref: .\microsoft.graph.horizontalSection.yaml
+        description: Collection of horizontal sections on the SharePoint page.
+        x-ms-navigationProperty: true
+      verticalSection:
+        anyOf:
+          - $ref: .\microsoft.graph.verticalSection.yaml
+          - type: object
+            nullable: true
+        description: Vertical section on the SharePoint page.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.canvasLayout'

@@ -1,0 +1,52 @@
+allOf:
+  - $ref: .\microsoft.graph.security.artifact.yaml
+  - title: hostSslCertificate
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      firstSeenDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: >-
+          The first date and time when this hostSslCertificate was observed. The
+          timestamp type represents date and time information using ISO 8601
+          format and is always in UTC. For example, midnight UTC on Jan 1, 2014
+          is 2014-01-01T00:00:00Z.
+        format: date-time
+        nullable: true
+      lastSeenDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: >-
+          The most recent date and time when this hostSslCertificate was
+          observed. The timestamp type represents date and time information
+          using ISO 8601 format and is always in UTC. For example, midnight UTC
+          on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+        format: date-time
+        nullable: true
+      ports:
+        type: array
+        items:
+          $ref: .\microsoft.graph.security.hostSslCertificatePort.yaml
+        description: The ports related with this hostSslCertificate.
+      host:
+        anyOf:
+          - $ref: .\microsoft.graph.security.host.yaml
+          - type: object
+            nullable: true
+        description: The host for this hostSslCertificate.
+        x-ms-navigationProperty: true
+      sslCertificate:
+        anyOf:
+          - $ref: .\microsoft.graph.security.sslCertificate.yaml
+          - type: object
+            nullable: true
+        description: The sslCertificate for this hostSslCertificate.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.security.hostSslCertificate'
+x-ms-discriminator-value: '#microsoft.graph.security.hostSslCertificate'

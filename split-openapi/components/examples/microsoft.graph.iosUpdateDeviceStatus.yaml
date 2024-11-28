@@ -1,0 +1,14 @@
+value:
+  complianceGracePeriodExpirationDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  deviceDisplayName: String
+  deviceId: String
+  deviceModel: String
+  installStatus:
+    '@odata.type': microsoft.graph.iosUpdatesInstallStatus
+  lastReportedDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  osVersion: String
+  status:
+    '@odata.type': microsoft.graph.complianceStatus
+  userId: String
+  userName: String
+  userPrincipalName: String

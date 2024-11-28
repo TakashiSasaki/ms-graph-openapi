@@ -1,0 +1,39 @@
+allOf:
+  - $ref: .\microsoft.graph.serviceAnnouncementBase.yaml
+  - title: serviceHealthIssue
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      classification:
+        $ref: .\microsoft.graph.serviceHealthClassificationType.yaml
+      feature:
+        type: string
+        description: The feature name of the service issue.
+        nullable: true
+      featureGroup:
+        type: string
+        description: The feature group name of the service issue.
+        nullable: true
+      impactDescription:
+        type: string
+        description: The description of the service issue impact.
+      isResolved:
+        type: boolean
+        description: Indicates whether the issue is resolved.
+      origin:
+        $ref: .\microsoft.graph.serviceHealthOrigin.yaml
+      posts:
+        type: array
+        items:
+          $ref: .\microsoft.graph.serviceHealthIssuePost.yaml
+        description: Collection of historical posts for the service issue.
+      service:
+        type: string
+        description: Indicates the service affected by the issue.
+      status:
+        $ref: .\microsoft.graph.serviceHealthStatus.yaml
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.serviceHealthIssue'
+x-ms-discriminator-value: '#microsoft.graph.serviceHealthIssue'

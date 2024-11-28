@@ -1,0 +1,6 @@
+value:
+  applicationRestrictions:
+    '@odata.type': microsoft.graph.appManagementApplicationConfiguration
+  isEnabled: 'true'
+  servicePrincipalRestrictions:
+    '@odata.type': microsoft.graph.appManagementServicePrincipalConfiguration

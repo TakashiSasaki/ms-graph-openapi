@@ -1,0 +1,27 @@
+value:
+  activityDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  changeId: String
+  cycleId: String
+  durationInMilliseconds: '0'
+  initiatedBy:
+    '@odata.type': microsoft.graph.initiator
+  jobId: String
+  modifiedProperties:
+    - '@odata.type': microsoft.graph.modifiedProperty
+  provisioningAction:
+    '@odata.type': microsoft.graph.provisioningAction
+  provisioningStatusInfo:
+    '@odata.type': microsoft.graph.provisioningStatusInfo
+  provisioningSteps:
+    - '@odata.type': microsoft.graph.provisioningStep
+  servicePrincipal:
+    '@odata.type': microsoft.graph.provisioningServicePrincipal
+  sourceIdentity:
+    '@odata.type': microsoft.graph.provisionedIdentity
+  sourceSystem:
+    '@odata.type': microsoft.graph.provisioningSystem
+  targetIdentity:
+    '@odata.type': microsoft.graph.provisionedIdentity
+  targetSystem:
+    '@odata.type': microsoft.graph.provisioningSystem
+  tenantId: String

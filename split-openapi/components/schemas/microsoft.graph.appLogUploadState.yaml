@@ -1,0 +1,30 @@
+title: appLogUploadState
+enum:
+  - pending
+  - completed
+  - failed
+  - unknownFutureValue
+type: string
+description: AppLogUploadStatus
+x-ms-enum:
+  name: appLogUploadState
+  modelAsString: false
+  values:
+    - value: pending
+      description: >-
+        Default. Indicates that request is waiting to be processed or under
+        processing.
+      name: pending
+    - value: completed
+      description: >-
+        Indicates that request is completed with file uploaded to Azure blob for
+        download.
+      name: completed
+    - value: failed
+      description: >-
+        Indicates that request is completed with file uploaded to Azure blob for
+        download.
+      name: failed
+    - value: unknownFutureValue
+      description: Evolvable enumeration sentinel value. Do not use.
+      name: unknownFutureValue

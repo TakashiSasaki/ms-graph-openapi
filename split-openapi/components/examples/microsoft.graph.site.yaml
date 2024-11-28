@@ -1,0 +1,41 @@
+value:
+  analytics:
+    '@odata.type': microsoft.graph.itemAnalytics
+  columns:
+    - '@odata.type': microsoft.graph.columnDefinition
+  contentTypes:
+    - '@odata.type': microsoft.graph.contentType
+  displayName: String
+  drive:
+    '@odata.type': microsoft.graph.drive
+  drives:
+    - '@odata.type': microsoft.graph.drive
+  error:
+    '@odata.type': microsoft.graph.publicError
+  externalColumns:
+    - '@odata.type': microsoft.graph.columnDefinition
+  isPersonalSite: 'true'
+  items:
+    - '@odata.type': microsoft.graph.baseItem
+  lists:
+    - '@odata.type': microsoft.graph.list
+  onenote:
+    '@odata.type': microsoft.graph.onenote
+  operations:
+    - '@odata.type': microsoft.graph.richLongRunningOperation
+  pages:
+    - '@odata.type': microsoft.graph.baseSitePage
+  permissions:
+    - '@odata.type': microsoft.graph.permission
+  root:
+    '@odata.type': microsoft.graph.root
+  sharepointIds:
+    '@odata.type': microsoft.graph.sharepointIds
+  siteCollection:
+    '@odata.type': microsoft.graph.siteCollection
+  sites:
+    - '@odata.type': microsoft.graph.site
+  termStore:
+    '@odata.type': microsoft.graph.termStore.store
+  termStores:
+    - '@odata.type': microsoft.graph.termStore.store

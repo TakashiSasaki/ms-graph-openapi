@@ -1,0 +1,25 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: remoteDesktopSecurityConfiguration
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      isRemoteDesktopProtocolEnabled:
+        type: boolean
+        description: >-
+          Determines if Microsoft Entra ID RDS authentication protocol for RDP
+          is enabled.
+      targetDeviceGroups:
+        type: array
+        items:
+          $ref: .\microsoft.graph.targetDeviceGroup.yaml
+        description: >-
+          The collection of target device groups that are associated with the
+          RDS security configuration that will be enabled for SSO when a client
+          connects to the target device over RDP using the new Microsoft Entra
+          ID RDS authentication protocol.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.remoteDesktopSecurityConfiguration'

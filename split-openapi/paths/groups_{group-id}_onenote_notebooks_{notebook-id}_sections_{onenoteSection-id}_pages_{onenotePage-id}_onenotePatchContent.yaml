@@ -1,0 +1,75 @@
+description: Provides operations to call the onenotePatchContent method.
+post:
+  tags:
+    - groups.onenote
+  summary: Invoke action onenotePatchContent
+  operationId: >-
+    groups.group.onenote.notebooks.notebook.sections.onenoteSection.pages.onenotePage.onenotePatchContent
+  requestBody:
+    description: Action parameters
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            commands:
+              type: array
+              items:
+                $ref: >-
+                  ..\components\schemas\microsoft.graph.onenotePatchContentCommand.yaml
+    required: true
+  responses:
+    '204':
+      description: Success
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: action
+parameters:
+  - name: group-id
+    in: path
+    description: The unique identifier of group
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: group
+  - name: notebook-id
+    in: path
+    description: The unique identifier of notebook
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: notebook
+  - name: onenoteSection-id
+    in: path
+    description: The unique identifier of onenoteSection
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: onenoteSection
+  - name: onenotePage-id
+    in: path
+    description: The unique identifier of onenotePage
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: onenotePage
+x-ms-docs-grouped-path:
+  - >-
+    /groups/{group-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/onenotePatchContent
+  - /groups/{group-id}/onenote/pages/{onenotePage-id}/onenotePatchContent
+  - >-
+    /groups/{group-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/onenotePatchContent
+  - >-
+    /groups/{group-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/onenotePatchContent
+  - >-
+    /groups/{group-id}/sites/{site-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/onenotePatchContent
+  - >-
+    /groups/{group-id}/sites/{site-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/onenotePatchContent
+  - >-
+    /groups/{group-id}/sites/{site-id}/onenote/pages/{onenotePage-id}/onenotePatchContent
+  - >-
+    /groups/{group-id}/sites/{site-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/onenotePatchContent
+  - >-
+    /groups/{group-id}/sites/{site-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/onenotePatchContent

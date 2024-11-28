@@ -1,0 +1,22 @@
+value:
+  captureDeviceDriver: String
+  captureDeviceName: String
+  captureNotFunctioningEventRatio: '0'
+  cpuInsufficentEventRatio: '0'
+  deviceClippingEventRatio: '0'
+  deviceGlitchEventRatio: '0'
+  howlingEventCount: '0'
+  initialSignalLevelRootMeanSquare: '0'
+  lowSpeechLevelEventRatio: '0'
+  lowSpeechToNoiseEventRatio: '0'
+  micGlitchRate: '0'
+  receivedNoiseLevel: '0'
+  receivedSignalLevel: '0'
+  renderDeviceDriver: String
+  renderDeviceName: String
+  renderMuteEventRatio: '0'
+  renderNotFunctioningEventRatio: '0'
+  renderZeroVolumeEventRatio: '0'
+  sentNoiseLevel: '0'
+  sentSignalLevel: '0'
+  speakerGlitchRate: '0'

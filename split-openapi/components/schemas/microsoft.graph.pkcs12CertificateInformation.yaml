@@ -1,0 +1,34 @@
+title: pkcs12CertificateInformation
+required:
+  - '@odata.type'
+type: object
+properties:
+  isActive:
+    type: boolean
+    description: >-
+      Represents whether the certificate is the active certificate to be used
+      for calling the API connector. The active certificate is the most recently
+      uploaded certificate that isn't yet expired but whose notBefore time is in
+      the past.
+  notAfter:
+    type: number
+    description: >-
+      The certificate's expiry. This value is a NumericDate as defined in RFC
+      7519 (A JSON numeric value representing the number of seconds from
+      1970-01-01T00:00:00Z UTC until the specified UTC date/time, ignoring leap
+      seconds.)
+    format: int64
+  notBefore:
+    type: number
+    description: >-
+      The certificate's issue time (not before). This value is a NumericDate as
+      defined in RFC 7519 (A JSON numeric value representing the number of
+      seconds from 1970-01-01T00:00:00Z UTC until the specified UTC date/time,
+      ignoring leap seconds.)
+    format: int64
+  thumbprint:
+    type: string
+    description: The certificate thumbprint.
+    nullable: true
+  '@odata.type':
+    type: string

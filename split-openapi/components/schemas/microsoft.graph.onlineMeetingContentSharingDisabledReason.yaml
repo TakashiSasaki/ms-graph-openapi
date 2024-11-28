@@ -1,0 +1,7 @@
+title: onlineMeetingContentSharingDisabledReason
+enum:
+  - watermarkProtection
+  - unknownFutureValue
+type: string
+x-ms-enum-flags:
+  isFlags: true

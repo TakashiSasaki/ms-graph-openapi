@@ -1,0 +1,32 @@
+allOf:
+  - $ref: .\microsoft.graph.directoryObject.yaml
+  - title: directoryObjectPartnerReference
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      description:
+        type: string
+        description: Description of the object returned. Read-only.
+        nullable: true
+      displayName:
+        type: string
+        description: >-
+          Name of directory object being returned, like group or application.
+          Read-only.
+        nullable: true
+      externalPartnerTenantId:
+        pattern: >-
+          ^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$
+        type: string
+        description: The tenant identifier for the partner tenant. Read-only.
+        format: uuid
+        nullable: true
+      objectType:
+        type: string
+        description: The type of the referenced object in the partner tenant. Read-only.
+        nullable: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.directoryObjectPartnerReference'
+x-ms-discriminator-value: '#microsoft.graph.directoryObjectPartnerReference'

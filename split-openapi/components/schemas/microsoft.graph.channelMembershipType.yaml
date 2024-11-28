@@ -1,0 +1,7 @@
+title: channelMembershipType
+enum:
+  - standard
+  - private
+  - unknownFutureValue
+  - shared
+type: string

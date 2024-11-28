@@ -1,0 +1,15 @@
+value:
+  accountManagerPolicy:
+    '@odata.type': microsoft.graph.sharedPCAccountManagerPolicy
+  allowedAccounts:
+    '@odata.type': microsoft.graph.sharedPCAllowedAccountType
+  allowLocalStorage: 'true'
+  disableAccountManager: 'true'
+  disableEduPolicies: 'true'
+  disablePowerPolicies: 'true'
+  disableSignInOnResume: 'true'
+  enabled: 'true'
+  idleTimeBeforeSleepInSeconds: '0'
+  kioskAppDisplayName: String
+  kioskAppUserModelId: String
+  maintenanceStartTime: TimeOfDay (timestamp)

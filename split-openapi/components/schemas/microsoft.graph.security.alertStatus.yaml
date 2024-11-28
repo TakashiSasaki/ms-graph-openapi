@@ -1,0 +1,8 @@
+title: alertStatus
+enum:
+  - unknown
+  - new
+  - inProgress
+  - resolved
+  - unknownFutureValue
+type: string

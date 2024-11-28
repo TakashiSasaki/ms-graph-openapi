@@ -1,0 +1,23 @@
+allOf:
+  - $ref: .\microsoft.graph.endUserNotificationSetting.yaml
+  - title: trainingNotificationSetting
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      trainingAssignment:
+        anyOf:
+          - $ref: .\microsoft.graph.baseEndUserNotification.yaml
+          - type: object
+            nullable: true
+        description: Training assignment details.
+      trainingReminder:
+        anyOf:
+          - $ref: .\microsoft.graph.trainingReminderNotification.yaml
+          - type: object
+            nullable: true
+        description: Training reminder details.
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.trainingNotificationSetting'
+x-ms-discriminator-value: '#microsoft.graph.trainingNotificationSetting'

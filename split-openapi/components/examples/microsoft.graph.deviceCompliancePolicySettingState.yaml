@@ -1,0 +1,15 @@
+value:
+  currentValue: String
+  errorCode: '0'
+  errorDescription: String
+  instanceDisplayName: String
+  setting: String
+  settingName: String
+  sources:
+    - '@odata.type': microsoft.graph.settingSource
+  state:
+    '@odata.type': microsoft.graph.complianceStatus
+  userEmail: String
+  userId: String
+  userName: String
+  userPrincipalName: String

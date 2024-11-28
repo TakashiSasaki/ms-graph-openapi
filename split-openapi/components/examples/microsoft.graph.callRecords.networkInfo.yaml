@@ -1,0 +1,32 @@
+value:
+  bandwidthLowEventRatio: '0'
+  basicServiceSetIdentifier: String
+  connectionType:
+    '@odata.type': microsoft.graph.callRecords.networkConnectionType
+  delayEventRatio: '0'
+  dnsSuffix: String
+  ipAddress: String
+  linkSpeed: '0'
+  macAddress: String
+  networkTransportProtocol:
+    '@odata.type': microsoft.graph.callRecords.networkTransportProtocol
+  port: '0'
+  receivedQualityEventRatio: '0'
+  reflexiveIPAddress: String
+  relayIPAddress: String
+  relayPort: '0'
+  sentQualityEventRatio: '0'
+  subnet: String
+  traceRouteHops:
+    - '@odata.type': microsoft.graph.callRecords.traceRouteHop
+  wifiBand:
+    '@odata.type': microsoft.graph.callRecords.wifiBand
+  wifiBatteryCharge: '0'
+  wifiChannel: '0'
+  wifiMicrosoftDriver: String
+  wifiMicrosoftDriverVersion: String
+  wifiRadioType:
+    '@odata.type': microsoft.graph.callRecords.wifiRadioType
+  wifiSignalStrength: '0'
+  wifiVendorDriver: String
+  wifiVendorDriverVersion: String

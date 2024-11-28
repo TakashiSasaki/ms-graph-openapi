@@ -1,0 +1,21 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: managedMobileApp
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      mobileAppIdentifier:
+        anyOf:
+          - $ref: .\microsoft.graph.mobileAppIdentifier.yaml
+          - type: object
+            nullable: true
+        description: The identifier for an app with it's operating system type.
+      version:
+        type: string
+        description: Version of the entity.
+        nullable: true
+      '@odata.type':
+        type: string
+    description: The identifier for the deployment an app.
+x-ms-discriminator-value: '#microsoft.graph.managedMobileApp'

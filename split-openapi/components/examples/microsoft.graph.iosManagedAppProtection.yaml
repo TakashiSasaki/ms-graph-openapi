@@ -1,0 +1,11 @@
+value:
+  appDataEncryptionType:
+    '@odata.type': microsoft.graph.managedAppDataEncryptionType
+  apps:
+    - '@odata.type': microsoft.graph.managedMobileApp
+  customBrowserProtocol: String
+  deployedAppCount: '0'
+  deploymentSummary:
+    '@odata.type': microsoft.graph.managedAppPolicyDeploymentSummary
+  faceIdBlocked: 'true'
+  minimumRequiredSdkVersion: String

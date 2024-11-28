@@ -1,0 +1,10 @@
+title: Collection of smsAuthenticationMethodConfiguration
+type: object
+allOf:
+  - $ref: .\BaseCollectionPaginationCountResponse.yaml
+  - type: object
+    properties:
+      value:
+        type: array
+        items:
+          $ref: .\microsoft.graph.smsAuthenticationMethodConfiguration.yaml

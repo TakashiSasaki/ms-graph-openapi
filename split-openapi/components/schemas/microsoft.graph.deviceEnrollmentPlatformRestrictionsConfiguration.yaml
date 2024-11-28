@@ -1,0 +1,54 @@
+allOf:
+  - $ref: .\microsoft.graph.deviceEnrollmentConfiguration.yaml
+  - title: deviceEnrollmentPlatformRestrictionsConfiguration
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      androidRestriction:
+        anyOf:
+          - $ref: .\microsoft.graph.deviceEnrollmentPlatformRestriction.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Android restrictions based on platform, platform operating system
+          version, and device ownership
+      iosRestriction:
+        anyOf:
+          - $ref: .\microsoft.graph.deviceEnrollmentPlatformRestriction.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Ios restrictions based on platform, platform operating system version,
+          and device ownership
+      macOSRestriction:
+        anyOf:
+          - $ref: .\microsoft.graph.deviceEnrollmentPlatformRestriction.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Mac restrictions based on platform, platform operating system version,
+          and device ownership
+      windowsMobileRestriction:
+        anyOf:
+          - $ref: .\microsoft.graph.deviceEnrollmentPlatformRestriction.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Windows mobile restrictions based on platform, platform operating
+          system version, and device ownership
+      windowsRestriction:
+        anyOf:
+          - $ref: .\microsoft.graph.deviceEnrollmentPlatformRestriction.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Windows restrictions based on platform, platform operating system
+          version, and device ownership
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.deviceEnrollmentPlatformRestrictionsConfiguration'
+    description: >-
+      Device Enrollment Configuration that restricts the types of devices a user
+      can enroll
+x-ms-discriminator-value: '#microsoft.graph.deviceEnrollmentPlatformRestrictionsConfiguration'

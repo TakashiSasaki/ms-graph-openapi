@@ -1,0 +1,17 @@
+value:
+  allowPartnerToCollectIOSApplicationMetadata: 'true'
+  allowPartnerToCollectIOSPersonalApplicationMetadata: 'true'
+  androidDeviceBlockedOnMissingPartnerData: 'true'
+  androidEnabled: 'true'
+  androidMobileApplicationManagementEnabled: 'true'
+  iosDeviceBlockedOnMissingPartnerData: 'true'
+  iosEnabled: 'true'
+  iosMobileApplicationManagementEnabled: 'true'
+  lastHeartbeatDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  microsoftDefenderForEndpointAttachEnabled: 'true'
+  partnerState:
+    '@odata.type': microsoft.graph.mobileThreatPartnerTenantState
+  partnerUnresponsivenessThresholdInDays: '0'
+  partnerUnsupportedOsVersionBlocked: 'true'
+  windowsDeviceBlockedOnMissingPartnerData: 'true'
+  windowsEnabled: 'true'

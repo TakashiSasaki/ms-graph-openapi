@@ -1,0 +1,5 @@
+value:
+  contentSharingDisabled:
+    '@odata.type': microsoft.graph.onlineMeetingContentSharingDisabledReason
+  videoDisabled:
+    '@odata.type': microsoft.graph.onlineMeetingVideoDisabledReason

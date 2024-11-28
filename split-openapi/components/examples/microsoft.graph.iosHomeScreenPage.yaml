@@ -1,0 +1,4 @@
+value:
+  displayName: String
+  icons:
+    - '@odata.type': microsoft.graph.iosHomeScreenItem

@@ -1,0 +1,24 @@
+allOf:
+  - $ref: .\microsoft.graph.riskyUser.yaml
+  - title: riskyUserHistoryItem
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      activity:
+        anyOf:
+          - $ref: .\microsoft.graph.riskUserActivity.yaml
+          - type: object
+            nullable: true
+        description: The activity related to user risk level change.
+      initiatedBy:
+        type: string
+        description: The ID of actor that does the operation.
+        nullable: true
+      userId:
+        type: string
+        description: The ID of the user.
+        nullable: true
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.riskyUserHistoryItem'

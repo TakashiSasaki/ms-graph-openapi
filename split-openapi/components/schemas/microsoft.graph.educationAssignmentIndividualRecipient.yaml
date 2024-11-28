@@ -1,0 +1,17 @@
+allOf:
+  - $ref: .\microsoft.graph.educationAssignmentRecipient.yaml
+  - title: educationAssignmentIndividualRecipient
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      recipients:
+        type: array
+        items:
+          type: string
+          nullable: true
+        description: A collection of IDs of the recipients.
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.educationAssignmentIndividualRecipient'
+x-ms-discriminator-value: '#microsoft.graph.educationAssignmentIndividualRecipient'

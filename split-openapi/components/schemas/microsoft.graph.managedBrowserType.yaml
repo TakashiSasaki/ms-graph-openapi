@@ -1,0 +1,18 @@
+title: managedBrowserType
+enum:
+  - notConfigured
+  - microsoftEdge
+type: string
+description: Type of managed browser
+x-ms-enum-flags:
+  isFlags: true
+x-ms-enum:
+  name: managedBrowserType
+  modelAsString: false
+  values:
+    - value: notConfigured
+      description: Not configured
+      name: notConfigured
+    - value: microsoftEdge
+      description: Microsoft Edge
+      name: microsoftEdge

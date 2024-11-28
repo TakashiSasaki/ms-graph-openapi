@@ -1,0 +1,5 @@
+title: workforceIntegrationEncryptionProtocol
+enum:
+  - sharedSecret
+  - unknownFutureValue
+type: string

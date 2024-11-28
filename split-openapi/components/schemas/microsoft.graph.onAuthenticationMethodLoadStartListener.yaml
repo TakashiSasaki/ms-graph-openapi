@@ -1,0 +1,20 @@
+allOf:
+  - $ref: .\microsoft.graph.authenticationEventListener.yaml
+  - title: onAuthenticationMethodLoadStartListener
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      handler:
+        anyOf:
+          - $ref: .\microsoft.graph.onAuthenticationMethodLoadStartHandler.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Required. Configuration for what to invoke if the event resolves to
+          this listener. This property lets us define potential handler
+          configurations per-event.
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.onAuthenticationMethodLoadStartListener'
+x-ms-discriminator-value: '#microsoft.graph.onAuthenticationMethodLoadStartListener'

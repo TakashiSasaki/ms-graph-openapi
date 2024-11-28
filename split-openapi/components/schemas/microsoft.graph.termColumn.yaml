@@ -1,0 +1,27 @@
+title: termColumn
+required:
+  - '@odata.type'
+type: object
+properties:
+  allowMultipleValues:
+    type: boolean
+    description: Specifies whether the column allows more than one value.
+    nullable: true
+  showFullyQualifiedName:
+    type: boolean
+    description: Specifies whether to display the entire term path or only the term label.
+    nullable: true
+  parentTerm:
+    anyOf:
+      - $ref: .\microsoft.graph.termStore.term.yaml
+      - type: object
+        nullable: true
+    x-ms-navigationProperty: true
+  termSet:
+    anyOf:
+      - $ref: .\microsoft.graph.termStore.set.yaml
+      - type: object
+        nullable: true
+    x-ms-navigationProperty: true
+  '@odata.type':
+    type: string

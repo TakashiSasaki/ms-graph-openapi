@@ -1,0 +1,6 @@
+title: hostPortProtocol
+enum:
+  - tcp
+  - udp
+  - unknownFutureValue
+type: string

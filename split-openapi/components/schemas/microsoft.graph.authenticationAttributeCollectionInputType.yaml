@@ -1,0 +1,8 @@
+title: authenticationAttributeCollectionInputType
+enum:
+  - text
+  - radioSingleSelect
+  - checkboxMultiSelect
+  - boolean
+  - unknownFutureValue
+type: string

@@ -1,0 +1,156 @@
+allOf:
+  - $ref: .\microsoft.graph.deviceConfiguration.yaml
+  - title: windows81GeneralConfiguration
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      accountsBlockAddingNonMicrosoftAccountEmail:
+        type: boolean
+        description: >-
+          Indicates whether or not to Block the user from adding email accounts
+          to the device that are not associated with a Microsoft account.
+      applyOnlyToWindows81:
+        type: boolean
+        description: >-
+          Value indicating whether this policy only applies to Windows 8.1. This
+          property is read-only.
+        readOnly: true
+      browserBlockAutofill:
+        type: boolean
+        description: Indicates whether or not to block auto fill.
+      browserBlockAutomaticDetectionOfIntranetSites:
+        type: boolean
+        description: >-
+          Indicates whether or not to block automatic detection of Intranet
+          sites.
+      browserBlockEnterpriseModeAccess:
+        type: boolean
+        description: Indicates whether or not to block enterprise mode access.
+      browserBlockJavaScript:
+        type: boolean
+        description: Indicates whether or not to Block the user from using JavaScript.
+      browserBlockPlugins:
+        type: boolean
+        description: Indicates whether or not to block plug-ins.
+      browserBlockPopups:
+        type: boolean
+        description: Indicates whether or not to block popups.
+      browserBlockSendingDoNotTrackHeader:
+        type: boolean
+        description: >-
+          Indicates whether or not to Block the user from sending the do not
+          track header.
+      browserBlockSingleWordEntryOnIntranetSites:
+        type: boolean
+        description: >-
+          Indicates whether or not to block a single word entry on Intranet
+          sites.
+      browserEnterpriseModeSiteListLocation:
+        type: string
+        description: >-
+          The enterprise mode site list location. Could be a local file, local
+          network or http location.
+        nullable: true
+      browserInternetSecurityLevel:
+        $ref: .\microsoft.graph.internetSiteSecurityLevel.yaml
+      browserIntranetSecurityLevel:
+        $ref: .\microsoft.graph.siteSecurityLevel.yaml
+      browserLoggingReportLocation:
+        type: string
+        description: The logging report location.
+        nullable: true
+      browserRequireFirewall:
+        type: boolean
+        description: Indicates whether or not to require a firewall.
+      browserRequireFraudWarning:
+        type: boolean
+        description: Indicates whether or not to require fraud warning.
+      browserRequireHighSecurityForRestrictedSites:
+        type: boolean
+        description: >-
+          Indicates whether or not to require high security for restricted
+          sites.
+      browserRequireSmartScreen:
+        type: boolean
+        description: >-
+          Indicates whether or not to require the user to use the smart screen
+          filter.
+      browserTrustedSitesSecurityLevel:
+        $ref: .\microsoft.graph.siteSecurityLevel.yaml
+      cellularBlockDataRoaming:
+        type: boolean
+        description: Indicates whether or not to block data roaming.
+      diagnosticsBlockDataSubmission:
+        type: boolean
+        description: Indicates whether or not to block diagnostic data submission.
+      passwordBlockPicturePasswordAndPin:
+        type: boolean
+        description: >-
+          Indicates whether or not to Block the user from using a pictures
+          password and pin.
+      passwordExpirationDays:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: Password expiration in days.
+        format: int32
+        nullable: true
+      passwordMinimumCharacterSetCount:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: The number of character sets required in the password.
+        format: int32
+        nullable: true
+      passwordMinimumLength:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: The minimum password length.
+        format: int32
+        nullable: true
+      passwordMinutesOfInactivityBeforeScreenTimeout:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: The minutes of inactivity before the screen times out.
+        format: int32
+        nullable: true
+      passwordPreviousPasswordBlockCount:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: >-
+          The number of previous passwords to prevent re-use of. Valid values 0
+          to 24
+        format: int32
+        nullable: true
+      passwordRequiredType:
+        $ref: .\microsoft.graph.requiredPasswordType.yaml
+      passwordSignInFailureCountBeforeFactoryReset:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: The number of sign in failures before factory reset.
+        format: int32
+        nullable: true
+      storageRequireDeviceEncryption:
+        type: boolean
+        description: Indicates whether or not to require encryption on a mobile device.
+      updatesRequireAutomaticUpdates:
+        type: boolean
+        description: Indicates whether or not to require automatic updates.
+      userAccountControlSettings:
+        $ref: .\microsoft.graph.windowsUserAccountControlSettings.yaml
+      workFoldersUrl:
+        type: string
+        description: The work folders url.
+        nullable: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.windows81GeneralConfiguration'
+    description: >-
+      This topic provides descriptions of the declared methods, properties and
+      relationships exposed by the windows81GeneralConfiguration resource.
+x-ms-discriminator-value: '#microsoft.graph.windows81GeneralConfiguration'

@@ -1,0 +1,30 @@
+title: sharingInvitation
+required:
+  - '@odata.type'
+type: object
+properties:
+  email:
+    type: string
+    description: >-
+      The email address provided for the recipient of the sharing invitation.
+      Read-only.
+    nullable: true
+  invitedBy:
+    anyOf:
+      - $ref: .\microsoft.graph.identitySet.yaml
+      - type: object
+        nullable: true
+    description: >-
+      Provides information about who sent the invitation that created this
+      permission, if that information is available. Read-only.
+  redeemedBy:
+    type: string
+    nullable: true
+  signInRequired:
+    type: boolean
+    description: >-
+      If true the recipient of the invitation needs to sign in in order to
+      access the shared item. Read-only.
+    nullable: true
+  '@odata.type':
+    type: string

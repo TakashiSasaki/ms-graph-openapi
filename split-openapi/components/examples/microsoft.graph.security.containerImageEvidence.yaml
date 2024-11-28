@@ -1,0 +1,6 @@
+value:
+  digestImage:
+    '@odata.type': microsoft.graph.security.containerImageEvidence
+  imageId: String
+  registry:
+    '@odata.type': microsoft.graph.security.containerRegistryEvidence

@@ -1,0 +1,12 @@
+value:
+  connectorServerName: String
+  exchangeAlias: String
+  exchangeConnectorType:
+    '@odata.type': microsoft.graph.deviceManagementExchangeConnectorType
+  exchangeOrganization: String
+  lastSyncDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  primarySmtpAddress: String
+  serverName: String
+  status:
+    '@odata.type': microsoft.graph.deviceManagementExchangeConnectorStatus
+  version: String

@@ -1,0 +1,3 @@
+value:
+  ruleType:
+    '@odata.type': microsoft.graph.win32LobAppRuleType

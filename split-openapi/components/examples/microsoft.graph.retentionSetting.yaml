@@ -1,0 +1,3 @@
+value:
+  interval: String
+  period: Duration

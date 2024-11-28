@@ -1,0 +1,71 @@
+allOf:
+  - $ref: .\microsoft.graph.message.yaml
+  - title: eventMessage
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      endDateTime:
+        anyOf:
+          - $ref: .\microsoft.graph.dateTimeTimeZone.yaml
+          - type: object
+            nullable: true
+      isAllDay:
+        type: boolean
+        nullable: true
+      isDelegated:
+        type: boolean
+        description: >-
+          True if this meeting request is accessible to a delegate, false
+          otherwise. Default is false.
+        nullable: true
+      isOutOfDate:
+        type: boolean
+        nullable: true
+      location:
+        anyOf:
+          - $ref: .\microsoft.graph.location.yaml
+          - type: object
+            nullable: true
+      meetingMessageType:
+        anyOf:
+          - $ref: .\microsoft.graph.meetingMessageType.yaml
+          - type: object
+            nullable: true
+        description: >-
+          The type of event message: none, meetingRequest, meetingCancelled,
+          meetingAccepted, meetingTenativelyAccepted, meetingDeclined.
+      recurrence:
+        anyOf:
+          - $ref: .\microsoft.graph.patternedRecurrence.yaml
+          - type: object
+            nullable: true
+      startDateTime:
+        anyOf:
+          - $ref: .\microsoft.graph.dateTimeTimeZone.yaml
+          - type: object
+            nullable: true
+      type:
+        anyOf:
+          - $ref: .\microsoft.graph.eventType.yaml
+          - type: object
+            nullable: true
+      event:
+        anyOf:
+          - $ref: .\microsoft.graph.event.yaml
+          - type: object
+            nullable: true
+        description: >-
+          The event associated with the event message. The assumption for
+          attendees or room resources is that the Calendar Attendant is set to
+          automatically update the calendar with an event when meeting request
+          event messages arrive. Navigation property.  Read-only.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.eventMessage'
+    discriminator:
+      propertyName: '@odata.type'
+      mapping:
+        '#microsoft.graph.eventMessageRequest': .\microsoft.graph.eventMessageRequest.yaml
+        '#microsoft.graph.eventMessageResponse': .\microsoft.graph.eventMessageResponse.yaml

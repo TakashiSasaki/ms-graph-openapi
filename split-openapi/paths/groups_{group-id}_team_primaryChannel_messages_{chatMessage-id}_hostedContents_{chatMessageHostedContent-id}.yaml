@@ -1,0 +1,118 @@
+description: >-
+  Provides operations to manage the hostedContents property of the
+  microsoft.graph.chatMessage entity.
+get:
+  tags:
+    - groups.team
+  summary: Get hostedContents from groups
+  description: >-
+    Content in a message hosted by Microsoft Teams - for example, images or code
+    snippets.
+  operationId: groups.team.primaryChannel.messages.GetHostedContents
+  parameters:
+    - name: $select
+      in: query
+      description: Select properties to be returned
+      style: form
+      explode: false
+      schema:
+        uniqueItems: true
+        type: array
+        items:
+          type: string
+    - name: $expand
+      in: query
+      description: Expand related entities
+      style: form
+      explode: false
+      schema:
+        uniqueItems: true
+        type: array
+        items:
+          type: string
+  responses:
+    2XX:
+      description: Retrieved navigation property
+      content:
+        application/json:
+          schema:
+            $ref: >-
+              ..\components\schemas\microsoft.graph.chatMessageHostedContent.yaml
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: operation
+patch:
+  tags:
+    - groups.team
+  summary: Update the navigation property hostedContents in groups
+  operationId: groups.team.primaryChannel.messages.UpdateHostedContents
+  requestBody:
+    description: New navigation property values
+    content:
+      application/json:
+        schema:
+          $ref: ..\components\schemas\microsoft.graph.chatMessageHostedContent.yaml
+    required: true
+  responses:
+    2XX:
+      description: Success
+      content:
+        application/json:
+          schema:
+            $ref: >-
+              ..\components\schemas\microsoft.graph.chatMessageHostedContent.yaml
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: operation
+delete:
+  tags:
+    - groups.team
+  summary: Delete navigation property hostedContents for groups
+  operationId: groups.team.primaryChannel.messages.DeleteHostedContents
+  parameters:
+    - name: If-Match
+      in: header
+      description: ETag
+      schema:
+        type: string
+  responses:
+    '204':
+      description: Success
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: operation
+parameters:
+  - name: group-id
+    in: path
+    description: The unique identifier of group
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: group
+  - name: chatMessage-id
+    in: path
+    description: The unique identifier of chatMessage
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: chatMessage
+  - name: chatMessageHostedContent-id
+    in: path
+    description: The unique identifier of chatMessageHostedContent
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: chatMessageHostedContent
+x-ms-docs-grouped-path:
+  - >-
+    /groups/{group-id}/team/channels/{channel-id}/messages/{chatMessage-id}/hostedContents/{chatMessageHostedContent-id}
+  - >-
+    /groups/{group-id}/team/channels/{channel-id}/messages/{chatMessage-id}/replies/{chatMessage-id1}/hostedContents/{chatMessageHostedContent-id}
+  - >-
+    /groups/{group-id}/team/primaryChannel/messages/{chatMessage-id}/replies/{chatMessage-id1}/hostedContents/{chatMessageHostedContent-id}

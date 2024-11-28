@@ -1,0 +1,5 @@
+value:
+  logicAppWorkflowName: String
+  resourceGroupName: String
+  subscriptionId: String
+  url: String

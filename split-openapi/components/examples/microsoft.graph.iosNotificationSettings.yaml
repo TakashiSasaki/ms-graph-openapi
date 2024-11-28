@@ -1,0 +1,11 @@
+value:
+  alertType:
+    '@odata.type': microsoft.graph.iosNotificationAlertType
+  appName: String
+  badgesEnabled: 'true'
+  bundleID: String
+  enabled: 'true'
+  publisher: String
+  showInNotificationCenter: 'true'
+  showOnLockScreen: 'true'
+  soundsEnabled: 'true'

@@ -1,0 +1,5 @@
+value:
+  externalTenants:
+    '@odata.type': microsoft.graph.conditionalAccessExternalTenants
+  guestOrExternalUserTypes:
+    '@odata.type': microsoft.graph.conditionalAccessGuestOrExternalUserTypes

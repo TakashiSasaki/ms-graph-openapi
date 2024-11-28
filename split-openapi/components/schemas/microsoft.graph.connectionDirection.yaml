@@ -1,0 +1,7 @@
+title: connectionDirection
+enum:
+  - unknown
+  - inbound
+  - outbound
+  - unknownFutureValue
+type: string

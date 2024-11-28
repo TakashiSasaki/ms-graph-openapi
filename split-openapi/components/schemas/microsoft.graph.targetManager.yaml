@@ -1,0 +1,18 @@
+allOf:
+  - $ref: .\microsoft.graph.subjectSet.yaml
+  - title: targetManager
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      managerLevel:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: Manager level, between 1 and 4. The direct manager is 1.
+        format: int32
+        nullable: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.targetManager'
+x-ms-discriminator-value: '#microsoft.graph.targetManager'

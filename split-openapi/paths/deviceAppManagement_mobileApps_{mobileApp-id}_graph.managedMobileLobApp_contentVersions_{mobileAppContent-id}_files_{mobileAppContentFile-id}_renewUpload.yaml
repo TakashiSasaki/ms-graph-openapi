@@ -1,0 +1,59 @@
+description: Provides operations to call the renewUpload method.
+post:
+  tags:
+    - deviceAppManagement.mobileApp
+  summary: Invoke action renewUpload
+  description: Renews the SAS URI for an application file upload.
+  operationId: >-
+    deviceAppManagement.mobileApps.mobileApp.microsoft.graph.managedMobileLobApp.contentVersions.mobileAppContent.files.mobileAppContentFile.renewUpload
+  responses:
+    '204':
+      description: Success
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: action
+parameters:
+  - name: mobileApp-id
+    in: path
+    description: The unique identifier of mobileApp
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: mobileApp
+  - name: mobileAppContent-id
+    in: path
+    description: The unique identifier of mobileAppContent
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: mobileAppContent
+  - name: mobileAppContentFile-id
+    in: path
+    description: The unique identifier of mobileAppContentFile
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: mobileAppContentFile
+x-ms-docs-grouped-path:
+  - >-
+    /deviceAppManagement/mobileApps/{mobileApp-id}/graph.androidLobApp/contentVersions/{mobileAppContent-id}/files/{mobileAppContentFile-id}/renewUpload
+  - >-
+    /deviceAppManagement/mobileApps/{mobileApp-id}/graph.iosLobApp/contentVersions/{mobileAppContent-id}/files/{mobileAppContentFile-id}/renewUpload
+  - >-
+    /deviceAppManagement/mobileApps/{mobileApp-id}/graph.macOSDmgApp/contentVersions/{mobileAppContent-id}/files/{mobileAppContentFile-id}/renewUpload
+  - >-
+    /deviceAppManagement/mobileApps/{mobileApp-id}/graph.macOSLobApp/contentVersions/{mobileAppContent-id}/files/{mobileAppContentFile-id}/renewUpload
+  - >-
+    /deviceAppManagement/mobileApps/{mobileApp-id}/graph.managedAndroidLobApp/contentVersions/{mobileAppContent-id}/files/{mobileAppContentFile-id}/renewUpload
+  - >-
+    /deviceAppManagement/mobileApps/{mobileApp-id}/graph.managedIOSLobApp/contentVersions/{mobileAppContent-id}/files/{mobileAppContentFile-id}/renewUpload
+  - >-
+    /deviceAppManagement/mobileApps/{mobileApp-id}/graph.win32LobApp/contentVersions/{mobileAppContent-id}/files/{mobileAppContentFile-id}/renewUpload
+  - >-
+    /deviceAppManagement/mobileApps/{mobileApp-id}/graph.windowsAppX/contentVersions/{mobileAppContent-id}/files/{mobileAppContentFile-id}/renewUpload
+  - >-
+    /deviceAppManagement/mobileApps/{mobileApp-id}/graph.windowsMobileMSI/contentVersions/{mobileAppContent-id}/files/{mobileAppContentFile-id}/renewUpload
+  - >-
+    /deviceAppManagement/mobileApps/{mobileApp-id}/graph.windowsUniversalAppX/contentVersions/{mobileAppContent-id}/files/{mobileAppContentFile-id}/renewUpload

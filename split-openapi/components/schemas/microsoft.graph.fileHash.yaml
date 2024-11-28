@@ -1,0 +1,19 @@
+title: fileHash
+required:
+  - '@odata.type'
+type: object
+properties:
+  hashType:
+    anyOf:
+      - $ref: .\microsoft.graph.fileHashType.yaml
+      - type: object
+        nullable: true
+    description: >-
+      File hash type. Possible values are: unknown, sha1, sha256, md5,
+      authenticodeHash256, lsHash, ctph, peSha1, peSha256.
+  hashValue:
+    type: string
+    description: Value of the file hash.
+    nullable: true
+  '@odata.type':
+    type: string

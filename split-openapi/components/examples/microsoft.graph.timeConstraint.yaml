@@ -1,0 +1,5 @@
+value:
+  activityDomain:
+    '@odata.type': microsoft.graph.activityDomain
+  timeSlots:
+    - '@odata.type': microsoft.graph.timeSlot

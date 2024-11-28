@@ -1,0 +1,20 @@
+title: auditProperty
+required:
+  - '@odata.type'
+type: object
+properties:
+  displayName:
+    type: string
+    description: Display name.
+    nullable: true
+  newValue:
+    type: string
+    description: New value.
+    nullable: true
+  oldValue:
+    type: string
+    description: Old value.
+    nullable: true
+  '@odata.type':
+    type: string
+description: A class containing the properties for Audit Property.

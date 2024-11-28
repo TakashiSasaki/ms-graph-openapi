@@ -1,0 +1,12 @@
+title: oAuthAppScope
+enum:
+  - unknown
+  - readCalendar
+  - readContact
+  - readMail
+  - readAllChat
+  - readAllFile
+  - readAndWriteMail
+  - sendMail
+  - unknownFutureValue
+type: string

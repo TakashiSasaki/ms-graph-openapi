@@ -1,0 +1,16 @@
+allOf:
+  - $ref: .\microsoft.graph.deviceAndAppManagementAssignmentTarget.yaml
+  - title: configurationManagerCollectionAssignmentTarget
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      collectionId:
+        type: string
+        description: The collection Id that is the target of the assignment.
+        nullable: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.configurationManagerCollectionAssignmentTarget'
+    description: Represents an assignment to a Configuration Manager Collection.
+x-ms-discriminator-value: '#microsoft.graph.configurationManagerCollectionAssignmentTarget'

@@ -1,0 +1,11 @@
+value:
+  allowStaffSelection: 'true'
+  customAvailabilities:
+    - '@odata.type': microsoft.graph.bookingsAvailabilityWindow
+  generalAvailability:
+    '@odata.type': microsoft.graph.bookingsAvailability
+  isMeetingInviteToCustomersEnabled: 'true'
+  maximumAdvance: Duration
+  minimumLeadTime: Duration
+  sendConfirmationsToOwner: 'true'
+  timeSlotInterval: Duration

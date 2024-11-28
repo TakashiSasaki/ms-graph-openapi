@@ -1,0 +1,15 @@
+title: pendingOperations
+required:
+  - '@odata.type'
+type: object
+properties:
+  pendingContentUpdate:
+    anyOf:
+      - $ref: .\microsoft.graph.pendingContentUpdate.yaml
+      - type: object
+        nullable: true
+    description: >-
+      A property that indicates that an operation that might update the binary
+      content of a file is pending completion.
+  '@odata.type':
+    type: string

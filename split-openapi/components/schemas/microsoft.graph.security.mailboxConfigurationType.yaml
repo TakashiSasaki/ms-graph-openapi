@@ -1,0 +1,9 @@
+title: mailboxConfigurationType
+enum:
+  - mailForwardingRule
+  - owaSettings
+  - ewsSettings
+  - mailDelegation
+  - userInboxRule
+  - unknownFutureValue
+type: string

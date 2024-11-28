@@ -1,0 +1,29 @@
+allOf:
+  - $ref: .\microsoft.graph.eventMessageDetail.yaml
+  - title: callStartedEventMessageDetail
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      callEventType:
+        anyOf:
+          - $ref: .\microsoft.graph.teamworkCallEventType.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Represents the call event type. Possible values are: call, meeting,
+          screenShare, unknownFutureValue.
+      callId:
+        type: string
+        description: Unique identifier of the call.
+        nullable: true
+      initiator:
+        anyOf:
+          - $ref: .\microsoft.graph.identitySet.yaml
+          - type: object
+            nullable: true
+        description: Initiator of the event.
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.callStartedEventMessageDetail'
+x-ms-discriminator-value: '#microsoft.graph.callStartedEventMessageDetail'

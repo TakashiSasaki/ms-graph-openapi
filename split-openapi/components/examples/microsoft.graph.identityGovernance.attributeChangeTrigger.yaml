@@ -1,0 +1,3 @@
+value:
+  triggerAttributes:
+    - '@odata.type': microsoft.graph.identityGovernance.triggerAttribute

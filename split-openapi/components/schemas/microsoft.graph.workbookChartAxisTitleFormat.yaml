@@ -1,0 +1,19 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: workbookChartAxisTitleFormat
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      font:
+        anyOf:
+          - $ref: .\microsoft.graph.workbookChartFont.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Represents the font attributes, such as font name, font size, color,
+          etc. of chart axis title object. Read-only.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.workbookChartAxisTitleFormat'

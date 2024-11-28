@@ -1,0 +1,20 @@
+title: windowsHelloForBusinessPinUsage
+enum:
+  - allowed
+  - required
+  - disallowed
+type: string
+description: Windows Hello for Business pin usage options
+x-ms-enum:
+  name: windowsHelloForBusinessPinUsage
+  modelAsString: false
+  values:
+    - value: allowed
+      description: Allowed the usage of certain pin rule
+      name: allowed
+    - value: required
+      description: Enforce the usage of certain pin rule
+      name: required
+    - value: disallowed
+      description: Forbit the usage of certain pin rule
+      name: disallowed

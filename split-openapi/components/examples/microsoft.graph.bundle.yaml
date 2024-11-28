@@ -1,0 +1,4 @@
+value:
+  album:
+    '@odata.type': microsoft.graph.album
+  childCount: '0'

@@ -1,0 +1,122 @@
+title: printerDefaults
+required:
+  - '@odata.type'
+type: object
+properties:
+  colorMode:
+    anyOf:
+      - $ref: .\microsoft.graph.printColorMode.yaml
+      - type: object
+        nullable: true
+    description: >-
+      The default color mode to use when printing the document. Valid values are
+      described in the following table.
+  contentType:
+    type: string
+    description: The default content (MIME) type to use when processing documents.
+    nullable: true
+  copiesPerJob:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    description: The default number of copies printed per job.
+    format: int32
+    nullable: true
+  dpi:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    description: The default resolution in DPI to use when printing the job.
+    format: int32
+    nullable: true
+  duplexMode:
+    anyOf:
+      - $ref: .\microsoft.graph.printDuplexMode.yaml
+      - type: object
+        nullable: true
+    description: >-
+      The default duplex (double-sided) configuration to use when printing a
+      document. Valid values are described in the following table.
+  finishings:
+    type: array
+    items:
+      anyOf:
+        - $ref: .\microsoft.graph.printFinishing.yaml
+        - type: object
+          nullable: true
+    description: >-
+      The default set of finishings to apply to print jobs. Valid values are
+      described in the following table.
+  fitPdfToPage:
+    type: boolean
+    description: >-
+      The default fitPdfToPage setting. True to fit each page of a PDF document
+      to a physical sheet of media; false to let the printer decide how to lay
+      out impressions.
+    nullable: true
+  inputBin:
+    type: string
+    description: The default input bin that serves as the paper source.
+    nullable: true
+  mediaColor:
+    type: string
+    description: The default media (such as paper) color to print the document on.
+    nullable: true
+  mediaSize:
+    type: string
+    description: >-
+      The default media size to use. Supports standard size names for ISO and
+      ANSI media sizes. Valid values are listed in the printerCapabilities
+      topic.
+    nullable: true
+  mediaType:
+    type: string
+    description: The default media (such as paper) type to print the document on.
+    nullable: true
+  multipageLayout:
+    anyOf:
+      - $ref: .\microsoft.graph.printMultipageLayout.yaml
+      - type: object
+        nullable: true
+    description: >-
+      The default direction to lay out pages when multiple pages are being
+      printed per sheet. Valid values are described in the following table.
+  orientation:
+    anyOf:
+      - $ref: .\microsoft.graph.printOrientation.yaml
+      - type: object
+        nullable: true
+    description: >-
+      The default orientation to use when printing the document. Valid values
+      are described in the following table.
+  outputBin:
+    type: string
+    description: >-
+      The default output bin to place completed prints into. See the printer's
+      capabilities for a list of supported output bins.
+    nullable: true
+  pagesPerSheet:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    description: The default number of document pages to print on each sheet.
+    format: int32
+    nullable: true
+  quality:
+    anyOf:
+      - $ref: .\microsoft.graph.printQuality.yaml
+      - type: object
+        nullable: true
+    description: >-
+      The default quality to use when printing the document. Valid values are
+      described in the following table.
+  scaling:
+    anyOf:
+      - $ref: .\microsoft.graph.printScaling.yaml
+      - type: object
+        nullable: true
+    description: >-
+      Specifies how the printer scales the document data to fit the requested
+      media. Valid values are described in the following table.
+  '@odata.type':
+    type: string

@@ -1,0 +1,15 @@
+value:
+  detectionStatus:
+    '@odata.type': microsoft.graph.security.detectionStatus
+  imageFile:
+    '@odata.type': microsoft.graph.security.fileDetails
+  mdeDeviceId: String
+  parentProcessCreationDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  parentProcessId: '0'
+  parentProcessImageFile:
+    '@odata.type': microsoft.graph.security.fileDetails
+  processCommandLine: String
+  processCreationDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  processId: '0'
+  userAccount:
+    '@odata.type': microsoft.graph.security.userAccount

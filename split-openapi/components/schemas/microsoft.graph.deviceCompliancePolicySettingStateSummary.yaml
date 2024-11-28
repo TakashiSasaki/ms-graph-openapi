@@ -1,0 +1,69 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: deviceCompliancePolicySettingStateSummary
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      compliantDeviceCount:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: Number of compliant devices
+        format: int32
+      conflictDeviceCount:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: Number of conflict devices
+        format: int32
+      errorDeviceCount:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: Number of error devices
+        format: int32
+      nonCompliantDeviceCount:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: Number of NonCompliant devices
+        format: int32
+      notApplicableDeviceCount:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: Number of not applicable devices
+        format: int32
+      platformType:
+        $ref: .\microsoft.graph.policyPlatformType.yaml
+      remediatedDeviceCount:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: Number of remediated devices
+        format: int32
+      setting:
+        type: string
+        description: The setting class name and property name.
+        nullable: true
+      settingName:
+        type: string
+        description: Name of the setting.
+        nullable: true
+      unknownDeviceCount:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: Number of unknown devices
+        format: int32
+      deviceComplianceSettingStates:
+        type: array
+        items:
+          $ref: .\microsoft.graph.deviceComplianceSettingState.yaml
+        description: Not yet documented
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+    description: Device Compilance Policy Setting State summary across the account.
+x-ms-discriminator-value: '#microsoft.graph.deviceCompliancePolicySettingStateSummary'

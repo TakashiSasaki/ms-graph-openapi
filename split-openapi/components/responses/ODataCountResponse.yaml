@@ -1,0 +1,5 @@
+description: The count of the resource
+content:
+  text/plain:
+    schema:
+      $ref: ..\schemas\ODataCountResponse.yaml

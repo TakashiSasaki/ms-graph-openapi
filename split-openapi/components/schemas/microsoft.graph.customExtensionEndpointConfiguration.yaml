@@ -1,0 +1,14 @@
+title: customExtensionEndpointConfiguration
+required:
+  - '@odata.type'
+type: object
+properties:
+  '@odata.type':
+    type: string
+discriminator:
+  propertyName: '@odata.type'
+  mapping:
+    '#microsoft.graph.httpRequestEndpoint': .\microsoft.graph.httpRequestEndpoint.yaml
+    '#microsoft.graph.logicAppTriggerEndpointConfiguration': .\microsoft.graph.logicAppTriggerEndpointConfiguration.yaml
+    microsoft.graph.httpRequestEndpoint: .\microsoft.graph.httpRequestEndpoint.yaml
+    microsoft.graph.logicAppTriggerEndpointConfiguration: .\microsoft.graph.logicAppTriggerEndpointConfiguration.yaml

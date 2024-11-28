@@ -1,0 +1,23 @@
+value:
+  availabilityStatus:
+    '@odata.type': microsoft.graph.trainingAvailabilityStatus
+  createdBy:
+    '@odata.type': microsoft.graph.emailIdentity
+  createdDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  description: String
+  displayName: String
+  durationInMinutes: '0'
+  hasEvaluation: 'true'
+  languageDetails:
+    - '@odata.type': microsoft.graph.trainingLanguageDetail
+  lastModifiedBy:
+    '@odata.type': microsoft.graph.emailIdentity
+  lastModifiedDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  source:
+    '@odata.type': microsoft.graph.simulationContentSource
+  supportedLocales:
+    - String
+  tags:
+    - String
+  type:
+    '@odata.type': microsoft.graph.trainingType

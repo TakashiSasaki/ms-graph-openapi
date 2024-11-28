@@ -1,0 +1,11 @@
+allOf:
+  - $ref: .\microsoft.graph.security.indicator.yaml
+  - title: articleIndicator
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.security.articleIndicator'
+x-ms-discriminator-value: '#microsoft.graph.security.articleIndicator'

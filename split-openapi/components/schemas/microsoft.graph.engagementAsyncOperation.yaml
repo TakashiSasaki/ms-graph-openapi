@@ -1,0 +1,32 @@
+allOf:
+  - $ref: .\microsoft.graph.longRunningOperation.yaml
+  - title: engagementAsyncOperation
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      operationType:
+        anyOf:
+          - $ref: .\microsoft.graph.engagementAsyncOperationType.yaml
+          - type: object
+            nullable: true
+        description: >-
+          The type of the long-running operation. The possible values are:
+          createCommunity, unknownFutureValue.
+      resourceId:
+        type: string
+        description: >-
+          The ID of the object created or modified as a result of this async
+          operation.
+        nullable: true
+      '@odata.type':
+        type: string
+    description: >-
+      Represents the status of a Viva Engage async operation that is an
+      operation that transcends the
+
+      lifetime of a single API request. These operations are long-running or too
+      expensive to complete
+
+      within the time frame of their original request.
+x-ms-discriminator-value: '#microsoft.graph.engagementAsyncOperation'

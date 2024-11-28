@@ -1,0 +1,10 @@
+value:
+  activeDeviceCount: '0'
+  appCrashCount: '0'
+  appDisplayName: String
+  appName: String
+  appPublisher: String
+  appUsageDuration: '0'
+  meanTimeToFailureInMinutes: '0'
+  osBuildNumber: String
+  osVersion: String

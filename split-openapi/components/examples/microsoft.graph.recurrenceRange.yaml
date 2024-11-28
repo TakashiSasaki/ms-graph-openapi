@@ -1,0 +1,7 @@
+value:
+  endDate: '0001-01-01'
+  numberOfOccurrences: '0'
+  recurrenceTimeZone: String
+  startDate: '0001-01-01'
+  type:
+    '@odata.type': microsoft.graph.recurrenceRangeType

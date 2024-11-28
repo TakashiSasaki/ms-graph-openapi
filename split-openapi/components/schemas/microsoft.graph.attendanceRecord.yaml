@@ -1,0 +1,38 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: attendanceRecord
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      attendanceIntervals:
+        type: array
+        items:
+          $ref: .\microsoft.graph.attendanceInterval.yaml
+        description: List of time periods between joining and leaving a meeting.
+      emailAddress:
+        type: string
+        description: Email address of the user associated with this attendance record.
+        nullable: true
+      identity:
+        anyOf:
+          - $ref: .\microsoft.graph.identity.yaml
+          - type: object
+            nullable: true
+        description: Identity of the user associated with this attendance record.
+      role:
+        type: string
+        description: >-
+          Role of the attendee. Possible values are: None, Attendee, Presenter,
+          and Organizer.
+        nullable: true
+      totalAttendanceInSeconds:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: Total duration of the attendances in seconds.
+        format: int32
+        nullable: true
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.attendanceRecord'

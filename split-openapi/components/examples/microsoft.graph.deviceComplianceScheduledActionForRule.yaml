@@ -1,0 +1,4 @@
+value:
+  ruleName: String
+  scheduledActionConfigurations:
+    - '@odata.type': microsoft.graph.deviceComplianceActionItem

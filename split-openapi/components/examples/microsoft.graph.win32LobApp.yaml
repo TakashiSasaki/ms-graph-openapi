@@ -1,0 +1,19 @@
+value:
+  applicableArchitectures:
+    '@odata.type': microsoft.graph.windowsArchitecture
+  installCommandLine: String
+  installExperience:
+    '@odata.type': microsoft.graph.win32LobAppInstallExperience
+  minimumCpuSpeedInMHz: '0'
+  minimumFreeDiskSpaceInMB: '0'
+  minimumMemoryInMB: '0'
+  minimumNumberOfProcessors: '0'
+  minimumSupportedWindowsRelease: String
+  msiInformation:
+    '@odata.type': microsoft.graph.win32LobAppMsiInformation
+  returnCodes:
+    - '@odata.type': microsoft.graph.win32LobAppReturnCode
+  rules:
+    - '@odata.type': microsoft.graph.win32LobAppRule
+  setupFilePath: String
+  uninstallCommandLine: String

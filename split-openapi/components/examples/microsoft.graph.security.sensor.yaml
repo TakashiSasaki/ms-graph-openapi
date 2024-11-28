@@ -1,0 +1,16 @@
+value:
+  createdDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  deploymentStatus:
+    '@odata.type': microsoft.graph.security.deploymentStatus
+  displayName: String
+  domainName: String
+  healthIssues:
+    - '@odata.type': microsoft.graph.security.healthIssue
+  healthStatus:
+    '@odata.type': microsoft.graph.security.sensorHealthStatus
+  openHealthIssuesCount: '0'
+  sensorType:
+    '@odata.type': microsoft.graph.security.sensorType
+  settings:
+    '@odata.type': microsoft.graph.security.sensorSettings
+  version: String

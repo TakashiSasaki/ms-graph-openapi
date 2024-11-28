@@ -1,0 +1,7 @@
+value:
+  healthOverviews:
+    - '@odata.type': microsoft.graph.serviceHealth
+  issues:
+    - '@odata.type': microsoft.graph.serviceHealthIssue
+  messages:
+    - '@odata.type': microsoft.graph.serviceUpdateMessage

@@ -1,0 +1,7 @@
+title: featureTargetType
+enum:
+  - group
+  - administrativeUnit
+  - role
+  - unknownFutureValue
+type: string

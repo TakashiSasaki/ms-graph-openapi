@@ -1,0 +1,14 @@
+title: subjectRightsRequestSiteLocation
+required:
+  - '@odata.type'
+type: object
+properties:
+  '@odata.type':
+    type: string
+discriminator:
+  propertyName: '@odata.type'
+  mapping:
+    '#microsoft.graph.subjectRightsRequestAllSiteLocation': .\microsoft.graph.subjectRightsRequestAllSiteLocation.yaml
+    '#microsoft.graph.subjectRightsRequestEnumeratedSiteLocation': .\microsoft.graph.subjectRightsRequestEnumeratedSiteLocation.yaml
+    microsoft.graph.subjectRightsRequestAllSiteLocation: .\microsoft.graph.subjectRightsRequestAllSiteLocation.yaml
+    microsoft.graph.subjectRightsRequestEnumeratedSiteLocation: .\microsoft.graph.subjectRightsRequestEnumeratedSiteLocation.yaml

@@ -1,0 +1,7 @@
+value:
+  itemInsights:
+    '@odata.type': microsoft.graph.insightsSettings
+  profileCardProperties:
+    - '@odata.type': microsoft.graph.profileCardProperty
+  pronouns:
+    '@odata.type': microsoft.graph.pronounsSettings

@@ -1,0 +1,59 @@
+title: meetingTimeSuggestion
+required:
+  - '@odata.type'
+type: object
+properties:
+  attendeeAvailability:
+    type: array
+    items:
+      $ref: .\microsoft.graph.attendeeAvailability.yaml
+    description: >-
+      An array that shows the availability status of each attendee for this
+      meeting suggestion.
+  confidence:
+    oneOf:
+      - type: number
+        format: double
+        nullable: true
+      - type: string
+        nullable: true
+      - $ref: .\ReferenceNumeric.yaml
+    description: A percentage that represents the likelhood of all the attendees attending.
+  locations:
+    type: array
+    items:
+      $ref: .\microsoft.graph.location.yaml
+    description: >-
+      An array that specifies the name and geographic location of each meeting
+      location for this meeting suggestion.
+  meetingTimeSlot:
+    anyOf:
+      - $ref: .\microsoft.graph.timeSlot.yaml
+      - type: object
+        nullable: true
+    description: A time period suggested for the meeting.
+  order:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    description: >-
+      Order of meeting time suggestions sorted by their computed confidence
+      value from high to low, then by chronology if there are suggestions with
+      the same confidence.
+    format: int32
+    nullable: true
+  organizerAvailability:
+    anyOf:
+      - $ref: .\microsoft.graph.freeBusyStatus.yaml
+      - type: object
+        nullable: true
+    description: >-
+      Availability of the meeting organizer for this meeting suggestion. The
+      possible values are: free, tentative, busy, oof, workingElsewhere,
+      unknown.
+  suggestionReason:
+    type: string
+    description: Reason for suggesting the meeting time.
+    nullable: true
+  '@odata.type':
+    type: string

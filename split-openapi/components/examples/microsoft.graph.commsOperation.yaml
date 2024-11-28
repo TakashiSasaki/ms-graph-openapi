@@ -1,0 +1,6 @@
+value:
+  clientContext: String
+  resultInfo:
+    '@odata.type': microsoft.graph.resultInfo
+  status:
+    '@odata.type': microsoft.graph.operationStatus

@@ -1,0 +1,22 @@
+title: devicesFilter
+required:
+  - '@odata.type'
+type: object
+properties:
+  mode:
+    anyOf:
+      - $ref: >-
+          .\microsoft.graph.crossTenantAccessPolicyTargetConfigurationAccessType.yaml
+      - type: object
+        nullable: true
+    description: >-
+      Determines whether devices that satisfy the rule should be allowed or
+      blocked. The possible values are: allowed, blocked, unknownFutureValue.
+  rule:
+    type: string
+    description: >-
+      Defines the rule to filter the devices. For example,
+      device.deviceAttribute2 -eq 'PrivilegedAccessWorkstation'.
+    nullable: true
+  '@odata.type':
+    type: string

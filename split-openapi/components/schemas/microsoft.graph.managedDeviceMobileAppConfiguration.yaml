@@ -1,0 +1,80 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: managedDeviceMobileAppConfiguration
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      createdDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: DateTime the object was created.
+        format: date-time
+      description:
+        type: string
+        description: Admin provided description of the Device Configuration.
+        nullable: true
+      displayName:
+        type: string
+        description: Admin provided name of the device configuration.
+      lastModifiedDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: DateTime the object was last modified.
+        format: date-time
+      targetedMobileApps:
+        type: array
+        items:
+          type: string
+          nullable: true
+        description: the associated app.
+      version:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: Version of the device configuration.
+        format: int32
+      assignments:
+        type: array
+        items:
+          $ref: .\microsoft.graph.managedDeviceMobileAppConfigurationAssignment.yaml
+        description: The list of group assignemenets for app configration.
+        x-ms-navigationProperty: true
+      deviceStatuses:
+        type: array
+        items:
+          $ref: >-
+            .\microsoft.graph.managedDeviceMobileAppConfigurationDeviceStatus.yaml
+        description: List of ManagedDeviceMobileAppConfigurationDeviceStatus.
+        x-ms-navigationProperty: true
+      deviceStatusSummary:
+        anyOf:
+          - $ref: >-
+              .\microsoft.graph.managedDeviceMobileAppConfigurationDeviceSummary.yaml
+          - type: object
+            nullable: true
+        description: App configuration device status summary.
+        x-ms-navigationProperty: true
+      userStatuses:
+        type: array
+        items:
+          $ref: .\microsoft.graph.managedDeviceMobileAppConfigurationUserStatus.yaml
+        description: List of ManagedDeviceMobileAppConfigurationUserStatus.
+        x-ms-navigationProperty: true
+      userStatusSummary:
+        anyOf:
+          - $ref: >-
+              .\microsoft.graph.managedDeviceMobileAppConfigurationUserSummary.yaml
+          - type: object
+            nullable: true
+        description: App configuration user status summary.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+    description: An abstract class for Mobile app configuration for enrolled devices.
+    discriminator:
+      propertyName: '@odata.type'
+      mapping:
+        '#microsoft.graph.iosMobileAppConfiguration': .\microsoft.graph.iosMobileAppConfiguration.yaml

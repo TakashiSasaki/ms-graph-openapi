@@ -1,0 +1,14 @@
+description: Success
+content:
+  application/json:
+    schema:
+      title: Collection of managedAppPolicy
+      type: object
+      allOf:
+        - $ref: ..\schemas\BaseCollectionPaginationCountResponse.yaml
+        - type: object
+          properties:
+            value:
+              type: array
+              items:
+                $ref: ..\schemas\microsoft.graph.managedAppPolicy.yaml

@@ -1,0 +1,3 @@
+value:
+  lists:
+    - '@odata.type': microsoft.graph.todoTaskList

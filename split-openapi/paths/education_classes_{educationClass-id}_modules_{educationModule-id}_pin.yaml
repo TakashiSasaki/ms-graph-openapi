@@ -1,0 +1,44 @@
+description: Provides operations to call the pin method.
+post:
+  tags:
+    - education.educationClass
+  summary: Invoke action pin
+  description: >-
+    Pin an educationModule in the class work list. This action sets the isPinned
+    property to true for an educationModule. Only teachers can perform this
+    action and only one module at a time can be pinned in the class work list.
+  externalDocs:
+    description: Find more info here
+    url: >-
+      https://learn.microsoft.com/graph/api/educationmodule-pin?view=graph-rest-1.0
+  operationId: education.classes.educationClass.modules.educationModule.pin
+  responses:
+    2XX:
+      description: Success
+      content:
+        application/json:
+          schema:
+            anyOf:
+              - $ref: ..\components\schemas\microsoft.graph.educationModule.yaml
+              - type: object
+                nullable: true
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: action
+parameters:
+  - name: educationClass-id
+    in: path
+    description: The unique identifier of educationClass
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: educationClass
+  - name: educationModule-id
+    in: path
+    description: The unique identifier of educationModule
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: educationModule

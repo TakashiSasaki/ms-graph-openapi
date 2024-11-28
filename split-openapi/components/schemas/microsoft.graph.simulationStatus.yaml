@@ -1,0 +1,12 @@
+title: simulationStatus
+enum:
+  - unknown
+  - draft
+  - running
+  - scheduled
+  - succeeded
+  - failed
+  - cancelled
+  - excluded
+  - unknownFutureValue
+type: string

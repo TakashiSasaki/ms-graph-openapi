@@ -1,0 +1,25 @@
+value:
+  callDurationSource:
+    '@odata.type': microsoft.graph.callRecords.pstnCallDurationSource
+  calleeNumber: String
+  callerNumber: String
+  callId: String
+  callType: String
+  charge: '0'
+  conferenceId: String
+  connectionCharge: '0'
+  currency: String
+  destinationContext: String
+  destinationName: String
+  duration: '0'
+  endDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  id: String
+  inventoryType: String
+  licenseCapability: String
+  operator: String
+  startDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  tenantCountryCode: String
+  usageCountryCode: String
+  userDisplayName: String
+  userId: String
+  userPrincipalName: String

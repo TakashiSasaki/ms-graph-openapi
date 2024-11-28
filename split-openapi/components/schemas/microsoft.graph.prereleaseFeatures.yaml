@@ -1,0 +1,24 @@
+title: prereleaseFeatures
+enum:
+  - userDefined
+  - settingsOnly
+  - settingsAndExperimentations
+  - notAllowed
+type: string
+description: Possible values for pre-release features.
+x-ms-enum:
+  name: prereleaseFeatures
+  modelAsString: false
+  values:
+    - value: userDefined
+      description: User Defined, default value, no intent.
+      name: userDefined
+    - value: settingsOnly
+      description: Settings only pre-release features.
+      name: settingsOnly
+    - value: settingsAndExperimentations
+      description: Settings and experimentations pre-release features.
+      name: settingsAndExperimentations
+    - value: notAllowed
+      description: Pre-release features not allowed.
+      name: notAllowed

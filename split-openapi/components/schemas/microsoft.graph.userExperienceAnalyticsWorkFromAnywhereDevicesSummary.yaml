@@ -1,0 +1,122 @@
+title: userExperienceAnalyticsWorkFromAnywhereDevicesSummary
+required:
+  - '@odata.type'
+type: object
+properties:
+  autopilotDevicesSummary:
+    anyOf:
+      - $ref: .\microsoft.graph.userExperienceAnalyticsAutopilotDevicesSummary.yaml
+      - type: object
+        nullable: true
+    description: >-
+      The user experience analytics work from anywhere Autopilot devices
+      summary. Read-only.
+  cloudIdentityDevicesSummary:
+    anyOf:
+      - $ref: >-
+          .\microsoft.graph.userExperienceAnalyticsCloudIdentityDevicesSummary.yaml
+      - type: object
+        nullable: true
+    description: >-
+      The user experience analytics work from anywhere Cloud Identity devices
+      summary. Read-only.
+  cloudManagementDevicesSummary:
+    anyOf:
+      - $ref: >-
+          .\microsoft.graph.userExperienceAnalyticsCloudManagementDevicesSummary.yaml
+      - type: object
+        nullable: true
+    description: >-
+      The user experience analytics work from anywhere Cloud management devices
+      summary. Read-only.
+  coManagedDevices:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    description: >-
+      Total number of co-managed devices. Read-only. Valid values -2147483648 to
+      2147483647
+    format: int32
+  devicesNotAutopilotRegistered:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    description: >-
+      The count of intune devices that are not autopilot registerd. Read-only.
+      Valid values -2147483648 to 2147483647
+    format: int32
+  devicesWithoutAutopilotProfileAssigned:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    description: >-
+      The count of intune devices not autopilot profile assigned. Read-only.
+      Valid values -2147483648 to 2147483647
+    format: int32
+  devicesWithoutCloudIdentity:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    description: >-
+      The count of devices that are not cloud identity. Read-only. Valid values
+      -2147483648 to 2147483647
+    format: int32
+  intuneDevices:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    description: >-
+      The count of intune devices that are not autopilot registerd. Read-only.
+      Valid values -2147483648 to 2147483647
+    format: int32
+  tenantAttachDevices:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    description: >-
+      Total count of tenant attach devices. Read-only. Valid values -2147483648
+      to 2147483647
+    format: int32
+  totalDevices:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    description: >-
+      The total count of devices. Read-only. Valid values -2147483648 to
+      2147483647
+    format: int32
+  unsupportedOSversionDevices:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    description: >-
+      The count of Windows 10 devices that have unsupported OS versions.
+      Read-only. Valid values -2147483648 to 2147483647
+    format: int32
+  windows10Devices:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    description: >-
+      The count of windows 10 devices. Read-only. Valid values -2147483648 to
+      2147483647
+    format: int32
+  windows10DevicesSummary:
+    anyOf:
+      - $ref: .\microsoft.graph.userExperienceAnalyticsWindows10DevicesSummary.yaml
+      - type: object
+        nullable: true
+    description: >-
+      The user experience analytics work from anywhere Windows 10 devices
+      summary. Read-only.
+  windows10DevicesWithoutTenantAttach:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    description: >-
+      The count of windows 10 devices that are Intune and co-managed. Read-only.
+      Valid values -2147483648 to 2147483647
+    format: int32
+  '@odata.type':
+    type: string
+description: The user experience analytics Work From Anywhere metrics devices summary.

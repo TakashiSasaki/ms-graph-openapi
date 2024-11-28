@@ -1,0 +1,5 @@
+value:
+  appId: String
+  appStoreUrl: String
+  name: String
+  publisher: String

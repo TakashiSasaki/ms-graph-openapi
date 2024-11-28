@@ -1,0 +1,25 @@
+allOf:
+  - $ref: .\microsoft.graph.protectionUnitBase.yaml
+  - title: mailboxProtectionUnit
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      directoryObjectId:
+        type: string
+        description: The ID of the directory object.
+        nullable: true
+      displayName:
+        type: string
+        description: Display name of the directory object.
+        nullable: true
+        readOnly: true
+      email:
+        type: string
+        description: Email address associated with the directory object.
+        nullable: true
+        readOnly: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.mailboxProtectionUnit'
+x-ms-discriminator-value: '#microsoft.graph.mailboxProtectionUnit'

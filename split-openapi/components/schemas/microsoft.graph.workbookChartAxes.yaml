@@ -1,0 +1,31 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: workbookChartAxes
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      categoryAxis:
+        anyOf:
+          - $ref: .\microsoft.graph.workbookChartAxis.yaml
+          - type: object
+            nullable: true
+        description: Represents the category axis in a chart. Read-only.
+        x-ms-navigationProperty: true
+      seriesAxis:
+        anyOf:
+          - $ref: .\microsoft.graph.workbookChartAxis.yaml
+          - type: object
+            nullable: true
+        description: Represents the series axis of a 3-dimensional chart. Read-only.
+        x-ms-navigationProperty: true
+      valueAxis:
+        anyOf:
+          - $ref: .\microsoft.graph.workbookChartAxis.yaml
+          - type: object
+            nullable: true
+        description: Represents the value axis in an axis. Read-only.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.workbookChartAxes'

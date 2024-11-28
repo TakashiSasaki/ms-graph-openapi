@@ -1,0 +1,15 @@
+title: videoCodec
+enum:
+  - unknown
+  - invalid
+  - av1
+  - h263
+  - h264
+  - h264s
+  - h264uc
+  - h265
+  - rtvc1
+  - rtVideo
+  - xrtvc1
+  - unknownFutureValue
+type: string

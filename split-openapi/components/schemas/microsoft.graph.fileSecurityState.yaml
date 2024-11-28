@@ -1,0 +1,29 @@
+title: fileSecurityState
+required:
+  - '@odata.type'
+type: object
+properties:
+  fileHash:
+    anyOf:
+      - $ref: .\microsoft.graph.fileHash.yaml
+      - type: object
+        nullable: true
+    description: >-
+      Complex type containing file hashes (cryptographic and
+      location-sensitive).
+  name:
+    type: string
+    description: File name (without path).
+    nullable: true
+  path:
+    type: string
+    description: Full file path of the file/imageFile.
+    nullable: true
+  riskScore:
+    type: string
+    description: >-
+      Provider generated/calculated risk score of the alert file. Recommended
+      value range of 0-1, which equates to a percentage.
+    nullable: true
+  '@odata.type':
+    type: string

@@ -1,0 +1,7 @@
+title: onenoteUserRole
+enum:
+  - None
+  - Owner
+  - Contributor
+  - Reader
+type: string

@@ -1,0 +1,61 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: settingStateDeviceSummary
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      compliantDeviceCount:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: Device Compliant count for the setting
+        format: int32
+      conflictDeviceCount:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: Device conflict error count for the setting
+        format: int32
+      errorDeviceCount:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: Device error count for the setting
+        format: int32
+      instancePath:
+        type: string
+        description: Name of the InstancePath for the setting
+        nullable: true
+      nonCompliantDeviceCount:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: Device NonCompliant count for the setting
+        format: int32
+      notApplicableDeviceCount:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: Device Not Applicable count for the setting
+        format: int32
+      remediatedDeviceCount:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: Device Compliant count for the setting
+        format: int32
+      settingName:
+        type: string
+        description: Name of the setting
+        nullable: true
+      unknownDeviceCount:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: Device Unkown count for the setting
+        format: int32
+      '@odata.type':
+        type: string
+    description: Device Compilance Policy and Configuration for a Setting State summary
+x-ms-discriminator-value: '#microsoft.graph.settingStateDeviceSummary'

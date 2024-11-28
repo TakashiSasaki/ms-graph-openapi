@@ -1,0 +1,30 @@
+title: ratingNewZealandTelevisionType
+enum:
+  - allAllowed
+  - allBlocked
+  - general
+  - parentalGuidance
+  - adults
+type: string
+description: TV content rating labels in New Zealand
+x-ms-enum:
+  name: ratingNewZealandTelevisionType
+  modelAsString: false
+  values:
+    - value: allAllowed
+      description: Default value, allow all TV shows content
+      name: allAllowed
+    - value: allBlocked
+      description: Do not allow any TV shows content
+      name: allBlocked
+    - value: general
+      description: The G classification excludes materials likely to harm children under 14
+      name: general
+    - value: parentalGuidance
+      description: >-
+        The PGR classification encourages parents and guardians to supervise
+        younger viewers
+      name: parentalGuidance
+    - value: adults
+      description: The AO classification is not suitable for children
+      name: adults

@@ -1,0 +1,7 @@
+value:
+  dataType:
+    '@odata.type': microsoft.graph.identityUserFlowAttributeDataType
+  description: String
+  displayName: String
+  userFlowAttributeType:
+    '@odata.type': microsoft.graph.identityUserFlowAttributeType

@@ -1,0 +1,37 @@
+title: userTrainingEventInfo
+required:
+  - '@odata.type'
+type: object
+properties:
+  displayName:
+    type: string
+    description: Display name of the training.
+    nullable: true
+  latestTrainingStatus:
+    anyOf:
+      - $ref: .\microsoft.graph.trainingStatus.yaml
+      - type: object
+        nullable: true
+    description: >-
+      Latest status of the training assigned to the user. Possible values are:
+      unknown, assigned, inProgress, completed, overdue, unknownFutureValue.
+  trainingAssignedProperties:
+    anyOf:
+      - $ref: .\microsoft.graph.userTrainingContentEventInfo.yaml
+      - type: object
+        nullable: true
+    description: Event details of the training when it was assigned to the user.
+  trainingCompletedProperties:
+    anyOf:
+      - $ref: .\microsoft.graph.userTrainingContentEventInfo.yaml
+      - type: object
+        nullable: true
+    description: Event details of the training when it was completed by the user.
+  trainingUpdatedProperties:
+    anyOf:
+      - $ref: .\microsoft.graph.userTrainingContentEventInfo.yaml
+      - type: object
+        nullable: true
+    description: Event details of the training when it was updated/in-progress by the user.
+  '@odata.type':
+    type: string

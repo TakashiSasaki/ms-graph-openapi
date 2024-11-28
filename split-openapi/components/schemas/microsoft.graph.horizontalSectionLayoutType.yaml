@@ -1,0 +1,11 @@
+title: horizontalSectionLayoutType
+enum:
+  - none
+  - oneColumn
+  - twoColumns
+  - threeColumns
+  - oneThirdLeftColumn
+  - oneThirdRightColumn
+  - fullWidth
+  - unknownFutureValue
+type: string

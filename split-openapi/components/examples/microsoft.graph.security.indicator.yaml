@@ -1,0 +1,5 @@
+value:
+  artifact:
+    '@odata.type': microsoft.graph.security.artifact
+  source:
+    '@odata.type': microsoft.graph.security.indicatorSource

@@ -1,0 +1,26 @@
+title: autoRestartNotificationDismissalMethod
+enum:
+  - notConfigured
+  - automatic
+  - user
+  - unknownFutureValue
+type: string
+description: Auto restart required notification dismissal method
+x-ms-enum:
+  name: autoRestartNotificationDismissalMethod
+  modelAsString: false
+  values:
+    - value: notConfigured
+      description: Not configured
+      name: notConfigured
+    - value: automatic
+      description: >-
+        Auto dismissal Indicates that the notification is automatically
+        dismissed without user intervention
+      name: automatic
+    - value: user
+      description: User dismissal. Allows the user to dismiss the notification
+      name: user
+    - value: unknownFutureValue
+      description: Evolvable enum member
+      name: unknownFutureValue

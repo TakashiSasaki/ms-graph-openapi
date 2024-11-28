@@ -1,0 +1,14 @@
+title: subjectRightsRequestMailboxLocation
+required:
+  - '@odata.type'
+type: object
+properties:
+  '@odata.type':
+    type: string
+discriminator:
+  propertyName: '@odata.type'
+  mapping:
+    '#microsoft.graph.subjectRightsRequestAllMailboxLocation': .\microsoft.graph.subjectRightsRequestAllMailboxLocation.yaml
+    '#microsoft.graph.subjectRightsRequestEnumeratedMailboxLocation': .\microsoft.graph.subjectRightsRequestEnumeratedMailboxLocation.yaml
+    microsoft.graph.subjectRightsRequestAllMailboxLocation: .\microsoft.graph.subjectRightsRequestAllMailboxLocation.yaml
+    microsoft.graph.subjectRightsRequestEnumeratedMailboxLocation: .\microsoft.graph.subjectRightsRequestEnumeratedMailboxLocation.yaml

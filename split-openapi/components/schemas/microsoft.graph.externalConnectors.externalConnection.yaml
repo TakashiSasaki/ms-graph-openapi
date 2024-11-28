@@ -1,0 +1,80 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: externalConnection
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      activitySettings:
+        anyOf:
+          - $ref: .\microsoft.graph.externalConnectors.activitySettings.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Collects configurable settings related to activities involving
+          connector content.
+      configuration:
+        anyOf:
+          - $ref: .\microsoft.graph.externalConnectors.configuration.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Specifies additional application IDs that are allowed to manage the
+          connection and to index content in the connection. Optional.
+      connectorId:
+        type: string
+        description: The Teams app ID. Optional.
+        nullable: true
+      description:
+        type: string
+        description: >-
+          Description of the connection displayed in the Microsoft 365 admin
+          center. Optional.
+        nullable: true
+      name:
+        type: string
+        description: >-
+          The display name of the connection to be displayed in the Microsoft
+          365 admin center. Maximum length of 128 characters. Required.
+        nullable: true
+      searchSettings:
+        anyOf:
+          - $ref: .\microsoft.graph.externalConnectors.searchSettings.yaml
+          - type: object
+            nullable: true
+        description: >-
+          The settings configuring the search experience for content in this
+          connection, such as the display templates for search results.
+      state:
+        anyOf:
+          - $ref: .\microsoft.graph.externalConnectors.connectionState.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Indicates the current state of the connection. Possible values are:
+          draft, ready, obsolete, limitExceeded, unknownFutureValue.
+        readOnly: true
+      groups:
+        type: array
+        items:
+          $ref: .\microsoft.graph.externalConnectors.externalGroup.yaml
+        x-ms-navigationProperty: true
+      items:
+        type: array
+        items:
+          $ref: .\microsoft.graph.externalConnectors.externalItem.yaml
+        x-ms-navigationProperty: true
+      operations:
+        type: array
+        items:
+          $ref: .\microsoft.graph.externalConnectors.connectionOperation.yaml
+        x-ms-navigationProperty: true
+      schema:
+        anyOf:
+          - $ref: .\microsoft.graph.externalConnectors.schema.yaml
+          - type: object
+            nullable: true
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.externalConnectors.externalConnection'

@@ -1,0 +1,36 @@
+title: x509CertificateUserBinding
+required:
+  - '@odata.type'
+type: object
+properties:
+  priority:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    description: >-
+      The priority of the binding. Microsoft Entra ID uses the binding with the
+      highest priority. This value must be a non-negative integer and unique in
+      the collection of objects in the certificateUserBindings property of an
+      x509CertificateAuthenticationMethodConfiguration object. Required
+    format: int32
+  trustAffinityLevel:
+    anyOf:
+      - $ref: .\microsoft.graph.x509CertificateAffinityLevel.yaml
+      - type: object
+        nullable: true
+  userProperty:
+    type: string
+    description: >-
+      Defines the Microsoft Entra user property of the user object to use for
+      the binding. The possible values are: userPrincipalName,
+      onPremisesUserPrincipalName, certificateUserIds. Required.
+    nullable: true
+  x509CertificateField:
+    type: string
+    description: >-
+      The field on the X.509 certificate to use for the binding. The possible
+      values are: PrincipalName, RFC822Name, SubjectKeyIdentifier,
+      SHA1PublicKey.
+    nullable: true
+  '@odata.type':
+    type: string

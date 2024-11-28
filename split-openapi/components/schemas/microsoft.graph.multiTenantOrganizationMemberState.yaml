@@ -1,0 +1,7 @@
+title: multiTenantOrganizationMemberState
+enum:
+  - pending
+  - active
+  - removed
+  - unknownFutureValue
+type: string

@@ -1,0 +1,8 @@
+title: ioTDeviceImportanceType
+enum:
+  - unknown
+  - low
+  - normal
+  - high
+  - unknownFutureValue
+type: string

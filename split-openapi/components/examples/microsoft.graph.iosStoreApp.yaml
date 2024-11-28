@@ -1,0 +1,7 @@
+value:
+  applicableDeviceType:
+    '@odata.type': microsoft.graph.iosDeviceType
+  appStoreUrl: String
+  bundleId: String
+  minimumSupportedOperatingSystem:
+    '@odata.type': microsoft.graph.iosMinimumOperatingSystem

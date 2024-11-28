@@ -1,0 +1,19 @@
+allOf:
+  - $ref: .\microsoft.graph.subjectSet.yaml
+  - title: connectedOrganizationMembers
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      connectedOrganizationId:
+        type: string
+        description: The ID of the connected organization in entitlement management.
+        nullable: true
+      description:
+        type: string
+        description: The name of the connected organization.
+        nullable: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.connectedOrganizationMembers'
+x-ms-discriminator-value: '#microsoft.graph.connectedOrganizationMembers'

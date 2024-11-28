@@ -1,0 +1,72 @@
+description: Provides operations to call the parseExpression method.
+post:
+  tags:
+    - applications.synchronization
+  summary: Invoke action parseExpression
+  description: >-
+    Parse a given string expression into an attributeMappingSource object. For
+    more information about expressions, see Writing Expressions for Attribute
+    Mappings in Microsoft Entra ID.
+  externalDocs:
+    description: Find more info here
+    url: >-
+      https://learn.microsoft.com/graph/api/synchronization-synchronizationschema-parseexpression?view=graph-rest-1.0
+  operationId: >-
+    applications.application.synchronization.templates.synchronizationTemplate.schema.parseExpression
+  requestBody:
+    description: Action parameters
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            expression:
+              type: string
+              nullable: true
+            testInputObject:
+              anyOf:
+                - $ref: >-
+                    ..\components\schemas\microsoft.graph.expressionInputObject.yaml
+                - type: object
+                  nullable: true
+            targetAttributeDefinition:
+              anyOf:
+                - $ref: >-
+                    ..\components\schemas\microsoft.graph.attributeDefinition.yaml
+                - type: object
+                  nullable: true
+    required: true
+  responses:
+    2XX:
+      description: Success
+      content:
+        application/json:
+          schema:
+            anyOf:
+              - $ref: >-
+                  ..\components\schemas\microsoft.graph.parseExpressionResponse.yaml
+              - type: object
+                nullable: true
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: action
+parameters:
+  - name: application-id
+    in: path
+    description: The unique identifier of application
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: application
+  - name: synchronizationTemplate-id
+    in: path
+    description: The unique identifier of synchronizationTemplate
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: synchronizationTemplate
+x-ms-docs-grouped-path:
+  - >-
+    /applications/{application-id}/synchronization/jobs/{synchronizationJob-id}/schema/parseExpression

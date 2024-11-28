@@ -1,0 +1,17 @@
+value:
+  appDataEncryptionType:
+    '@odata.type': microsoft.graph.managedAppDataEncryptionType
+  apps:
+    - '@odata.type': microsoft.graph.managedMobileApp
+  customSettings:
+    - '@odata.type': microsoft.graph.keyValuePair
+  deployedAppCount: '0'
+  deploymentSummary:
+    '@odata.type': microsoft.graph.managedAppPolicyDeploymentSummary
+  disableAppEncryptionIfDeviceEncryptionIsEnabled: 'true'
+  encryptAppData: 'true'
+  faceIdBlocked: 'true'
+  minimumRequiredPatchVersion: String
+  minimumRequiredSdkVersion: String
+  minimumWarningPatchVersion: String
+  screenCaptureBlocked: 'true'

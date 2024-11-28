@@ -1,0 +1,5 @@
+value:
+  blockCrossOrganizationWriteAccess: 'true'
+  encryptionMethod:
+    '@odata.type': microsoft.graph.bitLockerEncryptionMethod
+  requireEncryptionForWriteAccess: 'true'

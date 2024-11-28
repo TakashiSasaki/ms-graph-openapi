@@ -1,0 +1,3 @@
+value:
+  pages:
+    - '@odata.type': microsoft.graph.iosHomeScreenFolderPage

@@ -1,0 +1,16 @@
+title: windowsInformationProtectionProxiedDomainCollection
+required:
+  - '@odata.type'
+type: object
+properties:
+  displayName:
+    type: string
+    description: Display name
+  proxiedDomains:
+    type: array
+    items:
+      $ref: .\microsoft.graph.proxiedDomain.yaml
+    description: Collection of proxied domains
+  '@odata.type':
+    type: string
+description: Windows Information Protection Proxied Domain Collection

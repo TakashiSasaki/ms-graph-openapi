@@ -1,0 +1,12 @@
+allOf:
+  - $ref: .\microsoft.graph.deviceAndAppManagementAssignmentTarget.yaml
+  - title: allDevicesAssignmentTarget
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.allDevicesAssignmentTarget'
+    description: Represents an assignment to all managed devices in the tenant.
+x-ms-discriminator-value: '#microsoft.graph.allDevicesAssignmentTarget'

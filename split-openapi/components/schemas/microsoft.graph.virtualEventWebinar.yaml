@@ -1,0 +1,38 @@
+allOf:
+  - $ref: .\microsoft.graph.virtualEvent.yaml
+  - title: virtualEventWebinar
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      audience:
+        anyOf:
+          - $ref: .\microsoft.graph.meetingAudience.yaml
+          - type: object
+            nullable: true
+        description: >-
+          To whom the webinar is visible. Possible values are: everyone,
+          organization, and unknownFutureValue.
+      coOrganizers:
+        type: array
+        items:
+          $ref: .\microsoft.graph.communicationsUserIdentity.yaml
+        description: Identity information of coorganizers of the webinar.
+      registrationConfiguration:
+        anyOf:
+          - $ref: >-
+              .\microsoft.graph.virtualEventWebinarRegistrationConfiguration.yaml
+          - type: object
+            nullable: true
+        description: Registration configuration of the webinar.
+        x-ms-navigationProperty: true
+      registrations:
+        type: array
+        items:
+          $ref: .\microsoft.graph.virtualEventRegistration.yaml
+        description: Registration records of the webinar.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.virtualEventWebinar'
+x-ms-discriminator-value: '#microsoft.graph.virtualEventWebinar'

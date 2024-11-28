@@ -1,0 +1,5 @@
+value:
+  name: String
+  storageResource:
+    '@odata.type': microsoft.graph.security.azureResourceEvidence
+  url: String

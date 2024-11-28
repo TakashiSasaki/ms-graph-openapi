@@ -1,0 +1,9 @@
+title: riskLevel
+enum:
+  - low
+  - medium
+  - high
+  - hidden
+  - none
+  - unknownFutureValue
+type: string

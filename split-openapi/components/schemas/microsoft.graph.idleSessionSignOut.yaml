@@ -1,0 +1,23 @@
+title: idleSessionSignOut
+required:
+  - '@odata.type'
+type: object
+properties:
+  isEnabled:
+    type: boolean
+    description: Indicates whether the idle session sign-out policy is enabled.
+    nullable: true
+  signOutAfterInSeconds:
+    type: number
+    description: Number of seconds of inactivity after which a user is signed out.
+    format: int64
+    nullable: true
+  warnAfterInSeconds:
+    type: number
+    description: >-
+      Number of seconds of inactivity after which a user is notified that
+      they'll be signed out.
+    format: int64
+    nullable: true
+  '@odata.type':
+    type: string

@@ -1,0 +1,28 @@
+title: cvssSummary
+required:
+  - '@odata.type'
+type: object
+properties:
+  score:
+    oneOf:
+      - type: number
+        format: double
+        nullable: true
+      - type: string
+        nullable: true
+      - $ref: .\ReferenceNumeric.yaml
+    description: The CVSS score about this vulnerability.
+  severity:
+    anyOf:
+      - $ref: .\microsoft.graph.security.vulnerabilitySeverity.yaml
+      - type: object
+        nullable: true
+    description: >-
+      The CVSS severity rating for this vulnerability. The possible values are:
+      none, low, medium, high, critical, unknownFutureValue.
+  vectorString:
+    type: string
+    description: The CVSS vector string for this vulnerability.
+    nullable: true
+  '@odata.type':
+    type: string

@@ -1,0 +1,5 @@
+title: attributeFlowBehavior
+enum:
+  - FlowWhenChanged
+  - FlowAlways
+type: string

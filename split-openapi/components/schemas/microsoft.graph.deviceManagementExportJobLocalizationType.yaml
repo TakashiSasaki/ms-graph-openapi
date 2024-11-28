@@ -1,0 +1,20 @@
+title: deviceManagementExportJobLocalizationType
+enum:
+  - localizedValuesAsAdditionalColumn
+  - replaceLocalizableValues
+type: string
+description: Configures how the requested export job is localized.
+x-ms-enum:
+  name: deviceManagementExportJobLocalizationType
+  modelAsString: false
+  values:
+    - value: localizedValuesAsAdditionalColumn
+      description: >-
+        Configures the export job to expose localized values as an additional
+        column.
+      name: localizedValuesAsAdditionalColumn
+    - value: replaceLocalizableValues
+      description: >-
+        Configures the export job to replace enumerable values with their
+        localized values.
+      name: replaceLocalizableValues

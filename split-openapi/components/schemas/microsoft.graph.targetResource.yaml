@@ -1,0 +1,44 @@
+title: targetResource
+required:
+  - '@odata.type'
+type: object
+properties:
+  displayName:
+    type: string
+    description: >-
+      Indicates the visible name defined for the resource. Typically specified
+      when the resource is created.
+    nullable: true
+  groupType:
+    anyOf:
+      - $ref: .\microsoft.graph.groupType.yaml
+      - type: object
+        nullable: true
+    description: >-
+      When type is set to Group, this indicates the group type. Possible values
+      are: unifiedGroups, azureAD, and unknownFutureValue
+  id:
+    type: string
+    description: Indicates the unique ID of the resource.
+    nullable: true
+  modifiedProperties:
+    type: array
+    items:
+      $ref: .\microsoft.graph.modifiedProperty.yaml
+    description: >-
+      Indicates name, old value and new value of each attribute that changed.
+      Property values depend on the operation type.
+  type:
+    type: string
+    description: >-
+      Describes the resource type.  Example values include Application, Group,
+      ServicePrincipal, and User.
+    nullable: true
+  userPrincipalName:
+    type: string
+    description: >-
+      When type is set to User, this includes the user name that initiated the
+      action; null for other types.
+    nullable: true
+  '@odata.type':
+    type: string

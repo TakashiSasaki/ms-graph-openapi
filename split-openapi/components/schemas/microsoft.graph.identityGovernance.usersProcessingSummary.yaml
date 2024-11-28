@@ -1,0 +1,32 @@
+title: usersProcessingSummary
+required:
+  - '@odata.type'
+type: object
+properties:
+  failedTasks:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    format: int32
+  failedUsers:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    format: int32
+  successfulUsers:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    format: int32
+  totalTasks:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    format: int32
+  totalUsers:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    format: int32
+  '@odata.type':
+    type: string

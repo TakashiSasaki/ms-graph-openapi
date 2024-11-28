@@ -1,0 +1,8 @@
+title: additionalDataOptions
+enum:
+  - allVersions
+  - linkedFiles
+  - unknownFutureValue
+type: string
+x-ms-enum-flags:
+  isFlags: true

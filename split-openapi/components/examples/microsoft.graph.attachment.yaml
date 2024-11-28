@@ -1,0 +1,6 @@
+value:
+  contentType: String
+  isInline: 'true'
+  lastModifiedDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  name: String
+  size: '0'

@@ -1,0 +1,16 @@
+title: educationAssignmentRecipient
+required:
+  - '@odata.type'
+type: object
+properties:
+  '@odata.type':
+    type: string
+discriminator:
+  propertyName: '@odata.type'
+  mapping:
+    '#microsoft.graph.educationAssignmentClassRecipient': .\microsoft.graph.educationAssignmentClassRecipient.yaml
+    '#microsoft.graph.educationAssignmentGroupRecipient': .\microsoft.graph.educationAssignmentGroupRecipient.yaml
+    '#microsoft.graph.educationAssignmentIndividualRecipient': .\microsoft.graph.educationAssignmentIndividualRecipient.yaml
+    microsoft.graph.educationAssignmentClassRecipient: .\microsoft.graph.educationAssignmentClassRecipient.yaml
+    microsoft.graph.educationAssignmentGroupRecipient: .\microsoft.graph.educationAssignmentGroupRecipient.yaml
+    microsoft.graph.educationAssignmentIndividualRecipient: .\microsoft.graph.educationAssignmentIndividualRecipient.yaml

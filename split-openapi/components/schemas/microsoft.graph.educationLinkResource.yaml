@@ -1,0 +1,15 @@
+allOf:
+  - $ref: .\microsoft.graph.educationResource.yaml
+  - title: educationLinkResource
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      link:
+        type: string
+        description: URL to the resource.
+        nullable: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.educationLinkResource'
+x-ms-discriminator-value: '#microsoft.graph.educationLinkResource'

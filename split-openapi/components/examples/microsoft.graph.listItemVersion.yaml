@@ -1,0 +1,3 @@
+value:
+  fields:
+    '@odata.type': microsoft.graph.fieldValueSet

@@ -1,0 +1,3 @@
+value:
+  maximumRetries: '0'
+  timeoutInMilliseconds: '0'

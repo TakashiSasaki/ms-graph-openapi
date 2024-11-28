@@ -1,0 +1,9 @@
+title: modality
+enum:
+  - audio
+  - video
+  - videoBasedScreenSharing
+  - data
+  - screenSharing
+  - unknownFutureValue
+type: string

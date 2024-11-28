@@ -1,0 +1,18 @@
+title: ipRange
+required:
+  - '@odata.type'
+type: object
+properties:
+  '@odata.type':
+    type: string
+discriminator:
+  propertyName: '@odata.type'
+  mapping:
+    '#microsoft.graph.iPv4CidrRange': .\microsoft.graph.iPv4CidrRange.yaml
+    '#microsoft.graph.iPv4Range': .\microsoft.graph.iPv4Range.yaml
+    '#microsoft.graph.iPv6CidrRange': .\microsoft.graph.iPv6CidrRange.yaml
+    '#microsoft.graph.iPv6Range': .\microsoft.graph.iPv6Range.yaml
+    microsoft.graph.iPv4CidrRange: .\microsoft.graph.iPv4CidrRange.yaml
+    microsoft.graph.iPv4Range: .\microsoft.graph.iPv4Range.yaml
+    microsoft.graph.iPv6CidrRange: .\microsoft.graph.iPv6CidrRange.yaml
+    microsoft.graph.iPv6Range: .\microsoft.graph.iPv6Range.yaml

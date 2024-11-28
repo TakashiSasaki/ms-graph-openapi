@@ -1,0 +1,10 @@
+value:
+  authenticationStrength:
+    '@odata.type': microsoft.graph.authenticationStrengthPolicy
+  builtInControls:
+    - '@odata.type': microsoft.graph.conditionalAccessGrantControl
+  customAuthenticationFactors:
+    - String
+  operator: String
+  termsOfUse:
+    - String

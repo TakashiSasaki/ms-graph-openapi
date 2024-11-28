@@ -1,0 +1,3 @@
+value:
+  group:
+    '@odata.type': microsoft.graph.privilegedAccessGroup

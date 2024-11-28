@@ -1,0 +1,8 @@
+value:
+  operation:
+    '@odata.type': microsoft.graph.externalConnectors.ruleOperation
+  property: String
+  values:
+    - String
+  valuesJoinedBy:
+    '@odata.type': microsoft.graph.binaryOperator

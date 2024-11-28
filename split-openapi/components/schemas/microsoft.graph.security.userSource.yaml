@@ -1,0 +1,26 @@
+allOf:
+  - $ref: .\microsoft.graph.security.dataSource.yaml
+  - title: userSource
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      email:
+        type: string
+        description: Email address of the user's mailbox.
+      includedSources:
+        anyOf:
+          - $ref: .\microsoft.graph.security.sourceType.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Specifies which sources are included in this group. Possible values
+          are: mailbox, site.
+      siteWebUrl:
+        type: string
+        description: The URL of the user's OneDrive for Business site. Read-only.
+        nullable: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.security.userSource'
+x-ms-discriminator-value: '#microsoft.graph.security.userSource'

@@ -1,0 +1,16 @@
+title: editionUpgradeLicenseType
+enum:
+  - productKey
+  - licenseFile
+type: string
+description: Edition Upgrade License type
+x-ms-enum:
+  name: editionUpgradeLicenseType
+  modelAsString: false
+  values:
+    - value: productKey
+      description: Product Key Type
+      name: productKey
+    - value: licenseFile
+      description: License File Type
+      name: licenseFile

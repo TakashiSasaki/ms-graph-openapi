@@ -1,0 +1,7 @@
+title: pagePromotionType
+enum:
+  - microsoftReserved
+  - page
+  - newsPost
+  - unknownFutureValue
+type: string

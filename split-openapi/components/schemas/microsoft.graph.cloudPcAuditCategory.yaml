@@ -1,0 +1,5 @@
+title: cloudPcAuditCategory
+enum:
+  - cloudPC
+  - unknownFutureValue
+type: string

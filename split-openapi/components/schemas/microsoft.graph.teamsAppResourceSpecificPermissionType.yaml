@@ -1,0 +1,6 @@
+title: teamsAppResourceSpecificPermissionType
+enum:
+  - delegated
+  - application
+  - unknownFutureValue
+type: string

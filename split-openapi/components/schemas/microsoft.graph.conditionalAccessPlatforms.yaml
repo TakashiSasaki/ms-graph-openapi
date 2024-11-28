@@ -1,0 +1,21 @@
+title: conditionalAccessPlatforms
+required:
+  - '@odata.type'
+type: object
+properties:
+  excludePlatforms:
+    type: array
+    items:
+      $ref: .\microsoft.graph.conditionalAccessDevicePlatform.yaml
+    description: >-
+      Possible values are: android, iOS, windows, windowsPhone, macOS, linux,
+      all, unknownFutureValue.
+  includePlatforms:
+    type: array
+    items:
+      $ref: .\microsoft.graph.conditionalAccessDevicePlatform.yaml
+    description: >-
+      Possible values are: android, iOS, windows, windowsPhone, macOS, linux,
+      all, unknownFutureValue.
+  '@odata.type':
+    type: string

@@ -1,0 +1,19 @@
+title: mailDestinationRoutingReason
+enum:
+  - none
+  - mailFlowRule
+  - safeSender
+  - blockedSender
+  - advancedSpamFiltering
+  - domainAllowList
+  - domainBlockList
+  - notInAddressBook
+  - firstTimeSender
+  - autoPurgeToInbox
+  - autoPurgeToJunk
+  - autoPurgeToDeleted
+  - outbound
+  - notJunk
+  - junk
+  - unknownFutureValue
+type: string

@@ -1,0 +1,22 @@
+title: tenantInformation
+required:
+  - '@odata.type'
+type: object
+properties:
+  defaultDomainName:
+    type: string
+    description: Primary domain name of a Microsoft Entra tenant.
+    nullable: true
+  displayName:
+    type: string
+    description: Display name of a Microsoft Entra tenant.
+    nullable: true
+  federationBrandName:
+    type: string
+    description: Name shown to users that sign in to a Microsoft Entra tenant.
+    nullable: true
+  tenantId:
+    type: string
+    description: Unique identifier of a Microsoft Entra tenant.
+  '@odata.type':
+    type: string

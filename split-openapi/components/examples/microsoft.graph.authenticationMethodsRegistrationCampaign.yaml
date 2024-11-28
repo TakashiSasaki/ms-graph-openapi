@@ -1,0 +1,8 @@
+value:
+  excludeTargets:
+    - '@odata.type': microsoft.graph.excludeTarget
+  includeTargets:
+    - '@odata.type': microsoft.graph.authenticationMethodsRegistrationCampaignIncludeTarget
+  snoozeDurationInDays: '0'
+  state:
+    '@odata.type': microsoft.graph.advancedConfigState

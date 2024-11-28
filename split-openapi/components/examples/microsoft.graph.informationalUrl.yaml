@@ -1,0 +1,6 @@
+value:
+  logoUrl: String
+  marketingUrl: String
+  privacyStatementUrl: String
+  supportUrl: String
+  termsOfServiceUrl: String

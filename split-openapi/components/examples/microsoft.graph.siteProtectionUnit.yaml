@@ -1,0 +1,4 @@
+value:
+  siteId: String
+  siteName: String
+  siteWebUrl: String

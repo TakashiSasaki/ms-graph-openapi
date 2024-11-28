@@ -1,0 +1,5 @@
+value:
+  customExtension:
+    '@odata.type': microsoft.graph.customCalloutExtension
+  stage:
+    '@odata.type': microsoft.graph.accessPackageCustomExtensionStage

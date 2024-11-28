@@ -1,0 +1,15 @@
+value:
+  invitedUser:
+    '@odata.type': microsoft.graph.user
+  invitedUserDisplayName: String
+  invitedUserEmailAddress: String
+  invitedUserMessageInfo:
+    '@odata.type': microsoft.graph.invitedUserMessageInfo
+  invitedUserSponsors:
+    - '@odata.type': microsoft.graph.directoryObject
+  invitedUserType: String
+  inviteRedeemUrl: String
+  inviteRedirectUrl: String
+  resetRedemption: 'true'
+  sendInvitationMessage: 'true'
+  status: String

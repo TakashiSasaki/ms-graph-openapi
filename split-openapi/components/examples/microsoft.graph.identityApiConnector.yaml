@@ -1,0 +1,5 @@
+value:
+  authenticationConfiguration:
+    '@odata.type': microsoft.graph.apiAuthenticationConfigurationBase
+  displayName: String
+  targetUrl: String

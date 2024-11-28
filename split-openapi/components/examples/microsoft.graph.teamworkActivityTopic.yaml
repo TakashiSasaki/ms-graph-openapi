@@ -1,0 +1,5 @@
+value:
+  source:
+    '@odata.type': microsoft.graph.teamworkActivityTopicSource
+  value: String
+  webUrl: String

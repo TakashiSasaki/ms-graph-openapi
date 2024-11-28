@@ -1,0 +1,4 @@
+value:
+  isEnabled: 'true'
+  maxImageSize: '0'
+  timeout: Duration

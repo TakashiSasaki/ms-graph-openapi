@@ -1,0 +1,38 @@
+title: deviceExchangeAccessStateSummary
+required:
+  - '@odata.type'
+type: object
+properties:
+  allowedDeviceCount:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    description: 'Total count of devices with Exchange Access State: Allowed.'
+    format: int32
+  blockedDeviceCount:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    description: 'Total count of devices with Exchange Access State: Blocked.'
+    format: int32
+  quarantinedDeviceCount:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    description: 'Total count of devices with Exchange Access State: Quarantined.'
+    format: int32
+  unavailableDeviceCount:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    description: Total count of devices for which no Exchange Access State could be found.
+    format: int32
+  unknownDeviceCount:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    description: 'Total count of devices with Exchange Access State: Unknown.'
+    format: int32
+  '@odata.type':
+    type: string
+description: Device Exchange Access State summary

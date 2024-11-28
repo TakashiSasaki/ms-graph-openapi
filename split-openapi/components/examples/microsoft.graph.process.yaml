@@ -1,0 +1,15 @@
+value:
+  accountName: String
+  commandLine: String
+  createdDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  fileHash:
+    '@odata.type': microsoft.graph.fileHash
+  integrityLevel:
+    '@odata.type': microsoft.graph.processIntegrityLevel
+  isElevated: 'true'
+  name: String
+  parentProcessCreatedDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  parentProcessId: '0'
+  parentProcessName: String
+  path: String
+  processId: '0'

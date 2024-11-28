@@ -1,0 +1,14 @@
+title: vppLicensingType
+required:
+  - '@odata.type'
+type: object
+properties:
+  supportsDeviceLicensing:
+    type: boolean
+    description: Whether the program supports the device licensing type.
+  supportsUserLicensing:
+    type: boolean
+    description: Whether the program supports the user licensing type.
+  '@odata.type':
+    type: string
+description: Contains properties for iOS Volume-Purchased Program (Vpp) Licensing Type.

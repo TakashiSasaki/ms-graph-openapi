@@ -1,0 +1,21 @@
+title: synchronizationMetadataEntry
+required:
+  - '@odata.type'
+type: object
+properties:
+  key:
+    anyOf:
+      - $ref: .\microsoft.graph.synchronizationMetadata.yaml
+      - type: object
+        nullable: true
+    description: >-
+      Possible values are: GalleryApplicationIdentifier, GalleryApplicationKey,
+      IsOAuthEnabled, IsSynchronizationAgentAssignmentRequired,
+      IsSynchronizationAgentRequired, IsSynchronizationInPreview, OAuthSettings,
+      SynchronizationLearnMoreIbizaFwLink, ConfigurationFields.
+  value:
+    type: string
+    description: Value of the metadata property.
+    nullable: true
+  '@odata.type':
+    type: string

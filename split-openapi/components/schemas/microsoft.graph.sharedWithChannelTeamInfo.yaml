@@ -1,0 +1,20 @@
+allOf:
+  - $ref: .\microsoft.graph.teamInfo.yaml
+  - title: sharedWithChannelTeamInfo
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      isHostTeam:
+        type: boolean
+        description: Indicates whether the team is the host of the channel.
+        nullable: true
+      allowedMembers:
+        type: array
+        items:
+          $ref: .\microsoft.graph.conversationMember.yaml
+        description: A collection of team members who have access to the shared channel.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.sharedWithChannelTeamInfo'

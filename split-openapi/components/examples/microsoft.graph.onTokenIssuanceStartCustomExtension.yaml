@@ -1,0 +1,3 @@
+value:
+  claimsForTokenConfiguration:
+    - '@odata.type': microsoft.graph.onTokenIssuanceStartReturnClaim

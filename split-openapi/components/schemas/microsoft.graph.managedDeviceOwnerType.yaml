@@ -1,0 +1,20 @@
+title: managedDeviceOwnerType
+enum:
+  - unknown
+  - company
+  - personal
+type: string
+description: Owner type of device.
+x-ms-enum:
+  name: managedDeviceOwnerType
+  modelAsString: false
+  values:
+    - value: unknown
+      description: Unknown.
+      name: unknown
+    - value: company
+      description: Owned by company.
+      name: company
+    - value: personal
+      description: Owned by person.
+      name: personal

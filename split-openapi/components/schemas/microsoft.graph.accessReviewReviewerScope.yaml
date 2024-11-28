@@ -1,0 +1,23 @@
+title: accessReviewReviewerScope
+required:
+  - '@odata.type'
+type: object
+properties:
+  query:
+    type: string
+    description: The query specifying who will be the reviewer.
+    nullable: true
+  queryRoot:
+    type: string
+    description: >-
+      In the scenario where reviewers need to be specified dynamically, this
+      property is used to indicate the relative source of the query. This
+      property is only required if a relative query, for example, ./manager, is
+      specified. Possible value: decisions.
+    nullable: true
+  queryType:
+    type: string
+    description: The type of query. Examples include MicrosoftGraph and ARM.
+    nullable: true
+  '@odata.type':
+    type: string

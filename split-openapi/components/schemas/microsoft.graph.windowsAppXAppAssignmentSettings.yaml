@@ -1,0 +1,21 @@
+allOf:
+  - $ref: .\microsoft.graph.mobileAppAssignmentSettings.yaml
+  - title: windowsAppXAppAssignmentSettings
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      useDeviceContext:
+        type: boolean
+        description: >-
+          When TRUE, indicates that device execution context will be used for
+          the AppX mobile app. When FALSE, indicates that user context will be
+          used for the AppX mobile app. By default, this property is set to
+          FALSE. Once this property has been set to TRUE it cannot be changed.
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.windowsAppXAppAssignmentSettings'
+    description: >-
+      Contains properties used when assigning a Windows AppX mobile app to a
+      group.
+x-ms-discriminator-value: '#microsoft.graph.windowsAppXAppAssignmentSettings'

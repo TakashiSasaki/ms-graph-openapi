@@ -1,0 +1,32 @@
+title: onPremisesProvisioningError
+required:
+  - '@odata.type'
+type: object
+properties:
+  category:
+    type: string
+    description: >-
+      Category of the provisioning error. Note: Currently, there is only one
+      possible value. Possible value: PropertyConflict - indicates a property
+      value is not unique. Other objects contain the same value for the
+      property.
+    nullable: true
+  occurredDateTime:
+    pattern: >-
+      ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+    type: string
+    description: The date and time at which the error occurred.
+    format: date-time
+    nullable: true
+  propertyCausingError:
+    type: string
+    description: >-
+      Name of the directory property causing the error. Current possible values:
+      UserPrincipalName or ProxyAddress
+    nullable: true
+  value:
+    type: string
+    description: Value of the property causing the error.
+    nullable: true
+  '@odata.type':
+    type: string

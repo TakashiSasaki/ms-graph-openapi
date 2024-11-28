@@ -1,0 +1,8 @@
+value:
+  content: String
+  contentType: String
+  contentUrl: String
+  id: String
+  name: String
+  teamsAppId: String
+  thumbnailUrl: String

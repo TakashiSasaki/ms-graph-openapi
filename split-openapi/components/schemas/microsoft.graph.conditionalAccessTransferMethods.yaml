@@ -1,0 +1,9 @@
+title: conditionalAccessTransferMethods
+enum:
+  - none
+  - deviceCodeFlow
+  - authenticationTransfer
+  - unknownFutureValue
+type: string
+x-ms-enum-flags:
+  isFlags: true

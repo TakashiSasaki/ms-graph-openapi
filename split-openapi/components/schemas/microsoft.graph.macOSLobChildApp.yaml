@@ -1,0 +1,20 @@
+title: macOSLobChildApp
+required:
+  - '@odata.type'
+type: object
+properties:
+  buildNumber:
+    type: string
+    description: The build number of the app.
+    nullable: true
+  bundleId:
+    type: string
+    description: The bundleId of the app.
+    nullable: true
+  versionNumber:
+    type: string
+    description: The version number of the app.
+    nullable: true
+  '@odata.type':
+    type: string
+description: Contains properties of a macOS .app in the package

@@ -1,0 +1,16 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: cloudClipboardRoot
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      items:
+        type: array
+        items:
+          $ref: .\microsoft.graph.cloudClipboardItem.yaml
+        description: Represents a collection of Cloud Clipboard items.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.cloudClipboardRoot'

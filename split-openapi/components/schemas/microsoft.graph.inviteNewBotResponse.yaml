@@ -1,0 +1,15 @@
+allOf:
+  - $ref: .\microsoft.graph.participantJoiningResponse.yaml
+  - title: inviteNewBotResponse
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      inviteUri:
+        type: string
+        description: URI to receive new incoming call notification.
+        nullable: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.inviteNewBotResponse'
+x-ms-discriminator-value: '#microsoft.graph.inviteNewBotResponse'

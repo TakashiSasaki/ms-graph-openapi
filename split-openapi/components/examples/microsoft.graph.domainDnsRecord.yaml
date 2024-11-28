@@ -1,0 +1,6 @@
+value:
+  isOptional: 'true'
+  label: String
+  recordType: String
+  supportedService: String
+  ttl: '0'

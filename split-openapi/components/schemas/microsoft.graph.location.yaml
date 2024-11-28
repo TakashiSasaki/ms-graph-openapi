@@ -1,0 +1,55 @@
+title: location
+required:
+  - '@odata.type'
+type: object
+properties:
+  address:
+    anyOf:
+      - $ref: .\microsoft.graph.physicalAddress.yaml
+      - type: object
+        nullable: true
+    description: The street address of the location.
+  coordinates:
+    anyOf:
+      - $ref: .\microsoft.graph.outlookGeoCoordinates.yaml
+      - type: object
+        nullable: true
+    description: The geographic coordinates and elevation of the location.
+  displayName:
+    type: string
+    description: The name associated with the location.
+    nullable: true
+  locationEmailAddress:
+    type: string
+    description: Optional email address of the location.
+    nullable: true
+  locationType:
+    anyOf:
+      - $ref: .\microsoft.graph.locationType.yaml
+      - type: object
+        nullable: true
+    description: >-
+      The type of location. The possible values are: default, conferenceRoom,
+      homeAddress, businessAddress,geoCoordinates, streetAddress, hotel,
+      restaurant, localBusiness, postalAddress. Read-only.
+  locationUri:
+    type: string
+    description: Optional URI representing the location.
+    nullable: true
+  uniqueId:
+    type: string
+    description: For internal use only.
+    nullable: true
+  uniqueIdType:
+    anyOf:
+      - $ref: .\microsoft.graph.locationUniqueIdType.yaml
+      - type: object
+        nullable: true
+    description: For internal use only.
+  '@odata.type':
+    type: string
+discriminator:
+  propertyName: '@odata.type'
+  mapping:
+    '#microsoft.graph.locationConstraintItem': .\microsoft.graph.locationConstraintItem.yaml
+    microsoft.graph.locationConstraintItem: .\microsoft.graph.locationConstraintItem.yaml

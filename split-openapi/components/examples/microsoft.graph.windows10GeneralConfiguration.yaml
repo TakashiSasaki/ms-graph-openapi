@@ -1,0 +1,235 @@
+value:
+  accountsBlockAddingNonMicrosoftAccountEmail: 'true'
+  antiTheftModeBlocked: 'true'
+  appsAllowTrustedAppsSideloading:
+    '@odata.type': microsoft.graph.stateManagementSetting
+  appsBlockWindowsStoreOriginatedApps: 'true'
+  bluetoothAllowedServices:
+    - String
+  bluetoothBlockAdvertising: 'true'
+  bluetoothBlockDiscoverableMode: 'true'
+  bluetoothBlocked: 'true'
+  bluetoothBlockPrePairing: 'true'
+  cameraBlocked: 'true'
+  cellularBlockDataWhenRoaming: 'true'
+  cellularBlockVpn: 'true'
+  cellularBlockVpnWhenRoaming: 'true'
+  certificatesBlockManualRootCertificateInstallation: 'true'
+  connectedDevicesServiceBlocked: 'true'
+  copyPasteBlocked: 'true'
+  cortanaBlocked: 'true'
+  defenderBlockEndUserAccess: 'true'
+  defenderCloudBlockLevel:
+    '@odata.type': microsoft.graph.defenderCloudBlockLevelType
+  defenderDaysBeforeDeletingQuarantinedMalware: '0'
+  defenderDetectedMalwareActions:
+    '@odata.type': microsoft.graph.defenderDetectedMalwareActions
+  defenderFileExtensionsToExclude:
+    - String
+  defenderFilesAndFoldersToExclude:
+    - String
+  defenderMonitorFileActivity:
+    '@odata.type': microsoft.graph.defenderMonitorFileActivity
+  defenderProcessesToExclude:
+    - String
+  defenderPromptForSampleSubmission:
+    '@odata.type': microsoft.graph.defenderPromptForSampleSubmission
+  defenderRequireBehaviorMonitoring: 'true'
+  defenderRequireCloudProtection: 'true'
+  defenderRequireNetworkInspectionSystem: 'true'
+  defenderRequireRealTimeMonitoring: 'true'
+  defenderScanArchiveFiles: 'true'
+  defenderScanDownloads: 'true'
+  defenderScanIncomingMail: 'true'
+  defenderScanMappedNetworkDrivesDuringFullScan: 'true'
+  defenderScanMaxCpu: '0'
+  defenderScanNetworkFiles: 'true'
+  defenderScanRemovableDrivesDuringFullScan: 'true'
+  defenderScanScriptsLoadedInInternetExplorer: 'true'
+  defenderScanType:
+    '@odata.type': microsoft.graph.defenderScanType
+  defenderScheduledQuickScanTime: TimeOfDay (timestamp)
+  defenderScheduledScanTime: TimeOfDay (timestamp)
+  defenderSignatureUpdateIntervalInHours: '0'
+  defenderSystemScanSchedule:
+    '@odata.type': microsoft.graph.weeklySchedule
+  developerUnlockSetting:
+    '@odata.type': microsoft.graph.stateManagementSetting
+  deviceManagementBlockFactoryResetOnMobile: 'true'
+  deviceManagementBlockManualUnenroll: 'true'
+  diagnosticsDataSubmissionMode:
+    '@odata.type': microsoft.graph.diagnosticDataSubmissionMode
+  edgeAllowStartPagesModification: 'true'
+  edgeBlockAccessToAboutFlags: 'true'
+  edgeBlockAddressBarDropdown: 'true'
+  edgeBlockAutofill: 'true'
+  edgeBlockCompatibilityList: 'true'
+  edgeBlockDeveloperTools: 'true'
+  edgeBlocked: 'true'
+  edgeBlockExtensions: 'true'
+  edgeBlockInPrivateBrowsing: 'true'
+  edgeBlockJavaScript: 'true'
+  edgeBlockLiveTileDataCollection: 'true'
+  edgeBlockPasswordManager: 'true'
+  edgeBlockPopups: 'true'
+  edgeBlockSearchSuggestions: 'true'
+  edgeBlockSendingDoNotTrackHeader: 'true'
+  edgeBlockSendingIntranetTrafficToInternetExplorer: 'true'
+  edgeClearBrowsingDataOnExit: 'true'
+  edgeCookiePolicy:
+    '@odata.type': microsoft.graph.edgeCookiePolicy
+  edgeDisableFirstRunPage: 'true'
+  edgeEnterpriseModeSiteListLocation: String
+  edgeFirstRunUrl: String
+  edgeHomepageUrls:
+    - String
+  edgeRequireSmartScreen: 'true'
+  edgeSearchEngine:
+    '@odata.type': microsoft.graph.edgeSearchEngineBase
+  edgeSendIntranetTrafficToInternetExplorer: 'true'
+  edgeSyncFavoritesWithInternetExplorer: 'true'
+  enterpriseCloudPrintDiscoveryEndPoint: String
+  enterpriseCloudPrintDiscoveryMaxLimit: '0'
+  enterpriseCloudPrintMopriaDiscoveryResourceIdentifier: String
+  enterpriseCloudPrintOAuthAuthority: String
+  enterpriseCloudPrintOAuthClientIdentifier: String
+  enterpriseCloudPrintResourceIdentifier: String
+  experienceBlockDeviceDiscovery: 'true'
+  experienceBlockErrorDialogWhenNoSIM: 'true'
+  experienceBlockTaskSwitcher: 'true'
+  gameDvrBlocked: 'true'
+  internetSharingBlocked: 'true'
+  locationServicesBlocked: 'true'
+  lockScreenAllowTimeoutConfiguration: 'true'
+  lockScreenBlockActionCenterNotifications: 'true'
+  lockScreenBlockCortana: 'true'
+  lockScreenBlockToastNotifications: 'true'
+  lockScreenTimeoutInSeconds: '0'
+  logonBlockFastUserSwitching: 'true'
+  microsoftAccountBlocked: 'true'
+  microsoftAccountBlockSettingsSync: 'true'
+  networkProxyApplySettingsDeviceWide: 'true'
+  networkProxyAutomaticConfigurationUrl: String
+  networkProxyDisableAutoDetect: 'true'
+  networkProxyServer:
+    '@odata.type': microsoft.graph.windows10NetworkProxyServer
+  nfcBlocked: 'true'
+  oneDriveDisableFileSync: 'true'
+  passwordBlockSimple: 'true'
+  passwordExpirationDays: '0'
+  passwordMinimumCharacterSetCount: '0'
+  passwordMinimumLength: '0'
+  passwordMinutesOfInactivityBeforeScreenTimeout: '0'
+  passwordPreviousPasswordBlockCount: '0'
+  passwordRequired: 'true'
+  passwordRequiredType:
+    '@odata.type': microsoft.graph.requiredPasswordType
+  passwordRequireWhenResumeFromIdleState: 'true'
+  passwordSignInFailureCountBeforeFactoryReset: '0'
+  personalizationDesktopImageUrl: String
+  personalizationLockScreenImageUrl: String
+  privacyAdvertisingId:
+    '@odata.type': microsoft.graph.stateManagementSetting
+  privacyAutoAcceptPairingAndConsentPrompts: 'true'
+  privacyBlockInputPersonalization: 'true'
+  resetProtectionModeBlocked: 'true'
+  safeSearchFilter:
+    '@odata.type': microsoft.graph.safeSearchFilterType
+  screenCaptureBlocked: 'true'
+  searchBlockDiacritics: 'true'
+  searchDisableAutoLanguageDetection: 'true'
+  searchDisableIndexerBackoff: 'true'
+  searchDisableIndexingEncryptedItems: 'true'
+  searchDisableIndexingRemovableDrive: 'true'
+  searchEnableAutomaticIndexSizeManangement: 'true'
+  searchEnableRemoteQueries: 'true'
+  settingsBlockAccountsPage: 'true'
+  settingsBlockAddProvisioningPackage: 'true'
+  settingsBlockAppsPage: 'true'
+  settingsBlockChangeLanguage: 'true'
+  settingsBlockChangePowerSleep: 'true'
+  settingsBlockChangeRegion: 'true'
+  settingsBlockChangeSystemTime: 'true'
+  settingsBlockDevicesPage: 'true'
+  settingsBlockEaseOfAccessPage: 'true'
+  settingsBlockEditDeviceName: 'true'
+  settingsBlockGamingPage: 'true'
+  settingsBlockNetworkInternetPage: 'true'
+  settingsBlockPersonalizationPage: 'true'
+  settingsBlockPrivacyPage: 'true'
+  settingsBlockRemoveProvisioningPackage: 'true'
+  settingsBlockSettingsApp: 'true'
+  settingsBlockSystemPage: 'true'
+  settingsBlockTimeLanguagePage: 'true'
+  settingsBlockUpdateSecurityPage: 'true'
+  sharedUserAppDataAllowed: 'true'
+  smartScreenBlockPromptOverride: 'true'
+  smartScreenBlockPromptOverrideForFiles: 'true'
+  smartScreenEnableAppInstallControl: 'true'
+  startBlockUnpinningAppsFromTaskbar: 'true'
+  startMenuAppListVisibility:
+    '@odata.type': microsoft.graph.windowsStartMenuAppListVisibilityType
+  startMenuHideChangeAccountSettings: 'true'
+  startMenuHideFrequentlyUsedApps: 'true'
+  startMenuHideHibernate: 'true'
+  startMenuHideLock: 'true'
+  startMenuHidePowerButton: 'true'
+  startMenuHideRecentJumpLists: 'true'
+  startMenuHideRecentlyAddedApps: 'true'
+  startMenuHideRestartOptions: 'true'
+  startMenuHideShutDown: 'true'
+  startMenuHideSignOut: 'true'
+  startMenuHideSleep: 'true'
+  startMenuHideSwitchAccount: 'true'
+  startMenuHideUserTile: 'true'
+  startMenuLayoutEdgeAssetsXml: AA==
+  startMenuLayoutXml: AA==
+  startMenuMode:
+    '@odata.type': microsoft.graph.windowsStartMenuModeType
+  startMenuPinnedFolderDocuments:
+    '@odata.type': microsoft.graph.visibilitySetting
+  startMenuPinnedFolderDownloads:
+    '@odata.type': microsoft.graph.visibilitySetting
+  startMenuPinnedFolderFileExplorer:
+    '@odata.type': microsoft.graph.visibilitySetting
+  startMenuPinnedFolderHomeGroup:
+    '@odata.type': microsoft.graph.visibilitySetting
+  startMenuPinnedFolderMusic:
+    '@odata.type': microsoft.graph.visibilitySetting
+  startMenuPinnedFolderNetwork:
+    '@odata.type': microsoft.graph.visibilitySetting
+  startMenuPinnedFolderPersonalFolder:
+    '@odata.type': microsoft.graph.visibilitySetting
+  startMenuPinnedFolderPictures:
+    '@odata.type': microsoft.graph.visibilitySetting
+  startMenuPinnedFolderSettings:
+    '@odata.type': microsoft.graph.visibilitySetting
+  startMenuPinnedFolderVideos:
+    '@odata.type': microsoft.graph.visibilitySetting
+  storageBlockRemovableStorage: 'true'
+  storageRequireMobileDeviceEncryption: 'true'
+  storageRestrictAppDataToSystemVolume: 'true'
+  storageRestrictAppInstallToSystemVolume: 'true'
+  tenantLockdownRequireNetworkDuringOutOfBoxExperience: 'true'
+  usbBlocked: 'true'
+  voiceRecordingBlocked: 'true'
+  webRtcBlockLocalhostIpAddress: 'true'
+  wiFiBlockAutomaticConnectHotspots: 'true'
+  wiFiBlocked: 'true'
+  wiFiBlockManualConfiguration: 'true'
+  wiFiScanInterval: '0'
+  windowsSpotlightBlockConsumerSpecificFeatures: 'true'
+  windowsSpotlightBlocked: 'true'
+  windowsSpotlightBlockOnActionCenter: 'true'
+  windowsSpotlightBlockTailoredExperiences: 'true'
+  windowsSpotlightBlockThirdPartyNotifications: 'true'
+  windowsSpotlightBlockWelcomeExperience: 'true'
+  windowsSpotlightBlockWindowsTips: 'true'
+  windowsSpotlightConfigureOnLockScreen:
+    '@odata.type': microsoft.graph.windowsSpotlightEnablementSettings
+  windowsStoreBlockAutoUpdate: 'true'
+  windowsStoreBlocked: 'true'
+  windowsStoreEnablePrivateStoreOnly: 'true'
+  wirelessDisplayBlockProjectionToThisDevice: 'true'
+  wirelessDisplayBlockUserInputFromReceiver: 'true'
+  wirelessDisplayRequirePinForPairing: 'true'

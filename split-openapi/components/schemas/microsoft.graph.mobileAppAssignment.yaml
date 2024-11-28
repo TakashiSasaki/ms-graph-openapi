@@ -1,0 +1,27 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: mobileAppAssignment
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      intent:
+        $ref: .\microsoft.graph.installIntent.yaml
+      settings:
+        anyOf:
+          - $ref: .\microsoft.graph.mobileAppAssignmentSettings.yaml
+          - type: object
+            nullable: true
+        description: The settings for target assignment defined by the admin.
+      target:
+        anyOf:
+          - $ref: .\microsoft.graph.deviceAndAppManagementAssignmentTarget.yaml
+          - type: object
+            nullable: true
+        description: The target group assignment defined by the admin.
+      '@odata.type':
+        type: string
+    description: >-
+      A class containing the properties used for Group Assignment of a Mobile
+      App.
+x-ms-discriminator-value: '#microsoft.graph.mobileAppAssignment'

@@ -1,0 +1,14 @@
+value:
+  canvasLayout:
+    '@odata.type': microsoft.graph.canvasLayout
+  promotionKind:
+    '@odata.type': microsoft.graph.pagePromotionType
+  reactions:
+    '@odata.type': microsoft.graph.reactionsFacet
+  showComments: 'true'
+  showRecommendedPages: 'true'
+  thumbnailWebUrl: String
+  titleArea:
+    '@odata.type': microsoft.graph.titleArea
+  webParts:
+    - '@odata.type': microsoft.graph.webPart

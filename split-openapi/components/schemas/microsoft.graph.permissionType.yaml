@@ -1,0 +1,6 @@
+title: permissionType
+enum:
+  - delegatedUserConsentable
+  - delegated
+  - application
+type: string

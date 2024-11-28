@@ -1,0 +1,6 @@
+value:
+  cluster:
+    '@odata.type': microsoft.graph.security.kubernetesClusterEvidence
+  labels:
+    '@odata.type': microsoft.graph.security.dictionary
+  name: String

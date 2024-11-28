@@ -1,0 +1,22 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: schema
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      baseType:
+        type: string
+        description: >-
+          Must be set to microsoft.graph.externalConnector.externalItem.
+          Required.
+      properties:
+        type: array
+        items:
+          $ref: .\microsoft.graph.externalConnectors.property.yaml
+        description: >-
+          The properties defined for the items in the connection. The minimum
+          number of properties is one, the maximum is 128.
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.externalConnectors.schema'

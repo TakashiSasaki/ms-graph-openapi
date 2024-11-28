@@ -1,0 +1,41 @@
+description: Provides operations to call the clearPresence method.
+post:
+  tags:
+    - communications.presence
+  summary: Invoke action clearPresence
+  description: >-
+    Clear the application's presence session for a user. If it is the user's
+    only presence session, the user's presence will change to Offline/Offline.
+    For details about presences sessions, see presence: setPresence.
+  externalDocs:
+    description: Find more info here
+    url: >-
+      https://learn.microsoft.com/graph/api/presence-clearpresence?view=graph-rest-1.0
+  operationId: communications.presences.presence.clearPresence
+  requestBody:
+    description: Action parameters
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            sessionId:
+              type: string
+              nullable: true
+    required: true
+  responses:
+    '204':
+      description: Success
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: action
+parameters:
+  - name: presence-id
+    in: path
+    description: The unique identifier of presence
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: presence

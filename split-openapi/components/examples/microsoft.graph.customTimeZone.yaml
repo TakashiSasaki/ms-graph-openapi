@@ -1,0 +1,6 @@
+value:
+  bias: '0'
+  daylightOffset:
+    '@odata.type': microsoft.graph.daylightTimeZoneOffset
+  standardOffset:
+    '@odata.type': microsoft.graph.standardTimeZoneOffset

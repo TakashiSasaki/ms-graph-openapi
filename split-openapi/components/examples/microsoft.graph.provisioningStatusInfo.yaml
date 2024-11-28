@@ -1,0 +1,5 @@
+value:
+  errorInformation:
+    '@odata.type': microsoft.graph.provisioningErrorInfo
+  status:
+    '@odata.type': microsoft.graph.provisioningResult

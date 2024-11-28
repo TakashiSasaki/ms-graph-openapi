@@ -1,0 +1,16 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: m365AppsInstallationOptions
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      appsForMac:
+        $ref: .\microsoft.graph.appsInstallationOptionsForMac.yaml
+      appsForWindows:
+        $ref: .\microsoft.graph.appsInstallationOptionsForWindows.yaml
+      updateChannel:
+        $ref: .\microsoft.graph.appsUpdateChannelType.yaml
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.m365AppsInstallationOptions'

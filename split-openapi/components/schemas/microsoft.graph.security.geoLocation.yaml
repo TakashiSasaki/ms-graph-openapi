@@ -1,0 +1,32 @@
+title: geoLocation
+required:
+  - '@odata.type'
+type: object
+properties:
+  city:
+    type: string
+    nullable: true
+  countryName:
+    type: string
+    nullable: true
+  latitude:
+    oneOf:
+      - type: number
+        format: double
+        nullable: true
+      - type: string
+        nullable: true
+      - $ref: .\ReferenceNumeric.yaml
+  longitude:
+    oneOf:
+      - type: number
+        format: double
+        nullable: true
+      - type: string
+        nullable: true
+      - $ref: .\ReferenceNumeric.yaml
+  state:
+    type: string
+    nullable: true
+  '@odata.type':
+    type: string

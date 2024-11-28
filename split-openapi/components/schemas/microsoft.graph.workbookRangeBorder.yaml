@@ -1,0 +1,37 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: workbookRangeBorder
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      color:
+        type: string
+        description: >-
+          The HTML color code that represents the color of the border line. Can
+          either be of the form #RRGGBB, for example 'FFA500', or a named HTML
+          color, for example 'orange'.
+        nullable: true
+      sideIndex:
+        type: string
+        description: >-
+          Indicates the specific side of the border. The possible values are:
+          EdgeTop, EdgeBottom, EdgeLeft, EdgeRight, InsideVertical,
+          InsideHorizontal, DiagonalDown, DiagonalUp. Read-only.
+        nullable: true
+      style:
+        type: string
+        description: >-
+          Indicates the line style for the border. The possible values are:
+          None, Continuous, Dash, DashDot, DashDotDot, Dot, Double,
+          SlantDashDot.
+        nullable: true
+      weight:
+        type: string
+        description: >-
+          The weight of the border around a range. The possible values are:
+          Hairline, Thin, Medium, Thick.
+        nullable: true
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.workbookRangeBorder'

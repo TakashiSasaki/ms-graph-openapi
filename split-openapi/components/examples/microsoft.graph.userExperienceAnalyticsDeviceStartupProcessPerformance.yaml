@@ -1,0 +1,7 @@
+value:
+  deviceCount: '0'
+  medianImpactInMs: '0'
+  processName: String
+  productName: String
+  publisher: String
+  totalImpactInMs: '0'

@@ -1,0 +1,36 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: peopleAdminSettings
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      itemInsights:
+        anyOf:
+          - $ref: .\microsoft.graph.insightsSettings.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Represents administrator settings that manage the support for item
+          insights in an organization.
+        x-ms-navigationProperty: true
+      profileCardProperties:
+        type: array
+        items:
+          $ref: .\microsoft.graph.profileCardProperty.yaml
+        description: >-
+          Contains a collection of the properties an administrator has defined
+          as visible on the Microsoft 365 profile card.
+        x-ms-navigationProperty: true
+      pronouns:
+        anyOf:
+          - $ref: .\microsoft.graph.pronounsSettings.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Represents administrator settings that manage the support of pronouns
+          in an organization.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.peopleAdminSettings'

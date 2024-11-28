@@ -1,0 +1,98 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: softwareUpdateStatusSummary
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      compliantDeviceCount:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: Number of compliant devices.
+        format: int32
+      compliantUserCount:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: Number of compliant users.
+        format: int32
+      conflictDeviceCount:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: Number of conflict devices.
+        format: int32
+      conflictUserCount:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: Number of conflict users.
+        format: int32
+      displayName:
+        type: string
+        description: The name of the policy.
+        nullable: true
+      errorDeviceCount:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: Number of devices had error.
+        format: int32
+      errorUserCount:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: Number of users had error.
+        format: int32
+      nonCompliantDeviceCount:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: Number of non compliant devices.
+        format: int32
+      nonCompliantUserCount:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: Number of non compliant users.
+        format: int32
+      notApplicableDeviceCount:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: Number of not applicable devices.
+        format: int32
+      notApplicableUserCount:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: Number of not applicable users.
+        format: int32
+      remediatedDeviceCount:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: Number of remediated devices.
+        format: int32
+      remediatedUserCount:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: Number of remediated users.
+        format: int32
+      unknownDeviceCount:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: Number of unknown devices.
+        format: int32
+      unknownUserCount:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: Number of unknown users.
+        format: int32
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.softwareUpdateStatusSummary'

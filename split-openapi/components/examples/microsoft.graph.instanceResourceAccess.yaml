@@ -1,0 +1,4 @@
+value:
+  permissions:
+    - '@odata.type': microsoft.graph.resourcePermission
+  resourceAppId: String

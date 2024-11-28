@@ -1,0 +1,6 @@
+title: bookingType
+enum:
+  - unknown
+  - standard
+  - reserved
+type: string

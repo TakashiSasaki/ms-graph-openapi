@@ -1,0 +1,6 @@
+value:
+  draftTimeOff:
+    '@odata.type': microsoft.graph.timeOffItem
+  sharedTimeOff:
+    '@odata.type': microsoft.graph.timeOffItem
+  userId: String

@@ -1,0 +1,7 @@
+value:
+  instances:
+    - '@odata.type': microsoft.graph.windowsSettingInstance
+  payloadType: String
+  settingType:
+    '@odata.type': microsoft.graph.windowsSettingType
+  windowsDeviceId: String

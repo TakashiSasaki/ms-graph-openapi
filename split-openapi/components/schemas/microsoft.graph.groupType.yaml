@@ -1,0 +1,6 @@
+title: groupType
+enum:
+  - unifiedGroups
+  - azureAD
+  - unknownFutureValue
+type: string

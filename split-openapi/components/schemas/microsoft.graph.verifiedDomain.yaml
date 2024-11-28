@@ -1,0 +1,31 @@
+title: verifiedDomain
+required:
+  - '@odata.type'
+type: object
+properties:
+  capabilities:
+    type: string
+    description: For example, Email, OfficeCommunicationsOnline.
+    nullable: true
+  isDefault:
+    type: boolean
+    description: >-
+      true if this is the default domain associated with the tenant; otherwise,
+      false.
+    nullable: true
+  isInitial:
+    type: boolean
+    description: >-
+      true if this is the initial domain associated with the tenant; otherwise,
+      false.
+    nullable: true
+  name:
+    type: string
+    description: The domain name; for example, contoso.com.
+    nullable: true
+  type:
+    type: string
+    description: For example, Managed.
+    nullable: true
+  '@odata.type':
+    type: string

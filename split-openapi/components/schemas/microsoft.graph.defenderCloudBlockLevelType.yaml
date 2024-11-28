@@ -1,0 +1,27 @@
+title: defenderCloudBlockLevelType
+enum:
+  - notConfigured
+  - high
+  - highPlus
+  - zeroTolerance
+type: string
+description: Possible values of Cloud Block Level
+x-ms-enum:
+  name: defenderCloudBlockLevelType
+  modelAsString: false
+  values:
+    - value: notConfigured
+      description: >-
+        Default value, uses the default Windows Defender Antivirus blocking
+        level and provides strong detection without increasing the risk of
+        detecting legitimate files
+      name: notConfigured
+    - value: high
+      description: High applies a strong level of detection.
+      name: high
+    - value: highPlus
+      description: High + uses the High level and applies addition protection measures
+      name: highPlus
+    - value: zeroTolerance
+      description: Zero tolerance blocks all unknown executables
+      name: zeroTolerance

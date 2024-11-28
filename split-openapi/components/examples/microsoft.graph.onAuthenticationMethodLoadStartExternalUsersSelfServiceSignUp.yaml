@@ -1,0 +1,3 @@
+value:
+  identityProviders:
+    - '@odata.type': microsoft.graph.identityProviderBase

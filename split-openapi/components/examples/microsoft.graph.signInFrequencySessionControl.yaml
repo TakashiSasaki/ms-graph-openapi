@@ -1,0 +1,8 @@
+value:
+  authenticationType:
+    '@odata.type': microsoft.graph.signInFrequencyAuthenticationType
+  frequencyInterval:
+    '@odata.type': microsoft.graph.signInFrequencyInterval
+  type:
+    '@odata.type': microsoft.graph.signinFrequencyType
+  value: '0'

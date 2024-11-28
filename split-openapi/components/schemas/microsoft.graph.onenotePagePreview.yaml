@@ -1,0 +1,15 @@
+title: onenotePagePreview
+required:
+  - '@odata.type'
+type: object
+properties:
+  links:
+    anyOf:
+      - $ref: .\microsoft.graph.onenotePagePreviewLinks.yaml
+      - type: object
+        nullable: true
+  previewText:
+    type: string
+    nullable: true
+  '@odata.type':
+    type: string

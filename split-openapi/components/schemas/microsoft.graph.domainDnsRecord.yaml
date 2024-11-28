@@ -1,0 +1,49 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: domainDnsRecord
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      isOptional:
+        type: boolean
+        description: >-
+          If false, the customer must configure this record at the DNS host for
+          Microsoft Online Services to operate correctly with the domain.
+      label:
+        type: string
+        description: >-
+          Value used when configuring the name of the DNS record at the DNS
+          host.
+      recordType:
+        type: string
+        description: >-
+          Indicates what type of DNS record this entity represents. The value
+          can be CName, Mx, Srv, or Txt.
+        nullable: true
+      supportedService:
+        type: string
+        description: >-
+          Microsoft Online Service or feature that has a dependency on this DNS
+          record. Can be one of the following values: null, Email, Sharepoint,
+          EmailInternalRelayOnly, OfficeCommunicationsOnline,
+          SharePointDefaultDomain, FullRedelegation, SharePointPublic,
+          OrgIdAuthentication, Yammer, Intune.
+      ttl:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: >-
+          Value to use when configuring the time-to-live (ttl) property of the
+          DNS record at the DNS host. Not nullable.
+        format: int32
+      '@odata.type':
+        type: string
+    discriminator:
+      propertyName: '@odata.type'
+      mapping:
+        '#microsoft.graph.domainDnsCnameRecord': .\microsoft.graph.domainDnsCnameRecord.yaml
+        '#microsoft.graph.domainDnsMxRecord': .\microsoft.graph.domainDnsMxRecord.yaml
+        '#microsoft.graph.domainDnsSrvRecord': .\microsoft.graph.domainDnsSrvRecord.yaml
+        '#microsoft.graph.domainDnsTxtRecord': .\microsoft.graph.domainDnsTxtRecord.yaml
+        '#microsoft.graph.domainDnsUnavailableRecord': .\microsoft.graph.domainDnsUnavailableRecord.yaml

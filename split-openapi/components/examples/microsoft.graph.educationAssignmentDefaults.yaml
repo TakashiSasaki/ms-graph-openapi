@@ -1,0 +1,7 @@
+value:
+  addedStudentAction:
+    '@odata.type': microsoft.graph.educationAddedStudentAction
+  addToCalendarAction:
+    '@odata.type': microsoft.graph.educationAddToCalendarOptions
+  dueTime: TimeOfDay (timestamp)
+  notificationChannelUrl: String

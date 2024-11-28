@@ -1,0 +1,53 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: request
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      approvalId:
+        type: string
+        description: The identifier of the approval of the request.
+        nullable: true
+      completedDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: The request completion date time.
+        format: date-time
+        nullable: true
+      createdBy:
+        anyOf:
+          - $ref: .\microsoft.graph.identitySet.yaml
+          - type: object
+            nullable: true
+        description: The principal that created the request.
+      createdDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: The request creation date time.
+        format: date-time
+        nullable: true
+      customData:
+        type: string
+        description: Free text field to define any custom data for the request. Not used.
+        nullable: true
+      status:
+        type: string
+        description: >-
+          The status of the request. Not nullable. The possible values are:
+          Canceled, Denied, Failed, Granted, PendingAdminDecision,
+          PendingApproval, PendingProvisioning, PendingScheduleCreation,
+          Provisioned, Revoked, and ScheduleCreated. Not nullable.
+      '@odata.type':
+        type: string
+    discriminator:
+      propertyName: '@odata.type'
+      mapping:
+        '#microsoft.graph.privilegedAccessScheduleRequest': .\microsoft.graph.privilegedAccessScheduleRequest.yaml
+        '#microsoft.graph.privilegedAccessGroupAssignmentScheduleRequest': .\microsoft.graph.privilegedAccessGroupAssignmentScheduleRequest.yaml
+        '#microsoft.graph.privilegedAccessGroupEligibilityScheduleRequest': .\microsoft.graph.privilegedAccessGroupEligibilityScheduleRequest.yaml
+        '#microsoft.graph.unifiedRoleAssignmentScheduleRequest': .\microsoft.graph.unifiedRoleAssignmentScheduleRequest.yaml
+        '#microsoft.graph.unifiedRoleEligibilityScheduleRequest': .\microsoft.graph.unifiedRoleEligibilityScheduleRequest.yaml
+        '#microsoft.graph.userConsentRequest': .\microsoft.graph.userConsentRequest.yaml

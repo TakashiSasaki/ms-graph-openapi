@@ -1,0 +1,14 @@
+value:
+  authorizedApplicationRulesFromGroupPolicyMerged: 'true'
+  connectionSecurityRulesFromGroupPolicyMerged: 'true'
+  firewallEnabled:
+    '@odata.type': microsoft.graph.stateManagementSetting
+  globalPortRulesFromGroupPolicyMerged: 'true'
+  inboundConnectionsBlocked: 'true'
+  inboundNotificationsBlocked: 'true'
+  incomingTrafficBlocked: 'true'
+  outboundConnectionsBlocked: 'true'
+  policyRulesFromGroupPolicyMerged: 'true'
+  securedPacketExemptionAllowed: 'true'
+  stealthModeBlocked: 'true'
+  unicastResponsesToMulticastBroadcastsBlocked: 'true'

@@ -1,0 +1,29 @@
+title: searchBucket
+required:
+  - '@odata.type'
+type: object
+properties:
+  aggregationFilterToken:
+    type: string
+    description: >-
+      A token containing the encoded filter to aggregate search matches by the
+      specific key value. To use the filter, pass the token as part of the
+      aggregationFilter property in a searchRequest object, in the format
+      '{field}:/'{aggregationFilterToken}/''. See an example.
+    nullable: true
+  count:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    description: >-
+      The approximate number of search matches that share the same value
+      specified in the key property. Note that this number is not the exact
+      number of matches.
+    format: int32
+    nullable: true
+  key:
+    type: string
+    description: The discrete value of the field that an aggregation was computed on.
+    nullable: true
+  '@odata.type':
+    type: string

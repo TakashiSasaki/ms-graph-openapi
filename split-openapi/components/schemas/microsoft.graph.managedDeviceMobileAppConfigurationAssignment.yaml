@@ -1,0 +1,19 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: managedDeviceMobileAppConfigurationAssignment
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      target:
+        anyOf:
+          - $ref: .\microsoft.graph.deviceAndAppManagementAssignmentTarget.yaml
+          - type: object
+            nullable: true
+        description: Assignment target that the T&C policy is assigned to.
+      '@odata.type':
+        type: string
+    description: >-
+      Contains the properties used to assign an MDM app configuration to a
+      group.
+x-ms-discriminator-value: '#microsoft.graph.managedDeviceMobileAppConfigurationAssignment'

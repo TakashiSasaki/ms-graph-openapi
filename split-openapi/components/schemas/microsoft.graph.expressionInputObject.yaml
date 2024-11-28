@@ -1,0 +1,18 @@
+title: expressionInputObject
+required:
+  - '@odata.type'
+type: object
+properties:
+  definition:
+    anyOf:
+      - $ref: .\microsoft.graph.objectDefinition.yaml
+      - type: object
+        nullable: true
+    description: Definition of the test object.
+  properties:
+    type: array
+    items:
+      $ref: .\microsoft.graph.stringKeyObjectValuePair.yaml
+    description: Property values of the test object.
+  '@odata.type':
+    type: string

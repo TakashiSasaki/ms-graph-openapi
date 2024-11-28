@@ -1,0 +1,11 @@
+allOf:
+  - $ref: .\microsoft.graph.stsPolicy.yaml
+  - title: claimsMappingPolicy
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.claimsMappingPolicy'
+x-ms-discriminator-value: '#microsoft.graph.claimsMappingPolicy'

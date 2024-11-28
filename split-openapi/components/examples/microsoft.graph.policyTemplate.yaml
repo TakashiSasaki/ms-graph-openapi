@@ -1,0 +1,5 @@
+value:
+  multiTenantOrganizationIdentitySynchronization:
+    '@odata.type': microsoft.graph.multiTenantOrganizationIdentitySyncPolicyTemplate
+  multiTenantOrganizationPartnerConfiguration:
+    '@odata.type': microsoft.graph.multiTenantOrganizationPartnerConfigurationTemplate

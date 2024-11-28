@@ -1,0 +1,57 @@
+allOf:
+  - $ref: .\microsoft.graph.security.caseOperation.yaml
+  - title: ediscoveryExportOperation
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      description:
+        type: string
+        description: The description provided for the export.
+        nullable: true
+      exportFileMetadata:
+        type: array
+        items:
+          $ref: .\microsoft.graph.security.exportFileMetadata.yaml
+        description: >-
+          Contains the properties for an export file metadata, including
+          downloadUrl, fileName, and size.
+      exportOptions:
+        anyOf:
+          - $ref: .\microsoft.graph.security.exportOptions.yaml
+          - type: object
+            nullable: true
+        description: >-
+          The options provided for the export. For more information, see
+          reviewSet: export. Possible values are: originalFiles, text,
+          pdfReplacement,  tags.
+      exportStructure:
+        anyOf:
+          - $ref: .\microsoft.graph.security.exportFileStructure.yaml
+          - type: object
+            nullable: true
+        description: >-
+          The options that specify the structure of the export. For more
+          information, see reviewSet: export. Possible values are: none,
+          directory, pst.
+      outputName:
+        type: string
+        description: The name provided for the export.
+        nullable: true
+      reviewSet:
+        anyOf:
+          - $ref: .\microsoft.graph.security.ediscoveryReviewSet.yaml
+          - type: object
+            nullable: true
+        description: Review set from where documents are exported.
+        x-ms-navigationProperty: true
+      reviewSetQuery:
+        anyOf:
+          - $ref: .\microsoft.graph.security.ediscoveryReviewSetQuery.yaml
+          - type: object
+            nullable: true
+        description: The review set query that is used to filter the documents for export.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.security.ediscoveryExportOperation'

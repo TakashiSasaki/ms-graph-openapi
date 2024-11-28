@@ -1,0 +1,34 @@
+description: Provides operations to call the refreshSession method.
+post:
+  tags:
+    - drives.driveItem
+  summary: Invoke action refreshSession
+  description: Use this API to refresh an existing workbook session.
+  externalDocs:
+    description: Find more info here
+    url: >-
+      https://learn.microsoft.com/graph/api/workbook-refreshsession?view=graph-rest-1.0
+  operationId: drives.drive.items.driveItem.workbook.refreshSession
+  responses:
+    '204':
+      description: Success
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: action
+parameters:
+  - name: drive-id
+    in: path
+    description: The unique identifier of drive
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: drive
+  - name: driveItem-id
+    in: path
+    description: The unique identifier of driveItem
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: driveItem

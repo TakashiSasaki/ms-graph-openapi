@@ -1,0 +1,16 @@
+title: sortProperty
+required:
+  - '@odata.type'
+type: object
+properties:
+  isDescending:
+    type: boolean
+    description: >-
+      True if the sort order is descending. Default is false, with the sort
+      order as ascending. Optional.
+    nullable: true
+  name:
+    type: string
+    description: The name of the property to sort on. Required.
+  '@odata.type':
+    type: string

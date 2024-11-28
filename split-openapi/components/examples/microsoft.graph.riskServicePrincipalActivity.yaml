@@ -1,0 +1,5 @@
+value:
+  detail:
+    '@odata.type': microsoft.graph.riskDetail
+  riskEventTypes:
+    - String

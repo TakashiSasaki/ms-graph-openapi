@@ -1,0 +1,21 @@
+allOf:
+  - $ref: .\microsoft.graph.identity.yaml
+  - title: userIdentity
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      ipAddress:
+        type: string
+        description: >-
+          Indicates the client IP address associated with the user performing
+          the activity (audit log only).
+        nullable: true
+      userPrincipalName:
+        type: string
+        description: The userPrincipalName attribute of the user.
+        nullable: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.userIdentity'
+x-ms-discriminator-value: '#microsoft.graph.userIdentity'

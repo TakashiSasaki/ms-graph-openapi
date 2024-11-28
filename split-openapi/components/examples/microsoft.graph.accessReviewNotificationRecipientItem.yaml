@@ -1,0 +1,4 @@
+value:
+  notificationRecipientScope:
+    '@odata.type': microsoft.graph.accessReviewNotificationRecipientScope
+  notificationTemplateType: String

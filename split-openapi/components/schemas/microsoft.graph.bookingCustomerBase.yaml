@@ -1,0 +1,14 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: bookingCustomerBase
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      '@odata.type':
+        type: string
+    description: Booking entities that provide a display name.
+    discriminator:
+      propertyName: '@odata.type'
+      mapping:
+        '#microsoft.graph.bookingCustomer': .\microsoft.graph.bookingCustomer.yaml

@@ -1,0 +1,8 @@
+title: synchronizationStatusCode
+enum:
+  - NotConfigured
+  - NotRun
+  - Active
+  - Paused
+  - Quarantine
+type: string

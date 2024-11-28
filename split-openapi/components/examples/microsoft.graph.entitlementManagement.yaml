@@ -1,0 +1,25 @@
+value:
+  accessPackageAssignmentApprovals:
+    - '@odata.type': microsoft.graph.approval
+  accessPackages:
+    - '@odata.type': microsoft.graph.accessPackage
+  assignmentPolicies:
+    - '@odata.type': microsoft.graph.accessPackageAssignmentPolicy
+  assignmentRequests:
+    - '@odata.type': microsoft.graph.accessPackageAssignmentRequest
+  assignments:
+    - '@odata.type': microsoft.graph.accessPackageAssignment
+  catalogs:
+    - '@odata.type': microsoft.graph.accessPackageCatalog
+  connectedOrganizations:
+    - '@odata.type': microsoft.graph.connectedOrganization
+  resourceEnvironments:
+    - '@odata.type': microsoft.graph.accessPackageResourceEnvironment
+  resourceRequests:
+    - '@odata.type': microsoft.graph.accessPackageResourceRequest
+  resourceRoleScopes:
+    - '@odata.type': microsoft.graph.accessPackageResourceRoleScope
+  resources:
+    - '@odata.type': microsoft.graph.accessPackageResource
+  settings:
+    '@odata.type': microsoft.graph.entitlementManagementSettings

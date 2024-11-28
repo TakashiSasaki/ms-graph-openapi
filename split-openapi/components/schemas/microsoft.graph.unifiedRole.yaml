@@ -1,0 +1,12 @@
+title: unifiedRole
+required:
+  - '@odata.type'
+type: object
+properties:
+  roleDefinitionId:
+    type: string
+    description: >-
+      The unified role definition ID of the directory role. Refer to
+      unifiedRoleDefinition resource.
+  '@odata.type':
+    type: string

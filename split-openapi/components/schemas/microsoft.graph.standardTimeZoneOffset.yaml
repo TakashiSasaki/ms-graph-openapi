@@ -1,0 +1,56 @@
+title: standardTimeZoneOffset
+required:
+  - '@odata.type'
+type: object
+properties:
+  dayOccurrence:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    description: >-
+      Represents the nth occurrence of the day of week that the transition from
+      daylight saving time to standard time occurs.
+    format: int32
+    nullable: true
+  dayOfWeek:
+    anyOf:
+      - $ref: .\microsoft.graph.dayOfWeek.yaml
+      - type: object
+        nullable: true
+    description: >-
+      Represents the day of the week when the transition from daylight saving
+      time to standard time.
+  month:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    description: >-
+      Represents the month of the year when the transition from daylight saving
+      time to standard time occurs.
+    format: int32
+    nullable: true
+  time:
+    pattern: ^([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?$
+    type: string
+    description: >-
+      Represents the time of day when the transition from daylight saving time
+      to standard time occurs.
+    format: time
+    nullable: true
+  year:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    description: >-
+      Represents how frequently in terms of years the change from daylight
+      saving time to standard time occurs. For example, a value of 0 means every
+      year.
+    format: int32
+    nullable: true
+  '@odata.type':
+    type: string
+discriminator:
+  propertyName: '@odata.type'
+  mapping:
+    '#microsoft.graph.daylightTimeZoneOffset': .\microsoft.graph.daylightTimeZoneOffset.yaml
+    microsoft.graph.daylightTimeZoneOffset: .\microsoft.graph.daylightTimeZoneOffset.yaml

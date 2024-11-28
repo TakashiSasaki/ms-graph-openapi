@@ -1,0 +1,6 @@
+value:
+  countriesAndRegions:
+    - String
+  countryLookupMethod:
+    '@odata.type': microsoft.graph.countryLookupMethodType
+  includeUnknownCountriesAndRegions: 'true'

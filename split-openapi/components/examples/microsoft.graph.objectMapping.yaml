@@ -1,0 +1,13 @@
+value:
+  attributeMappings:
+    - '@odata.type': microsoft.graph.attributeMapping
+  enabled: 'true'
+  flowTypes:
+    '@odata.type': microsoft.graph.objectFlowTypes
+  metadata:
+    - '@odata.type': microsoft.graph.objectMappingMetadataEntry
+  name: String
+  scope:
+    '@odata.type': microsoft.graph.filter
+  sourceObjectName: String
+  targetObjectName: String

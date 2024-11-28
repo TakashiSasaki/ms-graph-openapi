@@ -1,0 +1,10 @@
+description: Action parameters
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        deviceTag:
+          type: string
+          nullable: true
+required: true

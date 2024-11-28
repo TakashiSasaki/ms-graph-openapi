@@ -1,0 +1,8 @@
+title: titleAreaLayoutType
+enum:
+  - imageAndTitle
+  - plain
+  - colorBlock
+  - overlap
+  - unknownFutureValue
+type: string

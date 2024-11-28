@@ -1,0 +1,92 @@
+description: Provides operations to manage the media for the group entity.
+get:
+  tags:
+    - groups.onenote
+  summary: Get content for the navigation property pages from groups
+  description: The page's HTML content.
+  operationId: groups.onenote.notebooks.sections.GetPagesContent
+  responses:
+    2XX:
+      description: Retrieved media content
+      content:
+        application/octet-stream:
+          schema:
+            type: string
+            format: binary
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+put:
+  tags:
+    - groups.onenote
+  summary: Update content for the navigation property pages in groups
+  description: The page's HTML content.
+  operationId: groups.onenote.notebooks.sections.UpdatePagesContent
+  requestBody:
+    description: New media content.
+    content:
+      application/octet-stream:
+        schema:
+          type: string
+          format: binary
+    required: true
+  responses:
+    2XX:
+      description: Success
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\microsoft.graph.onenotePage.yaml
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+delete:
+  tags:
+    - groups.onenote
+  summary: Delete content for the navigation property pages in groups
+  description: The page's HTML content.
+  operationId: groups.onenote.notebooks.sections.DeletePagesContent
+  parameters:
+    - name: If-Match
+      in: header
+      description: ETag
+      schema:
+        type: string
+  responses:
+    '204':
+      description: Success
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+parameters:
+  - name: group-id
+    in: path
+    description: The unique identifier of group
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: group
+  - name: notebook-id
+    in: path
+    description: The unique identifier of notebook
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: notebook
+  - name: onenoteSection-id
+    in: path
+    description: The unique identifier of onenoteSection
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: onenoteSection
+  - name: onenotePage-id
+    in: path
+    description: The unique identifier of onenotePage
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: onenotePage

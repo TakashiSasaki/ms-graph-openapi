@@ -1,0 +1,31 @@
+description: >-
+  Casts the previous resource to
+  onAttributeCollectionExternalUsersSelfServiceSignUp.
+get:
+  tags:
+    - identity.authenticationEventsFlow
+  summary: >-
+    Get the item of type microsoft.graph.onAttributeCollectionHandler as
+    microsoft.graph.onAttributeCollectionExternalUsersSelfServiceSignUp
+  operationId: >-
+    identity.authenticationEventsFlows.GetOnAttributeCollection.AsOnAttributeCollectionExternalUsersSelfServiceSignUp
+  responses:
+    2XX:
+      description: Entity result.
+      content:
+        application/json:
+          schema:
+            $ref: >-
+              ..\components\schemas\microsoft.graph.onAttributeCollectionExternalUsersSelfServiceSignUp.yaml
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+parameters:
+  - name: authenticationEventsFlow-id
+    in: path
+    description: The unique identifier of authenticationEventsFlow
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: authenticationEventsFlow

@@ -1,0 +1,6 @@
+value:
+  noResultProtectionUnitIds:
+    - String
+  searchResponseId: String
+  searchResults:
+    - '@odata.type': microsoft.graph.restorePointSearchResult

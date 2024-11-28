@@ -1,0 +1,3 @@
+value:
+  insights:
+    - '@odata.type': microsoft.graph.userExperienceAnalyticsInsight

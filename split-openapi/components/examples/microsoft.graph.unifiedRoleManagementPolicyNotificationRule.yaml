@@ -1,0 +1,7 @@
+value:
+  isDefaultRecipientsEnabled: 'true'
+  notificationLevel: String
+  notificationRecipients:
+    - String
+  notificationType: String
+  recipientType: String

@@ -1,0 +1,14 @@
+value:
+  activity: String
+  activityDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  activityOperationType: String
+  activityResult: String
+  activityType: String
+  actor:
+    '@odata.type': microsoft.graph.auditActor
+  category: String
+  componentName: String
+  correlationId: 00000000-0000-0000-0000-000000000000
+  displayName: String
+  resources:
+    - '@odata.type': microsoft.graph.auditResource

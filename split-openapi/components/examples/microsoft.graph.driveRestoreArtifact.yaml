@@ -1,0 +1,4 @@
+value:
+  restoredSiteId: String
+  restoredSiteName: String
+  restoredSiteWebUrl: String

@@ -1,0 +1,15 @@
+value:
+  analytics:
+    '@odata.type': microsoft.graph.itemAnalytics
+  contentType:
+    '@odata.type': microsoft.graph.contentTypeInfo
+  documentSetVersions:
+    - '@odata.type': microsoft.graph.documentSetVersion
+  driveItem:
+    '@odata.type': microsoft.graph.driveItem
+  fields:
+    '@odata.type': microsoft.graph.fieldValueSet
+  sharepointIds:
+    '@odata.type': microsoft.graph.sharepointIds
+  versions:
+    - '@odata.type': microsoft.graph.listItemVersion

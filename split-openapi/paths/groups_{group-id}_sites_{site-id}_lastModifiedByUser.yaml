@@ -1,0 +1,67 @@
+description: >-
+  Provides operations to manage the lastModifiedByUser property of the
+  microsoft.graph.baseItem entity.
+get:
+  tags:
+    - groups.site
+  summary: Get lastModifiedByUser from groups
+  description: Identity of the user who last modified the item. Read-only.
+  operationId: groups.sites.GetLastModifiedByUser
+  parameters:
+    - name: $select
+      in: query
+      description: Select properties to be returned
+      style: form
+      explode: false
+      schema:
+        uniqueItems: true
+        type: array
+        items:
+          type: string
+    - name: $expand
+      in: query
+      description: Expand related entities
+      style: form
+      explode: false
+      schema:
+        uniqueItems: true
+        type: array
+        items:
+          type: string
+  responses:
+    2XX:
+      description: Retrieved navigation property
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\microsoft.graph.user.yaml
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: operation
+parameters:
+  - name: group-id
+    in: path
+    description: The unique identifier of group
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: group
+  - name: site-id
+    in: path
+    description: The unique identifier of site
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: site
+x-ms-docs-grouped-path:
+  - >-
+    /groups/{group-id}/sites/{site-id}/lists/{list-id}/items/{listItem-id}/lastModifiedByUser
+  - /groups/{group-id}/sites/{site-id}/lists/{list-id}/lastModifiedByUser
+  - >-
+    /groups/{group-id}/sites/{site-id}/getByPath(path='{path}')/lastModifiedByUser
+  - >-
+    /groups/{group-id}/sites/{site-id}/pages/{baseSitePage-id}/lastModifiedByUser
+  - >-
+    /groups/{group-id}/sites/{site-id}/pages/{baseSitePage-id}/graph.sitePage/lastModifiedByUser

@@ -1,0 +1,64 @@
+title: messageRuleActions
+required:
+  - '@odata.type'
+type: object
+properties:
+  assignCategories:
+    type: array
+    items:
+      type: string
+      nullable: true
+    description: A list of categories to be assigned to a message.
+  copyToFolder:
+    type: string
+    description: The ID of a folder that a message is to be copied to.
+    nullable: true
+  delete:
+    type: boolean
+    description: Indicates whether a message should be moved to the Deleted Items folder.
+    nullable: true
+  forwardAsAttachmentTo:
+    type: array
+    items:
+      $ref: .\microsoft.graph.recipient.yaml
+    description: >-
+      The email addresses of the recipients to which a message should be
+      forwarded as an attachment.
+  forwardTo:
+    type: array
+    items:
+      $ref: .\microsoft.graph.recipient.yaml
+    description: >-
+      The email addresses of the recipients to which a message should be
+      forwarded.
+  markAsRead:
+    type: boolean
+    description: Indicates whether a message should be marked as read.
+    nullable: true
+  markImportance:
+    anyOf:
+      - $ref: .\microsoft.graph.importance.yaml
+      - type: object
+        nullable: true
+    description: 'Sets the importance of the message, which can be: low, normal, high.'
+  moveToFolder:
+    type: string
+    description: The ID of the folder that a message will be moved to.
+    nullable: true
+  permanentDelete:
+    type: boolean
+    description: >-
+      Indicates whether a message should be permanently deleted and not saved to
+      the Deleted Items folder.
+    nullable: true
+  redirectTo:
+    type: array
+    items:
+      $ref: .\microsoft.graph.recipient.yaml
+    description: The email addresses to which a message should be redirected.
+  stopProcessingRules:
+    type: boolean
+    description: Indicates whether subsequent rules should be evaluated.
+    nullable: true
+  '@odata.type':
+    type: string

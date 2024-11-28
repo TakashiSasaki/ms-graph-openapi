@@ -1,0 +1,5 @@
+value:
+  availabilityType:
+    '@odata.type': microsoft.graph.bookingsServiceAvailabilityType
+  businessHours:
+    - '@odata.type': microsoft.graph.bookingWorkHours

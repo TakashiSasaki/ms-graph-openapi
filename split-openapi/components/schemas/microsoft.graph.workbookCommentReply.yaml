@@ -1,0 +1,17 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: workbookCommentReply
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      content:
+        type: string
+        description: The content of the reply.
+        nullable: true
+      contentType:
+        type: string
+        description: The content type for the reply.
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.workbookCommentReply'

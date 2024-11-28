@@ -1,0 +1,10 @@
+title: conditionalAccessClientApp
+enum:
+  - all
+  - browser
+  - mobileAppsAndDesktopClients
+  - exchangeActiveSync
+  - easSupported
+  - other
+  - unknownFutureValue
+type: string

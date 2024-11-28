@@ -1,0 +1,46 @@
+title: driveItemUploadableProperties
+required:
+  - '@odata.type'
+type: object
+properties:
+  description:
+    type: string
+    description: >-
+      Provides a user-visible description of the item. Read-write. Only on
+      OneDrive Personal.
+    nullable: true
+  driveItemSource:
+    anyOf:
+      - $ref: .\microsoft.graph.driveItemSource.yaml
+      - type: object
+        nullable: true
+    description: >-
+      Information about the drive item source. Read-write. Only on OneDrive for
+      Business and SharePoint.
+  fileSize:
+    type: number
+    description: >-
+      Provides an expected file size to perform a quota check before uploading.
+      Only on OneDrive Personal.
+    format: int64
+    nullable: true
+  fileSystemInfo:
+    anyOf:
+      - $ref: .\microsoft.graph.fileSystemInfo.yaml
+      - type: object
+        nullable: true
+    description: File system information on client. Read-write.
+  mediaSource:
+    anyOf:
+      - $ref: .\microsoft.graph.mediaSource.yaml
+      - type: object
+        nullable: true
+    description: >-
+      Media source information. Read-write. Only on OneDrive for Business and
+      SharePoint.
+  name:
+    type: string
+    description: The name of the item (filename and extension). Read-write.
+    nullable: true
+  '@odata.type':
+    type: string

@@ -1,0 +1,25 @@
+allOf:
+  - $ref: .\microsoft.graph.protectionPolicyBase.yaml
+  - title: oneDriveForBusinessProtectionPolicy
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      driveInclusionRules:
+        type: array
+        items:
+          $ref: .\microsoft.graph.driveProtectionRule.yaml
+        description: Contains the details of the Onedrive for Business protection rule.
+        x-ms-navigationProperty: true
+      driveProtectionUnits:
+        type: array
+        items:
+          $ref: .\microsoft.graph.driveProtectionUnit.yaml
+        description: >-
+          Contains the protection units associated with a  OneDrive for Business
+          protection policy.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.oneDriveForBusinessProtectionPolicy'
+x-ms-discriminator-value: '#microsoft.graph.oneDriveForBusinessProtectionPolicy'

@@ -1,0 +1,29 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: synchronizationSchema
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      synchronizationRules:
+        type: array
+        items:
+          $ref: .\microsoft.graph.synchronizationRule.yaml
+        description: >-
+          A collection of synchronization rules configured for the
+          synchronizationJob or synchronizationTemplate.
+      version:
+        type: string
+        description: >-
+          The version of the schema, updated automatically with every schema
+          change.
+        nullable: true
+      directories:
+        type: array
+        items:
+          $ref: .\microsoft.graph.directoryDefinition.yaml
+        description: Contains the collection of directories and all of their objects.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.synchronizationSchema'

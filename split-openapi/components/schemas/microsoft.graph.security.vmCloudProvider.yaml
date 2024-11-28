@@ -1,0 +1,6 @@
+title: vmCloudProvider
+enum:
+  - unknown
+  - azure
+  - unknownFutureValue
+type: string

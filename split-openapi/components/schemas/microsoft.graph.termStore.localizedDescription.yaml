@@ -1,0 +1,15 @@
+title: localizedDescription
+required:
+  - '@odata.type'
+type: object
+properties:
+  description:
+    type: string
+    description: The description in the localized language.
+    nullable: true
+  languageTag:
+    type: string
+    description: The language tag for the label.
+    nullable: true
+  '@odata.type':
+    type: string

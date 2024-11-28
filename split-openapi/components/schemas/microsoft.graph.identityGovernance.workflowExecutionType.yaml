@@ -1,0 +1,6 @@
+title: workflowExecutionType
+enum:
+  - scheduled
+  - onDemand
+  - unknownFutureValue
+type: string

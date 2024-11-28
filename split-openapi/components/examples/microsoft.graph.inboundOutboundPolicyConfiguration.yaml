@@ -1,0 +1,3 @@
+value:
+  inboundAllowed: 'true'
+  outboundAllowed: 'true'

@@ -1,0 +1,9 @@
+title: accessPackageAssignmentState
+enum:
+  - delivering
+  - partiallyDelivered
+  - delivered
+  - expired
+  - deliveryFailed
+  - unknownFutureValue
+type: string

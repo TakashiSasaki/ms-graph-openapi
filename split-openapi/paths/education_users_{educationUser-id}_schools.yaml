@@ -1,0 +1,67 @@
+description: >-
+  Provides operations to manage the schools property of the
+  microsoft.graph.educationUser entity.
+get:
+  tags:
+    - education.educationUser
+  summary: Get schools from education
+  description: Schools to which the user belongs. Nullable.
+  operationId: education.users.ListSchools
+  parameters:
+    - $ref: ..\components\parameters\top.yaml
+    - $ref: ..\components\parameters\skip.yaml
+    - $ref: ..\components\parameters\search.yaml
+    - $ref: ..\components\parameters\filter.yaml
+    - $ref: ..\components\parameters\count.yaml
+    - name: $orderby
+      in: query
+      description: Order items by property values
+      style: form
+      explode: false
+      schema:
+        uniqueItems: true
+        type: array
+        items:
+          type: string
+    - name: $select
+      in: query
+      description: Select properties to be returned
+      style: form
+      explode: false
+      schema:
+        uniqueItems: true
+        type: array
+        items:
+          type: string
+    - name: $expand
+      in: query
+      description: Expand related entities
+      style: form
+      explode: false
+      schema:
+        uniqueItems: true
+        type: array
+        items:
+          type: string
+  responses:
+    2XX:
+      $ref: >-
+        ..\components\responses\microsoft.graph.educationSchoolCollectionResponse.yaml
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-pageable:
+    nextLinkName: '@odata.nextLink'
+    operationName: listMore
+  x-ms-docs-operation-type: operation
+parameters:
+  - name: educationUser-id
+    in: path
+    description: The unique identifier of educationUser
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: educationUser
+x-ms-docs-grouped-path:
+  - /education/me/schools

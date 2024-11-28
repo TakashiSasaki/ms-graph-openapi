@@ -1,0 +1,6 @@
+value:
+  description: String
+  details:
+    - '@odata.type': microsoft.graph.printerProcessingStateDetail
+  state:
+    '@odata.type': microsoft.graph.printerProcessingState

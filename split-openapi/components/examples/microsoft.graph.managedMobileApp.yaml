@@ -1,0 +1,4 @@
+value:
+  mobileAppIdentifier:
+    '@odata.type': microsoft.graph.mobileAppIdentifier
+  version: String

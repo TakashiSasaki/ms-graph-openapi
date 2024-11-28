@@ -1,0 +1,25 @@
+value:
+  birthday: String
+  companyName: String
+  department: String
+  displayName: String
+  givenName: String
+  imAddress: String
+  isFavorite: 'true'
+  jobTitle: String
+  officeLocation: String
+  personNotes: String
+  personType:
+    '@odata.type': microsoft.graph.personType
+  phones:
+    - '@odata.type': microsoft.graph.phone
+  postalAddresses:
+    - '@odata.type': microsoft.graph.location
+  profession: String
+  scoredEmailAddresses:
+    - '@odata.type': microsoft.graph.scoredEmailAddress
+  surname: String
+  userPrincipalName: String
+  websites:
+    - '@odata.type': microsoft.graph.website
+  yomiCompany: String

@@ -1,0 +1,67 @@
+description: Provides operations to manage the media for the group entity.
+get:
+  tags:
+    - groups.profilePhoto
+  summary: Get media content for the navigation property photo from groups
+  description: The group's profile photo
+  operationId: groups.GetPhotoContent
+  responses:
+    2XX:
+      description: Retrieved media content
+      content:
+        application/octet-stream:
+          schema:
+            type: string
+            format: binary
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+put:
+  tags:
+    - groups.profilePhoto
+  summary: Update media content for the navigation property photo in groups
+  description: The group's profile photo
+  operationId: groups.UpdatePhotoContent
+  requestBody:
+    description: New media content.
+    content:
+      application/octet-stream:
+        schema:
+          type: string
+          format: binary
+    required: true
+  responses:
+    2XX:
+      description: Success
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+delete:
+  tags:
+    - groups.profilePhoto
+  summary: Delete media content for the navigation property photo in groups
+  description: The group's profile photo
+  operationId: groups.DeletePhotoContent
+  parameters:
+    - name: If-Match
+      in: header
+      description: ETag
+      schema:
+        type: string
+  responses:
+    '204':
+      description: Success
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+parameters:
+  - name: group-id
+    in: path
+    description: The unique identifier of group
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: group

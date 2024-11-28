@@ -1,0 +1,64 @@
+allOf:
+  - $ref: .\microsoft.graph.identitySet.yaml
+  - title: communicationsIdentitySet
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      applicationInstance:
+        anyOf:
+          - $ref: .\microsoft.graph.identity.yaml
+          - type: object
+            nullable: true
+        description: The application instance associated with this action.
+      assertedIdentity:
+        anyOf:
+          - $ref: .\microsoft.graph.identity.yaml
+          - type: object
+            nullable: true
+        description: >-
+          An identity the participant would like to present itself as to the
+          other participants in the call.
+      azureCommunicationServicesUser:
+        anyOf:
+          - $ref: .\microsoft.graph.identity.yaml
+          - type: object
+            nullable: true
+        description: The Azure Communication Services user associated with this action.
+      encrypted:
+        anyOf:
+          - $ref: .\microsoft.graph.identity.yaml
+          - type: object
+            nullable: true
+        description: The encrypted user associated with this action.
+      endpointType:
+        anyOf:
+          - $ref: .\microsoft.graph.endpointType.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Type of endpoint that the participant uses. Possible values are:
+          default, voicemail, skypeForBusiness, skypeForBusinessVoipPhone,
+          unknownFutureValue.
+      guest:
+        anyOf:
+          - $ref: .\microsoft.graph.identity.yaml
+          - type: object
+            nullable: true
+        description: The guest user associated with this action.
+      onPremises:
+        anyOf:
+          - $ref: .\microsoft.graph.identity.yaml
+          - type: object
+            nullable: true
+        description: The Skype for Business on-premises user associated with this action.
+      phone:
+        anyOf:
+          - $ref: .\microsoft.graph.identity.yaml
+          - type: object
+            nullable: true
+        description: The phone user associated with this action.
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.communicationsIdentitySet'
+x-ms-discriminator-value: '#microsoft.graph.communicationsIdentitySet'

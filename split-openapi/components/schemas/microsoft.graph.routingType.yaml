@@ -1,0 +1,7 @@
+title: routingType
+enum:
+  - forwarded
+  - lookup
+  - selfFork
+  - unknownFutureValue
+type: string

@@ -1,0 +1,4 @@
+value:
+  name: String
+  worksheet:
+    '@odata.type': microsoft.graph.workbookWorksheet

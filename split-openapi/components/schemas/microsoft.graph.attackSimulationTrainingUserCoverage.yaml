@@ -1,0 +1,18 @@
+title: attackSimulationTrainingUserCoverage
+required:
+  - '@odata.type'
+type: object
+properties:
+  attackSimulationUser:
+    anyOf:
+      - $ref: .\microsoft.graph.attackSimulationUser.yaml
+      - type: object
+        nullable: true
+    description: User in an attack simulation and training campaign.
+  userTrainings:
+    type: array
+    items:
+      $ref: .\microsoft.graph.userTrainingStatusInfo.yaml
+    description: List of assigned trainings and their statuses for the user.
+  '@odata.type':
+    type: string

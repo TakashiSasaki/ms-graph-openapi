@@ -1,0 +1,4 @@
+value:
+  frequencyType:
+    '@odata.type': microsoft.graph.cloudPcRestorePointFrequencyType
+  userRestoreEnabled: 'true'

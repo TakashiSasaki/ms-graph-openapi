@@ -1,0 +1,7 @@
+value:
+  associatedTeams:
+    - '@odata.type': microsoft.graph.associatedTeamInfo
+  installedApps:
+    - '@odata.type': microsoft.graph.userScopeTeamsAppInstallation
+  locale: String
+  region: String

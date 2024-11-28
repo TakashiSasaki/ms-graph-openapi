@@ -1,0 +1,14 @@
+title: calendarColor
+enum:
+  - auto
+  - lightBlue
+  - lightGreen
+  - lightOrange
+  - lightGray
+  - lightYellow
+  - lightTeal
+  - lightPink
+  - lightBrown
+  - lightRed
+  - maxColor
+type: string

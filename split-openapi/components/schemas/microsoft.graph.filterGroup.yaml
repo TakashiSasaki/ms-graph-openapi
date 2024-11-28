@@ -1,0 +1,18 @@
+title: filterGroup
+required:
+  - '@odata.type'
+type: object
+properties:
+  clauses:
+    type: array
+    items:
+      $ref: .\microsoft.graph.filterClause.yaml
+    description: >-
+      Filter clauses (conditions) of this group. All clauses in a group must be
+      satisfied in order for the filter group to evaluate to true.
+  name:
+    type: string
+    description: Human-readable name of the filter group.
+    nullable: true
+  '@odata.type':
+    type: string

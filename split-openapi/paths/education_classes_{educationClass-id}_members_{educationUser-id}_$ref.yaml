@@ -1,0 +1,40 @@
+description: Provides operations to manage the collection of educationRoot entities.
+delete:
+  tags:
+    - education.educationClass
+  summary: Remove member from educationClass
+  description: Remove an educationUser from an educationClass.
+  externalDocs:
+    description: Find more info here
+    url: >-
+      https://learn.microsoft.com/graph/api/educationclass-delete-members?view=graph-rest-1.0
+  operationId: education.classes.members.DeleteRefEducationUser
+  parameters:
+    - name: If-Match
+      in: header
+      description: ETag
+      schema:
+        type: string
+  responses:
+    '204':
+      description: Success
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: operation
+parameters:
+  - name: educationClass-id
+    in: path
+    description: The unique identifier of educationClass
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: educationClass
+  - name: educationUser-id
+    in: path
+    description: The unique identifier of educationUser
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: educationUser

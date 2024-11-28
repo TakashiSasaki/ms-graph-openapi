@@ -1,0 +1,47 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: userExperienceAnalyticsDeviceStartupProcessPerformance
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      deviceCount:
+        type: number
+        description: >-
+          The count of devices which initiated this process on startup.
+          Supports: $filter, $select, $OrderBy. Read-only.
+        format: int64
+      medianImpactInMs:
+        type: number
+        description: >-
+          The median impact of startup process on device boot time in
+          milliseconds. Supports: $filter, $select, $OrderBy. Read-only.
+        format: int64
+      processName:
+        type: string
+        description: >-
+          The name of the startup process. Examples: outlook, excel. Supports:
+          $select, $OrderBy. Read-only.
+        nullable: true
+      productName:
+        type: string
+        description: >-
+          The product name of the startup process. Examples: Microsoft Outlook,
+          Microsoft Excel. Supports: $select, $OrderBy. Read-only.
+        nullable: true
+      publisher:
+        type: string
+        description: >-
+          The publisher of the startup process. Examples: Microsoft Corporation,
+          Contoso Corp. Supports: $select, $OrderBy. Read-only.
+        nullable: true
+      totalImpactInMs:
+        type: number
+        description: >-
+          The total impact of startup process on device boot time in
+          milliseconds. Supports: $filter, $select, $OrderBy. Read-only.
+        format: int64
+      '@odata.type':
+        type: string
+    description: The user experience analytics device startup process performance.
+x-ms-discriminator-value: '#microsoft.graph.userExperienceAnalyticsDeviceStartupProcessPerformance'

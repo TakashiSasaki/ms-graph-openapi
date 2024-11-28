@@ -1,0 +1,12 @@
+title: prompt
+required:
+  - '@odata.type'
+type: object
+properties:
+  '@odata.type':
+    type: string
+discriminator:
+  propertyName: '@odata.type'
+  mapping:
+    '#microsoft.graph.mediaPrompt': .\microsoft.graph.mediaPrompt.yaml
+    microsoft.graph.mediaPrompt: .\microsoft.graph.mediaPrompt.yaml

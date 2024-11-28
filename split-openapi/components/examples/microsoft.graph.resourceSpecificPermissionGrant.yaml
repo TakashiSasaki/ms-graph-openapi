@@ -1,0 +1,6 @@
+value:
+  clientAppId: String
+  clientId: String
+  permission: String
+  permissionType: String
+  resourceAppId: String

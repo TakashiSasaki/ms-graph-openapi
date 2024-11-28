@@ -1,0 +1,30 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: virtualEventPresenter
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      email:
+        type: string
+        description: Email address of the presenter.
+        nullable: true
+      identity:
+        anyOf:
+          - $ref: .\microsoft.graph.identity.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Identity information of the presenter. The supported identities are:
+          communicationsGuestIdentity and communicationsUserIdentity.
+      presenterDetails:
+        anyOf:
+          - $ref: .\microsoft.graph.virtualEventPresenterDetails.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Other details about the presenter. This property returns null when the
+          virtual event type is virtualEventTownhall.
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.virtualEventPresenter'

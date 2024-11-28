@@ -1,0 +1,7 @@
+title: disableReason
+enum:
+  - none
+  - invalidBillingProfile
+  - userRequested
+  - unknownFutureValue
+type: string

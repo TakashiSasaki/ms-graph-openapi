@@ -1,0 +1,13 @@
+title: investigationSecurityState
+required:
+  - '@odata.type'
+type: object
+properties:
+  name:
+    type: string
+    nullable: true
+  status:
+    type: string
+    nullable: true
+  '@odata.type':
+    type: string

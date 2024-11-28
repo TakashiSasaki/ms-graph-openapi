@@ -1,0 +1,30 @@
+description: Provides operations to call the verifyWindowsEnrollmentAutoDiscovery method.
+get:
+  tags:
+    - deviceManagement.deviceManagement
+  summary: Invoke function verifyWindowsEnrollmentAutoDiscovery
+  operationId: deviceManagement.verifyWindowsEnrollmentAutoDiscovery
+  responses:
+    2XX:
+      description: Success
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              value:
+                type: boolean
+                default: false
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: function
+parameters:
+  - name: domainName
+    in: path
+    description: 'Usage: domainName=''{domainName}'''
+    required: true
+    schema:
+      type: string
+      nullable: true

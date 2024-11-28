@@ -1,0 +1,7 @@
+value:
+  certificate: AA==
+  certificateRevocationListUrl: String
+  deltaCertificateRevocationListUrl: String
+  isRootAuthority: 'true'
+  issuer: String
+  issuerSki: String

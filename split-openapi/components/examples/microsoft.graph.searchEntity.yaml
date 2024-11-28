@@ -1,0 +1,7 @@
+value:
+  acronyms:
+    - '@odata.type': microsoft.graph.search.acronym
+  bookmarks:
+    - '@odata.type': microsoft.graph.search.bookmark
+  qnas:
+    - '@odata.type': microsoft.graph.search.qna

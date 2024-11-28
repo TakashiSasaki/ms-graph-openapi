@@ -1,0 +1,58 @@
+allOf:
+  - $ref: .\microsoft.graph.identityProviderBase.yaml
+  - title: samlOrWsFedProvider
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      issuerUri:
+        type: string
+        description: Issuer URI of the federation server.
+        nullable: true
+      metadataExchangeUri:
+        type: string
+        description: >-
+          URI of the metadata exchange endpoint used for authentication from
+          rich client applications.
+        nullable: true
+      passiveSignInUri:
+        type: string
+        description: >-
+          URI that web-based clients are directed to when signing in to
+          Microsoft Entra services.
+        nullable: true
+      preferredAuthenticationProtocol:
+        anyOf:
+          - $ref: .\microsoft.graph.authenticationProtocol.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Preferred authentication protocol. The possible values are: wsFed,
+          saml, unknownFutureValue.
+      signingCertificate:
+        type: string
+        description: >-
+          Current certificate used to sign tokens passed to the Microsoft
+          identity platform. The certificate is formatted as a Base64 encoded
+          string of the public portion of the federated IdP's token signing
+          certificate and must be compatible with the X509Certificate2 class.  
+          This property is used in the following scenarios:  if a rollover is
+          required outside of the autorollover update a new federation service
+          is being set up  if the new token signing certificate isn't present in
+          the federation properties after the federation service certificate has
+          been updated.   Microsoft Entra ID updates certificates via an
+          autorollover process in which it attempts to retrieve a new
+          certificate from the federation service metadata, 30 days before
+          expiry of the current certificate. If a new certificate isn't
+          available, Microsoft Entra ID monitors the metadata daily and will
+          update the federation settings for the domain when a new certificate
+          is available.
+        nullable: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.samlOrWsFedProvider'
+    discriminator:
+      propertyName: '@odata.type'
+      mapping:
+        '#microsoft.graph.internalDomainFederation': .\microsoft.graph.internalDomainFederation.yaml
+        '#microsoft.graph.samlOrWsFedExternalDomainFederation': .\microsoft.graph.samlOrWsFedExternalDomainFederation.yaml

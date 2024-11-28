@@ -1,0 +1,36 @@
+value:
+  backgroundColor: String
+  backgroundImage: Stream
+  backgroundImageRelativeUrl: String
+  bannerLogo: Stream
+  bannerLogoRelativeUrl: String
+  cdnList:
+    - String
+  contentCustomization:
+    '@odata.type': microsoft.graph.contentCustomization
+  customAccountResetCredentialsUrl: String
+  customCannotAccessYourAccountText: String
+  customCannotAccessYourAccountUrl: String
+  customCSS: Stream
+  customCSSRelativeUrl: String
+  customForgotMyPasswordText: String
+  customPrivacyAndCookiesText: String
+  customPrivacyAndCookiesUrl: String
+  customResetItNowText: String
+  customTermsOfUseText: String
+  customTermsOfUseUrl: String
+  favicon: Stream
+  faviconRelativeUrl: String
+  headerBackgroundColor: String
+  headerLogo: Stream
+  headerLogoRelativeUrl: String
+  loginPageLayoutConfiguration:
+    '@odata.type': microsoft.graph.loginPageLayoutConfiguration
+  loginPageTextVisibilitySettings:
+    '@odata.type': microsoft.graph.loginPageTextVisibilitySettings
+  signInPageText: String
+  squareLogo: Stream
+  squareLogoDark: Stream
+  squareLogoDarkRelativeUrl: String
+  squareLogoRelativeUrl: String
+  usernameHintText: String

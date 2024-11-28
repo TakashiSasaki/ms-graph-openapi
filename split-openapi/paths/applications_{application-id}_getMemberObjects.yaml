@@ -1,0 +1,59 @@
+description: Provides operations to call the getMemberObjects method.
+post:
+  tags:
+    - applications.application
+  summary: Invoke action getMemberObjects
+  description: >-
+    Return all IDs for the groups, administrative units, and directory roles
+    that a user, group, service principal, organizational contact, device, or
+    directory object is a member of. This function is transitive. Note: Only
+    users and role-enabled groups can be members of directory roles.
+  externalDocs:
+    description: Find more info here
+    url: >-
+      https://learn.microsoft.com/graph/api/directoryobject-getmemberobjects?view=graph-rest-1.0
+  operationId: applications.application.getMemberObjects
+  requestBody:
+    description: Action parameters
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            securityEnabledOnly:
+              type: boolean
+              default: false
+              nullable: true
+    required: true
+  responses:
+    2XX:
+      description: Success
+      content:
+        application/json:
+          schema:
+            type: object
+            allOf:
+              - $ref: >-
+                  ..\components\schemas\BaseCollectionPaginationCountResponse.yaml
+              - type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      type: string
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: action
+  x-ms-pageable:
+    nextLinkName: '@odata.nextLink'
+    operationName: listMore
+parameters:
+  - name: application-id
+    in: path
+    description: The unique identifier of application
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: application

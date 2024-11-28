@@ -1,0 +1,131 @@
+title: directRoutingLogRow
+required:
+  - '@odata.type'
+type: object
+properties:
+  calleeNumber:
+    type: string
+    description: >-
+      Number of the user or bot who received the call. E.164 format, but might
+      include other data.
+    nullable: true
+  callEndSubReason:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    description: >-
+      In addition to the SIP codes, Microsoft has subcodes that indicate the
+      specific issue.
+    format: int32
+    nullable: true
+  callerNumber:
+    type: string
+    description: >-
+      Number of the user or bot who made the call. E.164 format, but might
+      include other data.
+    nullable: true
+  callType:
+    type: string
+    description: Call type and direction.
+    nullable: true
+  correlationId:
+    type: string
+    description: >-
+      Identifier for the call that you can use when calling Microsoft Support.
+      GUID.
+    nullable: true
+  duration:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    description: Duration of the call in seconds.
+    format: int32
+    nullable: true
+  endDateTime:
+    pattern: >-
+      ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+    type: string
+    description: >-
+      Only exists for successful (fully established) calls. Time when call
+      ended.
+    format: date-time
+    nullable: true
+  failureDateTime:
+    pattern: >-
+      ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+    type: string
+    description: Only exists for failed (not fully established) calls.
+    format: date-time
+    nullable: true
+  finalSipCode:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    description: >-
+      The final response code with which the call ended. For more information,
+      see RFC 3261.
+    format: int32
+    nullable: true
+  finalSipCodePhrase:
+    type: string
+    description: Description of the SIP code and Microsoft subcode.
+    nullable: true
+  id:
+    type: string
+    description: Unique call identifier. GUID.
+    nullable: true
+  inviteDateTime:
+    pattern: >-
+      ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+    type: string
+    description: The date and time when the initial invite was sent.
+    format: date-time
+    nullable: true
+  mediaBypassEnabled:
+    type: boolean
+    description: Indicates whether the trunk was enabled for media bypass.
+    nullable: true
+  mediaPathLocation:
+    type: string
+    description: The datacenter used for media path in a nonbypass call.
+    nullable: true
+  signalingLocation:
+    type: string
+    description: The datacenter used for signaling for both bypass and nonbypass calls.
+    nullable: true
+  startDateTime:
+    pattern: >-
+      ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+    type: string
+    description: >-
+      Call start time.For failed and unanswered calls, this value can be equal
+      to the invite or failure time.
+    format: date-time
+    nullable: true
+  successfulCall:
+    type: boolean
+    description: Success or attempt.
+    nullable: true
+  trunkFullyQualifiedDomainName:
+    type: string
+    description: Fully qualified domain name of the session border controller.
+    nullable: true
+  userDisplayName:
+    type: string
+    description: Display name of the user.
+    nullable: true
+  userId:
+    type: string
+    description: >-
+      Calling user's ID in Microsoft Graph. This and other user information is
+      null/empty for bot call types. GUID.
+    nullable: true
+  userPrincipalName:
+    type: string
+    description: >-
+      UserPrincipalName (sign-in name) in Microsoft Entra ID. This value is
+      usually the same as the user's SIP Address, and can be the same as the
+      user's email address.
+    nullable: true
+  '@odata.type':
+    type: string

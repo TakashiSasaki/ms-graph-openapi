@@ -1,0 +1,7 @@
+title: cloudPcGalleryImageStatus
+enum:
+  - supported
+  - supportedWithWarning
+  - notSupported
+  - unknownFutureValue
+type: string

@@ -1,0 +1,13 @@
+title: authenticationAttributeCollectionPage
+required:
+  - '@odata.type'
+type: object
+properties:
+  views:
+    type: array
+    items:
+      $ref: >-
+        .\microsoft.graph.authenticationAttributeCollectionPageViewConfiguration.yaml
+    description: A collection of displays of the attribute collection page.
+  '@odata.type':
+    type: string

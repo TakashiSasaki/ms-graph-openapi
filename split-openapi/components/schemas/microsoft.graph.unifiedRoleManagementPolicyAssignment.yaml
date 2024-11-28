@@ -1,0 +1,41 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: unifiedRoleManagementPolicyAssignment
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      policyId:
+        type: string
+        description: The id of the policy. Inherited from entity.
+      roleDefinitionId:
+        type: string
+        description: >-
+          For Microsoft Entra roles policy, it's the identifier of the role
+          definition object where the policy applies. For PIM for groups
+          membership and ownership, it's either member or owner. Supports
+          $filter (eq).
+        nullable: true
+      scopeId:
+        type: string
+        description: >-
+          The identifier of the scope where the policy is assigned.  Can be /
+          for the tenant or a group ID. Required.
+      scopeType:
+        type: string
+        description: >-
+          The type of the scope where the policy is assigned. One of Directory,
+          DirectoryRole, Group. Required.
+      policy:
+        anyOf:
+          - $ref: .\microsoft.graph.unifiedRoleManagementPolicy.yaml
+          - type: object
+            nullable: true
+        description: >-
+          The policy that's associated with a policy assignment. Supports
+          $expand and a nested $expand of the rules and effectiveRules
+          relationships for the policy.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.unifiedRoleManagementPolicyAssignment'

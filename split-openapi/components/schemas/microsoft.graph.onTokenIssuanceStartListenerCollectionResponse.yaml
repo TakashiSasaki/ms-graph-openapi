@@ -1,0 +1,10 @@
+title: Collection of onTokenIssuanceStartListener
+type: object
+allOf:
+  - $ref: .\BaseCollectionPaginationCountResponse.yaml
+  - type: object
+    properties:
+      value:
+        type: array
+        items:
+          $ref: .\microsoft.graph.onTokenIssuanceStartListener.yaml

@@ -1,0 +1,7 @@
+value:
+  failedDeviceCount: '0'
+  failedUserCount: '0'
+  installedDeviceCount: '0'
+  installedUserCount: '0'
+  notInstalledDeviceCount: '0'
+  notInstalledUserCount: '0'

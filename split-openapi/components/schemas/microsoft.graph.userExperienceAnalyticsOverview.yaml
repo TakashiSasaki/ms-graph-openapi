@@ -1,0 +1,18 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: userExperienceAnalyticsOverview
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      insights:
+        type: array
+        items:
+          $ref: .\microsoft.graph.userExperienceAnalyticsInsight.yaml
+        description: The user experience analytics insights. Read-only.
+      '@odata.type':
+        type: string
+    description: >-
+      The user experience analytics overview entity contains the overall score
+      and the scores and insights of every metric of all categories.
+x-ms-discriminator-value: '#microsoft.graph.userExperienceAnalyticsOverview'

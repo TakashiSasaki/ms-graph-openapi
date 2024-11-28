@@ -1,0 +1,8 @@
+title: printColorMode
+enum:
+  - blackAndWhite
+  - grayscale
+  - color
+  - auto
+  - unknownFutureValue
+type: string

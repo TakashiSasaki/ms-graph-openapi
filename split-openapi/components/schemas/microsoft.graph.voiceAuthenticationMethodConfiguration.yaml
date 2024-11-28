@@ -1,0 +1,23 @@
+allOf:
+  - $ref: .\microsoft.graph.authenticationMethodConfiguration.yaml
+  - title: voiceAuthenticationMethodConfiguration
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      isOfficePhoneAllowed:
+        type: boolean
+        description: true if users can register office phones, otherwise, false.
+        nullable: true
+      includeTargets:
+        type: array
+        items:
+          $ref: .\microsoft.graph.authenticationMethodTarget.yaml
+        description: >-
+          A collection of groups that are enabled to use the authentication
+          method. Expanded by default.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.voiceAuthenticationMethodConfiguration'
+x-ms-discriminator-value: '#microsoft.graph.voiceAuthenticationMethodConfiguration'

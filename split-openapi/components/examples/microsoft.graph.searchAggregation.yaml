@@ -1,0 +1,4 @@
+value:
+  buckets:
+    - '@odata.type': microsoft.graph.searchBucket
+  field: String

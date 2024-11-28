@@ -1,0 +1,9 @@
+value:
+  comment: String
+  name: String
+  scope: String
+  type: String
+  value: {}
+  visible: 'true'
+  worksheet:
+    '@odata.type': microsoft.graph.workbookWorksheet

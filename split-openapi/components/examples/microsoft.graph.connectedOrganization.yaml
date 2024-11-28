@@ -1,0 +1,13 @@
+value:
+  createdDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  description: String
+  displayName: String
+  externalSponsors:
+    - '@odata.type': microsoft.graph.directoryObject
+  identitySources:
+    - '@odata.type': microsoft.graph.identitySource
+  internalSponsors:
+    - '@odata.type': microsoft.graph.directoryObject
+  modifiedDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  state:
+    '@odata.type': microsoft.graph.connectedOrganizationState

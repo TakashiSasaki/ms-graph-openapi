@@ -1,0 +1,30 @@
+title: publicError
+required:
+  - '@odata.type'
+type: object
+properties:
+  code:
+    type: string
+    description: Represents the error code.
+    nullable: true
+  details:
+    type: array
+    items:
+      $ref: .\microsoft.graph.publicErrorDetail.yaml
+    description: Details of the error.
+  innerError:
+    anyOf:
+      - $ref: .\microsoft.graph.publicInnerError.yaml
+      - type: object
+        nullable: true
+    description: Details of the inner error.
+  message:
+    type: string
+    description: A non-localized message for the developer.
+    nullable: true
+  target:
+    type: string
+    description: The target of the error.
+    nullable: true
+  '@odata.type':
+    type: string

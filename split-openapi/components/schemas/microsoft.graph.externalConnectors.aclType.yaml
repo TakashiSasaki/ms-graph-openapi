@@ -1,0 +1,9 @@
+title: aclType
+enum:
+  - user
+  - group
+  - everyone
+  - everyoneExceptGuests
+  - externalGroup
+  - unknownFutureValue
+type: string

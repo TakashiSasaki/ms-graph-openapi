@@ -1,0 +1,5 @@
+title: eligibilityScheduleFilterByCurrentUserOptions
+enum:
+  - principal
+  - unknownFutureValue
+type: string

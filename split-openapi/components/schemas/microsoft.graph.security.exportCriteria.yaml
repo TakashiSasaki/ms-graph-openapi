@@ -1,0 +1,8 @@
+title: exportCriteria
+enum:
+  - searchHits
+  - partiallyIndexed
+  - unknownFutureValue
+type: string
+x-ms-enum-flags:
+  isFlags: true

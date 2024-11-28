@@ -1,0 +1,40 @@
+title: media
+required:
+  - '@odata.type'
+type: object
+properties:
+  calleeDevice:
+    anyOf:
+      - $ref: .\microsoft.graph.callRecords.deviceInfo.yaml
+      - type: object
+        nullable: true
+    description: Device information associated with the callee endpoint of this media.
+  calleeNetwork:
+    anyOf:
+      - $ref: .\microsoft.graph.callRecords.networkInfo.yaml
+      - type: object
+        nullable: true
+    description: Network information associated with the callee endpoint of this media.
+  callerDevice:
+    anyOf:
+      - $ref: .\microsoft.graph.callRecords.deviceInfo.yaml
+      - type: object
+        nullable: true
+    description: Device information associated with the caller endpoint of this media.
+  callerNetwork:
+    anyOf:
+      - $ref: .\microsoft.graph.callRecords.networkInfo.yaml
+      - type: object
+        nullable: true
+    description: Network information associated with the caller endpoint of this media.
+  label:
+    type: string
+    description: How the media was identified during media negotiation stage.
+    nullable: true
+  streams:
+    type: array
+    items:
+      $ref: .\microsoft.graph.callRecords.mediaStream.yaml
+    description: Network streams associated with this media.
+  '@odata.type':
+    type: string

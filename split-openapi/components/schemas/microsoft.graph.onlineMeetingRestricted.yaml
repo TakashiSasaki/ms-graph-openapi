@@ -1,0 +1,23 @@
+title: onlineMeetingRestricted
+required:
+  - '@odata.type'
+type: object
+properties:
+  contentSharingDisabled:
+    anyOf:
+      - $ref: .\microsoft.graph.onlineMeetingContentSharingDisabledReason.yaml
+      - type: object
+        nullable: true
+    description: >-
+      Specifies the reason shared content from this participant is disabled.
+      Possible values are: watermarkProtection, unknownFutureValue.
+  videoDisabled:
+    anyOf:
+      - $ref: .\microsoft.graph.onlineMeetingVideoDisabledReason.yaml
+      - type: object
+        nullable: true
+    description: >-
+      Specifies the reason video from this participant is disabled. Possible
+      values are: watermarkProtection, unknownFutureValue.
+  '@odata.type':
+    type: string

@@ -1,0 +1,14 @@
+title: onInteractiveAuthFlowStartHandler
+required:
+  - '@odata.type'
+type: object
+properties:
+  '@odata.type':
+    type: string
+discriminator:
+  propertyName: '@odata.type'
+  mapping:
+    '#microsoft.graph.onInteractiveAuthFlowStartExternalUsersSelfServiceSignUp': >-
+      .\microsoft.graph.onInteractiveAuthFlowStartExternalUsersSelfServiceSignUp.yaml
+    microsoft.graph.onInteractiveAuthFlowStartExternalUsersSelfServiceSignUp: >-
+      .\microsoft.graph.onInteractiveAuthFlowStartExternalUsersSelfServiceSignUp.yaml

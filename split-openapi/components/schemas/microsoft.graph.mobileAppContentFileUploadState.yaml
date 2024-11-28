@@ -1,0 +1,20 @@
+title: mobileAppContentFileUploadState
+enum:
+  - success
+  - transientError
+  - error
+  - unknown
+  - azureStorageUriRequestSuccess
+  - azureStorageUriRequestPending
+  - azureStorageUriRequestFailed
+  - azureStorageUriRequestTimedOut
+  - azureStorageUriRenewalSuccess
+  - azureStorageUriRenewalPending
+  - azureStorageUriRenewalFailed
+  - azureStorageUriRenewalTimedOut
+  - commitFileSuccess
+  - commitFilePending
+  - commitFileFailed
+  - commitFileTimedOut
+type: string
+description: Contains properties for upload request states.

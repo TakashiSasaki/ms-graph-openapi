@@ -1,0 +1,9 @@
+value:
+  check32BitOn64System: 'true'
+  comparisonValue: String
+  keyPath: String
+  operationType:
+    '@odata.type': microsoft.graph.win32LobAppRegistryRuleOperationType
+  operator:
+    '@odata.type': microsoft.graph.win32LobAppRuleOperator
+  valueName: String

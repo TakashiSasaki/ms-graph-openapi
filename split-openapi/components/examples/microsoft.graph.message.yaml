@@ -1,0 +1,47 @@
+value:
+  attachments:
+    - '@odata.type': microsoft.graph.attachment
+  bccRecipients:
+    - '@odata.type': microsoft.graph.recipient
+  body:
+    '@odata.type': microsoft.graph.itemBody
+  bodyPreview: String
+  ccRecipients:
+    - '@odata.type': microsoft.graph.recipient
+  conversationId: String
+  conversationIndex: AA==
+  extensions:
+    - '@odata.type': microsoft.graph.extension
+  flag:
+    '@odata.type': microsoft.graph.followupFlag
+  from:
+    '@odata.type': microsoft.graph.recipient
+  hasAttachments: 'true'
+  importance:
+    '@odata.type': microsoft.graph.importance
+  inferenceClassification:
+    '@odata.type': microsoft.graph.inferenceClassificationType
+  internetMessageHeaders:
+    - '@odata.type': microsoft.graph.internetMessageHeader
+  internetMessageId: String
+  isDeliveryReceiptRequested: 'true'
+  isDraft: 'true'
+  isRead: 'true'
+  isReadReceiptRequested: 'true'
+  multiValueExtendedProperties:
+    - '@odata.type': microsoft.graph.multiValueLegacyExtendedProperty
+  parentFolderId: String
+  receivedDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  replyTo:
+    - '@odata.type': microsoft.graph.recipient
+  sender:
+    '@odata.type': microsoft.graph.recipient
+  sentDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  singleValueExtendedProperties:
+    - '@odata.type': microsoft.graph.singleValueLegacyExtendedProperty
+  subject: String
+  toRecipients:
+    - '@odata.type': microsoft.graph.recipient
+  uniqueBody:
+    '@odata.type': microsoft.graph.itemBody
+  webLink: String

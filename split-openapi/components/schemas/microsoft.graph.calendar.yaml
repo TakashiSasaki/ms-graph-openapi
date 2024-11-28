@@ -1,0 +1,143 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: calendar
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      allowedOnlineMeetingProviders:
+        type: array
+        items:
+          anyOf:
+            - $ref: .\microsoft.graph.onlineMeetingProviderType.yaml
+            - type: object
+              nullable: true
+        description: >-
+          Represent the online meeting service providers that can be used to
+          create online meetings in this calendar. Possible values are: unknown,
+          skypeForBusiness, skypeForConsumer, teamsForBusiness.
+      canEdit:
+        type: boolean
+        description: >-
+          true if the user can write to the calendar, false otherwise. This
+          property is true for the user who created the calendar. This property
+          is also true for a user who has been shared a calendar and granted
+          write access.
+        nullable: true
+      canShare:
+        type: boolean
+        description: >-
+          true if the user has the permission to share the calendar, false
+          otherwise. Only the user who created the calendar can share it.
+        nullable: true
+      canViewPrivateItems:
+        type: boolean
+        description: >-
+          true if the user can read calendar items that have been marked
+          private, false otherwise.
+        nullable: true
+      changeKey:
+        type: string
+        description: >-
+          Identifies the version of the calendar object. Every time the calendar
+          is changed, changeKey changes as well. This allows Exchange to apply
+          changes to the correct version of the object. Read-only.
+        nullable: true
+      color:
+        anyOf:
+          - $ref: .\microsoft.graph.calendarColor.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Specifies the color theme to distinguish the calendar from other
+          calendars in a UI. The property values are: auto, lightBlue,
+          lightGreen, lightOrange, lightGray, lightYellow, lightTeal, lightPink,
+          lightBrown, lightRed, maxColor.
+      defaultOnlineMeetingProvider:
+        anyOf:
+          - $ref: .\microsoft.graph.onlineMeetingProviderType.yaml
+          - type: object
+            nullable: true
+        description: >-
+          The default online meeting provider for meetings sent from this
+          calendar. Possible values are: unknown, skypeForBusiness,
+          skypeForConsumer, teamsForBusiness.
+      hexColor:
+        type: string
+        description: >-
+          The calendar color, expressed in a hex color code of three hexadecimal
+          values, each ranging from 00 to FF and representing the red, green, or
+          blue components of the color in the RGB color space. If the user has
+          never explicitly set a color for the calendar, this property is empty.
+          Read-only.
+        nullable: true
+      isDefaultCalendar:
+        type: boolean
+        description: >-
+          true if this is the default calendar where new events are created by
+          default, false otherwise.
+        nullable: true
+      isRemovable:
+        type: boolean
+        description: >-
+          Indicates whether this user calendar can be deleted from the user
+          mailbox.
+        nullable: true
+      isTallyingResponses:
+        type: boolean
+        description: >-
+          Indicates whether this user calendar supports tracking of meeting
+          responses. Only meeting invites sent from users' primary calendars
+          support tracking of meeting responses.
+        nullable: true
+      name:
+        type: string
+        description: The calendar name.
+        nullable: true
+      owner:
+        anyOf:
+          - $ref: .\microsoft.graph.emailAddress.yaml
+          - type: object
+            nullable: true
+        description: >-
+          If set, this represents the user who created or added the calendar.
+          For a calendar that the user created or added, the owner property is
+          set to the user. For a calendar shared with the user, the owner
+          property is set to the person who shared that calendar with the user.
+      calendarPermissions:
+        type: array
+        items:
+          $ref: .\microsoft.graph.calendarPermission.yaml
+        description: The permissions of the users with whom the calendar is shared.
+        x-ms-navigationProperty: true
+      calendarView:
+        type: array
+        items:
+          $ref: .\microsoft.graph.event.yaml
+        description: The calendar view for the calendar. Navigation property. Read-only.
+        x-ms-navigationProperty: true
+      events:
+        type: array
+        items:
+          $ref: .\microsoft.graph.event.yaml
+        description: The events in the calendar. Navigation property. Read-only.
+        x-ms-navigationProperty: true
+      multiValueExtendedProperties:
+        type: array
+        items:
+          $ref: .\microsoft.graph.multiValueLegacyExtendedProperty.yaml
+        description: >-
+          The collection of multi-value extended properties defined for the
+          calendar. Read-only. Nullable.
+        x-ms-navigationProperty: true
+      singleValueExtendedProperties:
+        type: array
+        items:
+          $ref: .\microsoft.graph.singleValueLegacyExtendedProperty.yaml
+        description: >-
+          The collection of single-value extended properties defined for the
+          calendar. Read-only. Nullable.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.calendar'

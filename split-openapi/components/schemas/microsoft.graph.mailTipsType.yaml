@@ -1,0 +1,15 @@
+title: mailTipsType
+enum:
+  - automaticReplies
+  - mailboxFullStatus
+  - customMailTip
+  - externalMemberCount
+  - totalMemberCount
+  - maxMessageSize
+  - deliveryRestriction
+  - moderationStatus
+  - recipientScope
+  - recipientSuggestions
+type: string
+x-ms-enum-flags:
+  isFlags: true

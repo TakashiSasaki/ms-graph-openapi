@@ -1,0 +1,115 @@
+title: onPremisesDirectorySynchronizationFeature
+required:
+  - '@odata.type'
+type: object
+properties:
+  blockCloudObjectTakeoverThroughHardMatchEnabled:
+    type: boolean
+    description: >-
+      Used to block cloud object takeover via source anchor hard match if
+      enabled.
+    nullable: true
+  blockSoftMatchEnabled:
+    type: boolean
+    description: >-
+      Use to block soft match for all objects if enabled for the  tenant.
+      Customers are encouraged to enable this feature and keep it enabled until
+      soft matching is required again for their tenancy. This flag should be
+      enabled again after any soft matching has been completed and is no longer
+      needed.
+    nullable: true
+  bypassDirSyncOverridesEnabled:
+    type: boolean
+    description: >-
+      When true, persists the values of Mobile and OtherMobile in on-premises AD
+      during sync cycles instead of values of MobilePhone or
+      AlternateMobilePhones in Microsoft Entra ID.
+    nullable: true
+  cloudPasswordPolicyForPasswordSyncedUsersEnabled:
+    type: boolean
+    description: >-
+      Used to indicate that cloud password policy applies to users whose
+      passwords are synchronized from on-premises.
+    nullable: true
+  concurrentCredentialUpdateEnabled:
+    type: boolean
+    description: Used to enable concurrent user credentials update in OrgId.
+    nullable: true
+  concurrentOrgIdProvisioningEnabled:
+    type: boolean
+    description: Used to enable concurrent user creation in OrgId.
+    nullable: true
+  deviceWritebackEnabled:
+    type: boolean
+    description: Used to indicate that device write-back is enabled.
+    nullable: true
+  directoryExtensionsEnabled:
+    type: boolean
+    description: >-
+      Used to indicate that directory extensions are being synced from
+      on-premises AD to Microsoft Entra ID.
+    nullable: true
+  fopeConflictResolutionEnabled:
+    type: boolean
+    description: >-
+      Used to indicate that for a Microsoft Forefront Online Protection for
+      Exchange (FOPE) migrated tenant, the conflicting proxy address should be
+      migrated over.
+    nullable: true
+  groupWriteBackEnabled:
+    type: boolean
+    description: >-
+      Used to enable object-level group writeback feature for additional group
+      types.
+    nullable: true
+  passwordSyncEnabled:
+    type: boolean
+    description: Used to indicate on-premise password synchronization is enabled.
+    nullable: true
+  passwordWritebackEnabled:
+    type: boolean
+    description: >-
+      Used to indicate that writeback of password resets from Microsoft Entra ID
+      to on-premises AD is enabled. This property isn't in use and updating it
+      isn't supported.
+    nullable: true
+  quarantineUponProxyAddressesConflictEnabled:
+    type: boolean
+    description: >-
+      Used to indicate that we should quarantine objects with conflicting proxy
+      address.
+    nullable: true
+  quarantineUponUpnConflictEnabled:
+    type: boolean
+    description: >-
+      Used to indicate that we should quarantine objects conflicting with
+      duplicate userPrincipalName.
+    nullable: true
+  softMatchOnUpnEnabled:
+    type: boolean
+    description: >-
+      Used to indicate that we should soft match objects based on
+      userPrincipalName.
+    nullable: true
+  synchronizeUpnForManagedUsersEnabled:
+    type: boolean
+    description: >-
+      Used to indicate that we should synchronize userPrincipalName objects for
+      managed users with licenses.
+    nullable: true
+  unifiedGroupWritebackEnabled:
+    type: boolean
+    description: Used to indicate that Microsoft 365 Group write-back is enabled.
+    nullable: true
+  userForcePasswordChangeOnLogonEnabled:
+    type: boolean
+    description: >-
+      Used to indicate that feature to force password change for a user on logon
+      is enabled while synchronizing on-premise credentials.
+    nullable: true
+  userWritebackEnabled:
+    type: boolean
+    description: Used to indicate that user writeback is enabled.
+    nullable: true
+  '@odata.type':
+    type: string

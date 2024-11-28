@@ -1,0 +1,9 @@
+title: kubernetesPlatform
+enum:
+  - unknown
+  - aks
+  - eks
+  - gke
+  - arc
+  - unknownFutureValue
+type: string

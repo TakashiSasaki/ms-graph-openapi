@@ -1,0 +1,13 @@
+value:
+  attribute: String
+  defaultValue: String
+  editable: 'true'
+  hidden: 'true'
+  inputType:
+    '@odata.type': microsoft.graph.authenticationAttributeCollectionInputType
+  label: String
+  options:
+    - '@odata.type': microsoft.graph.authenticationAttributeCollectionOptionConfiguration
+  required: 'true'
+  validationRegEx: String
+  writeToDirectory: 'true'

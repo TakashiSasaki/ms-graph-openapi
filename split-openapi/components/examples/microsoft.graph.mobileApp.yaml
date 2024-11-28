@@ -1,0 +1,20 @@
+value:
+  assignments:
+    - '@odata.type': microsoft.graph.mobileAppAssignment
+  categories:
+    - '@odata.type': microsoft.graph.mobileAppCategory
+  createdDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  description: String
+  developer: String
+  displayName: String
+  informationUrl: String
+  isFeatured: 'true'
+  largeIcon:
+    '@odata.type': microsoft.graph.mimeContent
+  lastModifiedDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  notes: String
+  owner: String
+  privacyInformationUrl: String
+  publisher: String
+  publishingState:
+    '@odata.type': microsoft.graph.mobileAppPublishingState

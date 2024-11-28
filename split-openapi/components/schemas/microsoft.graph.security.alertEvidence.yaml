@@ -1,0 +1,142 @@
+title: alertEvidence
+required:
+  - '@odata.type'
+type: object
+properties:
+  createdDateTime:
+    pattern: >-
+      ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+    type: string
+    description: >-
+      The date and time when the evidence was created and added to the alert.
+      The Timestamp type represents date and time information using ISO 8601
+      format and is always in UTC time. For example, midnight UTC on Jan 1, 2014
+      is 2014-01-01T00:00:00Z.
+    format: date-time
+  detailedRoles:
+    type: array
+    items:
+      type: string
+      nullable: true
+    description: >-
+      Detailed description of the entity role/s in an alert. Values are
+      free-form.
+  remediationStatus:
+    $ref: .\microsoft.graph.security.evidenceRemediationStatus.yaml
+  remediationStatusDetails:
+    type: string
+    description: Details about the remediation status.
+    nullable: true
+  roles:
+    type: array
+    items:
+      $ref: .\microsoft.graph.security.evidenceRole.yaml
+    description: >-
+      The role/s that an evidence entity represents in an alert, for example, an
+      IP address that is associated with an attacker has the evidence role
+      Attacker.
+  tags:
+    type: array
+    items:
+      type: string
+      nullable: true
+    description: >-
+      Array of custom tags associated with an evidence instance, for example, to
+      denote a group of devices, high-value assets, etc.
+  verdict:
+    $ref: .\microsoft.graph.security.evidenceVerdict.yaml
+  '@odata.type':
+    type: string
+discriminator:
+  propertyName: '@odata.type'
+  mapping:
+    '#microsoft.graph.security.amazonResourceEvidence': .\microsoft.graph.security.amazonResourceEvidence.yaml
+    '#microsoft.graph.security.analyzedMessageEvidence': .\microsoft.graph.security.analyzedMessageEvidence.yaml
+    '#microsoft.graph.security.azureResourceEvidence': .\microsoft.graph.security.azureResourceEvidence.yaml
+    '#microsoft.graph.security.blobContainerEvidence': .\microsoft.graph.security.blobContainerEvidence.yaml
+    '#microsoft.graph.security.blobEvidence': .\microsoft.graph.security.blobEvidence.yaml
+    '#microsoft.graph.security.cloudApplicationEvidence': .\microsoft.graph.security.cloudApplicationEvidence.yaml
+    '#microsoft.graph.security.cloudLogonRequestEvidence': .\microsoft.graph.security.cloudLogonRequestEvidence.yaml
+    '#microsoft.graph.security.cloudLogonSessionEvidence': .\microsoft.graph.security.cloudLogonSessionEvidence.yaml
+    '#microsoft.graph.security.containerEvidence': .\microsoft.graph.security.containerEvidence.yaml
+    '#microsoft.graph.security.containerImageEvidence': .\microsoft.graph.security.containerImageEvidence.yaml
+    '#microsoft.graph.security.containerRegistryEvidence': .\microsoft.graph.security.containerRegistryEvidence.yaml
+    '#microsoft.graph.security.deviceEvidence': .\microsoft.graph.security.deviceEvidence.yaml
+    '#microsoft.graph.security.dnsEvidence': .\microsoft.graph.security.dnsEvidence.yaml
+    '#microsoft.graph.security.fileEvidence': .\microsoft.graph.security.fileEvidence.yaml
+    '#microsoft.graph.security.fileHashEvidence': .\microsoft.graph.security.fileHashEvidence.yaml
+    '#microsoft.graph.security.gitHubOrganizationEvidence': .\microsoft.graph.security.gitHubOrganizationEvidence.yaml
+    '#microsoft.graph.security.gitHubRepoEvidence': .\microsoft.graph.security.gitHubRepoEvidence.yaml
+    '#microsoft.graph.security.gitHubUserEvidence': .\microsoft.graph.security.gitHubUserEvidence.yaml
+    '#microsoft.graph.security.googleCloudResourceEvidence': .\microsoft.graph.security.googleCloudResourceEvidence.yaml
+    '#microsoft.graph.security.hostLogonSessionEvidence': .\microsoft.graph.security.hostLogonSessionEvidence.yaml
+    '#microsoft.graph.security.ioTDeviceEvidence': .\microsoft.graph.security.ioTDeviceEvidence.yaml
+    '#microsoft.graph.security.ipEvidence': .\microsoft.graph.security.ipEvidence.yaml
+    '#microsoft.graph.security.kubernetesClusterEvidence': .\microsoft.graph.security.kubernetesClusterEvidence.yaml
+    '#microsoft.graph.security.kubernetesControllerEvidence': .\microsoft.graph.security.kubernetesControllerEvidence.yaml
+    '#microsoft.graph.security.kubernetesNamespaceEvidence': .\microsoft.graph.security.kubernetesNamespaceEvidence.yaml
+    '#microsoft.graph.security.kubernetesPodEvidence': .\microsoft.graph.security.kubernetesPodEvidence.yaml
+    '#microsoft.graph.security.kubernetesSecretEvidence': .\microsoft.graph.security.kubernetesSecretEvidence.yaml
+    '#microsoft.graph.security.kubernetesServiceAccountEvidence': .\microsoft.graph.security.kubernetesServiceAccountEvidence.yaml
+    '#microsoft.graph.security.kubernetesServiceEvidence': .\microsoft.graph.security.kubernetesServiceEvidence.yaml
+    '#microsoft.graph.security.mailboxConfigurationEvidence': .\microsoft.graph.security.mailboxConfigurationEvidence.yaml
+    '#microsoft.graph.security.mailboxEvidence': .\microsoft.graph.security.mailboxEvidence.yaml
+    '#microsoft.graph.security.mailClusterEvidence': .\microsoft.graph.security.mailClusterEvidence.yaml
+    '#microsoft.graph.security.malwareEvidence': .\microsoft.graph.security.malwareEvidence.yaml
+    '#microsoft.graph.security.networkConnectionEvidence': .\microsoft.graph.security.networkConnectionEvidence.yaml
+    '#microsoft.graph.security.nicEvidence': .\microsoft.graph.security.nicEvidence.yaml
+    '#microsoft.graph.security.oauthApplicationEvidence': .\microsoft.graph.security.oauthApplicationEvidence.yaml
+    '#microsoft.graph.security.processEvidence': .\microsoft.graph.security.processEvidence.yaml
+    '#microsoft.graph.security.registryKeyEvidence': .\microsoft.graph.security.registryKeyEvidence.yaml
+    '#microsoft.graph.security.registryValueEvidence': .\microsoft.graph.security.registryValueEvidence.yaml
+    '#microsoft.graph.security.sasTokenEvidence': .\microsoft.graph.security.sasTokenEvidence.yaml
+    '#microsoft.graph.security.securityGroupEvidence': .\microsoft.graph.security.securityGroupEvidence.yaml
+    '#microsoft.graph.security.servicePrincipalEvidence': .\microsoft.graph.security.servicePrincipalEvidence.yaml
+    '#microsoft.graph.security.submissionMailEvidence': .\microsoft.graph.security.submissionMailEvidence.yaml
+    '#microsoft.graph.security.urlEvidence': .\microsoft.graph.security.urlEvidence.yaml
+    '#microsoft.graph.security.userEvidence': .\microsoft.graph.security.userEvidence.yaml
+    microsoft.graph.security.amazonResourceEvidence: .\microsoft.graph.security.amazonResourceEvidence.yaml
+    microsoft.graph.security.analyzedMessageEvidence: .\microsoft.graph.security.analyzedMessageEvidence.yaml
+    microsoft.graph.security.azureResourceEvidence: .\microsoft.graph.security.azureResourceEvidence.yaml
+    microsoft.graph.security.blobContainerEvidence: .\microsoft.graph.security.blobContainerEvidence.yaml
+    microsoft.graph.security.blobEvidence: .\microsoft.graph.security.blobEvidence.yaml
+    microsoft.graph.security.cloudApplicationEvidence: .\microsoft.graph.security.cloudApplicationEvidence.yaml
+    microsoft.graph.security.cloudLogonRequestEvidence: .\microsoft.graph.security.cloudLogonRequestEvidence.yaml
+    microsoft.graph.security.cloudLogonSessionEvidence: .\microsoft.graph.security.cloudLogonSessionEvidence.yaml
+    microsoft.graph.security.containerEvidence: .\microsoft.graph.security.containerEvidence.yaml
+    microsoft.graph.security.containerImageEvidence: .\microsoft.graph.security.containerImageEvidence.yaml
+    microsoft.graph.security.containerRegistryEvidence: .\microsoft.graph.security.containerRegistryEvidence.yaml
+    microsoft.graph.security.deviceEvidence: .\microsoft.graph.security.deviceEvidence.yaml
+    microsoft.graph.security.dnsEvidence: .\microsoft.graph.security.dnsEvidence.yaml
+    microsoft.graph.security.fileEvidence: .\microsoft.graph.security.fileEvidence.yaml
+    microsoft.graph.security.fileHashEvidence: .\microsoft.graph.security.fileHashEvidence.yaml
+    microsoft.graph.security.gitHubOrganizationEvidence: .\microsoft.graph.security.gitHubOrganizationEvidence.yaml
+    microsoft.graph.security.gitHubRepoEvidence: .\microsoft.graph.security.gitHubRepoEvidence.yaml
+    microsoft.graph.security.gitHubUserEvidence: .\microsoft.graph.security.gitHubUserEvidence.yaml
+    microsoft.graph.security.googleCloudResourceEvidence: .\microsoft.graph.security.googleCloudResourceEvidence.yaml
+    microsoft.graph.security.hostLogonSessionEvidence: .\microsoft.graph.security.hostLogonSessionEvidence.yaml
+    microsoft.graph.security.ioTDeviceEvidence: .\microsoft.graph.security.ioTDeviceEvidence.yaml
+    microsoft.graph.security.ipEvidence: .\microsoft.graph.security.ipEvidence.yaml
+    microsoft.graph.security.kubernetesClusterEvidence: .\microsoft.graph.security.kubernetesClusterEvidence.yaml
+    microsoft.graph.security.kubernetesControllerEvidence: .\microsoft.graph.security.kubernetesControllerEvidence.yaml
+    microsoft.graph.security.kubernetesNamespaceEvidence: .\microsoft.graph.security.kubernetesNamespaceEvidence.yaml
+    microsoft.graph.security.kubernetesPodEvidence: .\microsoft.graph.security.kubernetesPodEvidence.yaml
+    microsoft.graph.security.kubernetesSecretEvidence: .\microsoft.graph.security.kubernetesSecretEvidence.yaml
+    microsoft.graph.security.kubernetesServiceAccountEvidence: .\microsoft.graph.security.kubernetesServiceAccountEvidence.yaml
+    microsoft.graph.security.kubernetesServiceEvidence: .\microsoft.graph.security.kubernetesServiceEvidence.yaml
+    microsoft.graph.security.mailboxConfigurationEvidence: .\microsoft.graph.security.mailboxConfigurationEvidence.yaml
+    microsoft.graph.security.mailboxEvidence: .\microsoft.graph.security.mailboxEvidence.yaml
+    microsoft.graph.security.mailClusterEvidence: .\microsoft.graph.security.mailClusterEvidence.yaml
+    microsoft.graph.security.malwareEvidence: .\microsoft.graph.security.malwareEvidence.yaml
+    microsoft.graph.security.networkConnectionEvidence: .\microsoft.graph.security.networkConnectionEvidence.yaml
+    microsoft.graph.security.nicEvidence: .\microsoft.graph.security.nicEvidence.yaml
+    microsoft.graph.security.oauthApplicationEvidence: .\microsoft.graph.security.oauthApplicationEvidence.yaml
+    microsoft.graph.security.processEvidence: .\microsoft.graph.security.processEvidence.yaml
+    microsoft.graph.security.registryKeyEvidence: .\microsoft.graph.security.registryKeyEvidence.yaml
+    microsoft.graph.security.registryValueEvidence: .\microsoft.graph.security.registryValueEvidence.yaml
+    microsoft.graph.security.sasTokenEvidence: .\microsoft.graph.security.sasTokenEvidence.yaml
+    microsoft.graph.security.securityGroupEvidence: .\microsoft.graph.security.securityGroupEvidence.yaml
+    microsoft.graph.security.servicePrincipalEvidence: .\microsoft.graph.security.servicePrincipalEvidence.yaml
+    microsoft.graph.security.submissionMailEvidence: .\microsoft.graph.security.submissionMailEvidence.yaml
+    microsoft.graph.security.urlEvidence: .\microsoft.graph.security.urlEvidence.yaml
+    microsoft.graph.security.userEvidence: .\microsoft.graph.security.userEvidence.yaml

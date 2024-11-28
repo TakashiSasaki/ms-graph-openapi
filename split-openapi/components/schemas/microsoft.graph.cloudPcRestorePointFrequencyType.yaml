@@ -1,0 +1,10 @@
+title: cloudPcRestorePointFrequencyType
+enum:
+  - default
+  - fourHours
+  - sixHours
+  - twelveHours
+  - sixteenHours
+  - twentyFourHours
+  - unknownFutureValue
+type: string

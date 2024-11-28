@@ -1,0 +1,14 @@
+value:
+  description: String
+  displayName: String
+  extensions:
+    - '@odata.type': microsoft.graph.extension
+  isMemberManagementRestricted: 'true'
+  members:
+    - '@odata.type': microsoft.graph.directoryObject
+  membershipRule: String
+  membershipRuleProcessingState: String
+  membershipType: String
+  scopedRoleMembers:
+    - '@odata.type': microsoft.graph.scopedRoleMembership
+  visibility: String

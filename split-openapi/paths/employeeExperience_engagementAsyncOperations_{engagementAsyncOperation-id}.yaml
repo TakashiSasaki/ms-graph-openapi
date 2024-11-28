@@ -1,0 +1,101 @@
+description: >-
+  Provides operations to manage the engagementAsyncOperations property of the
+  microsoft.graph.employeeExperience entity.
+get:
+  tags:
+    - employeeExperience.engagementAsyncOperation
+  summary: Get engagementAsyncOperation
+  description: Get an engagementAsyncOperation to track a long-running operation request.
+  externalDocs:
+    description: Find more info here
+    url: >-
+      https://learn.microsoft.com/graph/api/engagementasyncoperation-get?view=graph-rest-1.0
+  operationId: employeeExperience.GetEngagementAsyncOperations
+  parameters:
+    - name: $select
+      in: query
+      description: Select properties to be returned
+      style: form
+      explode: false
+      schema:
+        uniqueItems: true
+        type: array
+        items:
+          type: string
+    - name: $expand
+      in: query
+      description: Expand related entities
+      style: form
+      explode: false
+      schema:
+        uniqueItems: true
+        type: array
+        items:
+          type: string
+  responses:
+    2XX:
+      description: Retrieved navigation property
+      content:
+        application/json:
+          schema:
+            $ref: >-
+              ..\components\schemas\microsoft.graph.engagementAsyncOperation.yaml
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: operation
+patch:
+  tags:
+    - employeeExperience.engagementAsyncOperation
+  summary: >-
+    Update the navigation property engagementAsyncOperations in
+    employeeExperience
+  operationId: employeeExperience.UpdateEngagementAsyncOperations
+  requestBody:
+    description: New navigation property values
+    content:
+      application/json:
+        schema:
+          $ref: ..\components\schemas\microsoft.graph.engagementAsyncOperation.yaml
+    required: true
+  responses:
+    2XX:
+      description: Success
+      content:
+        application/json:
+          schema:
+            $ref: >-
+              ..\components\schemas\microsoft.graph.engagementAsyncOperation.yaml
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: operation
+delete:
+  tags:
+    - employeeExperience.engagementAsyncOperation
+  summary: Delete navigation property engagementAsyncOperations for employeeExperience
+  operationId: employeeExperience.DeleteEngagementAsyncOperations
+  parameters:
+    - name: If-Match
+      in: header
+      description: ETag
+      schema:
+        type: string
+  responses:
+    '204':
+      description: Success
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: operation
+parameters:
+  - name: engagementAsyncOperation-id
+    in: path
+    description: The unique identifier of engagementAsyncOperation
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: engagementAsyncOperation

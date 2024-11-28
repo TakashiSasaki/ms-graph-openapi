@@ -1,0 +1,56 @@
+title: reportRoot
+required:
+  - '@odata.type'
+type: object
+properties:
+  authenticationMethods:
+    anyOf:
+      - $ref: .\microsoft.graph.authenticationMethodsRoot.yaml
+      - type: object
+        nullable: true
+    description: >-
+      Container for navigation properties for Microsoft Entra authentication
+      methods resources.
+    x-ms-navigationProperty: true
+  dailyPrintUsageByPrinter:
+    type: array
+    items:
+      $ref: .\microsoft.graph.printUsageByPrinter.yaml
+    description: Retrieve a list of daily print usage summaries, grouped by printer.
+    x-ms-navigationProperty: true
+  dailyPrintUsageByUser:
+    type: array
+    items:
+      $ref: .\microsoft.graph.printUsageByUser.yaml
+    description: Retrieve a list of daily print usage summaries, grouped by user.
+    x-ms-navigationProperty: true
+  monthlyPrintUsageByPrinter:
+    type: array
+    items:
+      $ref: .\microsoft.graph.printUsageByPrinter.yaml
+    description: Retrieve a list of monthly print usage summaries, grouped by printer.
+    x-ms-navigationProperty: true
+  monthlyPrintUsageByUser:
+    type: array
+    items:
+      $ref: .\microsoft.graph.printUsageByUser.yaml
+    description: Retrieve a list of monthly print usage summaries, grouped by user.
+    x-ms-navigationProperty: true
+  partners:
+    anyOf:
+      - $ref: .\microsoft.graph.partners.yaml
+      - type: object
+        nullable: true
+    description: Represents billing details for a Microsoft direct partner.
+    x-ms-navigationProperty: true
+  security:
+    anyOf:
+      - $ref: .\microsoft.graph.securityReportsRoot.yaml
+      - type: object
+        nullable: true
+    description: >-
+      Represents an abstract type that contains resources for attack simulation
+      and training reports.
+    x-ms-navigationProperty: true
+  '@odata.type':
+    type: string

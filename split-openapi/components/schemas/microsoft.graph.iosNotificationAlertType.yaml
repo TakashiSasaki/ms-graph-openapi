@@ -1,0 +1,24 @@
+title: iosNotificationAlertType
+enum:
+  - deviceDefault
+  - banner
+  - modal
+  - none
+type: string
+description: Notification Settings Alert Type.
+x-ms-enum:
+  name: iosNotificationAlertType
+  modelAsString: false
+  values:
+    - value: deviceDefault
+      description: Device default value, no intent.
+      name: deviceDefault
+    - value: banner
+      description: Banner.
+      name: banner
+    - value: modal
+      description: Modal.
+      name: modal
+    - value: none
+      description: None.
+      name: none

@@ -1,0 +1,13 @@
+title: unifiedRoleScheduleRequestActions
+enum:
+  - adminAssign
+  - adminUpdate
+  - adminRemove
+  - selfActivate
+  - selfDeactivate
+  - adminExtend
+  - adminRenew
+  - selfExtend
+  - selfRenew
+  - unknownFutureValue
+type: string

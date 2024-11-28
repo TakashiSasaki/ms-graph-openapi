@@ -1,0 +1,113 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: schedule
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      enabled:
+        type: boolean
+        description: Indicates whether the schedule is enabled for the team. Required.
+        nullable: true
+      offerShiftRequestsEnabled:
+        type: boolean
+        description: Indicates whether offer shift requests are enabled for the schedule.
+        nullable: true
+      openShiftsEnabled:
+        type: boolean
+        description: Indicates whether open shifts are enabled for the schedule.
+        nullable: true
+      provisionStatus:
+        anyOf:
+          - $ref: .\microsoft.graph.operationStatus.yaml
+          - type: object
+            nullable: true
+        description: >-
+          The status of the schedule provisioning. The possible values are
+          notStarted, running, completed, failed.
+        readOnly: true
+      provisionStatusCode:
+        type: string
+        description: Additional information about why schedule provisioning failed.
+        nullable: true
+        readOnly: true
+      swapShiftsRequestsEnabled:
+        type: boolean
+        description: Indicates whether swap shifts requests are enabled for the schedule.
+        nullable: true
+      timeClockEnabled:
+        type: boolean
+        description: Indicates whether time clock is enabled for the schedule.
+        nullable: true
+      timeOffRequestsEnabled:
+        type: boolean
+        description: Indicates whether time off requests are enabled for the schedule.
+        nullable: true
+      timeZone:
+        type: string
+        description: >-
+          Indicates the time zone of the schedule team using tz database format.
+          Required.
+        nullable: true
+      workforceIntegrationIds:
+        type: array
+        items:
+          type: string
+          nullable: true
+      offerShiftRequests:
+        type: array
+        items:
+          $ref: .\microsoft.graph.offerShiftRequest.yaml
+        description: The offer requests for shifts in the schedule.
+        x-ms-navigationProperty: true
+      openShiftChangeRequests:
+        type: array
+        items:
+          $ref: .\microsoft.graph.openShiftChangeRequest.yaml
+        description: The open shift requests in the schedule.
+        x-ms-navigationProperty: true
+      openShifts:
+        type: array
+        items:
+          $ref: .\microsoft.graph.openShift.yaml
+        description: The set of open shifts in a scheduling group in the schedule.
+        x-ms-navigationProperty: true
+      schedulingGroups:
+        type: array
+        items:
+          $ref: .\microsoft.graph.schedulingGroup.yaml
+        description: The logical grouping of users in the schedule (usually by role).
+        x-ms-navigationProperty: true
+      shifts:
+        type: array
+        items:
+          $ref: .\microsoft.graph.shift.yaml
+        description: The shifts in the schedule.
+        x-ms-navigationProperty: true
+      swapShiftsChangeRequests:
+        type: array
+        items:
+          $ref: .\microsoft.graph.swapShiftsChangeRequest.yaml
+        description: The swap requests for shifts in the schedule.
+        x-ms-navigationProperty: true
+      timeOffReasons:
+        type: array
+        items:
+          $ref: .\microsoft.graph.timeOffReason.yaml
+        description: The set of reasons for a time off in the schedule.
+        x-ms-navigationProperty: true
+      timeOffRequests:
+        type: array
+        items:
+          $ref: .\microsoft.graph.timeOffRequest.yaml
+        description: The time off requests in the schedule.
+        x-ms-navigationProperty: true
+      timesOff:
+        type: array
+        items:
+          $ref: .\microsoft.graph.timeOff.yaml
+        description: The instances of times off in the schedule.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.schedule'

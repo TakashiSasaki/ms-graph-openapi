@@ -1,0 +1,5 @@
+value:
+  appScope:
+    '@odata.type': microsoft.graph.oAuthAppScope
+  displayLogo: String
+  displayName: String

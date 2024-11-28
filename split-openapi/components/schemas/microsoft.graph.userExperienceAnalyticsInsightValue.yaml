@@ -1,0 +1,15 @@
+title: userExperienceAnalyticsInsightValue
+required:
+  - '@odata.type'
+type: object
+properties:
+  '@odata.type':
+    type: string
+description: The value in an user experience analytics insight.
+discriminator:
+  propertyName: '@odata.type'
+  mapping:
+    '#microsoft.graph.insightValueDouble': .\microsoft.graph.insightValueDouble.yaml
+    '#microsoft.graph.insightValueInt': .\microsoft.graph.insightValueInt.yaml
+    microsoft.graph.insightValueDouble: .\microsoft.graph.insightValueDouble.yaml
+    microsoft.graph.insightValueInt: .\microsoft.graph.insightValueInt.yaml

@@ -1,0 +1,22 @@
+allOf:
+  - $ref: .\microsoft.graph.onTokenIssuanceStartHandler.yaml
+  - title: onTokenIssuanceStartCustomExtensionHandler
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      configuration:
+        anyOf:
+          - $ref: .\microsoft.graph.customExtensionOverwriteConfiguration.yaml
+          - type: object
+            nullable: true
+      customExtension:
+        anyOf:
+          - $ref: .\microsoft.graph.onTokenIssuanceStartCustomExtension.yaml
+          - type: object
+            nullable: true
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.onTokenIssuanceStartCustomExtensionHandler'
+x-ms-discriminator-value: '#microsoft.graph.onTokenIssuanceStartCustomExtensionHandler'

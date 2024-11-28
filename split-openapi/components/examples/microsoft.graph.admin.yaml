@@ -1,0 +1,13 @@
+value:
+  edge:
+    '@odata.type': microsoft.graph.edge
+  microsoft365Apps:
+    '@odata.type': microsoft.graph.adminMicrosoft365Apps
+  people:
+    '@odata.type': microsoft.graph.peopleAdminSettings
+  reportSettings:
+    '@odata.type': microsoft.graph.adminReportSettings
+  serviceAnnouncement:
+    '@odata.type': microsoft.graph.serviceAnnouncement
+  sharepoint:
+    '@odata.type': microsoft.graph.sharepoint

@@ -1,0 +1,13 @@
+title: failureInfo
+required:
+  - '@odata.type'
+type: object
+properties:
+  reason:
+    type: string
+    description: Classification of why a call or portion of a call failed.
+    nullable: true
+  stage:
+    $ref: .\microsoft.graph.callRecords.failureStage.yaml
+  '@odata.type':
+    type: string

@@ -1,0 +1,53 @@
+allOf:
+  - $ref: .\microsoft.graph.customCalloutExtension.yaml
+  - title: customTaskExtension
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      callbackConfiguration:
+        anyOf:
+          - $ref: .\microsoft.graph.customExtensionCallbackConfiguration.yaml
+          - type: object
+            nullable: true
+        description: The callback configuration for a custom task extension.
+      createdDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: >-
+          When the custom task extension was created.Supports $filter(lt, le,
+          gt, ge, eq, ne) and $orderby.
+        format: date-time
+        nullable: true
+      lastModifiedDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: >-
+          When the custom extension was last modified.Supports $filter(lt, le,
+          gt, ge, eq, ne) and $orderby.
+        format: date-time
+        nullable: true
+      createdBy:
+        anyOf:
+          - $ref: .\microsoft.graph.user.yaml
+          - type: object
+            nullable: true
+        description: >-
+          The unique identifier of the Microsoft Entra user that created the
+          custom task extension.Supports $filter(eq, ne) and $expand.
+        x-ms-navigationProperty: true
+      lastModifiedBy:
+        anyOf:
+          - $ref: .\microsoft.graph.user.yaml
+          - type: object
+            nullable: true
+        description: >-
+          The unique identifier of the Microsoft Entra user that modified the
+          custom task extension last.Supports $filter(eq, ne) and $expand.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.identityGovernance.customTaskExtension'
+x-ms-discriminator-value: '#microsoft.graph.identityGovernance.customTaskExtension'

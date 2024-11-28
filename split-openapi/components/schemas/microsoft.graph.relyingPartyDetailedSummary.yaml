@@ -1,0 +1,77 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: relyingPartyDetailedSummary
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      failedSignInCount:
+        type: number
+        description: >-
+          Number of failed sign ins on AD FS in the period specified. Supports
+          $orderby, $filter (eq).
+        format: int64
+      migrationStatus:
+        $ref: .\microsoft.graph.migrationStatus.yaml
+      migrationValidationDetails:
+        type: array
+        items:
+          $ref: .\microsoft.graph.keyValuePair.yaml
+        description: >-
+          Specifies all the validations checks done on applications config
+          details.
+      relyingPartyId:
+        type: string
+        description: >-
+          Identifies the relying party to this federation service. It's used
+          when issuing claims to the relying party. Supports $orderby, $filter
+          (eq).
+      relyingPartyName:
+        type: string
+        description: >-
+          Name of the relying party's website or other entity on the Internet
+          that uses an identity provider to authenticate a user who wants to log
+          in. Supports $orderby, $filter (eq).
+      replyUrls:
+        type: array
+        items:
+          type: string
+        description: Specifies where the relying party expects to receive the token.
+      serviceId:
+        type: string
+        description: >-
+          Uniquely identifies the Active Directory forest. Supports $orderby,
+          $filter (eq).
+      signInSuccessRate:
+        oneOf:
+          - type: number
+            format: double
+            nullable: true
+          - type: string
+            nullable: true
+          - $ref: .\ReferenceNumeric.yaml
+        description: >-
+          Calculated as Number of successful / (Number of successful + Number of
+          failed sign ins) or successfulSignInCount / totalSignInCount on AD FS
+          in the period specified. Supports $orderby, $filter (eq).
+      successfulSignInCount:
+        type: number
+        description: >-
+          Number of successful sign ins on AD FS. Supports $orderby, $filter
+          (eq).
+        format: int64
+      totalSignInCount:
+        type: number
+        description: >-
+          Number of successful + failed sign ins on AD FS in the period
+          specified. Supports $orderby, $filter (eq).
+        format: int64
+      uniqueUserCount:
+        type: number
+        description: >-
+          Number of unique users that signed into the application. Supports
+          $orderby, $filter (eq).
+        format: int64
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.relyingPartyDetailedSummary'

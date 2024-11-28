@@ -1,0 +1,15 @@
+title: metaDataKeyStringPair
+required:
+  - '@odata.type'
+type: object
+properties:
+  key:
+    type: string
+    description: Key of the meta data.
+    nullable: true
+  value:
+    type: string
+    description: Value of the meta data.
+    nullable: true
+  '@odata.type':
+    type: string

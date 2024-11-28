@@ -1,0 +1,17 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: adminMicrosoft365Apps
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      installationOptions:
+        anyOf:
+          - $ref: .\microsoft.graph.m365AppsInstallationOptions.yaml
+          - type: object
+            nullable: true
+        description: A container for tenant-level settings for Microsoft 365 applications.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.adminMicrosoft365Apps'

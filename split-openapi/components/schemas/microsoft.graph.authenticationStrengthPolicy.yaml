@@ -1,0 +1,51 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: authenticationStrengthPolicy
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      allowedCombinations:
+        type: array
+        items:
+          $ref: .\microsoft.graph.authenticationMethodModes.yaml
+        description: >-
+          A collection of authentication method modes that are required be used
+          to satify this authentication strength.
+      createdDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: The datetime when this policy was created.
+        format: date-time
+      description:
+        type: string
+        description: The human-readable description of this policy.
+        nullable: true
+      displayName:
+        type: string
+        description: >-
+          The human-readable display name of this policy. Supports $filter (eq,
+          ne, not , and in).
+      modifiedDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: The datetime when this policy was last modified.
+        format: date-time
+      policyType:
+        $ref: .\microsoft.graph.authenticationStrengthPolicyType.yaml
+      requirementsSatisfied:
+        $ref: .\microsoft.graph.authenticationStrengthRequirements.yaml
+      combinationConfigurations:
+        type: array
+        items:
+          $ref: .\microsoft.graph.authenticationCombinationConfiguration.yaml
+        description: >-
+          Settings that may be used to require specific types or instances of an
+          authentication method to be used when authenticating with a specified
+          combination of authentication methods.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.authenticationStrengthPolicy'

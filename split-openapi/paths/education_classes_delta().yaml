@@ -1,0 +1,87 @@
+description: Provides operations to call the delta method.
+get:
+  tags:
+    - education.educationClass
+  summary: Invoke function delta
+  description: >-
+    Get newly created or updated classes, including membership changes, without
+    having to perform a full read of the entire class collection. See Use delta
+    query for details.
+  externalDocs:
+    description: Find more info here
+    url: >-
+      https://learn.microsoft.com/graph/api/educationclass-delta?view=graph-rest-1.0
+  operationId: education.classes.delta
+  parameters:
+    - $ref: ..\components\parameters\top.yaml
+    - $ref: ..\components\parameters\skip.yaml
+    - $ref: ..\components\parameters\search.yaml
+    - $ref: ..\components\parameters\filter.yaml
+    - $ref: ..\components\parameters\count.yaml
+    - name: $select
+      in: query
+      description: Select properties to be returned
+      style: form
+      explode: false
+      schema:
+        uniqueItems: true
+        type: array
+        items:
+          type: string
+    - name: $orderby
+      in: query
+      description: Order items by property values
+      style: form
+      explode: false
+      schema:
+        uniqueItems: true
+        type: array
+        items:
+          type: string
+    - name: $expand
+      in: query
+      description: Expand related entities
+      style: form
+      explode: false
+      schema:
+        uniqueItems: true
+        type: array
+        items:
+          type: string
+  responses:
+    2XX:
+      description: Success
+      content:
+        application/json:
+          schema:
+            title: Collection of educationClass
+            type: object
+            allOf:
+              - $ref: ..\components\schemas\BaseDeltaFunctionResponse.yaml
+              - type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: >-
+                        ..\components\schemas\microsoft.graph.educationClass.yaml
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: function
+  x-ms-pageable:
+    nextLinkName: '@odata.nextLink'
+    operationName: listMore
+x-ms-docs-grouped-path:
+  - /education/classes/{educationClass-id}/assignmentCategories/delta()
+  - >-
+    /education/classes/{educationClass-id}/assignments/{educationAssignment-id}/categories/delta()
+  - /education/classes/{educationClass-id}/assignments/delta()
+  - /education/me/assignments/{educationAssignment-id}/categories/delta()
+  - /education/me/assignments/delta()
+  - /education/schools/delta()
+  - >-
+    /education/users/{educationUser-id}/assignments/{educationAssignment-id}/categories/delta()
+  - /education/users/{educationUser-id}/assignments/delta()
+  - /education/users/delta()

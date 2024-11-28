@@ -1,0 +1,12 @@
+title: shareAction
+required:
+  - '@odata.type'
+type: object
+properties:
+  recipients:
+    type: array
+    items:
+      $ref: .\microsoft.graph.identitySet.yaml
+    description: The identities the item was shared with in this action.
+  '@odata.type':
+    type: string

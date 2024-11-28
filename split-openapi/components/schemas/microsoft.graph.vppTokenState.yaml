@@ -1,0 +1,28 @@
+title: vppTokenState
+enum:
+  - unknown
+  - valid
+  - expired
+  - invalid
+  - assignedToExternalMDM
+type: string
+description: Possible states associated with an Apple Volume Purchase Program token.
+x-ms-enum:
+  name: vppTokenState
+  modelAsString: false
+  values:
+    - value: unknown
+      description: Default state.
+      name: unknown
+    - value: valid
+      description: Token is valid.
+      name: valid
+    - value: expired
+      description: Token is expired.
+      name: expired
+    - value: invalid
+      description: Token is invalid.
+      name: invalid
+    - value: assignedToExternalMDM
+      description: Token is managed by another MDM Service.
+      name: assignedToExternalMDM

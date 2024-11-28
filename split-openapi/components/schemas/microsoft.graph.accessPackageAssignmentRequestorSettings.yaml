@@ -1,0 +1,48 @@
+title: accessPackageAssignmentRequestorSettings
+required:
+  - '@odata.type'
+type: object
+properties:
+  allowCustomAssignmentSchedule:
+    type: boolean
+    description: >-
+      False indicates that the requestor isn't permitted to include a schedule
+      in their request.
+    nullable: true
+  enableOnBehalfRequestorsToAddAccess:
+    type: boolean
+    description: >-
+      True allows on-behalf-of requestors to create a request to add access for
+      another principal.
+    nullable: true
+  enableOnBehalfRequestorsToRemoveAccess:
+    type: boolean
+    description: >-
+      True allows on-behalf-of requestors to create a request to remove access
+      for another principal.
+    nullable: true
+  enableOnBehalfRequestorsToUpdateAccess:
+    type: boolean
+    description: >-
+      True allows on-behalf-of requestors to create a request to update access
+      for another principal.
+    nullable: true
+  enableTargetsToSelfAddAccess:
+    type: boolean
+    description: True allows requestors to create a request to add access for themselves.
+    nullable: true
+  enableTargetsToSelfRemoveAccess:
+    type: boolean
+    description: True allows requestors to create a request to remove their access.
+    nullable: true
+  enableTargetsToSelfUpdateAccess:
+    type: boolean
+    description: True allows requestors to create a request to update their access.
+    nullable: true
+  onBehalfRequestors:
+    type: array
+    items:
+      $ref: .\microsoft.graph.subjectSet.yaml
+    description: The principals who can request on-behalf-of others.
+  '@odata.type':
+    type: string

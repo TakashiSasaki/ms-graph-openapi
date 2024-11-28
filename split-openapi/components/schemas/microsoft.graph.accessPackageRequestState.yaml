@@ -1,0 +1,13 @@
+title: accessPackageRequestState
+enum:
+  - submitted
+  - pendingApproval
+  - delivering
+  - delivered
+  - deliveryFailed
+  - denied
+  - scheduled
+  - canceled
+  - partiallyDelivered
+  - unknownFutureValue
+type: string

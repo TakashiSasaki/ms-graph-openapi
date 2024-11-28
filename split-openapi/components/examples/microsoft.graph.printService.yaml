@@ -1,0 +1,3 @@
+value:
+  endpoints:
+    - '@odata.type': microsoft.graph.printServiceEndpoint

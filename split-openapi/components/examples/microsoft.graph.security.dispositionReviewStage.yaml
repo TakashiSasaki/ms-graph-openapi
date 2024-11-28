@@ -1,0 +1,5 @@
+value:
+  name: String
+  reviewersEmailAddresses:
+    - String
+  stageNumber: String (identifier)

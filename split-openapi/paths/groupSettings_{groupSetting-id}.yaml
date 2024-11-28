@@ -1,0 +1,108 @@
+description: Provides operations to manage the collection of groupSetting entities.
+get:
+  tags:
+    - groupSettings.groupSetting
+  summary: Get groupSetting
+  description: >-
+    Retrieve the properties of a specific group setting object. The setting can
+    be a tenant-level or group-specific setting.
+  externalDocs:
+    description: Find more info here
+    url: https://learn.microsoft.com/graph/api/groupsetting-get?view=graph-rest-1.0
+  operationId: groupSettings.groupSetting.GetGroupSetting
+  parameters:
+    - name: $select
+      in: query
+      description: Select properties to be returned
+      style: form
+      explode: false
+      schema:
+        uniqueItems: true
+        type: array
+        items:
+          type: string
+    - name: $expand
+      in: query
+      description: Expand related entities
+      style: form
+      explode: false
+      schema:
+        uniqueItems: true
+        type: array
+        items:
+          type: string
+  responses:
+    2XX:
+      description: Retrieved entity
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\microsoft.graph.groupSetting.yaml
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: operation
+patch:
+  tags:
+    - groupSettings.groupSetting
+  summary: Update groupSetting
+  description: >-
+    Update the properties of a groupSetting object for tenant-wide group
+    settings or a specific group setting.
+  externalDocs:
+    description: Find more info here
+    url: >-
+      https://learn.microsoft.com/graph/api/groupsetting-update?view=graph-rest-1.0
+  operationId: groupSettings.groupSetting.UpdateGroupSetting
+  requestBody:
+    description: New property values
+    content:
+      application/json:
+        schema:
+          $ref: ..\components\schemas\microsoft.graph.groupSetting.yaml
+    required: true
+  responses:
+    2XX:
+      description: Success
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\microsoft.graph.groupSetting.yaml
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: operation
+delete:
+  tags:
+    - groupSettings.groupSetting
+  summary: Delete a group setting
+  description: Delete a tenant-level or group-specific groupSetting object.
+  externalDocs:
+    description: Find more info here
+    url: >-
+      https://learn.microsoft.com/graph/api/groupsetting-delete?view=graph-rest-1.0
+  operationId: groupSettings.groupSetting.DeleteGroupSetting
+  parameters:
+    - name: If-Match
+      in: header
+      description: ETag
+      schema:
+        type: string
+  responses:
+    '204':
+      description: Success
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: operation
+parameters:
+  - name: groupSetting-id
+    in: path
+    description: The unique identifier of groupSetting
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: groupSetting

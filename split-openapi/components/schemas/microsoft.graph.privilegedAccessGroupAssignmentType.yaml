@@ -1,0 +1,6 @@
+title: privilegedAccessGroupAssignmentType
+enum:
+  - assigned
+  - activated
+  - unknownFutureValue
+type: string

@@ -1,0 +1,18 @@
+title: parameter
+required:
+  - '@odata.type'
+type: object
+properties:
+  name:
+    type: string
+    description: The name of the parameter.
+  values:
+    type: array
+    items:
+      type: string
+      nullable: true
+    description: The values of the parameter.
+  valueType:
+    $ref: .\microsoft.graph.identityGovernance.valueType.yaml
+  '@odata.type':
+    type: string

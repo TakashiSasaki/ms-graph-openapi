@@ -1,0 +1,19 @@
+value:
+  aliases:
+    - String
+  countriesOrRegionsOfOrigin:
+    - '@odata.type': microsoft.graph.security.intelligenceProfileCountryOrRegionOfOrigin
+  description:
+    '@odata.type': microsoft.graph.security.formattedContent
+  firstActiveDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  indicators:
+    - '@odata.type': microsoft.graph.security.intelligenceProfileIndicator
+  kind:
+    '@odata.type': microsoft.graph.security.intelligenceProfileKind
+  summary:
+    '@odata.type': microsoft.graph.security.formattedContent
+  targets:
+    - String
+  title: String
+  tradecraft:
+    '@odata.type': microsoft.graph.security.formattedContent

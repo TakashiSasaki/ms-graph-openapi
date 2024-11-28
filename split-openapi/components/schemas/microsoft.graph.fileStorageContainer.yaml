@@ -1,0 +1,75 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: fileStorageContainer
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      containerTypeId:
+        pattern: >-
+          ^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$
+        type: string
+        description: >-
+          Container type ID of the fileStorageContainer. For details about
+          container types, see Container Types. Each container must have only
+          one container type. Read-only.
+        format: uuid
+      createdDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: Date and time of the fileStorageContainer creation. Read-only.
+        format: date-time
+      customProperties:
+        anyOf:
+          - $ref: >-
+              .\microsoft.graph.fileStorageContainerCustomPropertyDictionary.yaml
+          - type: object
+            nullable: true
+        description: Custom property collection for the fileStorageContainer. Read-write.
+      description:
+        type: string
+        description: >-
+          Provides a user-visible description of the fileStorageContainer.
+          Read-write.
+        nullable: true
+      displayName:
+        type: string
+        description: The display name of the fileStorageContainer. Read-write.
+      settings:
+        $ref: .\microsoft.graph.fileStorageContainerSettings.yaml
+      status:
+        anyOf:
+          - $ref: .\microsoft.graph.fileStorageContainerStatus.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Status of the fileStorageContainer. Containers are created as inactive
+          and require activation. Inactive containers are subjected to automatic
+          deletion in 24 hours. The possible values are: inactive, active.
+          Read-only.
+      viewpoint:
+        anyOf:
+          - $ref: .\microsoft.graph.fileStorageContainerViewpoint.yaml
+          - type: object
+            nullable: true
+        description: Data specific to the current user. Read-only.
+      drive:
+        anyOf:
+          - $ref: .\microsoft.graph.drive.yaml
+          - type: object
+            nullable: true
+        description: The drive of the resource fileStorageContainer. Read-only.
+        x-ms-navigationProperty: true
+      permissions:
+        type: array
+        items:
+          $ref: .\microsoft.graph.permission.yaml
+        description: >-
+          The set of permissions for users in the fileStorageContainer.
+          Permission for each user is set by the roles property. The possible
+          values are: reader, writer, manager, and owner. Read-write.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.fileStorageContainer'

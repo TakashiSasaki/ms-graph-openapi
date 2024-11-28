@@ -1,0 +1,15 @@
+description: Action parameters
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        InputIds:
+          type: array
+          items:
+            type: string
+        TargetIdType:
+          $ref: ..\schemas\microsoft.graph.exchangeIdFormat.yaml
+        SourceIdType:
+          $ref: ..\schemas\microsoft.graph.exchangeIdFormat.yaml
+required: true

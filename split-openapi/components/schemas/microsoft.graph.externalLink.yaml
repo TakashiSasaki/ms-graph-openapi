@@ -1,0 +1,11 @@
+title: externalLink
+required:
+  - '@odata.type'
+type: object
+properties:
+  href:
+    type: string
+    description: The URL of the link.
+    nullable: true
+  '@odata.type':
+    type: string

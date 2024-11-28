@@ -1,0 +1,13 @@
+title: phoneType
+enum:
+  - home
+  - business
+  - mobile
+  - other
+  - assistant
+  - homeFax
+  - businessFax
+  - otherFax
+  - pager
+  - radio
+type: string

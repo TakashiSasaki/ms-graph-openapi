@@ -1,0 +1,13 @@
+value:
+  apps:
+    - '@odata.type': microsoft.graph.managedMobileApp
+  customBrowserDisplayName: String
+  customBrowserPackageId: String
+  deployedAppCount: '0'
+  deploymentSummary:
+    '@odata.type': microsoft.graph.managedAppPolicyDeploymentSummary
+  disableAppEncryptionIfDeviceEncryptionIsEnabled: 'true'
+  encryptAppData: 'true'
+  minimumRequiredPatchVersion: String
+  minimumWarningPatchVersion: String
+  screenCaptureBlocked: 'true'

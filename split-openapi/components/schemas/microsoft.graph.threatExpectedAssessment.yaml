@@ -1,0 +1,5 @@
+title: threatExpectedAssessment
+enum:
+  - block
+  - unblock
+type: string

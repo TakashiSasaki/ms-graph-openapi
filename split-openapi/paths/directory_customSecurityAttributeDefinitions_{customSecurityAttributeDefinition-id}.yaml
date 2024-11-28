@@ -1,0 +1,107 @@
+description: >-
+  Provides operations to manage the customSecurityAttributeDefinitions property
+  of the microsoft.graph.directory entity.
+get:
+  tags:
+    - directory.customSecurityAttributeDefinition
+  summary: Get customSecurityAttributeDefinition
+  description: >-
+    Read the properties and relationships of a customSecurityAttributeDefinition
+    object.
+  externalDocs:
+    description: Find more info here
+    url: >-
+      https://learn.microsoft.com/graph/api/customsecurityattributedefinition-get?view=graph-rest-1.0
+  operationId: directory.GetCustomSecurityAttributeDefinitions
+  parameters:
+    - name: $select
+      in: query
+      description: Select properties to be returned
+      style: form
+      explode: false
+      schema:
+        uniqueItems: true
+        type: array
+        items:
+          type: string
+    - name: $expand
+      in: query
+      description: Expand related entities
+      style: form
+      explode: false
+      schema:
+        uniqueItems: true
+        type: array
+        items:
+          type: string
+  responses:
+    2XX:
+      description: Retrieved navigation property
+      content:
+        application/json:
+          schema:
+            $ref: >-
+              ..\components\schemas\microsoft.graph.customSecurityAttributeDefinition.yaml
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: operation
+patch:
+  tags:
+    - directory.customSecurityAttributeDefinition
+  summary: Update customSecurityAttributeDefinition
+  description: Update the properties of a customSecurityAttributeDefinition object.
+  externalDocs:
+    description: Find more info here
+    url: >-
+      https://learn.microsoft.com/graph/api/customsecurityattributedefinition-update?view=graph-rest-1.0
+  operationId: directory.UpdateCustomSecurityAttributeDefinitions
+  requestBody:
+    description: New navigation property values
+    content:
+      application/json:
+        schema:
+          $ref: >-
+            ..\components\schemas\microsoft.graph.customSecurityAttributeDefinition.yaml
+    required: true
+  responses:
+    2XX:
+      description: Success
+      content:
+        application/json:
+          schema:
+            $ref: >-
+              ..\components\schemas\microsoft.graph.customSecurityAttributeDefinition.yaml
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: operation
+delete:
+  tags:
+    - directory.customSecurityAttributeDefinition
+  summary: Delete navigation property customSecurityAttributeDefinitions for directory
+  operationId: directory.DeleteCustomSecurityAttributeDefinitions
+  parameters:
+    - name: If-Match
+      in: header
+      description: ETag
+      schema:
+        type: string
+  responses:
+    '204':
+      description: Success
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: operation
+parameters:
+  - name: customSecurityAttributeDefinition-id
+    in: path
+    description: The unique identifier of customSecurityAttributeDefinition
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: customSecurityAttributeDefinition

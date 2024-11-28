@@ -1,0 +1,21 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: filterOperatorSchema
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      arity:
+        $ref: .\microsoft.graph.scopeOperatorType.yaml
+      multivaluedComparisonType:
+        $ref: .\microsoft.graph.scopeOperatorMultiValuedComparisonType.yaml
+      supportedAttributeTypes:
+        type: array
+        items:
+          $ref: .\microsoft.graph.attributeType.yaml
+        description: >-
+          Attribute types supported by the operator. Possible values are:
+          Boolean, Binary, Reference, Integer, String.
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.filterOperatorSchema'

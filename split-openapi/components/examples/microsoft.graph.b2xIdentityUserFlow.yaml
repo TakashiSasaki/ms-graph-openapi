@@ -1,0 +1,11 @@
+value:
+  apiConnectorConfiguration:
+    '@odata.type': microsoft.graph.userFlowApiConnectorConfiguration
+  identityProviders:
+    - '@odata.type': microsoft.graph.identityProvider
+  languages:
+    - '@odata.type': microsoft.graph.userFlowLanguageConfiguration
+  userAttributeAssignments:
+    - '@odata.type': microsoft.graph.identityUserFlowAttributeAssignment
+  userFlowIdentityProviders:
+    - '@odata.type': microsoft.graph.identityProviderBase

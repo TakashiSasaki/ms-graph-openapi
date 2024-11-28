@@ -1,0 +1,12 @@
+title: registryHive
+enum:
+  - unknown
+  - currentConfig
+  - currentUser
+  - localMachineSam
+  - localMachineSecurity
+  - localMachineSoftware
+  - localMachineSystem
+  - usersDefault
+  - unknownFutureValue
+type: string

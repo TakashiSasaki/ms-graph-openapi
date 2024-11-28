@@ -1,0 +1,15 @@
+allOf:
+  - $ref: .\microsoft.graph.authenticationMethod.yaml
+  - title: softwareOathAuthenticationMethod
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      secretKey:
+        type: string
+        description: The secret key of the method. Always returns null.
+        nullable: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.softwareOathAuthenticationMethod'
+x-ms-discriminator-value: '#microsoft.graph.softwareOathAuthenticationMethod'

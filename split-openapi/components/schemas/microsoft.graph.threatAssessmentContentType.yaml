@@ -1,0 +1,6 @@
+title: threatAssessmentContentType
+enum:
+  - mail
+  - url
+  - file
+type: string

@@ -1,0 +1,20 @@
+value:
+  columns:
+    - '@odata.type': microsoft.graph.columnDefinition
+  contentTypes:
+    - '@odata.type': microsoft.graph.contentType
+  displayName: String
+  drive:
+    '@odata.type': microsoft.graph.drive
+  items:
+    - '@odata.type': microsoft.graph.listItem
+  list:
+    '@odata.type': microsoft.graph.listInfo
+  operations:
+    - '@odata.type': microsoft.graph.richLongRunningOperation
+  sharepointIds:
+    '@odata.type': microsoft.graph.sharepointIds
+  subscriptions:
+    - '@odata.type': microsoft.graph.subscription
+  system:
+    '@odata.type': microsoft.graph.systemFacet

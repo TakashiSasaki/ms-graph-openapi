@@ -1,0 +1,4 @@
+value:
+  assignments:
+    - '@odata.type': microsoft.graph.targetedManagedAppPolicyAssignment
+  isAssigned: 'true'

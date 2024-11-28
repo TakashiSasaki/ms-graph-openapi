@@ -1,0 +1,9 @@
+value:
+  applicableDeviceType:
+    '@odata.type': microsoft.graph.iosDeviceType
+  buildNumber: String
+  bundleId: String
+  expirationDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  minimumSupportedOperatingSystem:
+    '@odata.type': microsoft.graph.iosMinimumOperatingSystem
+  versionNumber: String

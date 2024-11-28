@@ -1,0 +1,10 @@
+title: processIntegrityLevel
+enum:
+  - unknown
+  - untrusted
+  - low
+  - medium
+  - high
+  - system
+  - unknownFutureValue
+type: string

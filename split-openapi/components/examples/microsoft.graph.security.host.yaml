@@ -1,0 +1,29 @@
+value:
+  childHostPairs:
+    - '@odata.type': microsoft.graph.security.hostPair
+  components:
+    - '@odata.type': microsoft.graph.security.hostComponent
+  cookies:
+    - '@odata.type': microsoft.graph.security.hostCookie
+  firstSeenDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  hostPairs:
+    - '@odata.type': microsoft.graph.security.hostPair
+  lastSeenDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  parentHostPairs:
+    - '@odata.type': microsoft.graph.security.hostPair
+  passiveDns:
+    - '@odata.type': microsoft.graph.security.passiveDnsRecord
+  passiveDnsReverse:
+    - '@odata.type': microsoft.graph.security.passiveDnsRecord
+  ports:
+    - '@odata.type': microsoft.graph.security.hostPort
+  reputation:
+    '@odata.type': microsoft.graph.security.hostReputation
+  sslCertificates:
+    - '@odata.type': microsoft.graph.security.hostSslCertificate
+  subdomains:
+    - '@odata.type': microsoft.graph.security.subdomain
+  trackers:
+    - '@odata.type': microsoft.graph.security.hostTracker
+  whois:
+    '@odata.type': microsoft.graph.security.whoisRecord

@@ -1,0 +1,112 @@
+description: >-
+  Provides operations to manage the members property of the
+  microsoft.graph.externalConnectors.externalGroup entity.
+get:
+  tags:
+    - connections.externalGroup
+  summary: Get members from connections
+  description: >-
+    A member added to an externalGroup. You can add Microsoft Entra users,
+    Microsoft Entra groups, or an externalGroup as members.
+  operationId: connections.groups.GetMembers
+  parameters:
+    - name: $select
+      in: query
+      description: Select properties to be returned
+      style: form
+      explode: false
+      schema:
+        uniqueItems: true
+        type: array
+        items:
+          type: string
+    - name: $expand
+      in: query
+      description: Expand related entities
+      style: form
+      explode: false
+      schema:
+        uniqueItems: true
+        type: array
+        items:
+          type: string
+  responses:
+    2XX:
+      description: Retrieved navigation property
+      content:
+        application/json:
+          schema:
+            $ref: >-
+              ..\components\schemas\microsoft.graph.externalConnectors.identity.yaml
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: operation
+patch:
+  tags:
+    - connections.externalGroup
+  summary: Update the navigation property members in connections
+  operationId: connections.groups.UpdateMembers
+  requestBody:
+    description: New navigation property values
+    content:
+      application/json:
+        schema:
+          $ref: >-
+            ..\components\schemas\microsoft.graph.externalConnectors.identity.yaml
+    required: true
+  responses:
+    2XX:
+      description: Success
+      content:
+        application/json:
+          schema:
+            $ref: >-
+              ..\components\schemas\microsoft.graph.externalConnectors.identity.yaml
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: operation
+delete:
+  tags:
+    - connections.externalGroup
+  summary: Delete navigation property members for connections
+  operationId: connections.groups.DeleteMembers
+  parameters:
+    - name: If-Match
+      in: header
+      description: ETag
+      schema:
+        type: string
+  responses:
+    '204':
+      description: Success
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: operation
+parameters:
+  - name: externalConnection-id
+    in: path
+    description: The unique identifier of externalConnection
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: externalConnection
+  - name: externalGroup-id
+    in: path
+    description: The unique identifier of externalGroup
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: externalGroup
+  - name: identity-id
+    in: path
+    description: The unique identifier of identity
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: identity

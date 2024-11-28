@@ -1,0 +1,31 @@
+value:
+  additionalInformation: String
+  createdDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  customQuestions:
+    - '@odata.type': microsoft.graph.bookingQuestionAssignment
+  defaultDuration: Duration
+  defaultLocation:
+    '@odata.type': microsoft.graph.location
+  defaultPrice: '0'
+  defaultPriceType:
+    '@odata.type': microsoft.graph.bookingPriceType
+  defaultReminders:
+    - '@odata.type': microsoft.graph.bookingReminder
+  description: String
+  displayName: String
+  isAnonymousJoinEnabled: 'true'
+  isCustomerAllowedToManageBooking: 'true'
+  isHiddenFromCustomers: 'true'
+  isLocationOnline: 'true'
+  languageTag: String
+  lastUpdatedDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  maximumAttendeesCount: '0'
+  notes: String
+  postBuffer: Duration
+  preBuffer: Duration
+  schedulingPolicy:
+    '@odata.type': microsoft.graph.bookingSchedulingPolicy
+  smsNotificationsEnabled: 'true'
+  staffMemberIds:
+    - String
+  webUrl: String

@@ -1,0 +1,20 @@
+title: deviceManagementPartnerAppType
+enum:
+  - unknown
+  - singleTenantApp
+  - multiTenantApp
+type: string
+description: Partner App Type.
+x-ms-enum:
+  name: deviceManagementPartnerAppType
+  modelAsString: false
+  values:
+    - value: unknown
+      description: Partner App type is unknown.
+      name: unknown
+    - value: singleTenantApp
+      description: Partner App is Single tenant in AAD.
+      name: singleTenantApp
+    - value: multiTenantApp
+      description: Partner App is Multi tenant in AAD.
+      name: multiTenantApp

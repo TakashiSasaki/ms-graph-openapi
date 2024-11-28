@@ -1,0 +1,5 @@
+value:
+  containerId: String
+  type:
+    '@odata.type': microsoft.graph.plannerContainerType
+  url: String

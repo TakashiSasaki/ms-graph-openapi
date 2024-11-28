@@ -1,0 +1,17 @@
+title: appsInstallationOptionsForMac
+required:
+  - '@odata.type'
+type: object
+properties:
+  isMicrosoft365AppsEnabled:
+    type: boolean
+    description: >-
+      Specifies whether users can install Microsoft 365 apps on their MAC
+      devices. The default value is true.
+  isSkypeForBusinessEnabled:
+    type: boolean
+    description: >-
+      Specifies whether users can install Skype for Business on their MAC
+      devices running OS X El Capitan 10.11 or later. The default value is true.
+  '@odata.type':
+    type: string

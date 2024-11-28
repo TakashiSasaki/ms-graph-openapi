@@ -1,0 +1,5 @@
+value:
+  displayName: String
+  modifiedProperties:
+    - '@odata.type': microsoft.graph.cloudPcAuditProperty
+  resourceId: String

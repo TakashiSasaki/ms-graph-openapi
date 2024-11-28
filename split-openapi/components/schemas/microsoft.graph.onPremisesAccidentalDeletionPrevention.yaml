@@ -1,0 +1,27 @@
+title: onPremisesAccidentalDeletionPrevention
+required:
+  - '@odata.type'
+type: object
+properties:
+  alertThreshold:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    description: >-
+      Threshold value which triggers accidental deletion prevention. The
+      threshold is either an absolute number of objects or a percentage number
+      of objects.
+    format: int32
+    nullable: true
+  synchronizationPreventionType:
+    anyOf:
+      - $ref: >-
+          .\microsoft.graph.onPremisesDirectorySynchronizationDeletionPreventionType.yaml
+      - type: object
+        nullable: true
+    description: >-
+      The status of the accidental deletion prevention feature. The possible
+      values are: disabled, enabledForCount, enabledForPercentage,
+      unknownFutureValue.
+  '@odata.type':
+    type: string

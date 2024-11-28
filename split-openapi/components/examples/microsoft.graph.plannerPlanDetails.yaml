@@ -1,0 +1,5 @@
+value:
+  categoryDescriptions:
+    '@odata.type': microsoft.graph.plannerCategoryDescriptions
+  sharedWith:
+    '@odata.type': microsoft.graph.plannerUserIds

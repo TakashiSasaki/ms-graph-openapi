@@ -1,0 +1,3 @@
+value:
+  userTypeToCreate:
+    '@odata.type': microsoft.graph.userType

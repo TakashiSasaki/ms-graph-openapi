@@ -1,0 +1,19 @@
+allOf:
+  - $ref: .\microsoft.graph.subjectSet.yaml
+  - title: groupMembers
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      description:
+        type: string
+        description: The name of the group in Microsoft Entra ID. Read only.
+        nullable: true
+      groupId:
+        type: string
+        description: The ID of the group in Microsoft Entra ID.
+        nullable: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.groupMembers'
+x-ms-discriminator-value: '#microsoft.graph.groupMembers'

@@ -1,0 +1,11 @@
+value:
+  allowCustomAssignmentSchedule: 'true'
+  isApprovalRequiredForAdd: 'true'
+  isApprovalRequiredForUpdate: 'true'
+  policyDescription: String
+  policyDisplayName: String
+  policyId: String
+  questions:
+    - '@odata.type': microsoft.graph.accessPackageQuestion
+  schedule:
+    '@odata.type': microsoft.graph.entitlementManagementSchedule

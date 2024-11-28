@@ -1,0 +1,15 @@
+title: printCertificateSigningRequest
+required:
+  - '@odata.type'
+type: object
+properties:
+  content:
+    type: string
+    description: A base64-encoded pkcs10 certificate request. Read-only.
+  transportKey:
+    type: string
+    description: >-
+      The base64-encoded public portion of an asymmetric key that is generated
+      by the client. Read-only.
+  '@odata.type':
+    type: string

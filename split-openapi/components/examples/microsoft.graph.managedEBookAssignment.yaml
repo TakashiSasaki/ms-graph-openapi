@@ -1,0 +1,5 @@
+value:
+  installIntent:
+    '@odata.type': microsoft.graph.installIntent
+  target:
+    '@odata.type': microsoft.graph.deviceAndAppManagementAssignmentTarget

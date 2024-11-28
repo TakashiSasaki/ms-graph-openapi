@@ -1,0 +1,15 @@
+allOf:
+  - $ref: .\microsoft.graph.security.alertEvidence.yaml
+  - title: containerRegistryEvidence
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      registry:
+        type: string
+        description: The registry URI.
+        nullable: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.security.containerRegistryEvidence'
+x-ms-discriminator-value: '#microsoft.graph.security.containerRegistryEvidence'

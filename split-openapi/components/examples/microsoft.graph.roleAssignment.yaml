@@ -1,0 +1,7 @@
+value:
+  description: String
+  displayName: String
+  resourceScopes:
+    - String
+  roleDefinition:
+    '@odata.type': microsoft.graph.roleDefinition

@@ -1,0 +1,52 @@
+title: unifiedRoleManagementPolicyRuleTarget
+required:
+  - '@odata.type'
+type: object
+properties:
+  caller:
+    type: string
+    description: >-
+      The type of caller that's the target of the policy rule. Allowed values
+      are: None, Admin, EndUser.
+    nullable: true
+  enforcedSettings:
+    type: array
+    items:
+      type: string
+      nullable: true
+    description: >-
+      The list of role settings that are enforced and cannot be overridden by
+      child scopes. Use All for all settings.
+  inheritableSettings:
+    type: array
+    items:
+      type: string
+      nullable: true
+    description: >-
+      The list of role settings that can be inherited by child scopes. Use All
+      for all settings.
+  level:
+    type: string
+    description: >-
+      The role assignment type that's the target of policy rule. Allowed values
+      are: Eligibility, Assignment.
+    nullable: true
+  operations:
+    type: array
+    items:
+      anyOf:
+        - $ref: >-
+            .\microsoft.graph.unifiedRoleManagementPolicyRuleTargetOperations.yaml
+        - type: object
+          nullable: true
+    description: >-
+      The role management operations that are the target of the policy rule.
+      Allowed values are: All, Activate, Deactivate, Assign, Update, Remove,
+      Extend, Renew.
+  targetObjects:
+    type: array
+    items:
+      $ref: .\microsoft.graph.directoryObject.yaml
+    x-ms-navigationProperty: true
+  '@odata.type':
+    type: string

@@ -1,0 +1,8 @@
+title: alertClassification
+enum:
+  - unknown
+  - falsePositive
+  - truePositive
+  - informationalExpectedActivity
+  - unknownFutureValue
+type: string

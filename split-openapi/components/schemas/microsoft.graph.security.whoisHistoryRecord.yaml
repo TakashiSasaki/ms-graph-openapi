@@ -1,0 +1,11 @@
+allOf:
+  - $ref: .\microsoft.graph.security.whoisBaseRecord.yaml
+  - title: whoisHistoryRecord
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.security.whoisHistoryRecord'
+x-ms-discriminator-value: '#microsoft.graph.security.whoisHistoryRecord'

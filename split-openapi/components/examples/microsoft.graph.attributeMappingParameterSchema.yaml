@@ -1,0 +1,6 @@
+value:
+  allowMultipleOccurrences: 'true'
+  name: String
+  required: 'true'
+  type:
+    '@odata.type': microsoft.graph.attributeType

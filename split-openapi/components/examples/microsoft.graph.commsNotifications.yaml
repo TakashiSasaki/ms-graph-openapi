@@ -1,0 +1,3 @@
+value:
+  value:
+    - '@odata.type': microsoft.graph.commsNotification

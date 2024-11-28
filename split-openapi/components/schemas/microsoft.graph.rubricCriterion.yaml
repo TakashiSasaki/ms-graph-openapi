@@ -1,0 +1,13 @@
+title: rubricCriterion
+required:
+  - '@odata.type'
+type: object
+properties:
+  description:
+    anyOf:
+      - $ref: .\microsoft.graph.educationItemBody.yaml
+      - type: object
+        nullable: true
+    description: The description of this criterion.
+  '@odata.type':
+    type: string

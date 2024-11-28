@@ -1,0 +1,7 @@
+value:
+  isAnswerEditable: 'true'
+  isRequired: 'true'
+  localizations:
+    - '@odata.type': microsoft.graph.accessPackageLocalizedText
+  sequence: '0'
+  text: String

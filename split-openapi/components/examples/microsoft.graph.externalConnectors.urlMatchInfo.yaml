@@ -1,0 +1,4 @@
+value:
+  baseUrls:
+    - String
+  urlPattern: String

@@ -1,0 +1,8 @@
+title: onlineMeetingRole
+enum:
+  - attendee
+  - presenter
+  - unknownFutureValue
+  - producer
+  - coorganizer
+type: string

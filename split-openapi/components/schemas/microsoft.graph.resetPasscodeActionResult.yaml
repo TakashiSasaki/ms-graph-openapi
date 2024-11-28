@@ -1,0 +1,21 @@
+allOf:
+  - $ref: .\microsoft.graph.deviceActionResult.yaml
+  - title: resetPasscodeActionResult
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      errorCode:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: RotateBitLockerKeys action error code. Valid values 0 to 2147483647
+        format: int32
+      passcode:
+        type: string
+        description: Newly generated passcode for the device
+        nullable: true
+      '@odata.type':
+        type: string
+    description: Reset passcode action result
+x-ms-discriminator-value: '#microsoft.graph.resetPasscodeActionResult'

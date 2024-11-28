@@ -1,0 +1,14 @@
+allOf:
+  - $ref: .\microsoft.graph.mobileApp.yaml
+  - title: macOSOfficeSuiteApp
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.macOSOfficeSuiteApp'
+    description: >-
+      Contains properties and inherited properties for the MacOS Office Suite
+      App.
+x-ms-discriminator-value: '#microsoft.graph.macOSOfficeSuiteApp'

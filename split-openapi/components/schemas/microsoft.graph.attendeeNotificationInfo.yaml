@@ -1,0 +1,17 @@
+title: attendeeNotificationInfo
+required:
+  - '@odata.type'
+type: object
+properties:
+  phoneNumber:
+    type: string
+    description: The phone number of the external attendee. Required.
+    nullable: true
+  timeZone:
+    type: string
+    description: >-
+      The time zone of the external attendee. The timeZone property can be set
+      to any of the time zones currently supported by Windows. Required.
+    nullable: true
+  '@odata.type':
+    type: string

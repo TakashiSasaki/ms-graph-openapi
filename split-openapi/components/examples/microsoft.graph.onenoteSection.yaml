@@ -1,0 +1,11 @@
+value:
+  isDefault: 'true'
+  links:
+    '@odata.type': microsoft.graph.sectionLinks
+  pages:
+    - '@odata.type': microsoft.graph.onenotePage
+  pagesUrl: String
+  parentNotebook:
+    '@odata.type': microsoft.graph.notebook
+  parentSectionGroup:
+    '@odata.type': microsoft.graph.sectionGroup

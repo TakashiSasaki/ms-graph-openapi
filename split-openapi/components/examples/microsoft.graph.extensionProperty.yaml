@@ -1,0 +1,8 @@
+value:
+  appDisplayName: String
+  dataType: String
+  isMultiValued: 'true'
+  isSyncedFromOnPremises: 'true'
+  name: String
+  targetObjects:
+    - String

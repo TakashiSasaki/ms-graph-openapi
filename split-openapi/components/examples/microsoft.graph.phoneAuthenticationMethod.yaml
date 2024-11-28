@@ -1,0 +1,6 @@
+value:
+  phoneNumber: String
+  phoneType:
+    '@odata.type': microsoft.graph.authenticationPhoneType
+  smsSignInState:
+    '@odata.type': microsoft.graph.authenticationMethodSignInState

@@ -1,0 +1,14 @@
+title: delegatedAdminAccessDetails
+required:
+  - '@odata.type'
+type: object
+properties:
+  unifiedRoles:
+    type: array
+    items:
+      $ref: .\microsoft.graph.unifiedRole.yaml
+    description: >-
+      The directory roles that the Microsoft partner is assigned in the customer
+      tenant.
+  '@odata.type':
+    type: string

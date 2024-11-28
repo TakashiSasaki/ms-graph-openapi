@@ -1,0 +1,20 @@
+title: simulationReport
+required:
+  - '@odata.type'
+type: object
+properties:
+  overview:
+    anyOf:
+      - $ref: .\microsoft.graph.simulationReportOverview.yaml
+      - type: object
+        nullable: true
+    description: Overview of an attack simulation and training campaign.
+  simulationUsers:
+    type: array
+    items:
+      $ref: .\microsoft.graph.userSimulationDetails.yaml
+    description: >-
+      The tenant users and their online actions in an attack simulation and
+      training campaign.
+  '@odata.type':
+    type: string

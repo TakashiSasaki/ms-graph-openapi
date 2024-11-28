@@ -1,0 +1,5 @@
+title: screenSharingRole
+enum:
+  - viewer
+  - sharer
+type: string

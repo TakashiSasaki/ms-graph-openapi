@@ -1,0 +1,17 @@
+title: settingSource
+required:
+  - '@odata.type'
+type: object
+properties:
+  displayName:
+    type: string
+    description: Not yet documented
+    nullable: true
+  id:
+    type: string
+    description: Not yet documented
+    nullable: true
+  sourceType:
+    $ref: .\microsoft.graph.settingSourceType.yaml
+  '@odata.type':
+    type: string

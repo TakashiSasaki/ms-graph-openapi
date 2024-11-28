@@ -1,0 +1,50 @@
+title: resourceVisualization
+required:
+  - '@odata.type'
+type: object
+properties:
+  containerDisplayName:
+    type: string
+    description: >-
+      A string describing where the item is stored. For example, the name of a
+      SharePoint site or the user name identifying the owner of the OneDrive
+      storing the item.
+    nullable: true
+  containerType:
+    type: string
+    description: >-
+      Can be used for filtering by the type of container in which the file is
+      stored. Such as Site or OneDriveBusiness.
+    nullable: true
+  containerWebUrl:
+    type: string
+    description: A path leading to the folder in which the item is stored.
+    nullable: true
+  mediaType:
+    type: string
+    description: >-
+      The item's media type. Can be used for filtering for a specific type of
+      file based on supported IANA Media Mime Types. Not all Media Mime Types
+      are supported.
+    nullable: true
+  previewImageUrl:
+    type: string
+    description: A URL leading to the preview image for the item.
+    nullable: true
+  previewText:
+    type: string
+    description: A preview text for the item.
+    nullable: true
+  title:
+    type: string
+    description: The item's title text.
+    nullable: true
+  type:
+    type: string
+    description: >-
+      The item's media type. Can be used for filtering for a specific file based
+      on a specific type. See the section Type property values for supported
+      types.
+    nullable: true
+  '@odata.type':
+    type: string

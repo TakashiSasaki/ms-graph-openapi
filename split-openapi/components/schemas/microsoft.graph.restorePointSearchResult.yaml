@@ -1,0 +1,20 @@
+title: restorePointSearchResult
+required:
+  - '@odata.type'
+type: object
+properties:
+  artifactHitCount:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    description: Total number of artifacts restored.
+    format: int32
+    nullable: true
+  restorePoint:
+    anyOf:
+      - $ref: .\microsoft.graph.restorePoint.yaml
+      - type: object
+        nullable: true
+    x-ms-navigationProperty: true
+  '@odata.type':
+    type: string

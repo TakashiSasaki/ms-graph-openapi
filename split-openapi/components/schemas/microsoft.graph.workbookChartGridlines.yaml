@@ -1,0 +1,20 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: workbookChartGridlines
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      visible:
+        type: boolean
+        description: Indicates whether the axis gridlines are visible.
+      format:
+        anyOf:
+          - $ref: .\microsoft.graph.workbookChartGridlinesFormat.yaml
+          - type: object
+            nullable: true
+        description: Represents the formatting of chart gridlines. Read-only.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.workbookChartGridlines'

@@ -1,0 +1,65 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: manifest
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      blobCount:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: The total file count for this partner tenant ID.
+        format: int32
+      blobs:
+        type: array
+        items:
+          $ref: .\microsoft.graph.partners.billing.blob.yaml
+        description: >-
+          A collection of blob objects that contain details of all the files for
+          the partner tenant ID.
+      createdDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: >-
+          The date and time when a manifest resource was created. The timestamp
+          type represents date and time information using ISO 8601 format and is
+          always in UTC. For example, midnight UTC on Jan 1, 2014 is
+          2014-01-01T00:00:00Z.
+        format: date-time
+      dataFormat:
+        type: string
+        description: >-
+          The billing data file format. The possible value is:
+          compressedJSONLines. Each blob is a compressed file and data in the
+          file is in JSON lines format. Decompress the file to access the data.
+      eTag:
+        type: string
+        description: >-
+          Version of data represented by the manifest. Any change in eTag
+          indicates a new data version.
+      partitionType:
+        type: string
+        description: >-
+          Indicates the division of data. If a given partition has more than the
+          supported number, the data is split into multiple files, each file
+          representing a specific partitionValue. By default, the data in the
+          file is partitioned by the number of line items.
+      partnerTenantId:
+        type: string
+        description: The Microsoft Entra tenant ID of the partner.
+      rootDirectory:
+        type: string
+        description: The root directory that contains all the files.
+      sasToken:
+        type: string
+        description: >-
+          The SAS token for accessing the directory or an individual file in the
+          directory.
+      schemaVersion:
+        type: string
+        description: The version of the manifest schema.
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.partners.billing.manifest'

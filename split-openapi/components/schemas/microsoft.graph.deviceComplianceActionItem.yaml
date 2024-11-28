@@ -1,0 +1,33 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: deviceComplianceActionItem
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      actionType:
+        $ref: .\microsoft.graph.deviceComplianceActionType.yaml
+      gracePeriodHours:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: >-
+          Number of hours to wait till the action will be enforced. Valid values
+          0 to 8760
+        format: int32
+      notificationMessageCCList:
+        type: array
+        items:
+          type: string
+          nullable: true
+        description: >-
+          A list of group IDs to speicify who to CC this notification message
+          to.
+      notificationTemplateId:
+        type: string
+        description: What notification Message template to use
+        nullable: true
+      '@odata.type':
+        type: string
+    description: Scheduled Action Configuration
+x-ms-discriminator-value: '#microsoft.graph.deviceComplianceActionItem'

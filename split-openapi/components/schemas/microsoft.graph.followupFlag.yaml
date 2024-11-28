@@ -1,0 +1,36 @@
+title: followupFlag
+required:
+  - '@odata.type'
+type: object
+properties:
+  completedDateTime:
+    anyOf:
+      - $ref: .\microsoft.graph.dateTimeTimeZone.yaml
+      - type: object
+        nullable: true
+    description: The date and time that the follow-up was finished.
+  dueDateTime:
+    anyOf:
+      - $ref: .\microsoft.graph.dateTimeTimeZone.yaml
+      - type: object
+        nullable: true
+    description: >-
+      The date and time that the follow-up is to be finished. Note: To set the
+      due date, you must also specify the startDateTime; otherwise, you get a
+      400 Bad Request response.
+  flagStatus:
+    anyOf:
+      - $ref: .\microsoft.graph.followupFlagStatus.yaml
+      - type: object
+        nullable: true
+    description: >-
+      The status for follow-up for an item. Possible values are notFlagged,
+      complete, and flagged.
+  startDateTime:
+    anyOf:
+      - $ref: .\microsoft.graph.dateTimeTimeZone.yaml
+      - type: object
+        nullable: true
+    description: The date and time that the follow-up is to begin.
+  '@odata.type':
+    type: string

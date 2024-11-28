@@ -1,0 +1,12 @@
+title: attributeDefinitionMetadata
+enum:
+  - BaseAttributeName
+  - ComplexObjectDefinition
+  - IsContainer
+  - IsCustomerDefined
+  - IsDomainQualified
+  - LinkPropertyNames
+  - LinkTypeName
+  - MaximumLength
+  - ReferencedProperty
+type: string

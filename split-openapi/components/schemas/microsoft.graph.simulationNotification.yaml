@@ -1,0 +1,19 @@
+allOf:
+  - $ref: .\microsoft.graph.baseEndUserNotification.yaml
+  - title: simulationNotification
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      targettedUserType:
+        anyOf:
+          - $ref: .\microsoft.graph.targettedUserType.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Target user type. Possible values are: unknown, clicked, compromised,
+          allUsers, unknownFutureValue.
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.simulationNotification'
+x-ms-discriminator-value: '#microsoft.graph.simulationNotification'

@@ -1,0 +1,52 @@
+description: Provides operations to call the associateWithHubSites method.
+post:
+  tags:
+    - drives.list
+  summary: Invoke action associateWithHubSites
+  description: >-
+    Associate a published content type present in a content type hub with a list
+    of hub sites.
+  externalDocs:
+    description: Find more info here
+    url: >-
+      https://learn.microsoft.com/graph/api/contenttype-associatewithhubsites?view=graph-rest-1.0
+  operationId: drives.drive.list.contentTypes.contentType.associateWithHubSites
+  requestBody:
+    description: Action parameters
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            hubSiteUrls:
+              type: array
+              items:
+                type: string
+            propagateToExistingLists:
+              type: boolean
+              default: false
+              nullable: true
+    required: true
+  responses:
+    '204':
+      description: Success
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: action
+parameters:
+  - name: drive-id
+    in: path
+    description: The unique identifier of drive
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: drive
+  - name: contentType-id
+    in: path
+    description: The unique identifier of contentType
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: contentType

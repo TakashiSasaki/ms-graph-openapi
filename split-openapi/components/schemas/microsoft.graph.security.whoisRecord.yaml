@@ -1,0 +1,17 @@
+allOf:
+  - $ref: .\microsoft.graph.security.whoisBaseRecord.yaml
+  - title: whoisRecord
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      history:
+        type: array
+        items:
+          $ref: .\microsoft.graph.security.whoisHistoryRecord.yaml
+        description: The collection of historical records associated to this WHOIS object.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.security.whoisRecord'
+x-ms-discriminator-value: '#microsoft.graph.security.whoisRecord'

@@ -1,0 +1,28 @@
+title: windowsStartMenuAppListVisibilityType
+enum:
+  - userDefined
+  - collapse
+  - remove
+  - disableSettingsApp
+type: string
+description: Type of start menu app list visibility.
+x-ms-enum-flags:
+  isFlags: true
+x-ms-enum:
+  name: windowsStartMenuAppListVisibilityType
+  modelAsString: false
+  values:
+    - value: userDefined
+      description: User defined. Default value.
+      name: userDefined
+    - value: collapse
+      description: Collapse the app list on the start menu.
+      name: collapse
+    - value: remove
+      description: Removes the app list entirely from the start menu.
+      name: remove
+    - value: disableSettingsApp
+      description: >-
+        Disables the corresponding toggle (Collapse or Remove) in the Settings
+        app.
+      name: disableSettingsApp

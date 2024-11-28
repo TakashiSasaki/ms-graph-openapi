@@ -1,0 +1,11 @@
+title: stringKeyObjectValuePair
+required:
+  - '@odata.type'
+type: object
+properties:
+  key:
+    type: string
+    description: Key.
+    nullable: true
+  '@odata.type':
+    type: string

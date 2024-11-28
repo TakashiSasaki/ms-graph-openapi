@@ -1,0 +1,8 @@
+title: dataPolicyOperationStatus
+enum:
+  - notStarted
+  - running
+  - complete
+  - failed
+  - unknownFutureValue
+type: string

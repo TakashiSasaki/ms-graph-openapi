@@ -1,0 +1,24 @@
+description: Provides operations to count the resources in the collection.
+get:
+  tags:
+    - employeeExperience.community
+  summary: Get the number of the resource
+  operationId: employeeExperience.communities.group.ServiceProvisioningErrors.GetCount-d8ef
+  parameters:
+    - $ref: ..\components\parameters\search.yaml
+    - $ref: ..\components\parameters\filter.yaml
+  responses:
+    2XX:
+      $ref: ..\components\responses\ODataCountResponse.yaml
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+parameters:
+  - name: community-id
+    in: path
+    description: The unique identifier of community
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: community

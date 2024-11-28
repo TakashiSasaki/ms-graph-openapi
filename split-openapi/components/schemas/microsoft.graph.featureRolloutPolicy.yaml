@@ -1,0 +1,35 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: featureRolloutPolicy
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      description:
+        type: string
+        description: A description for this feature rollout policy.
+        nullable: true
+      displayName:
+        type: string
+        description: The display name for this  feature rollout policy.
+      feature:
+        $ref: .\microsoft.graph.stagedFeatureName.yaml
+      isAppliedToOrganization:
+        type: boolean
+        description: >-
+          Indicates whether this feature rollout policy should be applied to the
+          entire organization.
+      isEnabled:
+        type: boolean
+        description: Indicates whether the feature rollout is enabled.
+      appliesTo:
+        type: array
+        items:
+          $ref: .\microsoft.graph.directoryObject.yaml
+        description: >-
+          Nullable. Specifies a list of directoryObject resources that feature
+          is enabled for.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.featureRolloutPolicy'

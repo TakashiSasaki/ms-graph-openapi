@@ -1,0 +1,7 @@
+value:
+  accessToken:
+    - '@odata.type': microsoft.graph.optionalClaim
+  idToken:
+    - '@odata.type': microsoft.graph.optionalClaim
+  saml2Token:
+    - '@odata.type': microsoft.graph.optionalClaim

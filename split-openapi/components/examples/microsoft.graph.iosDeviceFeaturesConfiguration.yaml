@@ -1,0 +1,9 @@
+value:
+  assetTagTemplate: String
+  homeScreenDockIcons:
+    - '@odata.type': microsoft.graph.iosHomeScreenItem
+  homeScreenPages:
+    - '@odata.type': microsoft.graph.iosHomeScreenPage
+  lockScreenFootnote: String
+  notificationSettings:
+    - '@odata.type': microsoft.graph.iosNotificationSettings

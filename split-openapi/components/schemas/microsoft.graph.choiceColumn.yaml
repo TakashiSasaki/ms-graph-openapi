@@ -1,0 +1,23 @@
+title: choiceColumn
+required:
+  - '@odata.type'
+type: object
+properties:
+  allowTextEntry:
+    type: boolean
+    description: If true, allows custom values that aren't in the configured choices.
+    nullable: true
+  choices:
+    type: array
+    items:
+      type: string
+      nullable: true
+    description: The list of values available for this column.
+  displayAs:
+    type: string
+    description: >-
+      How the choices are to be presented in the UX. Must be one of checkBoxes,
+      dropDownMenu, or radioButtons
+    nullable: true
+  '@odata.type':
+    type: string

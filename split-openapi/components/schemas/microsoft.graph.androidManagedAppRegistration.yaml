@@ -1,0 +1,14 @@
+allOf:
+  - $ref: .\microsoft.graph.managedAppRegistration.yaml
+  - title: androidManagedAppRegistration
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.androidManagedAppRegistration'
+    description: >-
+      Represents the synchronization details of an android app, with management
+      capabilities, for a specific user.
+x-ms-discriminator-value: '#microsoft.graph.androidManagedAppRegistration'

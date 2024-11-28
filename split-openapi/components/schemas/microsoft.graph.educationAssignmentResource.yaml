@@ -1,0 +1,22 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: educationAssignmentResource
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      distributeForStudentWork:
+        type: boolean
+        description: >-
+          Indicates whether this resource should be copied to each student
+          submission for modification and submission. Required
+        nullable: true
+      resource:
+        anyOf:
+          - $ref: .\microsoft.graph.educationResource.yaml
+          - type: object
+            nullable: true
+        description: Resource object that has been associated with this assignment.
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.educationAssignmentResource'

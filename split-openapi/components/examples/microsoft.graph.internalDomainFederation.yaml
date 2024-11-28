@@ -1,0 +1,11 @@
+value:
+  activeSignInUri: String
+  federatedIdpMfaBehavior:
+    '@odata.type': microsoft.graph.federatedIdpMfaBehavior
+  isSignedAuthenticationRequestRequired: 'true'
+  nextSigningCertificate: String
+  promptLoginBehavior:
+    '@odata.type': microsoft.graph.promptLoginBehavior
+  signingCertificateUpdateStatus:
+    '@odata.type': microsoft.graph.signingCertificateUpdateStatus
+  signOutUri: String

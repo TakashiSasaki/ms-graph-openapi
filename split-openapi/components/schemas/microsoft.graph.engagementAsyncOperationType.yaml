@@ -1,0 +1,18 @@
+title: engagementAsyncOperationType
+enum:
+  - createCommunity
+  - unknownFutureValue
+type: string
+description: >-
+  Types of engagementAsyncOperationType. Members will be added here as more
+  async operations are supported.
+x-ms-enum:
+  name: engagementAsyncOperationType
+  modelAsString: false
+  values:
+    - value: createCommunity
+      description: Operation to create a Viva Engage community.
+      name: createCommunity
+    - value: unknownFutureValue
+      description: A marker value for members added after the release of this API.
+      name: unknownFutureValue

@@ -1,0 +1,63 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: mobileAppContentFile
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      azureStorageUri:
+        type: string
+        description: The Azure Storage URI.
+        nullable: true
+        readOnly: true
+      azureStorageUriExpirationDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: The time the Azure storage Uri expires.
+        format: date-time
+        nullable: true
+        readOnly: true
+      createdDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: The time the file was created.
+        format: date-time
+        readOnly: true
+      isCommitted:
+        type: boolean
+        description: A value indicating whether the file is committed.
+        readOnly: true
+      isDependency:
+        type: boolean
+        description: >-
+          Indicates whether this content file is a dependency for the main
+          content file. TRUE means that the content file is a dependency, FALSE
+          means that the content file is not a dependency and is the main
+          content file. Defaults to FALSE.
+      manifest:
+        type: string
+        description: The manifest information.
+        format: base64url
+        nullable: true
+      name:
+        type: string
+        description: the file name.
+        nullable: true
+      size:
+        type: number
+        description: The size of the file prior to encryption.
+        format: int64
+      sizeEncrypted:
+        type: number
+        description: The size of the file after encryption.
+        format: int64
+      uploadState:
+        $ref: .\microsoft.graph.mobileAppContentFileUploadState.yaml
+      '@odata.type':
+        type: string
+    description: >-
+      Contains properties for a single installer file that is associated with a
+      given mobileAppContent version.
+x-ms-discriminator-value: '#microsoft.graph.mobileAppContentFile'

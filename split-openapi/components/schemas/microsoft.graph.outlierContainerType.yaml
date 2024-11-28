@@ -1,0 +1,5 @@
+title: outlierContainerType
+enum:
+  - group
+  - unknownFutureValue
+type: string

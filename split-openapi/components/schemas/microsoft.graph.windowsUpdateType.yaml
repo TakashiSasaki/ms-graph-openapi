@@ -1,0 +1,36 @@
+title: windowsUpdateType
+enum:
+  - userDefined
+  - all
+  - businessReadyOnly
+  - windowsInsiderBuildFast
+  - windowsInsiderBuildSlow
+  - windowsInsiderBuildRelease
+type: string
+description: Which branch devices will receive their updates from
+x-ms-enum:
+  name: windowsUpdateType
+  modelAsString: false
+  values:
+    - value: userDefined
+      description: Allow the user to set.
+      name: userDefined
+    - value: all
+      description: >-
+        Semi-annual Channel (Targeted). Device gets all applicable feature
+        updates from Semi-annual Channel (Targeted).
+      name: all
+    - value: businessReadyOnly
+      description: >-
+        Semi-annual Channel. Device gets feature updates from Semi-annual
+        Channel.
+      name: businessReadyOnly
+    - value: windowsInsiderBuildFast
+      description: Windows Insider build - Fast
+      name: windowsInsiderBuildFast
+    - value: windowsInsiderBuildSlow
+      description: Windows Insider build - Slow
+      name: windowsInsiderBuildSlow
+    - value: windowsInsiderBuildRelease
+      description: Release Windows Insider build
+      name: windowsInsiderBuildRelease

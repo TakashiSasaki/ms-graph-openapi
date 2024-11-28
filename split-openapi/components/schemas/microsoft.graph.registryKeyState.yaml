@@ -1,0 +1,70 @@
+title: registryKeyState
+required:
+  - '@odata.type'
+type: object
+properties:
+  hive:
+    anyOf:
+      - $ref: .\microsoft.graph.registryHive.yaml
+      - type: object
+        nullable: true
+    description: >-
+      A Windows registry hive : HKEYCURRENTCONFIG HKEYCURRENTUSER
+      HKEYLOCALMACHINE/SAM HKEYLOCALMACHINE/Security HKEYLOCALMACHINE/Software
+      HKEYLOCALMACHINE/System HKEY_USERS/.Default. Possible values are: unknown,
+      currentConfig, currentUser, localMachineSam, localMachineSecurity,
+      localMachineSoftware, localMachineSystem, usersDefault.
+  key:
+    type: string
+    description: Current (i.e. changed) registry key (excludes HIVE).
+    nullable: true
+  oldKey:
+    type: string
+    description: Previous (i.e. before changed) registry key (excludes HIVE).
+    nullable: true
+  oldValueData:
+    type: string
+    description: Previous (i.e. before changed) registry key value data (contents).
+    nullable: true
+  oldValueName:
+    type: string
+    description: Previous (i.e. before changed) registry key value name.
+    nullable: true
+  operation:
+    anyOf:
+      - $ref: .\microsoft.graph.registryOperation.yaml
+      - type: object
+        nullable: true
+    description: >-
+      Operation that changed the registry key name and/or value. Possible values
+      are: unknown, create, modify, delete.
+  processId:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    description: >-
+      Process ID (PID) of the process that modified the registry key (process
+      details will appear in the alert 'processes' collection).
+    format: int32
+    nullable: true
+  valueData:
+    type: string
+    description: Current (i.e. changed) registry key value data (contents).
+    nullable: true
+  valueName:
+    type: string
+    description: Current (i.e. changed) registry key value name
+    nullable: true
+  valueType:
+    anyOf:
+      - $ref: .\microsoft.graph.registryValueType.yaml
+      - type: object
+        nullable: true
+    description: >-
+      Registry key value type REGBINARY REGDWORD REGDWORDLITTLEENDIAN
+      REGDWORDBIGENDIANREGEXPANDSZ REGLINK REGMULTISZ REGNONE REGQWORD
+      REGQWORDLITTLEENDIAN REG_SZ Possible values are: unknown, binary, dword,
+      dwordLittleEndian, dwordBigEndian, expandSz, link, multiSz, none, qword,
+      qwordlittleEndian, sz.
+  '@odata.type':
+    type: string

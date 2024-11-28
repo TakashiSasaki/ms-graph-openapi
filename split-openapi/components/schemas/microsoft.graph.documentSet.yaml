@@ -1,0 +1,39 @@
+title: documentSet
+required:
+  - '@odata.type'
+type: object
+properties:
+  allowedContentTypes:
+    type: array
+    items:
+      $ref: .\microsoft.graph.contentTypeInfo.yaml
+    description: Content types allowed in document set.
+  defaultContents:
+    type: array
+    items:
+      $ref: .\microsoft.graph.documentSetContent.yaml
+    description: Default contents of document set.
+  propagateWelcomePageChanges:
+    type: boolean
+    description: Specifies whether to push welcome page changes to inherited content types.
+    nullable: true
+  shouldPrefixNameToFile:
+    type: boolean
+    description: Indicates whether to add the name of the document set to each file name.
+    nullable: true
+  welcomePageUrl:
+    type: string
+    description: Welcome page absolute URL.
+    nullable: true
+  sharedColumns:
+    type: array
+    items:
+      $ref: .\microsoft.graph.columnDefinition.yaml
+    x-ms-navigationProperty: true
+  welcomePageColumns:
+    type: array
+    items:
+      $ref: .\microsoft.graph.columnDefinition.yaml
+    x-ms-navigationProperty: true
+  '@odata.type':
+    type: string

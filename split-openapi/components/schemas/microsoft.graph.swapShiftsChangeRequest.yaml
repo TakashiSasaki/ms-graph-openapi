@@ -1,0 +1,15 @@
+allOf:
+  - $ref: .\microsoft.graph.offerShiftRequest.yaml
+  - title: swapShiftsChangeRequest
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      recipientShiftId:
+        type: string
+        description: ShiftId for the recipient user with whom the request is to swap.
+        nullable: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.swapShiftsChangeRequest'
+x-ms-discriminator-value: '#microsoft.graph.swapShiftsChangeRequest'

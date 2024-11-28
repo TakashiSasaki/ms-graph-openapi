@@ -1,0 +1,5 @@
+value:
+  displayAppInformationRequiredState:
+    '@odata.type': microsoft.graph.authenticationMethodFeatureConfiguration
+  displayLocationInformationRequiredState:
+    '@odata.type': microsoft.graph.authenticationMethodFeatureConfiguration

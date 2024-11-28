@@ -1,0 +1,29 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: plannerBucket
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      name:
+        type: string
+        description: Name of the bucket.
+      orderHint:
+        type: string
+        description: >-
+          Hint used to order items of this type in a list view. For details
+          about the supported format, see Using order hints in Planner.
+        nullable: true
+      planId:
+        type: string
+        description: Plan ID to which the bucket belongs.
+        nullable: true
+      tasks:
+        type: array
+        items:
+          $ref: .\microsoft.graph.plannerTask.yaml
+        description: Read-only. Nullable. The collection of tasks in the bucket.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.plannerBucket'

@@ -1,0 +1,22 @@
+title: attackSimulationRepeatOffender
+required:
+  - '@odata.type'
+type: object
+properties:
+  attackSimulationUser:
+    anyOf:
+      - $ref: .\microsoft.graph.attackSimulationUser.yaml
+      - type: object
+        nullable: true
+    description: The user in an attack simulation and training campaign.
+  repeatOffenceCount:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    description: >-
+      Number of repeat offences of the user in attack simulation and training
+      campaigns.
+    format: int32
+    nullable: true
+  '@odata.type':
+    type: string

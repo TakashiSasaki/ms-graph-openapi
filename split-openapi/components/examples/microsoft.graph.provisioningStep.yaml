@@ -1,0 +1,9 @@
+value:
+  description: String
+  details:
+    '@odata.type': microsoft.graph.detailsInfo
+  name: String
+  provisioningStepType:
+    '@odata.type': microsoft.graph.provisioningStepType
+  status:
+    '@odata.type': microsoft.graph.provisioningResult

@@ -1,0 +1,18 @@
+title: meetingParticipants
+required:
+  - '@odata.type'
+type: object
+properties:
+  attendees:
+    type: array
+    items:
+      $ref: .\microsoft.graph.meetingParticipantInfo.yaml
+    description: Information about the meeting attendees.
+  organizer:
+    anyOf:
+      - $ref: .\microsoft.graph.meetingParticipantInfo.yaml
+      - type: object
+        nullable: true
+    description: Information about the meeting organizer.
+  '@odata.type':
+    type: string

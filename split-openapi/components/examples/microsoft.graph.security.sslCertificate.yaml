@@ -1,0 +1,14 @@
+value:
+  expirationDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  fingerprint: String
+  firstSeenDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  issueDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  issuer:
+    '@odata.type': microsoft.graph.security.sslCertificateEntity
+  lastSeenDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  relatedHosts:
+    - '@odata.type': microsoft.graph.security.host
+  serialNumber: String
+  sha1: String
+  subject:
+    '@odata.type': microsoft.graph.security.sslCertificateEntity

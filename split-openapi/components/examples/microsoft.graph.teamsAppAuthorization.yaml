@@ -1,0 +1,4 @@
+value:
+  clientAppId: String
+  requiredPermissionSet:
+    '@odata.type': microsoft.graph.teamsAppPermissionSet

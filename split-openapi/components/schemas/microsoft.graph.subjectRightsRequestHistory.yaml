@@ -1,0 +1,43 @@
+title: subjectRightsRequestHistory
+required:
+  - '@odata.type'
+type: object
+properties:
+  changedBy:
+    anyOf:
+      - $ref: .\microsoft.graph.identitySet.yaml
+      - type: object
+        nullable: true
+    description: Identity of the user who changed the  subject rights request.
+  eventDateTime:
+    pattern: >-
+      ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+    type: string
+    description: Data and time when the entity was changed.
+    format: date-time
+    nullable: true
+  stage:
+    anyOf:
+      - $ref: .\microsoft.graph.subjectRightsRequestStage.yaml
+      - type: object
+        nullable: true
+    description: >-
+      The stage when the entity was changed. Possible values are:
+      contentRetrieval, contentReview, generateReport, contentDeletion,
+      caseResolved, unknownFutureValue, approval. Note that you must use the
+      Prefer: include-unknown-enum-members request header to get the following
+      value(s) in this evolvable enum: approval.
+  stageStatus:
+    anyOf:
+      - $ref: .\microsoft.graph.subjectRightsRequestStageStatus.yaml
+      - type: object
+        nullable: true
+    description: >-
+      The status of the stage when the entity was changed. Possible values are:
+      notStarted, current, completed, failed, unknownFutureValue.
+  type:
+    type: string
+    description: Type of history.
+    nullable: true
+  '@odata.type':
+    type: string

@@ -1,0 +1,5 @@
+title: selectionLikelihoodInfo
+enum:
+  - notSpecified
+  - high
+type: string

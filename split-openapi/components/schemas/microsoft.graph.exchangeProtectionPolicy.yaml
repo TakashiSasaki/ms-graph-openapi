@@ -1,0 +1,25 @@
+allOf:
+  - $ref: .\microsoft.graph.protectionPolicyBase.yaml
+  - title: exchangeProtectionPolicy
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      mailboxInclusionRules:
+        type: array
+        items:
+          $ref: .\microsoft.graph.mailboxProtectionRule.yaml
+        description: The rules associated with the Exchange protection policy.
+        x-ms-navigationProperty: true
+      mailboxProtectionUnits:
+        type: array
+        items:
+          $ref: .\microsoft.graph.mailboxProtectionUnit.yaml
+        description: >-
+          The protection units (mailboxes) that are  protected under the
+          Exchange protection policy.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.exchangeProtectionPolicy'
+x-ms-discriminator-value: '#microsoft.graph.exchangeProtectionPolicy'

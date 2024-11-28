@@ -1,0 +1,5 @@
+value:
+  healthIssues:
+    - '@odata.type': microsoft.graph.security.healthIssue
+  sensors:
+    - '@odata.type': microsoft.graph.security.sensor

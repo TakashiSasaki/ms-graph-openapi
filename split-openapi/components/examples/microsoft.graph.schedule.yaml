@@ -1,0 +1,31 @@
+value:
+  enabled: 'true'
+  offerShiftRequests:
+    - '@odata.type': microsoft.graph.offerShiftRequest
+  offerShiftRequestsEnabled: 'true'
+  openShiftChangeRequests:
+    - '@odata.type': microsoft.graph.openShiftChangeRequest
+  openShifts:
+    - '@odata.type': microsoft.graph.openShift
+  openShiftsEnabled: 'true'
+  provisionStatus:
+    '@odata.type': microsoft.graph.operationStatus
+  provisionStatusCode: String
+  schedulingGroups:
+    - '@odata.type': microsoft.graph.schedulingGroup
+  shifts:
+    - '@odata.type': microsoft.graph.shift
+  swapShiftsChangeRequests:
+    - '@odata.type': microsoft.graph.swapShiftsChangeRequest
+  swapShiftsRequestsEnabled: 'true'
+  timeClockEnabled: 'true'
+  timeOffReasons:
+    - '@odata.type': microsoft.graph.timeOffReason
+  timeOffRequests:
+    - '@odata.type': microsoft.graph.timeOffRequest
+  timeOffRequestsEnabled: 'true'
+  timesOff:
+    - '@odata.type': microsoft.graph.timeOff
+  timeZone: String
+  workforceIntegrationIds:
+    - String

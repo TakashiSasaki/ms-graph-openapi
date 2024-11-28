@@ -1,0 +1,16 @@
+allOf:
+  - $ref: .\microsoft.graph.mobileApp.yaml
+  - title: macOSMicrosoftEdgeApp
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      channel:
+        $ref: .\microsoft.graph.microsoftEdgeChannel.yaml
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.macOSMicrosoftEdgeApp'
+    description: >-
+      Contains properties and inherited properties for the macOS Microsoft Edge
+      App.
+x-ms-discriminator-value: '#microsoft.graph.macOSMicrosoftEdgeApp'

@@ -1,0 +1,8 @@
+value:
+  definition:
+    '@odata.type': microsoft.graph.printTaskDefinition
+  parentUrl: String
+  status:
+    '@odata.type': microsoft.graph.printTaskStatus
+  trigger:
+    '@odata.type': microsoft.graph.printTaskTrigger

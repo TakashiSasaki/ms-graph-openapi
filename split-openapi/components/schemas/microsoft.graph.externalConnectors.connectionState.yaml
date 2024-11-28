@@ -1,0 +1,8 @@
+title: connectionState
+enum:
+  - draft
+  - ready
+  - obsolete
+  - limitExceeded
+  - unknownFutureValue
+type: string

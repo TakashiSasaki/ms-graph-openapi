@@ -1,0 +1,124 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: provisioningObjectSummary
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      activityDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: >-
+          Represents date and time information using ISO 8601 format and is
+          always in UTC time. For example, midnight UTC on Jan 1, 2014 is
+          2014-01-01T00:00:00Z.  SUpports $filter (eq, gt, lt) and orderby.
+        format: date-time
+      changeId:
+        type: string
+        description: >-
+          Unique ID of this change in this cycle. Supports $filter (eq,
+          contains).
+        nullable: true
+      cycleId:
+        type: string
+        description: Unique ID per job iteration. Supports $filter (eq, contains).
+        nullable: true
+      durationInMilliseconds:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: >-
+          Indicates how long this provisioning action took to finish. Measured
+          in milliseconds.
+        format: int32
+        nullable: true
+      initiatedBy:
+        anyOf:
+          - $ref: .\microsoft.graph.initiator.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Details of who initiated this provisioning. Supports $filter (eq,
+          contains).
+      jobId:
+        type: string
+        description: >-
+          The unique ID for the whole provisioning job. Supports $filter (eq,
+          contains).
+        nullable: true
+      modifiedProperties:
+        type: array
+        items:
+          $ref: .\microsoft.graph.modifiedProperty.yaml
+        description: >-
+          Details of each property that was modified in this provisioning action
+          on this object.
+      provisioningAction:
+        anyOf:
+          - $ref: .\microsoft.graph.provisioningAction.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Indicates the activity name or the operation name. Possible values
+          are: create, update, delete, stageddelete, disable, other and
+          unknownFutureValue. For a list of activities logged, refer to
+          Microsoft Entra activity list. Supports $filter (eq, contains).
+      provisioningStatusInfo:
+        anyOf:
+          - $ref: .\microsoft.graph.provisioningStatusInfo.yaml
+          - type: object
+            nullable: true
+        description: Details of provisioning status.
+      provisioningSteps:
+        type: array
+        items:
+          $ref: .\microsoft.graph.provisioningStep.yaml
+        description: Details of each step in provisioning.
+      servicePrincipal:
+        anyOf:
+          - $ref: .\microsoft.graph.provisioningServicePrincipal.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Represents the service principal used for provisioning. Supports
+          $filter (eq) for id and name.
+      sourceIdentity:
+        anyOf:
+          - $ref: .\microsoft.graph.provisionedIdentity.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Details of source object being provisioned. Supports $filter (eq,
+          contains) for identityType, id, and displayName.
+      sourceSystem:
+        anyOf:
+          - $ref: .\microsoft.graph.provisioningSystem.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Details of source system of the object being provisioned. Supports
+          $filter (eq, contains) for displayName.
+      targetIdentity:
+        anyOf:
+          - $ref: .\microsoft.graph.provisionedIdentity.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Details of target object being provisioned. Supports $filter (eq,
+          contains) for identityType, id, and displayName.
+      targetSystem:
+        anyOf:
+          - $ref: .\microsoft.graph.provisioningSystem.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Details of target system of the object being provisioned. Supports
+          $filter (eq, contains) for displayName.
+      tenantId:
+        type: string
+        description: Unique Microsoft Entra tenant ID. Supports $filter (eq, contains).
+        nullable: true
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.provisioningObjectSummary'

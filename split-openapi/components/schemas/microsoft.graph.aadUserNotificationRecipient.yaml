@@ -1,0 +1,16 @@
+allOf:
+  - $ref: .\microsoft.graph.teamworkNotificationRecipient.yaml
+  - title: aadUserNotificationRecipient
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      userId:
+        type: string
+        description: >-
+          Microsoft Entra user identifier. Use the List users method to get this
+          ID.
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.aadUserNotificationRecipient'
+x-ms-discriminator-value: '#microsoft.graph.aadUserNotificationRecipient'

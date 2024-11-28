@@ -1,0 +1,36 @@
+title: win32LobAppRuleOperator
+enum:
+  - notConfigured
+  - equal
+  - notEqual
+  - greaterThan
+  - greaterThanOrEqual
+  - lessThan
+  - lessThanOrEqual
+type: string
+description: Contains properties for detection operator.
+x-ms-enum:
+  name: win32LobAppRuleOperator
+  modelAsString: false
+  values:
+    - value: notConfigured
+      description: Not configured.
+      name: notConfigured
+    - value: equal
+      description: Equal operator.
+      name: equal
+    - value: notEqual
+      description: Not equal operator.
+      name: notEqual
+    - value: greaterThan
+      description: Greater than operator.
+      name: greaterThan
+    - value: greaterThanOrEqual
+      description: Greater than or equal operator.
+      name: greaterThanOrEqual
+    - value: lessThan
+      description: Less than operator.
+      name: lessThan
+    - value: lessThanOrEqual
+      description: Less than or equal operator.
+      name: lessThanOrEqual

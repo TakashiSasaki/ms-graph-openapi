@@ -1,0 +1,6 @@
+title: attestationLevel
+enum:
+  - attested
+  - notAttested
+  - unknownFutureValue
+type: string

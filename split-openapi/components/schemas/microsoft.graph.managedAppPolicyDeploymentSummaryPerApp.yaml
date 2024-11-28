@@ -1,0 +1,20 @@
+title: managedAppPolicyDeploymentSummaryPerApp
+required:
+  - '@odata.type'
+type: object
+properties:
+  configurationAppliedUserCount:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    description: Number of users the policy is applied.
+    format: int32
+  mobileAppIdentifier:
+    anyOf:
+      - $ref: .\microsoft.graph.mobileAppIdentifier.yaml
+      - type: object
+        nullable: true
+    description: Deployment of an app.
+  '@odata.type':
+    type: string
+description: Represents policy deployment summary per app.

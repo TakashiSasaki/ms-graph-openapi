@@ -1,0 +1,47 @@
+title: searchHit
+required:
+  - '@odata.type'
+type: object
+properties:
+  contentSource:
+    type: string
+    description: The name of the content source that the externalItem is part of.
+    nullable: true
+  hitId:
+    type: string
+    description: >-
+      The internal identifier for the item. The format of the identifier varies
+      based on the entity type. For details, see hitId format.
+    nullable: true
+  isCollapsed:
+    type: boolean
+    description: >-
+      Indicates whether the current result is collapsed when the
+      collapseProperties property in the searchRequest is used.
+    nullable: true
+  rank:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    description: The rank or the order of the result.
+    format: int32
+    nullable: true
+  resultTemplateId:
+    type: string
+    description: >-
+      ID of the result template used to render the search result. This ID must
+      map to a display layout in the resultTemplates dictionary that is also
+      included in the searchResponse.
+    nullable: true
+  summary:
+    type: string
+    description: A summary of the result, if a summary is available.
+    nullable: true
+  resource:
+    anyOf:
+      - $ref: .\microsoft.graph.entity.yaml
+      - type: object
+        nullable: true
+    x-ms-navigationProperty: true
+  '@odata.type':
+    type: string

@@ -1,0 +1,17 @@
+title: integerRange
+required:
+  - '@odata.type'
+type: object
+properties:
+  end:
+    type: number
+    description: The inclusive upper bound of the integer range.
+    format: int64
+    nullable: true
+  start:
+    type: number
+    description: The inclusive lower bound of the integer range.
+    format: int64
+    nullable: true
+  '@odata.type':
+    type: string

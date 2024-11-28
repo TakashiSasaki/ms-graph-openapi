@@ -1,0 +1,5 @@
+value:
+  displayName: String
+  id: String
+  sourceType:
+    '@odata.type': microsoft.graph.settingSourceType

@@ -1,0 +1,27 @@
+title: mobileAppAssignmentSettings
+required:
+  - '@odata.type'
+type: object
+properties:
+  '@odata.type':
+    type: string
+description: Abstract class to contain properties used to assign a mobile app to a group.
+discriminator:
+  propertyName: '@odata.type'
+  mapping:
+    '#microsoft.graph.iosLobAppAssignmentSettings': .\microsoft.graph.iosLobAppAssignmentSettings.yaml
+    '#microsoft.graph.iosStoreAppAssignmentSettings': .\microsoft.graph.iosStoreAppAssignmentSettings.yaml
+    '#microsoft.graph.iosVppAppAssignmentSettings': .\microsoft.graph.iosVppAppAssignmentSettings.yaml
+    '#microsoft.graph.macOsLobAppAssignmentSettings': .\microsoft.graph.macOsLobAppAssignmentSettings.yaml
+    '#microsoft.graph.microsoftStoreForBusinessAppAssignmentSettings': .\microsoft.graph.microsoftStoreForBusinessAppAssignmentSettings.yaml
+    '#microsoft.graph.win32LobAppAssignmentSettings': .\microsoft.graph.win32LobAppAssignmentSettings.yaml
+    '#microsoft.graph.windowsAppXAppAssignmentSettings': .\microsoft.graph.windowsAppXAppAssignmentSettings.yaml
+    '#microsoft.graph.windowsUniversalAppXAppAssignmentSettings': .\microsoft.graph.windowsUniversalAppXAppAssignmentSettings.yaml
+    microsoft.graph.iosLobAppAssignmentSettings: .\microsoft.graph.iosLobAppAssignmentSettings.yaml
+    microsoft.graph.iosStoreAppAssignmentSettings: .\microsoft.graph.iosStoreAppAssignmentSettings.yaml
+    microsoft.graph.iosVppAppAssignmentSettings: .\microsoft.graph.iosVppAppAssignmentSettings.yaml
+    microsoft.graph.macOsLobAppAssignmentSettings: .\microsoft.graph.macOsLobAppAssignmentSettings.yaml
+    microsoft.graph.microsoftStoreForBusinessAppAssignmentSettings: .\microsoft.graph.microsoftStoreForBusinessAppAssignmentSettings.yaml
+    microsoft.graph.win32LobAppAssignmentSettings: .\microsoft.graph.win32LobAppAssignmentSettings.yaml
+    microsoft.graph.windowsAppXAppAssignmentSettings: .\microsoft.graph.windowsAppXAppAssignmentSettings.yaml
+    microsoft.graph.windowsUniversalAppXAppAssignmentSettings: .\microsoft.graph.windowsUniversalAppXAppAssignmentSettings.yaml

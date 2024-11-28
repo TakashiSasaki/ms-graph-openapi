@@ -1,4 +1,4 @@
-calendar/openapi_spec.pkl
-calendar/calendar.pkl
-calendar/calendar.log
 calendar/.redocly.lint-ignore.yaml
+calendar/calendar.log
+calendar/calendar.pkl
+calendar/openapi_spec.pkl

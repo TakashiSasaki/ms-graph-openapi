@@ -1,0 +1,4 @@
+value:
+  assignedTrainingsInfos:
+    - '@odata.type': microsoft.graph.assignedTrainingInfo
+  trainingsAssignedUserCount: '0'

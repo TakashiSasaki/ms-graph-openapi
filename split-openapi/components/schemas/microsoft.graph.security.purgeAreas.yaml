@@ -1,0 +1,8 @@
+title: purgeAreas
+enum:
+  - mailboxes
+  - teamsMessages
+  - unknownFutureValue
+type: string
+x-ms-enum-flags:
+  isFlags: true

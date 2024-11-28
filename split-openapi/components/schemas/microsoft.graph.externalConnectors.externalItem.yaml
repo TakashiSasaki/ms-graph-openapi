@@ -1,0 +1,39 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: externalItem
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      acl:
+        type: array
+        items:
+          $ref: .\microsoft.graph.externalConnectors.acl.yaml
+        description: >-
+          An array of access control entries. Each entry specifies the access
+          granted to a user or group. Required.
+      content:
+        anyOf:
+          - $ref: .\microsoft.graph.externalConnectors.externalItemContent.yaml
+          - type: object
+            nullable: true
+        description: >-
+          A plain-text  representation of the contents of the item. The text in
+          this property is full-text indexed. Optional.
+      properties:
+        anyOf:
+          - $ref: .\microsoft.graph.externalConnectors.properties.yaml
+          - type: object
+            nullable: true
+        description: >-
+          A property bag with the properties of the item. The properties MUST
+          conform to the schema defined for the externalConnection. Required.
+      activities:
+        type: array
+        items:
+          $ref: .\microsoft.graph.externalConnectors.externalActivity.yaml
+        description: Returns a list of activities performed on the item. Write-only.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.externalConnectors.externalItem'

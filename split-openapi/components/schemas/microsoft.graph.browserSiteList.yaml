@@ -1,0 +1,59 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: browserSiteList
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      description:
+        type: string
+        description: The description of the site list.
+      displayName:
+        type: string
+        description: The name of the site list.
+      lastModifiedBy:
+        anyOf:
+          - $ref: .\microsoft.graph.identitySet.yaml
+          - type: object
+            nullable: true
+        description: The user who last modified the site list.
+      lastModifiedDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: The date and time when the site list was last modified.
+        format: date-time
+      publishedBy:
+        anyOf:
+          - $ref: .\microsoft.graph.identitySet.yaml
+          - type: object
+            nullable: true
+        description: The user who published the site list.
+      publishedDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: The date and time when the site list was published.
+        format: date-time
+        nullable: true
+      revision:
+        type: string
+        description: The current revision of the site list.
+      status:
+        $ref: .\microsoft.graph.browserSiteListStatus.yaml
+      sharedCookies:
+        type: array
+        items:
+          $ref: .\microsoft.graph.browserSharedCookie.yaml
+        description: A collection of shared cookies defined for the site list.
+        x-ms-navigationProperty: true
+      sites:
+        type: array
+        items:
+          $ref: .\microsoft.graph.browserSite.yaml
+        description: A collection of sites defined for the site list.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+    description: A singleton entity which is used to specify IE mode site list metadata
+x-ms-discriminator-value: '#microsoft.graph.browserSiteList'

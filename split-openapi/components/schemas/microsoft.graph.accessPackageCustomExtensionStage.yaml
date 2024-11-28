@@ -1,0 +1,10 @@
+title: accessPackageCustomExtensionStage
+enum:
+  - assignmentRequestCreated
+  - assignmentRequestApproved
+  - assignmentRequestGranted
+  - assignmentRequestRemoved
+  - assignmentFourteenDaysBeforeExpiration
+  - assignmentOneDayBeforeExpiration
+  - unknownFutureValue
+type: string

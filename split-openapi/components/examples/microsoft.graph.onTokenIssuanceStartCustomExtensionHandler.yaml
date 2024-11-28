@@ -1,0 +1,5 @@
+value:
+  configuration:
+    '@odata.type': microsoft.graph.customExtensionOverwriteConfiguration
+  customExtension:
+    '@odata.type': microsoft.graph.onTokenIssuanceStartCustomExtension

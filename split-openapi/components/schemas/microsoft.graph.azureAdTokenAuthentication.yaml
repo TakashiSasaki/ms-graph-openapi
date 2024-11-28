@@ -1,0 +1,17 @@
+allOf:
+  - $ref: .\microsoft.graph.customExtensionAuthenticationConfiguration.yaml
+  - title: azureAdTokenAuthentication
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      resourceId:
+        type: string
+        description: >-
+          The appID of the Microsoft Entra application to use to authenticate an
+          app with a custom extension.
+        nullable: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.azureAdTokenAuthentication'
+x-ms-discriminator-value: '#microsoft.graph.azureAdTokenAuthentication'

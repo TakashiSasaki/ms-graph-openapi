@@ -1,0 +1,21 @@
+value:
+  bitLockerEnabled: 'true'
+  codeIntegrityEnabled: 'true'
+  earlyLaunchAntiMalwareDriverEnabled: 'true'
+  mobileOsMaximumVersion: String
+  mobileOsMinimumVersion: String
+  osMaximumVersion: String
+  osMinimumVersion: String
+  passwordBlockSimple: 'true'
+  passwordExpirationDays: '0'
+  passwordMinimumCharacterSetCount: '0'
+  passwordMinimumLength: '0'
+  passwordMinutesOfInactivityBeforeLock: '0'
+  passwordPreviousPasswordBlockCount: '0'
+  passwordRequired: 'true'
+  passwordRequiredToUnlockFromIdle: 'true'
+  passwordRequiredType:
+    '@odata.type': microsoft.graph.requiredPasswordType
+  requireHealthyDeviceReport: 'true'
+  secureBootEnabled: 'true'
+  storageRequireEncryption: 'true'

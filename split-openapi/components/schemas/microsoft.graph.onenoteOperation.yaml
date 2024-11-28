@@ -1,0 +1,32 @@
+allOf:
+  - $ref: .\microsoft.graph.operation.yaml
+  - title: onenoteOperation
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      error:
+        anyOf:
+          - $ref: .\microsoft.graph.onenoteOperationError.yaml
+          - type: object
+            nullable: true
+        description: The error returned by the operation.
+      percentComplete:
+        type: string
+        description: >-
+          The operation percent complete if the operation is still in running
+          status.
+        nullable: true
+      resourceId:
+        type: string
+        description: The resource id.
+        nullable: true
+      resourceLocation:
+        type: string
+        description: >-
+          The resource URI for the object. For example, the resource URI for a
+          copied page or section.
+        nullable: true
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.onenoteOperation'

@@ -1,0 +1,187 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: columnDefinition
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      boolean:
+        anyOf:
+          - $ref: .\microsoft.graph.booleanColumn.yaml
+          - type: object
+            nullable: true
+        description: This column stores Boolean values.
+      calculated:
+        anyOf:
+          - $ref: .\microsoft.graph.calculatedColumn.yaml
+          - type: object
+            nullable: true
+        description: This column's data is calculated based on other columns.
+      choice:
+        anyOf:
+          - $ref: .\microsoft.graph.choiceColumn.yaml
+          - type: object
+            nullable: true
+        description: This column stores data from a list of choices.
+      columnGroup:
+        type: string
+        description: >-
+          For site columns, the name of the group this column belongs to. Helps
+          organize related columns.
+        nullable: true
+      contentApprovalStatus:
+        anyOf:
+          - $ref: .\microsoft.graph.contentApprovalStatusColumn.yaml
+          - type: object
+            nullable: true
+        description: This column stores content approval status.
+      currency:
+        anyOf:
+          - $ref: .\microsoft.graph.currencyColumn.yaml
+          - type: object
+            nullable: true
+        description: This column stores currency values.
+      dateTime:
+        anyOf:
+          - $ref: .\microsoft.graph.dateTimeColumn.yaml
+          - type: object
+            nullable: true
+        description: This column stores DateTime values.
+      defaultValue:
+        anyOf:
+          - $ref: .\microsoft.graph.defaultColumnValue.yaml
+          - type: object
+            nullable: true
+        description: The default value for this column.
+      description:
+        type: string
+        description: The user-facing description of the column.
+        nullable: true
+      displayName:
+        type: string
+        description: The user-facing name of the column.
+        nullable: true
+      enforceUniqueValues:
+        type: boolean
+        description: If true, no two list items may have the same value for this column.
+        nullable: true
+      geolocation:
+        anyOf:
+          - $ref: .\microsoft.graph.geolocationColumn.yaml
+          - type: object
+            nullable: true
+        description: This column stores a geolocation.
+      hidden:
+        type: boolean
+        description: Specifies whether the column is displayed in the user interface.
+        nullable: true
+      hyperlinkOrPicture:
+        anyOf:
+          - $ref: .\microsoft.graph.hyperlinkOrPictureColumn.yaml
+          - type: object
+            nullable: true
+        description: This column stores hyperlink or picture values.
+      indexed:
+        type: boolean
+        description: >-
+          Specifies whether the column values can be used for sorting and
+          searching.
+        nullable: true
+      isDeletable:
+        type: boolean
+        description: Indicates whether this column can be deleted.
+        nullable: true
+      isReorderable:
+        type: boolean
+        description: Indicates whether values in the column can be reordered. Read-only.
+        nullable: true
+      isSealed:
+        type: boolean
+        description: Specifies whether the column can be changed.
+        nullable: true
+      lookup:
+        anyOf:
+          - $ref: .\microsoft.graph.lookupColumn.yaml
+          - type: object
+            nullable: true
+        description: This column's data is looked up from another source in the site.
+      name:
+        type: string
+        description: >-
+          The API-facing name of the column as it appears in the fields on a
+          listItem. For the user-facing name, see displayName.
+        nullable: true
+      number:
+        anyOf:
+          - $ref: .\microsoft.graph.numberColumn.yaml
+          - type: object
+            nullable: true
+        description: This column stores number values.
+      personOrGroup:
+        anyOf:
+          - $ref: .\microsoft.graph.personOrGroupColumn.yaml
+          - type: object
+            nullable: true
+        description: This column stores Person or Group values.
+      propagateChanges:
+        type: boolean
+        description: >-
+          If 'true', changes to this column will be propagated to lists that
+          implement the column.
+        nullable: true
+      readOnly:
+        type: boolean
+        description: Specifies whether the column values can be modified.
+        nullable: true
+      required:
+        type: boolean
+        description: Specifies whether the column value isn't optional.
+        nullable: true
+      sourceContentType:
+        anyOf:
+          - $ref: .\microsoft.graph.contentTypeInfo.yaml
+          - type: object
+            nullable: true
+        description: >-
+          ContentType from which this column is inherited from. Present only in
+          contentTypes columns response. Read-only.
+      term:
+        anyOf:
+          - $ref: .\microsoft.graph.termColumn.yaml
+          - type: object
+            nullable: true
+        description: This column stores taxonomy terms.
+      text:
+        anyOf:
+          - $ref: .\microsoft.graph.textColumn.yaml
+          - type: object
+            nullable: true
+        description: This column stores text values.
+      thumbnail:
+        anyOf:
+          - $ref: .\microsoft.graph.thumbnailColumn.yaml
+          - type: object
+            nullable: true
+        description: This column stores thumbnail values.
+      type:
+        anyOf:
+          - $ref: .\microsoft.graph.columnTypes.yaml
+          - type: object
+            nullable: true
+        description: For site columns, the type of column. Read-only.
+      validation:
+        anyOf:
+          - $ref: .\microsoft.graph.columnValidation.yaml
+          - type: object
+            nullable: true
+        description: This column stores validation formula and message for the column.
+      sourceColumn:
+        anyOf:
+          - $ref: .\microsoft.graph.columnDefinition.yaml
+          - type: object
+            nullable: true
+        description: The source column for the content type column.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.columnDefinition'

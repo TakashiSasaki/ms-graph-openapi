@@ -1,0 +1,7 @@
+value:
+  accountName: String
+  azureAdUserId: String
+  displayName: String
+  domainName: String
+  userPrincipalName: String
+  userSid: String

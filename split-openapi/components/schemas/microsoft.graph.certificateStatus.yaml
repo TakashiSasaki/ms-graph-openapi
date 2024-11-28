@@ -1,0 +1,5 @@
+title: certificateStatus
+enum:
+  - notProvisioned
+  - provisioned
+type: string

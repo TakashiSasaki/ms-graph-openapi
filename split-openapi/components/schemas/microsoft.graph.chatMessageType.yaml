@@ -1,0 +1,8 @@
+title: chatMessageType
+enum:
+  - message
+  - chatEvent
+  - typing
+  - unknownFutureValue
+  - systemEventMessage
+type: string

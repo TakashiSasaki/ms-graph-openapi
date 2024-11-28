@@ -1,0 +1,13 @@
+title: propertyType
+enum:
+  - string
+  - int64
+  - double
+  - dateTime
+  - boolean
+  - stringCollection
+  - int64Collection
+  - doubleCollection
+  - dateTimeCollection
+  - unknownFutureValue
+type: string

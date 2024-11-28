@@ -1,0 +1,3 @@
+value:
+  ediscoveryCases:
+    - '@odata.type': microsoft.graph.security.ediscoveryCase

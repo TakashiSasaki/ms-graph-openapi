@@ -1,0 +1,15 @@
+allOf:
+  - $ref: .\microsoft.graph.windowsDeviceAccount.yaml
+  - title: windowsDeviceAzureADAccount
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      userPrincipalName:
+        type: string
+        description: Not yet documented
+        nullable: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.windowsDeviceAzureADAccount'
+x-ms-discriminator-value: '#microsoft.graph.windowsDeviceAzureADAccount'

@@ -1,0 +1,37 @@
+title: bucketAggregationDefinition
+required:
+  - '@odata.type'
+type: object
+properties:
+  isDescending:
+    type: boolean
+    description: >-
+      True to specify the sort order as descending. The default is false, with
+      the sort order as ascending. Optional.
+    nullable: true
+  minimumCount:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    description: >-
+      The minimum number of items that should be present in the aggregation to
+      be returned in a bucket. Optional.
+    format: int32
+    nullable: true
+  prefixFilter:
+    type: string
+    description: >-
+      A filter to define a matching criteria. The key should start with the
+      specified prefix to be returned in the response. Optional.
+    nullable: true
+  ranges:
+    type: array
+    items:
+      $ref: .\microsoft.graph.bucketAggregationRange.yaml
+    description: >-
+      Specifies the manual ranges to compute the aggregations. This is only
+      valid for nonstring refiners of date or numeric type. Optional.
+  sortBy:
+    $ref: .\microsoft.graph.bucketAggregationSortProperty.yaml
+  '@odata.type':
+    type: string

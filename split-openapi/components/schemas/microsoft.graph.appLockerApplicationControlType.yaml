@@ -1,0 +1,28 @@
+title: appLockerApplicationControlType
+enum:
+  - notConfigured
+  - enforceComponentsAndStoreApps
+  - auditComponentsAndStoreApps
+  - enforceComponentsStoreAppsAndSmartlocker
+  - auditComponentsStoreAppsAndSmartlocker
+type: string
+description: Possible values of AppLocker Application Control Types
+x-ms-enum:
+  name: appLockerApplicationControlType
+  modelAsString: false
+  values:
+    - value: notConfigured
+      description: Device default value, no Application Control type selected.
+      name: notConfigured
+    - value: enforceComponentsAndStoreApps
+      description: Enforce Windows component and store apps.
+      name: enforceComponentsAndStoreApps
+    - value: auditComponentsAndStoreApps
+      description: Audit Windows component and store apps.
+      name: auditComponentsAndStoreApps
+    - value: enforceComponentsStoreAppsAndSmartlocker
+      description: Enforce Windows components, store apps and smart locker.
+      name: enforceComponentsStoreAppsAndSmartlocker
+    - value: auditComponentsStoreAppsAndSmartlocker
+      description: Audit Windows components, store apps and smart locker​.
+      name: auditComponentsStoreAppsAndSmartlocker

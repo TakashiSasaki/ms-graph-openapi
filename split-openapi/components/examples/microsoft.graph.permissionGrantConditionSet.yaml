@@ -1,0 +1,14 @@
+value:
+  clientApplicationIds:
+    - String
+  clientApplicationPublisherIds:
+    - String
+  clientApplicationsFromVerifiedPublisherOnly: 'true'
+  clientApplicationTenantIds:
+    - String
+  permissionClassification: String
+  permissions:
+    - String
+  permissionType:
+    '@odata.type': microsoft.graph.permissionType
+  resourceApplication: String

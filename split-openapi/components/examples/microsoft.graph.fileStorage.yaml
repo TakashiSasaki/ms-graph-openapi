@@ -1,0 +1,3 @@
+value:
+  containers:
+    - '@odata.type': microsoft.graph.fileStorageContainer

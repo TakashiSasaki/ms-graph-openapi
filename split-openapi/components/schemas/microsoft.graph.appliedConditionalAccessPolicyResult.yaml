@@ -1,0 +1,13 @@
+title: appliedConditionalAccessPolicyResult
+enum:
+  - success
+  - failure
+  - notApplied
+  - notEnabled
+  - unknown
+  - unknownFutureValue
+  - reportOnlySuccess
+  - reportOnlyFailure
+  - reportOnlyNotApplied
+  - reportOnlyInterrupted
+type: string

@@ -1,0 +1,7 @@
+title: sensitivity
+enum:
+  - normal
+  - personal
+  - private
+  - confidential
+type: string

@@ -1,0 +1,4 @@
+value:
+  annotations:
+    - '@odata.type': microsoft.graph.profileCardAnnotation
+  directoryPropertyName: String

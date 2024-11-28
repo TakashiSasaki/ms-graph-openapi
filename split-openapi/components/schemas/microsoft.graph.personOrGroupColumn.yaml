@@ -1,0 +1,23 @@
+title: personOrGroupColumn
+required:
+  - '@odata.type'
+type: object
+properties:
+  allowMultipleSelection:
+    type: boolean
+    description: Indicates whether multiple values can be selected from the source.
+    nullable: true
+  chooseFromType:
+    type: string
+    description: >-
+      Whether to allow selection of people only, or people and groups. Must be
+      one of peopleAndGroups or peopleOnly.
+    nullable: true
+  displayAs:
+    type: string
+    description: >-
+      How to display the information about the person or group chosen. See
+      below.
+    nullable: true
+  '@odata.type':
+    type: string

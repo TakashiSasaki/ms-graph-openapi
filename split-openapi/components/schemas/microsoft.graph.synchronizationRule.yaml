@@ -1,0 +1,67 @@
+title: synchronizationRule
+required:
+  - '@odata.type'
+type: object
+properties:
+  containerFilter:
+    anyOf:
+      - $ref: .\microsoft.graph.containerFilter.yaml
+      - type: object
+        nullable: true
+  editable:
+    type: boolean
+    description: >-
+      true if the synchronization rule can be customized; false if this rule is
+      read-only and shouldn't be changed.
+  groupFilter:
+    anyOf:
+      - $ref: .\microsoft.graph.groupFilter.yaml
+      - type: object
+        nullable: true
+  id:
+    type: string
+    description: >-
+      Synchronization rule identifier. Must be one of the identifiers recognized
+      by the synchronization engine. Supported rule identifiers can be found in
+      the synchronization template returned by the API.
+    nullable: true
+  metadata:
+    type: array
+    items:
+      $ref: .\microsoft.graph.stringKeyStringValuePair.yaml
+    description: >-
+      Additional extension properties. Unless instructed explicitly by the
+      support team, metadata values shouldn't be changed.
+  name:
+    type: string
+    description: Human-readable name of the synchronization rule. Not nullable.
+    nullable: true
+  objectMappings:
+    type: array
+    items:
+      $ref: .\microsoft.graph.objectMapping.yaml
+    description: >-
+      Collection of object mappings supported by the rule. Tells the
+      synchronization engine which objects should be synchronized.
+  priority:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    description: >-
+      Priority relative to other rules in the synchronizationSchema. Rules with
+      the lowest priority number will be processed first.
+    format: int32
+  sourceDirectoryName:
+    type: string
+    description: >-
+      Name of the source directory. Must match one of the directory definitions
+      in synchronizationSchema.
+    nullable: true
+  targetDirectoryName:
+    type: string
+    description: >-
+      Name of the target directory. Must match one of the directory definitions
+      in synchronizationSchema.
+    nullable: true
+  '@odata.type':
+    type: string

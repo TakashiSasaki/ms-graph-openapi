@@ -1,0 +1,15 @@
+title: operationError
+required:
+  - '@odata.type'
+type: object
+properties:
+  code:
+    type: string
+    description: Operation error code.
+    nullable: true
+  message:
+    type: string
+    description: Operation error message.
+    nullable: true
+  '@odata.type':
+    type: string

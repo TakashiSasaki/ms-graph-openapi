@@ -1,0 +1,71 @@
+title: video
+required:
+  - '@odata.type'
+type: object
+properties:
+  audioBitsPerSample:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    description: Number of audio bits per sample.
+    format: int32
+    nullable: true
+  audioChannels:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    description: Number of audio channels.
+    format: int32
+    nullable: true
+  audioFormat:
+    type: string
+    description: Name of the audio format (AAC, MP3, etc.).
+    nullable: true
+  audioSamplesPerSecond:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    description: Number of audio samples per second.
+    format: int32
+    nullable: true
+  bitrate:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    description: Bit rate of the video in bits per second.
+    format: int32
+    nullable: true
+  duration:
+    type: number
+    description: Duration of the file in milliseconds.
+    format: int64
+    nullable: true
+  fourCC:
+    type: string
+    description: '''Four character code'' name of the video format.'
+    nullable: true
+  frameRate:
+    oneOf:
+      - type: number
+        format: double
+        nullable: true
+      - type: string
+        nullable: true
+      - $ref: .\ReferenceNumeric.yaml
+    description: Frame rate of the video.
+  height:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    description: Height of the video, in pixels.
+    format: int32
+    nullable: true
+  width:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    description: Width of the video, in pixels.
+    format: int32
+    nullable: true
+  '@odata.type':
+    type: string

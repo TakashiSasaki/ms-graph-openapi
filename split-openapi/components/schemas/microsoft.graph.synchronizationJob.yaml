@@ -1,0 +1,49 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: synchronizationJob
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      schedule:
+        anyOf:
+          - $ref: .\microsoft.graph.synchronizationSchedule.yaml
+          - type: object
+            nullable: true
+        description: Schedule used to run the job. Read-only.
+      status:
+        anyOf:
+          - $ref: .\microsoft.graph.synchronizationStatus.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Status of the job, which includes when the job was last run, current
+          job state, and errors.
+      synchronizationJobSettings:
+        type: array
+        items:
+          $ref: .\microsoft.graph.keyValuePair.yaml
+        description: >-
+          Settings associated with the job. Some settings are inherited from the
+          template.
+      templateId:
+        type: string
+        description: Identifier of the synchronization template this job is based on.
+        nullable: true
+      bulkUpload:
+        anyOf:
+          - $ref: .\microsoft.graph.bulkUpload.yaml
+          - type: object
+            nullable: true
+        description: The bulk upload operation for the job.
+        x-ms-navigationProperty: true
+      schema:
+        anyOf:
+          - $ref: .\microsoft.graph.synchronizationSchema.yaml
+          - type: object
+            nullable: true
+        description: The synchronization schema configured for the job.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.synchronizationJob'

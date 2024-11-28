@@ -1,0 +1,6 @@
+title: defaultRecordBehavior
+enum:
+  - startLocked
+  - startUnlocked
+  - unknownFutureValue
+type: string

@@ -1,0 +1,19 @@
+title: insightIdentity
+required:
+  - '@odata.type'
+type: object
+properties:
+  address:
+    type: string
+    description: The email address of the user who shared the item.
+    nullable: true
+  displayName:
+    type: string
+    description: The display name of the user who shared the item.
+    nullable: true
+  id:
+    type: string
+    description: The ID of the user who shared the item.
+    nullable: true
+  '@odata.type':
+    type: string

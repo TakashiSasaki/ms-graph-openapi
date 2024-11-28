@@ -1,0 +1,27 @@
+allOf:
+  - $ref: .\microsoft.graph.changeTrackedEntity.yaml
+  - title: openShift
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      draftOpenShift:
+        anyOf:
+          - $ref: .\microsoft.graph.openShiftItem.yaml
+          - type: object
+            nullable: true
+        description: An unpublished open shift.
+      schedulingGroupId:
+        type: string
+        description: ID for the scheduling group that the open shift belongs to.
+        nullable: true
+      sharedOpenShift:
+        anyOf:
+          - $ref: .\microsoft.graph.openShiftItem.yaml
+          - type: object
+            nullable: true
+        description: A published open shift.
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.openShift'
+x-ms-discriminator-value: '#microsoft.graph.openShift'

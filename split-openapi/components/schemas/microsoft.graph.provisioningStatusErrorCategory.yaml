@@ -1,0 +1,7 @@
+title: provisioningStatusErrorCategory
+enum:
+  - failure
+  - nonServiceFailure
+  - success
+  - unknownFutureValue
+type: string

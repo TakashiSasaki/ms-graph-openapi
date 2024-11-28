@@ -1,0 +1,33 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: groupLifecyclePolicy
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      alternateNotificationEmails:
+        type: string
+        description: >-
+          List of email address to send notifications for groups without owners.
+          Multiple email address can be defined by separating email address with
+          a semicolon.
+        nullable: true
+      groupLifetimeInDays:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: >-
+          Number of days before a group expires and needs to be renewed. Once
+          renewed, the group expiration is extended by the number of days
+          defined.
+        format: int32
+        nullable: true
+      managedGroupTypes:
+        type: string
+        description: >-
+          The group type for which the expiration policy applies. Possible
+          values are All, Selected or None.
+        nullable: true
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.groupLifecyclePolicy'

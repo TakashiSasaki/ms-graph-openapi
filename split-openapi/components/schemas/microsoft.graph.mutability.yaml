@@ -1,0 +1,7 @@
+title: mutability
+enum:
+  - ReadWrite
+  - ReadOnly
+  - Immutable
+  - WriteOnly
+type: string

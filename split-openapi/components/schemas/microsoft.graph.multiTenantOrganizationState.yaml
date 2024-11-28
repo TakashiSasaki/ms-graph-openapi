@@ -1,0 +1,6 @@
+title: multiTenantOrganizationState
+enum:
+  - active
+  - inactive
+  - unknownFutureValue
+type: string

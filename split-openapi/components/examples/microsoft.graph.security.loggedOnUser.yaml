@@ -1,0 +1,3 @@
+value:
+  accountName: String
+  domainName: String

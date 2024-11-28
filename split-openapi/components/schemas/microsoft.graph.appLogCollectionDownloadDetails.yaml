@@ -1,0 +1,17 @@
+title: appLogCollectionDownloadDetails
+required:
+  - '@odata.type'
+type: object
+properties:
+  appLogDecryptionAlgorithm:
+    $ref: .\microsoft.graph.appLogDecryptionAlgorithm.yaml
+  decryptionKey:
+    type: string
+    description: Decryption key that used to decrypt the log.
+    nullable: true
+  downloadUrl:
+    type: string
+    description: Download SAS (Shared Access Signature) Url for completed app log request.
+    nullable: true
+  '@odata.type':
+    type: string

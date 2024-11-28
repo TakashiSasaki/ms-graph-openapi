@@ -1,0 +1,36 @@
+title: thumbnail
+required:
+  - '@odata.type'
+type: object
+properties:
+  content:
+    type: string
+    description: The content stream for the thumbnail.
+    format: base64url
+    nullable: true
+  height:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    description: The height of the thumbnail, in pixels.
+    format: int32
+    nullable: true
+  sourceItemId:
+    type: string
+    description: >-
+      The unique identifier of the item that provided the thumbnail. This is
+      only available when a folder thumbnail is requested.
+    nullable: true
+  url:
+    type: string
+    description: The URL used to fetch the thumbnail content.
+    nullable: true
+  width:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    description: The width of the thumbnail, in pixels.
+    format: int32
+    nullable: true
+  '@odata.type':
+    type: string

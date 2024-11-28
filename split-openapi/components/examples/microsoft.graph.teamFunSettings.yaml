@@ -1,0 +1,6 @@
+value:
+  allowCustomMemes: 'true'
+  allowGiphy: 'true'
+  allowStickersAndMemes: 'true'
+  giphyContentRating:
+    '@odata.type': microsoft.graph.giphyRatingType

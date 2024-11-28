@@ -1,0 +1,6 @@
+value:
+  autonomousSystem:
+    '@odata.type': microsoft.graph.security.autonomousSystem
+  countryOrRegion: String
+  hostingProvider: String
+  netblock: String

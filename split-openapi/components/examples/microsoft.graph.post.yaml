@@ -1,0 +1,23 @@
+value:
+  attachments:
+    - '@odata.type': microsoft.graph.attachment
+  body:
+    '@odata.type': microsoft.graph.itemBody
+  conversationId: String
+  conversationThreadId: String
+  extensions:
+    - '@odata.type': microsoft.graph.extension
+  from:
+    '@odata.type': microsoft.graph.recipient
+  hasAttachments: 'true'
+  inReplyTo:
+    '@odata.type': microsoft.graph.post
+  multiValueExtendedProperties:
+    - '@odata.type': microsoft.graph.multiValueLegacyExtendedProperty
+  newParticipants:
+    - '@odata.type': microsoft.graph.recipient
+  receivedDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  sender:
+    '@odata.type': microsoft.graph.recipient
+  singleValueExtendedProperties:
+    - '@odata.type': microsoft.graph.singleValueLegacyExtendedProperty

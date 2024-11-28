@@ -1,0 +1,8 @@
+value:
+  attachmentType:
+    '@odata.type': microsoft.graph.attachmentType
+  contentId: String
+  contentType: String
+  isInline: 'true'
+  name: String
+  size: '0'

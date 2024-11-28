@@ -1,0 +1,5 @@
+value:
+  definitions:
+    - '@odata.type': microsoft.graph.accessReviewScheduleDefinition
+  historyDefinitions:
+    - '@odata.type': microsoft.graph.accessReviewHistoryDefinition

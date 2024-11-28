@@ -1,0 +1,26 @@
+title: userExperienceAnalyticsAutopilotDevicesSummary
+required:
+  - '@odata.type'
+type: object
+properties:
+  devicesNotAutopilotRegistered:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    description: The count of intune devices that are not autopilot registerd. Read-only.
+    format: int32
+  devicesWithoutAutopilotProfileAssigned:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    description: The count of intune devices not autopilot profile assigned. Read-only.
+    format: int32
+  totalWindows10DevicesWithoutTenantAttached:
+    maximum: 2147483647
+    minimum: -2147483648
+    type: number
+    description: The count of windows 10 devices that are Intune and co-managed. Read-only.
+    format: int32
+  '@odata.type':
+    type: string
+description: The user experience analytics summary of Devices not windows autopilot ready.

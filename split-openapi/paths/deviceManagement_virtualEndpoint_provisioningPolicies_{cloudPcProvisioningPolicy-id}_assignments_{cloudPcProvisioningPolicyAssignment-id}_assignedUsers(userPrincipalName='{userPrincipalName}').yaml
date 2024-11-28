@@ -1,0 +1,71 @@
+description: >-
+  Provides operations to manage the assignedUsers property of the
+  microsoft.graph.cloudPcProvisioningPolicyAssignment entity.
+get:
+  tags:
+    - deviceManagement.virtualEndpoint
+  summary: Get assignedUsers from deviceManagement
+  description: >-
+    The assignment targeted users for the provisioning policy. This list of
+    users is computed based on assignments, licenses, group memberships, and
+    policies. Read-only. Supports$expand.
+  operationId: >-
+    deviceManagement.virtualEndpoint.provisioningPolicies.assignments.assignedUsers.GetByUserPrincipalName
+  parameters:
+    - name: $select
+      in: query
+      description: Select properties to be returned
+      style: form
+      explode: false
+      schema:
+        uniqueItems: true
+        type: array
+        items:
+          type: string
+    - name: $expand
+      in: query
+      description: Expand related entities
+      style: form
+      explode: false
+      schema:
+        uniqueItems: true
+        type: array
+        items:
+          type: string
+  responses:
+    2XX:
+      description: Retrieved navigation property
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\microsoft.graph.user.yaml
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: operation
+parameters:
+  - name: cloudPcProvisioningPolicy-id
+    in: path
+    description: The unique identifier of cloudPcProvisioningPolicy
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: cloudPcProvisioningPolicy
+  - name: cloudPcProvisioningPolicyAssignment-id
+    in: path
+    description: The unique identifier of cloudPcProvisioningPolicyAssignment
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: cloudPcProvisioningPolicyAssignment
+  - name: userPrincipalName
+    in: path
+    description: Alternate key of user
+    required: true
+    schema:
+      type: string
+      nullable: true
+x-ms-docs-grouped-path:
+  - >-
+    /deviceManagement/virtualEndpoint/provisioningPolicies/{cloudPcProvisioningPolicy-id}/assignments/{cloudPcProvisioningPolicyAssignment-id}/assignedUsers/{user-id}

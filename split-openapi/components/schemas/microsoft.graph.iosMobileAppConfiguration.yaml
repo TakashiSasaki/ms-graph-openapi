@@ -1,0 +1,24 @@
+allOf:
+  - $ref: .\microsoft.graph.managedDeviceMobileAppConfiguration.yaml
+  - title: iosMobileAppConfiguration
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      encodedSettingXml:
+        type: string
+        description: mdm app configuration Base64 binary.
+        format: base64url
+        nullable: true
+      settings:
+        type: array
+        items:
+          $ref: .\microsoft.graph.appConfigurationSettingItem.yaml
+        description: app configuration setting items.
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.iosMobileAppConfiguration'
+    description: >-
+      Contains properties, inherited properties and actions for iOS mobile app
+      configurations.
+x-ms-discriminator-value: '#microsoft.graph.iosMobileAppConfiguration'

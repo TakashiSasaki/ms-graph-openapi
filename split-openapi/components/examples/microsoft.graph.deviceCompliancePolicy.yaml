@@ -1,0 +1,20 @@
+value:
+  assignments:
+    - '@odata.type': microsoft.graph.deviceCompliancePolicyAssignment
+  createdDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  description: String
+  deviceSettingStateSummaries:
+    - '@odata.type': microsoft.graph.settingStateDeviceSummary
+  deviceStatuses:
+    - '@odata.type': microsoft.graph.deviceComplianceDeviceStatus
+  deviceStatusOverview:
+    '@odata.type': microsoft.graph.deviceComplianceDeviceOverview
+  displayName: String
+  lastModifiedDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  scheduledActionsForRule:
+    - '@odata.type': microsoft.graph.deviceComplianceScheduledActionForRule
+  userStatuses:
+    - '@odata.type': microsoft.graph.deviceComplianceUserStatus
+  userStatusOverview:
+    '@odata.type': microsoft.graph.deviceComplianceUserOverview
+  version: '0'

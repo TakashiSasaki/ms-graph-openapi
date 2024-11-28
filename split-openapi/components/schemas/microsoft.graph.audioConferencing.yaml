@@ -1,0 +1,37 @@
+title: audioConferencing
+required:
+  - '@odata.type'
+type: object
+properties:
+  conferenceId:
+    type: string
+    description: The conference id of the online meeting.
+    nullable: true
+  dialinUrl:
+    type: string
+    description: >-
+      A URL to the externally-accessible web page that contains dial-in
+      information.
+    nullable: true
+  tollFreeNumber:
+    type: string
+    description: The toll-free number that connects to the Audio Conference Provider.
+    nullable: true
+  tollFreeNumbers:
+    type: array
+    items:
+      type: string
+      nullable: true
+    description: List of toll-free numbers that are displayed in the meeting invite.
+  tollNumber:
+    type: string
+    description: The toll number that connects to the Audio Conference Provider.
+    nullable: true
+  tollNumbers:
+    type: array
+    items:
+      type: string
+      nullable: true
+    description: List of toll numbers that are displayed in the meeting invite.
+  '@odata.type':
+    type: string

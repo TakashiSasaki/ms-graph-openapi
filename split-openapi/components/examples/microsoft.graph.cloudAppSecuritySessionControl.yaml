@@ -1,0 +1,3 @@
+value:
+  cloudAppSecurityType:
+    '@odata.type': microsoft.graph.cloudAppSecuritySessionControlType

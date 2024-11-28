@@ -1,0 +1,5 @@
+value:
+  error:
+    '@odata.type': microsoft.graph.publicError
+  status:
+    '@odata.type': microsoft.graph.externalConnectors.connectionOperationStatus

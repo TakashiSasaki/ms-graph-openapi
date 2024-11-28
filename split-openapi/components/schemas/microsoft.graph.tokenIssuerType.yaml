@@ -1,0 +1,9 @@
+title: tokenIssuerType
+enum:
+  - AzureAD
+  - ADFederationServices
+  - UnknownFutureValue
+  - AzureADBackupAuth
+  - ADFederationServicesMFAAdapter
+  - NPSExtension
+type: string

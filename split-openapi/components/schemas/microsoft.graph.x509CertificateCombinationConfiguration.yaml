@@ -1,0 +1,21 @@
+allOf:
+  - $ref: .\microsoft.graph.authenticationCombinationConfiguration.yaml
+  - title: x509CertificateCombinationConfiguration
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      allowedIssuerSkis:
+        type: array
+        items:
+          type: string
+        description: A list of allowed subject key identifier values.
+      allowedPolicyOIDs:
+        type: array
+        items:
+          type: string
+        description: A list of allowed policy OIDs.
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.x509CertificateCombinationConfiguration'
+x-ms-discriminator-value: '#microsoft.graph.x509CertificateCombinationConfiguration'

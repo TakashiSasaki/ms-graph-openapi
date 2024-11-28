@@ -1,0 +1,35 @@
+title: identityProtectionRoot
+required:
+  - '@odata.type'
+type: object
+properties:
+  riskDetections:
+    type: array
+    items:
+      $ref: .\microsoft.graph.riskDetection.yaml
+    description: >-
+      Risk detection in Microsoft Entra ID Protection and the associated
+      information about the detection.
+    x-ms-navigationProperty: true
+  riskyServicePrincipals:
+    type: array
+    items:
+      $ref: .\microsoft.graph.riskyServicePrincipal.yaml
+    description: Microsoft Entra service principals that are at risk.
+    x-ms-navigationProperty: true
+  riskyUsers:
+    type: array
+    items:
+      $ref: .\microsoft.graph.riskyUser.yaml
+    description: Users that are flagged as at-risk by Microsoft Entra ID Protection.
+    x-ms-navigationProperty: true
+  servicePrincipalRiskDetections:
+    type: array
+    items:
+      $ref: .\microsoft.graph.servicePrincipalRiskDetection.yaml
+    description: >-
+      Represents information about detected at-risk service principals in a
+      Microsoft Entra tenant.
+    x-ms-navigationProperty: true
+  '@odata.type':
+    type: string

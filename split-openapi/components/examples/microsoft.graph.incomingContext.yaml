@@ -1,0 +1,7 @@
+value:
+  observedParticipantId: String
+  onBehalfOf:
+    '@odata.type': microsoft.graph.identitySet
+  sourceParticipantId: String
+  transferor:
+    '@odata.type': microsoft.graph.identitySet

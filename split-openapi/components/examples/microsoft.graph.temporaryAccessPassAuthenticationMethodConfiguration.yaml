@@ -1,0 +1,8 @@
+value:
+  defaultLength: '0'
+  defaultLifetimeInMinutes: '0'
+  includeTargets:
+    - '@odata.type': microsoft.graph.authenticationMethodTarget
+  isUsableOnce: 'true'
+  maximumLifetimeInMinutes: '0'
+  minimumLifetimeInMinutes: '0'

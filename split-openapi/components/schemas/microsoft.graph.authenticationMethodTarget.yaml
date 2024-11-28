@@ -1,0 +1,22 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: authenticationMethodTarget
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      isRegistrationRequired:
+        type: boolean
+        description: >-
+          Determines if the user is enforced to register the authentication
+          method.
+      targetType:
+        $ref: .\microsoft.graph.authenticationMethodTargetType.yaml
+      '@odata.type':
+        type: string
+    discriminator:
+      propertyName: '@odata.type'
+      mapping:
+        '#microsoft.graph.microsoftAuthenticatorAuthenticationMethodTarget': >-
+          .\microsoft.graph.microsoftAuthenticatorAuthenticationMethodTarget.yaml
+        '#microsoft.graph.smsAuthenticationMethodTarget': .\microsoft.graph.smsAuthenticationMethodTarget.yaml

@@ -1,0 +1,37 @@
+title: sharepointIds
+required:
+  - '@odata.type'
+type: object
+properties:
+  listId:
+    type: string
+    description: The unique identifier (guid) for the item's list in SharePoint.
+    nullable: true
+  listItemId:
+    type: string
+    description: An integer identifier for the item within the containing list.
+    nullable: true
+  listItemUniqueId:
+    type: string
+    description: >-
+      The unique identifier (guid) for the item within OneDrive for Business or
+      a SharePoint site.
+    nullable: true
+  siteId:
+    type: string
+    description: The unique identifier (guid) for the item's site collection (SPSite).
+    nullable: true
+  siteUrl:
+    type: string
+    description: The SharePoint URL for the site that contains the item.
+    nullable: true
+  tenantId:
+    type: string
+    description: The unique identifier (guid) for the tenancy.
+    nullable: true
+  webId:
+    type: string
+    description: The unique identifier (guid) for the item's site (SPWeb).
+    nullable: true
+  '@odata.type':
+    type: string

@@ -1,0 +1,13 @@
+value:
+  accessControl:
+    '@odata.type': microsoft.graph.bookingPageAccessControl
+  bookingPageColorCode: String
+  businessTimeZone: String
+  customerConsentMessage: String
+  enforceOneTimePassword: 'true'
+  isBusinessLogoDisplayEnabled: 'true'
+  isCustomerConsentEnabled: 'true'
+  isSearchEngineIndexabilityDisabled: 'true'
+  isTimeSlotTimeZoneSetToBusinessTimeZone: 'true'
+  privacyPolicyWebUrl: String
+  termsAndConditionsWebUrl: String

@@ -1,0 +1,32 @@
+title: siteSecurityLevel
+enum:
+  - userDefined
+  - low
+  - mediumLow
+  - medium
+  - mediumHigh
+  - high
+type: string
+description: Possible values for site security level.
+x-ms-enum:
+  name: siteSecurityLevel
+  modelAsString: false
+  values:
+    - value: userDefined
+      description: User Defined, default value, no intent.
+      name: userDefined
+    - value: low
+      description: Low.
+      name: low
+    - value: mediumLow
+      description: Medium-low.
+      name: mediumLow
+    - value: medium
+      description: Medium.
+      name: medium
+    - value: mediumHigh
+      description: Medium-high.
+      name: mediumHigh
+    - value: high
+      description: High.
+      name: high

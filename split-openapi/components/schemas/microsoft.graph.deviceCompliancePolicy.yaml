@@ -1,0 +1,96 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: deviceCompliancePolicy
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      createdDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: DateTime the object was created.
+        format: date-time
+      description:
+        type: string
+        description: Admin provided description of the Device Configuration.
+        nullable: true
+      displayName:
+        type: string
+        description: Admin provided name of the device configuration.
+      lastModifiedDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: DateTime the object was last modified.
+        format: date-time
+      version:
+        maximum: 2147483647
+        minimum: -2147483648
+        type: number
+        description: Version of the device configuration.
+        format: int32
+      assignments:
+        type: array
+        items:
+          $ref: .\microsoft.graph.deviceCompliancePolicyAssignment.yaml
+        description: The collection of assignments for this compliance policy.
+        x-ms-navigationProperty: true
+      deviceSettingStateSummaries:
+        type: array
+        items:
+          $ref: .\microsoft.graph.settingStateDeviceSummary.yaml
+        description: Compliance Setting State Device Summary
+        x-ms-navigationProperty: true
+      deviceStatuses:
+        type: array
+        items:
+          $ref: .\microsoft.graph.deviceComplianceDeviceStatus.yaml
+        description: List of DeviceComplianceDeviceStatus.
+        x-ms-navigationProperty: true
+      deviceStatusOverview:
+        anyOf:
+          - $ref: .\microsoft.graph.deviceComplianceDeviceOverview.yaml
+          - type: object
+            nullable: true
+        description: Device compliance devices status overview
+        x-ms-navigationProperty: true
+      scheduledActionsForRule:
+        type: array
+        items:
+          $ref: .\microsoft.graph.deviceComplianceScheduledActionForRule.yaml
+        description: >-
+          The list of scheduled action per rule for this compliance policy. This
+          is a required property when creating any individual per-platform
+          compliance policies.
+        x-ms-navigationProperty: true
+      userStatuses:
+        type: array
+        items:
+          $ref: .\microsoft.graph.deviceComplianceUserStatus.yaml
+        description: List of DeviceComplianceUserStatus.
+        x-ms-navigationProperty: true
+      userStatusOverview:
+        anyOf:
+          - $ref: .\microsoft.graph.deviceComplianceUserOverview.yaml
+          - type: object
+            nullable: true
+        description: Device compliance users status overview
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+    description: >-
+      This is the base class for Compliance policy. Compliance policies are
+      platform specific and individual per-platform compliance policies inherit
+      from here. 
+    discriminator:
+      propertyName: '@odata.type'
+      mapping:
+        '#microsoft.graph.androidCompliancePolicy': .\microsoft.graph.androidCompliancePolicy.yaml
+        '#microsoft.graph.androidWorkProfileCompliancePolicy': .\microsoft.graph.androidWorkProfileCompliancePolicy.yaml
+        '#microsoft.graph.iosCompliancePolicy': .\microsoft.graph.iosCompliancePolicy.yaml
+        '#microsoft.graph.macOSCompliancePolicy': .\microsoft.graph.macOSCompliancePolicy.yaml
+        '#microsoft.graph.windows10CompliancePolicy': .\microsoft.graph.windows10CompliancePolicy.yaml
+        '#microsoft.graph.windows10MobileCompliancePolicy': .\microsoft.graph.windows10MobileCompliancePolicy.yaml
+        '#microsoft.graph.windows81CompliancePolicy': .\microsoft.graph.windows81CompliancePolicy.yaml
+        '#microsoft.graph.windowsPhone81CompliancePolicy': .\microsoft.graph.windowsPhone81CompliancePolicy.yaml

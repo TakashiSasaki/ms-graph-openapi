@@ -1,0 +1,34 @@
+value:
+  audioCodec:
+    '@odata.type': microsoft.graph.callRecords.audioCodec
+  averageAudioDegradation: '0'
+  averageAudioNetworkJitter: Duration
+  averageBandwidthEstimate: '0'
+  averageFreezeDuration: Duration
+  averageJitter: Duration
+  averagePacketLossRate: '0'
+  averageRatioOfConcealedSamples: '0'
+  averageReceivedFrameRate: '0'
+  averageRoundTripTime: Duration
+  averageVideoFrameLossPercentage: '0'
+  averageVideoFrameRate: '0'
+  averageVideoPacketLossRate: '0'
+  endDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  isAudioForwardErrorCorrectionUsed: 'true'
+  lowFrameRateRatio: '0'
+  lowVideoProcessingCapabilityRatio: '0'
+  maxAudioNetworkJitter: Duration
+  maxJitter: Duration
+  maxPacketLossRate: '0'
+  maxRatioOfConcealedSamples: '0'
+  maxRoundTripTime: Duration
+  packetUtilization: '0'
+  postForwardErrorCorrectionPacketLossRate: '0'
+  rmsFreezeDuration: Duration
+  startDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  streamDirection:
+    '@odata.type': microsoft.graph.callRecords.mediaStreamDirection
+  streamId: String
+  videoCodec:
+    '@odata.type': microsoft.graph.callRecords.videoCodec
+  wasMediaBypassed: 'true'

@@ -1,0 +1,4 @@
+value:
+  displayName: String
+  id: String
+  type: String

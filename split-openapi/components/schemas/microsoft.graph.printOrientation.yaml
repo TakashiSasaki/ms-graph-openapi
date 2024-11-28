@@ -1,0 +1,8 @@
+title: printOrientation
+enum:
+  - portrait
+  - landscape
+  - reverseLandscape
+  - reversePortrait
+  - unknownFutureValue
+type: string

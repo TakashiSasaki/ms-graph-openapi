@@ -1,0 +1,8 @@
+value:
+  code: String
+  details:
+    - '@odata.type': microsoft.graph.publicErrorDetail
+  innerError:
+    '@odata.type': microsoft.graph.publicInnerError
+  message: String
+  target: String

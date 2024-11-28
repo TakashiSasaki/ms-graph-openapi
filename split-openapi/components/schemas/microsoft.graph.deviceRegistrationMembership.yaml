@@ -1,0 +1,16 @@
+title: deviceRegistrationMembership
+required:
+  - '@odata.type'
+type: object
+properties:
+  '@odata.type':
+    type: string
+discriminator:
+  propertyName: '@odata.type'
+  mapping:
+    '#microsoft.graph.allDeviceRegistrationMembership': .\microsoft.graph.allDeviceRegistrationMembership.yaml
+    '#microsoft.graph.enumeratedDeviceRegistrationMembership': .\microsoft.graph.enumeratedDeviceRegistrationMembership.yaml
+    '#microsoft.graph.noDeviceRegistrationMembership': .\microsoft.graph.noDeviceRegistrationMembership.yaml
+    microsoft.graph.allDeviceRegistrationMembership: .\microsoft.graph.allDeviceRegistrationMembership.yaml
+    microsoft.graph.enumeratedDeviceRegistrationMembership: .\microsoft.graph.enumeratedDeviceRegistrationMembership.yaml
+    microsoft.graph.noDeviceRegistrationMembership: .\microsoft.graph.noDeviceRegistrationMembership.yaml

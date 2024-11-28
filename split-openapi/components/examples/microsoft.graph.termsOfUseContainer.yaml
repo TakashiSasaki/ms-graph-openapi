@@ -1,0 +1,5 @@
+value:
+  agreementAcceptances:
+    - '@odata.type': microsoft.graph.agreementAcceptance
+  agreements:
+    - '@odata.type': microsoft.graph.agreement

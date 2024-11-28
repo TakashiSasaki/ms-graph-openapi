@@ -1,0 +1,45 @@
+description: Provides operations to count the resources in the collection.
+get:
+  tags:
+    - groups.team
+  summary: Get the number of the resource
+  operationId: groups.team.channels.messages.replies.hostedContents.GetCount-2a4d
+  parameters:
+    - $ref: ..\components\parameters\search.yaml
+    - $ref: ..\components\parameters\filter.yaml
+  responses:
+    2XX:
+      $ref: ..\components\responses\ODataCountResponse.yaml
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+parameters:
+  - name: group-id
+    in: path
+    description: The unique identifier of group
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: group
+  - name: channel-id
+    in: path
+    description: The unique identifier of channel
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: channel
+  - name: chatMessage-id
+    in: path
+    description: The unique identifier of chatMessage
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: chatMessage
+  - name: chatMessage-id1
+    in: path
+    description: The unique identifier of chatMessage
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: chatMessage

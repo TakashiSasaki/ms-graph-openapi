@@ -1,0 +1,50 @@
+description: Provides operations to call the sendVirtualAppointmentReminderSms method.
+post:
+  tags:
+    - communications.onlineMeeting
+  summary: Invoke action sendVirtualAppointmentReminderSms
+  description: >-
+    Send an SMS reminder to external attendees for a Teams virtual appointment.
+    This feature requires Teams premium and attendees must have a valid United
+    States phone number to receive SMS notifications.
+  externalDocs:
+    description: Find more info here
+    url: >-
+      https://learn.microsoft.com/graph/api/virtualappointment-sendvirtualappointmentremindersms?view=graph-rest-1.0
+  operationId: >-
+    communications.onlineMeetings.onlineMeeting.sendVirtualAppointmentReminderSms
+  requestBody:
+    description: Action parameters
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            remindBeforeTimeInMinutesType:
+              anyOf:
+                - $ref: >-
+                    ..\components\schemas\microsoft.graph.remindBeforeTimeInMinutesType.yaml
+                - type: object
+                  nullable: true
+            attendees:
+              type: array
+              items:
+                $ref: >-
+                  ..\components\schemas\microsoft.graph.attendeeNotificationInfo.yaml
+    required: true
+  responses:
+    '204':
+      description: Success
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: action
+parameters:
+  - name: onlineMeeting-id
+    in: path
+    description: The unique identifier of onlineMeeting
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: onlineMeeting

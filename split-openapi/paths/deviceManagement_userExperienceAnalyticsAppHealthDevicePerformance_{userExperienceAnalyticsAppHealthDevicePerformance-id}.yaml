@@ -1,0 +1,101 @@
+description: >-
+  Provides operations to manage the
+  userExperienceAnalyticsAppHealthDevicePerformance property of the
+  microsoft.graph.deviceManagement entity.
+get:
+  tags:
+    - deviceManagement.userExperienceAnalyticsAppHealthDevicePerformance
+  summary: Get userExperienceAnalyticsAppHealthDevicePerformance from deviceManagement
+  description: User experience analytics appHealth Device Performance
+  operationId: deviceManagement.GetUserExperienceAnalyticsAppHealthDevicePerformance
+  parameters:
+    - name: $select
+      in: query
+      description: Select properties to be returned
+      style: form
+      explode: false
+      schema:
+        uniqueItems: true
+        type: array
+        items:
+          type: string
+    - name: $expand
+      in: query
+      description: Expand related entities
+      style: form
+      explode: false
+      schema:
+        uniqueItems: true
+        type: array
+        items:
+          type: string
+  responses:
+    2XX:
+      description: Retrieved navigation property
+      content:
+        application/json:
+          schema:
+            $ref: >-
+              ..\components\schemas\microsoft.graph.userExperienceAnalyticsAppHealthDevicePerformance.yaml
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: operation
+patch:
+  tags:
+    - deviceManagement.userExperienceAnalyticsAppHealthDevicePerformance
+  summary: >-
+    Update the navigation property
+    userExperienceAnalyticsAppHealthDevicePerformance in deviceManagement
+  operationId: deviceManagement.UpdateUserExperienceAnalyticsAppHealthDevicePerformance
+  requestBody:
+    description: New navigation property values
+    content:
+      application/json:
+        schema:
+          $ref: >-
+            ..\components\schemas\microsoft.graph.userExperienceAnalyticsAppHealthDevicePerformance.yaml
+    required: true
+  responses:
+    2XX:
+      description: Success
+      content:
+        application/json:
+          schema:
+            $ref: >-
+              ..\components\schemas\microsoft.graph.userExperienceAnalyticsAppHealthDevicePerformance.yaml
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: operation
+delete:
+  tags:
+    - deviceManagement.userExperienceAnalyticsAppHealthDevicePerformance
+  summary: >-
+    Delete navigation property userExperienceAnalyticsAppHealthDevicePerformance
+    for deviceManagement
+  operationId: deviceManagement.DeleteUserExperienceAnalyticsAppHealthDevicePerformance
+  parameters:
+    - name: If-Match
+      in: header
+      description: ETag
+      schema:
+        type: string
+  responses:
+    '204':
+      description: Success
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: operation
+parameters:
+  - name: userExperienceAnalyticsAppHealthDevicePerformance-id
+    in: path
+    description: The unique identifier of userExperienceAnalyticsAppHealthDevicePerformance
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: userExperienceAnalyticsAppHealthDevicePerformance

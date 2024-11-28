@@ -1,0 +1,12 @@
+title: additionalOptions
+enum:
+  - none
+  - teamsAndYammerConversations
+  - cloudAttachments
+  - allDocumentVersions
+  - subfolderContents
+  - listAttachments
+  - unknownFutureValue
+type: string
+x-ms-enum-flags:
+  isFlags: true

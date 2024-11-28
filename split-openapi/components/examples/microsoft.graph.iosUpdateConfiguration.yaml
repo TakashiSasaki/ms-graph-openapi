@@ -1,0 +1,6 @@
+value:
+  activeHoursEnd: TimeOfDay (timestamp)
+  activeHoursStart: TimeOfDay (timestamp)
+  scheduledInstallDays:
+    - '@odata.type': microsoft.graph.dayOfWeek
+  utcTimeOffsetInMinutes: '0'

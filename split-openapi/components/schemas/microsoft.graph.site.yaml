@@ -1,0 +1,143 @@
+allOf:
+  - $ref: .\microsoft.graph.baseItem.yaml
+  - title: site
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      displayName:
+        type: string
+        description: The full title for the site. Read-only.
+        nullable: true
+      error:
+        anyOf:
+          - $ref: .\microsoft.graph.publicError.yaml
+          - type: object
+            nullable: true
+      isPersonalSite:
+        type: boolean
+        description: Identifies whether the site is personal or not. Read-only.
+        nullable: true
+      root:
+        anyOf:
+          - $ref: .\microsoft.graph.root.yaml
+          - type: object
+            nullable: true
+        description: If present, provides the root site in the site collection. Read-only.
+      sharepointIds:
+        anyOf:
+          - $ref: .\microsoft.graph.sharepointIds.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Returns identifiers useful for SharePoint REST compatibility.
+          Read-only.
+      siteCollection:
+        anyOf:
+          - $ref: .\microsoft.graph.siteCollection.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Provides details about the site's site collection. Available only on
+          the root site. Read-only.
+      analytics:
+        anyOf:
+          - $ref: .\microsoft.graph.itemAnalytics.yaml
+          - type: object
+            nullable: true
+        description: Analytics about the view activities that took place on this site.
+        x-ms-navigationProperty: true
+      columns:
+        type: array
+        items:
+          $ref: .\microsoft.graph.columnDefinition.yaml
+        description: >-
+          The collection of column definitions reusable across lists under this
+          site.
+        x-ms-navigationProperty: true
+      contentTypes:
+        type: array
+        items:
+          $ref: .\microsoft.graph.contentType.yaml
+        description: The collection of content types defined for this site.
+        x-ms-navigationProperty: true
+      drive:
+        anyOf:
+          - $ref: .\microsoft.graph.drive.yaml
+          - type: object
+            nullable: true
+        description: The default drive (document library) for this site.
+        x-ms-navigationProperty: true
+      drives:
+        type: array
+        items:
+          $ref: .\microsoft.graph.drive.yaml
+        description: The collection of drives (document libraries) under this site.
+        x-ms-navigationProperty: true
+      externalColumns:
+        type: array
+        items:
+          $ref: .\microsoft.graph.columnDefinition.yaml
+        x-ms-navigationProperty: true
+      items:
+        type: array
+        items:
+          $ref: .\microsoft.graph.baseItem.yaml
+        description: >-
+          Used to address any item contained in this site. This collection can't
+          be enumerated.
+        x-ms-navigationProperty: true
+      lists:
+        type: array
+        items:
+          $ref: .\microsoft.graph.list.yaml
+        description: The collection of lists under this site.
+        x-ms-navigationProperty: true
+      onenote:
+        anyOf:
+          - $ref: .\microsoft.graph.onenote.yaml
+          - type: object
+            nullable: true
+        description: Calls the OneNote service for notebook related operations.
+        x-ms-navigationProperty: true
+      operations:
+        type: array
+        items:
+          $ref: .\microsoft.graph.richLongRunningOperation.yaml
+        description: The collection of long-running operations on the site.
+        x-ms-navigationProperty: true
+      pages:
+        type: array
+        items:
+          $ref: .\microsoft.graph.baseSitePage.yaml
+        description: The collection of pages in the baseSitePages list in this site.
+        x-ms-navigationProperty: true
+      permissions:
+        type: array
+        items:
+          $ref: .\microsoft.graph.permission.yaml
+        description: The permissions associated with the site. Nullable.
+        x-ms-navigationProperty: true
+      sites:
+        type: array
+        items:
+          $ref: .\microsoft.graph.site.yaml
+        description: The collection of the sub-sites under this site.
+        x-ms-navigationProperty: true
+      termStore:
+        anyOf:
+          - $ref: .\microsoft.graph.termStore.store.yaml
+          - type: object
+            nullable: true
+        description: The default termStore under this site.
+        x-ms-navigationProperty: true
+      termStores:
+        type: array
+        items:
+          $ref: .\microsoft.graph.termStore.store.yaml
+        description: The collection of termStores under this site.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.site'
+x-ms-discriminator-value: '#microsoft.graph.site'

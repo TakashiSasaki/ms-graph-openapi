@@ -1,0 +1,27 @@
+description: Provides operations to call the retryServiceProvisioning method.
+post:
+  tags:
+    - groups.group
+  summary: Invoke action retryServiceProvisioning
+  description: Retry the group service provisioning.
+  externalDocs:
+    description: Find more info here
+    url: >-
+      https://learn.microsoft.com/graph/api/group-retryserviceprovisioning?view=graph-rest-1.0
+  operationId: groups.group.retryServiceProvisioning
+  responses:
+    '204':
+      description: Success
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: action
+parameters:
+  - name: group-id
+    in: path
+    description: The unique identifier of group
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: group

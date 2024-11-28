@@ -1,0 +1,19 @@
+title: hostReputationRule
+required:
+  - '@odata.type'
+type: object
+properties:
+  description:
+    type: string
+    description: The description of the rule that gives more context.
+  name:
+    type: string
+    description: The name of the rule.
+  relatedDetailsUrl:
+    type: string
+    description: Link to a web page with details related to this rule.
+    nullable: true
+  severity:
+    $ref: .\microsoft.graph.security.hostReputationRuleSeverity.yaml
+  '@odata.type':
+    type: string

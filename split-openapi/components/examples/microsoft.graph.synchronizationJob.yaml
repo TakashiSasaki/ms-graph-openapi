@@ -1,0 +1,12 @@
+value:
+  bulkUpload:
+    '@odata.type': microsoft.graph.bulkUpload
+  schedule:
+    '@odata.type': microsoft.graph.synchronizationSchedule
+  schema:
+    '@odata.type': microsoft.graph.synchronizationSchema
+  status:
+    '@odata.type': microsoft.graph.synchronizationStatus
+  synchronizationJobSettings:
+    - '@odata.type': microsoft.graph.keyValuePair
+  templateId: String

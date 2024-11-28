@@ -1,0 +1,21 @@
+allOf:
+  - $ref: .\microsoft.graph.security.dataSource.yaml
+  - title: unifiedGroupSource
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      includedSources:
+        anyOf:
+          - $ref: .\microsoft.graph.security.sourceType.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Specifies which sources are included in this group. Possible values
+          are: mailbox, site.
+      group:
+        $ref: .\microsoft.graph.group.yaml
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.security.unifiedGroupSource'
+x-ms-discriminator-value: '#microsoft.graph.security.unifiedGroupSource'

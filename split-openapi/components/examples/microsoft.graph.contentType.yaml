@@ -1,0 +1,30 @@
+value:
+  associatedHubsUrls:
+    - String
+  base:
+    '@odata.type': microsoft.graph.contentType
+  baseTypes:
+    - '@odata.type': microsoft.graph.contentType
+  columnLinks:
+    - '@odata.type': microsoft.graph.columnLink
+  columnPositions:
+    - '@odata.type': microsoft.graph.columnDefinition
+  columns:
+    - '@odata.type': microsoft.graph.columnDefinition
+  description: String
+  documentSet:
+    '@odata.type': microsoft.graph.documentSet
+  documentTemplate:
+    '@odata.type': microsoft.graph.documentSetContent
+  group: String
+  hidden: 'true'
+  inheritedFrom:
+    '@odata.type': microsoft.graph.itemReference
+  isBuiltIn: 'true'
+  name: String
+  order:
+    '@odata.type': microsoft.graph.contentTypeOrder
+  parentId: String
+  propagateChanges: 'true'
+  readOnly: 'true'
+  sealed: 'true'

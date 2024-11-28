@@ -1,0 +1,22 @@
+value:
+  calleeNumber: String
+  callEndSubReason: '0'
+  callerNumber: String
+  callType: String
+  correlationId: String
+  duration: '0'
+  endDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  failureDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  finalSipCode: '0'
+  finalSipCodePhrase: String
+  id: String
+  inviteDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  mediaBypassEnabled: 'true'
+  mediaPathLocation: String
+  signalingLocation: String
+  startDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  successfulCall: 'true'
+  trunkFullyQualifiedDomainName: String
+  userDisplayName: String
+  userId: String
+  userPrincipalName: String

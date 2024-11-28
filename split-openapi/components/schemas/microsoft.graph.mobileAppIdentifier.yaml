@@ -1,0 +1,15 @@
+title: mobileAppIdentifier
+required:
+  - '@odata.type'
+type: object
+properties:
+  '@odata.type':
+    type: string
+description: The identifier for a mobile app.
+discriminator:
+  propertyName: '@odata.type'
+  mapping:
+    '#microsoft.graph.androidMobileAppIdentifier': .\microsoft.graph.androidMobileAppIdentifier.yaml
+    '#microsoft.graph.iosMobileAppIdentifier': .\microsoft.graph.iosMobileAppIdentifier.yaml
+    microsoft.graph.androidMobileAppIdentifier: .\microsoft.graph.androidMobileAppIdentifier.yaml
+    microsoft.graph.iosMobileAppIdentifier: .\microsoft.graph.iosMobileAppIdentifier.yaml

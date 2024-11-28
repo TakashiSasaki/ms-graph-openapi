@@ -1,0 +1,34 @@
+allOf:
+  - $ref: .\microsoft.graph.mailFolder.yaml
+  - title: mailSearchFolder
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      filterQuery:
+        type: string
+        description: The OData query to filter the messages.
+        nullable: true
+      includeNestedFolders:
+        type: boolean
+        description: >-
+          Indicates how the mailbox folder hierarchy should be traversed in the
+          search. true means that a deep search should be done to include child
+          folders in the hierarchy of each folder explicitly specified in
+          sourceFolderIds. false means a shallow search of only each of the
+          folders explicitly specified in sourceFolderIds.
+        nullable: true
+      isSupported:
+        type: boolean
+        description: Indicates whether a search folder is editable using REST APIs.
+        nullable: true
+      sourceFolderIds:
+        type: array
+        items:
+          type: string
+          nullable: true
+        description: The mailbox folders that should be mined.
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.mailSearchFolder'
+x-ms-discriminator-value: '#microsoft.graph.mailSearchFolder'

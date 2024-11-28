@@ -1,0 +1,15 @@
+allOf:
+  - $ref: .\microsoft.graph.identity.yaml
+  - title: sharePointIdentity
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      loginName:
+        type: string
+        description: The sign in name of the SharePoint identity.
+        nullable: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.sharePointIdentity'
+x-ms-discriminator-value: '#microsoft.graph.sharePointIdentity'

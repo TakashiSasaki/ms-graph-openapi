@@ -1,0 +1,6 @@
+value:
+  customExtensionStageInstanceDetail: String
+  customExtensionStageInstanceId: String
+  stage:
+    '@odata.type': microsoft.graph.accessPackageCustomExtensionStage
+  state: String

@@ -1,0 +1,7 @@
+value:
+  dataVersion: String
+  description: String
+  properties: {}
+  serverProcessedContent:
+    '@odata.type': microsoft.graph.serverProcessedContent
+  title: String

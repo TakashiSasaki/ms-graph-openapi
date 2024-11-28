@@ -1,0 +1,14 @@
+title: complianceManagementPartnerAssignment
+required:
+  - '@odata.type'
+type: object
+properties:
+  target:
+    anyOf:
+      - $ref: .\microsoft.graph.deviceAndAppManagementAssignmentTarget.yaml
+      - type: object
+        nullable: true
+    description: Group assignment target.
+  '@odata.type':
+    type: string
+description: User group targeting for Compliance Management Partner

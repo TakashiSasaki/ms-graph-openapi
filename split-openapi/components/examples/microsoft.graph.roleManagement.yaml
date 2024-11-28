@@ -1,0 +1,5 @@
+value:
+  directory:
+    '@odata.type': microsoft.graph.rbacApplication
+  entitlementManagement:
+    '@odata.type': microsoft.graph.rbacApplication

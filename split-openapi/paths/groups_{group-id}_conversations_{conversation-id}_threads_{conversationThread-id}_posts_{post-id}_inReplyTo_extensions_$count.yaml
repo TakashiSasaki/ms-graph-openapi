@@ -1,0 +1,45 @@
+description: Provides operations to count the resources in the collection.
+get:
+  tags:
+    - groups.conversation
+  summary: Get the number of the resource
+  operationId: groups.conversations.threads.posts.inReplyTo.extensions.GetCount-6de4
+  parameters:
+    - $ref: ..\components\parameters\search.yaml
+    - $ref: ..\components\parameters\filter.yaml
+  responses:
+    2XX:
+      $ref: ..\components\responses\ODataCountResponse.yaml
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+parameters:
+  - name: group-id
+    in: path
+    description: The unique identifier of group
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: group
+  - name: conversation-id
+    in: path
+    description: The unique identifier of conversation
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: conversation
+  - name: conversationThread-id
+    in: path
+    description: The unique identifier of conversationThread
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: conversationThread
+  - name: post-id
+    in: path
+    description: The unique identifier of post
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: post

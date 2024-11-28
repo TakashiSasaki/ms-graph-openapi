@@ -1,0 +1,10 @@
+value:
+  appleId: String
+  genres:
+    - String
+  language: String
+  seller: String
+  totalLicenseCount: '0'
+  usedLicenseCount: '0'
+  vppOrganizationName: String
+  vppTokenId: 00000000-0000-0000-0000-000000000000

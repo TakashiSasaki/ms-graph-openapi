@@ -1,0 +1,15 @@
+allOf:
+  - $ref: .\microsoft.graph.educationResource.yaml
+  - title: educationFileResource
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      fileUrl:
+        type: string
+        description: Location on disk of the file resource.
+        nullable: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.educationFileResource'
+x-ms-discriminator-value: '#microsoft.graph.educationFileResource'

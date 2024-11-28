@@ -1,0 +1,74 @@
+description: Provides operations to call the decline method.
+post:
+  tags:
+    - groups.event
+  summary: Invoke action decline
+  description: >-
+    Decline invitation to the specified event in a user calendar. If the event
+    allows proposals for new times, on declining the event, an invitee can
+    choose to suggest an alternative time by including the proposedNewTime
+    parameter. For more information on how to propose a time, and how to receive
+    and accept a new time proposal, see Propose new meeting times.
+  externalDocs:
+    description: Find more info here
+    url: https://learn.microsoft.com/graph/api/event-decline?view=graph-rest-1.0
+  operationId: groups.group.events.event.instances.event.decline
+  requestBody:
+    description: Action parameters
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            ProposedNewTime:
+              anyOf:
+                - $ref: ..\components\schemas\microsoft.graph.timeSlot.yaml
+                - type: object
+                  nullable: true
+            SendResponse:
+              type: boolean
+              default: false
+              nullable: true
+            Comment:
+              type: string
+              nullable: true
+    required: true
+  responses:
+    '204':
+      description: Success
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: action
+parameters:
+  - name: group-id
+    in: path
+    description: The unique identifier of group
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: group
+  - name: event-id
+    in: path
+    description: The unique identifier of event
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: event
+  - name: event-id1
+    in: path
+    description: The unique identifier of event
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: event
+x-ms-docs-grouped-path:
+  - >-
+    /groups/{group-id}/calendar/calendarView/{event-id}/instances/{event-id1}/decline
+  - /groups/{group-id}/calendar/calendarView/{event-id}/decline
+  - /groups/{group-id}/calendar/events/{event-id}/instances/{event-id1}/decline
+  - /groups/{group-id}/calendar/events/{event-id}/decline
+  - /groups/{group-id}/calendarView/{event-id}/instances/{event-id1}/decline
+  - /groups/{group-id}/calendarView/{event-id}/decline
+  - /groups/{group-id}/events/{event-id}/decline

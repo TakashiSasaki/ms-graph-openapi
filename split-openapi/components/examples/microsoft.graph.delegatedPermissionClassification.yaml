@@ -1,0 +1,5 @@
+value:
+  classification:
+    '@odata.type': microsoft.graph.permissionClassificationType
+  permissionId: String
+  permissionName: String

@@ -1,0 +1,41 @@
+value:
+  activityBasedTimeoutPolicies:
+    - '@odata.type': microsoft.graph.activityBasedTimeoutPolicy
+  adminConsentRequestPolicy:
+    '@odata.type': microsoft.graph.adminConsentRequestPolicy
+  appManagementPolicies:
+    - '@odata.type': microsoft.graph.appManagementPolicy
+  authenticationFlowsPolicy:
+    '@odata.type': microsoft.graph.authenticationFlowsPolicy
+  authenticationMethodsPolicy:
+    '@odata.type': microsoft.graph.authenticationMethodsPolicy
+  authenticationStrengthPolicies:
+    - '@odata.type': microsoft.graph.authenticationStrengthPolicy
+  authorizationPolicy:
+    '@odata.type': microsoft.graph.authorizationPolicy
+  claimsMappingPolicies:
+    - '@odata.type': microsoft.graph.claimsMappingPolicy
+  conditionalAccessPolicies:
+    - '@odata.type': microsoft.graph.conditionalAccessPolicy
+  crossTenantAccessPolicy:
+    '@odata.type': microsoft.graph.crossTenantAccessPolicy
+  defaultAppManagementPolicy:
+    '@odata.type': microsoft.graph.tenantAppManagementPolicy
+  deviceRegistrationPolicy:
+    '@odata.type': microsoft.graph.deviceRegistrationPolicy
+  featureRolloutPolicies:
+    - '@odata.type': microsoft.graph.featureRolloutPolicy
+  homeRealmDiscoveryPolicies:
+    - '@odata.type': microsoft.graph.homeRealmDiscoveryPolicy
+  identitySecurityDefaultsEnforcementPolicy:
+    '@odata.type': microsoft.graph.identitySecurityDefaultsEnforcementPolicy
+  permissionGrantPolicies:
+    - '@odata.type': microsoft.graph.permissionGrantPolicy
+  roleManagementPolicies:
+    - '@odata.type': microsoft.graph.unifiedRoleManagementPolicy
+  roleManagementPolicyAssignments:
+    - '@odata.type': microsoft.graph.unifiedRoleManagementPolicyAssignment
+  tokenIssuancePolicies:
+    - '@odata.type': microsoft.graph.tokenIssuancePolicy
+  tokenLifetimePolicies:
+    - '@odata.type': microsoft.graph.tokenLifetimePolicy

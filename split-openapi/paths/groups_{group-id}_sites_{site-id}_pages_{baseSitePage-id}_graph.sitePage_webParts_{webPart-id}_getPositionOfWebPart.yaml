@@ -1,0 +1,56 @@
+description: Provides operations to call the getPositionOfWebPart method.
+post:
+  tags:
+    - groups.site
+  summary: Invoke action getPositionOfWebPart
+  operationId: >-
+    groups.group.sites.site.pages.baseSitePage.microsoft.graph.sitePage.webParts.webPart.getPositionOfWebPart
+  responses:
+    2XX:
+      description: Success
+      content:
+        application/json:
+          schema:
+            anyOf:
+              - $ref: ..\components\schemas\microsoft.graph.webPartPosition.yaml
+              - type: object
+                nullable: true
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: action
+parameters:
+  - name: group-id
+    in: path
+    description: The unique identifier of group
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: group
+  - name: site-id
+    in: path
+    description: The unique identifier of site
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: site
+  - name: baseSitePage-id
+    in: path
+    description: The unique identifier of baseSitePage
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: baseSitePage
+  - name: webPart-id
+    in: path
+    description: The unique identifier of webPart
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: webPart
+x-ms-docs-grouped-path:
+  - >-
+    /groups/{group-id}/sites/{site-id}/pages/{baseSitePage-id}/graph.sitePage/canvasLayout/horizontalSections/{horizontalSection-id}/columns/{horizontalSectionColumn-id}/webparts/{webPart-id}/getPositionOfWebPart
+  - >-
+    /groups/{group-id}/sites/{site-id}/pages/{baseSitePage-id}/graph.sitePage/canvasLayout/verticalSection/webparts/{webPart-id}/getPositionOfWebPart

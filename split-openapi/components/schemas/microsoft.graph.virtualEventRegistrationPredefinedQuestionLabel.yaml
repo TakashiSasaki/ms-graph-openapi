@@ -1,0 +1,12 @@
+title: virtualEventRegistrationPredefinedQuestionLabel
+enum:
+  - street
+  - city
+  - state
+  - postalCode
+  - countryOrRegion
+  - industry
+  - jobTitle
+  - organization
+  - unknownFutureValue
+type: string

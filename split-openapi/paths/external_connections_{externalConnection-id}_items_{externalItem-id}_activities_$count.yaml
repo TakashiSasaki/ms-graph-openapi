@@ -1,0 +1,31 @@
+description: Provides operations to count the resources in the collection.
+get:
+  tags:
+    - external.externalConnection
+  summary: Get the number of the resource
+  operationId: external.connections.items.activities.GetCount-d5b5
+  parameters:
+    - $ref: ..\components\parameters\search.yaml
+    - $ref: ..\components\parameters\filter.yaml
+  responses:
+    2XX:
+      $ref: ..\components\responses\ODataCountResponse.yaml
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+parameters:
+  - name: externalConnection-id
+    in: path
+    description: The unique identifier of externalConnection
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: externalConnection
+  - name: externalItem-id
+    in: path
+    description: The unique identifier of externalItem
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: externalItem

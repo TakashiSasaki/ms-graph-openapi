@@ -1,0 +1,6 @@
+title: synchronizationDisposition
+enum:
+  - Normal
+  - Discard
+  - Escrow
+type: string

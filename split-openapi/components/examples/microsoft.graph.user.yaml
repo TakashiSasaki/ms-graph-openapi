@@ -1,0 +1,205 @@
+value:
+  aboutMe: String
+  accountEnabled: 'true'
+  activities:
+    - '@odata.type': microsoft.graph.userActivity
+  ageGroup: String
+  agreementAcceptances:
+    - '@odata.type': microsoft.graph.agreementAcceptance
+  appRoleAssignments:
+    - '@odata.type': microsoft.graph.appRoleAssignment
+  assignedLicenses:
+    - '@odata.type': microsoft.graph.assignedLicense
+  assignedPlans:
+    - '@odata.type': microsoft.graph.assignedPlan
+  authentication:
+    '@odata.type': microsoft.graph.authentication
+  authorizationInfo:
+    '@odata.type': microsoft.graph.authorizationInfo
+  birthday: '0001-01-01T00:00:00.0000000+00:00'
+  businessPhones:
+    - String
+  calendar:
+    '@odata.type': microsoft.graph.calendar
+  calendarGroups:
+    - '@odata.type': microsoft.graph.calendarGroup
+  calendars:
+    - '@odata.type': microsoft.graph.calendar
+  calendarView:
+    - '@odata.type': microsoft.graph.event
+  chats:
+    - '@odata.type': microsoft.graph.chat
+  city: String
+  cloudClipboard:
+    '@odata.type': microsoft.graph.cloudClipboardRoot
+  companyName: String
+  consentProvidedForMinor: String
+  contactFolders:
+    - '@odata.type': microsoft.graph.contactFolder
+  contacts:
+    - '@odata.type': microsoft.graph.contact
+  country: String
+  createdDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  createdObjects:
+    - '@odata.type': microsoft.graph.directoryObject
+  creationType: String
+  customSecurityAttributes:
+    '@odata.type': microsoft.graph.customSecurityAttributeValue
+  department: String
+  deviceEnrollmentLimit: '0'
+  deviceManagementTroubleshootingEvents:
+    - '@odata.type': microsoft.graph.deviceManagementTroubleshootingEvent
+  directReports:
+    - '@odata.type': microsoft.graph.directoryObject
+  displayName: String
+  drive:
+    '@odata.type': microsoft.graph.drive
+  drives:
+    - '@odata.type': microsoft.graph.drive
+  employeeExperience:
+    '@odata.type': microsoft.graph.employeeExperienceUser
+  employeeHireDate: '0001-01-01T00:00:00.0000000+00:00'
+  employeeId: String
+  employeeLeaveDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  employeeOrgData:
+    '@odata.type': microsoft.graph.employeeOrgData
+  employeeType: String
+  events:
+    - '@odata.type': microsoft.graph.event
+  extensions:
+    - '@odata.type': microsoft.graph.extension
+  externalUserState: String
+  externalUserStateChangeDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  faxNumber: String
+  followedSites:
+    - '@odata.type': microsoft.graph.site
+  givenName: String
+  hireDate: '0001-01-01T00:00:00.0000000+00:00'
+  identities:
+    - '@odata.type': microsoft.graph.objectIdentity
+  imAddresses:
+    - String
+  inferenceClassification:
+    '@odata.type': microsoft.graph.inferenceClassification
+  insights:
+    '@odata.type': microsoft.graph.itemInsights
+  interests:
+    - String
+  isManagementRestricted: 'true'
+  isResourceAccount: 'true'
+  jobTitle: String
+  joinedTeams:
+    - '@odata.type': microsoft.graph.team
+  lastPasswordChangeDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  legalAgeGroupClassification: String
+  licenseAssignmentStates:
+    - '@odata.type': microsoft.graph.licenseAssignmentState
+  licenseDetails:
+    - '@odata.type': microsoft.graph.licenseDetails
+  mail: String
+  mailboxSettings:
+    '@odata.type': microsoft.graph.mailboxSettings
+  mailFolders:
+    - '@odata.type': microsoft.graph.mailFolder
+  mailNickname: String
+  managedAppRegistrations:
+    - '@odata.type': microsoft.graph.managedAppRegistration
+  managedDevices:
+    - '@odata.type': microsoft.graph.managedDevice
+  manager:
+    '@odata.type': microsoft.graph.directoryObject
+  memberOf:
+    - '@odata.type': microsoft.graph.directoryObject
+  messages:
+    - '@odata.type': microsoft.graph.message
+  mobilePhone: String
+  mySite: String
+  oauth2PermissionGrants:
+    - '@odata.type': microsoft.graph.oAuth2PermissionGrant
+  officeLocation: String
+  onenote:
+    '@odata.type': microsoft.graph.onenote
+  onlineMeetings:
+    - '@odata.type': microsoft.graph.onlineMeeting
+  onPremisesDistinguishedName: String
+  onPremisesDomainName: String
+  onPremisesExtensionAttributes:
+    '@odata.type': microsoft.graph.onPremisesExtensionAttributes
+  onPremisesImmutableId: String
+  onPremisesLastSyncDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  onPremisesProvisioningErrors:
+    - '@odata.type': microsoft.graph.onPremisesProvisioningError
+  onPremisesSamAccountName: String
+  onPremisesSecurityIdentifier: String
+  onPremisesSyncEnabled: 'true'
+  onPremisesUserPrincipalName: String
+  otherMails:
+    - String
+  outlook:
+    '@odata.type': microsoft.graph.outlookUser
+  ownedDevices:
+    - '@odata.type': microsoft.graph.directoryObject
+  ownedObjects:
+    - '@odata.type': microsoft.graph.directoryObject
+  passwordPolicies: String
+  passwordProfile:
+    '@odata.type': microsoft.graph.passwordProfile
+  pastProjects:
+    - String
+  people:
+    - '@odata.type': microsoft.graph.person
+  permissionGrants:
+    - '@odata.type': microsoft.graph.resourceSpecificPermissionGrant
+  photo:
+    '@odata.type': microsoft.graph.profilePhoto
+  photos:
+    - '@odata.type': microsoft.graph.profilePhoto
+  planner:
+    '@odata.type': microsoft.graph.plannerUser
+  postalCode: String
+  preferredDataLocation: String
+  preferredLanguage: String
+  preferredName: String
+  presence:
+    '@odata.type': microsoft.graph.presence
+  print:
+    '@odata.type': microsoft.graph.userPrint
+  provisionedPlans:
+    - '@odata.type': microsoft.graph.provisionedPlan
+  proxyAddresses:
+    - String
+  registeredDevices:
+    - '@odata.type': microsoft.graph.directoryObject
+  responsibilities:
+    - String
+  schools:
+    - String
+  scopedRoleMemberOf:
+    - '@odata.type': microsoft.graph.scopedRoleMembership
+  securityIdentifier: String
+  serviceProvisioningErrors:
+    - '@odata.type': microsoft.graph.serviceProvisioningError
+  settings:
+    '@odata.type': microsoft.graph.userSettings
+  showInAddressList: 'true'
+  signInActivity:
+    '@odata.type': microsoft.graph.signInActivity
+  signInSessionsValidFromDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  skills:
+    - String
+  solutions:
+    '@odata.type': microsoft.graph.userSolutionRoot
+  sponsors:
+    - '@odata.type': microsoft.graph.directoryObject
+  state: String
+  streetAddress: String
+  surname: String
+  teamwork:
+    '@odata.type': microsoft.graph.userTeamwork
+  todo:
+    '@odata.type': microsoft.graph.todo
+  transitiveMemberOf:
+    - '@odata.type': microsoft.graph.directoryObject
+  usageLocation: String
+  userPrincipalName: String
+  userType: String

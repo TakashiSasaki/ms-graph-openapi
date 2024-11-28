@@ -1,0 +1,60 @@
+title: devicePlatformType
+enum:
+  - android
+  - androidForWork
+  - iOS
+  - macOS
+  - windowsPhone81
+  - windows81AndLater
+  - windows10AndLater
+  - androidWorkProfile
+  - unknown
+  - androidAOSP
+  - androidMobileApplicationManagement
+  - iOSMobileApplicationManagement
+  - unknownFutureValue
+type: string
+description: Supported platform types.
+x-ms-enum:
+  name: devicePlatformType
+  modelAsString: false
+  values:
+    - value: android
+      description: Android.
+      name: android
+    - value: androidForWork
+      description: AndroidForWork.
+      name: androidForWork
+    - value: iOS
+      description: iOS.
+      name: iOS
+    - value: macOS
+      description: MacOS.
+      name: macOS
+    - value: windowsPhone81
+      description: WindowsPhone 8.1.
+      name: windowsPhone81
+    - value: windows81AndLater
+      description: Windows 8.1 and later
+      name: windows81AndLater
+    - value: windows10AndLater
+      description: Windows 10 and later.
+      name: windows10AndLater
+    - value: androidWorkProfile
+      description: Android Work Profile.
+      name: androidWorkProfile
+    - value: unknown
+      description: Unknown.
+      name: unknown
+    - value: androidAOSP
+      description: Android AOSP.
+      name: androidAOSP
+    - value: androidMobileApplicationManagement
+      description: Indicates Mobile Application Management (MAM) for android devices.
+      name: androidMobileApplicationManagement
+    - value: iOSMobileApplicationManagement
+      description: Indicates Mobile Application Management (MAM) for iOS devices
+      name: iOSMobileApplicationManagement
+    - value: unknownFutureValue
+      description: Evolvable enumeration sentinel value. Do not use
+      name: unknownFutureValue

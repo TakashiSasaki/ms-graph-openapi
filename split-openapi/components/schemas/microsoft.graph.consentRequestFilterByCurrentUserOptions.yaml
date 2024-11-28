@@ -1,0 +1,5 @@
+title: consentRequestFilterByCurrentUserOptions
+enum:
+  - reviewer
+  - unknownFutureValue
+type: string

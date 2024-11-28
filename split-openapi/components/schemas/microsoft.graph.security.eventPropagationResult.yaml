@@ -1,0 +1,29 @@
+title: eventPropagationResult
+required:
+  - '@odata.type'
+type: object
+properties:
+  location:
+    type: string
+    description: >-
+      The name of the specific location in the workload associated with the
+      event.
+    nullable: true
+  serviceName:
+    type: string
+    description: The name of the workload associated with the event.
+    nullable: true
+  status:
+    anyOf:
+      - $ref: .\microsoft.graph.security.eventPropagationStatus.yaml
+      - type: object
+        nullable: true
+    description: >-
+      Indicates the status of the event creation request. The possible values
+      are: none, inProcessing, failed, success, unknownFutureValue.
+  statusInformation:
+    type: string
+    description: Additional information about the status of the event creation request.
+    nullable: true
+  '@odata.type':
+    type: string

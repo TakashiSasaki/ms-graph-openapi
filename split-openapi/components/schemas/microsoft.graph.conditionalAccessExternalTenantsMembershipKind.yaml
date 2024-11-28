@@ -1,0 +1,6 @@
+title: conditionalAccessExternalTenantsMembershipKind
+enum:
+  - all
+  - enumerated
+  - unknownFutureValue
+type: string

@@ -1,0 +1,19 @@
+allOf:
+  - $ref: .\microsoft.graph.mobileAppAssignmentSettings.yaml
+  - title: microsoftStoreForBusinessAppAssignmentSettings
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      useDeviceContext:
+        type: boolean
+        description: >-
+          Whether or not to use device execution context for Microsoft Store for
+          Business mobile app.
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.microsoftStoreForBusinessAppAssignmentSettings'
+    description: >-
+      Contains properties used to assign an Microsoft Store for Business mobile
+      app to a group.
+x-ms-discriminator-value: '#microsoft.graph.microsoftStoreForBusinessAppAssignmentSettings'

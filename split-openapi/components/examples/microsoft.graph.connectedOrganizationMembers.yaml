@@ -1,0 +1,3 @@
+value:
+  connectedOrganizationId: String
+  description: String

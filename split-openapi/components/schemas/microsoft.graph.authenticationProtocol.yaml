@@ -1,0 +1,6 @@
+title: authenticationProtocol
+enum:
+  - wsFed
+  - saml
+  - unknownFutureValue
+type: string

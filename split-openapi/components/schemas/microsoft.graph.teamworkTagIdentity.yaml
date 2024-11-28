@@ -1,0 +1,11 @@
+allOf:
+  - $ref: .\microsoft.graph.identity.yaml
+  - title: teamworkTagIdentity
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.teamworkTagIdentity'
+x-ms-discriminator-value: '#microsoft.graph.teamworkTagIdentity'

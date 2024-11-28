@@ -1,0 +1,7 @@
+title: assignmentType
+enum:
+  - required
+  - recommended
+  - unknownFutureValue
+  - peerRecommended
+type: string

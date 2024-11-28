@@ -1,0 +1,11 @@
+title: mediaContentRatingJapan
+required:
+  - '@odata.type'
+type: object
+properties:
+  movieRating:
+    $ref: .\microsoft.graph.ratingJapanMoviesType.yaml
+  tvRating:
+    $ref: .\microsoft.graph.ratingJapanTelevisionType.yaml
+  '@odata.type':
+    type: string

@@ -1,0 +1,10 @@
+title: lifecycleWorkflowProcessingStatus
+enum:
+  - queued
+  - inProgress
+  - completed
+  - completedWithErrors
+  - canceled
+  - failed
+  - unknownFutureValue
+type: string

@@ -1,0 +1,9 @@
+title: printScaling
+enum:
+  - auto
+  - shrinkToFit
+  - fill
+  - fit
+  - none
+  - unknownFutureValue
+type: string

@@ -1,0 +1,7 @@
+value:
+  hideAccountResetCredentials: 'true'
+  hideCannotAccessYourAccount: 'true'
+  hideForgotMyPassword: 'true'
+  hidePrivacyAndCookies: 'true'
+  hideResetItNow: 'true'
+  hideTermsOfUse: 'true'

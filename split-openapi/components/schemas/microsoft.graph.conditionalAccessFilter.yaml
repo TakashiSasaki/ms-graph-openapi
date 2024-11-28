@@ -1,0 +1,14 @@
+title: conditionalAccessFilter
+required:
+  - '@odata.type'
+type: object
+properties:
+  mode:
+    $ref: .\microsoft.graph.filterMode.yaml
+  rule:
+    type: string
+    description: >-
+      Rule syntax is similar to that used for membership rules for groups in
+      Microsoft Entra ID. For details, see rules with multiple expressions
+  '@odata.type':
+    type: string

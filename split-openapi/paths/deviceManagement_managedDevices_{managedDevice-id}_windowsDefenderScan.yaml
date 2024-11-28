@@ -1,0 +1,38 @@
+description: Provides operations to call the windowsDefenderScan method.
+post:
+  tags:
+    - deviceManagement.managedDevice
+  summary: Invoke action windowsDefenderScan
+  description: Not yet documented
+  externalDocs:
+    description: Find more info here
+    url: >-
+      https://learn.microsoft.com/graph/api/intune-devices-manageddevice-windowsdefenderscan?view=graph-rest-1.0
+  operationId: deviceManagement.managedDevices.managedDevice.windowsDefenderScan
+  requestBody:
+    description: Action parameters
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            quickScan:
+              type: boolean
+              default: false
+    required: true
+  responses:
+    '204':
+      description: Success
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: action
+parameters:
+  - name: managedDevice-id
+    in: path
+    description: The unique identifier of managedDevice
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: managedDevice

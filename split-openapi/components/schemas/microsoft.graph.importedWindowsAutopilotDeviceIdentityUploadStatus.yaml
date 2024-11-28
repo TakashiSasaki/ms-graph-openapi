@@ -1,0 +1,23 @@
+title: importedWindowsAutopilotDeviceIdentityUploadStatus
+enum:
+  - noUpload
+  - pending
+  - complete
+  - error
+type: string
+x-ms-enum:
+  name: importedWindowsAutopilotDeviceIdentityUploadStatus
+  modelAsString: false
+  values:
+    - value: noUpload
+      description: No upload status.
+      name: noUpload
+    - value: pending
+      description: Pending status.
+      name: pending
+    - value: complete
+      description: Complete status.
+      name: complete
+    - value: error
+      description: Error status.
+      name: error

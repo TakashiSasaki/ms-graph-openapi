@@ -1,0 +1,5 @@
+value:
+  calendarEventId: String
+  joinWebUrl: String
+  organizer:
+    '@odata.type': microsoft.graph.teamworkUserIdentity

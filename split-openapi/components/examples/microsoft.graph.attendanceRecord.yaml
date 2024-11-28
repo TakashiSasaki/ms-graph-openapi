@@ -1,0 +1,8 @@
+value:
+  attendanceIntervals:
+    - '@odata.type': microsoft.graph.attendanceInterval
+  emailAddress: String
+  identity:
+    '@odata.type': microsoft.graph.identity
+  role: String
+  totalAttendanceInSeconds: '0'

@@ -1,0 +1,36 @@
+title: updateAllowedCombinationsResult
+required:
+  - '@odata.type'
+type: object
+properties:
+  additionalInformation:
+    type: string
+    description: >-
+      Information about why the updateAllowedCombinations action was successful
+      or failed.
+    nullable: true
+  conditionalAccessReferences:
+    type: array
+    items:
+      type: string
+      nullable: true
+    description: >-
+      References to existing Conditional Access policies that use this
+      authentication strength.
+  currentCombinations:
+    type: array
+    items:
+      $ref: .\microsoft.graph.authenticationMethodModes.yaml
+    description: >-
+      The list of current authentication method combinations allowed by the
+      authentication strength.
+  previousCombinations:
+    type: array
+    items:
+      $ref: .\microsoft.graph.authenticationMethodModes.yaml
+    description: >-
+      The list of former authentication method combinations allowed by the
+      authentication strength before they were updated through the
+      updateAllowedCombinations action.
+  '@odata.type':
+    type: string

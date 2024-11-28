@@ -1,0 +1,7 @@
+value:
+  categoryFilterGroups:
+    - '@odata.type': microsoft.graph.filterGroup
+  groups:
+    - '@odata.type': microsoft.graph.filterGroup
+  inputFilterGroups:
+    - '@odata.type': microsoft.graph.filterGroup

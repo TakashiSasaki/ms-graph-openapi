@@ -1,0 +1,17 @@
+value:
+  category:
+    '@odata.type': microsoft.graph.identityGovernance.lifecycleWorkflowCategory
+  createdBy:
+    '@odata.type': microsoft.graph.user
+  createdDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  description: String
+  displayName: String
+  executionConditions:
+    '@odata.type': microsoft.graph.identityGovernance.workflowExecutionConditions
+  isEnabled: 'true'
+  isSchedulingEnabled: 'true'
+  lastModifiedBy:
+    '@odata.type': microsoft.graph.user
+  lastModifiedDateTime: '0001-01-01T00:00:00.0000000+00:00'
+  tasks:
+    - '@odata.type': microsoft.graph.identityGovernance.task

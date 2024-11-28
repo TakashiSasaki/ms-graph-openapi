@@ -1,0 +1,28 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: entitlementManagementSettings
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      durationUntilExternalUserDeletedAfterBlocked:
+        pattern: ^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$
+        type: string
+        description: >-
+          If externalUserLifecycleAction is blockSignInAndDelete, the duration,
+          typically many days, after an external user is blocked from sign in
+          before their account is deleted.
+        format: duration
+        nullable: true
+      externalUserLifecycleAction:
+        anyOf:
+          - $ref: .\microsoft.graph.accessPackageExternalUserLifecycleAction.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Automatic action that the service should take when an external user's
+          last access package assignment is removed. The possible values are:
+          none, blockSignIn, blockSignInAndDelete, unknownFutureValue.
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.entitlementManagementSettings'

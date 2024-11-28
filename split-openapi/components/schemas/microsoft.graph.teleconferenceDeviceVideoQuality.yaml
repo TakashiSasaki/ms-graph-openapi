@@ -1,0 +1,50 @@
+allOf:
+  - $ref: .\microsoft.graph.teleconferenceDeviceMediaQuality.yaml
+  - title: teleconferenceDeviceVideoQuality
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      averageInboundBitRate:
+        oneOf:
+          - type: number
+            format: double
+            nullable: true
+          - type: string
+            nullable: true
+          - $ref: .\ReferenceNumeric.yaml
+        description: The average inbound stream video bit rate per second.
+      averageInboundFrameRate:
+        oneOf:
+          - type: number
+            format: double
+            nullable: true
+          - type: string
+            nullable: true
+          - $ref: .\ReferenceNumeric.yaml
+        description: The average inbound stream video frame rate per second.
+      averageOutboundBitRate:
+        oneOf:
+          - type: number
+            format: double
+            nullable: true
+          - type: string
+            nullable: true
+          - $ref: .\ReferenceNumeric.yaml
+        description: The average outbound stream video bit rate per second.
+      averageOutboundFrameRate:
+        oneOf:
+          - type: number
+            format: double
+            nullable: true
+          - type: string
+            nullable: true
+          - $ref: .\ReferenceNumeric.yaml
+        description: The average outbound stream video frame rate per second.
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.teleconferenceDeviceVideoQuality'
+    discriminator:
+      propertyName: '@odata.type'
+      mapping:
+        '#microsoft.graph.teleconferenceDeviceScreenSharingQuality': .\microsoft.graph.teleconferenceDeviceScreenSharingQuality.yaml

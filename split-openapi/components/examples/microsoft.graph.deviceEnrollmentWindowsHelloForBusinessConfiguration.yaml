@@ -1,0 +1,18 @@
+value:
+  enhancedBiometricsState:
+    '@odata.type': microsoft.graph.enablement
+  pinExpirationInDays: '0'
+  pinLowercaseCharactersUsage:
+    '@odata.type': microsoft.graph.windowsHelloForBusinessPinUsage
+  pinMaximumLength: '0'
+  pinMinimumLength: '0'
+  pinPreviousBlockCount: '0'
+  pinSpecialCharactersUsage:
+    '@odata.type': microsoft.graph.windowsHelloForBusinessPinUsage
+  pinUppercaseCharactersUsage:
+    '@odata.type': microsoft.graph.windowsHelloForBusinessPinUsage
+  remotePassportEnabled: 'true'
+  securityDeviceRequired: 'true'
+  state:
+    '@odata.type': microsoft.graph.enablement
+  unlockWithBiometricsEnabled: 'true'

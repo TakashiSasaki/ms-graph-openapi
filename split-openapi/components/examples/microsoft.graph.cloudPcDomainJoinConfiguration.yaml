@@ -1,0 +1,7 @@
+value:
+  domainJoinType:
+    '@odata.type': microsoft.graph.cloudPcDomainJoinType
+  onPremisesConnectionId: String
+  regionGroup:
+    '@odata.type': microsoft.graph.cloudPcRegionGroup
+  regionName: String

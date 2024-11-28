@@ -1,0 +1,10 @@
+title: deploymentAccessKeyType
+required:
+  - '@odata.type'
+type: object
+properties:
+  deploymentAccessKey:
+    type: string
+    description: The deployment access key.
+  '@odata.type':
+    type: string

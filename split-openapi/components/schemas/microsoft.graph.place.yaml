@@ -1,0 +1,35 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: place
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      address:
+        anyOf:
+          - $ref: .\microsoft.graph.physicalAddress.yaml
+          - type: object
+            nullable: true
+        description: The street address of the place.
+      displayName:
+        type: string
+        description: The name associated with the place.
+      geoCoordinates:
+        anyOf:
+          - $ref: .\microsoft.graph.outlookGeoCoordinates.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Specifies the place location in latitude, longitude, and (optionally)
+          altitude coordinates.
+      phone:
+        type: string
+        description: The phone number of the place.
+        nullable: true
+      '@odata.type':
+        type: string
+    discriminator:
+      propertyName: '@odata.type'
+      mapping:
+        '#microsoft.graph.room': .\microsoft.graph.room.yaml
+        '#microsoft.graph.roomList': .\microsoft.graph.roomList.yaml

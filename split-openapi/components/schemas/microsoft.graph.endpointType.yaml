@@ -1,0 +1,8 @@
+title: endpointType
+enum:
+  - default
+  - voicemail
+  - skypeForBusiness
+  - skypeForBusinessVoipPhone
+  - unknownFutureValue
+type: string

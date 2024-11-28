@@ -1,0 +1,4 @@
+value:
+  itemId: String
+  urlMatchInfo:
+    '@odata.type': microsoft.graph.externalConnectors.urlMatchInfo

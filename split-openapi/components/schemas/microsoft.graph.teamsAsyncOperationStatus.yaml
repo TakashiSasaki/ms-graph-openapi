@@ -1,0 +1,9 @@
+title: teamsAsyncOperationStatus
+enum:
+  - invalid
+  - notStarted
+  - inProgress
+  - succeeded
+  - failed
+  - unknownFutureValue
+type: string

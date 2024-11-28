@@ -1,0 +1,23 @@
+allOf:
+  - $ref: .\microsoft.graph.accessReviewScope.yaml
+  - title: principalResourceMembershipsScope
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      principalScopes:
+        type: array
+        items:
+          $ref: .\microsoft.graph.accessReviewScope.yaml
+        description: >-
+          Defines the scopes of the principals whose access to resources are
+          reviewed in the access review.
+      resourceScopes:
+        type: array
+        items:
+          $ref: .\microsoft.graph.accessReviewScope.yaml
+        description: Defines the scopes of the resources for which access is reviewed.
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.principalResourceMembershipsScope'
+x-ms-discriminator-value: '#microsoft.graph.principalResourceMembershipsScope'

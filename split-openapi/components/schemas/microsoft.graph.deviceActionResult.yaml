@@ -1,0 +1,41 @@
+title: deviceActionResult
+required:
+  - '@odata.type'
+type: object
+properties:
+  actionName:
+    type: string
+    description: Action name
+    nullable: true
+  actionState:
+    $ref: .\microsoft.graph.actionState.yaml
+  lastUpdatedDateTime:
+    pattern: >-
+      ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+    type: string
+    description: Time the action state was last updated
+    format: date-time
+  startDateTime:
+    pattern: >-
+      ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+    type: string
+    description: Time the action was initiated
+    format: date-time
+  '@odata.type':
+    type: string
+description: Device action result
+discriminator:
+  propertyName: '@odata.type'
+  mapping:
+    '#microsoft.graph.deleteUserFromSharedAppleDeviceActionResult': .\microsoft.graph.deleteUserFromSharedAppleDeviceActionResult.yaml
+    '#microsoft.graph.locateDeviceActionResult': .\microsoft.graph.locateDeviceActionResult.yaml
+    '#microsoft.graph.remoteLockActionResult': .\microsoft.graph.remoteLockActionResult.yaml
+    '#microsoft.graph.resetPasscodeActionResult': .\microsoft.graph.resetPasscodeActionResult.yaml
+    '#microsoft.graph.rotateBitLockerKeysDeviceActionResult': .\microsoft.graph.rotateBitLockerKeysDeviceActionResult.yaml
+    '#microsoft.graph.windowsDefenderScanActionResult': .\microsoft.graph.windowsDefenderScanActionResult.yaml
+    microsoft.graph.deleteUserFromSharedAppleDeviceActionResult: .\microsoft.graph.deleteUserFromSharedAppleDeviceActionResult.yaml
+    microsoft.graph.locateDeviceActionResult: .\microsoft.graph.locateDeviceActionResult.yaml
+    microsoft.graph.remoteLockActionResult: .\microsoft.graph.remoteLockActionResult.yaml
+    microsoft.graph.resetPasscodeActionResult: .\microsoft.graph.resetPasscodeActionResult.yaml
+    microsoft.graph.rotateBitLockerKeysDeviceActionResult: .\microsoft.graph.rotateBitLockerKeysDeviceActionResult.yaml
+    microsoft.graph.windowsDefenderScanActionResult: .\microsoft.graph.windowsDefenderScanActionResult.yaml

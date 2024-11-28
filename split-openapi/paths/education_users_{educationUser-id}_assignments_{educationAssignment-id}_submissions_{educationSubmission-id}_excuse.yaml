@@ -1,0 +1,60 @@
+description: Provides operations to call the excuse method.
+post:
+  tags:
+    - education.educationUser
+  summary: Invoke action excuse
+  description: >-
+    Excuse a submission. Excused submissions aren't included in average grade
+    calculations. Grading rubrics and feedback are deleted. Only teachers can
+    perform this action.  If the Prefer: include-unknown-enum-members request
+    header is provided, the excused submission shows the excused status.
+    Otherwise, the submission status retains the returned status. For more
+    information about how to use this header, see the Examples section.
+  externalDocs:
+    description: Find more info here
+    url: >-
+      https://learn.microsoft.com/graph/api/educationsubmission-excuse?view=graph-rest-1.0
+  operationId: >-
+    education.users.educationUser.assignments.educationAssignment.submissions.educationSubmission.excuse
+  responses:
+    2XX:
+      description: Success
+      content:
+        application/json:
+          schema:
+            anyOf:
+              - $ref: ..\components\schemas\microsoft.graph.educationSubmission.yaml
+              - type: object
+                nullable: true
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: action
+parameters:
+  - name: educationUser-id
+    in: path
+    description: The unique identifier of educationUser
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: educationUser
+  - name: educationAssignment-id
+    in: path
+    description: The unique identifier of educationAssignment
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: educationAssignment
+  - name: educationSubmission-id
+    in: path
+    description: The unique identifier of educationSubmission
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: educationSubmission
+x-ms-docs-grouped-path:
+  - >-
+    /education/classes/{educationClass-id}/assignments/{educationAssignment-id}/submissions/{educationSubmission-id}/excuse
+  - >-
+    /education/me/assignments/{educationAssignment-id}/submissions/{educationSubmission-id}/excuse

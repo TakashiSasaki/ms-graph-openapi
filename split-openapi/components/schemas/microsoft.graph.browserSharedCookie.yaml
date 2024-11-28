@@ -1,0 +1,59 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: browserSharedCookie
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      comment:
+        type: string
+        description: The comment for the shared cookie.
+      createdDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: The date and time when the shared cookie was created.
+        format: date-time
+      deletedDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: The date and time when the shared cookie was deleted.
+        format: date-time
+        nullable: true
+      displayName:
+        type: string
+        description: The name of the cookie.
+      history:
+        type: array
+        items:
+          $ref: .\microsoft.graph.browserSharedCookieHistory.yaml
+        description: The history of modifications applied to the cookie.
+      hostOnly:
+        type: boolean
+        description: Controls whether a cookie is a host-only or domain cookie.
+      hostOrDomain:
+        type: string
+        description: The URL of the cookie.
+      lastModifiedBy:
+        anyOf:
+          - $ref: .\microsoft.graph.identitySet.yaml
+          - type: object
+            nullable: true
+        description: The user who last modified the cookie.
+      lastModifiedDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: The date and time when the cookie was last modified.
+        format: date-time
+      path:
+        type: string
+        description: The path of the cookie.
+      sourceEnvironment:
+        $ref: .\microsoft.graph.browserSharedCookieSourceEnvironment.yaml
+      status:
+        $ref: .\microsoft.graph.browserSharedCookieStatus.yaml
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.browserSharedCookie'

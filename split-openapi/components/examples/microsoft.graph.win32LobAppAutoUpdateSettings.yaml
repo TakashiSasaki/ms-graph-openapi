@@ -1,0 +1,3 @@
+value:
+  autoUpdateSupersededAppsState:
+    '@odata.type': microsoft.graph.win32LobAutoUpdateSupersededAppsState

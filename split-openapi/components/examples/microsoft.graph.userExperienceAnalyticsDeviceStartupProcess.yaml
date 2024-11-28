@@ -1,0 +1,6 @@
+value:
+  managedDeviceId: String
+  processName: String
+  productName: String
+  publisher: String
+  startupImpactInMs: '0'

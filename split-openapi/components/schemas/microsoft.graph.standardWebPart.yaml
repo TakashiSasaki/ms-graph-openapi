@@ -1,0 +1,27 @@
+allOf:
+  - $ref: .\microsoft.graph.webPart.yaml
+  - title: standardWebPart
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      containerTextWebPartId:
+        type: string
+        description: >-
+          The instance identifier of the container text webPart. It only works
+          for inline standard webPart in rich text webParts.
+        nullable: true
+      data:
+        anyOf:
+          - $ref: .\microsoft.graph.webPartData.yaml
+          - type: object
+            nullable: true
+        description: Data of the webPart.
+      webPartType:
+        type: string
+        description: A Guid that indicates the webPart type.
+        nullable: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.standardWebPart'
+x-ms-discriminator-value: '#microsoft.graph.standardWebPart'

@@ -1,0 +1,25 @@
+title: hashes
+required:
+  - '@odata.type'
+type: object
+properties:
+  crc32Hash:
+    type: string
+    description: The CRC32 value of the file in little endian (if available). Read-only.
+    nullable: true
+  quickXorHash:
+    type: string
+    description: >-
+      A proprietary hash of the file that can be used to determine if the
+      contents of the file have changed (if available). Read-only.
+    nullable: true
+  sha1Hash:
+    type: string
+    description: SHA1 hash for the contents of the file (if available). Read-only.
+    nullable: true
+  sha256Hash:
+    type: string
+    description: SHA256 hash for the contents of the file (if available). Read-only.
+    nullable: true
+  '@odata.type':
+    type: string

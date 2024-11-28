@@ -1,0 +1,7 @@
+value:
+  expression: String
+  name: String
+  parameters:
+    - '@odata.type': microsoft.graph.stringKeyAttributeMappingSourceValuePair
+  type:
+    '@odata.type': microsoft.graph.attributeMappingSourceType

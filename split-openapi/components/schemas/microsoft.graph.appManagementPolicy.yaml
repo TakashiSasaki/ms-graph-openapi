@@ -1,0 +1,28 @@
+allOf:
+  - $ref: .\microsoft.graph.policyBase.yaml
+  - title: appManagementPolicy
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      isEnabled:
+        type: boolean
+        description: Denotes whether the policy is enabled.
+      restrictions:
+        anyOf:
+          - $ref: .\microsoft.graph.customAppManagementConfiguration.yaml
+          - type: object
+            nullable: true
+        description: Restrictions that apply to an application or service principal object.
+      appliesTo:
+        type: array
+        items:
+          $ref: .\microsoft.graph.directoryObject.yaml
+        description: >-
+          Collection of applications and service principals to which the policy
+          is applied.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.appManagementPolicy'
+x-ms-discriminator-value: '#microsoft.graph.appManagementPolicy'

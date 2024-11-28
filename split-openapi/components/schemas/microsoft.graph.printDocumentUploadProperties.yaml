@@ -1,0 +1,17 @@
+title: printDocumentUploadProperties
+required:
+  - '@odata.type'
+type: object
+properties:
+  contentType:
+    type: string
+    description: The document's content (MIME) type.
+  documentName:
+    type: string
+    description: The document's name.
+  size:
+    type: number
+    description: The document's size in bytes.
+    format: int64
+  '@odata.type':
+    type: string

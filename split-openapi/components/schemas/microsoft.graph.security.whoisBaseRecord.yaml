@@ -1,0 +1,136 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: whoisBaseRecord
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      abuse:
+        anyOf:
+          - $ref: .\microsoft.graph.security.whoisContact.yaml
+          - type: object
+            nullable: true
+        description: The contact information for the abuse contact.
+      admin:
+        anyOf:
+          - $ref: .\microsoft.graph.security.whoisContact.yaml
+          - type: object
+            nullable: true
+        description: The contact information for the admin contact.
+      billing:
+        anyOf:
+          - $ref: .\microsoft.graph.security.whoisContact.yaml
+          - type: object
+            nullable: true
+        description: The contact information for the billing contact.
+      domainStatus:
+        type: string
+        description: The domain status for this WHOIS object.
+        nullable: true
+      expirationDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: >-
+          The date and time when this WHOIS record expires with the registrar.
+          The timestamp type represents date and time information using ISO 8601
+          format and is always in UTC. For example, midnight UTC on Jan 1, 2014
+          is 2014-01-01T00:00:00Z.
+        format: date-time
+        nullable: true
+      firstSeenDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: >-
+          The first seen date and time of this WHOIS record. The timestamp type
+          represents date and time information using ISO 8601 format and is
+          always in UTC. For example, midnight UTC on Jan 1, 2014 is
+          2014-01-01T00:00:00Z.
+        format: date-time
+        nullable: true
+      lastSeenDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: >-
+          The last seen date and time of this WHOIS record. The timestamp type
+          represents date and time information using ISO 8601 format and is
+          always in UTC. For example, midnight UTC on Jan 1, 2014 is
+          2014-01-01T00:00:00Z.
+        format: date-time
+        nullable: true
+      lastUpdateDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: >-
+          The date and time when this WHOIS record was last modified. The
+          timestamp type represents date and time information using ISO 8601
+          format and is always in UTC. For example, midnight UTC on Jan 1, 2014
+          is 2014-01-01T00:00:00Z.
+        format: date-time
+        nullable: true
+      nameservers:
+        type: array
+        items:
+          $ref: .\microsoft.graph.security.whoisNameserver.yaml
+        description: The nameservers for this WHOIS object.
+      noc:
+        anyOf:
+          - $ref: .\microsoft.graph.security.whoisContact.yaml
+          - type: object
+            nullable: true
+        description: The contact information for the noc contact.
+      rawWhoisText:
+        type: string
+        description: The raw WHOIS details for this WHOIS object.
+        nullable: true
+      registrant:
+        anyOf:
+          - $ref: .\microsoft.graph.security.whoisContact.yaml
+          - type: object
+            nullable: true
+        description: The contact information for the registrant contact.
+      registrar:
+        anyOf:
+          - $ref: .\microsoft.graph.security.whoisContact.yaml
+          - type: object
+            nullable: true
+        description: The contact information for the registrar contact.
+      registrationDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: >-
+          The date and time when this WHOIS record was registered with a
+          registrar. The timestamp type represents date and time information
+          using ISO 8601 format and is always in UTC. For example, midnight UTC
+          on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+        format: date-time
+        nullable: true
+      technical:
+        anyOf:
+          - $ref: .\microsoft.graph.security.whoisContact.yaml
+          - type: object
+            nullable: true
+        description: The contact information for the technical contact.
+      whoisServer:
+        type: string
+        description: The WHOIS server that provides the details.
+        nullable: true
+      zone:
+        anyOf:
+          - $ref: .\microsoft.graph.security.whoisContact.yaml
+          - type: object
+            nullable: true
+        description: The contact information for the zone contact.
+      host:
+        $ref: .\microsoft.graph.security.host.yaml
+      '@odata.type':
+        type: string
+    discriminator:
+      propertyName: '@odata.type'
+      mapping:
+        '#microsoft.graph.security.whoisHistoryRecord': .\microsoft.graph.security.whoisHistoryRecord.yaml
+        '#microsoft.graph.security.whoisRecord': .\microsoft.graph.security.whoisRecord.yaml

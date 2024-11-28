@@ -1,0 +1,9 @@
+value:
+  authenticationConfiguration:
+    '@odata.type': microsoft.graph.customExtensionAuthenticationConfiguration
+  clientConfiguration:
+    '@odata.type': microsoft.graph.customExtensionClientConfiguration
+  description: String
+  displayName: String
+  endpointConfiguration:
+    '@odata.type': microsoft.graph.customExtensionEndpointConfiguration

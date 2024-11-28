@@ -1,0 +1,252 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: educationAssignment
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      addedStudentAction:
+        anyOf:
+          - $ref: .\microsoft.graph.educationAddedStudentAction.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Optional field to control the assignment behavior for students who are
+          added after the assignment is published. If not specified, defaults to
+          none. Supported values are: none, assignIfOpen. For example, a teacher
+          can use assignIfOpen to indicate that an assignment should be assigned
+          to any new student who joins the class while the assignment is still
+          open, and none to indicate that an assignment shouldn't be assigned to
+          new students.
+      addToCalendarAction:
+        anyOf:
+          - $ref: .\microsoft.graph.educationAddToCalendarOptions.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Optional field to control the assignment behavior  for adding
+          assignments to students' and teachers' calendars when the assignment
+          is published. The possible values are: none, studentsAndPublisher,
+          studentsAndTeamOwners, unknownFutureValue, and studentsOnly. You must
+          use the Prefer: include-unknown-enum-members request header to get the
+          following values in this evolvable enum: studentsOnly. The default
+          value is none.
+      allowLateSubmissions:
+        type: boolean
+        description: >-
+          Identifies whether students can submit after the due date. If this
+          property isn't specified during create, it defaults to true.
+        nullable: true
+      allowStudentsToAddResourcesToSubmission:
+        type: boolean
+        description: >-
+          Identifies whether students can add their own resources to a
+          submission or if they can only modify resources added by the teacher.
+        nullable: true
+      assignDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: >-
+          The date when the assignment should become active. If in the future,
+          the assignment isn't shown to the student until this date. The
+          Timestamp type represents date and time information using ISO 8601
+          format and is always in UTC time. For example, midnight UTC on Jan 1,
+          2014 is 2014-01-01T00:00:00Z
+        format: date-time
+        nullable: true
+        readOnly: true
+      assignedDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: >-
+          The moment that the assignment was published to students and the
+          assignment shows up on the students timeline. The Timestamp type
+          represents date and time information using ISO 8601 format and is
+          always in UTC time. For example, midnight UTC on Jan 1, 2014 is
+          2014-01-01T00:00:00Z
+        format: date-time
+        nullable: true
+        readOnly: true
+      assignTo:
+        anyOf:
+          - $ref: .\microsoft.graph.educationAssignmentRecipient.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Which users, or whole class should receive a submission object once
+          the assignment is published.
+      classId:
+        type: string
+        description: Class to which this assignment belongs.
+        nullable: true
+      closeDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: >-
+          Date when the assignment is closed for submissions. This is an
+          optional field that can be null if the assignment doesn't
+          allowLateSubmissions or when the closeDateTime is the same as the
+          dueDateTime. But if specified, then the closeDateTime must be greater
+          than or equal to the dueDateTime. The Timestamp type represents date
+          and time information using ISO 8601 format and is always in UTC time.
+          For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+        format: date-time
+        nullable: true
+      createdBy:
+        anyOf:
+          - $ref: .\microsoft.graph.identitySet.yaml
+          - type: object
+            nullable: true
+        description: Who created the assignment.
+        readOnly: true
+      createdDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: >-
+          Moment when the assignment was created. The Timestamp type represents
+          date and time information using ISO 8601 format and is always in UTC
+          time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+        format: date-time
+        nullable: true
+        readOnly: true
+      displayName:
+        type: string
+        description: Name of the assignment.
+        nullable: true
+      dueDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: >-
+          Date when the students assignment is due. The Timestamp type
+          represents date and time information using ISO 8601 format and is
+          always in UTC time. For example, midnight UTC on Jan 1, 2014 is
+          2014-01-01T00:00:00Z
+        format: date-time
+        nullable: true
+      feedbackResourcesFolderUrl:
+        type: string
+        description: >-
+          Folder URL where all the feedback file resources for this assignment
+          are stored.
+        nullable: true
+        readOnly: true
+      grading:
+        anyOf:
+          - $ref: .\microsoft.graph.educationAssignmentGradeType.yaml
+          - type: object
+            nullable: true
+        description: How the assignment will be graded.
+      instructions:
+        anyOf:
+          - $ref: .\microsoft.graph.educationItemBody.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Instructions for the assignment. The instructions and the display name
+          tell the student what to do.
+      lastModifiedBy:
+        anyOf:
+          - $ref: .\microsoft.graph.identitySet.yaml
+          - type: object
+            nullable: true
+        description: Who last modified the assignment.
+        readOnly: true
+      lastModifiedDateTime:
+        pattern: >-
+          ^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$
+        type: string
+        description: >-
+          The date and time on which the assignment was modified. A student
+          submission doesn't modify the assignment; only teachers can update
+          assignments. The Timestamp type represents date and time information
+          using ISO 8601 format and is always in UTC time. For example, midnight
+          UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+        format: date-time
+        nullable: true
+        readOnly: true
+      moduleUrl:
+        type: string
+        description: The URL of the module from which to access the assignment.
+        nullable: true
+      notificationChannelUrl:
+        type: string
+        description: >-
+          Optional field to specify the URL of the channel to post the
+          assignment publish notification. If not specified or null, defaults to
+          the General channel. This field only applies to assignments where the
+          assignTo value is educationAssignmentClassRecipient. Updating the
+          notificationChannelUrl isn't allowed after the assignment is
+          published.
+        nullable: true
+      resourcesFolderUrl:
+        type: string
+        description: >-
+          Folder URL where all the file resources for this assignment are
+          stored.
+        nullable: true
+        readOnly: true
+      status:
+        anyOf:
+          - $ref: .\microsoft.graph.educationAssignmentStatus.yaml
+          - type: object
+            nullable: true
+        description: >-
+          Status of the assignment.  You can't PATCH this value. Possible values
+          are: draft, scheduled, published, assigned, unknownFutureValue,
+          inactive. Note that you must use the Prefer:
+          include-unknown-enum-members request header to get the following
+          value(s) in this evolvable enum: inactive.
+        readOnly: true
+      webUrl:
+        type: string
+        description: The deep link URL for the given assignment.
+        nullable: true
+        readOnly: true
+      categories:
+        type: array
+        items:
+          $ref: .\microsoft.graph.educationCategory.yaml
+        description: >-
+          When set, enables users to easily find assignments of a given type.
+          Read-only. Nullable.
+        x-ms-navigationProperty: true
+      gradingCategory:
+        anyOf:
+          - $ref: .\microsoft.graph.educationGradingCategory.yaml
+          - type: object
+            nullable: true
+        description: >-
+          When set, enables users to weight assignments differently when
+          computing a class average grade.
+        x-ms-navigationProperty: true
+      resources:
+        type: array
+        items:
+          $ref: .\microsoft.graph.educationAssignmentResource.yaml
+        description: >-
+          Learning objects that are associated with this assignment. Only
+          teachers can modify this list. Nullable.
+        x-ms-navigationProperty: true
+      rubric:
+        anyOf:
+          - $ref: .\microsoft.graph.educationRubric.yaml
+          - type: object
+            nullable: true
+        description: When set, the grading rubric attached to this assignment.
+        x-ms-navigationProperty: true
+      submissions:
+        type: array
+        items:
+          $ref: .\microsoft.graph.educationSubmission.yaml
+        description: >-
+          Once published, there's a submission object for each student
+          representing their work and grade. Read-only. Nullable.
+        x-ms-navigationProperty: true
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.educationAssignment'

@@ -1,0 +1,53 @@
+description: Provides operations to call the stopHoldMusic method.
+post:
+  tags:
+    - communications.call
+  summary: Invoke action stopHoldMusic
+  description: Reincorporate a participant previously put on hold to the call.
+  externalDocs:
+    description: Find more info here
+    url: >-
+      https://learn.microsoft.com/graph/api/participant-stopholdmusic?view=graph-rest-1.0
+  operationId: communications.calls.call.participants.participant.stopHoldMusic
+  requestBody:
+    description: Action parameters
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            clientContext:
+              type: string
+              nullable: true
+    required: true
+  responses:
+    2XX:
+      description: Success
+      content:
+        application/json:
+          schema:
+            anyOf:
+              - $ref: >-
+                  ..\components\schemas\microsoft.graph.stopHoldMusicOperation.yaml
+              - type: object
+                nullable: true
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: action
+parameters:
+  - name: call-id
+    in: path
+    description: The unique identifier of call
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: call
+  - name: participant-id
+    in: path
+    description: The unique identifier of participant
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: participant

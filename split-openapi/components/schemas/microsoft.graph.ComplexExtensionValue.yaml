@@ -1,0 +1,7 @@
+title: ComplexExtensionValue
+required:
+  - '@odata.type'
+type: object
+properties:
+  '@odata.type':
+    type: string

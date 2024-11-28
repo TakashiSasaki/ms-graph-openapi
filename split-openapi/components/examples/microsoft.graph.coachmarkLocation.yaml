@@ -1,0 +1,5 @@
+value:
+  length: '0'
+  offset: '0'
+  type:
+    '@odata.type': microsoft.graph.coachmarkLocationType

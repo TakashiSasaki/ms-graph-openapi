@@ -1,0 +1,11 @@
+title: complianceStatus
+enum:
+  - unknown
+  - notApplicable
+  - compliant
+  - remediated
+  - nonCompliant
+  - error
+  - conflict
+  - notAssigned
+type: string

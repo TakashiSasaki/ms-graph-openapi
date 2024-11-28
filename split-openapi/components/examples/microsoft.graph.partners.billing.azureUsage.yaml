@@ -1,0 +1,5 @@
+value:
+  billed:
+    '@odata.type': microsoft.graph.partners.billing.billedUsage
+  unbilled:
+    '@odata.type': microsoft.graph.partners.billing.unbilledUsage

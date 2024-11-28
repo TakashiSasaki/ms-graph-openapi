@@ -1,0 +1,15 @@
+allOf:
+  - $ref: .\microsoft.graph.entity.yaml
+  - title: bookingCurrency
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      symbol:
+        type: string
+        description: >-
+          The currency symbol. For example, the currency symbol for the US
+          dollar and for the Australian dollar is $.
+      '@odata.type':
+        type: string
+x-ms-discriminator-value: '#microsoft.graph.bookingCurrency'

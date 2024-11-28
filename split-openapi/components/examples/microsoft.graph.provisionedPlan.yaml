@@ -1,0 +1,4 @@
+value:
+  capabilityStatus: String
+  provisioningStatus: String
+  service: String

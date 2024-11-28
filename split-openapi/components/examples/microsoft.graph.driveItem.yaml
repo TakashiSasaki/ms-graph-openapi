@@ -1,0 +1,63 @@
+value:
+  analytics:
+    '@odata.type': microsoft.graph.itemAnalytics
+  audio:
+    '@odata.type': microsoft.graph.audio
+  bundle:
+    '@odata.type': microsoft.graph.bundle
+  children:
+    - '@odata.type': microsoft.graph.driveItem
+  content: Stream
+  cTag: String
+  deleted:
+    '@odata.type': microsoft.graph.deleted
+  file:
+    '@odata.type': microsoft.graph.file
+  fileSystemInfo:
+    '@odata.type': microsoft.graph.fileSystemInfo
+  folder:
+    '@odata.type': microsoft.graph.folder
+  image:
+    '@odata.type': microsoft.graph.image
+  listItem:
+    '@odata.type': microsoft.graph.listItem
+  location:
+    '@odata.type': microsoft.graph.geoCoordinates
+  malware:
+    '@odata.type': microsoft.graph.malware
+  package:
+    '@odata.type': microsoft.graph.package
+  pendingOperations:
+    '@odata.type': microsoft.graph.pendingOperations
+  permissions:
+    - '@odata.type': microsoft.graph.permission
+  photo:
+    '@odata.type': microsoft.graph.photo
+  publication:
+    '@odata.type': microsoft.graph.publicationFacet
+  remoteItem:
+    '@odata.type': microsoft.graph.remoteItem
+  retentionLabel:
+    '@odata.type': microsoft.graph.itemRetentionLabel
+  root:
+    '@odata.type': microsoft.graph.root
+  searchResult:
+    '@odata.type': microsoft.graph.searchResult
+  shared:
+    '@odata.type': microsoft.graph.shared
+  sharepointIds:
+    '@odata.type': microsoft.graph.sharepointIds
+  size: '0'
+  specialFolder:
+    '@odata.type': microsoft.graph.specialFolder
+  subscriptions:
+    - '@odata.type': microsoft.graph.subscription
+  thumbnails:
+    - '@odata.type': microsoft.graph.thumbnailSet
+  versions:
+    - '@odata.type': microsoft.graph.driveItemVersion
+  video:
+    '@odata.type': microsoft.graph.video
+  webDavUrl: String
+  workbook:
+    '@odata.type': microsoft.graph.workbook

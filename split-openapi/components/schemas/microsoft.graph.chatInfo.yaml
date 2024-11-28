@@ -1,0 +1,19 @@
+title: chatInfo
+required:
+  - '@odata.type'
+type: object
+properties:
+  messageId:
+    type: string
+    description: The unique identifier of a message in a Microsoft Teams channel.
+    nullable: true
+  replyChainMessageId:
+    type: string
+    description: The ID of the reply message.
+    nullable: true
+  threadId:
+    type: string
+    description: The unique identifier for a thread in Microsoft Teams.
+    nullable: true
+  '@odata.type':
+    type: string

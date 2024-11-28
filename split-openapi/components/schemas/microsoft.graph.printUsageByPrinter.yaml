@@ -1,0 +1,18 @@
+allOf:
+  - $ref: .\microsoft.graph.printUsage.yaml
+  - title: printUsageByPrinter
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      printerId:
+        type: string
+        description: The ID of the printer represented by these statistics.
+      printerName:
+        type: string
+        description: The name of the printer represented by these statistics.
+        nullable: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.printUsageByPrinter'
+x-ms-discriminator-value: '#microsoft.graph.printUsageByPrinter'

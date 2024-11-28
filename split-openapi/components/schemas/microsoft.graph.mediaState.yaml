@@ -1,0 +1,6 @@
+title: mediaState
+enum:
+  - active
+  - inactive
+  - unknownFutureValue
+type: string

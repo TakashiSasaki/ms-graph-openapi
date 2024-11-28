@@ -1,0 +1,5 @@
+value:
+  bucketDefinition:
+    '@odata.type': microsoft.graph.bucketAggregationDefinition
+  field: String
+  size: '0'

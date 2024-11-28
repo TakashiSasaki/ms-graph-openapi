@@ -1,0 +1,19 @@
+allOf:
+  - $ref: .\microsoft.graph.identitySource.yaml
+  - title: azureActiveDirectoryTenant
+    required:
+      - '@odata.type'
+    type: object
+    properties:
+      displayName:
+        type: string
+        description: The name of the Microsoft Entra tenant. Read only.
+        nullable: true
+      tenantId:
+        type: string
+        description: The ID of the Microsoft Entra tenant. Read only.
+        nullable: true
+      '@odata.type':
+        type: string
+        default: '#microsoft.graph.azureActiveDirectoryTenant'
+x-ms-discriminator-value: '#microsoft.graph.azureActiveDirectoryTenant'
