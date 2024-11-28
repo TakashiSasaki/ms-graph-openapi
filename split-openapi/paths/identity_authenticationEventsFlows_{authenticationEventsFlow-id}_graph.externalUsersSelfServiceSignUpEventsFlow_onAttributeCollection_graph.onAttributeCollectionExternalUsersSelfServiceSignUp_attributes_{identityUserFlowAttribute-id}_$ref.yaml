@@ -1,0 +1,36 @@
+description: Provides operations to manage the collection of identityContainer entities.
+delete:
+  tags:
+    - identity.authenticationEventsFlow
+  summary: Delete ref of navigation property attributes for identity
+  operationId: >-
+    identity.authenticationEventsFlows.AsOnAttributeCollectionExternalUsersSelfServiceSignUp.attributes.DeleteRefIdentityUserFlowAttribute
+  parameters:
+    - name: If-Match
+      in: header
+      description: ETag
+      schema:
+        type: string
+  responses:
+    '204':
+      description: Success
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: operation
+parameters:
+  - name: authenticationEventsFlow-id
+    in: path
+    description: The unique identifier of authenticationEventsFlow
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: authenticationEventsFlow
+  - name: identityUserFlowAttribute-id
+    in: path
+    description: The unique identifier of identityUserFlowAttribute
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: identityUserFlowAttribute

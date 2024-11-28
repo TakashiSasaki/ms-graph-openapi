@@ -1,0 +1,108 @@
+description: Provides operations to manage the collection of identityContainer entities.
+get:
+  tags:
+    - identity.authenticationEventsFlow
+  summary: List attributes (of a user flow)
+  description: >-
+    Get an identityUserFlowAttribute collection associated with an external
+    identities self-service user flow represented by an
+    externalUsersSelfServiceSignupEventsFlow object. These attributes are
+    collected from the user during the authentication experience defined by the
+    user flow.
+  externalDocs:
+    description: Find more info here
+    url: >-
+      https://learn.microsoft.com/graph/api/onattributecollectionexternalusersselfservicesignup-list-attributes?view=graph-rest-1.0
+  operationId: >-
+    identity.authenticationEventsFlows.AsOnAttributeCollectionExternalUsersSelfServiceSignUp.ListRefAttributes
+  parameters:
+    - $ref: ..\components\parameters\top.yaml
+    - $ref: ..\components\parameters\skip.yaml
+    - $ref: ..\components\parameters\search.yaml
+    - $ref: ..\components\parameters\filter.yaml
+    - $ref: ..\components\parameters\count.yaml
+    - name: $orderby
+      in: query
+      description: Order items by property values
+      style: form
+      explode: false
+      schema:
+        uniqueItems: true
+        type: array
+        items:
+          type: string
+  responses:
+    2XX:
+      $ref: ..\components\responses\StringCollectionResponse.yaml
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-pageable:
+    nextLinkName: '@odata.nextLink'
+    operationName: listMore
+  x-ms-docs-operation-type: operation
+post:
+  tags:
+    - identity.authenticationEventsFlow
+  summary: Add attribute (to user flow)
+  description: >-
+    Add an attribute to an external identities self-service sign up user flow
+    that's represented by an externalUsersSelfServiceSignupEventsFlow object.
+    You can add both custom and built-in attributes to a user flow. The
+    attribute is added to both the attributeCollection> attributes and
+    attributeCollection> attributeCollectionPage > views collections on the user
+    flow. In the views collection, the attribute is assigned the default
+    settings. You can PATCH the user flow to customize the settings of the
+    attribute on the views object, for example, marking it as required or
+    updating the allowed input types.
+  externalDocs:
+    description: Find more info here
+    url: >-
+      https://learn.microsoft.com/graph/api/onattributecollectionexternalusersselfservicesignup-post-attributes?view=graph-rest-1.0
+  operationId: >-
+    identity.authenticationEventsFlows.AsOnAttributeCollectionExternalUsersSelfServiceSignUp.CreateRefAttributes
+  requestBody:
+    $ref: ..\components\requestBodies\refPostBody.yaml
+  responses:
+    '204':
+      description: Success
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: operation
+delete:
+  tags:
+    - identity.authenticationEventsFlow
+  summary: Delete ref of navigation property attributes for identity
+  operationId: >-
+    identity.authenticationEventsFlows.AsOnAttributeCollectionExternalUsersSelfServiceSignUp.DeleteRefAttributes
+  parameters:
+    - name: If-Match
+      in: header
+      description: ETag
+      schema:
+        type: string
+    - name: '@id'
+      in: query
+      description: The delete Uri
+      required: true
+      schema:
+        type: string
+  responses:
+    '204':
+      description: Success
+    4XX:
+      $ref: ..\components\responses\error.yaml
+    5XX:
+      $ref: ..\components\responses\error.yaml
+  x-ms-docs-operation-type: operation
+parameters:
+  - name: authenticationEventsFlow-id
+    in: path
+    description: The unique identifier of authenticationEventsFlow
+    required: true
+    schema:
+      type: string
+    x-ms-docs-key-type: authenticationEventsFlow
