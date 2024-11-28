@@ -3,7 +3,7 @@ File: calendar.py
 Author: Takashi Sasaki
 Created: 2024-11-27
 Modified: 2024-11-28
-Version: 1.4.0
+Version: 1.4.2
 
 Description:
 This script extracts specified paths from a pre-processed OpenAPI document stored as a Pickle file. The extracted
@@ -36,6 +36,7 @@ logging.basicConfig(
 )
 logger = logging.getLogger()
 
+
 def ensure_correct_directory():
     """Ensure the script is executed from its directory or adjust the current directory."""
     script_dir = os.path.dirname(os.path.abspath(__file__))
@@ -45,8 +46,10 @@ def ensure_correct_directory():
         logger.info(f"Adjusting current directory to: {script_dir}")
         os.chdir(script_dir)
 
+
 def load_pickle_file(file_path):
     """Load a pickle file, and handle potential errors."""
+    logger.info(f"Attempting to load Pickle file: {file_path}")
     if not os.path.exists(file_path):
         logger.error(f"Error: The file {file_path} does not exist.")
         return None
@@ -59,21 +62,21 @@ def load_pickle_file(file_path):
     except pickle.UnpicklingError:
         logger.error(f"Error: Failed to unpickle the file {file_path}. The file may be corrupted or incompatible.")
         return None
-    except FileNotFoundError:
-        logger.error(f"Error: File {file_path} not found.")
+    except Exception as e:
+        logger.error(f"Error: {e}")
         return None
-    except IOError as e:
-        logger.error(f"Error: IOError occurred while reading the file {file_path}: {e}")
-        return None
+
 
 def load_required_paths(file_path):
     """Load the required paths from a text file."""
+    logger.info(f"Loading required paths from: {file_path}")
     try:
         with open(file_path, 'r', encoding='utf-8') as file:
             return [line.strip() for line in file if line.strip()]
     except Exception as e:
         logger.error(f"Failed to load required paths from {file_path}: {e}")
         raise
+
 
 def collect_refs(data, used_refs, current_path="root"):
     """Recursively collect all $ref values from the OpenAPI document."""
@@ -82,15 +85,20 @@ def collect_refs(data, used_refs, current_path="root"):
             if key == "$ref" and isinstance(value, str):
                 if value not in used_refs:
                     used_refs.add(value)
+                    # Log the reference found and the current size of used_refs
                     logger.debug(f"Found reference at {current_path}: {value}")
+                    logger.debug(f"Current size of used_refs: {len(used_refs)}")  # Log size of used_refs after addition
             else:
                 collect_refs(value, used_refs, f"{current_path}/{key}")
     elif isinstance(data, list):
         for index, item in enumerate(data):
             collect_refs(item, used_refs, f"{current_path}[{index}]")
 
+
+
 def resolve_refs_recursive(openapi_spec, used_refs):
     """Resolve all $ref dependencies recursively and include necessary components."""
+    logger.info(f"Resolving $refs recursively.")
     components = openapi_spec.get("components", {})
     resolved_components = {key: {} for key in components}
 
@@ -116,6 +124,9 @@ def resolve_refs_recursive(openapi_spec, used_refs):
                     collect_refs(components[comp_type][name], used_refs, f"#/components/{comp_type}/{name}")
             except ValueError as e:
                 logger.error(f"Malformed $ref: {ref} ({e})")
+        else:
+            logger.warning(f"$ref '{ref}' does not start with '#/components/', skipping.")
+
 
     # Resolve all collected refs
     for ref in list(used_refs):
@@ -129,8 +140,10 @@ def resolve_refs_recursive(openapi_spec, used_refs):
     # Return resolved components
     return {k: v for k, v in resolved_components.items() if v}
 
+
 def filter_openapi_spec(openapi_spec, required_paths):
     """Filter the OpenAPI spec to include only the required paths and resolve $refs."""
+    logger.info(f"Filtering OpenAPI spec to include only the required paths.")
     # Filter paths
     filtered_paths = {path: openapi_spec['paths'][path] for path in openapi_spec['paths'] if path in required_paths}
 
@@ -164,8 +177,10 @@ def filter_openapi_spec(openapi_spec, required_paths):
 
     return openapi_spec
 
+
 def save_file(data, file_path):
     """Save OpenAPI data to a file in YAML or JSON format."""
+    logger.info(f"Saving filtered OpenAPI spec to: {file_path}")
     try:
         with open(file_path, 'w', encoding='utf-8') as file:
             if file_path.endswith('.yaml') or file_path.endswith('.yml'):
@@ -178,6 +193,7 @@ def save_file(data, file_path):
     except Exception as e:
         logger.error(f"Failed to save file {file_path}: {e}")
         raise
+
 
 def main():
     # Ensure the script is run from its directory
@@ -196,7 +212,7 @@ def main():
 
     # If pickle file doesn't exist or loading failed, stop execution
     if not openapi_spec:
-        logger.error("Failed to load OpenAPI spec from the pickle file. Exiting script.")
+        logger.error("Pickle file loading failed. Exiting.")
         sys.exit(1)
 
     # Load required paths
@@ -210,6 +226,7 @@ def main():
     logger.info(f"Filtered OpenAPI spec saved to {args.output_json}")
     save_file(filtered_spec, args.output_yaml)
     logger.info(f"Filtered OpenAPI spec saved to {args.output_yaml}")
+
 
 if __name__ == "__main__":
     main()
